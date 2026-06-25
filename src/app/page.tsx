@@ -23,36 +23,49 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Who this is for — blue header band with the photo blended on the sides */}
+      {/* Who this is for — photo of Simon on the left, blending into the blue */}
       <section className="px-4 py-4 md:px-6 lg:px-8">
-        <div className="section-ink whofor relative mx-auto w-full max-w-7xl overflow-hidden rounded-[18px] px-6 py-16 md:px-10 md:py-24 lg:px-16">
-          <div className="whofor-photo" aria-hidden="true" />
-          <div className="relative z-10">
-            <div className="reveal mx-auto max-w-3xl text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-seafoam">
-                Who this is for
-              </p>
-              <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-white md:text-6xl">
-                Built for founder-led agencies, not giant companies.
-              </h2>
+        <div className="section-ink relative mx-auto w-full max-w-7xl overflow-hidden rounded-[18px]">
+          <div className="grid lg:grid-cols-2 lg:items-stretch">
+            <div className="whofor-photo relative min-h-[300px] lg:min-h-[560px]">
+              <Image
+                src="/simon-jacobs-event.webp"
+                alt="Simon Jacobs in conversation with agency founders"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover object-[50%_28%]"
+              />
             </div>
-            <ul className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-2">
-              {whoFor.map((item, index) => (
-                <li
-                  key={item}
-                  className="reveal flex items-start gap-3 rounded-[12px] border border-white/12 bg-white/8 p-5 backdrop-blur-xl md:p-6"
-                  style={{ animationDelay: `${index * 80}ms` }}
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-seafoam/20 text-sm font-bold text-seafoam"
+
+            <div className="relative z-10 px-6 pb-12 pt-4 lg:px-14 lg:py-20">
+              <div className="reveal">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-seafoam">
+                  Who this is for
+                </p>
+                <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-white md:text-5xl">
+                  Built for founder-led agencies, not giant companies.
+                </h2>
+              </div>
+              <ul className="mt-8 grid gap-3">
+                {whoFor.map((item, index) => (
+                  <li
+                    key={item}
+                    className="reveal flex items-start gap-3 rounded-[12px] border border-white/12 bg-white/8 p-4 backdrop-blur-xl md:p-5"
+                    style={{ animationDelay: `${index * 80}ms` }}
                   >
-                    ✓
-                  </span>
-                  <span className="text-base leading-7 text-white/90">{item}</span>
-                </li>
-              ))}
-            </ul>
+                    <span
+                      aria-hidden="true"
+                      className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-seafoam/20 text-sm font-bold text-seafoam"
+                    >
+                      ✓
+                    </span>
+                    <span className="text-base leading-7 text-white/90">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -61,7 +74,7 @@ export default function Home() {
       <section className="section-white relative mx-auto w-full max-w-7xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Tax advice for agency owners who need more than a year-end tidy-up.
+            Stop using Claude for taxes.
           </h2>
         </div>
         <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
