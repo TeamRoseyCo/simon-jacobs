@@ -1,64 +1,63 @@
 import Link from "next/link";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import CtaBand from "@/components/CtaBand";
-import { services, whoFor, resultItems } from "@/lib/content";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import { services, whoFor } from "@/lib/content";
+import { posts } from "@/lib/posts";
 
 export default function Home() {
   return (
     <>
       <Hero />
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 pt-28 text-center md:px-10 md:pb-20 md:pt-36 lg:px-16">
-        <div className="statement-panel reveal mx-auto max-w-4xl px-6 py-10 md:px-12 md:py-12">
-          <p className="font-serif text-2xl leading-[1.65] text-ink md:text-3xl">
-            Most agency owners are brilliant at winning clients.
-            <br />
-            They&apos;re <em className="text-accent">terrible</em> at keeping
-            what they make.
-            <br />
-            <br />
-            Not because they spend too much.
-            <br />
-            Because nobody ever showed them{" "}
-            <em className="text-accent">what&apos;s actually possible.</em>
-          </p>
-        </div>
+      {/* Lead statement — large, boxless, two-tone */}
+      <section className="section-white mx-auto w-full max-w-5xl px-6 py-24 text-center md:py-32 lg:px-16">
+        <p className="reveal mx-auto max-w-4xl font-serif text-[26px] leading-[1.5] text-muted md:text-[40px] md:leading-[1.38]">
+          Most agency owners are brilliant at winning clients.{" "}
+          <span className="text-ink">
+            They&apos;re terrible at keeping what they make.
+          </span>{" "}
+          Not because they spend too much. Because nobody ever showed them{" "}
+          <span className="text-accent">what&apos;s actually possible.</span>
+        </p>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div className="reveal">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              Who this is for
-            </p>
-            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-              Built for founder-led agencies, not giant companies.
-            </h2>
-            <p className="mt-5 max-w-[440px] text-base leading-8 text-muted">
-              The advice is sharpest when it understands how your business
-              actually works. If most of this sounds like you, it&apos;s a fit.
-            </p>
-          </div>
-          <ul className="reveal grid gap-3">
-            {whoFor.map((item, index) => (
-              <li
-                key={item}
-                className="finance-card flex items-start gap-4 p-5 md:p-6"
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent/10 text-sm font-bold text-accent"
+      {/* Who this is for — blue header band with the photo blended on the sides */}
+      <section className="px-4 py-4 md:px-6 lg:px-8">
+        <div className="section-ink whofor relative mx-auto w-full max-w-7xl overflow-hidden rounded-[18px] px-6 py-16 md:px-10 md:py-24 lg:px-16">
+          <div className="whofor-photo" aria-hidden="true" />
+          <div className="relative z-10">
+            <div className="reveal mx-auto max-w-3xl text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-seafoam">
+                Who this is for
+              </p>
+              <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-white md:text-6xl">
+                Built for founder-led agencies, not giant companies.
+              </h2>
+            </div>
+            <ul className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-2">
+              {whoFor.map((item, index) => (
+                <li
+                  key={item}
+                  className="reveal flex items-start gap-3 rounded-[12px] border border-white/12 bg-white/8 p-5 backdrop-blur-xl md:p-6"
+                  style={{ animationDelay: `${index * 80}ms` }}
                 >
-                  ✓
-                </span>
-                <span className="text-base leading-7 text-ink">{item}</span>
-              </li>
-            ))}
-          </ul>
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-seafoam/20 text-sm font-bold text-seafoam"
+                  >
+                    ✓
+                  </span>
+                  <span className="text-base leading-7 text-white/90">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
+      {/* Services teaser */}
       <section className="section-white relative mx-auto w-full max-w-7xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -92,25 +91,99 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About me */}
+      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="image-stack reveal relative min-h-[420px] overflow-hidden">
+            <Image
+              src="/simon-jacobs.webp"
+              alt="Simon Jacobs, Chartered Tax Adviser"
+              fill
+              sizes="(min-width: 1024px) 44vw, 100vw"
+              className="object-cover object-[center_12%]"
+            />
+          </div>
+          <div className="reveal">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              About Simon
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+              Plain-English advice from someone who gets agencies.
+            </h2>
+            <p className="mt-5 max-w-[560px] text-base leading-8 text-muted">
+              Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
+              year-round with founder-led UK agencies on tax, profit extraction,
+              and building a business that is genuinely worth selling.
+            </p>
+            <Link
+              href="/about"
+              className="mt-6 inline-flex text-sm font-semibold text-ink transition hover:text-accent"
+            >
+              More about Simon →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* From the blog */}
       <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="reveal mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-              What changes when the money side is handled.
-            </h2>
+          <div className="reveal flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                From the blog
+              </p>
+              <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+                Tax and profit, in plain English.
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="text-sm font-semibold text-ink transition hover:text-accent"
+            >
+              All posts →
+            </Link>
           </div>
-          <div className="mt-8 grid gap-3 text-left sm:grid-cols-2">
-            {resultItems.map((item, index) => (
-              <div
-                key={item}
-                className="finance-card reveal p-5 md:p-6"
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {posts.slice(0, 3).map((post, index) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="finance-card reveal flex flex-col p-6 transition duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
-                <span className="font-serif text-2xl leading-tight text-ink">
-                  {item}
+                <div className="flex items-center gap-3 text-xs font-semibold text-accent">
+                  <span>{post.tag}</span>
+                  <span className="text-muted">·</span>
+                  <span className="text-muted">{post.readingTime}</span>
+                </div>
+                <h3 className="mt-4 font-serif text-xl font-normal leading-snug text-ink">
+                  {post.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-7 text-muted">
+                  {post.excerpt}
+                </p>
+                <span className="mt-5 text-sm font-semibold text-ink">
+                  Read it →
                 </span>
-              </div>
+              </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Email registration */}
+      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <div className="reveal mx-auto max-w-2xl text-center">
+          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
+            Get the occasional note.
+          </h2>
+          <p className="mx-auto mt-4 max-w-[520px] text-base leading-8 text-muted">
+            Short, useful thinking on tax, profit, and agency value. No spam,
+            unsubscribe anytime.
+          </p>
+          <div className="mt-8">
+            <NewsletterSignup />
           </div>
         </div>
       </section>

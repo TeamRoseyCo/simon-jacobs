@@ -1,12 +1,28 @@
 import Link from "next/link";
 import { bookHref, navLinks } from "@/lib/content";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
+      <div className="mx-auto w-full max-w-7xl border-b border-white/10 px-6 py-10 md:px-10 lg:px-16">
+        <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
+          <div>
+            <h3 className="font-serif text-2xl text-white md:text-3xl">
+              Occasional notes worth reading.
+            </h3>
+            <p className="mt-3 max-w-[420px] text-sm leading-7 text-white/65">
+              Plain-English thinking on tax, profit, and building a more valuable
+              agency. No spam, unsubscribe anytime.
+            </p>
+          </div>
+          <NewsletterSignup variant="footer" />
+        </div>
+      </div>
+
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr] md:px-10 lg:px-16">
         <div>
-          <Link href="/" className="brand-script text-[40px] leading-none text-white">
+          <Link href="/" className="brand-script text-[30px] leading-none text-white">
             Simon Jacobs
           </Link>
           <p className="mt-5 max-w-[360px] text-sm leading-7 text-white/68">
