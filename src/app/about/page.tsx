@@ -52,6 +52,24 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+        <figure className="reveal overflow-hidden rounded-[18px] border border-border bg-white shadow-[0_18px_55px_rgba(8,34,75,0.08)]">
+          <div className="relative aspect-[16/10] w-full">
+            <Image
+              src="/simon-jacobs-event.jpg"
+              alt="Simon Jacobs in conversation with agency founders over dinner"
+              fill
+              sizes="(min-width: 1024px) 1100px, 100vw"
+              className="object-cover object-[center_32%]"
+            />
+          </div>
+          <figcaption className="px-6 py-5 text-center text-sm leading-7 text-muted">
+            Most of the useful conversations start exactly like this — founders,
+            a table, and the questions they never get to ask their accountant.
+          </figcaption>
+        </figure>
+      </section>
+
       <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="mx-auto w-full max-w-7xl">
           <div className="reveal mx-auto max-w-3xl text-center">
