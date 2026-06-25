@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import CtaBand from "@/components/CtaBand";
-import { services } from "@/lib/content";
+import { services, whoFor, resultItems } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -22,6 +22,40 @@ export default function Home() {
             Because nobody ever showed them{" "}
             <em className="text-accent">what&apos;s actually possible.</em>
           </p>
+        </div>
+      </section>
+
+      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div className="reveal">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              Who this is for
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+              Built for founder-led agencies, not giant companies.
+            </h2>
+            <p className="mt-5 max-w-[440px] text-base leading-8 text-muted">
+              The advice is sharpest when it understands how your business
+              actually works. If most of this sounds like you, it&apos;s a fit.
+            </p>
+          </div>
+          <ul className="reveal grid gap-3">
+            {whoFor.map((item, index) => (
+              <li
+                key={item}
+                className="finance-card flex items-start gap-4 p-5 md:p-6"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent/10 text-sm font-bold text-accent"
+                >
+                  ✓
+                </span>
+                <span className="text-base leading-7 text-ink">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -55,6 +89,29 @@ export default function Home() {
           >
             Explore the services
           </Link>
+        </div>
+      </section>
+
+      <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="reveal mx-auto max-w-3xl text-center">
+            <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
+              What changes when the money side is handled.
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-3 text-left sm:grid-cols-2">
+            {resultItems.map((item, index) => (
+              <div
+                key={item}
+                className="finance-card reveal p-5 md:p-6"
+                style={{ animationDelay: `${index * 90}ms` }}
+              >
+                <span className="font-serif text-2xl leading-tight text-ink">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

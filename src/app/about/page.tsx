@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
+import { principles, credentials } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Simon Jacobs — Chartered Tax Adviser, ex-PwC",
@@ -30,10 +31,17 @@ export default function AboutPage() {
             Chartered tax advice for busy founders
           </h1>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            Simon combines CTA and CA training with Big Four experience, then
-            applies it to the day-to-day realities of running a growing agency:
-            uneven cashflow, retained clients, hiring decisions, director pay,
-            and the constant tension between taking profit and reinvesting it.
+            Simon is a Chartered Tax Adviser and Chartered Accountant with Big
+            Four experience at PwC. He left large-firm advisory to do the thing
+            most agency founders can never get from a big practice: proactive,
+            plain-English advice from someone who actually understands the
+            business model.
+          </p>
+          <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
+            The day-to-day realities of a growing agency — uneven cashflow,
+            retained clients, hiring decisions, director pay, and the constant
+            tension between taking profit and reinvesting it — are exactly where
+            good tax planning earns its keep.
           </p>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
             The work is deliberately direct. You should know what the numbers
@@ -41,20 +49,58 @@ export default function AboutPage() {
             cost before you commit — including the choices that make the agency
             easier to sell later.
           </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="finance-card p-5">
-              <span className="font-serif text-3xl text-ink">Plain English</span>
-              <p className="mt-2 text-sm leading-6 text-muted">
-                You see the options and trade-offs without technical fog.
-              </p>
-            </div>
-            <div className="finance-card p-5">
-              <span className="font-serif text-3xl text-ink">Year-round</span>
-              <p className="mt-2 text-sm leading-6 text-muted">
-                Decisions happen while they can still change the outcome.
-              </p>
-            </div>
+        </div>
+      </section>
+
+      <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="reveal mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              How I work
+            </p>
+            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+              Four things you can count on.
+            </h2>
           </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {principles.map((p, index) => (
+              <article
+                key={p.title}
+                className="finance-card reveal p-5 md:p-6"
+                style={{ animationDelay: `${index * 90}ms` }}
+              >
+                <h3 className="font-serif text-2xl font-normal text-ink">
+                  {p.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{p.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            Background
+          </p>
+          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+            The credentials behind the advice.
+          </h2>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {credentials.map((c, index) => (
+            <article
+              key={c.title}
+              className="finance-card reveal p-5 md:p-6"
+              style={{ animationDelay: `${index * 90}ms` }}
+            >
+              <h3 className="font-serif text-xl font-normal leading-snug text-ink">
+                {c.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-muted">{c.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -40,15 +40,43 @@ export const services = [
   {
     title: "Tax planning",
     body: "Make cleaner decisions before the money moves, from corporation tax and VAT to director extraction and timing.",
+    includes: [
+      "Corporation tax forecasting and timing",
+      "A VAT position and scheme that fits an agency",
+      "Director extraction: salary, dividends, pension",
+      "Allowances and reliefs where they genuinely apply",
+      "Decisions modelled before you commit, not after",
+    ],
   },
   {
     title: "Profit extraction",
     body: "Build a practical route for paying yourself well without blunting the agency's ability to grow.",
+    includes: [
+      "The right salary and dividend split for your numbers",
+      "Pension used as a tax-efficient extraction route",
+      "Withdrawals timed around the tax year",
+      "A balance between what you take and what funds growth",
+      "Extraction planned with an eventual sale in mind",
+    ],
   },
   {
     title: "Agency accountancy",
     body: "Management accounts, compliance, and calm financial visibility shaped around the way agencies actually run.",
+    includes: [
+      "Management accounts you can actually read",
+      "Year-end accounts and corporation tax returns",
+      "VAT returns and payroll oversight",
+      "Clean books that hold up in due diligence",
+      "A clear monthly view of profit and cash",
+    ],
   },
+];
+
+export const whoFor = [
+  "You run a UK marketing or digital agency turning over roughly £500k–£5m.",
+  "You're the founder, and the one who actually makes the call.",
+  "Tax — corporation, VAT, and personal — takes a bigger bite every year.",
+  "You want to build something worth selling, not just a job that pays well.",
 ];
 
 export const resultItems = [
@@ -61,15 +89,53 @@ export const resultItems = [
 export const processSteps = [
   {
     title: "Diagnose",
-    body: "We review the numbers, owner goals, current extraction, and the places profit is quietly leaking.",
+    body: "We start with a discovery call and a look at the numbers: turnover, margins, current extraction, your tax position, and your goals for the next few years. The aim is to find where profit is quietly leaking and where the easy wins are.",
   },
   {
     title: "Plan",
-    body: "You get a focused tax and profit plan with plain-English trade-offs, not a pile of abstract options.",
+    body: "You get a focused tax and profit plan written in plain English, with the trade-offs spelled out, what each choice is likely to cost, and what it means for both your take-home and the agency's value at exit.",
   },
   {
     title: "Maintain",
-    body: "The plan is kept live through the year, so decisions happen before deadlines force your hand.",
+    body: "The plan is kept live through the year with regular check-ins, so big decisions — hiring, dividends, reinvestment — happen with the numbers in front of you, before deadlines force your hand.",
+  },
+];
+
+export const principles = [
+  {
+    title: "Plain English",
+    body: "You see the options and the trade-offs without wading through technical fog. If you can't explain it back, it isn't done.",
+  },
+  {
+    title: "Year-round",
+    body: "Advice happens while it can still change the outcome, not in a panic the week before a deadline.",
+  },
+  {
+    title: "Direct",
+    body: "You hear what each choice is likely to cost and what it's worth before you commit. No padding, no upsell.",
+  },
+  {
+    title: "Exit-minded",
+    body: "Even routine decisions are made with one eye on the agency's value, so you're building something sellable.",
+  },
+];
+
+export const credentials = [
+  {
+    title: "Chartered Tax Adviser (CTA)",
+    body: "The leading UK qualification for tax advice — the technical depth behind every plan.",
+  },
+  {
+    title: "Chartered Accountant (CA)",
+    body: "Trained in accountancy as well as tax, so advice connects to the real numbers.",
+  },
+  {
+    title: "Ex-PwC",
+    body: "Big Four advisory experience, applied to the practical decisions agency founders face.",
+  },
+  {
+    title: "Agency specialist",
+    body: "Focused on UK marketing and digital agencies — retainers, margins, founder incentives.",
   },
 ];
 

@@ -32,7 +32,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <article
               key={service.title}
-              className="finance-card reveal p-5 transition duration-300 hover:-translate-y-1 md:p-6"
+              className="finance-card reveal flex flex-col p-5 transition duration-300 hover:-translate-y-1 md:p-6"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <span className="text-xs font-semibold text-accent">
@@ -42,6 +42,17 @@ export default function ServicesPage() {
                 {service.title}
               </h2>
               <p className="mt-4 text-sm leading-7 text-muted">{service.body}</p>
+              <ul className="mt-5 grid gap-2.5 border-t border-border pt-5 text-sm text-ink">
+                {service.includes.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                    />
+                    <span className="leading-6">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
