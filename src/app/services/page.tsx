@@ -3,9 +3,9 @@ import CtaBand from "@/components/CtaBand";
 import { services, resultItems, processSteps } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Services — Tax planning, profit extraction & agency accountancy",
+  title: "Services: Tax planning, profit extraction & agency accountancy",
   description:
-    "Proactive tax planning, profit extraction, and accountancy for UK marketing agencies — built around how agencies actually run and where they are heading.",
+    "Proactive tax planning, profit extraction, and accountancy for UK marketing agencies, built around how agencies actually run and where they are heading.",
   alternates: { canonical: "/services" },
 };
 

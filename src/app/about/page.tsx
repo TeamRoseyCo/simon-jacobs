@@ -4,7 +4,7 @@ import CtaBand from "@/components/CtaBand";
 import { principles, credentials } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About Simon Jacobs — Chartered Tax Adviser, ex-PwC",
+  title: "About Simon Jacobs, Chartered Tax Adviser & ex-PwC",
   description:
     "Simon Jacobs combines CTA and CA training with Big Four (PwC) experience, applied to the real decisions UK agency founders face: tax, profit, director pay, and exit.",
   alternates: { canonical: "/about" },
@@ -38,15 +38,15 @@ export default function AboutPage() {
             business model.
           </p>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            The day-to-day realities of a growing agency — uneven cashflow,
+            The day-to-day realities of a growing agency, uneven cashflow,
             retained clients, hiring decisions, director pay, and the constant
-            tension between taking profit and reinvesting it — are exactly where
+            tension between taking profit and reinvesting it, are exactly where
             good tax planning earns its keep.
           </p>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
             The work is deliberately direct. You should know what the numbers
             mean, what choices are available, and what each choice is likely to
-            cost before you commit — including the choices that make the agency
+            cost before you commit, including the choices that make the agency
             easier to sell later.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <figure className="reveal overflow-hidden rounded-[18px] border border-border bg-white shadow-[0_18px_55px_rgba(8,34,75,0.08)]">
           <div className="relative aspect-[16/10] w-full">
             <Image
-              src="/simon-jacobs-event.jpg"
+              src="/simon-jacobs-event.webp"
               alt="Simon Jacobs in conversation with agency founders over dinner"
               fill
               sizes="(min-width: 1024px) 1100px, 100vw"
@@ -64,7 +64,7 @@ export default function AboutPage() {
             />
           </div>
           <figcaption className="px-6 py-5 text-center text-sm leading-7 text-muted">
-            Most of the useful conversations start exactly like this — founders,
+            Most of the useful conversations start exactly like this: founders,
             a table, and the questions they never get to ask their accountant.
           </figcaption>
         </figure>

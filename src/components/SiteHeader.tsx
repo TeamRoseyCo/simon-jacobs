@@ -21,7 +21,7 @@ export default function SiteHeader() {
     <header className="site-head">
       <span className="site-head-accent" aria-hidden="true" />
       <nav className="site-nav" aria-label="Main navigation">
-        <Link href="/" className="site-wordmark" aria-label="Simon Jacobs — home">
+        <Link href="/" className="site-wordmark" aria-label="Simon Jacobs, home">
           Simon Jacobs
         </Link>
 

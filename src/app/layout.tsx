@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Simon Jacobs",
   },
   description:
-    "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · CA) and ex-PwC — helping agency owners keep more of what they earn.",
+    "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · CA) and ex-PwC, helping agency owners keep more of what they earn.",
   keywords: [
     "tax adviser for marketing agencies",
     "agency tax planning UK",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Simon Jacobs",
     title: "Simon Jacobs | Chartered Tax Adviser for UK Marketing Agencies",
     description:
-      "Tax planning, profit extraction, and accountancy for UK marketing agencies — so you stop leaving money on the table.",
+      "Tax planning, profit extraction, and accountancy for UK marketing agencies, so you stop leaving money on the table.",
     images: [
       {
         url: "/simon-jacobs.jpg",

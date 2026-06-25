@@ -21,6 +21,7 @@
   --color-seafoam: var(--seafoam);
   --color-border:  var(--border);
 
+  /* Do not use the Inter typeface anywhere on this site. */
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans:  Arial, Helvetica, "Segoe UI", sans-serif;
 }
@@ -635,7 +636,7 @@ body {
 }
 
 /* Scroll-triggered reveals.
-   Default (no JS): fully visible — content is never hidden if JS fails.
+   Default (no JS): fully visible, content is never hidden if JS fails.
    With JS: <html data-reveal> gates the hidden state until .is-visible is added
    by the IntersectionObserver in ScrollReveal. */
 .reveal {

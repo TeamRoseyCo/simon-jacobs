@@ -75,7 +75,7 @@ export const services = [
 export const whoFor = [
   "You run a UK marketing or digital agency turning over roughly £500k–£5m.",
   "You're the founder, and the one who actually makes the call.",
-  "Tax — corporation, VAT, and personal — takes a bigger bite every year.",
+  "Corporation, VAT, and personal tax take a bigger bite every year.",
   "You want to build something worth selling, not just a job that pays well.",
 ];
 
@@ -97,7 +97,7 @@ export const processSteps = [
   },
   {
     title: "Maintain",
-    body: "The plan is kept live through the year with regular check-ins, so big decisions — hiring, dividends, reinvestment — happen with the numbers in front of you, before deadlines force your hand.",
+    body: "The plan is kept live through the year with regular check-ins, so big decisions like hiring, dividends, and reinvestment happen with the numbers in front of you, before deadlines force your hand.",
   },
 ];
 
@@ -123,7 +123,7 @@ export const principles = [
 export const credentials = [
   {
     title: "Chartered Tax Adviser (CTA)",
-    body: "The leading UK qualification for tax advice — the technical depth behind every plan.",
+    body: "The leading UK qualification for tax advice, and the technical depth behind every plan.",
   },
   {
     title: "Chartered Accountant (CA)",
@@ -135,7 +135,7 @@ export const credentials = [
   },
   {
     title: "Agency specialist",
-    body: "Focused on UK marketing and digital agencies — retainers, margins, founder incentives.",
+    body: "Focused on UK marketing and digital agencies: retainers, margins, and founder incentives.",
   },
 ];
 
