@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --bg:      #F7F5F1;
+  --surface: #EDEAE4;
+  --ink:     #0B1420;
+  --muted:   #6B7280;
+  --copper:  #7D5036;
+  --seafoam: #7EAAA8;
+  --border:  #D8D4CC;
+}
+
+@theme inline {
+  --color-bg:      var(--bg);
+  --color-surface: var(--surface);
+  --color-ink:     var(--ink);
+  --color-muted:   var(--muted);
+  --color-copper:  var(--copper);
+  --color-seafoam: var(--seafoam);
+  --color-border:  var(--border);
+
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans:  "DM Sans", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
