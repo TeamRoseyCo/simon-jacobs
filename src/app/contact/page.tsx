@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { bookHref, trustItems } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -17,15 +18,15 @@ const steps = [
 export default function ContactPage() {
   return (
     <>
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-10 pt-24 text-center md:px-10 md:pt-32 lg:px-16">
-        <div className="reveal mx-auto max-w-3xl">
+      <section className="section-white mx-auto grid w-full max-w-7xl items-center gap-10 px-6 pb-10 pt-24 md:px-10 md:pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:px-16">
+        <div className="reveal text-center lg:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
             Contact
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
             Find out what your agency could be keeping.
           </h1>
-          <p className="mx-auto mt-5 max-w-[560px] text-base leading-8 text-muted">
+          <p className="mx-auto mt-5 max-w-[520px] text-base leading-8 text-muted lg:mx-0">
             The first step is a short discovery call. Bring the financial
             questions you have been putting off — that is exactly what it is for.
           </p>
@@ -35,6 +36,15 @@ export default function ContactPage() {
           >
             Book a discovery call
           </a>
+        </div>
+        <div className="reveal image-stack relative mx-auto min-h-[360px] w-full max-w-[420px] overflow-hidden md:min-h-[440px]">
+          <Image
+            src="/simon-jacobs.webp"
+            alt="Simon Jacobs, Chartered Tax Adviser"
+            fill
+            sizes="(min-width: 1024px) 420px, 88vw"
+            className="object-cover object-[center_12%]"
+          />
         </div>
       </section>
 
