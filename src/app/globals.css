@@ -116,8 +116,9 @@ body {
 
 .nav-link {
   position: relative;
-  font-size: 14px;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--muted);
   text-decoration: none;
   padding: 6px 0;
@@ -162,7 +163,8 @@ body {
   background: var(--ink);
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-family: var(--font-serif);
+  font-size: 15px;
   font-weight: 600;
   padding: 10px 18px;
   border-radius: 999px;
@@ -258,8 +260,9 @@ body {
 }
 
 .mobile-link {
-  font-size: 16px;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
   color: var(--ink);
   text-decoration: none;
   padding: 13px 10px;
@@ -487,9 +490,10 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 50px;
-  padding: 0 26px;
+  padding: 0 28px;
   border-radius: 999px;
-  font-size: 14px;
+  font-family: var(--font-serif);
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
@@ -752,18 +756,39 @@ body {
   box-shadow: 20px 20px 0 #08224b;
 }
 
-/* "Who this is for" — Simon's photo on the left, fading into the blue.
-   Mobile: fades at the bottom (photo sits on top). Desktop: fades to the right. */
+/* "Who this is for" — Simon's photo on the left, feathered into the blue on
+   all sides so it blends from around, with drifting squares behind it. */
 .whofor-photo {
-  -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    125% 115% at 40% 45%,
+    #000 38%,
+    transparent 82%
+  );
+  mask-image: radial-gradient(125% 115% at 40% 45%, #000 38%, transparent 82%);
 }
 
 @media (min-width: 1024px) {
   .whofor-photo {
-    -webkit-mask-image: linear-gradient(90deg, #000 56%, transparent 100%);
-    mask-image: linear-gradient(90deg, #000 56%, transparent 100%);
+    -webkit-mask-image: radial-gradient(
+      105% 120% at 34% 50%,
+      #000 40%,
+      transparent 84%
+    );
+    mask-image: radial-gradient(105% 120% at 34% 50%, #000 40%, transparent 84%);
   }
+}
+
+.whofor-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: gridDrift 16s linear infinite;
 }
 
 .section-ink {
@@ -794,22 +819,25 @@ body {
    Default (no JS): fully visible, content is never hidden if JS fails.
    With JS: <html data-reveal> gates the hidden state until .is-visible is added
    by the IntersectionObserver in ScrollReveal. */
+/* Reveals NEVER hide content. With JS + motion allowed, elements gently slide
+   up as they enter view; with JS off, observer failure, or fast scrolling the
+   content is always fully visible. No opacity hiding, ever. */
 .reveal {
   opacity: 1;
 }
 
-[data-reveal] .reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition:
-    opacity 720ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 720ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: opacity, transform;
-}
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] .reveal {
+    transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
 
-[data-reveal] .reveal.is-visible {
-  opacity: 1;
-  transform: none;
+  [data-reveal] .reveal:not(.is-visible) {
+    transform: translateY(16px);
+  }
+
+  [data-reveal] .reveal.is-visible {
+    transform: none;
+  }
 }
 
 @keyframes scan {

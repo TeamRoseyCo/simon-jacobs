@@ -11,9 +11,13 @@ export default function SiteFooter() {
             <h3 className="font-serif text-2xl text-white md:text-3xl">
               Occasional notes worth reading.
             </h3>
-            <p className="mt-3 max-w-[420px] text-sm leading-7 text-white/65">
-              Plain-English thinking on tax, profit, and building a more valuable
-              agency. No spam, unsubscribe anytime.
+            <p className="mt-3 max-w-[440px] text-sm leading-7 text-white/80">
+              Useful if your tax bill keeps climbing, you want an agency worth
+              selling, and you would rather plan ahead than scramble at year-end.
+            </p>
+            <p className="mt-3 max-w-[440px] text-sm leading-7 text-white/60">
+              Plain-English thinking on tax, profit, and building value for your
+              own agency. No spam, unsubscribe anytime.
             </p>
           </div>
           <NewsletterSignup variant="footer" />

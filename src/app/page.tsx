@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
-import CtaBand from "@/components/CtaBand";
-import NewsletterSignup from "@/components/NewsletterSignup";
+import ConsultCta from "@/components/ConsultCta";
 import { services, whoFor } from "@/lib/content";
 import { posts } from "@/lib/posts";
 
@@ -26,8 +25,9 @@ export default function Home() {
       {/* Who this is for — photo of Simon on the left, blending into the blue */}
       <section className="px-4 py-4 md:px-6 lg:px-8">
         <div className="section-ink relative mx-auto w-full max-w-7xl overflow-hidden rounded-[18px]">
+          <div className="whofor-grid" aria-hidden="true" />
           <div className="grid lg:grid-cols-2 lg:items-stretch">
-            <div className="whofor-photo relative min-h-[300px] lg:min-h-[560px]">
+            <div className="whofor-photo relative z-10 min-h-[300px] lg:min-h-[560px]">
               <Image
                 src="/simon-jacobs-event.webp"
                 alt="Simon Jacobs in conversation with agency founders"
@@ -38,7 +38,7 @@ export default function Home() {
             </div>
 
             <div className="relative z-10 px-6 pb-12 pt-4 lg:px-14 lg:py-20">
-              <div className="reveal">
+              <div className="reveal text-center">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-seafoam">
                   Who this is for
                 </p>
@@ -76,6 +76,9 @@ export default function Home() {
           <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             Stop using Claude for taxes.
           </h2>
+          <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">
+            Instead, here is what you get when you work with me.
+          </p>
         </div>
         <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
           {services.map((service, index) => (
@@ -106,24 +109,24 @@ export default function Home() {
 
       {/* About me */}
       <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="image-stack reveal relative min-h-[420px] overflow-hidden">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+          <div className="image-stack reveal relative min-h-[460px] overflow-hidden">
             <Image
-              src="/simon-jacobs.webp"
-              alt="Simon Jacobs, Chartered Tax Adviser"
+              src="/simon-jacobs-dubai.webp"
+              alt="Simon Jacobs"
               fill
               sizes="(min-width: 1024px) 44vw, 100vw"
-              className="object-cover object-[center_12%]"
+              className="object-cover object-[center_18%]"
             />
           </div>
-          <div className="reveal">
+          <div className="reveal text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               About Simon
             </p>
             <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
               Plain-English advice from someone who gets agencies.
             </h2>
-            <p className="mt-5 max-w-[560px] text-base leading-8 text-muted">
+            <p className="mx-auto mt-5 max-w-[560px] text-base leading-8 text-muted">
               Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
               year-round with founder-led UK agencies on tax, profit extraction,
               and building a business that is genuinely worth selling.
@@ -141,21 +144,10 @@ export default function Home() {
       {/* From the blog */}
       <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="reveal flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-                From the blog
-              </p>
-              <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-                Tax and profit, in plain English.
-              </h2>
-            </div>
-            <Link
-              href="/blog"
-              className="text-sm font-semibold text-ink transition hover:text-accent"
-            >
-              All posts →
-            </Link>
+          <div className="reveal mx-auto max-w-3xl text-center">
+            <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
+              Tax and profit, in plain English.
+            </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {posts.slice(0, 3).map((post, index) => (
@@ -185,25 +177,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Email registration */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="reveal mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Get the occasional note.
-          </h2>
-          <p className="mx-auto mt-4 max-w-[520px] text-base leading-8 text-muted">
-            Short, useful thinking on tax, profit, and agency value. No spam,
-            unsubscribe anytime.
-          </p>
-          <div className="mt-8">
-            <NewsletterSignup />
-          </div>
-        </div>
-      </section>
-
-      <CtaBand
+      <ConsultCta
         heading="Find out what your agency could be keeping."
-        sub="A short discovery call to see where profit is leaking and whether Simon can help."
+        sub="Join the list and Simon will set you up with a free consultation. No spam, unsubscribe anytime."
       />
     </>
   );
