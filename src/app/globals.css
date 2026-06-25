@@ -363,6 +363,16 @@ body {
   background-size: 64px 64px;
   -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 28%, transparent 76%);
   mask-image: radial-gradient(120% 80% at 50% 0%, #000 28%, transparent 76%);
+  animation: gridDrift 14s linear infinite;
+}
+
+@keyframes gridDrift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 64px 64px, 64px 64px;
+  }
 }
 
 @keyframes auroraShift {
@@ -436,16 +446,8 @@ body {
   max-width: 620px;
 }
 
-.hero-eyebrow {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--seafoam);
-}
-
 .hero-title {
-  margin-top: 18px;
+  margin-top: 0;
   color: #fff;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -510,29 +512,39 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.hero-chips {
-  margin-top: 34px;
+/* Right column: expertise one-liner sitting above the portrait */
+.hero-right {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
 }
 
-.hero-chip {
+.hero-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  margin: 0 auto 18px;
+  max-width: 460px;
+}
+
+.hero-exp {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 9px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(8px);
+  gap: 6px;
 }
 
-.hero-chip-val {
+.hero-exp:not(:last-child)::after {
+  content: "·";
+  margin-left: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-exp-val {
   font-family: var(--font-serif);
   font-size: 14px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.92);
   white-space: nowrap;
 }
 

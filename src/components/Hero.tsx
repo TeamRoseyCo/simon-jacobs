@@ -38,14 +38,11 @@ export default function Hero() {
 
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="hero-eyebrow load-rise" style={{ animationDelay: "40ms" }}>
-            Chartered Tax Adviser · Ex-PwC
-          </p>
-          <h1 className="hero-title load-rise" style={{ animationDelay: "110ms" }}>
+          <h1 className="hero-title load-rise" style={{ animationDelay: "60ms" }}>
             I help UK marketing agencies{" "}
             <span className="hero-accent">keep more of what they earn.</span>
           </h1>
-          <p className="hero-sub load-rise" style={{ animationDelay: "210ms" }}>
+          <p className="hero-sub load-rise" style={{ animationDelay: "170ms" }}>
             As a Chartered Tax Adviser and ex-PwC professional, I help
             founder-led agencies plan tax, extract profit, and build a cleaner,
             more valuable business to one day sell.
@@ -53,7 +50,7 @@ export default function Hero() {
 
           <div
             className="hero-actions load-rise"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "280ms" }}
           >
             <a href={bookHref} className="hero-btn-primary">
               Book a discovery call
@@ -62,11 +59,13 @@ export default function Hero() {
               See how it works
             </a>
           </div>
+        </div>
 
-          <div className="hero-chips load-rise" style={{ animationDelay: "400ms" }}>
+        <div className="hero-right load-pop" style={{ animationDelay: "240ms" }}>
+          <div className="hero-expertise">
             {trustItems.map((item) => (
-              <div key={item.label} className="hero-chip">
-                <span className="hero-chip-val">{item.value}</span>
+              <span key={item.label} className="hero-exp">
+                <span className="hero-exp-val">{item.value}</span>
                 <span
                   className="trust-help"
                   tabIndex={0}
@@ -78,20 +77,20 @@ export default function Hero() {
                     {item.description}
                   </span>
                 </span>
-              </div>
+              </span>
             ))}
           </div>
-        </div>
 
-        <div className="hero-portrait load-pop" style={{ animationDelay: "260ms" }}>
-          <Image
-            src="/simon-jacobs.webp"
-            alt="Simon Jacobs, Chartered Tax Adviser"
-            fill
-            priority
-            sizes="(min-width: 1024px) 460px, 88vw"
-            className="object-cover object-[center_12%]"
-          />
+          <div className="hero-portrait">
+            <Image
+              src="/simon-jacobs.webp"
+              alt="Simon Jacobs, Chartered Tax Adviser"
+              fill
+              priority
+              sizes="(min-width: 1024px) 460px, 88vw"
+              className="object-cover object-[center_12%]"
+            />
+          </div>
         </div>
       </div>
 
