@@ -75,10 +75,7 @@ export default function Hero() {
             style={{ animationDelay: "280ms" }}
           >
             <a href={bookHref} className="hero-btn-primary">
-              Book a discovery call
-            </a>
-            <a href="/services" className="hero-btn-ghost">
-              See how it works
+              I&apos;m an agency founder
             </a>
           </div>
         </div>
