@@ -6,7 +6,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr] md:px-10 lg:px-16">
         <div>
-          <Link href="/" className="font-serif text-3xl text-white">
+          <Link href="/" className="brand-script text-[40px] leading-none text-white">
             Simon Jacobs
           </Link>
           <p className="mt-5 max-w-[360px] text-sm leading-7 text-white/68">

@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
+
+const brandScript = Pinyon_Script({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-script",
+});
 
 const siteUrl = "https://simonjacobs.co.uk";
 
@@ -96,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="h-full antialiased">
+    <html lang="en-GB" className={`h-full antialiased ${brandScript.variable}`}>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="site-shell flex-1 overflow-hidden bg-bg text-ink">

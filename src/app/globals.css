@@ -86,23 +86,26 @@ body {
   padding: 16px 24px;
 }
 
+/* Cursive brand wordmark. Apple's calligraphic fonts come first for Mac users,
+   then the self-hosted Pinyon Script for every other visitor. */
+.brand-script {
+  font-family: "Apple Chancery", "Zapfino", var(--font-script), "Snell Roundhand",
+    cursive;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 .site-wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-serif);
-  font-size: 18px;
+  line-height: 1;
+  font-family: "Apple Chancery", "Zapfino", var(--font-script), "Snell Roundhand",
+    cursive;
+  font-size: 30px;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
-}
-
-.site-wordmark-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--seafoam));
-  box-shadow: 0 0 0 4px rgba(47, 111, 198, 0.12);
+  padding-bottom: 2px;
 }
 
 .site-nav-links {
