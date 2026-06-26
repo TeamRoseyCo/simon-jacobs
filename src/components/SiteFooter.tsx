@@ -9,13 +9,13 @@ export default function SiteFooter() {
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
             <h3 className="font-serif text-2xl text-white md:text-3xl">
-              Occasional notes worth reading.
+              useful if:
             </h3>
             <p className="mt-3 max-w-[440px] text-sm leading-7 text-white/80">
-              Useful if your tax bill keeps climbing, you want an agency worth
-              selling, and you would rather plan ahead than scramble at year-end.
+              Your tax bill keeps climbing, you want an agency worth selling, and
+              you would rather plan ahead than scramble at year-end.
             </p>
-            <p className="mt-3 max-w-[440px] text-sm leading-7 text-white/60">
+            <p className="mt-3 max-w-[440px] text-xs leading-6 text-white/60">
               Plain-English thinking on tax, profit, and building value for your
               own agency. No spam, unsubscribe anytime.
             </p>
