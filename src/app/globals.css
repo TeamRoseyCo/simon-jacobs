@@ -47,23 +47,41 @@
   gap: 14px;
 }
 
+/* White logo tiles read cleanly on both light and dark sections. */
 .accred-badge {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
-  min-width: 128px;
-  padding: 16px 24px;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 150px;
+  padding: 20px 26px;
   border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.accred-dark .accred-badge {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+}
+
+.accred-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
 
 .accred-mark {
+  display: flex;
+  align-items: center;
+  height: 60px;
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 21px;
+  font-size: 22px;
   letter-spacing: 0.04em;
   line-height: 1;
+  color: var(--ink);
 }
 
 .accred-caption {
@@ -71,38 +89,82 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-}
-
-.accred-logo {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-}
-
-.accred-light .accred-badge {
-  background: #fff;
-  border: 1px solid var(--border);
-}
-
-.accred-light .accred-mark {
-  color: var(--ink);
-}
-
-.accred-light .accred-caption {
   color: var(--muted);
 }
 
-.accred-dark .accred-badge {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+/* ============ Blog (muslimstore-style layout) ============ */
+.blog-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(80, 134, 210, 0.25), transparent 26%),
+    linear-gradient(135deg, #113f82 0%, #0a2a5a 58%, #061b3c 100%);
 }
 
-.accred-dark .accred-mark {
-  color: #fff;
+.head-rule {
+  width: 54px;
+  height: 3px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--seafoam));
 }
 
-.accred-dark .accred-caption {
-  color: rgba(255, 255, 255, 0.62);
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: 0 14px 40px rgba(8, 34, 75, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 60px rgba(8, 34, 75, 0.12);
+}
+
+.post-thumb {
+  position: relative;
+  height: 158px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(159, 231, 220, 0.32), transparent 42%),
+    linear-gradient(135deg, #1b4d96 0%, #0d3268 58%, #08234c 100%);
+}
+
+.post-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(circle at 70% 30%, #000, transparent 78%);
+}
+
+.post-thumb-lg {
+  height: 100%;
+  min-height: 260px;
+}
+
+.post-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: var(--seafoam);
+  color: #06223f;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* Eyebrow label above headings. One source of truth for the eyebrow colour. */
@@ -675,7 +737,7 @@ body {
   min-height: 50px;
   padding: 0 28px;
   border-radius: 999px;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;

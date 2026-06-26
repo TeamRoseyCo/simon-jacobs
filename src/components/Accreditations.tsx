@@ -1,22 +1,22 @@
-// Accreditation marks (ICAEW, CIOT, ex-PwC).
-//
-// LOGO SWAP: drop the official logo files into /public/accreditations/
-// (icaew.svg, ciot.svg, pwc.svg) and set `logo` below. When `logo` is set the
-// badge renders the image; otherwise it falls back to the text mark. Use the
-// official brand assets:
-//   ICAEW: https://www.icaew.com/about-icaew/find-a-chartered-accountant/icaew-member-logo
-//   CIOT:  members area / brand guidelines at tax.org.uk
 import Image from "next/image";
 
 type Item = {
   mark: string;
   caption: string;
-  logo?: string; // e.g. "/accreditations/icaew.svg"
+  logo?: { src: string; width: number; height: number };
 };
 
 const items: Item[] = [
-  { mark: "ICAEW", caption: "Chartered Accountant" },
-  { mark: "CIOT", caption: "Chartered Tax Adviser" },
+  {
+    mark: "ICAEW",
+    caption: "Chartered Accountant",
+    logo: { src: "/accreditations/icaew.png", width: 600, height: 988 },
+  },
+  {
+    mark: "CIOT",
+    caption: "Chartered Tax Adviser",
+    logo: { src: "/accreditations/ciot.png", width: 392, height: 726 },
+  },
   { mark: "ex-PwC", caption: "Big Four trained" },
 ];
 
@@ -33,10 +33,10 @@ export default function Accreditations({
         <div key={item.mark} className="accred-badge">
           {item.logo ? (
             <Image
-              src={item.logo}
+              src={item.logo.src}
               alt={`${item.mark}, ${item.caption}`}
-              width={120}
-              height={48}
+              width={item.logo.width}
+              height={item.logo.height}
               className="accred-logo"
             />
           ) : (
