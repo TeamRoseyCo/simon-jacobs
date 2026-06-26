@@ -14,16 +14,23 @@ export default function ConsultCta({
 }) {
   const id = useId();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "done" | "error">("idle");
+  const [consent, setConsent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "done">("idle");
+  const [error, setError] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-    if (!ok) {
-      setStatus("error");
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    if (!emailOk) {
+      setError("Please enter a valid email.");
+      return;
+    }
+    if (!consent) {
+      setError("Please tick the box to consent.");
       return;
     }
     // TODO: send `email` to your list + trigger the consult booking here.
+    setError("");
     setStatus("done");
     setEmail("");
   }
@@ -63,20 +70,34 @@ export default function ConsultCta({
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-                if (status === "error") setStatus("idle");
+                if (error) setError("");
               }}
-              aria-invalid={status === "error"}
+              aria-invalid={Boolean(error)}
               className="email-field"
             />
+            <label className="email-consent" htmlFor={`${id}-consent`}>
+              <input
+                id={`${id}-consent`}
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => {
+                  setConsent(e.target.checked);
+                  if (error) setError("");
+                }}
+              />
+              <span>
+                I consent to Simon Jacobs contacting me by email about a free
+                consultation.
+              </span>
+            </label>
             <button type="submit" className="email-submit">
-              <span className="email-submit-main">Get a free consult</span>
-              <span className="email-submit-sub">Confirm your email to book</span>
+              Confirm and get a free consult
             </button>
           </form>
         )}
-        {status === "error" ? (
+        {error ? (
           <p role="alert" className="text-sm text-white">
-            Please enter a valid email.
+            {error}
           </p>
         ) : null}
       </div>

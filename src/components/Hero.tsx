@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { trustItems, bookHref } from "@/lib/content";
+import TrustHelp from "@/components/TrustHelp";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -85,17 +86,7 @@ export default function Hero() {
             {trustItems.map((item) => (
               <span key={item.label} className="hero-exp">
                 <span className="hero-exp-val">{item.value}</span>
-                <span
-                  className="trust-help"
-                  tabIndex={0}
-                  aria-label={`${item.label}: ${item.description}`}
-                >
-                  ?
-                  <span className="trust-tooltip" role="tooltip">
-                    <strong>{item.label}</strong>
-                    {item.description}
-                  </span>
-                </span>
+                <TrustHelp label={item.label} description={item.description} />
               </span>
             ))}
           </div>
