@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Simon Jacobs",
   },
   description:
-    "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · CA) and ex-PwC, helping agency owners keep more of what they earn.",
+    "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · ACA) and ex-PwC, helping agency owners keep more of what they earn.",
   keywords: [
     "tax adviser for marketing agencies",
     "agency tax planning UK",
@@ -103,7 +103,7 @@ const jsonLd = {
     name: "Simon Jacobs",
     jobTitle: "Chartered Tax Adviser",
     description:
-      "Chartered Tax Adviser (CTA) and Chartered Accountant (CA), ex-PwC, specialising in UK marketing agencies.",
+      "Chartered Tax Adviser (CTA) and Chartered Accountant (ACA), ex-PwC, specialising in UK marketing agencies.",
   },
 };
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
+import Accreditations from "@/components/Accreditations";
 import { principles, credentials } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -123,6 +124,7 @@ export default function AboutPage() {
             </article>
           ))}
         </div>
+        <Accreditations variant="light" className="reveal mt-10" />
       </section>
 
       <CtaBand

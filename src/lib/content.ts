@@ -18,9 +18,9 @@ export const bookHref = `mailto:${site.email}?subject=${encodeURIComponent(
 export const trustItems = [
   {
     label: "Qualified",
-    value: "CTA · CA",
+    value: "CTA · ACA",
     description:
-      "CTA and CA mean Simon is trained in both tax advice and accountancy. In plain English: your agency gets advice that connects tax planning with the real numbers.",
+      "CTA and ACA mean Simon is trained in both tax advice (Chartered Institute of Taxation) and accountancy (ICAEW). In plain English: your agency gets advice that connects tax planning with the real numbers.",
   },
   {
     label: "Background",
@@ -123,11 +123,11 @@ export const principles = [
 export const credentials = [
   {
     title: "Chartered Tax Adviser (CTA)",
-    body: "The leading UK qualification for tax advice, and the technical depth behind every plan.",
+    body: "Awarded by the Chartered Institute of Taxation, the leading UK qualification for tax advice and the technical depth behind every plan.",
   },
   {
-    title: "Chartered Accountant (CA)",
-    body: "Trained in accountancy as well as tax, so advice connects to the real numbers.",
+    title: "Chartered Accountant (ACA)",
+    body: "An ICAEW Chartered Accountant, trained in accountancy as well as tax, so advice connects to the real numbers.",
   },
   {
     title: "Ex-PwC",

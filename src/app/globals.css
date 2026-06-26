@@ -38,6 +38,73 @@
   letter-spacing: 0;
 }
 
+/* Accreditation marks strip (ICAEW / CIOT / ex-PwC). */
+.accred-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 14px;
+}
+
+.accred-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 128px;
+  padding: 16px 24px;
+  border-radius: 12px;
+}
+
+.accred-mark {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 21px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.accred-caption {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.accred-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.accred-light .accred-badge {
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.accred-light .accred-mark {
+  color: var(--ink);
+}
+
+.accred-light .accred-caption {
+  color: var(--muted);
+}
+
+.accred-dark .accred-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.accred-dark .accred-mark {
+  color: #fff;
+}
+
+.accred-dark .accred-caption {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 /* Eyebrow label above headings. One source of truth for the eyebrow colour. */
 .eyebrow {
   font-size: 12px;
