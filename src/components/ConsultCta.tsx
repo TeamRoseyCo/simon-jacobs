@@ -49,7 +49,7 @@ export default function ConsultCta({
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="reveal flex w-full max-w-xl flex-col gap-3 sm:flex-row"
+            className="email-capture reveal"
           >
             <label htmlFor={`${id}-email`} className="sr-only">
               Email address
@@ -66,13 +66,11 @@ export default function ConsultCta({
                 if (status === "error") setStatus("idle");
               }}
               aria-invalid={status === "error"}
-              className="min-h-[52px]flex-1 rounded-full border border-white/25 bg-white px-5 py-3.5 text-sm text-ink outline-none placeholder:text-muted focus:border-white"
+              className="email-field"
             />
-            <button
-              type="submit"
-              className="inline-flex min-h-[52px]items-center justify-center rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-accent"
-            >
-              Confirm and get a free consult
+            <button type="submit" className="email-submit">
+              <span className="email-submit-main">Get a free consult</span>
+              <span className="email-submit-sub">Confirm your email to book</span>
             </button>
           </form>
         )}
