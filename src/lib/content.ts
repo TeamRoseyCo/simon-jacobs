@@ -4,6 +4,7 @@
 
 export const site = {
   name: "Simon Jacobs",
+  firm: "SRJ International",
   role: "Chartered Tax Adviser",
   email: "simon@jacobs-taxes.com",
   phone: "07821 900 992",
@@ -11,6 +12,18 @@ export const site = {
   tagline:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
 } as const;
+
+// The full compliance service list (carried over from SRJ International).
+export const servicesFull = [
+  "Corporation tax",
+  "Accounts preparation",
+  "VAT & CIS",
+  "Tax planning",
+  "Payroll",
+  "Company secretarial & registered address",
+  "Self-assessment & MTD",
+  "Bookkeeping",
+];
 
 // Real client testimonials, lightly edited for length. `highlight` is an exact
 // substring of `quote` that gets emphasised (the payoff that matters most).

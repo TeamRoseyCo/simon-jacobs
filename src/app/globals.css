@@ -207,17 +207,28 @@ body {
 .site-wordmark {
   display: inline-flex;
   align-items: center;
+  gap: 11px;
   line-height: 1;
   white-space: nowrap;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 0 4px;
+}
+
+.site-wordmark-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  flex: 0 0 auto;
+}
+
+.site-wordmark-text {
   font-family: "Zapfino", "Apple Chancery", var(--font-script), "Snell Roundhand",
     cursive;
   font-size: 22px;
   letter-spacing: 0.01em;
-  color: var(--ink);
-  text-decoration: none;
-  /* Balanced top/bottom padding plus a small nudge to optically centre the
-     cursive wordmark (its glyph metrics sit high) within the header. */
-  padding: 6px 0 4px;
+  line-height: 1;
+  /* Small nudge to optically centre the cursive text (its glyph metrics sit high). */
   transform: translateY(3px);
 }
 

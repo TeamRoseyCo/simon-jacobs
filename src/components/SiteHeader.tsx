@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navLinks, bookHref } from "@/lib/content";
 
@@ -22,7 +23,15 @@ export default function SiteHeader() {
       <span className="site-head-accent" aria-hidden="true" />
       <nav className="site-nav" aria-label="Main navigation">
         <Link href="/" className="site-wordmark" aria-label="Simon Jacobs, home">
-          Simon Jacobs
+          <Image
+            src="/srj-logo.webp"
+            alt=""
+            width={96}
+            height={96}
+            className="site-wordmark-logo"
+            aria-hidden="true"
+          />
+          <span className="site-wordmark-text">Simon Jacobs</span>
         </Link>
 
         <div className="site-nav-links">

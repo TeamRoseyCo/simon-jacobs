@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { bookHref, navLinks, site } from "@/lib/content";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import Accreditations from "@/components/Accreditations";
@@ -35,6 +36,18 @@ export default function SiteFooter() {
             Chartered tax advice, profit extraction, and accountancy for UK
             marketing agencies building toward a profitable exit.
           </p>
+          <div className="mt-6 flex items-center gap-3">
+            <Image
+              src="/srj-logo.webp"
+              alt="SRJ International logo"
+              width={96}
+              height={96}
+              className="h-9 w-9 rounded-md"
+            />
+            <span className="text-sm font-semibold text-white/85">
+              {site.firm}
+            </span>
+          </div>
         </div>
 
         <div>

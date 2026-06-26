@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import CtaBand from "@/components/CtaBand";
-import { services, resultItems, processSteps } from "@/lib/content";
+import { services, servicesFull, resultItems, processSteps } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services: Tax planning, profit extraction & agency accountancy",
@@ -55,6 +55,37 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <p className="eyebrow">Full service list</p>
+          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+            Everything handled{" "}
+            <span className="em-display text-teal">under one roof.</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted">
+            From day-to-day compliance to forward planning, the whole finance
+            function for your agency in one place.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {servicesFull.map((item, index) => (
+            <div
+              key={item}
+              className="finance-card reveal flex items-center gap-3 p-4"
+              style={{ animationDelay: `${index * 60}ms` }}
+            >
+              <span
+                aria-hidden="true"
+                className="h-2 w-2 shrink-0 rounded-full bg-accent"
+              />
+              <span className="text-sm font-medium leading-6 text-ink">
+                {item}
+              </span>
+            </div>
           ))}
         </div>
       </section>
