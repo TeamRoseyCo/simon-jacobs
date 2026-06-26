@@ -8,7 +8,7 @@ export default function SiteFooter() {
       <div className="mx-auto w-full max-w-7xl border-b border-white/10 px-6 py-10 md:px-10 lg:px-16">
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
-            <h3 className="font-serif text-2xl text-white md:text-3xl">
+            <h3 className="font-serif text-2xl font-bold text-white md:text-3xl">
               Useful if:
             </h3>
             <p className="mt-3 max-w-[440px] text-sm leading-7 text-white/80">
