@@ -52,7 +52,7 @@ export default function BlogPage() {
         <section className="section-white mx-auto w-full max-w-7xl px-6 pb-10 md:px-10 lg:px-16">
           <Link
             href={`/blog/${featured.slug}`}
-            className="blog-card reveal grid md:grid-cols-2"
+            className="reveal grid overflow-hidden rounded-[14px] border border-border bg-white shadow-[0_14px_40px_rgba(8,34,75,0.06)] transition duration-300 hover:-translate-y-1 md:grid-cols-2"
           >
             <div className="relative min-h-[240px] md:min-h-[300px]">
               <Image
