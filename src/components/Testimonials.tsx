@@ -4,7 +4,7 @@ export default function Testimonials() {
   return (
     <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
       <div className="reveal mx-auto max-w-3xl">
-        <p className="eyebrow">In their words</p>
+        <p className="eyebrow">Testimonials</p>
         <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
           What clients say about{" "}
           <span className="em-display text-teal">working with Simon.</span>
