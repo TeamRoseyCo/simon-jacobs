@@ -13,11 +13,11 @@ export default function Home() {
       {/* Lead statement — large, boxless, two-tone */}
       <section className="section-white mx-auto w-full max-w-5xl px-6 py-24 text-center md:py-32 lg:px-16">
         <p className="reveal mx-auto max-w-4xl font-serif text-[26px] leading-[1.5] text-muted md:text-[40px] md:leading-[1.38]">
-          Most agency owners are brilliant at winning clients.{" "}
+          Most agency owners are brilliant at winning clients but{" "}
           <span className="text-ink">
-            They&apos;re terrible at keeping what they make.
+            terrible at keeping what they make.
           </span>{" "}
-          Not because they spend too much. Because nobody ever showed them{" "}
+          Because nobody ever showed them{" "}
           <span className="em-display text-teal">what&apos;s actually possible.</span>
         </p>
       </section>
