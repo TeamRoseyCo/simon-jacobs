@@ -215,7 +215,10 @@ body {
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
-  padding-bottom: 2px;
+  /* Balanced top/bottom padding plus a small nudge to optically centre the
+     cursive wordmark (its glyph metrics sit high) within the header. */
+  padding: 6px 0 4px;
+  transform: translateY(3px);
 }
 
 .site-nav-links {
