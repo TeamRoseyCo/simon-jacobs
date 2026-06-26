@@ -165,10 +165,8 @@ export default function Home() {
                 className="finance-card reveal flex flex-col p-6 transition duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
-                <div className="flex items-center gap-3 text-xs font-semibold text-accent">
-                  <span>{post.tag}</span>
-                  <span className="text-muted">·</span>
-                  <span className="text-muted">{post.readingTime}</span>
+                <div className="flex items-center gap-3 text-xs font-semibold text-muted">
+                  <span>{post.readingTime}</span>
                 </div>
                 <h3 className="mt-4 font-serif text-xl font-normal leading-snug text-ink">
                   {post.title}

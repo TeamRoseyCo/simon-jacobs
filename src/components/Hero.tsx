@@ -79,6 +79,29 @@ export default function Hero() {
               I&apos;m an agency founder
             </a>
           </div>
+
+          <div className="hero-creds load-rise" style={{ animationDelay: "380ms" }}>
+            <span className="hero-creds-label">Chartered &amp; regulated</span>
+            <div className="hero-creds-row">
+              <span className="hero-cred">
+                <Image
+                  src="/accreditations/icaew.png"
+                  alt="ICAEW Chartered Accountant"
+                  width={600}
+                  height={988}
+                />
+              </span>
+              <span className="hero-cred">
+                <Image
+                  src="/accreditations/ciot.png"
+                  alt="Chartered Institute of Taxation"
+                  width={392}
+                  height={726}
+                />
+              </span>
+              <span className="hero-cred hero-cred-text">ex-PwC</span>
+            </div>
+          </div>
         </div>
 
         <div className="hero-right load-pop" style={{ animationDelay: "240ms" }}>

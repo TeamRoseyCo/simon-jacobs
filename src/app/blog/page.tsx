@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 import { posts, formatPostDate } from "@/lib/posts";
 
@@ -53,8 +54,15 @@ export default function BlogPage() {
             href={`/blog/${featured.slug}`}
             className="blog-card reveal grid md:grid-cols-2"
           >
-            <div className="post-thumb post-thumb-lg">
-              <span className="post-tag">Featured</span>
+            <div className="relative min-h-[240px] md:min-h-[300px]">
+              <Image
+                src={`/blog/${featured.slug}.webp`}
+                alt={featured.title}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+                priority
+              />
             </div>
             <div className="flex flex-col justify-center p-7 md:p-10">
               <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">
@@ -84,8 +92,14 @@ export default function BlogPage() {
               className="blog-card reveal"
               style={{ animationDelay: `${index * 80}ms` }}
             >
-              <div className="post-thumb">
-                <span className="post-tag">{post.tag}</span>
+              <div className="relative h-[190px] w-full">
+                <Image
+                  src={`/blog/${post.slug}.webp`}
+                  alt={post.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">
