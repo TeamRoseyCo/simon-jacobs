@@ -588,6 +588,7 @@ body {
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
@@ -609,6 +610,8 @@ body {
 .hero-btn-primary {
   background: #fff;
   color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .hero-btn-primary:hover {
