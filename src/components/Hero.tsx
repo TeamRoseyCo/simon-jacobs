@@ -61,7 +61,7 @@ export default function Hero() {
           <h1 className="hero-title load-rise" style={{ animationDelay: "60ms" }}>
             I help UK marketing agencies{" "}
             <span className="hero-accent">
-              keep more <span className="text-white">of what</span> they earn.
+              keep more <span className="hero-accent-plain text-white">of what</span> they earn.
             </span>
           </h1>
           <p className="hero-sub load-rise" style={{ animationDelay: "170ms" }}>

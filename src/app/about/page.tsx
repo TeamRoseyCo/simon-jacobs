@@ -28,7 +28,8 @@ export default function AboutPage() {
             About
           </p>
           <h1 className="mt-4 max-w-[620px] font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Chartered tax advice for busy founders
+            Chartered tax advice for{" "}
+            <span className="em-display text-teal">busy founders</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
             Simon is a Chartered Tax Adviser and Chartered Accountant with Big
@@ -77,7 +78,8 @@ export default function AboutPage() {
               How I work
             </p>
             <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-              Four things you can count on.
+              Four things you can{" "}
+              <span className="em-display text-teal">count on.</span>
             </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -103,7 +105,8 @@ export default function AboutPage() {
             Background
           </p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-            The credentials behind the advice.
+            The credentials behind{" "}
+            <span className="em-display text-teal">the advice.</span>
           </h2>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

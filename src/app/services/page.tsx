@@ -18,7 +18,8 @@ export default function ServicesPage() {
             Services
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-            More than a year-end tidy-up.
+            More than a{" "}
+            <span className="em-display text-teal">year-end tidy-up.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-muted">
             Year-round advice on tax, profit, and the numbers that decide how
@@ -62,7 +63,7 @@ export default function ServicesPage() {
         <div className="section-ink mx-auto w-full max-w-7xl overflow-hidden rounded-[18px] px-6 py-14 text-center md:px-10 lg:px-16 lg:py-16">
           <div className="reveal mx-auto max-w-3xl">
             <h2 className="font-serif text-4xl font-normal leading-tight md:text-6xl">
-              How
+              <span className="em-display text-seafoam">How</span>
             </h2>
             <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-white/70">
               The work is designed to make tax visible earlier, profit easier to

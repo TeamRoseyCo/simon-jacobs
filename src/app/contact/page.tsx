@@ -25,7 +25,8 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Find out what your agency could be keeping.
+            Find out what your agency{" "}
+            <span className="em-display text-teal">could be keeping.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[520px] text-base leading-8 text-muted lg:mx-0">
             The first step is a short discovery call. Bring the financial

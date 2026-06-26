@@ -18,7 +18,7 @@ export default function Home() {
             They&apos;re terrible at keeping what they make.
           </span>{" "}
           Not because they spend too much. Because nobody ever showed them{" "}
-          <span className="text-accent">what&apos;s actually possible.</span>
+          <span className="em-display text-teal">what&apos;s actually possible.</span>
         </p>
       </section>
 
@@ -43,7 +43,11 @@ export default function Home() {
                   Who this is for
                 </p>
                 <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-white md:text-5xl">
-                  Built for founder-led agencies, not giant companies.
+                  Built for{" "}
+                  <span className="em-display text-seafoam">
+                    founder-led agencies
+                  </span>
+                  , not giant companies.
                 </h2>
               </div>
               <ul className="mt-8 grid gap-3">
@@ -74,7 +78,8 @@ export default function Home() {
       <section className="section-white relative mx-auto w-full max-w-7xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Stop using Claude for taxes.
+            Stop using <span className="em-display text-teal">Claude</span> for
+            taxes.
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">
             Instead, here is what you get when you work with me.
@@ -124,7 +129,8 @@ export default function Home() {
               About Simon
             </p>
             <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-              Plain-English advice from someone who gets agencies.
+              Plain-English advice from someone who{" "}
+              <span className="em-display text-teal">gets agencies.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-[560px] text-base leading-8 text-muted">
               Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
@@ -146,7 +152,8 @@ export default function Home() {
         <div className="mx-auto w-full max-w-7xl">
           <div className="reveal mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-              Tax and profit, in plain English.
+              Tax and profit, in{" "}
+              <span className="em-display text-teal">plain English.</span>
             </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">

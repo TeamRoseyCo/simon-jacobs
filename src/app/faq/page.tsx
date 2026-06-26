@@ -28,7 +28,8 @@ export default function FaqPage() {
             FAQ
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-            A few sensible questions before a call.
+            A few <span className="em-display text-teal">sensible questions</span>{" "}
+            before a call.
           </h1>
         </div>
       </section>

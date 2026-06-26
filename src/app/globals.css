@@ -8,6 +8,7 @@
   --accent:  #2F6FC6;
   --copper:  #557FC5;
   --seafoam: #9FE7DC;
+  --teal:    #1A8275;
   --border:  #D9E5EF;
 }
 
@@ -19,11 +20,22 @@
   --color-accent:  var(--accent);
   --color-copper:  var(--copper);
   --color-seafoam: var(--seafoam);
+  --color-teal:    var(--teal);
   --color-border:  var(--border);
 
   /* Do not use the Inter typeface anywhere on this site. */
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans:  Arial, Helvetica, "Segoe UI", sans-serif;
+}
+
+/* Emphasis motif: italic Playfair Display in teal, used to highlight
+   the key phrase inside headings and lead copy. Pair with text-teal on
+   light backgrounds or text-seafoam on dark backgrounds for legibility. */
+.em-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 * {
@@ -466,7 +478,17 @@ body {
 }
 
 .hero-accent {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
   color: var(--seafoam);
+}
+
+/* Reset nested words back to the hero title face (not the italic motif). */
+.hero-accent-plain {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .hero-sub {

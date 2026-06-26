@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Pinyon_Script } from "next/font/google";
+import { Pinyon_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -10,6 +10,15 @@ const brandScript = Pinyon_Script({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-script",
+});
+
+// Italic display face used for the teal emphasis motif (highlight words).
+const displaySerif = Playfair_Display({
+  weight: ["500", "600"],
+  style: ["italic"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-display",
 });
 
 const siteUrl = "https://simonjacobs.co.uk";
@@ -104,7 +113,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={`h-full antialiased ${brandScript.variable}`}>
+    <html
+      lang="en-GB"
+      className={`h-full antialiased ${brandScript.variable} ${displaySerif.variable}`}
+    >
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="site-shell flex-1 overflow-hidden bg-bg text-ink">

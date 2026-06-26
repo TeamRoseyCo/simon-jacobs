@@ -19,7 +19,8 @@ export default function BlogPage() {
             Blog
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Notes on tax, profit, and building a more valuable agency.
+            Notes on tax, profit, and building a{" "}
+            <span className="em-display text-teal">more valuable agency.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted">
             Short, plain-English reads for founder-led UK agencies. No jargon
