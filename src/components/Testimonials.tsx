@@ -20,8 +20,20 @@ export default function Testimonials() {
             <span aria-hidden="true" className="em-display text-4xl text-teal">
               &ldquo;
             </span>
-            <blockquote className="-mt-3 flex-1 text-sm leading-7 text-ink">
-              {t.quote}
+            <blockquote className="-mt-3 flex-1 text-sm leading-7 text-muted">
+              {(() => {
+                const i = t.highlight ? t.quote.indexOf(t.highlight) : -1;
+                if (i === -1) return t.quote;
+                return (
+                  <>
+                    {t.quote.slice(0, i)}
+                    <strong className="font-semibold text-ink">
+                      {t.highlight}
+                    </strong>
+                    {t.quote.slice(i + t.highlight.length)}
+                  </>
+                );
+              })()}
             </blockquote>
             <figcaption className="mt-5 border-t border-border pt-4">
               <span className="block font-serif text-base text-ink">
