@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { bookHref, navLinks } from "@/lib/content";
+import { bookHref, navLinks, site } from "@/lib/content";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import Accreditations from "@/components/Accreditations";
 
@@ -81,6 +81,20 @@ export default function SiteFooter() {
           >
             Book a discovery call
           </a>
+          <div className="mt-5 flex flex-col gap-2 text-sm text-white/70">
+            <a
+              href={`mailto:${site.email}`}
+              className="transition hover:text-white"
+            >
+              {site.email}
+            </a>
+            <a
+              href={`tel:${site.phone.replace(/\s/g, "")}`}
+              className="transition hover:text-white"
+            >
+              {site.phone}
+            </a>
+          </div>
         </div>
       </div>
 

@@ -33,23 +33,26 @@ export default function AboutPage() {
             <span className="em-display text-teal">busy founders</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            Simon is a Chartered Tax Adviser and Chartered Accountant with Big
-            Four experience at PwC. He left large-firm advisory to do the thing
-            most agency founders can never get from a big practice: proactive,
-            plain-English advice from someone who actually understands the
-            business model.
+            Simon is a Chartered Tax Adviser (CTA) and Chartered Accountant
+            (ACA), qualified through the CIOT and ICAEW, with over ten years in
+            tax and accounting. Before founding his own practice, SRJ
+            International, he spent more than four years at PwC advising large
+            multinational corporations and SMEs on tax planning and tax advice.
           </p>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            The day-to-day realities of a growing agency, uneven cashflow,
-            retained clients, hiring decisions, director pay, and the constant
-            tension between taking profit and reinvesting it, are exactly where
-            good tax planning earns its keep.
+            He set up on his own to specialise in the clients he enjoys most:
+            digital marketing agencies, SMEs, and high-net-worth individuals,
+            with tax planning, accounting, and compliance under one roof. The
+            day-to-day realities of a growing agency, uneven cashflow, retained
+            clients, director pay, and the tension between taking profit and
+            reinvesting it, are exactly where good planning earns its keep.
           </p>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            The work is deliberately direct. You should know what the numbers
-            mean, what choices are available, and what each choice is likely to
-            cost before you commit, including the choices that make the agency
-            easier to sell later.
+            Away from the numbers, Simon is an award-winning public speaker who
+            has presented at the ICAEW and CIOT and serves as Vice President of
+            Membership at his local Toastmasters club. It is the same instinct
+            that drives the work: explain it clearly, and help you make the call
+            with confidence.
           </p>
         </div>
       </section>

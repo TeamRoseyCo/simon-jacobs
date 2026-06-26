@@ -5,11 +5,34 @@
 export const site = {
   name: "Simon Jacobs",
   role: "Chartered Tax Adviser",
-  email: "hello@simonjacobs.co.uk",
+  email: "simon@jacobs-taxes.com",
+  phone: "07821 900 992",
   bookSubject: "Agency tax planning discovery call",
   tagline:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
 } as const;
+
+// Real client testimonials, lightly edited for length.
+export const testimonials = [
+  {
+    quote:
+      "Simon helped me save thousands on my tax bill and prevented me from losing my Personal Allowance. He also gave me very good insights and advice into cryptocurrency, which will save me thousands of pounds in the future.",
+    name: "Joe G",
+    role: "Digital marketing agency",
+  },
+  {
+    quote:
+      "Simon helped me reclaim money I did not even realise I was entitled to, saved me a significant amount in tax through proper structuring, and ensured everything is compliant and future-proof. What really separates him is how proactive and responsive he is. He advises, explains, and genuinely fights your corner with HMRC. You feel protected, informed, and strategically guided at all times.",
+    name: "Hamish B",
+    role: "Dentist",
+  },
+  {
+    quote:
+      "Simon has always given the best he can for the customer. Understanding my situation has allowed him to advise and guide me in the right direction and be more tax efficient where possible.",
+    name: "Jaison M",
+    role: "Landlord",
+  },
+];
 
 export const bookHref = `mailto:${site.email}?subject=${encodeURIComponent(
   site.bookSubject,

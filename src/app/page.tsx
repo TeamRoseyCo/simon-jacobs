@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
+import Testimonials from "@/components/Testimonials";
 import ConsultCta from "@/components/ConsultCta";
 import { services, whoFor } from "@/lib/content";
 import { posts } from "@/lib/posts";
@@ -183,6 +184,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       <ConsultCta
         heading="Find out what your agency could be keeping."
