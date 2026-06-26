@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
             <h3 className="font-serif text-2xl text-white md:text-3xl">
-              useful if:
+              Useful if:
             </h3>
             <p className="mt-3 max-w-[440px] text-sm leading-7 text-white/80">
               Your tax bill keeps climbing, you want an agency worth selling, and
