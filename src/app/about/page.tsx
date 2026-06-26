@@ -24,7 +24,7 @@ export default function AboutPage() {
           />
         </div>
         <div className="reveal flex flex-col justify-center text-center lg:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="eyebrow">
             About
           </p>
           <h1 className="mt-4 max-w-[620px] font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -74,7 +74,7 @@ export default function AboutPage() {
       <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="mx-auto w-full max-w-7xl">
           <div className="reveal mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <p className="eyebrow">
               How I work
             </p>
             <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -101,7 +101,7 @@ export default function AboutPage() {
 
       <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="eyebrow">
             Background
           </p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">

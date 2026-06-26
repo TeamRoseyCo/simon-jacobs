@@ -24,7 +24,7 @@ export default function FaqPage() {
     <>
       <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-24 text-center md:px-10 md:pt-32 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="eyebrow">
             FAQ
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">

@@ -38,6 +38,15 @@
   letter-spacing: 0;
 }
 
+/* Eyebrow label above headings. One source of truth for the eyebrow colour. */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
 * {
   box-sizing: border-box;
 }

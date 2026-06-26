@@ -21,7 +21,7 @@ export default function ContactPage() {
     <>
       <section className="section-white mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-10 pt-24 md:px-10 md:pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-16">
         <div className="reveal text-center lg:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="eyebrow">
             Contact
           </p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">

@@ -39,7 +39,7 @@ export default function Home() {
 
             <div className="relative z-10 px-6 pb-12 pt-4 lg:px-14 lg:py-20">
               <div className="reveal text-center">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-seafoam">
+                <p className="eyebrow">
                   Who this is for
                 </p>
                 <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-white md:text-5xl">
@@ -125,7 +125,7 @@ export default function Home() {
             />
           </div>
           <div className="reveal text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            <p className="eyebrow">
               About Simon
             </p>
             <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
