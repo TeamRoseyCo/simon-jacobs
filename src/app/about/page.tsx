@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-white mx-auto grid w-full max-w-7xl gap-10 px-6 pb-16 pt-24 md:px-10 md:pb-24 md:pt-32 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
+      <section className="section-white mx-auto grid w-full max-w-7xl gap-10 px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
         <div className="image-stack reveal relative min-h-[520px] overflow-hidden">
           <Image
             src="/simon-jacobs.webp"

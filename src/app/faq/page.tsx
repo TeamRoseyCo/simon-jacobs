@@ -23,7 +23,7 @@ const faqJsonLd = {
 export default function FaqPage() {
   return (
     <>
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-24 text-center md:px-10 md:pt-32 lg:px-16">
+      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-20 text-center md:px-10 md:pt-32 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
           <p className="eyebrow">
             FAQ

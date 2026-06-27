@@ -17,7 +17,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero banner */}
-      <section className="blog-hero px-6 pb-16 pt-28 text-center md:px-10 md:pb-20 md:pt-36 lg:px-16">
+      <section className="blog-hero px-6 pb-16 pt-24 text-center md:px-10 md:pb-20 md:pt-36 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
           <h1 className="font-serif text-5xl font-normal leading-tight text-white md:text-6xl">
             Blog

@@ -48,7 +48,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <article className="section-white mx-auto w-full max-w-3xl px-6 pb-16 pt-24 md:px-10 md:pb-24 md:pt-32">
+      <article className="section-white mx-auto w-full max-w-3xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32">
         <div className="reveal">
           <Link
             href="/blog"

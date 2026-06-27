@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
 
       {/* Lead statement — large, boxless, two-tone */}
-      <section className="section-white mx-auto w-full max-w-5xl px-6 py-24 text-center md:py-32 lg:px-16">
+      <section className="section-white mx-auto w-full max-w-5xl px-6 py-16 text-center md:py-32 lg:px-16">
         <p className="reveal mx-auto max-w-4xl font-serif text-[26px] leading-[1.5] text-muted md:text-[40px] md:leading-[1.38]">
           Most agency owners are brilliant at winning clients but{" "}
           <span className="text-ink">
