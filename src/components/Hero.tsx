@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { trustItems, bookHref } from "@/lib/content";
-import TrustHelp from "@/components/TrustHelp";
+import { bookHref } from "@/lib/content";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -58,14 +57,25 @@ export default function Hero() {
       <div className="hero-grid" aria-hidden="true" />
 
       <div className="hero-inner">
+        <div className="hero-portrait load-pop" style={{ animationDelay: "40ms" }}>
+          <Image
+            src="/simon-jacobs.webp"
+            alt="Simon Jacobs, Chartered Tax Adviser"
+            fill
+            priority
+            sizes="(min-width: 640px) 300px, 62vw"
+            className="object-cover object-[center_12%]"
+          />
+        </div>
+
         <div className="hero-copy">
-          <h1 className="hero-title load-rise" style={{ animationDelay: "60ms" }}>
+          <h1 className="hero-title load-rise" style={{ animationDelay: "140ms" }}>
             I help UK marketing agencies{" "}
             <span className="hero-accent">
               keep more <span className="hero-accent-plain text-white">of what</span> they earn.
             </span>
           </h1>
-          <p className="hero-sub load-rise" style={{ animationDelay: "170ms" }}>
+          <p className="hero-sub load-rise" style={{ animationDelay: "240ms" }}>
             Chartered Tax Adviser &amp; ex-PwC professional, I help agencies
             extract profit, plan tax, and build a cleaner, more valuable business
             to one day sell.
@@ -73,14 +83,14 @@ export default function Hero() {
 
           <div
             className="hero-actions load-rise"
-            style={{ animationDelay: "280ms" }}
+            style={{ animationDelay: "340ms" }}
           >
             <a href={bookHref} className="hero-btn-primary">
               I&apos;m an agency founder
             </a>
           </div>
 
-          <div className="hero-creds load-rise" style={{ animationDelay: "380ms" }}>
+          <div className="hero-creds load-rise" style={{ animationDelay: "440ms" }}>
             <span className="hero-creds-label">Chartered &amp; regulated</span>
             <div className="hero-creds-row">
               <span className="hero-cred">
@@ -101,28 +111,6 @@ export default function Hero() {
               </span>
               <span className="hero-cred hero-cred-text">ex-PwC</span>
             </div>
-          </div>
-        </div>
-
-        <div className="hero-right load-pop" style={{ animationDelay: "240ms" }}>
-          <div className="hero-expertise">
-            {trustItems.map((item) => (
-              <span key={item.label} className="hero-exp">
-                <span className="hero-exp-val">{item.value}</span>
-                <TrustHelp label={item.label} description={item.description} />
-              </span>
-            ))}
-          </div>
-
-          <div className="hero-portrait">
-            <Image
-              src="/simon-jacobs.webp"
-              alt="Simon Jacobs, Chartered Tax Adviser"
-              fill
-              priority
-              sizes="(min-width: 1024px) 460px, 88vw"
-              className="object-cover object-[center_12%]"
-            />
           </div>
         </div>
       </div>

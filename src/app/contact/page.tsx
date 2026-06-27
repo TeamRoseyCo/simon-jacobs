@@ -64,6 +64,12 @@ export default function ContactPage() {
       </section>
 
       <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+        <div className="reveal mx-auto mb-8 max-w-2xl text-center">
+          <p className="eyebrow">The process</p>
+          <h2 className="mt-4 font-serif text-3xl font-normal leading-tight md:text-4xl">
+            What happens <span className="em-display text-teal">next?</span>
+          </h2>
+        </div>
         <div className="grid gap-4 md:grid-cols-3">
           {steps.map((step, index) => (
             <article

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CtaBand from "@/components/CtaBand";
+import FaqAccordion from "@/components/FaqAccordion";
 import { faqs } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -35,21 +36,7 @@ export default function FaqPage() {
       </section>
 
       <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 pt-2 md:px-10 md:pb-24 lg:px-16">
-        <div className="faq-panel reveal mx-auto max-w-4xl divide-y divide-border px-6 text-left">
-          {faqs.map((faq) => (
-            <details key={faq.question} className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-serif text-xl text-ink">
-                {faq.question}
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-white/60 text-2xl text-accent transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 max-w-[720px] text-sm leading-7 text-muted">
-                {faq.answer}
-              </p>
-            </details>
-          ))}
-        </div>
+        <FaqAccordion items={faqs} />
       </section>
 
       <CtaBand heading="Still have a question? Ask it on a call." />

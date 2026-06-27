@@ -113,38 +113,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About me */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-          <div className="image-stack reveal relative min-h-[460px] overflow-hidden">
-            <Image
-              src="/simon-jacobs-dubai.webp"
-              alt="Simon Jacobs"
-              fill
-              sizes="(min-width: 1024px) 44vw, 100vw"
-              className="object-cover object-[center_18%]"
-            />
-          </div>
-          <div className="reveal text-center">
-            <p className="eyebrow">
-              About Simon
-            </p>
-            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-              Plain-English advice from someone who{" "}
-              <span className="em-display text-teal">gets agencies.</span>
-            </h2>
-            <p className="mx-auto mt-5 max-w-[560px] text-base leading-8 text-muted">
-              Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
-              year-round with founder-led UK agencies on tax, profit extraction,
-              and building a business that is genuinely worth selling.
-            </p>
-            <Link
-              href="/about"
-              className="mt-6 inline-flex text-sm font-semibold text-ink transition hover:text-accent"
-            >
-              More about Simon →
-            </Link>
-          </div>
+      {/* About me — heading first, photo in the middle, body beneath */}
+      <section className="section-white mx-auto w-full max-w-3xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
+        <div className="reveal">
+          <p className="eyebrow">
+            About Simon
+          </p>
+          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+            Plain-English advice from someone who{" "}
+            <span className="em-display text-teal">gets agencies.</span>
+          </h2>
+        </div>
+
+        <div className="image-stack reveal relative mx-auto mt-8 min-h-[320px] w-full max-w-[460px] overflow-hidden md:min-h-[420px]">
+          <Image
+            src="/simon-jacobs-dubai.webp"
+            alt="Simon Jacobs"
+            fill
+            sizes="(min-width: 1024px) 460px, 92vw"
+            className="object-cover object-[center_18%]"
+          />
+        </div>
+
+        <div className="reveal">
+          <p className="mx-auto mt-8 max-w-[560px] text-base leading-8 text-muted">
+            Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
+            year-round with founder-led UK agencies on tax, profit extraction,
+            and building a business that is genuinely worth selling.
+          </p>
+          <Link
+            href="/about"
+            className="mt-6 inline-flex text-sm font-semibold text-ink transition hover:text-accent"
+          >
+            More about Simon →
+          </Link>
         </div>
       </section>
 
