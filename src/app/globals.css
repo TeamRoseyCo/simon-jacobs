@@ -950,9 +950,52 @@ body {
 }
 
 @media (min-width: 1024px) {
+  /* Desktop: revert to the previous two-column hero (text left, photo right).
+     Mobile/tablet keep the centered photo-on-top layout from the base rules. */
   .hero-inner {
     padding-left: 64px;
     padding-right: 64px;
+    max-width: 80rem;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(36px, 5vw, 64px);
+    align-items: center;
+    text-align: left;
+  }
+
+  .hero-copy {
+    order: 1;
+    max-width: 620px;
+    margin: 0;
+  }
+
+  .hero-portrait {
+    order: 2;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 22px;
+    box-shadow: 0 32px 90px rgba(3, 17, 42, 0.5);
+  }
+
+  .hero-title {
+    line-height: 1.04;
+    font-size: clamp(40px, 5.6vw, 66px);
+  }
+
+  .hero-sub {
+    margin: 22px 0 0;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .hero-creds {
+    text-align: left;
+  }
+
+  .hero-creds-row {
+    justify-content: flex-start;
   }
 }
 
