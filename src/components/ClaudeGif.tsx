@@ -1,23 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-// Easter egg: a little Claude gif pops in next to the "Stop using Claude for
-// taxes" line for roughly 1 in 12 visitors. The decision is made once per
-// browser session, so it doesn't flicker on every navigation. If the gif asset
-// is missing it silently renders nothing (no broken-image icon).
+// A little Claude gif tucked at the bottom of the "Stop using Claude for taxes"
+// section. Always shown. If the gif asset is missing it silently renders
+// nothing (no broken-image icon).
 export default function ClaudeGif() {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const KEY = "claude-egg";
-    let decision = sessionStorage.getItem(KEY);
-    if (decision === null) {
-      decision = Math.random() < 0.08 ? "1" : "0"; // ~1 in 12 sessions, rare
-      sessionStorage.setItem(KEY, decision);
-    }
-    if (decision === "1") setShow(true);
-  }, []);
+  const [show, setShow] = useState(true);
 
   if (!show) return null;
 

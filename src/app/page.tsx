@@ -17,6 +17,7 @@ export default function Home() {
 
       {/* Lead statement: leads the reader into the whole page */}
       <section className="section-blue-soft px-6 py-16 text-center md:py-28 lg:px-16">
+        <p className="accred-eyebrow accred-eyebrow-light reveal">CTA · ACA · ex-PwC</p>
         <Accreditations
           variant="light"
           className="accred-prominent reveal mb-12 md:mb-16"

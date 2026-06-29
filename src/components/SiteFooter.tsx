@@ -24,7 +24,8 @@ export default function SiteFooter() {
           </div>
           <NewsletterSignup variant="footer" />
         </div>
-        <Accreditations variant="dark" className="mt-10" />
+        <p className="accred-eyebrow accred-eyebrow-dark mt-10">CTA · ACA · ex-PwC</p>
+        <Accreditations variant="dark" className="mt-3" />
         <WorksWith tone="light" className="mt-8" />
       </div>
 

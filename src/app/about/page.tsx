@@ -134,7 +134,8 @@ export default function AboutPage() {
             </article>
           ))}
         </div>
-        <Accreditations variant="light" className="reveal mt-10" />
+        <p className="accred-eyebrow accred-eyebrow-light reveal mt-10">CTA · ACA · ex-PwC</p>
+        <Accreditations variant="light" className="reveal" />
         <WorksWith className="reveal mt-8" />
       </section>
 
