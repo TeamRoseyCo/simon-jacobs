@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import CtaBand from "@/components/CtaBand";
+import ConsultCta from "@/components/ConsultCta";
 import Accreditations from "@/components/Accreditations";
+import AboutJourney from "@/components/AboutJourney";
+import WorksWith from "@/components/WorksWith";
 import { principles, credentials } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -14,8 +16,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-white mx-auto grid w-full max-w-7xl gap-10 px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32 lg:grid-cols-[0.9fr_1.1fr] lg:px-16">
-        <div className="image-stack reveal relative min-h-[520px] overflow-hidden">
+      <section className="section-white mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-2 pt-24 md:gap-16 md:px-10 md:pb-4 md:pt-28 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-16">
+        <div className="image-stack reveal relative min-h-[520px] overflow-hidden rounded-[18px]">
           <Image
             src="/simon-jacobs.webp"
             alt="Simon Jacobs"
@@ -25,21 +27,24 @@ export default function AboutPage() {
           />
         </div>
         <div className="reveal flex flex-col justify-center text-center lg:text-left">
-          <p className="eyebrow">
-            About
-          </p>
-          <h1 className="mt-4 max-w-[620px] font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h1 className="mx-auto max-w-[620px] font-serif text-4xl font-normal leading-tight md:text-5xl lg:mx-0">
             Chartered tax advice for{" "}
             <span className="em-display text-teal">busy founders</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
+          <p className="mx-auto mt-6 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
             Simon is a Chartered Tax Adviser (CTA) and Chartered Accountant
             (ACA), qualified through the CIOT and ICAEW, with over ten years in
             tax and accounting. Before founding his own practice, SRJ
             International, he spent more than four years at PwC advising large
             multinational corporations and SMEs on tax planning and tax advice.
           </p>
-          <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
+        </div>
+      </section>
+
+      {/* Editorial sequence with a scroll-journey connector behind it */}
+      <AboutJourney>
+        <div className="aj-step">
+          <p className="max-w-xl text-lg leading-9 text-muted">
             He set up on his own to specialise in the clients he enjoys most:
             digital marketing agencies, SMEs, and high-net-worth individuals,
             with tax planning, accounting, and compliance under one roof. The
@@ -47,7 +52,9 @@ export default function AboutPage() {
             clients, director pay, and the tension between taking profit and
             reinvesting it, are exactly where good planning earns its keep.
           </p>
-          <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
+        </div>
+        <div className="aj-step justify-end text-right">
+          <p className="ml-auto max-w-xl text-lg leading-9 text-muted">
             Away from the numbers, Simon is an award-winning public speaker who
             has presented at the ICAEW and CIOT and serves as Vice President of
             Membership at his local Toastmasters club. It is the same instinct
@@ -55,7 +62,7 @@ export default function AboutPage() {
             with confidence.
           </p>
         </div>
-      </section>
+      </AboutJourney>
 
       <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
         <figure className="reveal overflow-hidden rounded-[18px] border border-border bg-white shadow-[0_18px_55px_rgba(8,34,75,0.08)]">
@@ -128,9 +135,10 @@ export default function AboutPage() {
           ))}
         </div>
         <Accreditations variant="light" className="reveal mt-10" />
+        <WorksWith className="reveal mt-8" />
       </section>
 
-      <CtaBand
+      <ConsultCta
         heading="Bring the questions you've been putting off."
         sub="A short discovery call to talk through where the agency is and where you want it to go."
       />

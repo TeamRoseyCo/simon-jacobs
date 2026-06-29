@@ -1,0 +1,458 @@
+<title>The Adviser's Trade — Tax &amp; Accountancy for UK Marketing Agencies</title>
+<meta name="description" content="An industry primer that teaches the discipline of UK tax and accountancy advisory as practised for marketing agencies — qualifications, the core taxes, the planning mindset, and the economics of an exit." />
+
+<style>
+  :root {
+    /* — palette: cool "ledger paper", not warm cream — */
+    --desk:   #DBDED7;
+    --paper:  #EFF1EC;
+    --paper-2:#E5E8E1;   /* figure ground */
+    --ink:    #15232C;   /* deep blue-charcoal */
+    --slate:  #56666B;   /* muted captions */
+    --teal:   #0E776A;   /* the single accent */
+    --teal-d: #0A5C52;   /* accent on links/figures */
+    --rule:   #C5CBC4;   /* hairline */
+    --rule-2: #9CA79F;
+
+    --serif: "Charter", "Iowan Old Style", "Palatino Linotype", "Palatino", "Book Antiqua", Georgia, serif;
+    --sans:  "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    --mono:  "SF Mono", "JetBrains Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+
+    --measure: 1040px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .sheet {
+    max-width: var(--measure);
+    margin: 40px auto 64px;
+    background: var(--paper);
+    padding: 60px clamp(24px, 5vw, 76px) 64px;
+    box-shadow: 0 1px 0 rgba(21,35,44,.04), 0 18px 50px -28px rgba(21,35,44,.45);
+    border-top: 3px solid var(--ink);
+  }
+
+  /* — masthead — */
+  .kicker {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--slate);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    font-weight: 600;
+  }
+  .kicker .teal { color: var(--teal-d); }
+
+  h1.title {
+    font-size: clamp(33px, 5.4vw, 52px);
+    line-height: 1.04;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 22px 0 0;
+  }
+  .title em { font-style: italic; color: var(--teal-d); }
+
+  .subtitle {
+    font-size: clamp(17px, 2.2vw, 21px);
+    color: var(--slate);
+    font-style: italic;
+    margin: 14px 0 0;
+    max-width: 46ch;
+    line-height: 1.4;
+  }
+
+  .byline {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    color: var(--slate);
+    margin-top: 22px;
+    padding-bottom: 6px;
+  }
+  .byline b { color: var(--ink); font-weight: 600; }
+
+  .rule-double {
+    border: 0;
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    height: 4px;
+    margin: 14px 0 0;
+  }
+
+  /* — abstract — */
+  .abstract {
+    margin: 30px 0 8px;
+    padding: 4px 0 0;
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 0 24px;
+  }
+  .abstract .lbl {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--teal-d);
+    font-weight: 700;
+    padding-top: 5px;
+  }
+  .abstract p {
+    margin: 0;
+    font-size: 18.5px;
+    line-height: 1.52;
+    font-style: italic;
+    color: #28363d;
+  }
+
+  hr.thin { border: 0; border-top: 1px solid var(--rule); margin: 34px 0; }
+
+  /* — sections — */
+  section { margin-top: 36px; }
+
+  .h {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 16px;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .h .num {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--teal-d);
+    letter-spacing: 0;
+  }
+  .h h2 {
+    margin: 0;
+    font-size: clamp(20px, 2.6vw, 25px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  /* — two-column body — */
+  .cols {
+    column-count: 2;
+    column-gap: 38px;
+    column-rule: 1px solid var(--rule);
+    text-align: justify;
+    hyphens: auto;
+    orphans: 2;
+    widows: 2;
+  }
+  .cols p { margin: 0 0 0.95em; }
+  .cols p:last-child { margin-bottom: 0; }
+  .cols .lead::first-letter {
+    initial-letter: 3;
+    -webkit-initial-letter: 3;
+    font-weight: 600;
+    color: var(--teal-d);
+    margin-right: 10px;
+    font-family: var(--serif);
+  }
+
+  .term { font-style: italic; }
+  strong { font-weight: 600; }
+  .sc { font-variant: small-caps; letter-spacing: .03em; }
+  .num-i { font-family: var(--mono); font-size: 0.92em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* footnote markers */
+  sup.fn {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--teal-d);
+    font-weight: 600;
+    padding-left: 1px;
+    line-height: 0;
+  }
+
+  /* — figures: full-width stat boxes — */
+  figure.fig {
+    margin: 26px 0 4px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--teal);
+    padding: 18px 22px 20px;
+    break-inside: avoid;
+  }
+  figure.fig figcaption {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--slate);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  figure.fig figcaption b { color: var(--teal-d); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 16px 22px;
+  }
+  .stat .v {
+    font-family: var(--mono);
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .stat .v small { font-size: 13px; color: var(--slate); font-weight: 500; }
+  .stat .k {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--slate);
+    margin-top: 5px;
+    line-height: 1.3;
+  }
+
+  /* — editor's note — */
+  .note {
+    margin-top: 40px;
+    border: 1px solid var(--rule-2);
+    background: transparent;
+    padding: 22px 26px 24px;
+  }
+  .note .lbl {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--teal-d);
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .note h3 { margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+  .note ul { margin: 0; padding-left: 1.1em; }
+  .note li { margin-bottom: 7px; }
+  .note li b { color: var(--teal-d); }
+
+  /* — references — */
+  .refs { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--rule); }
+  .refs h4 {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--slate);
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+  .refs ol {
+    column-count: 2;
+    column-gap: 38px;
+    margin: 0;
+    padding-left: 1.3em;
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--slate);
+  }
+  .refs li { margin-bottom: 7px; break-inside: avoid; }
+  .refs a { color: var(--teal-d); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .refs a:hover { border-bottom-color: var(--teal-d); }
+
+  .colophon {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--slate);
+    text-align: center;
+    margin-top: 30px;
+    letter-spacing: .04em;
+  }
+
+  a:focus-visible, .refs a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .sheet { margin: 0 0 24px; padding: 36px 22px 44px; }
+    .cols, .refs ol { column-count: 1; }
+    .abstract { grid-template-columns: 1fr; gap: 8px; }
+    .abstract p { font-size: 17px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sheet { animation: rise .5s ease-out both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  }
+
+  @media print {
+    @page { size: A4; margin: 16mm 15mm; }
+    body { background: #fff; font-size: 10.5pt; line-height: 1.5; }
+    .sheet { margin: 0; max-width: none; padding: 0; box-shadow: none; border-top: 3px solid var(--ink); padding-top: 10px; animation: none; }
+    .cols { column-gap: 26px; }
+    section, figure.fig, .note, .h { break-inside: avoid; }
+    section { margin-top: 22px; }
+    h1.title { font-size: 30pt; }
+    .abstract p { font-size: 12pt; }
+    figure.fig { background: var(--paper-2) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .refs a { border-bottom: none; }
+    a { color: var(--teal-d); }
+  }
+</style>
+
+<article class="sheet" lang="en-GB">
+
+  <header>
+    <div class="kicker">
+      <span>Industry Briefing · No.&nbsp;1</span>
+      <span class="teal">Gate 1 · Understand</span>
+      <span>June 2026</span>
+    </div>
+
+    <h1 class="title">The Adviser's Trade</h1>
+    <p class="subtitle">A working primer on tax &amp; accountancy as it is actually practised for UK marketing agencies — written for someone who wants to understand it from the <em>inside</em>.</p>
+
+    <div class="byline">Prepared for the <b>Simon Jacobs</b> project · to understand the business, first understand the discipline it sells.</div>
+    <hr class="rule-double" />
+  </header>
+
+  <div class="abstract">
+    <div class="lbl">Abstract</div>
+    <p>A marketing agency is a high-revenue, people-heavy business usually run by a founder who was never trained in money. The person who fixes that — the tax adviser and accountant — practises a specific trade with its own qualifications, its own body of law, and its own way of thinking. This primer walks that trade from the ground up: what the work is, the taxes it turns on, how a good adviser reasons, how an agency's books actually behave, the central question of paying the founder, and the economics of an eventual sale. Read it as a short course, not a brochure.</p>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <div class="h"><span class="num">§1</span><h2>The trade, defined: two jobs wearing one coat</h2></div>
+    <div class="cols">
+      <p class="lead">There is a habit of saying "accountant" as if it were one thing. It is two. <strong>Compliance</strong> is the work of recording the past accurately and filing it on time: bookkeeping, the year-end accounts, VAT returns, payroll, the corporation-tax return to HMRC and the confirmation statement to Companies House. It is necessary, deadline-driven, and — increasingly — commoditised. <strong>Advisory</strong> is the work of shaping the future: deciding, <span class="term">before the money moves</span>, how to structure, time, and extract it so the client keeps more and risks less.</p>
+      <p>Most small firms sell mainly compliance. A minority sell advice. The "agency-specialist tax adviser" — the corner Simon occupies — is a narrow, advisory-led slice of a vast, fragmented market: tens of thousands of UK practices, the overwhelming majority of them generalists.</p>
+      <p>The trade is policed by professional bodies, and their letters are the currency of trust. An <strong>ACA</strong> (or <span class="sc">FCA/ACA</span>, awarded by the <span class="sc">ICAEW</span>) is a chartered accountant — trained in the numbers. A <strong>CTA</strong> (the <span class="sc">CIOT</span>'s Chartered Tax Adviser) is the senior UK qualification in tax advice specifically. <strong>ACCA</strong> is a parallel chartered-accountancy route. Holding both ACA <em>and</em> CTA is uncommon and signals an adviser who can connect the planning to the real ledger. "Ex-Big-Four" (PwC, Deloitte, EY, KPMG) signals structured advisory training usually reserved for large companies.<sup class="fn">1</sup></p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <div class="h"><span class="num">§2</span><h2>The toolkit: the taxes you must actually know</h2></div>
+    <div class="cols">
+      <p>An adviser to an owner-managed company works with a handful of taxes constantly. <strong>Corporation tax</strong> sits on company profit: <span class="num-i">19%</span> on profits up to <span class="num-i">£50,000</span>, <span class="num-i">25%</span> above <span class="num-i">£250,000</span>, with "marginal relief" creating an effective <span class="num-i">~26.5%</span> band between the two — which is precisely why the <em>timing</em> and <em>size</em> of profit matters.<sup class="fn">2</sup></p>
+      <p><strong>VAT</strong> is a transaction tax: a business must register once taxable turnover passes <span class="num-i">£90,000</span>. Agencies hit this fast because pass-through media spend can inflate "turnover" without adding profit, so scheme choice matters.<sup class="fn">3</sup></p>
+      <p><strong>Income tax</strong> and <strong>National Insurance</strong> govern how the founder is paid (see §5). <strong>Capital gains tax</strong> governs what happens when the business is sold (see §6). Wrapping all of it: the UK tax year runs <span class="num-i">6&nbsp;April–5&nbsp;April</span>, deadlines are fixed and unforgiving, and <span class="sc">Making&nbsp;Tax&nbsp;Digital</span> is pushing reporting quarterly and online — phasing in from April 2026 for income over <span class="num-i">£50,000</span>.<sup class="fn">4</sup> The craft is not memorising rates; it is knowing which lever moves which number, and when.</p>
+    </div>
+    <figure class="fig">
+      <figcaption><b>Fig.&nbsp;1</b> — The core rates an adviser carries in their head (2026/27)</figcaption>
+      <div class="grid">
+        <div class="stat"><div class="v">19–25<small>%</small></div><div class="k">Corporation tax (small-profits → main rate)</div></div>
+        <div class="stat"><div class="v">£90k</div><div class="k">VAT registration threshold</div></div>
+        <div class="stat"><div class="v">£12,570</div><div class="k">Personal allowance (tapers away £100k–£125,140)</div></div>
+        <div class="stat"><div class="v">15<small>%</small></div><div class="k">Employer NIC, on earnings over £5,000</div></div>
+        <div class="stat"><div class="v">6 Apr</div><div class="k">Start of the UK tax year</div></div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <div class="h"><span class="num">§3</span><h2>How an adviser thinks: model the decision before the money moves</h2></div>
+    <div class="cols">
+      <p>The compliance accountant looks <em>backwards</em> and asks "what happened, and what do we owe?" The adviser looks <em>forwards</em> and asks "what are you about to do, and what is the most efficient way to do it?" That single reorientation is the whole job.</p>
+      <p>The mental model has four recurring levers. <strong>Structure</strong>: sole trader, limited company, group, holding company — the container changes the tax. <strong>Timing</strong>: pulling income or a purchase into one tax year versus the next can move it across a rate band. <strong>Extraction</strong>: how value leaves the company (salary, dividend, pension, benefits) is rarely neutral. <strong>Reliefs</strong>: allowances and reliefs that genuinely apply, claimed deliberately rather than missed.</p>
+      <p>Two disciplines separate a good adviser from a filing service. The first is <strong>year-round</strong> contact — advice given while it can still change the outcome, not a post-mortem the week before a deadline. The agency owner's stock complaint, <span class="term">"my accountant only shows up at year-end, when it's too late to change anything,"</span> is a description of compliance sold as advice. The second is <strong>plain English</strong>: the ability to translate the law into a decision a non-specialist can own. If the client can't explain the choice back, the adviser hasn't finished.</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <div class="h"><span class="num">§4</span><h2>Reading an agency's books (why the sector matters)</h2></div>
+    <div class="cols">
+      <p>A specialist exists because an agency's numbers do not behave like a normal company's, and a generalist misreads them. Three features define the financial anatomy.</p>
+      <p><strong>Revenue is mixed and lumpy.</strong> Retainers are predictable and valuable; project fees are spiky; pass-through media or production spend inflates top-line revenue while adding little or no margin. Reading profit means stripping the pass-through out first.</p>
+      <p><strong>The cost base is people.</strong> Roughly <span class="num-i">70%</span> of an agency's costs are salaries and freelancers, so the hidden engine of the P&amp;L is <span class="term">utilisation</span> — billable hours against paid hours. A few points of utilisation is the difference between a healthy year and a loss.</p>
+      <p><strong>Cash and profit diverge.</strong> Clients pay in 30–60 days; staff and freelancers are paid now. A genuinely profitable agency can still run out of cash, which is why forecasting — not just reporting — is the service that earns trust. Healthy agencies run an <span class="sc">EBITDA</span> margin of <span class="num-i">20–30%</span>; many quietly sit below <span class="num-i">15%</span> and don't know why.<sup class="fn">5</sup> And the founder is usually the lead salesperson, lead creative <em>and</em> the finance department at once — the structural weakness that §6 turns into money.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <div class="h"><span class="num">§5</span><h2>The founder's central question: how to get paid</h2></div>
+    <div class="cols">
+      <p>For an owner-managed company the defining advisory question is <strong>profit extraction</strong>: how does the founder move money from a company they own into their own pocket, with the least lost to tax? There is no single answer, only a balance struck across three routes.</p>
+      <p><strong>Salary</strong> is deductible for the company but triggers income tax and both employee and employer National Insurance — and employer NIC now runs at <span class="num-i">15%</span> on earnings above just <span class="num-i">£5,000</span>, so large salaries are expensive to the business. <strong>Dividends</strong> are paid from post-tax profit, carry no NIC, and have their own (lower but rising) rates — <span class="num-i">10.75%</span>, <span class="num-i">35.75%</span> and <span class="num-i">39.35%</span> across the bands from April 2026 — but the tax-free dividend allowance has been cut to just <span class="num-i">£500</span>.<sup class="fn">6</sup> The textbook pattern is a modest salary topped up with dividends; the right split depends on the actual numbers.</p>
+      <p><strong>Pension</strong> contributions are the underused lever: paid by the company, they are usually deductible, escape NIC entirely, and move money out of the corporation-tax net. A recurring trap is the <span class="num-i">£100,000</span> threshold, where the personal allowance is withdrawn at <span class="num-i">£1</span> for every <span class="num-i">£2</span> earned — an effective <span class="num-i">60%</span> marginal rate that careful extraction can sidestep.<sup class="fn">7</sup> This is the everyday substance of the trade: unglamorous arithmetic that quietly moves thousands.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <div class="h"><span class="num">§6</span><h2>Planning for the exit: the long game that unifies the rest</h2></div>
+    <div class="cols">
+      <p>The largest tax event in a founder's life is usually the day they sell. Most agency owners are, whether they say it or not, building toward an exit in five to ten years — and the work of getting there well is the same work that lowers tax along the way.</p>
+      <p>UK creative and digital agencies typically sell for <span class="num-i">3.5×–5×</span> adjusted <span class="sc">EBITDA</span> (the strongest reach <span class="num-i">6×+</span>), or roughly <span class="num-i">0.5×–2.5×</span> revenue.<sup class="fn">8</sup> What lifts the multiple is unsexy and entirely within the adviser's reach: <strong>recurring retainer revenue</strong>, <strong>no single client over ~15–20%</strong> of turnover, <strong>reduced owner-dependency</strong>, <strong>clean financials</strong> that survive due diligence, and a margin in that <span class="num-i">20–30%</span> band. The same factors in reverse — messy books, one dominant client, a business that <em>is</em> the founder — crush it.</p>
+      <p>On the proceeds, <strong>Business Asset Disposal Relief</strong> offers a reduced capital-gains rate on up to <span class="num-i">£1m</span> of lifetime gains — though it has been climbing, from <span class="num-i">10%</span> to <span class="num-i">14%</span> and now <span class="num-i">18%</span> from April 2026, narrowing its edge over the standard <span class="num-i">24%</span>.<sup class="fn">9</sup> The unifying insight of the whole trade: <span class="term">tax planning and exit planning are one discipline seen over two horizons.</span> Prepared agencies are reckoned to exit at roughly <span class="num-i">1.5×–2×</span> the multiple of unprepared ones on the same earnings — and the preparation takes 12–24 months.</p>
+    </div>
+    <figure class="fig">
+      <figcaption><b>Fig.&nbsp;2</b> — The economics of selling a UK agency</figcaption>
+      <div class="grid">
+        <div class="stat"><div class="v">3.5–5<small>×</small></div><div class="k">Adjusted EBITDA multiple at sale</div></div>
+        <div class="stat"><div class="v">20–30<small>%</small></div><div class="k">EBITDA margin buyers reward</div></div>
+        <div class="stat"><div class="v">&lt;20<small>%</small></div><div class="k">Max share any one client should be</div></div>
+        <div class="stat"><div class="v">18<small>%</small></div><div class="k">BADR rate from Apr 2026 (£1m lifetime)</div></div>
+        <div class="stat"><div class="v">12–24<small>mo</small></div><div class="k">Lead time to prepare a clean exit</div></div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <div class="h"><span class="num">§7</span><h2>The business of advice — and where Simon stands in it</h2></div>
+    <div class="cols">
+      <p>Finally, the trade is itself a business, and it has a clear economic logic. Compliance is commoditising: cloud software (Xero, QuickBooks) plus online firms with tens of thousands of clients have driven the price of "file my accounts" toward the floor. The margin and the loyalty have migrated <em>upward</em>, to judgement a founder cannot get from software. A sector specialist's moat is understanding the business model well enough to advise it, not merely record it.</p>
+      <p>Such firms almost never publish prices — they qualify a lead on a discovery call and quote to the work — and they win clients through referral, reputation and search rather than advertising. That is the market Simon is in: <strong>CTA · ACA · ex-PwC</strong>, advisory-led, focused on founder-run UK agencies, and positioned not on cheap compliance but on keeping more profit today and building a more valuable, more sellable business for tomorrow. Understand the discipline in these seven sections and you understand exactly what he sells — and why it is worth more than the filing it is often confused with.</p>
+    </div>
+  </section>
+
+  <!-- editor's note: bridge to copy -->
+  <div class="note">
+    <p class="lbl">Editor's note — turning the discipline into copy</p>
+    <h3>Six things this primer tells the website to do</h3>
+    <ul>
+      <li><b>Lead with the exit, not the year-end.</b> The biggest, least-served idea in §6 is the strongest headline: plan tax around your exit, not just your return.</li>
+      <li><b>Name the three pains</b> from §2 &amp; §4 — the tax bite, the cash/cost squeeze, staying competitive — in the founder's own words.</li>
+      <li><b>Use real numbers.</b> Founders are cost-sensitive and trust specificity; the figures in Fig.&nbsp;1–2 are proof, not decoration.</li>
+      <li><b>Sell advice over compliance</b> (§3, §7): "your accountant files the past; this plans the future."</li>
+      <li><b>Write second-person and plain</b> — the §3 translation skill <em>is</em> the brand voice.</li>
+      <li><b>CTA = book a discovery call</b>, and don't publish prices — both are the market norm this trade runs on.</li>
+    </ul>
+  </div>
+
+  <!-- references -->
+  <div class="refs">
+    <h4>Sources &amp; further reading</h4>
+    <ol>
+      <li>ICAEW (ACA) and CIOT (CTA) are the UK chartered bodies for accountancy and tax respectively; "Big Four" = PwC, Deloitte, EY, KPMG.</li>
+      <li>Corporation-tax rates &amp; marginal relief — <a href="https://www.gov.uk/government/publications/rates-and-allowances-corporation-tax/rates-and-allowances-corporation-tax">GOV.UK, Corporation Tax rates and allowances</a>.</li>
+      <li>VAT registration threshold £90,000 (unchanged 2026/27) — <a href="https://www.gov.uk/government/publications/vat-increasing-the-registration-and-deregistration-thresholds/increasing-the-vat-registration-threshold">GOV.UK, VAT thresholds</a>.</li>
+      <li>Making Tax Digital for Income Tax phasing from April 2026 — GOV.UK / HMRC guidance.</li>
+      <li>Agency margin &amp; cost-base benchmarks — <a href="https://www.alto-accounting.com/insights/uk-marketing-agency-profit-margin-benchmarks">Alto Accounting, UK agency profit-margin benchmarks 2026</a>; <a href="https://www.sidekickaccounting.co.uk/sectors/digital-marketing-agency">Sidekick Accounting</a>.</li>
+      <li>Dividend rates rising to 10.75% / 35.75% from Apr 2026; £500 allowance — <a href="https://www.1stformations.co.uk/blog/dividend-tax-allowance/">1st Formations</a>; employer NIC 15% on earnings over £5,000 — <a href="https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027">GOV.UK employer rates</a>.</li>
+      <li>Personal-allowance taper between £100,000 and £125,140 (effective 60% band) — GOV.UK, Income Tax rates and allowances.</li>
+      <li>UK agency valuation multiples — <a href="https://www.feinternational.com/blog/digital-marketing-agency-valuation">FE International</a>; <a href="https://www.breakwaterma.com/blog/digital-marketing-agency-valuation-multiples-2026">Breakwater M&amp;A, 2026</a>.</li>
+      <li>Business Asset Disposal Relief: 10% → 14% → 18% (from 6 Apr 2026), £1m lifetime limit — <a href="https://www.gov.uk/business-asset-disposal-relief">GOV.UK, BADR</a>.</li>
+    </ol>
+  </div>
+
+  <p class="colophon">The Adviser's Trade · Industry Briefing No.&nbsp;1 · prepared for the Simon Jacobs project, Gate 1 (Understand) · June 2026</p>
+
+</article>

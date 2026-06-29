@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "Ideal Client Profile — Simon Jacobs / Jacobs Taxes",
+    "source": "Transcribed from docs/ideal-client-profile.md + refinements locked during Gate 1 (June 2026).",
+    "lastUpdated": "2026-06-29",
+    "note": "Single source of truth for who the site speaks to. Copy, structure, and CTAs map back to the pains, goals, and attributes below."
+  },
+  "profile": {
+    "industry": "UK marketing / digital agency (hard niche — confirmed by Simon as the main focus).",
+    "geographicReach": "UK predominantly; serves clients worldwide.",
+    "companySize": "Roughly 1–20 core employees, often plus external freelancers/contractors (e.g. ~18 staff + ~20 externals).",
+    "annualTurnover": {
+      "canonicalBand": "£500k–£2.5m",
+      "note": "Scorecard + form use £500k–£2.5m; original ICP doc said £500k–£5m. £2.5m treated as canonical.",
+      "profitability": "~30% profit before tax where healthy (≈ £150k–£750k PBT on band)."
+    },
+    "buyingProcess": "Finds accountants/tax advisers via social media or referral, then books a discovery call. Decides fast.",
+    "decisionMaker": "The founder/CEO — typically late 20s / early 30s, sole decision maker, and the lead salesperson.",
+    "painPoints": [
+      "High taxes — corporation, VAT, and personal/director.",
+      "High costs/expenses; cost-sensitive in a saturated market.",
+      "Staying competitive.",
+      "Accounting illiteracy — nobody on the team came through tax/finance.",
+      "Currently has no accountant, OR over-relies on AI (ChatGPT/Claude) for compliance and advice.",
+      "Burned by a previous accountant — wanted better compliance AND advisory."
+    ],
+    "businessGoals": [
+      "Keep more of what they earn.",
+      "Run a genuinely profitable business.",
+      "Build toward a profitable exit (5–10 year horizon, strong valuation)."
+    ],
+    "attributes": [
+      "Decides fast.",
+      "Cut-throat about cutting costs that run too high.",
+      "Tech-savvy and forward-thinking (to a fault — trusts AI with tax).",
+      "Values giving back."
+    ]
+  },
+  "avatar": {
+    "framing": "Hazem's own agency used as the working avatar ('let's say it's us').",
+    "snapshot": "Founder-led UK marketing agency, ~£500k–£1m+ turnover (~$100–250k/quarter), ~18 staff + ~20 externals, CEO is the lead salesperson, none of the team trained in tax/accounting.",
+    "currentState": "Either no accountant, or DIY-ing compliance and advisory with AI tools like Claude/ChatGPT — which is risky and they half-know it.",
+    "dreamState": "Keep more profit, run profitably, and build a clean, valuable business they can sell well.",
+    "trigger": "Actively shopping for an accountant: didn't like the old one, wants better compliance and proactive advisory.",
+    "namedPersona": "Kajus, 19, Lithuanian — started young via courses → cold calling → ~$20k/mo with a team. The aspirational IDENTITY/VOICE, not the literal buyer.",
+    "outsideForces": "Active War Room member (Tate's private network); bought-in and winning. Aligned POSITIVELY with the hustle/guru ecosystem (Tate, Gadzhi, Hormozi) — copy speaks with this worldview, never against it.",
+    "buyerVsIdentity": "Band resolved (option C): the actual buyer is a War-Room-minded founder running a £500k–£2.5m agency; Kajus is the younger aspirational identity. Scorecard gate (£500k–£2.5m) unchanged."
+  },
+  "antiPersona": {
+    "description": "Who Simon would rather NOT take.",
+    "examples": [
+      "Non-agency clients that dilute the niche (e.g. the dentist + landlord testimonials are being dropped from the site).",
+      "Pre-revenue / very small businesses below the band that only need cheap compliance.",
+      "Price-only shoppers who want the cheapest filing, not advice."
+    ]
+  },
+  "positioningImplications": [
+    "Sharpen the target to founder-led UK digital/marketing agencies, £500k–£2.5m — not generic 'agencies'.",
+    "Lead with the exit, not just the year-end: build a more valuable, sellable business.",
+    "Speak to the three pains: corporation/VAT/personal tax, high costs in a saturated market, competitiveness.",
+    "Match the buyer's tempo — punchy, skimmable copy; one obvious path to a discovery call.",
+    "Address the sole founder directly in second person ('you', 'your agency').",
+    "Trust signals matter (CTA·ACA·ex-PwC) because they arrive cold from social/referral.",
+    "Counter AI-reliance directly ('Stop using Claude for taxes') — the avatar literally does this."
+  ],
+  "copyHooks": [
+    "Built to keep more profit and a more valuable agency to sell.",
+    "Plan tax around your exit, not just your year-end.",
+    "Corporation tax, VAT, and what you actually take home — handled together.",
+    "For founder-led UK digital agencies scaling toward an exit.",
+    "Stop using Claude for taxes.",
+    "CTA: Book a discovery call (15-min fit call)."
+  ],
+  "settled": {
+    "noPriceList": "No prices on the site (Simon's call; confirmed by competitor study — none of the rivals publish full prices). Reference numbers: £100/hr calls; books £150–£400/mo; tax returns on top.",
+    "hardNiche": "Single ICP = UK marketing agencies. Do not dilute into influencers/landlords/etc."
+  },
+  "openQuestions": [
+    "AI-agency sub-focus: hard niche or strongest example?"
+  ]
+}

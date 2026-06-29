@@ -1,121 +1,63 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { bookHref } from "@/lib/content";
+import Link from "next/link";
+import { hero, scorecardHref, bookHref } from "@/lib/content";
 
+// Hero: clean light background with big soft Apple-style colour blobs drifting
+// behind. Content left-centred (headline + body + two CTAs), Simon on the side.
 export default function Hero() {
-  const ref = useRef<HTMLElement>(null);
-
-  // Spotlight eases toward the cursor for a smooth, fluid trail (pointer only).
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (window.matchMedia("(pointer: coarse)").matches) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let tx = 72;
-    let ty = 26;
-    let cx = 72;
-    let cy = 26;
-    let raf = 0;
-    let running = false;
-
-    const tick = () => {
-      cx += (tx - cx) * 0.1;
-      cy += (ty - cy) * 0.1;
-      el.style.setProperty("--mx", `${cx.toFixed(2)}%`);
-      el.style.setProperty("--my", `${cy.toFixed(2)}%`);
-      if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        running = false;
-      }
-    };
-
-    const onMove = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      tx = ((e.clientX - r.left) / r.width) * 100;
-      ty = ((e.clientY - r.top) / r.height) * 100;
-      if (!running) {
-        running = true;
-        raf = requestAnimationFrame(tick);
-      }
-    };
-
-    el.addEventListener("pointermove", onMove);
-    return () => {
-      el.removeEventListener("pointermove", onMove);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
-
   return (
-    <section ref={ref} id="top" className="hero">
-      <div className="hero-aurora" aria-hidden="true" />
-      <div className="hero-spotlight" aria-hidden="true" />
-      <div className="hero-grid" aria-hidden="true" />
+    <section id="top" className="hv">
+      <div className="hv-dots" aria-hidden="true">
+        <span className="hv-dot hv-dot-1" />
+        <span className="hv-dot hv-dot-2" />
+        <span className="hv-dot hv-dot-3" />
+        <span className="hv-dot hv-dot-4" />
+        <span className="hv-dot hv-dot-5" />
+      </div>
+      <div className="hv-grid" aria-hidden="true" />
 
-      <div className="hero-inner">
-        <div className="hero-portrait load-pop" style={{ animationDelay: "40ms" }}>
+      <div className="hv-inner">
+        <div className="hv-copy">
+          <h1 className="hv-title load-rise" style={{ animationDelay: "60ms" }}>
+            {hero.titleLead}{" "}
+            <span className="hero-accent">{hero.titleAccent}</span>
+          </h1>
+          <p className="hv-sub load-rise" style={{ animationDelay: "160ms" }}>
+            {hero.sub}
+          </p>
+          <p className="hv-aside load-rise" style={{ animationDelay: "210ms" }}>
+            {hero.subAside}
+          </p>
+          <div
+            className="hv-actions load-rise"
+            style={{ animationDelay: "260ms" }}
+          >
+            <Link href={scorecardHref} className="hv-btn-primary">
+              Find your profit leak
+              <span aria-hidden="true">→</span>
+            </Link>
+            <a
+              href={bookHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hv-btn-ghost"
+            >
+              Book a call
+            </a>
+          </div>
+        </div>
+
+        <div className="hv-portrait load-pop" style={{ animationDelay: "220ms" }}>
           <Image
             src="/simon-jacobs.webp"
             alt="Simon Jacobs, Chartered Tax Adviser"
             fill
             priority
-            sizes="(min-width: 640px) 300px, 62vw"
+            sizes="(min-width: 1024px) 500px, 70vw"
             className="object-cover object-[center_12%]"
           />
         </div>
-
-        <div className="hero-copy">
-          <h1 className="hero-title load-rise" style={{ animationDelay: "140ms" }}>
-            I help UK marketing agencies{" "}
-            <span className="hero-accent">
-              keep more <span className="hero-accent-plain text-white">of what</span> they earn.
-            </span>
-          </h1>
-          <p className="hero-sub load-rise" style={{ animationDelay: "240ms" }}>
-            Chartered Tax Adviser &amp; ex-PwC professional, I help agencies
-            extract profit, plan tax, and build a cleaner, more valuable business
-            to one day sell.
-          </p>
-
-          <div
-            className="hero-actions load-rise"
-            style={{ animationDelay: "340ms" }}
-          >
-            <a href={bookHref} className="hero-btn-primary">
-              I&apos;m an agency founder
-            </a>
-          </div>
-
-          <div className="hero-creds load-rise" style={{ animationDelay: "440ms" }}>
-            <span className="hero-creds-label">Chartered &amp; regulated</span>
-            <div className="hero-creds-row">
-              <span className="hero-cred">
-                <Image
-                  src="/accreditations/icaew.png"
-                  alt="ICAEW Chartered Accountant"
-                  width={600}
-                  height={988}
-                />
-              </span>
-              <span className="hero-cred">
-                <Image
-                  src="/accreditations/ciot.png"
-                  alt="Chartered Institute of Taxation"
-                  width={392}
-                  height={726}
-                />
-              </span>
-              <span className="hero-cred hero-cred-text">ex-PwC</span>
-            </div>
-          </div>
-        </div>
       </div>
-
-      <div className="hero-fade" aria-hidden="true" />
     </section>
   );
 }

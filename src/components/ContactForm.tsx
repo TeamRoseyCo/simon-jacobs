@@ -20,13 +20,15 @@ const empty: Fields = {
   question: "",
 };
 
-// NOTE: validates client-side and confirms; it does not send anywhere yet.
-// Wire `handleSubmit` to an email/CRM endpoint (Resend, Formspree, /api/contact).
+// Validates client-side, then POSTs to /api/contact (which re-validates
+// server-side and relays to Simon's inbox). Shows a spinner while in flight.
 export default function ContactForm() {
   const id = useId();
   const [f, setF] = useState<Fields>(empty);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [serverError, setServerError] = useState("");
 
   const set = (key: keyof Fields) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -35,7 +37,7 @@ export default function ContactForm() {
     if (errors[key]) setErrors((p) => ({ ...p, [key]: false }));
   };
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const next: Record<string, boolean> = {
       firstName: f.firstName.trim().length === 0,
@@ -45,8 +47,27 @@ export default function ContactForm() {
     };
     setErrors(next);
     if (Object.values(next).some(Boolean)) return;
-    // TODO: send `f` to your endpoint.
-    setDone(true);
+
+    setServerError("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ _kind: "contact", ...f }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      setDone(true);
+    } catch (err) {
+      setServerError(
+        err instanceof Error
+          ? err.message
+          : "Could not send right now. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (done) {
@@ -174,11 +195,28 @@ export default function ContactForm() {
         ) : null}
       </div>
 
+      {serverError ? (
+        <p role="alert" className="text-sm text-red-600">
+          {serverError}
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
+        disabled={submitting}
+        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent disabled:opacity-70"
       >
-        Send my question
+        {submitting ? (
+          <>
+            <span
+              aria-hidden="true"
+              className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"
+            />
+            Sending…
+          </>
+        ) : (
+          "Send my question"
+        )}
       </button>
     </form>
   );

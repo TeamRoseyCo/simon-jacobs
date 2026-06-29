@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import CtaBand from "@/components/CtaBand";
+import ConsultCta from "@/components/ConsultCta";
 import FaqAccordion from "@/components/FaqAccordion";
 import { faqs } from "@/lib/content";
 
@@ -39,7 +39,7 @@ export default function FaqPage() {
         <FaqAccordion items={faqs} />
       </section>
 
-      <CtaBand heading="Still have a question? Ask it on a call." />
+      <ConsultCta heading="Still have a question? Ask it on a call." />
 
       <script
         type="application/ld+json"

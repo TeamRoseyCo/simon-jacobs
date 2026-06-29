@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import CtaBand from "@/components/CtaBand";
+import ConsultCta from "@/components/ConsultCta";
 import { posts, formatPostDate } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -39,7 +39,6 @@ export default function BlogPage() {
             Notes on tax, profit, and a{" "}
             <span className="em-display text-teal">more valuable agency.</span>
           </h2>
-          <div className="head-rule" aria-hidden="true" />
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted">
             Short, plain-English reads for founder-led UK agencies. No jargon
             walls, no filler.
@@ -120,7 +119,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <CtaBand heading="Prefer to just ask Simon directly?" />
+      <ConsultCta heading="Prefer to just ask Simon directly?" />
     </>
   );
 }

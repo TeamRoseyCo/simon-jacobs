@@ -5,8 +5,7 @@ export default function Testimonials() {
     <section className="section-tinted px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
       <div className="mx-auto w-full max-w-7xl">
         <div className="reveal mx-auto max-w-3xl">
-          <p className="eyebrow">Testimonials</p>
-          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             What clients say about{" "}
             <span className="em-display text-teal">working with Simon.</span>
           </h2>
@@ -21,14 +20,14 @@ export default function Testimonials() {
             <span aria-hidden="true" className="em-display text-4xl text-teal">
               &ldquo;
             </span>
-            <blockquote className="-mt-3 flex-1 text-sm leading-7 text-muted">
+            <blockquote className="-mt-3 flex-1 text-[13px] leading-6 text-muted">
               {(() => {
                 const i = t.highlight ? t.quote.indexOf(t.highlight) : -1;
                 if (i === -1) return t.quote;
                 return (
                   <>
                     {t.quote.slice(0, i)}
-                    <strong className="font-semibold text-ink">
+                    <strong className="text-lg font-semibold leading-7 text-ink">
                       {t.highlight}
                     </strong>
                     {t.quote.slice(i + t.highlight.length)}

@@ -1,6 +1,83 @@
 import type { Metadata } from "next";
-import CtaBand from "@/components/CtaBand";
+import Image from "next/image";
+import type { ReactNode } from "react";
+import ConsultCta from "@/components/ConsultCta";
 import { services, servicesFull, resultItems, processSteps } from "@/lib/content";
+
+function Ico({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      {children}
+    </svg>
+  );
+}
+
+// Vector icons aligned to the full service list (same order as servicesFull).
+const serviceIcons: ReactNode[] = [
+  <path key="a" d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h0M9 11h0M9 15h0M15 7h0M15 11h0M15 15h0" />,
+  <>
+    <path key="b1" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path key="b2" d="M14 2v6h6M8 13h8M8 17h6" />
+  </>,
+  <>
+    <line key="c1" x1="19" y1="5" x2="5" y2="19" />
+    <circle key="c2" cx="6.5" cy="6.5" r="2.5" />
+    <circle key="c3" cx="17.5" cy="17.5" r="2.5" />
+  </>,
+  <>
+    <circle key="d1" cx="12" cy="12" r="9" />
+    <circle key="d2" cx="12" cy="12" r="5" />
+    <circle key="d3" cx="12" cy="12" r="1" />
+  </>,
+  <>
+    <path key="e1" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    <path key="e2" d="M16 12h3" />
+  </>,
+  <>
+    <rect key="f1" x="3" y="7" width="18" height="13" rx="2" />
+    <path key="f2" d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+  </>,
+  <>
+    <rect key="g1" x="3" y="4" width="18" height="18" rx="2" />
+    <path key="g2" d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4" />
+  </>,
+  <>
+    <path key="h1" d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+    <path key="h2" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+  </>,
+];
+
+// Icons for the How / results section (same order as resultItems).
+const resultIcons: ReactNode[] = [
+  <>
+    <path key="i1" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+    <circle key="i2" cx="12" cy="12" r="3" />
+  </>,
+  <>
+    <path key="j1" d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z" />
+    <path key="j2" d="M9 12l2 2 4-4" />
+  </>,
+  <>
+    <circle key="k1" cx="8" cy="9" r="5" />
+    <path key="k2" d="M14 6a5 5 0 1 1 0 10" />
+  </>,
+  <>
+    <path key="l1" d="M3 17l6-6 4 4 7-7" />
+    <path key="l2" d="M17 8h4v4" />
+  </>,
+];
+
+// Big Apple-emoji art for the process steps (same order as processSteps).
+const stepEmoji = ["/diagnose.webp", "/plan.webp", "/maintain.webp"];
 
 export const metadata: Metadata = {
   title: "Services: Tax planning, profit extraction & agency accountancy",
@@ -12,12 +89,9 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-20 text-center md:px-10 md:pt-32 lg:px-16">
+      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-20 text-center md:px-10 md:pt-28 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
-          <p className="eyebrow">
-            Services
-          </p>
-          <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h1 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             More than a{" "}
             <span className="em-display text-teal">year-end tidy-up.</span>
           </h1>
@@ -78,10 +152,9 @@ export default function ServicesPage() {
               className="finance-card reveal flex items-center gap-3 p-4"
               style={{ animationDelay: `${index * 60}ms` }}
             >
-              <span
-                aria-hidden="true"
-                className="h-2 w-2 shrink-0 rounded-full bg-accent"
-              />
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal/10 text-teal">
+                <Ico className="h-5 w-5">{serviceIcons[index]}</Ico>
+              </span>
               <span className="text-sm font-medium leading-6 text-ink">
                 {item}
               </span>
@@ -105,10 +178,13 @@ export default function ServicesPage() {
             {resultItems.map((item, index) => (
               <div
                 key={item}
-                className="reveal rounded-[10px] border border-white/12 bg-white/8 p-5 backdrop-blur-xl md:p-6"
+                className="reveal flex items-start gap-4 rounded-[10px] border border-white/12 bg-white/8 p-5 backdrop-blur-xl md:p-6"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
-                <span className="font-serif text-2xl leading-tight text-white">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-seafoam/15 text-seafoam">
+                  <Ico className="h-6 w-6">{resultIcons[index]}</Ico>
+                </span>
+                <span className="font-serif text-xl leading-snug text-white md:text-2xl">
                   {item}
                 </span>
               </div>
@@ -126,10 +202,14 @@ export default function ServicesPage() {
                 className="finance-card reveal p-5 text-center md:p-6"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span className="font-serif text-sm text-accent">
-                  0{index + 1}
-                </span>
-                <h3 className="mt-5 font-serif text-3xl font-normal text-ink">
+                <Image
+                  src={stepEmoji[index]}
+                  alt=""
+                  width={72}
+                  height={72}
+                  className="mx-auto h-16 w-16"
+                />
+                <h3 className="mt-4 font-serif text-3xl font-normal text-ink">
                   {step.title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-muted">{step.body}</p>
@@ -139,7 +219,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CtaBand
+      <ConsultCta
         heading="See what better tax planning could be worth."
         sub="Book a short discovery call and we will look at where your profit is going."
       />

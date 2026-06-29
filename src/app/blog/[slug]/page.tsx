@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import CtaBand from "@/components/CtaBand";
+import ConsultCta from "@/components/ConsultCta";
 import { posts, getPost, formatPostDate } from "@/lib/posts";
 
 export function generateStaticParams() {
@@ -77,7 +77,7 @@ export default async function BlogPostPage({
         </div>
       </article>
 
-      <CtaBand
+      <ConsultCta
         heading="Want this applied to your agency?"
         sub="Book a short discovery call and we will look at your actual numbers."
       />

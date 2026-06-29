@@ -16,9 +16,10 @@ export default function ConsultCta({
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "done">("idle");
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
     if (!emailOk) {
@@ -29,15 +30,45 @@ export default function ConsultCta({
       setError("Please tick the box to consent.");
       return;
     }
-    // TODO: send `email` to your list + trigger the consult booking here.
     setError("");
-    setStatus("done");
-    setEmail("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ _kind: "subscribe", email: email.trim() }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      setStatus("done");
+      setEmail("");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Could not send right now. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
     <section id="book" className="px-4 py-16 md:px-6 md:py-24 lg:px-8">
       <div className="cta-band mx-auto flex w-full max-w-7xl flex-col items-center gap-7 p-8 text-center lg:p-14">
+        <video
+          className="cta-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero-bg.jpg"
+          aria-hidden="true"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="cta-scrim" aria-hidden="true" />
+        <div className="cta-grain" aria-hidden="true" />
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-normal leading-tight md:text-6xl">
             {heading}
@@ -90,8 +121,22 @@ export default function ConsultCta({
                 consultation.
               </span>
             </label>
-            <button type="submit" className="email-submit">
-              Confirm and get a free consult
+            <button
+              type="submit"
+              disabled={submitting}
+              className="email-submit inline-flex items-center justify-center gap-2 disabled:opacity-70"
+            >
+              {submitting ? (
+                <>
+                  <span
+                    aria-hidden="true"
+                    className="h-4 w-4 animate-spin rounded-full border-2 border-ink/30 border-t-ink"
+                  />
+                  Sending…
+                </>
+              ) : (
+                "Confirm and get a free consult"
+              )}
             </button>
           </form>
         )}

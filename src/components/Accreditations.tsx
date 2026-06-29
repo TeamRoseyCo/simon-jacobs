@@ -3,6 +3,7 @@ import Image from "next/image";
 type Item = {
   mark: string;
   caption: string;
+  href: string;
   logo?: { src: string; width: number; height: number };
 };
 
@@ -10,14 +11,16 @@ const items: Item[] = [
   {
     mark: "ICAEW",
     caption: "Chartered Accountant",
+    href: "https://www.icaew.com",
     logo: { src: "/accreditations/icaew.png", width: 600, height: 988 },
   },
   {
     mark: "CIOT",
     caption: "Chartered Tax Adviser",
+    href: "https://www.tax.org.uk",
     logo: { src: "/accreditations/ciot.png", width: 392, height: 726 },
   },
-  { mark: "ex-PwC", caption: "Big Four trained" },
+  { mark: "ex-PwC", caption: "Big Four trained", href: "https://www.pwc.co.uk" },
 ];
 
 export default function Accreditations({
@@ -30,7 +33,14 @@ export default function Accreditations({
   return (
     <div className={`accred-strip accred-${variant} ${className}`}>
       {items.map((item) => (
-        <div key={item.mark} className="accred-badge">
+        <a
+          key={item.mark}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="accred-badge"
+          aria-label={`${item.mark}, ${item.caption} (opens in a new tab)`}
+        >
           {item.logo ? (
             <Image
               src={item.logo.src}
@@ -43,7 +53,7 @@ export default function Accreditations({
             <span className="accred-mark">{item.mark}</span>
           )}
           <span className="accred-caption">{item.caption}</span>
-        </div>
+        </a>
       ))}
     </div>
   );

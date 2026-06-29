@@ -1,16 +1,17 @@
 // Shared site content. Copy is tuned to the Ideal Client Profile
 // (see docs/ideal-client-profile.md): founder-led UK digital/marketing agencies,
-// £500k–£5m turnover, scaling toward a 5–10 year exit.
+// £500k to £5m turnover, scaling toward a 5 to 10 year exit.
 
 export const site = {
   name: "Simon Jacobs",
-  firm: "SRJ International",
+  firm: "Jacobs Taxes",
+  legalName: "SRJ International Limited",
   role: "Chartered Tax Adviser",
   email: "simon@jacobs-taxes.com",
   phone: "07821 900 992",
   bookSubject: "Agency tax planning discovery call",
   tagline:
-    "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
+    "I help UK marketing agencies keep more of what they earn.",
 } as const;
 
 // The full compliance service list (carried over from SRJ International).
@@ -51,9 +52,114 @@ export const testimonials = [
   },
 ];
 
-export const bookHref = `mailto:${site.email}?subject=${encodeURIComponent(
-  site.bookSubject,
-)}`;
+export const bookHref = "https://calendar.app.google/LjoJzvA8E1p9E8oV7";
+export const scorecardHref = "/scorecard";
+
+// Home-page section copy (Gate 3, drawn from docs/copy-research/Language of the Customer.docx)
+export const hero = {
+  eyebrow: "Chartered Tax Adviser · Ex-PwC · Agencies only",
+  titleLead: "Tax, profit and accounts for UK",
+  titleAccent: "marketing agencies.",
+  sub: "I help founder-led UK marketing agencies keep more of what they earn and build a business that's actually worth selling.",
+  subAside: "(No, ChatGPT can't do this part.)",
+};
+
+// Lead statement: the opening line that leads the reader into the whole page.
+export const lead = {
+  partA: "Most agency owners are brilliant at winning clients but ",
+  inkAccent: "terrible at keeping what they make.",
+  partB: " Because nobody ever showed them ",
+  tealAccent: "what's actually possible.",
+};
+
+export const exitAngle = {
+  eyebrow: "Plan your exit",
+  headingLead: "The",
+  headingAccent: "long game",
+  headingTail: " as a founder.",
+  body: "Every agency gets sold eventually. To sell for a serious multiple, founders need clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. I handle the structuring, the tax and the accounts quietly in the background, so when a buyer comes knocking your agency is worth more, and you walk away with far more of the sale.",
+};
+
+export const scorecardBand = {
+  eyebrow: "Free Profit-Rich Scorecard",
+  headingLead: "Find out exactly where your agency is ",
+  headingAccent: "leaking profit.",
+  sub: "Answer a few quick questions and Simon sends back your score across 7 areas, plus a 90-day plan to plug the leaks. Free, and no sales pitch.",
+  cta: "Take the Scorecard",
+  time: "est. ~5 minutes",
+};
+
+// The Profit-Rich DIGITAL Scorecard. Area D's questions are Simon's exact wording
+// from the live Google Form; D-I-G-I-T-A-L areas the rest are drafted in the same
+// style and format (CONFIRM wording with Simon). Each question scores No 0 /
+// Sometimes 1 / Yes 2, so each area is out of 6 and the whole thing out of 42.
+export const scorecardAreas = [
+  {
+    letter: "D",
+    title: "Diagnose tax leakage",
+    questions: [
+      "Do you review your expected corporation tax bill before year-end?",
+      "Do you have a tax plan before profits are finalised?",
+      "Do you regularly identify underclaimed expenses or missed tax reliefs?",
+    ],
+  },
+  {
+    letter: "I",
+    title: "Improve profit extraction",
+    questions: [
+      "Do you take profit through a planned mix of salary, dividends and pension?",
+      "Have you reviewed your director pay against this year's tax thresholds?",
+      "Do you use a pension as a tax-efficient way to extract profit?",
+    ],
+  },
+  {
+    letter: "G",
+    title: "Growth-proof structure",
+    questions: [
+      "Is your company structure reviewed as the agency grows?",
+      "Are you confident your structure protects retained profit?",
+      "Have you considered the right setup for investment, partners, or a holding company?",
+    ],
+  },
+  {
+    letter: "I",
+    title: "Incentivise key people",
+    questions: [
+      "Do you reward or retain key team members beyond salary?",
+      "Have you explored share options or equity incentives such as EMI?",
+      "Is there a clear plan to keep your best people through growth?",
+    ],
+  },
+  {
+    letter: "T",
+    title: "Tighten HMRC protection",
+    questions: [
+      "Are your filings and records consistently accurate and up to date?",
+      "Would your books hold up under an HMRC enquiry?",
+      "Do you have a plan or protection in place for an HMRC investigation?",
+    ],
+  },
+  {
+    letter: "A",
+    title: "Agency VAT & revenue",
+    questions: [
+      "Are you on the right VAT scheme for an agency?",
+      "Do you handle VAT correctly on pass-through costs and overseas clients?",
+      "Is revenue recognised correctly across retainers and projects?",
+    ],
+  },
+  {
+    letter: "L",
+    title: "Long-term wealth & exit",
+    questions: [
+      "Are you building the agency with a future sale or exit in mind?",
+      "Is your personal wealth growing alongside the business?",
+      "Are your books and structure clean enough to survive buyer due diligence?",
+    ],
+  },
+];
+
+export const scorecardAnswers = ["No", "Sometimes", "Yes"];
 
 export const trustItems = [
   {
@@ -79,7 +185,7 @@ export const trustItems = [
 export const services = [
   {
     title: "Tax planning",
-    body: "Make cleaner decisions before the money moves, from corporation tax and VAT to director extraction and timing.",
+    body: "Pay less, legally, and never get blindsided by a year-end bill again. We make the call before the money moves: corporation tax, VAT, and how you take money out.",
     includes: [
       "Corporation tax forecasting and timing",
       "A VAT position and scheme that fits an agency",
@@ -90,7 +196,7 @@ export const services = [
   },
   {
     title: "Profit extraction",
-    body: "Build a practical route for paying yourself well without blunting the agency's ability to grow.",
+    body: "Keep more of what you earn. The right salary, dividend and pension mix for your numbers, so the agency funds your life, not just the taxman's.",
     includes: [
       "The right salary and dividend split for your numbers",
       "Pension used as a tax-efficient extraction route",
@@ -101,7 +207,7 @@ export const services = [
   },
   {
     title: "Agency accountancy",
-    body: "Management accounts, compliance, and calm financial visibility shaped around the way agencies actually run.",
+    body: "The boring stuff, handled. Bookkeeping, VAT, payroll and year-end done properly, with management accounts you can actually read, and books clean enough to survive a buyer's due diligence.",
     includes: [
       "Management accounts you can actually read",
       "Year-end accounts and corporation tax returns",
@@ -113,9 +219,10 @@ export const services = [
 ];
 
 export const whoFor = [
-  "You run a UK marketing or digital agency turning over roughly £500k–£5m.",
+  "You run a UK marketing or digital agency turning over roughly £500k to £2.5m.",
   "You're the founder, and the one who actually makes the call.",
-  "Corporation, VAT, and personal tax take a bigger bite every year.",
+  "Corporation, VAT and personal tax take a bigger bite every year.",
+  "You're done doing your tax DIY and hoping for the best.",
   "You want to build something worth selling, not just a job that pays well.",
 ];
 

@@ -3,7 +3,11 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import ConsultCta from "@/components/ConsultCta";
-import { services, whoFor } from "@/lib/content";
+import ClaudeGif from "@/components/ClaudeGif";
+import ScorecardSection from "@/components/ScorecardSection";
+import Accreditations from "@/components/Accreditations";
+import WorksWith from "@/components/WorksWith";
+import { services, whoFor, lead, exitAngle, bookHref } from "@/lib/content";
 import { posts } from "@/lib/posts";
 
 export default function Home() {
@@ -11,39 +15,40 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Lead statement — large, boxless, two-tone */}
-      <section className="section-white mx-auto w-full max-w-5xl px-6 py-16 text-center md:py-32 lg:px-16">
-        <p className="reveal mx-auto max-w-4xl font-serif text-[26px] leading-[1.5] text-muted md:text-[40px] md:leading-[1.38]">
-          Most agency owners are brilliant at winning clients but{" "}
-          <span className="text-ink">
-            terrible at keeping what they make.
-          </span>{" "}
-          Because nobody ever showed them{" "}
-          <span className="em-display text-teal">what&apos;s actually possible.</span>
+      {/* Lead statement: leads the reader into the whole page */}
+      <section className="section-blue-soft px-6 py-16 text-center md:py-28 lg:px-16">
+        <Accreditations
+          variant="light"
+          className="accred-prominent reveal mb-12 md:mb-16"
+        />
+        <p className="reveal mx-auto max-w-3xl font-serif text-[26px] font-normal leading-[1.45] text-[#627286] md:text-[36px] md:leading-[1.4]">
+          {lead.partA}
+          <span className="font-bold text-ink">{lead.inkAccent}</span>
+          {lead.partB}
+          <span className="em-display text-teal">{lead.tealAccent}</span>
         </p>
+        <WorksWith className="reveal mt-12" />
       </section>
 
-      {/* Who this is for — photo of Simon on the left, blending into the blue */}
-      <section className="px-4 py-4 md:px-6 lg:px-8">
-        <div className="section-ink relative mx-auto w-full max-w-7xl overflow-hidden rounded-[18px]">
-          <div className="whofor-grid" aria-hidden="true" />
+      {/* Who this is for: full-bleed, over a clouds texture */}
+      <section className="whofor-section relative w-full overflow-hidden">
           <div className="grid lg:grid-cols-2 lg:items-stretch">
             <div className="whofor-photo relative z-10 min-h-[300px] lg:min-h-[560px]">
               <Image
-                src="/simon-jacobs-event.webp"
-                alt="Simon Jacobs in conversation with agency founders"
+                src="/simon-jacobs-dubai.webp"
+                alt="Simon Jacobs, Chartered Tax Adviser for UK marketing agencies"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-[50%_28%]"
+                className="object-cover object-[center_22%]"
               />
             </div>
 
-            <div className="relative z-10 px-6 pb-12 pt-4 lg:px-14 lg:py-20">
+            <div
+              className="relative z-10 px-6 pb-12 pt-4 lg:px-14 lg:py-20"
+              data-reveal-group
+            >
               <div className="reveal text-center">
-                <p className="eyebrow">
-                  Who this is for
-                </p>
-                <h2 className="mt-4 font-serif text-4xl font-normal leading-tight text-white md:text-5xl">
+                <h2 className="font-serif text-4xl font-bold leading-tight text-white md:text-5xl">
                   Built for{" "}
                   <span className="em-display text-seafoam">
                     founder-led agencies
@@ -72,18 +77,19 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Services teaser */}
       <section className="section-white relative mx-auto w-full max-w-7xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
-          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-            Stop using <span className="em-display text-teal">Claude</span> for
+          <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
+            Stop using{" "}
+            <span className="font-bold italic text-[#D97757]">Claude</span> for
             taxes.
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">
-            Instead, here is what you get when you work with me.
+            Here&apos;s what you get when a Chartered Tax Adviser who only works
+            with agencies handles it instead.
           </p>
         </div>
         <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
@@ -103,47 +109,51 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <div className="reveal mt-8">
+        <div className="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={bookHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-[5px] bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
+          >
+            Book a call
+          </a>
           <Link
             href="/services"
-            className="inline-flex min-h-12 items-center justify-center rounded-[5px] bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
+            className="inline-flex min-h-12 items-center justify-center rounded-[5px] border border-ink/20 bg-white px-7 text-sm font-semibold text-ink transition hover:border-ink hover:bg-surface"
           >
             Explore the services
           </Link>
         </div>
+        <ClaudeGif />
       </section>
 
-      {/* About me — heading first, photo in the middle, body beneath */}
-      <section className="section-white mx-auto w-full max-w-3xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
-        <div className="reveal">
-          <p className="eyebrow">
-            About Simon
-          </p>
-          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+      {/* Lead magnet: scroll-revealed scorecard invite (Door A) */}
+      <ScorecardSection />
+
+      {/* About: full-bleed photo with the heading set on it */}
+      <section className="aboutbleed relative w-full overflow-hidden">
+        <Image
+          src="/simon-jacobs-event.webp"
+          alt="Simon Jacobs in conversation with agency founders"
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_35%]"
+        />
+        <div className="aboutbleed-scrim" aria-hidden="true" />
+        <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center">
+          <h2 className="reveal font-serif text-4xl font-bold leading-tight text-white md:text-6xl">
             Plain-English advice from someone who{" "}
-            <span className="em-display text-teal">gets agencies.</span>
+            <span className="em-display text-seafoam">gets agencies.</span>
           </h2>
-        </div>
-
-        <div className="image-stack reveal relative mx-auto mt-8 min-h-[320px] w-full max-w-[460px] overflow-hidden md:min-h-[420px]">
-          <Image
-            src="/simon-jacobs-dubai.webp"
-            alt="Simon Jacobs"
-            fill
-            sizes="(min-width: 1024px) 460px, 92vw"
-            className="object-cover object-[center_18%]"
-          />
-        </div>
-
-        <div className="reveal">
-          <p className="mx-auto mt-8 max-w-[560px] text-base leading-8 text-muted">
+          <p className="reveal mx-auto mt-6 max-w-[560px] text-base leading-8 text-white/85">
             Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
             year-round with founder-led UK agencies on tax, profit extraction,
             and building a business that is genuinely worth selling.
           </p>
           <Link
             href="/about"
-            className="mt-6 inline-flex text-sm font-semibold text-ink transition hover:text-accent"
+            className="reveal mt-6 inline-flex text-sm font-semibold text-white transition hover:text-seafoam"
           >
             More about Simon →
           </Link>
@@ -154,9 +164,8 @@ export default function Home() {
       <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
         <div className="mx-auto w-full max-w-7xl">
           <div className="reveal mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-              Tax and profit, in{" "}
-              <span className="em-display text-teal">plain English.</span>
+            <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
+              Useful <span className="em-display text-teal">reads.</span>
             </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -185,11 +194,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* The exit angle: the long game as a founder */}
+      <section className="section-blue-soft px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
+        <div className="reveal mx-auto max-w-3xl">
+          <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
+            {exitAngle.headingLead}{" "}
+            <span className="em-display text-teal">{exitAngle.headingAccent}</span>
+            {exitAngle.headingTail}
+          </h2>
+          <p className="mx-auto mt-6 max-w-[680px] text-lg leading-9 text-muted">
+            {exitAngle.body}
+          </p>
+        </div>
+      </section>
+
       <Testimonials />
 
       <ConsultCta
         heading="Find out what your agency could be keeping."
-        sub="Join the list and Simon will set you up with a free consultation. No spam, unsubscribe anytime."
+        sub="Book a free 15-minute discovery call. No spam, no pressure, just a straight answer on whether Simon can help."
       />
     </>
   );

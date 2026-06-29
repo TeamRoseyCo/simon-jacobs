@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
+import CookieConsent from "@/components/CookieConsent";
 
 const brandScript = Pinyon_Script({
   weight: "400",
@@ -125,6 +126,7 @@ export default function RootLayout({
         </main>
         <SiteFooter />
         <ScrollReveal />
+        <CookieConsent />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

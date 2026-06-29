@@ -2,6 +2,7 @@ import Link from "next/link";
 import { bookHref, navLinks, site } from "@/lib/content";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import Accreditations from "@/components/Accreditations";
+import WorksWith from "@/components/WorksWith";
 
 export default function SiteFooter() {
   return (
@@ -24,6 +25,7 @@ export default function SiteFooter() {
           <NewsletterSignup variant="footer" />
         </div>
         <Accreditations variant="dark" className="mt-10" />
+        <WorksWith tone="light" className="mt-8" />
       </div>
 
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr] md:px-10 lg:px-16">
@@ -37,6 +39,9 @@ export default function SiteFooter() {
           </p>
           <p className="mt-5 text-sm font-semibold text-white/85">
             {site.firm}
+          </p>
+          <p className="mt-1 text-xs leading-6 text-white/55">
+            A trading name of SRJ International Limited.
           </p>
         </div>
 
@@ -102,9 +107,22 @@ export default function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-6 py-5 text-xs text-white/45 md:flex-row md:items-center md:justify-between md:px-10 lg:px-16">
-          <p>© 2026 Simon Jacobs. All rights reserved.</p>
-          <p>UK marketing agency tax and accountancy specialist.</p>
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-5 text-xs text-white/45 md:flex-row md:items-center md:justify-between md:px-10 lg:px-16">
+          <p>© 2026 SRJ International Limited, trading as Jacobs Taxes. All rights reserved.</p>
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="transition hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/cookies" className="transition hover:text-white">
+              Cookie Policy
+            </Link>
+            <Link href="/terms" className="transition hover:text-white">
+              Terms of Use
+            </Link>
+            <Link href="/accessibility" className="transition hover:text-white">
+              Accessibility Statement
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

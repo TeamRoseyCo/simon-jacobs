@@ -8,18 +8,35 @@ import { navLinks, bookHref } from "@/lib/content";
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Close the mobile menu whenever the route changes.
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  // Track scroll so the header can fade from transparent (over the hero) to a
+  // frosted "liquid glass" bar once the user moves down the page.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
 
+  // Transparent white-on-dark only while sitting over the home hero at the top;
+  // everywhere else (scrolled, or any inner page) it's the solid glass bar.
+  const isHome = pathname === "/";
+  const transparent = isHome && !scrolled;
+
   return (
-    <header className="site-head">
-      <span className="site-head-accent" aria-hidden="true" />
+    <>
+      <header
+        className={`site-head ${transparent ? "is-transparent" : "is-solid"}`}
+      >
       <nav className="site-nav" aria-label="Main navigation">
         <Link href="/" className="site-wordmark" aria-label="Simon Jacobs, home">
           Simon Jacobs
@@ -30,6 +47,7 @@ export default function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
+              data-text={link.label}
               aria-current={isActive(link.href) ? "page" : undefined}
               className={`nav-link ${isActive(link.href) ? "is-active" : ""}`}
             >
@@ -39,7 +57,12 @@ export default function SiteHeader() {
         </div>
 
         <div className="site-nav-actions">
-          <a href={bookHref} className="nav-cta">
+          <a
+            href={bookHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta"
+          >
             Book a call
             <span aria-hidden="true">→</span>
           </a>
@@ -67,12 +90,20 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <a href={bookHref} className="nav-cta mobile-cta">
+          <a
+            href={bookHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta mobile-cta"
+          >
             Book a discovery call
             <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
-    </header>
+      </header>
+      {/* Inner pages have no hero behind the fixed header, so reserve its height. */}
+      {!isHome ? <div className="site-head-spacer" aria-hidden="true" /> : null}
+    </>
   );
 }
