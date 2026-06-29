@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ScorecardPage() {
   return (
-    <section className="flex min-h-[calc(100svh-76px)] w-full flex-col items-center justify-center px-6 py-8">
+    <section className="flex min-h-[calc(100svh-76px)] w-full flex-col items-center justify-start px-6 pb-12 pt-14 md:pt-20">
       <ScorecardForm />
     </section>
   );

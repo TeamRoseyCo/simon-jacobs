@@ -32,7 +32,7 @@ export default function BlogPage() {
       </section>
 
       {/* Section intro */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-6 pt-16 text-center md:px-10 md:pt-20 lg:px-16">
+      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-6 pt-12 text-center md:px-10 md:pt-14 lg:px-16">
         <div className="reveal mx-auto max-w-3xl">
           <p className="eyebrow">Stories &amp; guides</p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -73,7 +73,7 @@ export default function BlogPage() {
               <p className="mt-4 text-base leading-8 text-muted">
                 {featured.excerpt}
               </p>
-              <span className="mt-6 text-sm font-semibold text-accent">
+              <span className="mt-6 text-sm font-semibold text-ink">
                 Read more →
               </span>
             </div>
@@ -110,7 +110,7 @@ export default function BlogPage() {
                 <p className="mt-3 flex-1 text-sm leading-7 text-muted">
                   {post.excerpt}
                 </p>
-                <span className="mt-5 text-sm font-semibold text-accent">
+                <span className="mt-5 text-sm font-semibold text-ink">
                   Read more →
                 </span>
               </div>

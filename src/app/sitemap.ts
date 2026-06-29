@@ -1,14 +1,32 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
 
-const siteUrl = "https://simonjacobs.co.uk";
+const siteUrl = "https://jacobs-taxes.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/about", "/blog", "/faq", "/contact"];
+  const routes = [
+    "",
+    "/services",
+    "/about",
+    "/blog",
+    "/faq",
+    "/contact",
+    "/scorecard",
+    "/privacy",
+    "/cookies",
+    "/terms",
+    "/accessibility",
+  ];
+  const lowPriority = new Set([
+    "/privacy",
+    "/cookies",
+    "/terms",
+    "/accessibility",
+  ]);
   const staticRoutes: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteUrl}${route}`,
     changeFrequency: "monthly",
-    priority: route === "" ? 1 : 0.8,
+    priority: route === "" ? 1 : lowPriority.has(route) ? 0.3 : 0.8,
   }));
 
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({

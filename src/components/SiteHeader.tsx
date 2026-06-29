@@ -102,6 +102,13 @@ export default function SiteHeader() {
         </div>
       </div>
       </header>
+      {/* Dim the page behind the open mobile menu so hero copy does not peek
+          beneath the dropdown. Tapping it closes the menu. */}
+      <div
+        className={`mobile-scrim ${open ? "is-open" : ""}`}
+        aria-hidden="true"
+        onClick={() => setOpen(false)}
+      />
       {/* Inner pages have no hero behind the fixed header, so reserve its height. */}
       {!isHome ? <div className="site-head-spacer" aria-hidden="true" /> : null}
     </>

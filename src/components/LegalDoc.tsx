@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 // Shared wrapper for the legal pages (privacy, cookies, terms, accessibility).
-// Bracketed [PLACEHOLDER: …] text is for Simon to confirm or replace.
 export default function LegalDoc({
   title,
   updated,
@@ -17,12 +16,6 @@ export default function LegalDoc({
       <Link href="/" className="legal-back">
         ← Back home
       </Link>
-
-      <div className="legal-draft" role="note">
-        <strong>Draft for review.</strong> This is a working template. Anything in{" "}
-        <code>[brackets]</code> needs Simon to confirm or fill in before launch,
-        and the whole document should be checked by a qualified adviser.
-      </div>
 
       <h1 className="legal-title">{title}</h1>
       <p className="legal-updated">Last updated: {updated}</p>

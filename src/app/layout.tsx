@@ -22,7 +22,7 @@ const displaySerif = Playfair_Display({
   variable: "--font-display",
 });
 
-const siteUrl = "https://simonjacobs.co.uk";
+const siteUrl = "https://jacobs-taxes.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

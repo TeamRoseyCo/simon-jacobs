@@ -62,7 +62,8 @@ export default function ConsultCta({
           muted
           loop
           playsInline
-          poster="/hero-bg.jpg"
+          preload="none"
+          poster="/hero-bg.webp"
           aria-hidden="true"
         >
           <source src="/hero.mp4" type="video/mp4" />
@@ -70,7 +71,7 @@ export default function ConsultCta({
         <div className="cta-scrim" aria-hidden="true" />
         <div className="cta-grain" aria-hidden="true" />
         <div className="reveal mx-auto max-w-3xl">
-          <h2 className="font-serif text-4xl font-normal leading-tight md:text-6xl">
+          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             {heading}
           </h2>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-white/80">

@@ -17,7 +17,7 @@ export default function SiteFooter() {
               Your tax bill keeps climbing, you want an agency worth selling, and
               you would rather plan ahead than scramble at year-end.
             </p>
-            <p className="mt-3 max-w-[440px] text-xs leading-6 text-white/60">
+            <p className="mt-3 max-w-[440px] text-xs leading-6 text-white/70">
               Plain-English thinking on tax, profit, and building value for your
               own agency. No spam, unsubscribe anytime.
             </p>
@@ -41,7 +41,7 @@ export default function SiteFooter() {
           <p className="mt-5 text-sm font-semibold text-white/85">
             {site.firm}
           </p>
-          <p className="mt-1 text-xs leading-6 text-white/55">
+          <p className="mt-1 text-xs leading-6 text-white/70">
             A trading name of SRJ International Limited.
           </p>
         </div>
@@ -71,9 +71,15 @@ export default function SiteFooter() {
             Services
           </h3>
           <div className="mt-5 flex flex-col gap-3 text-sm text-white/70">
-            <span>Tax planning</span>
-            <span>Profit extraction</span>
-            <span>Agency accountancy</span>
+            <Link href="/services" className="transition hover:text-white">
+              Tax planning
+            </Link>
+            <Link href="/services" className="transition hover:text-white">
+              Profit extraction
+            </Link>
+            <Link href="/services" className="transition hover:text-white">
+              Agency accountancy
+            </Link>
           </div>
         </div>
 
@@ -108,7 +114,7 @@ export default function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-5 text-xs text-white/45 md:flex-row md:items-center md:justify-between md:px-10 lg:px-16">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-5 text-xs text-white/70 md:flex-row md:items-center md:justify-between md:px-10 lg:px-16">
           <p>© 2026 SRJ International Limited, trading as Jacobs Taxes. All rights reserved.</p>
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/privacy" className="transition hover:text-white">

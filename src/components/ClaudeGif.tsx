@@ -13,7 +13,7 @@ export default function ClaudeGif() {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/claude.gif"
+      src="/claude.webp"
       alt=""
       aria-hidden="true"
       onError={() => setShow(false)}

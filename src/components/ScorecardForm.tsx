@@ -280,6 +280,7 @@ export default function ScorecardForm() {
                   id="sc-name"
                   type="text"
                   autoComplete="name"
+                  placeholder="Jane Smith"
                   value={name}
                   onChange={(e) => {
                     setName(e.target.value);

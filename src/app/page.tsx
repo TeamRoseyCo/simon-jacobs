@@ -22,7 +22,7 @@ export default function Home() {
           variant="light"
           className="accred-prominent reveal mb-12 md:mb-16"
         />
-        <p className="reveal mx-auto max-w-3xl font-serif text-[26px] font-normal leading-[1.45] text-[#627286] md:text-[36px] md:leading-[1.4]">
+        <p className="reveal mx-auto max-w-3xl font-serif text-[26px] font-normal leading-[1.45] text-[#4F5D6E] md:text-[36px] md:leading-[1.4]">
           {lead.partA}
           <span className="font-bold text-ink">{lead.inkAccent}</span>
           {lead.partB}

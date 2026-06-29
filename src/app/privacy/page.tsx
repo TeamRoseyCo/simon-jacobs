@@ -99,12 +99,12 @@ export default function PrivacyPage() {
           your form submission to Simon&rsquo;s inbox.
         </li>
         <li>
-          <strong>Google Analytics (Google LLC)</strong>: [PLACEHOLDER: include
-          once enabled] measures Site usage if you accept analytics cookies.
+          <strong>Google Analytics (Google LLC)</strong>: measures Site usage if
+          you accept analytics cookies.
         </li>
         <li>
-          <strong>Meta Pixel (Meta Platforms)</strong>: [PLACEHOLDER: include
-          once enabled] measures ad performance if you accept marketing cookies.
+          <strong>Meta Pixel (Meta Platforms)</strong>: measures ad performance
+          if you accept marketing cookies.
         </li>
       </ul>
       <p>

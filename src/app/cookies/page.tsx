@@ -36,38 +36,38 @@ export default function CookiesPage() {
         </li>
         <li>
           <strong>Analytics</strong>: help us understand how visitors use the
-          Site so we can improve it. [PLACEHOLDER: Google Analytics, once
-          enabled, sets cookies such as <code>_ga</code> and{" "}
-          <code>_ga_*</code>; confirm and list them here.]
+          Site so we can improve it. If you accept analytics cookies, Google
+          Analytics sets cookies such as <code>_ga</code> and{" "}
+          <code>_ga_*</code> to measure visits and page views.
         </li>
         <li>
           <strong>Marketing</strong>: used by advertising partners to measure
-          and target ads. [PLACEHOLDER: the Meta Pixel, once enabled, sets
-          cookies such as <code>_fbp</code>; confirm and list them here.]
-        </li>
-        <li>
-          <strong>Functioning</strong>: enable extra features and personal
-          settings. [PLACEHOLDER: list any, or remove this category if unused.]
+          and target ads. If you accept marketing cookies, the Meta Pixel sets
+          cookies such as <code>_fbp</code> to measure ad performance.
         </li>
       </ul>
 
       <h2>3. The cookies on this Site</h2>
       <p>
-        [PLACEHOLDER: keep this table accurate as services are added. As of the
-        last-updated date, only the strictly-required preference store below is
-        in use.]
+        The list below covers the cookies and similar technologies this Site can
+        set. Cookies in the analytics and marketing categories are only set after
+        you accept that category in the cookie banner.
       </p>
       <ul>
         <li>
-          <strong>sj-cookie-consent</strong> (local storage, strictly required), remembers your cookie choice so the banner does not reappear.
+          <strong>sj-cookie-consent</strong> (local storage, strictly required),
+          remembers your cookie choice so the banner does not reappear.
         </li>
         <li>
-          <strong>[_ga / _ga_*]</strong> (Google Analytics, analytics),
-          [PLACEHOLDER: purpose and retention, once enabled].
+          <strong>_ga / _ga_*</strong> (Google Analytics, analytics),
+          distinguishes visitors and sessions to measure Site usage. Set only
+          with your consent, and typically expires up to two years after your
+          last visit.
         </li>
         <li>
-          <strong>[_fbp]</strong> (Meta Pixel, marketing), [PLACEHOLDER:
-          purpose and retention, once enabled].
+          <strong>_fbp</strong> (Meta Pixel, marketing), identifies browsers for
+          ad measurement. Set only with your consent, and typically expires about
+          90 days after it is set.
         </li>
       </ul>
 

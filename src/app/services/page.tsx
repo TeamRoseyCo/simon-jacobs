@@ -116,7 +116,9 @@ export default function ServicesPage() {
               <h2 className="mt-5 font-serif text-2xl font-normal text-ink">
                 {service.title}
               </h2>
-              <p className="mt-4 text-sm leading-7 text-muted">{service.body}</p>
+              <p className="mt-4 text-sm leading-7 text-muted md:min-h-[6.5rem]">
+                {service.body}
+              </p>
               <ul className="mt-5 grid gap-2.5 border-t border-border pt-5 text-sm text-ink">
                 {service.includes.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
