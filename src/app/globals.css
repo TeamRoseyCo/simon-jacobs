@@ -2496,3 +2496,18 @@ body {
 @media (max-width: 767px) {
   .whofor-section h2 { line-height: 1.32; }
 }
+
+/* Mobile header: simple flex so the menu sits hard-right and the Book-a-call
+   pill sits right next to it (no awkward grid gaps). */
+@media (max-width: 900px) {
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav-actions { gap: 10px; }
+}
+/* Hero portrait: bigger on phones. */
+@media (max-width: 1023px) {
+  .hv-portrait { width: 208px; max-width: 208px; height: 208px; }
+}
