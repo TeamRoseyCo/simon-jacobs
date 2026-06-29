@@ -2453,3 +2453,46 @@ body {
 }
 .accred-eyebrow-light { color: var(--teal); }
 .accred-eyebrow-dark { color: var(--seafoam); }
+
+/* Header (mobile): make the Book-a-call pill and the menu a matched pair
+   (same height, vertically centred) so the cluster reads as one unit. */
+@media (max-width: 640px) {
+  .site-nav { padding: 16px 16px; }
+  .site-nav-actions { gap: 10px; align-items: center; }
+  .site-wordmark { font-size: 22px; }
+  .nav-cta {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+  .nav-toggle { width: 44px; height: 44px; border-radius: 12px; }
+  .site-head-spacer { height: 76px; }
+}
+
+/* Credentials line: normal serif, dark, bigger and clearly visible (override). */
+.accred-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+.accred-eyebrow-light { color: var(--ink); }
+.accred-eyebrow-dark { color: #ffffff; }
+
+/* Who-for: on phone, merge the checklist boxes into the navy section (no card). */
+@media (max-width: 767px) {
+  .whofor-section ul li {
+    background: transparent;
+    border-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 6px 0;
+  }
+}
+
+/* Who-for heading: italic Playfair descenders need more room on phone so the
+   lines don't run into each other. */
+@media (max-width: 767px) {
+  .whofor-section h2 { line-height: 1.32; }
+}
