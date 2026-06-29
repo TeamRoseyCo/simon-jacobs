@@ -2261,3 +2261,134 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .dashboard-panel { animation: none; }
 }
+
+/* ============ Mobile-first refinements ============ */
+@media (max-width: 1023px) {
+  /* Hero: anchor content near the top (kills the big empty gap) and show
+     Simon's portrait on mobile, his face is the trust anchor. */
+  .hv { align-items: flex-start; }
+  .hv-inner { gap: 6px; }
+  .hv-portrait {
+    display: block;
+    width: 100%;
+    max-width: 290px;
+    margin: 30px auto 0;
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Accreditation cards: 3 compact badges in a row instead of 3 huge stacked. */
+  .accred-prominent.accred-strip { gap: 8px; flex-wrap: nowrap; }
+  .accred-prominent .accred-badge {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 14px 8px;
+    gap: 8px;
+  }
+  .accred-prominent .accred-logo,
+  .accred-prominent .accred-mark { height: 44px; font-size: 17px; }
+  .accred-prominent .accred-caption { font-size: 9.5px; letter-spacing: 0.05em; }
+}
+
+/* ============ Header + mobile refinements (v2) ============ */
+/* Book a call: a real pill button with black text in every header state. */
+.nav-cta {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  gap: 8px;
+}
+.nav-cta:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+.nav-cta:hover span { transform: translateX(3px); }
+/* Keep it a white pill with black text even over the dark hero. */
+.site-head.is-transparent .nav-cta:not(.mobile-cta) {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+}
+.site-head.is-transparent .nav-cta:not(.mobile-cta):hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+/* Vertically centre the wordmark with the actions (drop the big downward nudge). */
+.site-wordmark { padding: 0; transform: translateY(2px); }
+
+/* Mobile dropdown: book-a-call as a button, no coloured strip, text always dark. */
+.mobile-link { color: var(--ink) !important; }
+.mobile-cta {
+  margin-top: 14px;
+  justify-content: center;
+  background: #fff;
+  color: var(--ink) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 999px;
+  padding: 14px;
+  font-weight: 600;
+}
+.mobile-cta:hover {
+  background: var(--ink);
+  color: #fff !important;
+  border-color: var(--ink) !important;
+}
+
+@media (max-width: 1023px) {
+  /* Hero title: lead in normal sans, "marketing agencies." in italic Playfair. */
+  .hv-title { font-family: var(--font-sans); font-style: normal; font-weight: 800; letter-spacing: -0.02em; }
+  .hv-title .hero-accent {
+    font-family: var(--font-display), Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+  }
+  /* Simon's photo on top: a circular avatar above the heading. */
+  .hv-portrait {
+    display: block;
+    order: -1;
+    width: 132px;
+    max-width: 132px;
+    height: 132px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin: 0 auto 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  .hv-portrait img { object-position: center 18% !important; }
+}
+
+@media (max-width: 640px) {
+  /* Header fits without clipping the menu; compact book-a-call pill. */
+  .site-nav { padding: 12px 16px; gap: 10px; }
+  .site-wordmark { font-size: 24px; }
+  .site-nav-actions { gap: 8px; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
+  .nav-cta span { display: none; }
+}
+
+/* About: more breathing room between the journey paragraphs on mobile. */
+@media (max-width: 767px) {
+  .aj-step { margin-block: 1.6rem; }
+  .aj-step:first-of-type { margin-top: 0.5rem; }
+}
+
+/* Solid dropdown panel (no hero bleed-through) + keep the pill on one line. */
+.mobile-menu { background: var(--bg); }
+.nav-cta { white-space: nowrap; }
+@media (max-width: 640px) {
+  .site-wordmark { font-size: 22px; }
+}

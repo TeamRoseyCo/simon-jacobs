@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TARGET = "drhazem.dweik@gmail.com";
+const TARGET = "simon@jacobs-taxes.com";
 
 // Persist a lead to Supabase if it's configured. Never throws: storage is a
 // bonus on top of the email relay, so a DB hiccup must not break submissions.

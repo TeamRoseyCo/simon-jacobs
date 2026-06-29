@@ -28,7 +28,7 @@ export default function ClaudeGif() {
       alt=""
       aria-hidden="true"
       onError={() => setShow(false)}
-      className="claude-egg pointer-events-none absolute bottom-4 left-4 z-10 hidden h-14 w-auto select-none md:block lg:left-8"
+      className="claude-egg pointer-events-none absolute bottom-4 left-4 z-10 block h-14 w-auto select-none lg:left-8"
     />
   );
 }

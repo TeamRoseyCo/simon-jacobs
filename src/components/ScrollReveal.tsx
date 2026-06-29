@@ -89,7 +89,7 @@ export default function ScrollReveal() {
       },
       // Trigger later: the element must climb ~28% up from the bottom before it
       // animates, so it reveals while you're looking at it, not before.
-      { rootMargin: "0px 0px -28% 0px", threshold: 0.2 },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
     );
 
     els.forEach((el) => {

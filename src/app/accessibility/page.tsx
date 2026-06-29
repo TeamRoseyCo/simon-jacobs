@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <LegalDoc title="Accessibility Statement" updated="[DATE]">
+    <LegalDoc title="Accessibility Statement" updated="29 June 2026">
       <p>
         Jacobs Taxes is committed to making <strong>jacobs-taxes.com</strong>{" "}
         usable for as many people as possible, including those relying on

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalDoc title="Privacy Policy" updated="[DATE]">
+    <LegalDoc title="Privacy Policy" updated="29 June 2026">
       <p>
         This Privacy Policy explains how your personal data is handled when you
         use <strong>jacobs-taxes.com</strong> (the &ldquo;Site&rdquo;) and its
@@ -26,10 +26,6 @@ export default function PrivacyPage() {
       <ul>
         <li>Registered office: 10 Northcliffe Drive, London, England, N20 8JZ</li>
         <li>Company number: 12779246</li>
-        <li>
-          ICO registration number: [PLACEHOLDER: ICO registration number, if
-          registered]
-        </li>
         <li>
           Contact:{" "}
           <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>

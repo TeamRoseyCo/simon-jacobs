@@ -60,7 +60,7 @@ export default function ScorecardSection() {
         </div>
 
         {/* Right: sample survey mockup */}
-        <div className="reveal relative">
+        <div className="reveal relative hidden lg:block">
           <div className="sc-mock-card" aria-hidden="true">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">

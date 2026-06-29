@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalDoc title="Terms of Use" updated="[DATE]">
+    <LegalDoc title="Terms of Use" updated="29 June 2026">
       <p>
         These terms govern your use of <strong>jacobs-taxes.com</strong> (the
         &ldquo;Site&rdquo;), operated by <strong>SRJ International Limited</strong>{" "}
@@ -26,8 +26,7 @@ export default function TermsPage() {
         financial advice, and it does not create a client relationship. Tax
         depends on your specific circumstances and the rules change. Before
         acting, get advice tailored to your situation, for example by booking a
-        consultation. [PLACEHOLDER: confirm wording with Simon&rsquo;s
-        professional body / PI insurer.]
+        consultation.
       </p>
 
       <h2>2. The Scorecard</h2>
@@ -71,15 +70,13 @@ export default function TermsPage() {
         that it will be error-free or uninterrupted. To the extent permitted by
         law, we are not liable for any loss arising from your reliance on Site
         content. Nothing in these terms excludes liability that cannot be
-        excluded by law. [PLACEHOLDER: confirm liability wording with adviser /
-        insurer.]
+        excluded by law.
       </p>
 
       <h2>7. Governing law</h2>
       <p>
         These terms are governed by the laws of England and Wales, and the
-        courts of England and Wales have exclusive jurisdiction. [PLACEHOLDER:
-        confirm jurisdiction.]
+        courts of England and Wales have exclusive jurisdiction.
       </p>
 
       <h2>8. Contact</h2>

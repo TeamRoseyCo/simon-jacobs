@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
   return (
-    <LegalDoc title="Cookie Policy" updated="[DATE]">
+    <LegalDoc title="Cookie Policy" updated="29 June 2026">
       <p>
         This policy explains how <strong>jacobs-taxes.com</strong> uses cookies
         and similar technologies, and how you can control them. When you first
