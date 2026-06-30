@@ -42,6 +42,25 @@ Not blockers for launch. The site is shippable as-is.
       gh auth kept timing out. Finish: push master, connect repo to the Vercel
       project so pushes deploy automatically.
 
+## Lead qualification (contact form)
+- [x] Qualification questionnaire added to ContactForm: turnover band, role
+      (decision-maker?), and intent. Qualified = decision-maker AND turnover
+      £500k+ (from the ICP). Qualified leads see the booking calendar; everyone
+      else is still captured and routed to the Scorecard. Email subject is
+      tagged QUALIFIED / Lead so Simon can triage at a glance.
+- [ ] **Minimum-spend gate (needs Simon's figure).** Add an explicit
+      "engagements start from £X" gate to the questionnaire (the TURNOVER_BANDS
+      / isQualified logic in ContactForm.tsx is where it slots in). Hold until
+      Simon confirms the floor. For reference his current pricing is books
+      £150–£400/mo + £100/hr calls + returns on top, so a sensible starting
+      floor is likely "~£150+/month". Confirm hard-gate vs soft-route.
+- [ ] **Paid discovery call / deposit (Stripe).** Optional later tier: a
+      creditable deposit to book a call, refunded/credited if they engage.
+      Filters hard; only worth it once inbound volume is high enough that
+      protecting the calendar beats filling it.
+- [ ] Confirm the turnover qualification threshold with Simon (currently £500k+,
+      from the ICP doc). One-line change in TURNOVER_BANDS if he wants it lower.
+
 ## Design polish (nice-to-have)
 - [ ] **Develop the scroll animation more** (Simon/Allan want this).
       Current reveals are a simple slide-up via IntersectionObserver. Could add

@@ -7,7 +7,7 @@ import ClaudeGif from "@/components/ClaudeGif";
 import ScorecardSection from "@/components/ScorecardSection";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
-import { services, whoFor, lead, exitAngle, bookHref } from "@/lib/content";
+import { services, whoFor, lead, exitAngle, bookCtaHref } from "@/lib/content";
 import { posts } from "@/lib/posts";
 
 export default function Home() {
@@ -112,9 +112,7 @@ export default function Home() {
         </div>
         <div className="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href={bookHref}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={bookCtaHref}
             className="inline-flex min-h-12 items-center justify-center rounded-[5px] bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
           >
             Book a call

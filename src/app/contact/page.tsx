@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
-import { bookHref, trustItems } from "@/lib/content";
+import { trustItems } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact: Book a discovery call",
@@ -30,7 +30,7 @@ export default function ContactPage() {
             questions you have been putting off. That is exactly what it is for.
           </p>
           <a
-            href={bookHref}
+            href="#contact-form"
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-white transition hover:bg-accent"
           >
             Book a discovery call
@@ -47,7 +47,10 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-20 lg:px-16">
+      <section
+        id="contact-form"
+        className="section-white mx-auto w-full max-w-7xl scroll-mt-24 px-6 pb-16 md:px-10 md:pb-20 lg:px-16"
+      >
         <div className="reveal mx-auto mb-8 max-w-2xl text-center">
           <h2 className="font-serif text-3xl font-normal leading-tight md:text-4xl">
             Or send your question now.

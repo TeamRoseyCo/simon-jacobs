@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { hero, scorecardHref, bookHref } from "@/lib/content";
+import { hero, scorecardHref, bookCtaHref } from "@/lib/content";
 
 // Hero: clean light background with big soft Apple-style colour blobs drifting
 // behind. Content left-centred (headline + body + two CTAs), Simon on the side.
@@ -36,12 +36,7 @@ export default function Hero() {
               Find your profit leak
               <span aria-hidden="true">→</span>
             </Link>
-            <a
-              href={bookHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hv-btn-ghost"
-            >
+            <a href={bookCtaHref} className="hv-btn-ghost">
               Book a call
             </a>
           </div>

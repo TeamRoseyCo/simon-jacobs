@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { bookHref, navLinks, site } from "@/lib/content";
+import { bookCtaHref, navLinks, site } from "@/lib/content";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
@@ -91,7 +91,7 @@ export default function SiteFooter() {
             I will show you what you&apos;re missing out on (for free)
           </p>
           <a
-            href={bookHref}
+            href={bookCtaHref}
             className="mt-5 inline-flex min-h-11 items-center justify-center rounded-[5px] bg-white px-5 text-sm font-semibold text-ink transition hover:bg-surface"
           >
             Book a discovery call

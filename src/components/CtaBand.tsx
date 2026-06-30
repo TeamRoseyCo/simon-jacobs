@@ -1,4 +1,4 @@
-import { bookHref } from "@/lib/content";
+import { bookCtaHref } from "@/lib/content";
 
 export default function CtaBand({
   heading = "Find out what your agency could be keeping.",
@@ -21,7 +21,7 @@ export default function CtaBand({
           ) : null}
         </div>
         <a
-          href={bookHref}
+          href={bookCtaHref}
           className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
         >
           Book a discovery call

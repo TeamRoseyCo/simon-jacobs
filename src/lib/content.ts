@@ -11,7 +11,7 @@ export const site = {
   phone: "07821 900 992",
   bookSubject: "Agency tax planning discovery call",
   tagline:
-    "I help UK marketing agencies keep more of what they earn.",
+    "Jacobs Taxes helps UK marketing agencies keep more of what they earn.",
 } as const;
 
 // The full compliance service list (carried over from SRJ International).
@@ -52,7 +52,12 @@ export const testimonials = [
   },
 ];
 
+// The raw booking calendar. Only used after a lead qualifies on the contact
+// form (see ContactForm.tsx) so call slots go to real fits.
 export const bookHref = "https://calendar.app.google/LjoJzvA8E1p9E8oV7";
+// Site-wide "Book a call" CTAs point here (the qualification form), not the
+// calendar directly, so the qualification gate can't be bypassed.
+export const bookCtaHref = "/contact";
 export const scorecardHref = "/scorecard";
 
 // Home-page section copy (Gate 3, drawn from docs/copy-research/Language of the Customer.docx)
@@ -60,7 +65,7 @@ export const hero = {
   eyebrow: "Chartered Tax Adviser · Ex-PwC · Agencies only",
   titleLead: "Tax, profit and accounts for UK",
   titleAccent: "marketing agencies.",
-  sub: "I help founder-led UK marketing agencies keep more of what they earn and build a business that's actually worth selling.",
+  sub: "We help founder-led UK marketing agencies keep more of what they earn and build a business that's actually worth selling.",
   subAside: "(No, ChatGPT can't do this part.)",
 };
 
@@ -77,14 +82,14 @@ export const exitAngle = {
   headingLead: "The",
   headingAccent: "long game",
   headingTail: " as a founder.",
-  body: "Every agency gets sold eventually. To sell for a serious multiple, founders need clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. I handle the structuring, the tax and the accounts quietly in the background, so when a buyer comes knocking your agency is worth more, and you walk away with far more of the sale.",
+  body: "Every agency gets sold eventually. To sell for a serious multiple, founders need clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. We handle the structuring, the tax and the accounts quietly in the background, so when a buyer comes knocking your agency is worth more, and you walk away with far more of the sale.",
 };
 
 export const scorecardBand = {
   eyebrow: "Free Profit-Rich Scorecard",
   headingLead: "Find out exactly where your agency is ",
   headingAccent: "leaking profit.",
-  sub: "Answer a few quick questions and Simon sends back your score across 7 areas, plus a 90-day plan to plug the leaks. Free, and no sales pitch.",
+  sub: "Answer a few quick questions and we'll send back your score across 7 areas, plus a 90-day plan to plug the leaks. Free, and no sales pitch.",
   cta: "Take the Scorecard",
   time: "est. ~5 minutes",
 };

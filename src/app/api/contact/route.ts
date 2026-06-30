@@ -97,12 +97,20 @@ export async function POST(req: Request) {
   } else {
     const fullName =
       `${String(body.firstName ?? "")} ${String(body.lastName ?? "")}`.trim();
+    const qualified = body.qualified === true;
+    const turnover = String(body.turnover ?? "");
+    const role = String(body.role ?? "");
+    const intent = String(body.intent ?? "");
     payload = {
-      _subject: `Agency question from ${fullName}`.trim(),
+      _subject: `${qualified ? "QUALIFIED" : "Lead"} — agency question from ${fullName}`.trim(),
       name: fullName,
       email,
       phone: String(body.phone ?? ""),
       website: String(body.website ?? ""),
+      turnover,
+      role,
+      intent,
+      qualified: qualified ? "Yes" : "No",
       question: String(body.question ?? ""),
     };
     lead = {
@@ -111,6 +119,10 @@ export async function POST(req: Request) {
       email,
       phone: String(body.phone ?? "") || null,
       website: String(body.website ?? "") || null,
+      turnover: turnover || null,
+      role: role || null,
+      intent: intent || null,
+      qualified,
       message: String(body.question ?? ""),
     };
   }

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navLinks, bookHref } from "@/lib/content";
+import { navLinks, bookCtaHref } from "@/lib/content";
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -57,12 +57,7 @@ export default function SiteHeader() {
         </div>
 
         <div className="site-nav-actions">
-          <a
-            href={bookHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-cta"
-          >
+          <a href={bookCtaHref} className="nav-cta">
             Book a call
             <span aria-hidden="true">→</span>
           </a>
@@ -90,12 +85,7 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={bookHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-cta mobile-cta"
-          >
+          <a href={bookCtaHref} className="nav-cta mobile-cta">
             Book a discovery call
             <span aria-hidden="true">→</span>
           </a>
