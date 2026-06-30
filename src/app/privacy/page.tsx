@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <LegalDoc title="Privacy Policy" updated="29 June 2026">
       <p>
         This Privacy Policy explains how your personal data is handled when you
-        use <strong>jacobs-taxes.com</strong> (the &ldquo;Site&rdquo;) and its
+        use <strong>srjinternational.co.uk</strong> (the &ldquo;Site&rdquo;) and its
         contact, newsletter, and Profit-Rich Scorecard forms. It is written to
         comply with the UK GDPR and the Data Protection Act 2018.
       </p>

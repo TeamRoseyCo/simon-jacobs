@@ -12,7 +12,7 @@ export default function CookiesPage() {
   return (
     <LegalDoc title="Cookie Policy" updated="29 June 2026">
       <p>
-        This policy explains how <strong>jacobs-taxes.com</strong> uses cookies
+        This policy explains how <strong>srjinternational.co.uk</strong> uses cookies
         and similar technologies, and how you can control them. When you first
         visit, our cookie banner lets you accept everything or set your
         preferences by category.

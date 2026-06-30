@@ -12,7 +12,7 @@ export default function AccessibilityPage() {
   return (
     <LegalDoc title="Accessibility Statement" updated="29 June 2026">
       <p>
-        Jacobs Taxes is committed to making <strong>jacobs-taxes.com</strong>{" "}
+        Jacobs Taxes is committed to making <strong>srjinternational.co.uk</strong>{" "}
         usable for as many people as possible, including those relying on
         assistive technology.
       </p>

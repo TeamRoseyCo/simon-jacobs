@@ -12,7 +12,7 @@ export default function TermsPage() {
   return (
     <LegalDoc title="Terms of Use" updated="29 June 2026">
       <p>
-        These terms govern your use of <strong>jacobs-taxes.com</strong> (the
+        These terms govern your use of <strong>srjinternational.co.uk</strong> (the
         &ldquo;Site&rdquo;), operated by <strong>SRJ International Limited</strong>{" "}
         trading as Jacobs Taxes. By using the Site you agree to these terms. If
         you do not agree, please do not use the Site.

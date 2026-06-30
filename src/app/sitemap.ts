@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
 
-const siteUrl = "https://jacobs-taxes.com";
+const siteUrl = "https://srjinternational.co.uk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
