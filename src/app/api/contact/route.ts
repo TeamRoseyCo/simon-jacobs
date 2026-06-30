@@ -1,8 +1,51 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TARGET = "simon@jacobs-taxes.com";
+
+// Lead notifications go out via Resend (branded sender on srjinternational.co.uk),
+// with the FormSubmit relay as an automatic fallback so a submission never fails
+// just because Resend's domain isn't verified yet (or the key is missing).
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
+const FROM = "Jacobs Taxes <noreply@srjinternational.co.uk>";
+
+async function notify(payload: Record<string, unknown>, replyTo: string) {
+  const subject = String(payload._subject ?? "New enquiry from the website");
+  const body = Object.entries(payload)
+    .filter(([k, v]) => !k.startsWith("_") && v !== "" && v != null)
+    .map(([k, v]) => `${k}: ${v}`)
+    .join("\n");
+
+  if (resend) {
+    try {
+      const { error } = await resend.emails.send({
+        from: FROM,
+        to: TARGET,
+        replyTo,
+        subject,
+        text: body,
+      });
+      if (!error) return true;
+    } catch {
+      // fall through to the FormSubmit relay below
+    }
+  }
+
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${TARGET}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
 
 // Persist a lead to Supabase if it's configured. Never throws: storage is a
 // bonus on top of the email relay, so a DB hiccup must not break submissions.
@@ -129,21 +172,15 @@ export async function POST(req: Request) {
 
   await storeLead(lead);
 
-  try {
-    const res = await fetch(`https://formsubmit.co/ajax/${TARGET}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) throw new Error(`upstream ${res.status}`);
+  const sent = await notify(payload, email);
+  if (sent) {
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json(
-      {
-        error:
-          "Could not send right now. Please email simon@jacobs-taxes.com directly.",
-      },
-      { status: 502 },
-    );
   }
+  return NextResponse.json(
+    {
+      error:
+        "Could not send right now. Please email simon@jacobs-taxes.com directly.",
+    },
+    { status: 502 },
+  );
 }
