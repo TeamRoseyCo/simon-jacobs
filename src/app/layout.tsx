@@ -27,8 +27,8 @@ const siteUrl = "https://jacobs-taxes.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Simon Jacobs | Chartered Tax Adviser for UK Marketing Agencies",
-    template: "%s | Simon Jacobs",
+    default: "Jacobs Taxes | Chartered Tax Advisers for UK Marketing Agencies",
+    template: "%s | Jacobs Taxes",
   },
   description:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · ACA) and ex-PwC, helping agency owners keep more of what they earn.",
@@ -42,7 +42,8 @@ export const metadata: Metadata = {
     "corporation tax planning",
   ],
   authors: [{ name: "Simon Jacobs" }],
-  creator: "Simon Jacobs",
+  creator: "Jacobs Taxes",
+  publisher: "Jacobs Taxes",
   alternates: {
     canonical: "/",
   },
@@ -50,8 +51,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: siteUrl,
-    siteName: "Simon Jacobs",
-    title: "Simon Jacobs | Chartered Tax Adviser for UK Marketing Agencies",
+    siteName: "Jacobs Taxes",
+    title: "Jacobs Taxes | Chartered Tax Advisers for UK Marketing Agencies",
     description:
       "Tax planning, profit extraction, and accountancy for UK marketing agencies, so you stop leaving money on the table.",
     images: [
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simon Jacobs | Chartered Tax Adviser for UK Marketing Agencies",
+    title: "Jacobs Taxes | Chartered Tax Advisers for UK Marketing Agencies",
     description:
       "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
     images: ["/simon-jacobs.jpg"],
@@ -85,7 +86,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AccountingService",
-  name: "Simon Jacobs",
+  name: "Jacobs Taxes",
+  legalName: "SRJ International Limited",
   description:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
   url: siteUrl,
