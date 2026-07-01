@@ -86,7 +86,29 @@ Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
 
 ---
 
-## Email 2 · Wants a call — DRAFT
+## Email 2 · Wants a call — APPROVED
+- **Trigger:** +2 days, if they haven't booked
+- **Subject:** Hey {{first_name}}, still want that call?
+- **Preheader:** I kept a slot open for you
+
+```text
+Hey {{first_name}}!
+
+Your question came through the other day, but it doesn't look like you've grabbed a time yet.
+
+Everything okay?
+
+If you still want it, here's your link again:
+→ {{BOOKING_LINK}}
+
+Or just hit reply and ask me right here. I read every one.
+
+Talk soon,
+Simon
+```
+
+---
+
 ## Email 2 · Wants the scorecard — DRAFT
 ## Email 3 · Both tracks (Instagram) — DRAFT
 
