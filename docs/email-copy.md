@@ -109,7 +109,28 @@ Simon
 
 ---
 
-## Email 2 · Wants the scorecard — DRAFT
+## Email 2 · Wants the scorecard — APPROVED
+- **Trigger:** 5 days after Email 1
+- **Subject:** Hey {{first_name}}, how did it land?
+- **Preheader:** I've been wondering how it landed
+
+```text
+Hey {{first_name}}!
+
+I sent over your Profit-Rich Scorecard and 90-day plan a couple of days back.
+
+How did it land?
+
+Hit reply and let me know, even a line. Did anything in there catch you off guard?
+
+More useful bits on the way soon.
+
+Catch you soon,
+Simon
+```
+
+---
+
 ## Email 3 · Both tracks (Instagram) — DRAFT
 
 Remaining drafts live in the editable artifact until signed off, then get pasted
