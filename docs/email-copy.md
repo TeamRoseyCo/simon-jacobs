@@ -48,7 +48,49 @@ Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
 
 ---
 
-## Email 1 · Wants the scorecard — DRAFT
+## Email 1 · Wants the scorecard — APPROVED
+- **Trigger:** instant, on scorecard submit
+- **Subject:** Your Profit-Rich Scorecard is on its way
+- **Preheader:** I'm scoring yours now
+
+```text
+Hey {{first_name}},
+
+Nice work finishing the Profit-Rich Scorecard. You've just done something most agency owners don't: looking at where money leaks.
+
+Here's what happens next. I personally score your answers across all 7 areas and send back your full result, plus a 90-day plan with the specific moves to plug the leaks, in order. It lands in your inbox within 2 working days, but here's the catch.
+
+While I put yours together, here's something worth a read in the meantime:
+→ {{RESOURCE_LINK}}
+
+After that, you'll get the occasional email from me on tax, profit extraction, and building an agency worth selling.
+
+So to make sure your scorecard (and everything after it) actually reaches you and doesn't get buried in your promotions tab, do me a quick favour.
+
+First:
+Hit reply to this email. Literally anything, even one word. It's the single best way to signal to Gmail not to bury my emails.
+
+Second:
+Add me as a contact. On Gmail desktop, hover over my name for a second and click "Add to Contacts". On mobile, hit the three dots and press "mark as important".
+
+Third:
+If one of my emails ever slips into your promotions tab, drag it to primary. Do that once or twice and Gmail will start sending me straight through.
+
+Speak soon. Your scorecard's on its way.
+
+Simon
+
+Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
+{{physical_address}} · Unsubscribe anytime: {{unsub_link}}
+```
+
+> Note: "…within 2 working days, but here's the catch." reads as a cliffhanger,
+> but its payoff (the deliverability favour) doesn't arrive until several lines
+> later, after the resource link. Kept as written per Simon; flagged for a
+> possible tighten so the "catch" lands right where it's set up.
+
+---
+
 ## Email 2 · Wants a call — DRAFT
 ## Email 2 · Wants the scorecard — DRAFT
 ## Email 3 · Both tracks (Instagram) — DRAFT
