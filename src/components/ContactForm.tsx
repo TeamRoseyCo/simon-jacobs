@@ -1,7 +1,11 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { bookHref, scorecardHref } from "@/lib/content";
+
+// Draft key for the in-progress form. Bump the version if the field shape
+// changes so an old draft can't restore into a mismatched form.
+const DRAFT_KEY = "jacobs-contact-draft-v1";
 
 type Fields = {
   firstName: string;
@@ -74,6 +78,31 @@ export default function ContactForm() {
   const [qualified, setQualified] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState("");
+  const hydrated = useRef(false);
+
+  // Restore an in-progress draft so an accidental refresh (or navigating away
+  // and back) does not wipe what the visitor has typed. Runs after mount so it
+  // never causes an SSR hydration mismatch.
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(DRAFT_KEY);
+      if (saved) setF((prev) => ({ ...prev, ...(JSON.parse(saved) as Partial<Fields>) }));
+    } catch {
+      // malformed or unavailable storage — start with a blank form
+    }
+    hydrated.current = true;
+  }, []);
+
+  // Persist the draft on every change. Guarded by `hydrated` so the empty
+  // initial state can't overwrite a saved draft before the restore above runs.
+  useEffect(() => {
+    if (!hydrated.current) return;
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(f));
+    } catch {
+      // storage full or disabled — draft-saving is a nice-to-have, ignore
+    }
+  }, [f]);
 
   const set = (key: keyof Fields) => (
     e: React.ChangeEvent<
@@ -111,6 +140,12 @@ export default function ContactForm() {
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setQualified(q);
       setDone(true);
+      // Submitted successfully — drop the saved draft so it can't reappear.
+      try {
+        localStorage.removeItem(DRAFT_KEY);
+      } catch {
+        // ignore
+      }
     } catch (err) {
       setServerError(
         err instanceof Error
