@@ -33,7 +33,7 @@ export default function ContactPage() {
             <ContactForm />
           </div>
         </div>
-        <div className="image-stack reveal relative mx-auto order-first min-h-[380px] w-full max-w-[440px] overflow-hidden lg:order-none lg:mx-0 lg:min-h-[460px]">
+        <div className="image-stack reveal relative mx-auto hidden min-h-[380px] w-full max-w-[440px] overflow-hidden lg:order-none lg:mx-0 lg:block lg:min-h-[460px]">
           <Image
             src="/simon-jacobs.webp"
             alt="Simon Jacobs, Chartered Tax Adviser"
