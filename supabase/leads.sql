@@ -13,7 +13,11 @@ create table if not exists public.leads (
   phone       text,
   website     text,
   message     text,                     -- contact question, or scorecard breakdown
-  score       text                      -- scorecard total, e.g. "31/42 — Amber"
+  score       text,                     -- scorecard total, e.g. "31/42 — Amber"
+  turnover    text,                     -- contact: annual turnover band
+  role        text,                     -- contact: founder / director / other
+  intent      text,                     -- contact: what they need help with
+  qualified   boolean                   -- contact: decision-maker AND at/above turnover floor
 );
 
 create index if not exists leads_created_at_idx on public.leads (created_at desc);

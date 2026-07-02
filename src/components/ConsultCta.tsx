@@ -3,8 +3,8 @@
 import { useId, useState } from "react";
 
 // Merged CTA + email capture: visitors join the list to get their free consult.
-// NOTE: validates client-side and confirms, but does not persist yet. Wire the
-// email to a provider / booking flow (Mailchimp, Resend, Calendly) to go live.
+// POSTs to /api/contact (_kind: "subscribe"), which stores the lead in Supabase
+// and notifies Simon.
 export default function ConsultCta({
   heading = "Find out what your agency could be keeping.",
   sub = "Join the list and Simon will set you up with a free consultation. No spam, unsubscribe anytime.",

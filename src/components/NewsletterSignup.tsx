@@ -4,9 +4,8 @@ import { useId, useState } from "react";
 
 type Variant = "panel" | "footer";
 
-// NOTE: This captures and validates the email client-side and shows a confirmation,
-// but it does not yet persist anywhere. Wire `onSubmit` to an email provider
-// (Mailchimp, ConvertKit, Resend, or a /api/subscribe route) to actually store it.
+// Captures and validates the email client-side, then POSTs to /api/contact
+// (_kind: "subscribe") which stores the lead in Supabase and notifies Simon.
 export default function NewsletterSignup({
   variant = "panel",
 }: {
@@ -15,19 +14,32 @@ export default function NewsletterSignup({
   const id = useId();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "done" | "error">("idle");
+  const [submitting, setSubmitting] = useState(false);
 
   const footer = variant === "footer";
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
     if (!ok) {
       setStatus("error");
       return;
     }
-    // TODO: send `email` to your email provider here.
-    setStatus("done");
-    setEmail("");
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ _kind: "subscribe", email: email.trim() }),
+      });
+      if (!res.ok) throw new Error("request failed");
+      setStatus("done");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (status === "done") {
@@ -69,20 +81,21 @@ export default function NewsletterSignup({
       />
       <button
         type="submit"
+        disabled={submitting}
         className={
           footer
-            ? "inline-flex min-h-11 items-center justify-center rounded-[8px] bg-white px-5 text-sm font-semibold text-ink transition hover:bg-surface"
-            : "inline-flex min-h-12 items-center justify-center rounded-[10px] bg-ink px-6 text-sm font-semibold text-white transition hover:bg-accent"
+            ? "inline-flex min-h-11 items-center justify-center rounded-[8px] bg-white px-5 text-sm font-semibold text-ink transition hover:bg-surface disabled:opacity-70"
+            : "inline-flex min-h-12 items-center justify-center rounded-[10px] bg-ink px-6 text-sm font-semibold text-white transition hover:bg-accent disabled:opacity-70"
         }
       >
-        Subscribe
+        {submitting ? "Subscribing…" : "Subscribe"}
       </button>
       {status === "error" ? (
         <span
           role="alert"
           className={`text-xs ${footer ? "text-red-300" : "text-red-600"} sm:sr-only`}
         >
-          Enter a valid email.
+          Something went wrong. Please try again.
         </span>
       ) : null}
     </form>
