@@ -16,7 +16,7 @@ export default async function AdminPage() {
 
   if (!supabase) {
     err =
-      "Supabase isn't connected yet (add NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to .env.local). Leads are still emailed to Simon in the meantime.";
+      "Supabase isn't connected yet (set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the environment: .env.local locally, or the Vercel project settings in production). Leads are still emailed to Simon in the meantime.";
   } else {
     const { data, error } = await supabase
       .from("leads")
