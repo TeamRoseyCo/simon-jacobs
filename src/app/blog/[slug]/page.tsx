@@ -42,7 +42,7 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     datePublished: post.date,
-    author: { "@type": "Person", name: "Simon Jacobs" },
+    author: { "@type": "Organization", name: "SRJ International" },
     description: post.excerpt,
   };
 

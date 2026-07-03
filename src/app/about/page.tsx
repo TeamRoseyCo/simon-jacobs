@@ -7,9 +7,9 @@ import WorksWith from "@/components/WorksWith";
 import { principles, credentials } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About Simon Jacobs, Chartered Tax Adviser & ex-PwC",
+  title: "About SRJ International, Chartered Tax Advisers & ex-PwC",
   description:
-    "Simon Jacobs combines CTA and CA training with Big Four (PwC) experience, applied to the real decisions UK agency founders face: tax, profit, director pay, and exit.",
+    "SRJ International combines CTA and CA training with Big Four (PwC) experience, applied to the real decisions UK agency founders face: tax, profit, director pay, and exit.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="image-stack reveal relative min-h-[520px] overflow-hidden rounded-[18px]">
           <Image
             src="/simon-jacobs.webp"
-            alt="Simon Jacobs"
+            alt="SRJ International's Chartered Tax Adviser"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover object-[center_12%]"
@@ -32,11 +32,11 @@ export default function AboutPage() {
             <span className="em-display text-teal">busy founders</span>
           </h1>
           <p className="mx-auto mt-6 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            Simon is a Chartered Tax Adviser (CTA) and Chartered Accountant
-            (ACA), qualified through the CIOT and ICAEW, with over ten years in
-            tax and accounting. Before founding his own practice, SRJ
-            International, he spent more than four years at PwC advising large
-            multinational corporations and SMEs on tax planning and tax advice.
+            Our founder is a Chartered Tax Adviser (CTA) and Chartered
+            Accountant (ACA), qualified through the CIOT and ICAEW, with over
+            ten years in tax and accounting. Before founding SRJ International,
+            he spent more than four years at PwC advising large multinational
+            corporations and SMEs on tax planning and tax advice.
           </p>
         </div>
       </section>
@@ -55,7 +55,7 @@ export default function AboutPage() {
         </div>
         <div className="aj-step justify-end text-right">
           <p className="ml-auto max-w-xl text-lg leading-9 text-muted">
-            Away from the numbers, Simon is an award-winning public speaker who
+            Away from the numbers, he is an award-winning public speaker who
             has presented at the ICAEW and CIOT and serves as Vice President of
             Membership at his local Toastmasters club. It is the same instinct
             that drives the work: explain it clearly, and help you make the call
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <div className="relative aspect-[16/10] w-full">
             <Image
               src="/simon-jacobs-event.webp"
-              alt="Simon Jacobs in conversation with agency founders over dinner"
+              alt="A chartered tax adviser in conversation with agency founders over dinner"
               fill
               sizes="(min-width: 1024px) 1100px, 100vw"
               className="object-cover object-[center_32%]"

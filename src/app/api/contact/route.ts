@@ -11,7 +11,7 @@ const TARGET = "simon@jacobs-taxes.com";
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
-const FROM = "Jacobs Taxes <noreply@srjinternational.co.uk>";
+const FROM = "SRJ International <noreply@srjinternational.co.uk>";
 
 async function notify(payload: Record<string, unknown>, replyTo: string) {
   const subject = String(payload._subject ?? "New enquiry from the website");

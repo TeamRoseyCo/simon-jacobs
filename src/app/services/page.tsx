@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import ConsultCta from "@/components/ConsultCta";
+import ServiceCard from "@/components/ServiceCard";
 import { services, servicesFull, resultItems, processSteps } from "@/lib/content";
 
 function Ico({ children, className }: { children: ReactNode; className?: string }) {
@@ -105,32 +106,7 @@ export default function ServicesPage() {
       <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 pt-8 md:px-10 md:pb-24 lg:px-16">
         <div className="grid gap-4 text-left md:grid-cols-3">
           {services.map((service, index) => (
-            <article
-              key={service.title}
-              className="finance-card reveal flex flex-col p-5 transition duration-300 hover:-translate-y-1 md:p-6"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <span className="text-xs font-semibold text-accent">
-                0{index + 1}
-              </span>
-              <h2 className="mt-5 font-serif text-2xl font-normal text-ink">
-                {service.title}
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-muted md:min-h-[6.5rem]">
-                {service.body}
-              </p>
-              <ul className="mt-5 grid gap-2.5 border-t border-border pt-5 text-sm text-ink">
-                {service.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span
-                      aria-hidden="true"
-                      className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                    />
-                    <span className="leading-6">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <ServiceCard key={service.title} service={service} index={index} />
           ))}
         </div>
       </section>

@@ -25,9 +25,6 @@ export default function Hero() {
           <p className="hv-sub load-rise" style={{ animationDelay: "160ms" }}>
             {hero.sub}
           </p>
-          <p className="hv-aside load-rise" style={{ animationDelay: "210ms" }}>
-            {hero.subAside}
-          </p>
           <div
             className="hv-actions load-rise"
             style={{ animationDelay: "260ms" }}
@@ -45,7 +42,7 @@ export default function Hero() {
         <div className="hv-portrait load-pop" style={{ animationDelay: "220ms" }}>
           <Image
             src="/simon-jacobs.webp"
-            alt="Simon Jacobs, Chartered Tax Adviser"
+            alt="A chartered tax adviser at SRJ International"
             fill
             priority
             sizes="(min-width: 1024px) 500px, 70vw"

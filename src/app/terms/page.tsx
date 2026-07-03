@@ -4,7 +4,7 @@ import LegalDoc from "@/components/LegalDoc";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
-    "The terms governing your use of the Jacobs Taxes website, including the important note that site content is general information, not advice.",
+    "The terms governing your use of the SRJ International website, including the important note that site content is general information, not advice.",
   alternates: { canonical: "/terms" },
 };
 

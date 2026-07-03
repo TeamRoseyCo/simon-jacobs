@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import ConsultCta from "@/components/ConsultCta";
 import ClaudeGif from "@/components/ClaudeGif";
+import RotatingWord from "@/components/RotatingWord";
 import ScorecardSection from "@/components/ScorecardSection";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
@@ -24,7 +25,7 @@ export default function Home() {
         />
         <p className="reveal mx-auto max-w-3xl font-serif text-[26px] font-normal leading-[1.45] text-[#4F5D6E] md:text-[36px] md:leading-[1.4]">
           {lead.partA}
-          <span className="font-bold text-ink">{lead.inkAccent}</span>
+          <span className="text-ink">{lead.inkAccent}</span>
           {lead.partB}
           <span className="em-display text-teal">{lead.tealAccent}</span>
         </p>
@@ -37,7 +38,7 @@ export default function Home() {
             <div className="whofor-photo relative z-10 min-h-[300px] lg:min-h-[560px]">
               <Image
                 src="/simon-jacobs-dubai.webp"
-                alt="Simon Jacobs, Chartered Tax Adviser for UK marketing agencies"
+                alt="A chartered tax adviser at SRJ International for UK marketing agencies"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover object-[center_22%]"
@@ -85,8 +86,16 @@ export default function Home() {
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
             Stop using{" "}
-            <span className="font-bold italic text-[#D97757]">Claude</span> for
-            taxes.
+            <RotatingWord
+              items={[
+                { label: "ChatGPT", color: "#10A37F" },
+                { label: "Claude", color: "#D97757" },
+                { label: "Gemini", color: "#4285F4" },
+                { label: "Copilot", color: "#0078D4" },
+                { label: "a spreadsheet", color: "#1A8275" },
+              ]}
+            />{" "}
+            for taxes.
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">
             Here&apos;s what you get when a Chartered Tax Adviser who only works
@@ -134,7 +143,7 @@ export default function Home() {
       <section className="aboutbleed relative w-full overflow-hidden">
         <Image
           src="/simon-jacobs-event.webp"
-          alt="Simon Jacobs in conversation with agency founders"
+          alt="A chartered tax adviser in conversation with agency founders"
           fill
           sizes="100vw"
           className="object-cover object-[center_35%]"
@@ -146,7 +155,7 @@ export default function Home() {
             <span className="em-display text-seafoam">gets agencies.</span>
           </h2>
           <p className="reveal mx-auto mt-6 max-w-[560px] text-base leading-8 text-white/85">
-            Chartered Tax Adviser, Chartered Accountant, and ex-PwC. Simon works
+            Chartered Tax Adviser, Chartered Accountant, and ex-PwC. We work
             year-round with founder-led UK agencies on tax, profit extraction,
             and building a business that is genuinely worth selling.
           </p>
@@ -154,7 +163,7 @@ export default function Home() {
             href="/about"
             className="reveal mt-6 inline-flex text-sm font-semibold text-white transition hover:text-seafoam"
           >
-            More about Simon →
+            More about us →
           </Link>
         </div>
       </section>
@@ -211,7 +220,7 @@ export default function Home() {
 
       <ConsultCta
         heading="Find out what your agency could be keeping."
-        sub="Book a free 15-minute discovery call. No spam, no pressure, just a straight answer on whether Simon can help."
+        sub="Book a free 15-minute discovery call. No spam, no pressure, just a straight answer on whether we can help."
       />
     </>
   );

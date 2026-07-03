@@ -7,7 +7,8 @@ Status legend: **APPROVED** = signed off by Simon, ready to wire in.
 **DRAFT** = still being edited (live in the editable artifact).
 
 Placeholders (filled in at send time):
-`{{first_name}}`, `{{BOOKING_LINK}}`, `{{RESOURCE_LINK}}`, `{{INSTAGRAM_LINK}}`,
+`{{first_name}}`, `{{BOOKING_LINK}}`, `{{RESOURCE_LINK}}`,
+`{{INSTAGRAM_LINK}}` = https://www.instagram.com/simonjacobs_cta,
 `{{physical_address}}`, `{{unsub_link}}`.
 
 ---
@@ -132,6 +133,12 @@ Simon
 ---
 
 ## Email 3 · Both tracks (Instagram) — DRAFT
+
+`{{INSTAGRAM_LINK}}` is now resolved (above) to https://www.instagram.com/simonjacobs_cta.
+The actual body for this one was drafted in a prior session's editable artifact,
+which isn't saved to this repo, so it isn't reproduced here. If you still have
+that draft open, paste the text back in and I'll drop the real link into it. If
+not, I can write a fresh draft now in the same voice as Emails 1-2 above.
 
 Remaining drafts live in the editable artifact until signed off, then get pasted
 in here and marked APPROVED.

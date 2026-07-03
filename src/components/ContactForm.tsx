@@ -161,7 +161,7 @@ export default function ContactForm() {
     return qualified ? (
       <div className="finance-card mx-auto max-w-2xl p-8 text-center md:p-10">
         <h3 className="font-serif text-2xl text-ink">
-          You are exactly who Simon works with.
+          You are exactly who we work with.
         </h3>
         <p className="mx-auto mt-3 max-w-[460px] text-sm leading-7 text-muted">
           Pick a time that suits you and he will come to the call with your
@@ -184,7 +184,7 @@ export default function ContactForm() {
         <p className="mx-auto mt-3 max-w-[480px] text-sm leading-7 text-muted">
           A one-to-one call may not be the right fit just yet, but the best
           place to start is the free Profit-Rich Scorecard: a score across 7
-          areas and a 90-day plan, no call needed. Simon has your details and
+          areas and a 90-day plan, no call needed. We have your details and
           will be in touch as the agency grows.
         </p>
         <a

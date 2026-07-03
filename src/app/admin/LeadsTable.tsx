@@ -157,7 +157,7 @@ export default function LeadsTable({ leads }: { leads: Lead[] }) {
     <div style={pageWrap(1080)}>
       <header style={headerRow}>
         <div>
-          <p style={eyebrowStyle}>Jacobs Taxes</p>
+          <p style={eyebrowStyle}>SRJ International</p>
           <h1 style={pageTitleStyle}>Leads</h1>
         </div>
         <div style={{ display: "flex", gap: "0.6rem" }}>

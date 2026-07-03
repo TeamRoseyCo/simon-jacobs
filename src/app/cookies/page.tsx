@@ -4,7 +4,7 @@ import LegalDoc from "@/components/LegalDoc";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description:
-    "What cookies and similar technologies Jacobs Taxes uses, and how to control them.",
+    "What cookies and similar technologies SRJ International uses, and how to control them.",
   alternates: { canonical: "/cookies" },
 };
 

@@ -4,7 +4,7 @@ import LegalDoc from "@/components/LegalDoc";
 export const metadata: Metadata = {
   title: "Accessibility Statement",
   description:
-    "Our commitment to keeping the Jacobs Taxes website usable for everyone, and how to report an accessibility problem.",
+    "Our commitment to keeping the SRJ International website usable for everyone, and how to report an accessibility problem.",
   alternates: { canonical: "/accessibility" },
 };
 
@@ -12,7 +12,8 @@ export default function AccessibilityPage() {
   return (
     <LegalDoc title="Accessibility Statement" updated="29 June 2026">
       <p>
-        Jacobs Taxes is committed to making <strong>srjinternational.co.uk</strong>{" "}
+        SRJ International is committed to making{" "}
+        <strong>srjinternational.co.uk</strong>{" "}
         usable for as many people as possible, including those relying on
         assistive technology.
       </p>

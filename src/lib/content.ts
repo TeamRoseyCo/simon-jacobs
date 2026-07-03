@@ -3,15 +3,17 @@
 // £500k to £5m turnover, scaling toward a 5 to 10 year exit.
 
 export const site = {
-  name: "Simon Jacobs",
-  firm: "Jacobs Taxes",
+  name: "SRJ International",
+  firm: "SRJ International",
   legalName: "SRJ International Limited",
   role: "Chartered Tax Adviser",
   email: "simon@jacobs-taxes.com",
   phone: "07821 900 992",
+  linkedin: "https://uk.linkedin.com/in/simon-r-jacobs",
+  instagram: "https://www.instagram.com/simonjacobs_cta",
   bookSubject: "Agency tax planning discovery call",
   tagline:
-    "Jacobs Taxes helps UK marketing agencies keep more of what they earn.",
+    "SRJ International helps UK marketing agencies keep more of what they earn.",
 } as const;
 
 // The full compliance service list (carried over from SRJ International).
@@ -66,7 +68,6 @@ export const hero = {
   titleLead: "Tax, profit and accounts for UK",
   titleAccent: "marketing agencies.",
   sub: "We help founder-led UK marketing agencies keep more of what they earn and build a business that's actually worth selling.",
-  subAside: "(No, ChatGPT can't do this part.)",
 };
 
 // Lead statement: the opening line that leads the reader into the whole page.
@@ -171,13 +172,13 @@ export const trustItems = [
     label: "Qualified",
     value: "CTA · ACA",
     description:
-      "CTA and ACA mean Simon is trained in both tax advice (Chartered Institute of Taxation) and accountancy (ICAEW). In plain English: your agency gets advice that connects tax planning with the real numbers.",
+      "CTA and ACA mean our team is trained in both tax advice (Chartered Institute of Taxation) and accountancy (ICAEW). In plain English: your agency gets advice that connects tax planning with the real numbers.",
   },
   {
     label: "Background",
     value: "Ex-PwC",
     description:
-      "Ex-PwC means Simon has Big Four advisory experience. In plain English: you get structured thinking usually reserved for larger businesses, applied to your agency.",
+      "Ex-PwC means our team has Big Four advisory experience. In plain English: you get structured thinking usually reserved for larger businesses, applied to your agency.",
   },
   {
     label: "Specialism",
@@ -295,12 +296,12 @@ export const faqs = [
   {
     question: "What does Big Four mean?",
     answer:
-      "Big Four means PwC, Deloitte, EY, and KPMG: the four largest global accounting and advisory firms. Ex-PwC means Simon has experience from one of those firms, then applies that structured thinking to the practical decisions agency owners actually face.",
+      "Big Four means PwC, Deloitte, EY, and KPMG: the four largest global accounting and advisory firms. Ex-PwC means our team has experience from one of those firms, then applies that structured thinking to the practical decisions agency owners actually face.",
   },
   {
     question: "Do I need to understand tax before we speak?",
     answer:
-      "No. That is the point. You should be able to explain what you want from the agency, what feels messy, and what you are unsure about. Simon can translate the tax and accountancy part into plain English.",
+      "No. That is the point. You should be able to explain what you want from the agency, what feels messy, and what you are unsure about. We can translate the tax and accountancy part into plain English.",
   },
   {
     question: "Is this just someone telling me to spend less?",
@@ -330,7 +331,7 @@ export const faqs = [
   {
     question: "What happens after I book?",
     answer:
-      "You will have a short discovery call to understand where the agency is today, what is bothering you financially, and whether Simon can help.",
+      "You will have a short discovery call to understand where the agency is today, what is bothering you financially, and whether we can help.",
   },
   {
     question: "Is this going to be really boring?",

@@ -4,7 +4,7 @@ import LegalDoc from "@/components/LegalDoc";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Jacobs Taxes collects, uses, and protects your personal data, written to comply with UK GDPR and the Data Protection Act 2018.",
+    "How SRJ International collects, uses, and protects your personal data, written to comply with UK GDPR and the Data Protection Act 2018.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -96,7 +96,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>FormSubmit</strong>: used to deliver
-          your form submission to Simon&rsquo;s inbox.
+          your form submission to our inbox.
         </li>
         <li>
           <strong>Google Analytics (Google LLC)</strong>: measures Site usage if

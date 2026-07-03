@@ -96,7 +96,7 @@ export default function ScorecardForm() {
           className="load-rise mx-auto mt-3 max-w-[440px] text-base leading-7 text-muted"
           style={{ animationDelay: "360ms" }}
         >
-          Simon will score your answers across all 7 areas and email your
+          We will score your answers across all 7 areas and email your
           Profit-Rich Scorecard, plus a 90-day plan, to{" "}
           <span className="font-medium text-ink">{email}</span>. No sales pitch.
         </p>
@@ -157,8 +157,8 @@ export default function ScorecardForm() {
           style={{ animationDelay: "680ms" }}
         >
           <h3 className="font-serif text-2xl text-ink md:text-3xl">
-            Or see exactly how Simon{" "}
-            <span className="em-display text-teal">can help.</span>
+            Or see exactly how{" "}
+            <span className="em-display text-teal">we can help.</span>
           </h3>
           <Link
             href="/services"
@@ -187,7 +187,7 @@ export default function ScorecardForm() {
         </h1>
         <p className="mx-auto mt-4 max-w-[460px] text-base leading-8 text-muted">
           21 quick questions across the 7 areas where agency profit usually
-          leaks. Simon scores it and emails back your result with a 90-day plan,
+          leaks. We score it and email back your result with a 90-day plan,
           free and no sales pitch.
         </p>
         <button
@@ -265,11 +265,11 @@ export default function ScorecardForm() {
         ) : (
           <>
             <h2 className="font-serif text-xl text-ink md:text-2xl">
-              Where should Simon send your results?
+              Where should we send your results?
             </h2>
             <p className="mt-2 text-sm leading-6 text-muted">
-              Your name and email, and Simon emails your scored scorecard with a
-              90-day plan.
+              Your name and email, and we&apos;ll email your scored scorecard
+              with a 90-day plan.
             </p>
             <div className="mt-5 grid gap-4">
               <div>

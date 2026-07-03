@@ -6,14 +6,14 @@ import { trustItems } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact: Book a discovery call",
   description:
-    "Book a short discovery call with Simon Jacobs to see where your agency's profit is leaking and whether he can help. No prep needed.",
+    "Book a short discovery call with SRJ International to see where your agency's profit is leaking and whether we can help. No prep needed.",
   alternates: { canonical: "/contact" },
 };
 
 const steps = [
   "A short fit call to understand where the agency is today.",
   "We talk through what feels messy: tax, profit, director pay, growth.",
-  "You leave knowing whether Simon can help. No pressure either way.",
+  "You leave knowing whether we can help. No pressure either way.",
 ];
 
 export default function ContactPage() {
@@ -36,7 +36,7 @@ export default function ContactPage() {
         <div className="image-stack reveal relative mx-auto hidden min-h-[380px] w-full max-w-[440px] overflow-hidden lg:order-none lg:mx-0 lg:block lg:min-h-[460px]">
           <Image
             src="/simon-jacobs.webp"
-            alt="Simon Jacobs, Chartered Tax Adviser"
+            alt="A chartered tax adviser at SRJ International"
             fill
             sizes="(min-width: 1024px) 440px, 88vw"
             className="object-cover object-[center_12%]"

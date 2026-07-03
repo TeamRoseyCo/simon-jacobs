@@ -119,7 +119,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <ConsultCta heading="Prefer to just ask Simon directly?" />
+      <ConsultCta heading="Prefer to just ask us directly?" />
     </>
   );
 }

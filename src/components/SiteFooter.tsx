@@ -32,7 +32,7 @@ export default function SiteFooter() {
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr] md:px-10 lg:px-16">
         <div>
           <Link href="/" className="brand-script text-[30px] leading-none text-white">
-            Simon Jacobs
+            SRJ International
           </Link>
           <p className="mt-5 max-w-[360px] text-sm leading-7 text-white/68">
             Chartered tax advice, profit extraction, and accountancy for UK
@@ -88,7 +88,7 @@ export default function SiteFooter() {
             Contact
           </h3>
           <p className="mt-5 text-sm leading-7 text-white/70">
-            I will show you what you&apos;re missing out on (for free)
+            We will show you what you&apos;re missing out on.
           </p>
           <a
             href={bookCtaHref}
@@ -108,6 +108,22 @@ export default function SiteFooter() {
               className="transition hover:text-white"
             >
               {site.phone}
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+            >
+              Instagram
             </a>
           </div>
         </div>

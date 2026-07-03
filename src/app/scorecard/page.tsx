@@ -4,7 +4,7 @@ import ScorecardForm from "@/components/ScorecardForm";
 export const metadata: Metadata = {
   title: "The Profit-Rich Scorecard, find your agency's profit leaks",
   description:
-    "21 quick questions across the 7 areas where founder-led UK agencies usually leak profit. Takes about 5 minutes; Simon emails your score and a 90-day plan, free.",
+    "21 quick questions across the 7 areas where founder-led UK agencies usually leak profit. Takes about 5 minutes; we email your score and a 90-day plan, free.",
   alternates: { canonical: "/scorecard" },
 };
 

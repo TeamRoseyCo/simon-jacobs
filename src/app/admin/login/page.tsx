@@ -82,7 +82,7 @@ export default function AdminLogin() {
             color: "var(--color-primary)",
           }}
         >
-          Jacobs Taxes
+          SRJ International
         </p>
         <h1
           style={{

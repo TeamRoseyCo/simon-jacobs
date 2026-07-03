@@ -38,8 +38,8 @@ export default function SiteHeader() {
         className={`site-head ${transparent ? "is-transparent" : "is-solid"}`}
       >
       <nav className="site-nav" aria-label="Main navigation">
-        <Link href="/" className="site-wordmark" aria-label="Jacobs Taxes, home">
-          Jacobs Taxes
+        <Link href="/" className="site-wordmark" aria-label="SRJ International, home">
+          SRJ International
         </Link>
 
         <div className="site-nav-links">

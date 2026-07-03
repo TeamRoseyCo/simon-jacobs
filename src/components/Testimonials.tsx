@@ -7,7 +7,7 @@ export default function Testimonials() {
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             What clients say about{" "}
-            <span className="em-display text-teal">working with Simon.</span>
+            <span className="em-display text-teal">working with us.</span>
           </h2>
         </div>
         <div className="mt-10 grid gap-4 text-left md:grid-cols-3">
@@ -20,20 +20,8 @@ export default function Testimonials() {
             <span aria-hidden="true" className="em-display text-4xl text-teal">
               &ldquo;
             </span>
-            <blockquote className="-mt-3 flex-1 text-[13px] leading-6 text-muted">
-              {(() => {
-                const i = t.highlight ? t.quote.indexOf(t.highlight) : -1;
-                if (i === -1) return t.quote;
-                return (
-                  <>
-                    {t.quote.slice(0, i)}
-                    <strong className="text-lg font-semibold leading-7 text-ink">
-                      {t.highlight}
-                    </strong>
-                    {t.quote.slice(i + t.highlight.length)}
-                  </>
-                );
-              })()}
+            <blockquote className="-mt-3 flex-1 text-[15px] leading-7 text-muted">
+              {t.quote}
             </blockquote>
             <figcaption className="mt-5 border-t border-border pt-4">
               <span className="block font-serif text-base text-ink">

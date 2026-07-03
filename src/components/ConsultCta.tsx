@@ -7,7 +7,7 @@ import { useId, useState } from "react";
 // and notifies Simon.
 export default function ConsultCta({
   heading = "Find out what your agency could be keeping.",
-  sub = "Join the list and Simon will set you up with a free consultation. No spam, unsubscribe anytime.",
+  sub = "Join the list and we will set you up with a free consultation. No spam, unsubscribe anytime.",
 }: {
   heading?: string;
   sub?: string;
@@ -81,7 +81,7 @@ export default function ConsultCta({
 
         {status === "done" ? (
           <p className="reveal text-lg font-medium text-white">
-            You&apos;re on the list. Simon will email you to set up your free
+            You&apos;re on the list. We will email you to set up your free
             consultation.
           </p>
         ) : (
@@ -118,8 +118,8 @@ export default function ConsultCta({
                 }}
               />
               <span>
-                I consent to Simon Jacobs contacting me by email about a free
-                consultation.
+                I consent to SRJ International contacting me by email about a
+                free consultation.
               </span>
             </label>
             <button

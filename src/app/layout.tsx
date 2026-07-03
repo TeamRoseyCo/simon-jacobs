@@ -1,34 +1,17 @@
 import type { Metadata } from "next";
-import { Pinyon_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
 import CookieConsent from "@/components/CookieConsent";
 
-const brandScript = Pinyon_Script({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-script",
-});
-
-// Italic display face used for the teal emphasis motif (highlight words).
-const displaySerif = Playfair_Display({
-  weight: ["500", "600"],
-  style: ["italic"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-display",
-});
-
 const siteUrl = "https://srjinternational.co.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Jacobs Taxes | Chartered Tax Advisers for UK Marketing Agencies",
-    template: "%s | Jacobs Taxes",
+    default: "SRJ International | Chartered Tax Advisers for UK Marketing Agencies",
+    template: "%s | SRJ International",
   },
   description:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · ACA) and ex-PwC, helping agency owners keep more of what they earn.",
@@ -41,9 +24,9 @@ export const metadata: Metadata = {
     "director pay",
     "corporation tax planning",
   ],
-  authors: [{ name: "Simon Jacobs" }],
-  creator: "Jacobs Taxes",
-  publisher: "Jacobs Taxes",
+  authors: [{ name: "SRJ International" }],
+  creator: "SRJ International",
+  publisher: "SRJ International",
   alternates: {
     canonical: "/",
   },
@@ -51,8 +34,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: siteUrl,
-    siteName: "Jacobs Taxes",
-    title: "Jacobs Taxes | Chartered Tax Advisers for UK Marketing Agencies",
+    siteName: "SRJ International",
+    title: "SRJ International | Chartered Tax Advisers for UK Marketing Agencies",
     description:
       "Tax planning, profit extraction, and accountancy for UK marketing agencies, so you stop leaving money on the table.",
     images: [
@@ -60,13 +43,13 @@ export const metadata: Metadata = {
         url: "/simon-jacobs.jpg",
         width: 961,
         height: 961,
-        alt: "Simon Jacobs, Chartered Tax Adviser",
+        alt: "SRJ International, Chartered Tax Advisers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jacobs Taxes | Chartered Tax Advisers for UK Marketing Agencies",
+    title: "SRJ International | Chartered Tax Advisers for UK Marketing Agencies",
     description:
       "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
     images: ["/simon-jacobs.jpg"],
@@ -86,7 +69,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AccountingService",
-  name: "Jacobs Taxes",
+  name: "SRJ International",
   legalName: "SRJ International Limited",
   description:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
@@ -102,13 +85,6 @@ const jsonLd = {
     "Director remuneration",
     "Agency accountancy",
   ],
-  founder: {
-    "@type": "Person",
-    name: "Simon Jacobs",
-    jobTitle: "Chartered Tax Adviser",
-    description:
-      "Chartered Tax Adviser (CTA) and Chartered Accountant (ACA), ex-PwC, specialising in UK marketing agencies.",
-  },
 };
 
 export default function RootLayout({
@@ -117,10 +93,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en-GB"
-      className={`h-full antialiased ${brandScript.variable} ${displaySerif.variable}`}
-    >
+    <html lang="en-GB" className="h-full antialiased">
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="site-shell flex-1 overflow-hidden bg-bg text-ink">

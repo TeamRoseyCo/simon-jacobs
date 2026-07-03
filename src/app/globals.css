@@ -23,18 +23,18 @@
   --color-teal:    var(--teal);
   --color-border:  var(--border);
 
-  /* Do not use the Inter typeface anywhere on this site. */
+  /* Do not use the Inter typeface anywhere on this site. Two faces only:
+     serif for headings/wordmark, sans for body copy. */
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans:  Arial, Helvetica, "Segoe UI", sans-serif;
 }
 
-/* Emphasis motif: italic Playfair Display in teal, used to highlight
-   the key phrase inside headings and lead copy. Pair with text-teal on
-   light backgrounds or text-seafoam on dark backgrounds for legibility. */
+/* Emphasis motif: same serif as headings, coloured (teal on light
+   backgrounds, seafoam on dark) to highlight the key phrase inside
+   headings and lead copy. No separate typeface, no italic. */
 .em-display {
-  font-family: var(--font-display), Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-style: normal;
   letter-spacing: 0;
 }
 
@@ -185,15 +185,15 @@ body {
     border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Frosted "liquid glass" bar: once scrolled, and on every inner page. */
+/* Frosted "liquid glass" bar: once scrolled, and on every inner page.
+   Opacity raised further (was 0.82) so the wordmark and nav stay easy to
+   read against busy page content behind it. */
 .site-head.is-solid {
-  /* Opacity raised to 0.82 so the bar stays legible even where backdrop-filter
-     does not render (older GPUs, some browsers); the blur is enhancement. */
-  background: rgba(246, 250, 252, 0.82);
+  background: rgba(246, 250, 252, 0.96);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(217, 229, 239, 0.65);
-  box-shadow: 0 8px 30px rgba(8, 34, 75, 0.06);
+  border-bottom: 1px solid rgba(217, 229, 239, 0.8);
+  box-shadow: 0 8px 30px rgba(8, 34, 75, 0.1);
 }
 
 /* Transparent over the hero: turn the menu white. */
@@ -263,12 +263,9 @@ body {
   padding: 16px 24px;
 }
 
-/* Cursive brand wordmark. Apple's calligraphic fonts come first for Mac users,
-   then the self-hosted Pinyon Script for every other visitor. */
 .brand-script {
-  font-family: "Zapfino", "Apple Chancery", var(--font-script), "Snell Roundhand",
-    cursive;
-  font-weight: 400;
+  font-family: var(--font-serif);
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -277,16 +274,13 @@ body {
   align-items: center;
   line-height: 1;
   white-space: nowrap;
-  font-family: "Zapfino", "Apple Chancery", var(--font-script), "Snell Roundhand",
-    cursive;
-  font-size: 30px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 22px;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
-  /* Balanced padding plus a small nudge to optically centre the cursive
-     wordmark (its glyph metrics sit high) within the header. */
   padding: 12px 0 4px;
-  transform: translateY(7px);
   justify-self: start;
 }
 
@@ -707,17 +701,10 @@ body {
 }
 
 .hero-accent {
-  font-family: var(--font-display), Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--seafoam);
-}
-
-/* Reset nested words back to the hero title face (not the italic motif). */
-.hero-accent-plain {
   font-family: var(--font-sans);
   font-style: normal;
   font-weight: 700;
+  color: var(--seafoam);
 }
 
 /* ============ Global email capture (CTA + footer) ============ */
@@ -1823,7 +1810,7 @@ body {
 .hv-title {
   margin: 0;
   color: #fff;
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.015em;
@@ -2362,12 +2349,12 @@ body {
 }
 
 @media (max-width: 1023px) {
-  /* Hero title: lead in normal sans, "marketing agencies." in italic Playfair. */
+  /* Hero title: one sans face throughout, accent picked out by colour only. */
   .hv-title { font-family: var(--font-sans); font-style: normal; font-weight: 800; letter-spacing: -0.02em; }
   .hv-title .hero-accent {
-    font-family: var(--font-display), Georgia, serif;
-    font-style: italic;
-    font-weight: 500;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 800;
   }
   /* Simon's photo on top: a circular avatar above the heading. */
   .hv-portrait {
