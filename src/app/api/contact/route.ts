@@ -12,7 +12,7 @@ const CC = "hazem.dweik@elevateoco.com";
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
-const FROM = "SRJ International <noreply@srjinternational.co.uk>";
+const FROM = "SRJ International <simon@srjinternational.co.uk>";
 
 async function notify(payload: Record<string, unknown>, replyTo: string) {
   const subject = String(payload._subject ?? "New enquiry from the website");
