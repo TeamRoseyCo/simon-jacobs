@@ -27,13 +27,14 @@ export default function RotatingWord({
 
   const current = items[index];
   // Fixed to the longest label's width (in ch, so it scales with font size)
-  // and centred within that slot, so the rest of the sentence never shifts
-  // as shorter/longer words rotate through.
+  // and left-aligned within that slot, so "Stop using" always sits right
+  // next to the word, and the rest of the sentence never shifts as
+  // shorter/longer words rotate through.
   const widthCh = Math.max(...items.map((i) => i.label.length)) + 1;
 
   return (
     <span
-      className="inline-block text-center align-baseline"
+      className="inline-block text-left align-baseline"
       style={{ width: `${widthCh}ch` }}
     >
       <span

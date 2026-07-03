@@ -52,6 +52,15 @@ export default function ScorecardForm() {
       return { area: `${a.letter}: ${a.title}`, score, max: 6, rating: rating(score, 6) };
     });
     const grandTotal = breakdown.reduce((s, b) => s + b.score, 0);
+    // Every individual question + the answer given, so Simon sees the full
+    // picture in the notification, not just the area-level scores.
+    const answerDetail = AREAS.flatMap((a, ai) =>
+      a.questions.map((q, qi) => ({
+        area: `${a.letter}: ${a.title}`,
+        question: q,
+        answer: scorecardAnswers[answers[`${ai}-${qi}`] ?? 0],
+      })),
+    );
 
     try {
       const res = await fetch("/api/contact", {
@@ -65,6 +74,7 @@ export default function ScorecardForm() {
           max: AREAS.length * 6,
           rating: rating(grandTotal, AREAS.length * 6),
           breakdown,
+          answerDetail,
         }),
       });
       const data = await res.json().catch(() => ({}));

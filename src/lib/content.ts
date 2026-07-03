@@ -3,6 +3,7 @@
 // £500k to £5m turnover, scaling toward a 5 to 10 year exit.
 
 export const site = {
+  url: "https://srjinternational.co.uk",
   name: "SRJ International",
   firm: "SRJ International",
   legalName: "SRJ International Limited",
@@ -12,6 +13,8 @@ export const site = {
   linkedin: "https://uk.linkedin.com/in/simon-r-jacobs",
   instagram: "https://www.instagram.com/simonjacobs_cta",
   bookSubject: "Agency tax planning discovery call",
+  // Registered office, used as the CAN-SPAM physical address in sequence emails.
+  physicalAddress: "10 Northcliffe Drive, London, England, N20 8JZ",
   tagline:
     "SRJ International helps UK marketing agencies keep more of what they earn.",
 } as const;

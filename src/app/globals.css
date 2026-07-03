@@ -276,7 +276,7 @@ body {
   white-space: nowrap;
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 22px;
+  font-size: 26px;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
@@ -508,7 +508,7 @@ body {
 
 @media (min-width: 1024px) {
   .site-nav {
-    padding: 18px 64px;
+    padding: 24px 64px;
   }
 }
 
@@ -1911,7 +1911,7 @@ body {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 5;
-    max-width: 500px;
+    max-width: 420px;
     margin-left: auto;
     transform: translateY(40px);
     border-radius: 16px;

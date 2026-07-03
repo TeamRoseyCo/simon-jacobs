@@ -1,25 +1,34 @@
-# Lead email copy (send-ready)
+import { bookHref, site } from "@/lib/content";
 
-The actual copy for the first-email sequence, in Simon's voice. Modelled on the
-Tyson 4D welcome sequence (see `email-sequences.md` for the strategy/spec).
+// Send-ready copy from docs/email-copy.md, kept in lockstep with that file.
+// If the docs change, update here too (and vice versa).
 
-Status legend: **APPROVED** = signed off by Simon, ready to wire in.
-**DRAFT** = still being edited (live in the editable artifact).
+export type TemplateVars = {
+  firstName: string;
+  resourceLink?: string;
+  unsubLink: string;
+};
 
-Placeholders (filled in at send time):
-`{{first_name}}`, `{{BOOKING_LINK}}`, `{{RESOURCE_LINK}}`,
-`{{INSTAGRAM_LINK}}` = https://www.instagram.com/simonjacobs_cta,
-`{{physical_address}}`, `{{unsub_link}}`.
+type Template = { subject: string; text: string };
 
----
+const SIGNOFF_CALL = `
+Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
+${site.physicalAddress} · Unsubscribe anytime: {{unsub}}`;
 
-## Email 1 · Wants a call — APPROVED
-- **Trigger:** instant, on contact-form submit
-- **Subject:** Here's your link to get booked in
-- **Preheader:** Your call link is inside
+function render(text: string, vars: TemplateVars): string {
+  return text
+    .replaceAll("{{first_name}}", vars.firstName || "there")
+    .replaceAll("{{BOOKING_LINK}}", bookHref)
+    .replaceAll("{{RESOURCE_LINK}}", vars.resourceLink ?? "")
+    .replaceAll("{{INSTAGRAM_LINK}}", site.instagram)
+    .replaceAll("{{unsub}}", vars.unsubLink);
+}
 
-```text
-Hey {{first_name}},
+export function callEmail1(vars: TemplateVars): Template {
+  return {
+    subject: "Here's your link to get booked in",
+    text: render(
+      `Hey {{first_name}},
 
 Thanks for reaching out. I've got your message in front of me, so as promised, here's your link to grab a time that suits you:
 → {{BOOKING_LINK}}
@@ -42,20 +51,39 @@ That's all for now.
 
 Talk soon,
 Simon
+${SIGNOFF_CALL}`,
+      vars,
+    ),
+  };
+}
 
-Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
-{{physical_address}} · Unsubscribe anytime: {{unsub_link}}
-```
+export function callEmail2(vars: TemplateVars): Template {
+  return {
+    subject: `Hey ${vars.firstName || "there"}, still want that call?`,
+    text: render(
+      `Hey {{first_name}}!
 
----
+Your question came through the other day, but it doesn't look like you've grabbed a time yet.
 
-## Email 1 · Wants the scorecard — APPROVED
-- **Trigger:** instant, on scorecard submit
-- **Subject:** Your Profit-Rich Scorecard is on its way
-- **Preheader:** I'm scoring yours now
+Everything okay?
 
-```text
-Hey {{first_name}},
+If you still want it, here's your link again:
+→ {{BOOKING_LINK}}
+
+Or just hit reply and ask me right here. I read every one.
+
+Talk soon,
+Simon`,
+      vars,
+    ),
+  };
+}
+
+export function scorecardEmail1(vars: TemplateVars): Template {
+  return {
+    subject: "Your Profit-Rich Scorecard is on its way",
+    text: render(
+      `Hey {{first_name}},
 
 Nice work finishing the Profit-Rich Scorecard. You've just done something most agency owners don't: looking at where money leaks.
 
@@ -80,43 +108,17 @@ After that, you'll get the occasional email from me on tax, profit extraction, a
 Speak soon. Your scorecard's on its way.
 
 Simon
+${SIGNOFF_CALL}`,
+      vars,
+    ),
+  };
+}
 
-Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
-{{physical_address}} · Unsubscribe anytime: {{unsub_link}}
-```
-
----
-
-## Email 2 · Wants a call — APPROVED
-- **Trigger:** +2 days, if they haven't booked
-- **Subject:** Hey {{first_name}}, still want that call?
-- **Preheader:** I kept a slot open for you
-
-```text
-Hey {{first_name}}!
-
-Your question came through the other day, but it doesn't look like you've grabbed a time yet.
-
-Everything okay?
-
-If you still want it, here's your link again:
-→ {{BOOKING_LINK}}
-
-Or just hit reply and ask me right here. I read every one.
-
-Talk soon,
-Simon
-```
-
----
-
-## Email 2 · Wants the scorecard — APPROVED
-- **Trigger:** 5 days after Email 1
-- **Subject:** Hey {{first_name}}, how did it land?
-- **Preheader:** I've been wondering how it landed
-
-```text
-Hey {{first_name}}!
+export function scorecardEmail2(vars: TemplateVars): Template {
+  return {
+    subject: `Hey ${vars.firstName || "there"}, how did it land?`,
+    text: render(
+      `Hey {{first_name}}!
 
 I sent over your Profit-Rich Scorecard and 90-day plan a couple of days back.
 
@@ -127,18 +129,17 @@ Hit reply and let me know, even a line. Did anything in there catch you off guar
 More useful bits on the way soon.
 
 Catch you soon,
-Simon
-```
+Simon`,
+      vars,
+    ),
+  };
+}
 
----
-
-## Email 3 · Both tracks (Instagram) — DRAFT
-- **Trigger:** +4-5 days after Email 1 (either track)
-- **Subject:** Here's where I post the free stuff (daily)
-- **Preheader:** The stuff I wish every agency owner saw sooner
-
-```text
-Hey {{first_name}}.
+export function instagramEmail3(vars: TemplateVars): Template {
+  return {
+    subject: "Here's where I post the free stuff (daily)",
+    text: render(
+      `Hey {{first_name}}.
 
 Whether we've spoken yet or not, I'd rather you didn't wait around for my next email to get something useful.
 
@@ -157,7 +158,8 @@ That's all for now.
 Talk soon,
 Simon
 
-P.S. It's where I test new ideas first and break down real (anonymised) agency numbers. Got a question about yours? Drop it in the comments and I'll likely turn it into a post.
-```
-
-`{{INSTAGRAM_LINK}}` resolves to https://www.instagram.com/simonjacobs_cta (see placeholders above). Flip the status to APPROVED once Simon signs off.
+P.S. It's where I test new ideas first and break down real (anonymised) agency numbers. Got a question about yours? Drop it in the comments and I'll likely turn it into a post.`,
+      vars,
+    ),
+  };
+}
