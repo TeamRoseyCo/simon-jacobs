@@ -94,7 +94,8 @@ export default function Home() {
                 { label: "Copilot", color: "#0078D4" },
                 { label: "a spreadsheet", color: "#1A8275" },
               ]}
-            />{" "}
+            />
+            <br />
             for taxes.
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">

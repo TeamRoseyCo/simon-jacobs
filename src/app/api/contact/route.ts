@@ -4,6 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TARGET = "simon@jacobs-taxes.com";
+const CC = "hazem.dweik@elevateoco.com";
 
 // Lead notifications go out via Resend (branded sender on srjinternational.co.uk),
 // with the FormSubmit relay as an automatic fallback so a submission never fails
@@ -24,7 +25,7 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
     try {
       const { error } = await resend.emails.send({
         from: FROM,
-        to: TARGET,
+        to: [TARGET, CC],
         replyTo,
         subject,
         text: body,
@@ -39,7 +40,7 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
     const res = await fetch(`https://formsubmit.co/ajax/${TARGET}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ ...payload, _cc: CC }),
     });
     return res.ok;
   } catch {

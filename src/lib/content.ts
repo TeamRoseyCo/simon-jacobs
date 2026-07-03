@@ -17,15 +17,41 @@ export const site = {
 } as const;
 
 // The full compliance service list (carried over from SRJ International).
+// `body` is placeholder "how it works" copy for the click-to-expand checklist
+// on the services page — CONFIRM/replace with Simon's own wording.
 export const servicesFull = [
-  "Corporation tax",
-  "Accounts preparation",
-  "VAT & CIS",
-  "Tax planning",
-  "Payroll",
-  "Company secretarial & registered address",
-  "Self-assessment & MTD",
-  "Bookkeeping",
+  {
+    title: "Corporation tax",
+    body: "We calculate, plan for, and file your corporation tax return, timed around your year-end so there are no surprises.",
+  },
+  {
+    title: "Accounts preparation",
+    body: "Statutory year-end accounts prepared and filed with Companies House, reconciled against your real numbers.",
+  },
+  {
+    title: "VAT & CIS",
+    body: "VAT returns filed on the right scheme for an agency, plus CIS handled if you use subcontractors.",
+  },
+  {
+    title: "Tax planning",
+    body: "Ongoing planning around corporation tax, VAT, and how you take money out, decided before the money moves.",
+  },
+  {
+    title: "Payroll",
+    body: "Monthly payroll run for you and your team, including PAYE, NI, and pension auto-enrolment.",
+  },
+  {
+    title: "Company secretarial & registered address",
+    body: "Companies House filings, statutory registers, and a registered office address kept up to date.",
+  },
+  {
+    title: "Self-assessment & MTD",
+    body: "Your personal tax return filed on time, ready for Making Tax Digital as the rules roll out.",
+  },
+  {
+    title: "Bookkeeping",
+    body: "Your books kept accurate and current, so management accounts and tax filings are never a scramble.",
+  },
 ];
 
 // Real client testimonials, lightly edited for length. `highlight` is an exact

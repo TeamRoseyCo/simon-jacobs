@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import ConsultCta from "@/components/ConsultCta";
 import ServiceCard from "@/components/ServiceCard";
+import FullServiceChecklist from "@/components/FullServiceChecklist";
 import { services, servicesFull, resultItems, processSteps } from "@/lib/content";
 
 function Ico({ children, className }: { children: ReactNode; className?: string }) {
@@ -123,22 +124,17 @@ export default function ServicesPage() {
             function for your agency in one place.
           </p>
         </div>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {servicesFull.map((item, index) => (
-            <div
-              key={item}
-              className="finance-card reveal flex items-center gap-3 p-4"
-              style={{ animationDelay: `${index * 60}ms` }}
-            >
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-teal/10 text-teal">
-                <Ico className="h-5 w-5">{serviceIcons[index]}</Ico>
-              </span>
-              <span className="text-sm font-medium leading-6 text-ink">
-                {item}
-              </span>
-            </div>
+        <FullServiceChecklist
+          items={servicesFull}
+          icons={serviceIcons.map((icon, index) => (
+            <Ico key={index} className="h-5 w-5">
+              {icon}
+            </Ico>
           ))}
-        </div>
+        />
+        <p className="reveal mx-auto mt-4 max-w-[600px] text-center text-xs text-muted">
+          Tap an item to see how it works.
+        </p>
       </section>
 
       <section className="section-white relative px-4 py-16 text-white md:px-6 md:py-24 lg:px-8">

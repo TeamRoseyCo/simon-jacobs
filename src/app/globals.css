@@ -1814,7 +1814,11 @@ body {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.015em;
-  font-size: clamp(42px, 5.8vw, 78px);
+  /* Ceiling brought down from 78px: at that size "marketing agencies." (kept
+     on one line via .hero-accent's nowrap) is wider than the 620px .hv-copy
+     column and overflows into the portrait on wide viewports. 56px keeps the
+     whole nowrap phrase inside the column at every width. */
+  font-size: clamp(36px, 4.4vw, 56px);
 }
 
 .hv-sub {
