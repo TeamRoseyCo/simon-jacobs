@@ -1244,6 +1244,18 @@ body {
   margin-top: 8px;
 }
 
+/* Footer social icons: grey by default, brand-coloured on hover.
+   LinkedIn colour is handled by Tailwind (currentColor); Instagram swaps
+   its fill to the brand gradient defined inline in the SVG. */
+.footer-social-ig svg path,
+.footer-social-ig svg circle {
+  fill: currentColor;
+}
+.footer-social-ig:hover svg path,
+.footer-social-ig:hover svg circle {
+  fill: url(#ig-gradient);
+}
+
 .image-stack {
   background: #0b2858;
   border-radius: 12px;

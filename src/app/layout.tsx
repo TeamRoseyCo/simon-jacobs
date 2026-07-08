@@ -76,7 +76,7 @@ const jsonLd = {
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
   url: siteUrl,
   image: `${siteUrl}/simon-jacobs.jpg`,
-  email: "simon@jacobs-taxes.com",
+  email: "simon@srjinternational.co.uk",
   telephone: "+447821900992",
   areaServed: "GB",
   knowsAbout: [

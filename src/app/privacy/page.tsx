@@ -28,7 +28,7 @@ export default function PrivacyPage() {
         <li>Company number: 12779246</li>
         <li>
           Contact:{" "}
-          <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>
+          <a href="mailto:simon@srjinternational.co.uk">simon@srjinternational.co.uk</a>
         </li>
       </ul>
 
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
       </ul>
       <p>
         To exercise any of these, email{" "}
-        <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>. You
+        <a href="mailto:simon@srjinternational.co.uk">simon@srjinternational.co.uk</a>. You
         also have the right to complain to the Information Commissioner&rsquo;s
         Office (ICO) at <a href="https://ico.org.uk">ico.org.uk</a>.
       </p>

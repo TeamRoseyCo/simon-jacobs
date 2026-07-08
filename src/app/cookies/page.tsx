@@ -83,7 +83,7 @@ export default function CookiesPage() {
       <p>
         For how we handle the personal data behind these cookies, see our{" "}
         <a href="/privacy">Privacy Policy</a>. Questions? Email{" "}
-        <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>.
+        <a href="mailto:simon@srjinternational.co.uk">simon@srjinternational.co.uk</a>.
       </p>
     </LegalDoc>
   );

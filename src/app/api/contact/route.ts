@@ -6,7 +6,7 @@ import { unsubscribeUrl } from "@/lib/unsubscribe";
 import { callEmail1, scorecardEmail1 } from "@/lib/emailTemplates";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const TARGET = "simon@jacobs-taxes.com";
+const TARGET = "simon@srjinternational.co.uk";
 const CC = "hazem.dweik@elevateoco.com";
 const RESOURCE_LINK = `${site.url}/blog/dont-use-claude-for-taxes`;
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -286,7 +286,7 @@ export async function POST(req: Request) {
   return NextResponse.json(
     {
       error:
-        "Could not send right now. Please email simon@jacobs-taxes.com directly.",
+        "Could not send right now. Please email simon@srjinternational.co.uk directly.",
     },
     { status: 502 },
   );

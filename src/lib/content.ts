@@ -8,7 +8,7 @@ export const site = {
   firm: "SRJ International",
   legalName: "SRJ International Limited",
   role: "Chartered Tax Adviser",
-  email: "simon@jacobs-taxes.com",
+  email: "simon@srjinternational.co.uk",
   phone: "07821 900 992",
   linkedin: "https://uk.linkedin.com/in/simon-r-jacobs",
   instagram: "https://www.instagram.com/simonjacobs_cta",

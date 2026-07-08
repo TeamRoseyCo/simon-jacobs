@@ -45,7 +45,7 @@ export default function AccessibilityPage() {
       <ul>
         <li>
           Email:{" "}
-          <a href="mailto:simon@jacobs-taxes.com">simon@jacobs-taxes.com</a>
+          <a href="mailto:simon@srjinternational.co.uk">simon@srjinternational.co.uk</a>
         </li>
         <li>Phone: 07821 900 992</li>
       </ul>

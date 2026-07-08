@@ -85,11 +85,11 @@ export async function GET(req: Request) {
       const { error } = await resend.emails.send({
         from: FROM,
         to: row.email,
-        replyTo: "simon@jacobs-taxes.com",
+        replyTo: "simon@srjinternational.co.uk",
         subject,
         text,
         headers: {
-          "List-Unsubscribe": `<mailto:simon@jacobs-taxes.com?subject=unsubscribe>, <${unsubLink}>`,
+          "List-Unsubscribe": `<mailto:simon@srjinternational.co.uk?subject=unsubscribe>, <${unsubLink}>`,
           "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
         },
       });
