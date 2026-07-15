@@ -160,7 +160,7 @@ export const posts: Post[] = [
   },
   {
     slug: "vat-for-agencies",
-    title: "VAT for agencies: the parts worth getting right",
+    title: "VAT for agencies: where the money quietly leaks",
     tag: "VAT",
     date: "2026-04-22",
     readingTime: "4 min read",
