@@ -99,8 +99,14 @@ export default function Home() {
             for taxes.
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">
-            Here&apos;s what you get when a Chartered Tax Adviser who only works
-            with agencies handles it instead.
+            Here&apos;s what you get when{" "}
+            <Link
+              href="/accountants-for-marketing-agencies"
+              className="font-semibold text-accent transition hover:text-ink"
+            >
+              accountants for marketing agencies
+            </Link>{" "}
+            who only work with agencies handle it instead.
           </p>
         </div>
         <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
