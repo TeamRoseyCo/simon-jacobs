@@ -3,6 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ConsultCta from "@/components/ConsultCta";
 import { posts, getPost, formatPostDate } from "@/lib/posts";
+import { site } from "@/lib/content";
+
+const siteUrl = site.url;
+const OG_IMAGE = "/simon-jacobs.jpg";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -24,6 +28,10 @@ export async function generateMetadata({
       type: "article",
       title: post.title,
       description: post.excerpt,
+      url: `${siteUrl}/blog/${post.slug}`,
+      publishedTime: post.date,
+      authors: ["Simon Jacobs"],
+      images: [{ url: OG_IMAGE }],
     },
   };
 }
@@ -37,13 +45,39 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
+  const postUrl = `${siteUrl}/blog/${post.slug}`;
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    datePublished: post.date,
-    author: { "@type": "Organization", name: "SRJ International" },
     description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    image: `${siteUrl}${OG_IMAGE}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    author: {
+      "@type": "Person",
+      name: "Simon Jacobs",
+      jobTitle: "Chartered Tax Adviser",
+      url: `${siteUrl}/about`,
+      sameAs: [site.linkedin, site.instagram],
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SRJ International",
+      "@id": `${siteUrl}/#organization`,
+      logo: { "@type": "ImageObject", url: `${siteUrl}${OG_IMAGE}` },
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+    ],
   };
 
   return (
@@ -85,6 +119,10 @@ export default async function BlogPostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

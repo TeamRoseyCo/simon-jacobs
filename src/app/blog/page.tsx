@@ -5,7 +5,7 @@ import ConsultCta from "@/components/ConsultCta";
 import { posts, formatPostDate } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blog: tax and profit notes for agency founders",
+  title: "Tax & Profit Notes for Agency Founders",
   description:
     "Plain-English notes on tax, profit extraction, VAT, and building a more valuable agency, written for founder-led UK marketing agencies.",
   alternates: { canonical: "/blog" },

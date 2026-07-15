@@ -5,13 +5,15 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
 import CookieConsent from "@/components/CookieConsent";
+import { site } from "@/lib/content";
 
-const siteUrl = "https://srjinternational.co.uk";
+const siteUrl = site.url;
+const GA_ID = "G-FJGM7PLZEC";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "SRJ International | Chartered Tax Advisers for UK Marketing Agencies",
+    default: "Chartered Tax Advisers for UK Agencies | SRJ International",
     template: "%s | SRJ International",
   },
   description:
@@ -70,15 +72,35 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "AccountingService",
+  "@id": `${siteUrl}/#organization`,
   name: "SRJ International",
   legalName: "SRJ International Limited",
   description:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
   url: siteUrl,
   image: `${siteUrl}/simon-jacobs.jpg`,
+  logo: `${siteUrl}/simon-jacobs.jpg`,
   email: "simon@srjinternational.co.uk",
   telephone: "+447821900992",
   areaServed: "GB",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "10 Northcliffe Drive",
+    addressLocality: "London",
+    addressRegion: "England",
+    postalCode: "N20 8JZ",
+    addressCountry: "GB",
+  },
+  sameAs: [site.linkedin, site.instagram],
+  founder: {
+    "@type": "Person",
+    name: "Simon Jacobs",
+    jobTitle: "Chartered Tax Adviser",
+    description:
+      "Chartered Tax Adviser (CTA · ACA) and ex-PwC, specialising in tax planning and profit extraction for UK marketing agencies.",
+    url: `${siteUrl}/about`,
+    sameAs: [site.linkedin, site.instagram],
+  },
   knowsAbout: [
     "Tax planning",
     "Profit extraction",
@@ -107,15 +129,30 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Consent Mode v2: deny all storage BEFORE gtag loads. The
+            CookieConsent banner flips these to 'granted' only on user opt-in,
+            so no analytics/ads cookies are set without consent (UK PECR/GDPR). */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'denied',
+  personalization_storage: 'denied',
+  security_storage: 'granted',
+  wait_for_update: 500
+});`}
+        </Script>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-FJGM7PLZEC"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="ga4" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-FJGM7PLZEC');`}
+          {`gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
         </Script>
       </body>
     </html>

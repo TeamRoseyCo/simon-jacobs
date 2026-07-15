@@ -7,7 +7,7 @@ import WorksWith from "@/components/WorksWith";
 import { principles, credentials } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About SRJ International, Chartered Tax Advisers & ex-PwC",
+  title: "About Simon Jacobs, CTA & ex-PwC",
   description:
     "SRJ International combines CTA and CA training with Big Four (PwC) experience, applied to the real decisions UK agency founders face: tax, profit, director pay, and exit.",
   alternates: { canonical: "/about" },

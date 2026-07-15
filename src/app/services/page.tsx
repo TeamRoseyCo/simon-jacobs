@@ -82,7 +82,7 @@ const resultIcons: ReactNode[] = [
 const stepEmoji = ["/diagnose.webp", "/plan.webp", "/maintain.webp"];
 
 export const metadata: Metadata = {
-  title: "Services: Tax planning, profit extraction & agency accountancy",
+  title: "Agency Tax Planning & Profit Extraction",
   description:
     "Proactive tax planning, profit extraction, and accountancy for UK marketing agencies, built around how agencies actually run and where they are heading.",
   alternates: { canonical: "/services" },

@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
+import { site } from "@/lib/content";
 
-const siteUrl = "https://srjinternational.co.uk";
+const siteUrl = site.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

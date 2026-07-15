@@ -29,6 +29,31 @@ function Toggle({
 
 type CatKey = "required" | "analytics" | "marketing" | "functioning";
 
+type ConsentChoice = {
+  analytics?: boolean;
+  marketing?: boolean;
+  functioning?: boolean;
+};
+
+// Push the user's choice into Google Consent Mode v2. Defaults are set to
+// 'denied' in layout.tsx before gtag loads; this flips them on opt-in.
+function applyConsent(c: ConsentChoice) {
+  const w = window as unknown as {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  };
+  const grant = (v: boolean | undefined) => (v ? "granted" : "denied");
+  if (typeof w.gtag !== "function") return;
+  w.gtag("consent", "update", {
+    analytics_storage: grant(c.analytics),
+    ad_storage: grant(c.marketing),
+    ad_user_data: grant(c.marketing),
+    ad_personalization: grant(c.marketing),
+    functionality_storage: grant(c.functioning),
+    personalization_storage: grant(c.functioning),
+  });
+}
+
 const CATEGORIES: {
   key: CatKey;
   name: string;
@@ -70,14 +95,23 @@ export default function CookieConsent() {
 
   useEffect(() => {
     try {
-      if (!localStorage.getItem("sj-cookie-consent")) setShow(true);
-    } catch {}
+      const stored = localStorage.getItem("sj-cookie-consent");
+      if (!stored) {
+        setShow(true);
+      } else {
+        // Returning visitor: re-apply their saved choice to Consent Mode.
+        applyConsent(JSON.parse(stored) as ConsentChoice);
+      }
+    } catch {
+      setShow(true);
+    }
   }, []);
 
   // Never show on the internal admin dashboard.
   if (pathname?.startsWith("/admin")) return null;
 
   function save(choice: Record<string, boolean>) {
+    applyConsent(choice);
     try {
       localStorage.setItem(
         "sj-cookie-consent",
