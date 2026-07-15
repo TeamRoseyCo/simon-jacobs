@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import ConsultCta from "@/components/ConsultCta";
 import ServiceCard from "@/components/ServiceCard";
@@ -99,7 +100,14 @@ export default function ServicesPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-muted">
             Year-round advice on tax, profit, and the numbers that decide how
-            much you keep and how much your agency is worth.
+            much you keep and how much your agency is worth. See how we work as{" "}
+            <Link
+              href="/accountants-for-marketing-agencies"
+              className="font-semibold text-accent transition hover:text-ink"
+            >
+              accountants for marketing agencies
+            </Link>
+            .
           </p>
         </div>
       </section>

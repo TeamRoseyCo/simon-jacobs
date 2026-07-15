@@ -7,8 +7,10 @@ const siteUrl = site.url;
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
+    "/accountants-for-marketing-agencies",
     "/services",
     "/about",
+    "/results",
     "/blog",
     "/faq",
     "/contact",
