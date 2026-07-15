@@ -13,6 +13,71 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "three-tax-moves-agency-owners-2026-27",
+    title: "Three tax moves for agency owners in 2026/27",
+    tag: "Profit extraction",
+    date: "2026-07-14",
+    readingTime: "4 min read",
+    excerpt:
+      "Three straightforward, legitimate moves for UK agency owners this tax year: a salary set to your allowance, tax-free company interest, and your ISA allowance.",
+    body: [
+      "If you run a marketing agency and want to save tax in 2026/27, a handful of ordinary moves do more than most people expect. None of these are clever schemes. They are the everyday allowances that founders keep meaning to use and never quite get round to.",
+      "First, consider keeping your salary at £12,570. That amount is covered by your personal allowance, so there is no income tax on it. If you have other employees on the payroll, there is typically no National Insurance to pay on it either. It is the simplest layer of a sensible profit-extraction plan.",
+      "Second, £1,000 of company interest. If your company owes you money because you have lent it cash, you can pay yourself interest on that loan. The first £1,000 is tax-free if you are a basic rate taxpayer. It is a small, legitimate route that founders routinely forget they have.",
+      "Third, your £20,000 tax-free ISA. If you have spare cash sitting around, an ISA lets you earn interest and dividends tax-free, up to £20,000 a year, with everything made inside it tax-free. Worth noting: the rules are set to change from April 2027, with tighter restrictions on how much you can put in, so it is worth making the most of the current allowance while it lasts.",
+      "Rules and thresholds can change, so always check the current position before acting, and take advice on how these fit your own numbers. Used together and reviewed each year, the ordinary allowances quietly add up to real money kept.",
+    ],
+  },
+  {
+    slug: "ai-bookkeeping-cost-20k-tax",
+    title: "AI replaced his bookkeeper. It cost £20k in extra tax.",
+    tag: "Bookkeeping",
+    date: "2026-07-13",
+    readingTime: "4 min read",
+    excerpt:
+      "One agency owner automated his bookkeeping with AI. It treated expenses as income and left his accounts unbalanced, pushing his tax bill around £20k too high.",
+    body: [
+      "“AI has just replaced my bookkeeper, and it is doing a better job.” That is exactly what one marketing agency owner thought, before he came to us.",
+      "Before working with us, he had built AI software to automate his company's bookkeeping. It ended up treating expenses as income, missing expenses entirely, and leaving his bank accounts not balancing.",
+      "Here is the problem with automating bookkeeping using AI: the errors it creates can take just as long to fix as it would have taken to do the job properly in the first place. By the time he came to us, this had pushed his tax bill around £20k higher than it should have been.",
+      "We went back to basics and rebuilt his bookkeeping from scratch. Once it was corrected, his tax bill came down to nil.",
+      "AI can be brilliant for a lot of things. But relying on it for your bookkeeping can end up costing you far more in tax than paying a human to do it properly. This is one example, and the numbers will vary from business to business, but the pattern is common: confident output, quietly wrong, expensive to unwind.",
+    ],
+  },
+  {
+    slug: "dubai-agency-optimise-uk-tax-first",
+    title: "Set up in Dubai and pay no tax? Optimise your UK position first",
+    tag: "International",
+    date: "2026-07-11",
+    readingTime: "6 min read",
+    excerpt:
+      "Before you move your agency to Dubai for a zero-tax life, get your UK position efficient first, and understand the UK rules that can follow you abroad.",
+    body: [
+      "“Set up a marketing agency in Dubai and pay no taxes ever again.” It is one of the most repeated pitches aimed at agency founders, and it is nowhere near as simple as it sounds.",
+      "Before you think about leaving the UK for Dubai or any other low-tax haven, optimise your UK taxes first. If you actually like living here, do not slowly start resenting the tax system until moving abroad feels like the only answer. That decision means leaving behind everything you value about the UK, family, culture, business opportunities, for a country that might not suit your lifestyle or work for your business at all.",
+      "The alternative most people do not consider is this: you can stay in the UK and still bring your tax bill down significantly. The right adviser can put together strategies and structures that make you genuinely efficient here, without uprooting your life. Once you know what tax-efficient actually looks like in the UK, you are in a much better position to decide whether leaving is even worth it.",
+      "There is also a blind spot in only listening to a UAE accountant: a lot of them focus purely on the Dubai side. They are not necessarily thinking about the UK implications of moving abroad. And there is plenty that can catch you out, including controlled foreign company rules, central management and control, economic substance requirements, and the UK statutory residence test. Get any of these wrong, and you could find you are not actually free from UK tax at all.",
+      "As a UK tax adviser with international exposure, the job is to look at both sides, the UK and the UAE, and advise accordingly. So unless a UAE firm is genuinely reputable, comes recommended, and has real experience dealing with UK clients, be careful about relying on them alone for your international tax position.",
+      "Relocating can genuinely lower your tax. But it is a decision to make from a position of knowledge, with the UK side handled first, not a leap taken on the strength of a social media pitch.",
+    ],
+  },
+  {
+    slug: "capital-gains-tax-rising-agency-owners",
+    title: "If capital gains tax rises, what should agency owners do?",
+    tag: "Capital gains",
+    date: "2026-07-08",
+    readingTime: "4 min read",
+    excerpt:
+      "There is speculation that capital gains tax could be aligned with income tax rates. Nothing is confirmed, but if you plan to sell assets soon, it is worth planning now.",
+    body: [
+      "Capital gains tax has been back in the headlines, with speculation that it could be aligned with income tax rates, which would take the top rate as high as 45%.",
+      "Right now, you pay 18% or 24% capital gains tax when you sell assets like crypto, property, or stocks and shares. Under a proposal that aligned the rates, that could rise as high as 45% for additional-rate taxpayers.",
+      "The thinking behind an idea like this is to raise more tax from wealth-generating assets, on the basis that the current system leans too heavily on taxing people who work rather than people who hold assets.",
+      "Nothing is confirmed, and this is still speculation. But if you are planning to sell shares, property, or other assets in the near future, now is a sensible time to speak to a tax adviser about capital gains planning, so you are prepared whichever way it goes.",
+      "Rules and rates change, sometimes at short notice. The point is not to panic about a headline, it is to know your position and your options before you commit to a sale.",
+    ],
+  },
+  {
     slug: "dont-use-claude-for-taxes",
     title: "Why you should not use Claude for your taxes",
     tag: "Tax planning",
