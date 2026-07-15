@@ -191,15 +191,36 @@ export default function ScorecardForm() {
   if (!started) {
     return (
       <div className="mx-auto w-full max-w-xl text-center">
-        <h1 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
-          The Profit-Rich{" "}
-          <span className="em-display text-teal">Scorecard.</span>
+        <p className="eyebrow">The Profit-Rich Scorecard</p>
+        <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          Find where your agency is{" "}
+          <span className="em-display text-teal">leaking profit.</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-[460px] text-base leading-8 text-muted">
-          21 quick questions across the 7 areas where agency profit usually
-          leaks. We score it and email back your result with a 90-day plan,
-          free and no sales pitch.
+        <p className="mx-auto mt-4 max-w-[480px] text-base leading-8 text-muted">
+          21 quick questions across the 7 areas where founder-led agencies
+          usually lose profit. Answer honestly and we email back your score with
+          a 90-day plan to plug the gaps. Free, and no sales pitch.
         </p>
+        <ul className="mx-auto mt-7 max-w-[420px] space-y-2.5 text-left">
+          {[
+            "Which of the 7 areas is quietly costing you the most",
+            "Whether you are paying more tax than you need to",
+            "The one change most likely to raise your take-home this year",
+          ].map((point) => (
+            <li
+              key={point}
+              className="flex items-start gap-3 text-sm leading-7 text-muted"
+            >
+              <span
+                aria-hidden="true"
+                className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-teal/15 text-xs font-bold text-teal"
+              >
+                ✓
+              </span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
         <button
           type="button"
           onClick={() => setStarted(true)}
@@ -208,7 +229,7 @@ export default function ScorecardForm() {
           Start the scorecard →
         </button>
         <p className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-muted">
-          7 areas · 21 questions · ~5 minutes
+          Scored by a Chartered Tax Adviser · CTA · ACA · ex-PwC · ~5 minutes
         </p>
       </div>
     );

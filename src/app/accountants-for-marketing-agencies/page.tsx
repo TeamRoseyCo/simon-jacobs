@@ -133,12 +133,16 @@ export default function AccountantsForMarketingAgenciesPage() {
             Accountants for{" "}
             <span className="em-display text-teal">marketing agencies.</span>
           </h1>
-          <p className="mx-auto mt-5 max-w-[640px] text-base leading-8 text-muted">
+          <p className="mx-auto mt-5 max-w-[640px] text-lg font-medium leading-8 text-ink">
+            Most agency owners are brilliant at winning clients and quietly
+            terrible at keeping what they make.
+          </p>
+          <p className="mx-auto mt-4 max-w-[640px] text-base leading-8 text-muted">
             SRJ International is a firm of specialist accountants and Chartered
             Tax Advisers for UK marketing agencies. We handle corporation tax,
-            VAT, profit extraction, and accounts around how founder-led agencies
-            actually run, so you keep more of what you earn and build a business
-            that is genuinely worth selling.
+            VAT, profit extraction, and the accounts around how founder-led
+            agencies actually run, so more of what you earn stays yours and the
+            business is genuinely worth selling.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href={bookCtaHref} className="hv-btn-primary">
