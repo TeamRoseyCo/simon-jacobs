@@ -20,6 +20,207 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "vat-on-overseas-clients-for-agencies",
+    title: "VAT when your agency has overseas clients",
+    tag: "VAT",
+    date: "2026-07-16",
+    readingTime: "5 min read",
+    excerpt:
+      "Do you put VAT on an invoice to a client in the US or the EU? For most agency services the answer turns on where your client belongs, not where you are.",
+    body: [
+      "One of the most common questions we get from agencies with international clients is simple to ask and easy to get wrong: do you put VAT on an invoice to a client in the US, or the EU, or anywhere outside the UK? For most agency services the answer turns on where your client belongs, not where you sit.",
+      "## The general rule: where your client belongs",
+      "For services supplied to a business customer, the general place-of-supply rule treats the service as supplied where the customer belongs, not the supplier. HMRC sets this out in [VAT Notice 741A](https://www.gov.uk/guidance/vat-place-of-supply-of-services-notice-741a). So for a UK agency invoicing an overseas business, the supply is generally outside the scope of UK VAT. It is a general rule with exceptions, so the honest answer is that it depends on your specifics, and we check your position rather than assume.",
+      "## Do you charge VAT to a US client?",
+      "Generally not, for the typical case of marketing or consultancy services sold to a US business. Because the customer belongs outside the UK, the supply is usually outside the scope of UK VAT, so no UK VAT is added. You still keep evidence of where the client belongs and that they are in business. Whether it is that simple depends on exactly what you supply and to whom, which is what we confirm.",
+      "## Do EU companies charge VAT to UK customers?",
+      "Since the UK left the EU, an EU supplier selling services to a UK business generally does not charge its local VAT. Instead the UK customer usually accounts for it under the reverse charge, explained in HMRC's guide to [VAT on services from abroad](https://www.gov.uk/vat-on-services-from-abroad). It works the other way too: your UK agency buying services from abroad may need to apply the reverse charge on its own return.",
+      "## Consultancy and other B2B services",
+      "Consultancy, marketing, and most professional business-to-business services follow the same place-of-supply logic: to a UK business client they are standard-rated UK VAT once you are registered, and to an overseas business client they are generally outside the scope. Rebilled [ad spend and media](/accountants-for-advertising-agencies) add another layer, because pass-through costs and platform charges need handling on their own terms.",
+      "## Where it stops being general",
+      "Business versus consumer matters, digital services have their own rules, and the exact nature of what you supply can change the treatment. Getting it wrong cuts both ways: charge VAT you should not have and you overcharge clients, miss VAT you should have accounted for and you carry a liability. This is exactly what a [specialist agency accountant](/accountants-for-marketing-agencies) is for. We look at your client mix and tell you the position rather than leaving it to a guess.",
+      "The short version: for most agency services, VAT follows where your client belongs, not where you are. The longer version is specific to your invoices, and worth getting right. If overseas clients are a real part of your income, [talk to us](/services) and we will map the VAT position across your client base.",
+    ],
+    faqs: [
+      {
+        question: "Is VAT charged on marketing services if the client is based overseas?",
+        answer:
+          "Generally not, when the client is an overseas business. The place-of-supply rules treat most agency and marketing services as supplied where the business customer belongs, so a UK agency invoicing an overseas business is usually outside the scope of UK VAT. The exact treatment depends on your specifics, which we check.",
+      },
+      {
+        question: "Do UK companies charge VAT to US clients?",
+        answer:
+          "Usually not for services sold to a US business. Because the customer belongs outside the UK, the supply is generally outside the scope of UK VAT, so no UK VAT is added, though you keep evidence of where the client belongs. Whether it is that clean depends on exactly what you supply.",
+      },
+      {
+        question: "Do EU companies charge VAT to UK customers?",
+        answer:
+          "Since Brexit, an EU supplier generally does not add its local VAT when selling services to a UK business. Instead the UK customer usually accounts for the VAT under the reverse charge on its own return. The same reverse-charge logic applies when your UK agency buys services from abroad.",
+      },
+      {
+        question: "Is VAT charged on consultancy services in the UK?",
+        answer:
+          "Consultancy to a UK business is generally standard-rated UK VAT once you are VAT registered. Sold to an overseas business, the same service is usually outside the scope under the place-of-supply rules. The treatment follows where the client belongs, so your client mix decides the answer.",
+      },
+    ],
+    related: [
+      "vat-for-agencies",
+      "dubai-agency-optimise-uk-tax-first",
+      "how-to-choose-a-tax-adviser-for-your-marketing-agency",
+    ],
+  },
+  {
+    slug: "non-resident-owner-uk-agency",
+    title: "You live abroad but own a UK agency. Where does the tax land?",
+    tag: "International",
+    date: "2026-07-16",
+    readingTime: "6 min read",
+    excerpt:
+      "You can live overseas and still own a UK marketing agency, but the company's tax and your personal tax are two separate questions. Here is how they split, in plain terms.",
+    body: [
+      "More agency founders than ever run a UK company from somewhere else: an EU city, Dubai, or a slow move abroad that never quite got formalised. The good news is that owning a UK agency from overseas is completely normal. The trap is assuming that living abroad automatically means no UK tax. It does not, and the two questions that matter, the company's tax and your own, have different answers.",
+      "## Can a non-UK resident own a UK company?",
+      "Yes. A non-UK resident, including an EU citizen, can own and be a director of a UK limited company, and you do not need to live in the UK to do it. Setting one up follows the same [Companies House process](https://www.gov.uk/limited-company-formation) as it does for a resident. Ownership and residence are simply not the same thing, which is exactly why the tax splits into two parts. If you want the agency-specific view, that sits alongside our wider [work with UK marketing agencies](/accountants-for-marketing-agencies).",
+      "## The company's tax and your tax are two different things",
+      "A UK company pays UK corporation tax on its profits regardless of where its owner lives. Incorporating in the UK and moving abroad does not move the company's profits out of UK tax. Your personal tax is the separate question: how you are taxed on what you take out (salary, dividends) depends on your own residence, not the company's. Founders who miss this end up surprised on one side or the other.",
+      "## What counts as UK income when you live abroad",
+      "As a general rule, someone who is not UK resident is still taxed in the UK on their [UK-source income](https://www.gov.uk/tax-uk-income-live-abroad), while their non-UK income usually falls outside UK tax. Dividends from your UK company, and how any double-tax treaty with your new country interacts with them, are a specific area worth getting advice on rather than guessing, because the answer changes with where you actually live.",
+      "## Residence is decided by a test, not by a feeling",
+      "Whether you count as UK resident for a tax year is decided by the [Statutory Residence Test](https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt), which looks at days spent in the UK and your ties here, not by where you feel you live. It is easy to assume you have left when the test still treats you as resident. Pin your status down before you make decisions that depend on it.",
+      "## The 5-year rule, and why leaving is rarely instant",
+      "There are also temporary non-residence rules: broadly, if you leave and then return to the UK within around five years, certain income and gains you took while away can be pulled back into UK tax on your return. It is one of the reasons a move abroad is a decision to plan, not a switch you flip. We look at both the UK and the overseas side together rather than only one, the same principle behind [optimising your UK position before any move](/blog/dubai-agency-optimise-uk-tax-first).",
+      "If you own a UK agency from abroad, or you are about to, get both sides mapped before the money moves. See how we [work with agencies](/services) or bring the questions to a call.",
+    ],
+    faqs: [
+      {
+        question: "Can a non-UK resident own a UK company?",
+        answer:
+          "Yes. A non-UK resident, including an EU citizen, can own and be a director of a UK limited company without living in the UK. The setup follows the standard Companies House process. Ownership and tax residence are separate, so owning the company does not by itself make you UK tax resident.",
+      },
+      {
+        question: "Do non-UK residents pay tax on UK income?",
+        answer:
+          "Generally yes on UK-source income, while non-UK income usually sits outside UK tax. The detail, especially around dividends from your UK company and any double-tax treaty with the country you live in, depends on your specific position, so it is worth advice rather than assuming living abroad means nothing is due here.",
+      },
+      {
+        question: "What is the 5-year rule for non-residents in the UK?",
+        answer:
+          "Broadly, the temporary non-residence rules mean that if you leave the UK and return within around five years, certain income and gains you realised while away can be taxed in the UK on your return. It is why leaving is a decision to plan carefully rather than treat as an instant, permanent break.",
+      },
+      {
+        question: "Can EU citizens open a business in the UK?",
+        answer:
+          "Yes. EU citizens can own and run a UK limited company, and do not need to be UK resident to do so. The company is taxed in the UK on its profits either way. How you are taxed personally on what you take out depends on where you are resident, which is the part worth planning.",
+      },
+    ],
+    related: [
+      "dubai-agency-optimise-uk-tax-first",
+      "tax-when-you-move-abroad",
+      "how-to-choose-a-tax-adviser-for-your-marketing-agency",
+    ],
+  },
+  {
+    slug: "how-to-reduce-your-agencys-corporation-tax",
+    title: "How to reduce your agency's corporation tax (legitimately)",
+    tag: "Tax planning",
+    date: "2026-07-16",
+    readingTime: "5 min read",
+    excerpt:
+      "Legitimate ways a UK marketing agency can bring its corporation tax bill down, what actually reduces taxable profit, and why dividends do not.",
+    body: [
+      "Corporation tax is charged on your agency's profit, not its turnover, and what you pay comes down to how cleanly that profit is worked out. There is no clever trick here, but there is a lot of ordinary ground that founder-led agencies leave on the table. Here is what genuinely reduces the bill, and what does not.",
+      "## Is corporation tax still 25% in the UK?",
+      "Partly. The main rate is 25%, but it applies to profits over £250,000. Companies with profits under £50,000 pay the small profits rate of 19%, and profits in between are eased in through marginal relief. So most small and mid-sized agencies pay an effective rate somewhere between 19% and 25%, not a flat 25%. See the current [Corporation Tax rates](https://www.gov.uk/corporation-tax-rates).",
+      "## What actually reduces corporation tax",
+      "Corporation tax falls when your taxable profit falls, and taxable profit falls when you claim every legitimate business cost. For an agency that usually means salaries and employer National Insurance, software and subscriptions, contractor and freelancer costs, and the everyday running costs of the business. The [expenses your agency can claim](/blog/agency-expenses-checklist) are the first place to look, because a missed cost is simply tax overpaid.",
+      "## Employer pension contributions",
+      "Contributions your company pays into a director's or employee's pension are generally an allowable business expense, so they reduce taxable profit while moving money into your own pension. For agency owners taking profit out, it is one of the more efficient routes, within the annual rules. See [pension tax relief](https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief). How much makes sense depends on your position, so we look at your numbers.",
+      "## Do dividends reduce corporation tax?",
+      "No, and this catches a lot of founders out. Dividends are paid out of profit after corporation tax has already been charged, so they are not a deductible expense and do not lower the corporation tax bill at all. Salary reduces it, dividends do not. Getting the [salary and dividend split](/blog/how-much-should-agency-founders-pay-themselves) right is about your overall tax, not your corporation tax.",
+      "## How much corporation tax on £100,000 profit?",
+      "As an illustration only, £100,000 of profit sits in the marginal band, so the effective rate lands between the 19% and 25% figures rather than at either end. The exact number depends on your accounting year, any associated companies, and what has genuinely been claimed as a cost first. That is why we work it out from your actual accounts rather than a headline rate.",
+      "## The win is planning, not tricks",
+      "The real savings come from planning the year rather than scrambling at the end of it: claiming what you are due, timing equipment purchases, and deciding how profit leaves the business before the money moves. If you want this applied to your agency, [see how we work](/services) or read our [three tax moves for agency owners](/blog/three-tax-moves-agency-owners-2026-27). Rules and thresholds change, so this is general information, not advice for your company, and the right figure always comes from your actual numbers.",
+    ],
+    faqs: [
+      {
+        question: "How do I reduce my corporation tax bill?",
+        answer:
+          "You reduce it by lowering taxable profit legitimately: claiming every allowable business cost, paying salaries and employer pension contributions, and timing equipment purchases. Dividends do not help, because they come out of post-tax profit. The dependable savings come from planning the year rather than a year-end scramble, applied to your own numbers.",
+      },
+      {
+        question: "What can I offset against corporation tax?",
+        answer:
+          "Allowable costs incurred wholly and exclusively for the business: salaries and employer National Insurance, contractor and freelancer fees, software, professional fees, and employer pension contributions, among others. Capital allowances cover equipment. What qualifies depends on your setup, so we check your specific costs against the current rules rather than assuming.",
+      },
+      {
+        question: "Do dividends reduce corporation tax in the UK?",
+        answer:
+          "No. Dividends are paid from profit after corporation tax, so they are not a deductible expense and do not lower the corporation tax bill. Salaries and employer pension contributions do reduce it. Dividends affect your personal tax, not the company's corporation tax, which is a common and costly mix-up.",
+      },
+      {
+        question: "Is corporation tax still 25% in the UK?",
+        answer:
+          "25% is the main rate, but it applies to profits over £250,000. Profits under £50,000 are taxed at the 19% small profits rate, and profits in between are eased in through marginal relief. Most small and mid-sized agencies therefore pay an effective rate between 19% and 25%.",
+      },
+    ],
+    related: [
+      "agency-expenses-checklist",
+      "how-much-should-agency-founders-pay-themselves",
+      "three-tax-moves-agency-owners-2026-27",
+    ],
+  },
+  {
+    slug: "the-60-percent-tax-trap",
+    title: "The 60% tax trap, and why agency owners keep hitting it",
+    tag: "Tax planning",
+    date: "2026-07-16",
+    readingTime: "4 min read",
+    excerpt:
+      "Between £100,000 and £125,140 of income, an odd quirk of the UK system taxes every extra pound at an effective 60 percent. Here is why it happens, and why agency founders hit it so often.",
+    body: [
+      "There is a band of income in the UK where every extra pound is taxed at an effective 60 percent, even though no tax table anywhere lists a 60 percent rate. It catches a lot of successful agency founders by surprise, usually in the year the business has a good run.",
+      "## What the 60% tax trap actually is",
+      "It comes from the way the Personal Allowance is withdrawn. Everyone gets a tax-free Personal Allowance, but once your income goes over £100,000 you start to lose it: £1 of allowance for every £2 of income above that line, until it is gone entirely at £125,140. Losing tax-free allowance while also paying tax on the income itself is what pushes the effective rate on that slice to around 60 percent. HMRC sets this out in its guidance on [income over £100,000](https://www.gov.uk/income-tax-rates/income-over-100000).",
+      "## Does anyone really pay 60% tax?",
+      "Not as a headline rate, no. The published higher rate is 40 percent. But in the £100,000 to £125,140 band, the combination of 40 percent tax and the disappearing Personal Allowance means each extra pound effectively costs about 60 pence. Above £125,140 the effective rate drops back down, so the trap is specifically that slice in the middle.",
+      "## Why agency founders hit it so often",
+      "Agency income is lumpy. A strong year, a big project, or a larger dividend taken to fund something can push a founder's income straight into the band without them planning for it. Because a lot of founders decide [how to pay themselves](/blog/how-much-should-agency-founders-pay-themselves) late in the year, they can cross £100,000 almost by accident and hand over 60 pence in the pound on the top slice.",
+      "## What you can do about it",
+      "There are legitimate, ordinary ways to manage income around that band, for example pension contributions, the timing of dividends, and how salary and dividends are split, all of which can reduce the income that falls inside the trap. Which of these actually help depends entirely on your numbers and your wider plan, so the honest answer is that we look at your specific position first. It is one of the [everyday moves](/blog/three-tax-moves-agency-owners-2026-27) that quietly saves real money, and it sits inside broader [profit extraction planning](/services).",
+      "## The Scottish 42% question",
+      "People often ask who pays 42 percent. That figure is Scotland's higher rate of income tax, because Scotland sets its own income tax rates, and it is separate from the 60 percent effective trap described here. The Personal Allowance taper that creates the trap applies across the whole UK. If you are a Scottish taxpayer the exact rates differ, so it is worth checking your own position.",
+      "The 60 percent trap is not a loophole or a scheme, it is simply how the rules interact, and it is very avoidable with a little planning before the income lands rather than after. If your agency is having a good year, that is exactly the moment to look at it. Rules and thresholds change, so always check the current position and take advice on your own numbers.",
+    ],
+    faqs: [
+      {
+        question: "What is the 60% tax trap?",
+        answer:
+          "It is the effective tax rate on income between £100,000 and £125,140. In that band you pay 40 percent tax and lose £1 of tax-free Personal Allowance for every £2 you earn, so each extra pound effectively costs around 60 pence. Above £125,140 the effective rate falls again.",
+      },
+      {
+        question: "Does anyone actually pay 60% tax in the UK?",
+        answer:
+          "Not as a listed rate; the published higher rate is 40 percent. But because the Personal Allowance is withdrawn between £100,000 and £125,140, the effective rate on that specific band works out at about 60 percent. It is a quirk of how the rules interact rather than a headline tax rate.",
+      },
+      {
+        question: "Who pays 42% tax in the UK?",
+        answer:
+          "The 42 percent figure is Scotland's higher rate of income tax, because Scotland sets its own income tax rates separately from the rest of the UK. It is different from the 60 percent effective trap, which comes from the UK-wide Personal Allowance taper on income above £100,000.",
+      },
+      {
+        question: "How can agency owners avoid the 60% trap?",
+        answer:
+          "There are ordinary, legitimate options such as pension contributions and planning the timing and mix of salary and dividends, so less income falls in the £100,000 to £125,140 band. What actually works depends on your numbers, so we look at your specific position on a call before suggesting anything.",
+      },
+    ],
+    related: [
+      "how-much-should-agency-founders-pay-themselves",
+      "three-tax-moves-agency-owners-2026-27",
+      "agency-expenses-checklist",
+    ],
+  },
+  {
     slug: "how-to-choose-a-tax-adviser-for-your-marketing-agency",
     title: "How to choose a tax adviser for your marketing agency",
     tag: "Tax planning",

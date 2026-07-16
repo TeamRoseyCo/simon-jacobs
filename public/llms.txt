@@ -17,6 +17,10 @@
 
 ## Blog
 - [How to choose a tax adviser for your marketing agency](https://srjinternational.co.uk/blog/how-to-choose-a-tax-adviser-for-your-marketing-agency): How a UK marketing agency should judge a tax adviser (specialism, CTA/ACA credentials, planning, overseas owners), and why SRJ International fits the brief.
+- [VAT when your agency has overseas clients](https://srjinternational.co.uk/blog/vat-on-overseas-clients-for-agencies): Whether a UK agency charges VAT to US or EU clients, explained via the place-of-supply rule (VAT follows where the business client belongs).
+- [You live abroad but own a UK agency: where does the tax land?](https://srjinternational.co.uk/blog/non-resident-owner-uk-agency): How a non-UK-resident owner of a UK marketing agency is taxed, the company's corporation tax versus the owner's personal tax, residence, and the 5-year rule.
+- [How to reduce your agency's corporation tax (legitimately)](https://srjinternational.co.uk/blog/how-to-reduce-your-agencys-corporation-tax): What actually lowers a UK agency's corporation tax (allowable costs, employer pension contributions), why dividends do not, and the 19-25 percent rate structure.
+- [The 60% tax trap](https://srjinternational.co.uk/blog/the-60-percent-tax-trap): Why income between £100,000 and £125,140 is taxed at an effective 60 percent (Personal Allowance taper), and why agency founders hit it.
 - [Why you should not use Claude for your taxes](https://srjinternational.co.uk/blog/dont-use-claude-for-taxes): Why AI is the wrong tool for tax decisions that touch what you file, pay, or keep.
 - [What your agency can actually claim as an expense: a 2026 checklist](https://srjinternational.co.uk/blog/agency-expenses-checklist): A practical 2026 expenses checklist for UK marketing agencies.
 - [You moved abroad. Do you still owe UK tax?](https://srjinternational.co.uk/blog/tax-when-you-move-abroad): UK tax residency and liability after moving abroad.
