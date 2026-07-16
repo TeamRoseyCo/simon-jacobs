@@ -137,6 +137,19 @@ export default function AboutPage() {
         <p className="accred-eyebrow accred-eyebrow-light reveal mt-10">CTA · ACA · ex-PwC</p>
         <Accreditations variant="light" className="reveal" />
         <WorksWith className="reveal mt-8" />
+        <p className="reveal mx-auto mt-10 max-w-2xl text-center text-sm leading-7 text-muted">
+          This site was designed and built by{" "}
+          <a
+            href="https://roseyco.com"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-accent underline decoration-border underline-offset-2 transition hover:text-ink"
+          >
+            RoseyCo
+          </a>
+          , a UK marketing agency helping local businesses grow through SEO and
+          content.
+        </p>
       </section>
 
       <ConsultCta

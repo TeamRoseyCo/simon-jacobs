@@ -150,7 +150,18 @@ export default function SiteFooter() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-5 text-xs text-white/70 md:flex-row md:items-center md:justify-between md:px-10 lg:px-16">
-          <p>© 2026 SRJ International Limited, trading as Jacobs Taxes. All rights reserved.</p>
+          <p>
+            © 2026 SRJ International Limited, trading as Jacobs Taxes. All rights reserved.{" "}
+            <span className="text-white/40">·</span> Website by{" "}
+            <a
+              href="https://roseyco.com"
+              target="_blank"
+              rel="noopener"
+              className="font-medium text-white/85 transition hover:text-white"
+            >
+              RoseyCo
+            </a>
+          </p>
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/privacy" className="transition hover:text-white">
               Privacy Policy

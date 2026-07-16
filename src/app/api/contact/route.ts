@@ -221,10 +221,17 @@ export async function POST(req: Request) {
     const answers = answerDetail
       .map((a) => `- [${String(a.area)}] ${String(a.question)} -> ${String(a.answer)}`)
       .join("\n");
+    // Marketing channel from the UTM-tagged link Simon shares (e.g. LinkedIn).
+    // "source / campaign" when both are present, so the notification and the
+    // stored lead show where each scorecard lead actually came from.
+    const utmSource = String(body.utm_source ?? "").trim();
+    const utmCampaign = String(body.utm_campaign ?? "").trim();
+    const channel = [utmSource, utmCampaign].filter(Boolean).join(" / ");
     payload = {
       _subject: `New Profit-Rich Scorecard, ${String(body.name)} (${String(body.total)}/${String(body.max)}, ${String(body.rating)})`,
       name: String(body.name),
       email,
+      channel,
       total: `${String(body.total)}/${String(body.max)}, ${String(body.rating)}`,
       results,
       answers,
@@ -234,7 +241,7 @@ export async function POST(req: Request) {
       name: String(body.name),
       email,
       score: `${String(body.total)}/${String(body.max)}, ${String(body.rating)}`,
-      message: answers ? `${results}\n\n${answers}` : results,
+      message: `${channel ? `Lead source: ${channel}\n\n` : ""}${answers ? `${results}\n\n${answers}` : results}`,
     };
     sequence = { track: "scorecard", firstName: String(body.name).trim().split(/\s+/)[0] ?? "" };
   } else {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { scorecardAreas, scorecardAnswers } from "@/lib/content";
@@ -26,6 +26,22 @@ export default function ScorecardForm() {
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  // Marketing source from the link Simon shares (e.g. /score?utm_source=linkedin).
+  // Captured once on load so it survives even if the URL changes mid-quiz, then
+  // sent with the submission so Simon sees which channel produced the lead.
+  const [utm, setUtm] = useState<{
+    source?: string;
+    medium?: string;
+    campaign?: string;
+  }>({});
+
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const source = p.get("utm_source") ?? undefined;
+    const medium = p.get("utm_medium") ?? undefined;
+    const campaign = p.get("utm_campaign") ?? undefined;
+    if (source || medium || campaign) setUtm({ source, medium, campaign });
+  }, []);
 
   const total = AREAS.length + 1; // areas + contact
   const onContact = step === AREAS.length;
@@ -75,6 +91,9 @@ export default function ScorecardForm() {
           rating: rating(grandTotal, AREAS.length * 6),
           breakdown,
           answerDetail,
+          utm_source: utm.source,
+          utm_medium: utm.medium,
+          utm_campaign: utm.campaign,
         }),
       });
       const data = await res.json().catch(() => ({}));
