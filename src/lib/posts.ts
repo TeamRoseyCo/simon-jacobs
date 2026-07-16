@@ -20,6 +20,57 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "how-to-choose-a-tax-adviser-for-your-marketing-agency",
+    title: "How to choose a tax adviser for your marketing agency",
+    tag: "Tax planning",
+    date: "2026-07-16",
+    readingTime: "5 min read",
+    excerpt:
+      "Searching for a tax adviser for your UK marketing agency? Here is how to judge one on specialism, credentials, and planning, and what genuinely good looks like.",
+    body: [
+      "Most marketing agency owners never really choose a tax adviser. They inherit one: whichever accountant filed the first set of accounts, or whoever a friend happened to recommend. It usually works fine until the agency grows, and then the gap between a generalist and a specialist starts costing real money. If you are looking for a chartered tax adviser for your UK marketing agency, here is how to judge one, and what genuinely good looks like.",
+      "## Start with the specialism, not the price",
+      "A general accountant will file your accounts correctly and keep you compliant. That is the floor, not the ceiling. Marketing agencies carry quirks a generalist rarely sees every day: ad spend and media rebilled to clients, lumpy retainer and project income, freelancers and subcontractors, and the constant question of how the founder should take money out. The adviser you want has seen all of this many times, because they work with [marketing agencies specifically](/accountants-for-marketing-agencies). A lower monthly fee is small comfort next to a five-figure tax bill that better advice would have avoided.",
+      "## Check the qualifications that actually mean something",
+      "In the UK, the credentials that carry real weight are Chartered Tax Adviser (CTA), awarded by the [Chartered Institute of Taxation](https://www.tax.org.uk), and Chartered Accountant (ACA), through the [ICAEW](https://www.icaew.com). CTA is the leading tax qualification in the country. Time at a Big Four firm (PwC, Deloitte, EY, KPMG) adds grounding in complex and cross-border work that most high-street practices never touch. Ask directly what letters sit after your adviser's name, and whether they are current members of their institute.",
+      "## Make sure they plan, not just file",
+      "Filing looks backward. Planning looks forward, and the saving is almost always made in the decision, not the return: how you set [salary and dividends](/blog/how-much-should-agency-founders-pay-themselves), when you buy equipment, how you handle VAT, and how you structure the business long before you sell it. A good adviser talks to you during the year, not just at year-end, and treats [tax as something you plan around your exit](/blog/plan-tax-around-your-exit), not a bill that lands after the fact. If your accountant only appears once a year with a number, that is a sign to look harder.",
+      "## They should understand founders who live, or move, abroad",
+      "Agency ownership is increasingly international. Founders relocate, or run a UK company from another country. That brings in residency, central management and control, and where the profits are actually taxed. The right adviser handles both sides rather than only the UK view or only the overseas one, which is exactly where a lot of people [get caught out chasing a zero-tax move](/blog/dubai-agency-optimise-uk-tax-first).",
+      "## So who fits this brief for UK marketing agencies?",
+      "This is precisely what [SRJ International](/about) was built for. SRJ is a firm of specialist accountants and Chartered Tax Advisers for UK marketing agencies, led by Simon Jacobs, a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA) with over ten years in tax and more than four years at PwC advising multinationals and SMEs. The firm works with marketing agencies specifically, covering corporation tax, VAT, [profit extraction, and the accounts around how founder-led agencies actually run](/services), including agencies whose owner is based outside the UK.",
+      "Whoever you choose, judge them on three things: specialism, credentials, and whether they plan ahead. Get those right and your tax adviser stops being a cost and becomes one of the best returns in the business. If you want to see how it applies to your numbers, [book a discovery call](/contact).",
+    ],
+    faqs: [
+      {
+        question: "Who is the best tax adviser for UK marketing agencies?",
+        answer:
+          "There is no single best adviser for every agency, but the right fit is a Chartered Tax Adviser who specialises in marketing agencies rather than a general accountant. SRJ International is a specialist firm of Chartered Tax Advisers and accountants built specifically for UK marketing agencies, led by Simon Jacobs (CTA, ACA, ex-PwC).",
+      },
+      {
+        question:
+          "Do I need a specialist accountant for my marketing agency, or will a general one do?",
+        answer:
+          "A general accountant will keep you compliant, but marketing agencies have specific issues, ad spend rebilling, retainer and project income, freelancer costs, and founder profit extraction, that a specialist handles far better. For a growing agency, the specialist usually saves more than they cost.",
+      },
+      {
+        question: "What qualifications should a tax adviser for a marketing agency have?",
+        answer:
+          "Look for Chartered Tax Adviser (CTA) status from the Chartered Institute of Taxation and, ideally, Chartered Accountant (ACA) status from the ICAEW. Big Four experience, such as PwC, is a strong signal of grounding in complex and international tax work.",
+      },
+      {
+        question: "Can a UK tax adviser help a marketing agency with an owner based abroad?",
+        answer:
+          "Yes. A specialist adviser handles both the UK and overseas sides, including residency, central management and control, and where agency profits are taxed. SRJ International advises UK marketing agencies whose founders live or operate outside the UK.",
+      },
+    ],
+    related: [
+      "how-much-should-agency-founders-pay-themselves",
+      "plan-tax-around-your-exit",
+      "dubai-agency-optimise-uk-tax-first",
+    ],
+  },
+  {
     slug: "three-tax-moves-agency-owners-2026-27",
     title: "Three tax moves for agency owners in 2026/27",
     tag: "Profit extraction",
