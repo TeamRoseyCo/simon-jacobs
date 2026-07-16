@@ -1636,6 +1636,30 @@ body {
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* Ghost button for LIGHT backgrounds (the white hero on the pillar page). The
+   default .hv-btn-ghost is white-on-transparent for dark heroes and vanishes
+   here, so this ink variant keeps the same shape with readable contrast. */
+.hv-btn-ghost-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #062038;
+  border: 1px solid rgba(6, 32, 56, 0.28);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.hv-btn-ghost-ink:hover {
+  border-color: rgba(6, 32, 56, 0.55);
+  background: rgba(6, 32, 56, 0.04);
+  transform: translateY(-2px);
+}
+
 .hv-certs {
   margin: 22px 0 0;
   color: rgba(255, 255, 255, 0.7);

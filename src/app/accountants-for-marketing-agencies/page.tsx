@@ -149,8 +149,9 @@ export default function AccountantsForMarketingAgenciesPage() {
               Book a discovery call
               <span aria-hidden="true">→</span>
             </Link>
-            <Link href={scorecardHref} className="hv-btn-ghost">
-              Take the free scorecard
+            <Link href={scorecardHref} className="hv-btn-ghost-ink">
+              See where your profit leaks
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
