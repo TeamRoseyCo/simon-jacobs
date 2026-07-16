@@ -222,7 +222,14 @@ export default function AccountantsForMarketingAgenciesPage() {
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
         <p className="reveal text-base leading-8 text-muted">
-          We also work with{" "}
+          Based in London? See our{" "}
+          <Link
+            href="/chartered-tax-adviser-london-marketing-agencies"
+            className="font-semibold text-accent hover:text-ink"
+          >
+            London Chartered Tax Adviser for marketing agencies
+          </Link>{" "}
+          page. We also work with{" "}
           <Link
             href="/accountants-for-creative-agencies"
             className="font-semibold text-accent hover:text-ink"

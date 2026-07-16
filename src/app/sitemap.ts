@@ -7,6 +7,7 @@ const siteUrl = site.url;
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
+    "/chartered-tax-adviser-london-marketing-agencies",
     "/accountants-for-marketing-agencies",
     "/accountants-for-creative-agencies",
     "/accountants-for-advertising-agencies",
