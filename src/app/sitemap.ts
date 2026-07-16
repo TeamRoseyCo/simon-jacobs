@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/accountants-for-marketing-agencies",
+    "/accountants-for-creative-agencies",
+    "/accountants-for-advertising-agencies",
     "/services",
     "/about",
     "/results",

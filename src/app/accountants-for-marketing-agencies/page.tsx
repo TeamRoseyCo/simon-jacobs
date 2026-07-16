@@ -222,7 +222,21 @@ export default function AccountantsForMarketingAgenciesPage() {
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
         <p className="reveal text-base leading-8 text-muted">
-          Want the detail on outcomes and how we work?{" "}
+          We also work with{" "}
+          <Link
+            href="/accountants-for-creative-agencies"
+            className="font-semibold text-accent hover:text-ink"
+          >
+            creative agencies
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/accountants-for-advertising-agencies"
+            className="font-semibold text-accent hover:text-ink"
+          >
+            advertising agencies
+          </Link>
+          . Want the detail on outcomes?{" "}
           <Link href="/results" className="font-semibold text-accent hover:text-ink">
             See client results
           </Link>{" "}
