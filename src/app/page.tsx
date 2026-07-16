@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
@@ -10,6 +11,15 @@ import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
 import { services, whoFor, lead, exitAngle, bookCtaHref } from "@/lib/content";
 import { posts } from "@/lib/posts";
+
+// Homepage-specific meta description. The site-wide default in layout.tsx runs
+// 172 chars (Bing flagged it as too long on "/"); this trims it to ~153, inside
+// the ~150-160 range engines display without truncating, while keeping the
+// credential and keyword signals.
+export const metadata: Metadata = {
+  description:
+    "Chartered Tax Advisers for UK marketing agencies. Tax planning, profit extraction and accountancy from a CTA, ACA and ex-PwC. Keep more of what you earn.",
+};
 
 export default function Home() {
   return (

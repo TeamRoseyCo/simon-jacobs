@@ -14,8 +14,7 @@ export default function ClaudeGif() {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/claude.webp"
-      alt=""
-      aria-hidden="true"
+      alt="The Claude AI logo, one of the AI tools you should not rely on for your agency's taxes"
       onError={() => setShow(false)}
       className="claude-egg pointer-events-none absolute bottom-4 left-4 z-10 block h-14 w-auto select-none lg:left-8"
     />
