@@ -8,7 +8,11 @@ import CookieConsent from "@/components/CookieConsent";
 import { site } from "@/lib/content";
 
 const siteUrl = site.url;
-const GA_ID = "G-FJGM7PLZEC";
+// GA4 properties. Both are consent-gated by the Consent Mode v2 block below
+// (consent is set at the gtag level, so it applies to every config'd property).
+// The gtag.js library only needs loading once; extra properties are added with
+// additional gtag('config', ...) calls.
+const GA_IDS = ["G-FJGM7PLZEC", "G-6S1EHH7C90"];
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -148,12 +152,12 @@ gtag('consent', 'default', {
 });`}
         </Script>
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_IDS[0]}`}
           strategy="afterInteractive"
         />
         <Script id="ga4" strategy="afterInteractive">
           {`gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
+${GA_IDS.map((id) => `gtag('config', '${id}');`).join("\n")}`}
         </Script>
       </body>
     </html>
