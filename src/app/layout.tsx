@@ -75,6 +75,7 @@ const jsonLd = {
   "@id": `${siteUrl}/#organization`,
   name: "SRJ International",
   legalName: "SRJ International Limited",
+  alternateName: "Jacobs Taxes",
   description:
     "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
   url: siteUrl,
@@ -91,7 +92,7 @@ const jsonLd = {
     postalCode: "N20 8JZ",
     addressCountry: "GB",
   },
-  sameAs: [site.linkedin, site.instagram],
+  sameAs: [site.linkedin, site.instagram, site.icaew],
   founder: {
     "@type": "Person",
     name: "Simon Jacobs",
@@ -99,7 +100,7 @@ const jsonLd = {
     description:
       "Chartered Tax Adviser (CTA · ACA) and ex-PwC, specialising in tax planning and profit extraction for UK marketing agencies.",
     url: `${siteUrl}/about`,
-    sameAs: [site.linkedin, site.instagram],
+    sameAs: [site.linkedin, site.instagram, site.icaew],
   },
   knowsAbout: [
     "Tax planning",

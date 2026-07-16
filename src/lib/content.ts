@@ -12,6 +12,11 @@ export const site = {
   phone: "07821 900 992",
   linkedin: "https://uk.linkedin.com/in/simon-r-jacobs",
   instagram: "https://www.instagram.com/simonjacobs_cta",
+  // Simon's ICAEW member profile. This URL is already indexed and ranks for his
+  // name, so listing it in sameAs helps search engines merge this site into his
+  // established personal entity (rather than the unrelated "SRJ" collisions).
+  // CONFIRM this is the correct profile (it 403s to bots, so verify in-browser).
+  icaew: "https://find.icaew.com/members/london/simon-jacobs/tPW1A",
   bookSubject: "Agency tax planning discovery call",
   // Registered office, used as the CAN-SPAM physical address in sequence emails.
   physicalAddress: "10 Northcliffe Drive, London, England, N20 8JZ",

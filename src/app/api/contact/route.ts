@@ -4,6 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { site } from "@/lib/content";
 import { unsubscribeUrl } from "@/lib/unsubscribe";
 import { callEmail1, scorecardEmail1 } from "@/lib/emailTemplates";
+import { looksLikeBot, looksLikeGibberishName } from "@/lib/spam";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TARGET = "simon@srjinternational.co.uk";
@@ -168,6 +169,24 @@ export async function POST(req: Request) {
         ? "scorecard"
         : "contact";
   const email = String(body.email ?? "").trim();
+
+  // Spam gate. Bots fill the hidden honeypot field, submit synthetic Gmail
+  // dot-abuse addresses, or post keyboard-mash names. When any of those trip,
+  // we return a normal-looking success WITHOUT storing or notifying: a silent
+  // drop means the bot sees 200 OK and moves on instead of retrying or adapting,
+  // while Simon's inbox and the leads table stay clean.
+  const honeypot = String(body.company_url ?? "").trim();
+  const spamName =
+    kind === "scorecard"
+      ? String(body.name ?? "")
+      : `${String(body.firstName ?? "")} ${String(body.lastName ?? "")}`.trim();
+  if (
+    honeypot ||
+    looksLikeBot(email) ||
+    (spamName && looksLikeGibberishName(spamName))
+  ) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (!EMAIL.test(email)) {
     return NextResponse.json(

@@ -20,6 +20,61 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "tax-when-you-sell-stocks-and-shares-agency-owner",
+    title: "Selling stocks and shares as an agency owner: the tax, in plain English",
+    tag: "Capital gains",
+    date: "2026-07-16",
+    readingTime: "5 min read",
+    excerpt:
+      "Sell shares at a profit and the taxman wants a slice. Here is what capital gains tax, dividend tax, and Business Asset Disposal Relief actually mean for an agency owner, plus the one shelter most people underuse.",
+    body: [
+      "You have built the agency, taken some profit, and put a chunk of it into stocks and shares. At some point you sell. The question agency owners ask us is always the same: what does the taxman take? Here is the plain-English version, current for the 2026 to 2027 tax year.",
+      "## Capital gains tax on what you sell",
+      "When you sell shares for more than you paid, the profit is a capital gain, and that is what gets taxed, not the whole sale price. You get an annual tax-free allowance, the annual exempt amount, of £3,000 for 2026 to 2027, and that single allowance covers all your gains for the year, so if you have also sold property or crypto it is shared across the lot. Above the allowance you pay 18% on gains that sit within the basic rate band and 24% on anything above it, which is where most higher and additional rate taxpayers land. HMRC sets the current figures out in its guide to [Capital Gains Tax rates](https://www.gov.uk/capital-gains-tax/rates).",
+      "## Selling shares in your own agency",
+      "Selling your own company is a different question from selling a share portfolio. If you qualify for Business Asset Disposal Relief, the gain on the sale of your agency is taxed at 18% from 6 April 2026, up to a lifetime limit, rather than at the standard rates. The conditions are specific: broadly, you need to have been an employee or officer of the company, hold at least 5% of the shares and voting rights, and the company needs to be trading, all for at least two years before you sell. HMRC lists the full conditions under [Business Asset Disposal Relief](https://www.gov.uk/business-asset-disposal-relief). Whether you actually qualify is worth checking well before a sale rather than on the way out, and it is a big part of how we [plan tax around an exit](/blog/plan-tax-around-your-exit).",
+      "## Dividend tax while you hold",
+      "Owning shares is not only about the eventual sale. Any dividends you receive along the way are taxed too. The first £500 of dividends in a year is tax-free, then you pay 10.75%, 35.75%, or 39.35% depending on which tax band the dividend falls into. HMRC keeps the current rates on its [tax on dividends](https://www.gov.uk/tax-on-dividends) page. For agency owners this matters twice over, because the dividends you take out of your own company use the same allowance and the same rates as dividends from any other shares you hold.",
+      "## The legal shelter most people underuse",
+      "The cleanest way to keep investment gains out of the taxman's reach is a stocks and shares ISA. Anything you hold inside an ISA grows free of both capital gains tax and dividend tax, and you can pay in up to £20,000 across your ISAs each tax year, as set out on HMRC's [Individual Savings Accounts](https://www.gov.uk/individual-savings-accounts) page. It will not undo the tax on shares you already hold outside an ISA, but for money you are investing from here on, sheltering it first is often the difference between paying tax on the growth and paying nothing on it.",
+      "ISA allowances are set each tax year and the rules are reviewed from time to time, so the sensible move is to use this year's allowance while it stands rather than assume it will look the same next year.",
+      "## The short version",
+      "Sell shares at a profit and capital gains tax applies above a £3,000 allowance, at 18% or 24%. Sell your own agency and Business Asset Disposal Relief may bring that down to 18% if you qualify. Take dividends and they are taxed above £500. Hold inside an ISA and you sidestep both. Where it stops being general is your own numbers, your tax band, and what else you have sold in the year, which is exactly the part worth getting right before you press sell. If a sale is on the horizon, [talk to us](/services) first.",
+    ],
+    faqs: [
+      {
+        question: "Do you pay capital gains tax when you sell shares?",
+        answer:
+          "Yes, on the profit rather than the whole sale. You get a £3,000 annual tax-free allowance for 2026 to 2027, shared across all your gains for the year. Above that you pay 18% on gains within the basic rate band and 24% on anything above it.",
+      },
+      {
+        question: "How much is capital gains tax on selling shares?",
+        answer:
+          "For 2026 to 2027, after the £3,000 annual exempt amount, the rate is 18% on gains that fall within your basic rate band and 24% on gains above it. Most higher and additional rate taxpayers pay 24%.",
+      },
+      {
+        question: "Do you pay less tax when you sell shares in your own company?",
+        answer:
+          "You might. Business Asset Disposal Relief can tax the gain on selling your own agency at 18% from 6 April 2026, up to a lifetime limit, if you qualify. Broadly you need to have been an employee or officer, held at least 5% of the shares and voting rights, and the company must be trading, all for at least two years before the sale.",
+      },
+      {
+        question: "How can you avoid capital gains tax on shares legally?",
+        answer:
+          "A stocks and shares ISA shelters your investments from both capital gains tax and dividend tax, and you can pay in up to £20,000 across your ISAs each tax year. It does not undo tax on shares already held outside an ISA, but it protects the growth on what you invest inside one.",
+      },
+      {
+        question: "How are dividends taxed in the UK?",
+        answer:
+          "The first £500 of dividends each year is tax-free. Above that you pay 10.75%, 35.75%, or 39.35% depending on your tax band. The same allowance and rates apply whether the dividends come from your own company or from other shares you hold.",
+      },
+    ],
+    related: [
+      "capital-gains-tax-rising-agency-owners",
+      "plan-tax-around-your-exit",
+      "how-to-reduce-your-agencys-corporation-tax",
+    ],
+  },
+  {
     slug: "vat-on-overseas-clients-for-agencies",
     title: "VAT when your agency has overseas clients",
     tag: "VAT",

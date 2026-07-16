@@ -26,6 +26,9 @@ export default function ScorecardForm() {
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  // Honeypot: hidden from humans, tempting to bots. A filled value is dropped
+  // server-side (see src/app/api/contact/route.ts).
+  const [companyUrl, setCompanyUrl] = useState("");
   // Marketing source from the link Simon shares (e.g. /score?utm_source=linkedin).
   // Captured once on load so it survives even if the URL changes mid-quiz, then
   // sent with the submission so Simon sees which channel produced the lead.
@@ -94,6 +97,7 @@ export default function ScorecardForm() {
           utm_source: utm.source,
           utm_medium: utm.medium,
           utm_campaign: utm.campaign,
+          company_url: companyUrl,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -357,6 +361,23 @@ export default function ScorecardForm() {
                   className="mt-2 min-h-11 w-full rounded-[10px] border border-border bg-white px-4 text-sm text-ink outline-none focus:border-accent"
                 />
               </div>
+            </div>
+            {/* Honeypot. Off-screen (not display:none, which naive bots skip)
+                and out of the tab order. A filled value flags a bot server-side. */}
+            <div
+              aria-hidden="true"
+              className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden"
+            >
+              <label htmlFor="sc-company-url">Company URL</label>
+              <input
+                id="sc-company-url"
+                type="text"
+                name="company_url"
+                tabIndex={-1}
+                autoComplete="off"
+                value={companyUrl}
+                onChange={(e) => setCompanyUrl(e.target.value)}
+              />
             </div>
           </>
         )}

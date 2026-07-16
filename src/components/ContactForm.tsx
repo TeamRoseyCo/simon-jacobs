@@ -78,6 +78,9 @@ export default function ContactForm() {
   const [qualified, setQualified] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState("");
+  // Honeypot: kept out of `Fields` so it never lands in the saved draft. A real
+  // visitor never sees or fills it; a filled value is dropped server-side.
+  const [companyUrl, setCompanyUrl] = useState("");
   const hydrated = useRef(false);
 
   // Restore an in-progress draft so an accidental refresh (or navigating away
@@ -134,7 +137,7 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ _kind: "contact", ...f, qualified: q }),
+        body: JSON.stringify({ _kind: "contact", ...f, qualified: q, company_url: companyUrl }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
@@ -208,6 +211,24 @@ export default function ContactForm() {
       noValidate
       className="finance-card mx-auto flex max-w-2xl flex-col gap-5 p-6 text-left md:p-8"
     >
+      {/* Honeypot. Hidden off-screen (not display:none, which naive bots skip)
+          and pulled out of the tab order. A filled value flags a bot server-side. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden"
+      >
+        <label htmlFor={`${id}-company-url`}>Company URL</label>
+        <input
+          id={`${id}-company-url`}
+          type="text"
+          name="company_url"
+          tabIndex={-1}
+          autoComplete="off"
+          value={companyUrl}
+          onChange={(e) => setCompanyUrl(e.target.value)}
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={`${id}-first`} className={labelBase}>

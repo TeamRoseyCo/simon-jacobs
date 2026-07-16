@@ -4,23 +4,74 @@ import ConsultCta from "@/components/ConsultCta";
 import Accreditations from "@/components/Accreditations";
 import AboutJourney from "@/components/AboutJourney";
 import WorksWith from "@/components/WorksWith";
-import { principles, credentials } from "@/lib/content";
+import { principles, credentials, site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About Simon Jacobs, CTA & ex-PwC",
+  title: "About Simon Jacobs, CTA & ex-PwC | SRJ International",
   description:
-    "SRJ International combines CTA and CA training with Big Four (PwC) experience, applied to the real decisions UK agency founders face: tax, profit, director pay, and exit.",
+    "Simon Jacobs is a Chartered Tax Adviser (CTA · ACA) and ex-PwC, founder of SRJ International (formerly Jacobs Taxes). He advises UK marketing agencies on tax, profit extraction, director pay, and exit.",
   alternates: { canonical: "/about" },
+};
+
+// ProfilePage + Person schema so branded searches for "Simon Jacobs" and
+// "Jacobs Taxes" resolve to this page as the canonical entity. Google treats a
+// ProfilePage with a mainEntity Person as the authoritative profile for a named
+// individual; alternateName on worksFor declares the "Jacobs Taxes" alias.
+const profileLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${site.url}/about#profile`,
+  url: `${site.url}/about`,
+  name: "About Simon Jacobs",
+  mainEntity: {
+    "@type": "Person",
+    "@id": `${site.url}/#simon-jacobs`,
+    name: "Simon Jacobs",
+    jobTitle: "Chartered Tax Adviser (CTA · ACA)",
+    description:
+      "Simon Jacobs is a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA), ex-PwC, and founder of SRJ International (formerly known as Jacobs Taxes), specialising in tax planning and profit extraction for UK marketing agencies.",
+    image: `${site.url}/simon-jacobs.jpg`,
+    url: `${site.url}/about`,
+    email: site.email,
+    telephone: "+447821900992",
+    sameAs: [site.linkedin, site.instagram, site.icaew],
+    worksFor: {
+      "@type": "AccountingService",
+      "@id": `${site.url}/#organization`,
+      name: "SRJ International",
+      alternateName: "Jacobs Taxes",
+      url: site.url,
+    },
+    alumniOf: { "@type": "Organization", name: "PwC" },
+    memberOf: [
+      {
+        "@type": "Organization",
+        name: "Chartered Institute of Taxation (CIOT)",
+      },
+      { "@type": "Organization", name: "ICAEW" },
+    ],
+    knowsAbout: [
+      "Tax planning",
+      "Profit extraction",
+      "Corporation tax",
+      "Director remuneration",
+      "Agency accountancy",
+    ],
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileLd) }}
+      />
       <section className="section-white mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-2 pt-24 md:gap-16 md:px-10 md:pb-4 md:pt-28 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-16">
         <div className="image-stack reveal relative min-h-[520px] overflow-hidden rounded-[18px]">
           <Image
             src="/simon-jacobs.webp"
-            alt="SRJ International's Chartered Tax Adviser"
+            alt="Simon Jacobs, Chartered Tax Adviser and founder of SRJ International"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover object-[center_12%]"
@@ -28,15 +79,16 @@ export default function AboutPage() {
         </div>
         <div className="reveal flex flex-col justify-center text-center lg:text-left">
           <h1 className="mx-auto max-w-[620px] font-serif text-4xl font-normal leading-tight md:text-5xl lg:mx-0">
-            Chartered tax advice for{" "}
-            <span className="em-display text-teal">busy founders</span>
+            Meet Simon Jacobs,{" "}
+            <span className="em-display text-teal">Chartered Tax Adviser</span>
           </h1>
           <p className="mx-auto mt-6 max-w-[600px] text-base leading-8 text-muted lg:mx-0">
-            Our founder is a Chartered Tax Adviser (CTA) and Chartered
+            Simon Jacobs is a Chartered Tax Adviser (CTA) and Chartered
             Accountant (ACA), qualified through the CIOT and ICAEW, with over
-            ten years in tax and accounting. Before founding SRJ International,
-            he spent more than four years at PwC advising large multinational
-            corporations and SMEs on tax planning and tax advice.
+            ten years in tax and accounting. Before founding SRJ International
+            (previously Jacobs Taxes), he spent more than four years at PwC
+            advising large multinational corporations and SMEs on tax planning
+            and tax advice.
           </p>
         </div>
       </section>
