@@ -20,6 +20,53 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "laptop-tax-relief-agency-annual-investment-allowance",
+    title: "Laptop tax relief: repairs, new MacBooks, and the Annual Investment Allowance",
+    tag: "Capital allowances",
+    date: "2026-07-17",
+    readingTime: "4 min read",
+    excerpt:
+      "Your laptop can cut your tax bill, but repairs and a brand-new machine are treated differently. Here is how each one works for an agency owner, and why the Annual Investment Allowance usually gives you the full relief upfront.",
+    body: [
+      "HMRC can give you tax relief on your laptop, but how you get it depends on whether you are fixing the one you have or buying a new one. Those are two different types of cost, and agency owners often lump them together and either claim wrongly or miss the relief entirely. Here is the plain-English version.",
+      "## Repairs are a straightforward business expense",
+      "If you need repairs done on your laptop or MacBook, you can claim those as a business expense, as long as you use the machine for work. A repair keeps an asset you already own working, so it is a running cost of the business rather than the purchase of something new, and it reduces your taxable profit in the year you pay for it. The usual test still applies: the cost has to be [wholly and exclusively](/blog/agency-expenses-checklist) for the business, so if the laptop is part personal you apportion honestly.",
+      "## A new laptop is an asset, not an expense",
+      "Buying a new laptop is different. It is not treated as an ordinary business expense; it is treated as an asset in the company, because it is something the business owns and uses over time rather than a cost consumed in a single year. Equipment like this is dealt with through [capital allowances](https://www.gov.uk/capital-allowances) rather than being written straight off as a day-to-day cost. That distinction is where a lot of founders get the treatment wrong.",
+      "## The Annual Investment Allowance gives you the relief upfront",
+      "Here is the good part. As long as your total spend on qualifying assets during the year is under £1 million, you can claim the full cost of the new laptop in the year you buy it through the [Annual Investment Allowance](https://www.gov.uk/capital-allowances/annual-investment-allowance). HMRC lets you deduct the full value of a qualifying item from your profits before tax, so instead of spreading the relief over several years you get tax relief on the entire cost upfront. For almost every marketing agency, whose annual equipment spend is nowhere near £1 million, that means a new laptop effectively behaves like a same-year deduction.",
+      "## The short version",
+      "Repairs to a laptop you use for work are a normal business expense. A new laptop is an asset, but the Annual Investment Allowance usually lets you claim the whole cost in the year you buy it, provided your total asset spend for the year stays under £1 million. Rules and thresholds change, and mixed personal use needs apportioning, so this is general information rather than advice on your own numbers. If you want the treatment applied properly across your agency's kit, [see how we work](/services) or read the full [agency expenses checklist](/blog/agency-expenses-checklist).",
+    ],
+    faqs: [
+      {
+        question: "Can I claim my laptop as a business expense?",
+        answer:
+          "Repairs to a laptop you use for work are a normal business expense and reduce your taxable profit in the year you pay for them. A brand-new laptop is different: it is treated as a company asset and claimed through capital allowances rather than as a straight expense, though the Annual Investment Allowance usually gives the full relief in the year of purchase.",
+      },
+      {
+        question: "Are laptop repairs tax deductible?",
+        answer:
+          "Yes, if you use the laptop for work. A repair keeps an asset you already own working, so it counts as a running cost of the business and reduces your taxable profit in the year you pay for it. As with any expense, the cost must be wholly and exclusively for the business, so any personal use is apportioned.",
+      },
+      {
+        question: "How do I get tax relief on a new laptop or MacBook?",
+        answer:
+          "A new laptop is treated as a company asset, so the relief comes through capital allowances. In practice, as long as your total spend on qualifying assets for the year is under £1 million, the Annual Investment Allowance lets you deduct the full cost from your profits before tax in the year you buy it, rather than spreading it over several years.",
+      },
+      {
+        question: "What is the Annual Investment Allowance?",
+        answer:
+          "It is a capital allowance that lets a business deduct the full value of qualifying equipment, such as a laptop, from its profits before tax in the year of purchase. The current limit is £1 million of qualifying asset spend a year, which is far above what a typical marketing agency spends, so most can claim the full cost upfront.",
+      },
+    ],
+    related: [
+      "agency-expenses-checklist",
+      "how-to-reduce-your-agencys-corporation-tax",
+      "three-tax-moves-agency-owners-2026-27",
+    ],
+  },
+  {
     slug: "tax-when-you-sell-stocks-and-shares-agency-owner",
     title: "Selling stocks and shares as an agency owner: the tax, in plain English",
     tag: "Capital gains",
