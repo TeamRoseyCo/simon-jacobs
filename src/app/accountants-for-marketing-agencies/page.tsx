@@ -87,6 +87,19 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Accountancy and tax advice for marketing agencies",
+  serviceType: "Tax planning and accountancy for UK marketing agencies",
+  areaServed: { "@type": "Country", name: "United Kingdom" },
+  provider: {
+    "@type": "AccountingService",
+    name: "SRJ International",
+    url: siteUrl,
+  },
+};
+
 // The five agency-specific areas, each linking down to its cluster post (the
 // hub-and-spoke internal linking that builds topical authority).
 const areas = [
@@ -139,8 +152,9 @@ export default function AccountantsForMarketingAgenciesPage() {
           </p>
           <p className="mx-auto mt-4 max-w-[640px] text-base leading-8 text-muted">
             SRJ International is a firm of specialist accountants and Chartered
-            Tax Advisers for UK marketing agencies. We handle corporation tax,
-            VAT, profit extraction, and the accounts around how founder-led
+            Tax Advisers for UK marketing agencies. Led by Simon Jacobs, a
+            Chartered Tax Adviser (CTA · ACA) and ex-PwC, we handle corporation
+            tax, VAT, profit extraction, and the accounts around how founder-led
             agencies actually run, so more of what you earn stays yours and the
             business is genuinely worth selling.
           </p>
@@ -177,9 +191,9 @@ export default function AccountantsForMarketingAgenciesPage() {
             constantly. We know where the profit leaks, where the planning
             opportunities sit, and where the traps are, so the advice is
             specific to how your agency runs rather than generic small-business
-            box-ticking. And because our founder is a Chartered Tax Adviser
-            (CTA · ACA) who trained at PwC, the tax planning goes well beyond
-            what most high-street firms offer.
+            box-ticking. And because our founder, Simon Jacobs, is a Chartered
+            Tax Adviser (CTA · ACA) who trained at PwC, the tax planning goes
+            well beyond what most high-street firms offer.
           </p>
         </div>
       </section>
@@ -242,6 +256,13 @@ export default function AccountantsForMarketingAgenciesPage() {
             className="font-semibold text-accent hover:text-ink"
           >
             advertising agencies
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/accountants-for-digital-marketing-agencies"
+            className="font-semibold text-accent hover:text-ink"
+          >
+            digital marketing agencies
           </Link>
           . Want the detail on outcomes?{" "}
           <Link href="/results" className="font-semibold text-accent hover:text-ink">
@@ -285,6 +306,10 @@ export default function AccountantsForMarketingAgenciesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
     </>
   );

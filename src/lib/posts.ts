@@ -280,22 +280,26 @@ export const posts: Post[] = [
     title: "How to choose a tax adviser for your marketing agency",
     tag: "Tax planning",
     date: "2026-07-16",
-    readingTime: "5 min read",
+    updated: "2026-07-17",
+    readingTime: "7 min read",
     excerpt:
       "Searching for a tax adviser for your UK marketing agency? Here is how to judge one on specialism, credentials, and planning, and what genuinely good looks like.",
     body: [
-      "Most marketing agency owners never really choose a tax adviser. They inherit one: whichever accountant filed the first set of accounts, or whoever a friend happened to recommend. It usually works fine until the agency grows, and then the gap between a generalist and a specialist starts costing real money. If you are looking for a chartered tax adviser for your UK marketing agency, here is how to judge one, and what genuinely good looks like.",
-      "## Start with the specialism, not the price",
-      "A general accountant will file your accounts correctly and keep you compliant. That is the floor, not the ceiling. Marketing agencies carry quirks a generalist rarely sees every day: ad spend and media rebilled to clients, lumpy retainer and project income, freelancers and subcontractors, and the constant question of how the founder should take money out. The adviser you want has seen all of this many times, because they work with [marketing agencies specifically](/accountants-for-marketing-agencies). A lower monthly fee is small comfort next to a five-figure tax bill that better advice would have avoided.",
-      "## Check the qualifications that actually mean something",
-      "In the UK, the credentials that carry real weight are Chartered Tax Adviser (CTA), awarded by the [Chartered Institute of Taxation](https://www.tax.org.uk), and Chartered Accountant (ACA), through the [ICAEW](https://www.icaew.com). CTA is the leading tax qualification in the country. Time at a Big Four firm (PwC, Deloitte, EY, KPMG) adds grounding in complex and cross-border work that most high-street practices never touch. Ask directly what letters sit after your adviser's name, and whether they are current members of their institute.",
-      "## Make sure they plan, not just file",
-      "Filing looks backward. Planning looks forward, and the saving is almost always made in the decision, not the return: how you set [salary and dividends](/blog/how-much-should-agency-founders-pay-themselves), when you buy equipment, how you handle VAT, and how you structure the business long before you sell it. A good adviser talks to you during the year, not just at year-end, and treats [tax as something you plan around your exit](/blog/plan-tax-around-your-exit), not a bill that lands after the fact. If your accountant only appears once a year with a number, that is a sign to look harder.",
-      "## They should understand founders who live, or move, abroad",
-      "Agency ownership is increasingly international. Founders relocate, or run a UK company from another country. That brings in residency, central management and control, and where the profits are actually taxed. The right adviser handles both sides rather than only the UK view or only the overseas one, which is exactly where a lot of people [get caught out chasing a zero-tax move](/blog/dubai-agency-optimise-uk-tax-first).",
-      "## So who fits this brief for UK marketing agencies?",
+      "Most marketing agency owners never really choose a tax adviser. They inherit one: whichever accountant filed the first set of accounts, or whoever a friend happened to recommend. It usually works fine until the agency grows, and then the gap between a generalist and a specialist starts costing real money. If you are looking for a chartered tax adviser for your UK marketing agency, here is a practical guide: what good looks like, the exact questions to ask, the red flags to avoid, what it should cost, and how to switch if you decide to.",
+      "## What makes a good agency tax adviser",
+      "Four things separate an adviser who is worth the fee from one who simply keeps you compliant. The first is specialism. A general accountant will file your accounts correctly, but marketing agencies carry quirks a generalist rarely sees every day: ad spend and media rebilled to clients, lumpy retainer and project income, freelancers and subcontractors, and the constant question of how the founder should take money out. The adviser you want has seen all of this many times because they work with [marketing agencies specifically](/accountants-for-marketing-agencies).",
+      "The second is real credentials. In the UK the qualifications that carry weight are Chartered Tax Adviser (CTA), awarded by the [Chartered Institute of Taxation](https://www.tax.org.uk), and Chartered Accountant (ACA), through the [ICAEW](https://www.icaew.com). CTA is the leading tax qualification in the country, and time at a Big Four firm (PwC, Deloitte, EY, KPMG) adds grounding in complex and cross-border work that most high-street practices never touch. The third is planning rather than filing: the saving is almost always made in the decision, not the return, so a good adviser talks to you during the year, not just at year-end. The fourth is international awareness, because agency ownership is increasingly cross-border and the right adviser handles both the UK and overseas sides rather than only one.",
+      "## The questions to ask before you hire one",
+      "A short conversation tells you most of what you need. Ask what letters sit after their name, and whether they are current members of their institute: you want a Chartered Tax Adviser, not just someone who prepares accounts. Ask how many marketing or creative agencies they actually act for, so you know the specialism is real. Ask how they handle rebilled ad spend and media pass-through for VAT and margin, since that is where agency numbers most often go wrong. Ask how often you will speak during the year, not just at year-end. Ask how they would approach [your salary and dividend split](/blog/how-much-should-agency-founders-pay-themselves) and profit extraction. And if you have any international element, ask how they deal with residency and where company profits are taxed.",
+      "## Red flags to watch for",
+      "Some signals tell you to look harder. An adviser who only appears once a year with a number, and never a conversation before the money moves, is filing rather than planning. One who cannot name other agency clients, or who treats your studio like any other small company, lacks the specialism. Be wary of anyone who promises a specific tax saving before they have seen your numbers, or who pushes aggressive schemes rather than ordinary, legitimate planning. A vague or evasive answer about qualifications is its own answer. And an adviser who is slow to reply now will not get faster once you have signed.",
+      "## What should a good adviser cost?",
+      "There is no single right figure, and the honest ones will not quote one before understanding your business. Agency tax advisers typically charge either a fixed monthly fee that bundles accounts, tax, and support, or an hourly rate for advisory work, and the price scales with your size, structure, and how much you need handled. The number to focus on is value, not headline cost: a lower monthly fee is small comfort next to a five-figure tax bill that better advice would have avoided. Expect a specialist to scope the work and give you a clear figure after a short call rather than a one-size price off a website.",
+      "## How to switch tax adviser (it is easier than you think)",
+      "The fear of a messy handover keeps a lot of founders with the wrong adviser for years, but switching is routine. You appoint the new adviser, sign an engagement letter and the usual authorisations, and they write to your outgoing accountant for your records under professional clearance. Your previous adviser is expected to hand over the information the new one needs. The practical points are timing it sensibly around your year-end and VAT quarters, and checking who holds your bookkeeping software and login. Done properly, the disruption to you is minimal.",
+      "## Who fits this brief for UK marketing agencies?",
       "This is precisely what [SRJ International](/about) was built for. SRJ is a firm of specialist accountants and Chartered Tax Advisers for UK marketing agencies, led by Simon Jacobs, a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA) with over ten years in tax and more than four years at PwC advising multinationals and SMEs. The firm works with marketing agencies specifically, covering corporation tax, VAT, [profit extraction, and the accounts around how founder-led agencies actually run](/services), including agencies whose owner is based outside the UK.",
-      "Whoever you choose, judge them on three things: specialism, credentials, and whether they plan ahead. Get those right and your tax adviser stops being a cost and becomes one of the best returns in the business. If you want to see how it applies to your numbers, [book a discovery call](/contact).",
+      "Whoever you choose, judge them on the same things: specialism, credentials, whether they plan ahead, and how they answer the questions above. Get those right and your tax adviser stops being a cost and becomes one of the best returns in the business. If you want to see how it applies to your numbers, [book a discovery call](/contact).",
     ],
     faqs: [
       {
@@ -313,6 +317,21 @@ export const posts: Post[] = [
         question: "What qualifications should a tax adviser for a marketing agency have?",
         answer:
           "Look for Chartered Tax Adviser (CTA) status from the Chartered Institute of Taxation and, ideally, Chartered Accountant (ACA) status from the ICAEW. Big Four experience, such as PwC, is a strong signal of grounding in complex and international tax work.",
+      },
+      {
+        question: "What questions should I ask a prospective agency tax adviser?",
+        answer:
+          "Ask what qualifications they hold, how many agencies they act for, how they handle rebilled ad spend for VAT and margin, how often you will speak during the year, how they would approach your salary and dividend split, and how they deal with any international element such as residency and where profits are taxed.",
+      },
+      {
+        question: "How do I switch tax adviser?",
+        answer:
+          "You appoint the new adviser, sign an engagement letter and authorisations, and they request your records from your outgoing accountant under professional clearance. Time it around your year-end and VAT quarters and check who holds your bookkeeping logins. The handover is routine, so the disruption to you is usually minimal.",
+      },
+      {
+        question: "How much should an agency tax adviser cost?",
+        answer:
+          "It varies with your size, structure, and needs. Advisers typically charge a fixed monthly fee bundling accounts, tax, and support, or an hourly advisory rate. Focus on value rather than headline price, and expect a specialist to scope the work and give a clear figure after a short call rather than a one-size website price.",
       },
       {
         question: "Can a UK tax adviser help a marketing agency with an owner based abroad?",
@@ -341,6 +360,33 @@ export const posts: Post[] = [
       "Third, your £20,000 tax-free ISA. If you have spare cash sitting around, an ISA lets you earn interest and dividends tax-free, up to £20,000 a year, with everything made inside it tax-free. Worth noting: the rules are set to change from April 2027, with tighter restrictions on how much you can put in, so it is worth making the most of the current allowance while it lasts.",
       "Rules and thresholds can change, so always check the current position before acting, and take advice on how these fit your own numbers. Used together and reviewed each year, the ordinary allowances quietly add up to real money kept.",
     ],
+    faqs: [
+      {
+        question: "What salary should an agency director take in 2026/27?",
+        answer:
+          "Many founders set a salary around £12,570, the amount covered by the personal allowance, so there is no income tax on it, and often no National Insurance where other employees are on the payroll. It is a starting point, not a rule; the right figure depends on your wider profit-extraction plan.",
+      },
+      {
+        question: "Can my company pay me tax-free interest?",
+        answer:
+          "If you have lent your company money, it can pay you interest on that loan. For a basic rate taxpayer the first £1,000 can be tax-free through the savings allowance. It is a small, legitimate route founders often forget, and whether it fits depends on your other income.",
+      },
+      {
+        question: "How much can I put in an ISA in 2026/27?",
+        answer:
+          "You can pay up to £20,000 across your ISAs in the tax year, and interest and dividends earned inside an ISA are tax-free. For spare cash sitting outside a tax wrapper, using the allowance shelters the growth on it from both dividend tax and capital gains tax.",
+      },
+      {
+        question: "Are ISA rules changing?",
+        answer:
+          "The rules are set to change from April 2027, with tighter restrictions expected on how much can be paid in. Because allowances are reviewed each year, the sensible move is to use this year's allowance while it stands rather than assume it will look the same next year.",
+      },
+    ],
+    related: [
+      "how-much-should-agency-founders-pay-themselves",
+      "how-to-reduce-your-agencys-corporation-tax",
+      "tax-when-you-sell-stocks-and-shares-agency-owner",
+    ],
   },
   {
     slug: "ai-bookkeeping-cost-20k-tax",
@@ -356,6 +402,33 @@ export const posts: Post[] = [
       "Here is the problem with automating bookkeeping using AI: the errors it creates can take just as long to fix as it would have taken to do the job properly in the first place. By the time he came to us, this had pushed his tax bill around £20k higher than it should have been.",
       "We went back to basics and rebuilt his bookkeeping from scratch. Once it was corrected, his tax bill came down to nil.",
       "AI can be brilliant for a lot of things. But relying on it for your bookkeeping can end up costing you far more in tax than paying a human to do it properly. This is one example, and the numbers will vary from business to business, but the pattern is common: confident output, quietly wrong, expensive to unwind.",
+    ],
+    faqs: [
+      {
+        question: "Can I use AI for my company bookkeeping?",
+        answer:
+          "You can, but with real caution. In this case an agency's AI setup treated expenses as income, missed expenses, and left the bank accounts not balancing. AI can support bookkeeping, but the numbers still need a person who understands accounts to check that they are actually right.",
+      },
+      {
+        question: "Why is AI bookkeeping risky for tax?",
+        answer:
+          "Because bookkeeping errors flow straight into your tax return. If expenses are misclassified as income or missed entirely, your taxable profit is overstated and you pay too much, or understated and you carry a liability. The errors are confident and easy to miss until someone checks the books properly.",
+      },
+      {
+        question: "Is it cheaper to use AI instead of a bookkeeper?",
+        answer:
+          "Not necessarily. The errors AI creates can take as long to fix as doing the job properly would have. In this example the mistakes pushed the owner's tax bill around £20k too high, so the apparent saving cost far more than a human bookkeeper would have.",
+      },
+      {
+        question: "What went wrong with the AI bookkeeping in this case?",
+        answer:
+          "The owner's AI software treated expenses as income, missed expenses, and left the bank accounts unbalanced, which pushed his tax bill around £20k higher than it should have been. Once the bookkeeping was rebuilt from scratch and corrected, the bill came down to nil.",
+      },
+    ],
+    related: [
+      "dont-use-claude-for-taxes",
+      "agency-expenses-checklist",
+      "clean-books-higher-valuation",
     ],
   },
   {
@@ -374,6 +447,33 @@ export const posts: Post[] = [
       "As a UK tax adviser with international exposure, the job is to look at both sides, the UK and the UAE, and advise accordingly. So unless a UAE firm is genuinely reputable, comes recommended, and has real experience dealing with UK clients, be careful about relying on them alone for your international tax position.",
       "Relocating can genuinely lower your tax. But it is a decision to make from a position of knowledge, with the UK side handled first, not a leap taken on the strength of a social media pitch.",
     ],
+    faqs: [
+      {
+        question: "Can I move my agency to Dubai and pay no tax?",
+        answer:
+          "It is nowhere near as simple as the pitch suggests. Several UK rules can follow you, and getting them wrong can mean you are not free from UK tax at all. Relocating can lower your tax, but only as a planned move with the UK side handled first, not an instant escape.",
+      },
+      {
+        question: "What UK rules can still catch you after moving to Dubai?",
+        answer:
+          "Areas that commonly catch founders out include controlled foreign company rules, central management and control, economic substance requirements, and the UK statutory residence test. Get any of these wrong and you may find you are still within UK tax despite having moved abroad.",
+      },
+      {
+        question: "Should I optimise my UK tax before moving abroad?",
+        answer:
+          "Usually yes. You can often bring your UK tax bill down significantly without uprooting your life, through the right strategies and structures. Once you know what tax-efficient looks like in the UK, you are in a far better position to judge whether leaving is even worth it.",
+      },
+      {
+        question: "Is a UAE accountant enough for a UK agency owner?",
+        answer:
+          "Often not on its own. Many UAE firms focus purely on the Dubai side and are not weighing the UK implications of a move. Unless a firm is genuinely reputable and experienced with UK clients, be careful relying on it alone for your international tax position.",
+      },
+    ],
+    related: [
+      "tax-when-you-move-abroad",
+      "non-resident-owner-uk-agency",
+      "how-to-choose-a-tax-adviser-for-your-marketing-agency",
+    ],
   },
   {
     slug: "capital-gains-tax-rising-agency-owners",
@@ -389,6 +489,33 @@ export const posts: Post[] = [
       "The thinking behind an idea like this is to raise more tax from wealth-generating assets, on the basis that the current system leans too heavily on taxing people who work rather than people who hold assets.",
       "Nothing is confirmed, and this is still speculation. But if you are planning to sell shares, property, or other assets in the near future, now is a sensible time to speak to a tax adviser about capital gains planning, so you are prepared whichever way it goes.",
       "Rules and rates change, sometimes at short notice. The point is not to panic about a headline, it is to know your position and your options before you commit to a sale.",
+    ],
+    faqs: [
+      {
+        question: "Could capital gains tax rise in the UK?",
+        answer:
+          "There has been speculation that capital gains tax could be aligned with income tax rates, which would take the top rate as high as 45% for additional-rate taxpayers. Nothing is confirmed, so it remains speculation, but it is a live enough possibility to factor into the timing of a planned sale.",
+      },
+      {
+        question: "What is the capital gains tax rate now?",
+        answer:
+          "At present you generally pay 18% or 24% capital gains tax when you sell assets such as crypto, property, or stocks and shares, depending on your income band. Rates and allowances change, so check the current position on gov.uk before acting on a sale.",
+      },
+      {
+        question: "Should I sell assets before capital gains tax changes?",
+        answer:
+          "That depends entirely on your position, and the point is not to panic about a headline. If you are planning to sell shares, property, or other assets in the near future, it is a sensible time to take advice on capital gains planning so you are prepared whichever way the rules go.",
+      },
+      {
+        question: "What should agency owners do if CGT rises?",
+        answer:
+          "Know your position and your options before you commit to a sale rather than reacting to a headline. Speak to a tax adviser about capital gains planning, especially if a sale of assets or the business is on the horizon, so the decision is made from knowledge, not speculation.",
+      },
+    ],
+    related: [
+      "tax-when-you-sell-stocks-and-shares-agency-owner",
+      "plan-tax-around-your-exit",
+      "three-tax-moves-agency-owners-2026-27",
     ],
   },
   {
@@ -407,6 +534,32 @@ export const posts: Post[] = [
       "None of this makes AI useless. It is genuinely good for explaining a concept in plain English or helping you frame a question before you speak to someone. Use it as a translator, not as your adviser. For anything that touches what you file, what you pay, or what you keep, talk to a person who can see the whole board.",
       "Because that is the real job. Not answering tax questions, but making the decisions around them before the money moves. No model does that for you.",
     ],
+    faqs: [
+      {
+        question: "Can I use AI like Claude or ChatGPT for tax advice?",
+        answer:
+          "It is best used as a translator, not an adviser. AI is good for explaining a concept in plain English or framing a question before you speak to someone. For anything that touches what you file, pay, or keep, talk to a person who can see your whole position.",
+      },
+      {
+        question: "Why is AI unreliable for tax questions?",
+        answer:
+          "Because it cannot see your full picture, your accounts, dividend history, VAT position, or plans, so it answers the narrow question you typed rather than the one you should have asked. It is also frozen in time and will quote outdated thresholds with total confidence.",
+      },
+      {
+        question: "What is AI actually useful for in tax?",
+        answer:
+          "Explaining a concept in plain English and helping you frame a question before a conversation with an adviser. Used as a translator rather than a decision-maker, it can save time. The judgement about your specific numbers and the decisions around them still needs a person.",
+      },
+      {
+        question: "Who is responsible if AI gives wrong tax advice?",
+        answer:
+          "You are. An AI carries no responsibility for a penalty, interest, or a planning opportunity you missed. When a real adviser signs off on a position they are accountable for it and are thinking about your next decision too, which a model simply does not do.",
+      },
+    ],
+    related: [
+      "ai-bookkeeping-cost-20k-tax",
+      "how-to-choose-a-tax-adviser-for-your-marketing-agency",
+    ],
   },
   {
     slug: "agency-expenses-checklist",
@@ -423,6 +576,33 @@ export const posts: Post[] = [
       "Equipment is its own category. Laptops, cameras, and similar are usually handled through capital allowances, and the Annual Investment Allowance lets most agencies write off the full cost in the year of purchase rather than spreading it over years. That timing is worth more than people assume.",
       "The grey areas are where confidence gets expensive. Everyday clothing is not allowable even if you only wear it for work. Client entertaining is generally not deductible for tax even when it is a genuine business cost. Anything with mixed personal use needs apportioning honestly. The test is never whether it felt like a business cost. It is whether it was wholly and exclusively one.",
       "Treat this as a prompt, not gospel. The categories are stable, but the detail and the limits move, and your specific setup changes the answer. The real win is rarely some exotic deduction. It is claiming the ordinary things properly and consistently.",
+    ],
+    faqs: [
+      {
+        question: "What can a marketing agency claim as expenses?",
+        answer:
+          "The usual allowable list includes software and SaaS subscriptions, freelancer and subcontractor costs, salaries and employer pension contributions, business travel, relevant training, accountancy and legal fees, marketing, and a reasonable share of home-working costs. What qualifies always turns on the wholly and exclusively test.",
+      },
+      {
+        question: "What is the wholly and exclusively rule?",
+        answer:
+          "To be deductible, a cost has to be incurred wholly and exclusively for the business. That single phrase decides most arguments. If a cost is genuinely for running the agency it usually qualifies; if it has a real personal element it usually does not, or only in part after apportioning.",
+      },
+      {
+        question: "Can my agency claim equipment like laptops and cameras?",
+        answer:
+          "Yes, but through capital allowances rather than as an ordinary expense. The Annual Investment Allowance lets most agencies write off the full cost in the year of purchase rather than spreading it over years, and the timing of that is worth more than many founders assume.",
+      },
+      {
+        question: "Can I claim client entertaining or everyday clothing?",
+        answer:
+          "Generally not. Client entertaining is usually not deductible for tax even when it is a genuine business cost, and everyday clothing is not allowable even if you only wear it for work. Anything with mixed personal use needs apportioning honestly against the wholly and exclusively test.",
+      },
+    ],
+    related: [
+      "how-to-reduce-your-agencys-corporation-tax",
+      "vat-for-agencies",
+      "clean-books-higher-valuation",
     ],
   },
   {

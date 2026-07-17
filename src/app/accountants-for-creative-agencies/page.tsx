@@ -245,6 +245,13 @@ export default function AccountantsForCreativeAgenciesPage() {
             className="font-semibold text-accent hover:text-ink"
           >
             advertising agencies
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/accountants-for-digital-marketing-agencies"
+            className="font-semibold text-accent hover:text-ink"
+          >
+            digital marketing agencies
           </Link>
           . See{" "}
           <Link href="/results" className="font-semibold text-accent hover:text-ink">

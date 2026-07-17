@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/accountants-for-marketing-agencies",
     "/accountants-for-creative-agencies",
     "/accountants-for-advertising-agencies",
+    "/accountants-for-digital-marketing-agencies",
     "/services",
     "/about",
     "/results",
