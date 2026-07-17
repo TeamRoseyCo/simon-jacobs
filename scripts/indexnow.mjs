@@ -10,10 +10,13 @@
 // The key file lives at public/<KEY>.txt and is served at
 // https://srjinternational.co.uk/<KEY>.txt. IndexNow fetches it to confirm we
 // own the host before accepting the submitted URLs.
-// RELEVANT FILES: public/9f7f845e495d397e443fd4ddbea57ea4.txt, src/app/sitemap.ts
+// RELEVANT FILES: public/3c75b0b8bc9f45c8a6e5920b8fda2d67.txt, src/app/sitemap.ts
 
 const HOST = "srjinternational.co.uk";
-const KEY = "9f7f845e495d397e443fd4ddbea57ea4";
+// Key issued by Bing Webmaster Tools (2026-07-17). Any valid key hosted at
+// KEY_LOCATION works across all IndexNow engines; using Bing's own key keeps it
+// aligned with what Bing expects.
+const KEY = "3c75b0b8bc9f45c8a6e5920b8fda2d67";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const SITEMAP = `https://${HOST}/sitemap.xml`;
 const ENDPOINT = "https://api.indexnow.org/indexnow";
