@@ -66,6 +66,20 @@ function isQualified(turnover: string, role: string) {
   return Boolean(t?.qualifies && r?.qualifies);
 }
 
+// Required fields in the order they appear, with the label used in the error
+// summary and the DOM id suffix used to scroll to them. On a phone the submit
+// button sits well below the first empty field, so an inline red border alone
+// is invisible: the form just looks broken. Both the summary and the scroll
+// below exist to make a blocked submit obvious.
+const REQUIRED_FIELDS = [
+  { key: "firstName", label: "First name", idSuffix: "first" },
+  { key: "lastName", label: "Last name", idSuffix: "last" },
+  { key: "email", label: "A valid email address", idSuffix: "email" },
+  { key: "turnover", label: "Annual turnover", idSuffix: "turnover" },
+  { key: "role", label: "Your role", idSuffix: "role" },
+  { key: "question", label: "Your most pressing question", idSuffix: "question" },
+] as const;
+
 // Validates client-side, then POSTs to /api/contact (which re-validates
 // server-side, stores the lead, and relays to Simon's inbox). The success
 // screen branches on qualification: a fit is sent to the booking calendar,
@@ -127,7 +141,14 @@ export default function ContactForm() {
       question: f.question.trim().length === 0,
     };
     setErrors(next);
-    if (Object.values(next).some(Boolean)) return;
+    const firstBad = REQUIRED_FIELDS.find((f) => next[f.key]);
+    if (firstBad) {
+      // Take the visitor to the field that is actually blocking them.
+      const el = document.getElementById(`${id}-${firstBad.idSuffix}`);
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      (el as HTMLElement | null)?.focus({ preventScroll: true });
+      return;
+    }
 
     const q = isQualified(f.turnover, f.role);
 
@@ -204,6 +225,7 @@ export default function ContactForm() {
     "mt-2 min-h-12 w-full rounded-[10px] border bg-white px-4 text-sm text-ink outline-none focus:border-accent";
   const labelBase = "block text-sm font-medium text-ink";
   const req = <span className="text-accent">*</span>;
+  const missing = REQUIRED_FIELDS.filter((field) => errors[field.key]);
 
   return (
     <form
@@ -400,10 +422,42 @@ export default function ContactForm() {
         ) : null}
       </div>
 
+      {missing.length > 0 ? (
+        <div
+          role="alert"
+          className="rounded-[10px] border border-red-300 bg-red-50 p-4 text-sm text-red-700"
+        >
+          <p className="font-semibold">
+            Nearly there, {missing.length === 1 ? "one field" : `${missing.length} fields`}{" "}
+            still needed:
+          </p>
+          <ul className="mt-2 list-disc pl-5 leading-6">
+            {missing.map((m) => (
+              <li key={m.key}>{m.label}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       {serverError ? (
-        <p role="alert" className="text-sm text-red-600">
-          {serverError}
-        </p>
+        <div
+          role="alert"
+          className="rounded-[10px] border border-red-300 bg-red-50 p-4 text-sm text-red-700"
+        >
+          <p>{serverError}</p>
+          {/* Last resort. If the relay is down, hand the visitor a ready-made
+              email instead of leaving them to copy the address by hand. */}
+          <a
+            href={`mailto:simon@srjinternational.co.uk?subject=${encodeURIComponent(
+              "Question about my agency's tax",
+            )}&body=${encodeURIComponent(
+              `${f.question}\n\n${[f.firstName, f.lastName].filter(Boolean).join(" ")}\n${f.email}${f.phone ? `\n${f.phone}` : ""}`,
+            )}`}
+            className="mt-2 inline-block font-semibold underline"
+          >
+            Open a pre-filled email instead
+          </a>
+        </div>
       ) : null}
 
       <button

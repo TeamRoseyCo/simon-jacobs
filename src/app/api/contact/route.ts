@@ -38,9 +38,17 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
         text: body,
       });
       if (!error) return true;
-    } catch {
-      // fall through to the FormSubmit relay below
+      // Log the reason. A dead or rotated API key and an unverified sending
+      // domain both surface here, and both are invisible without this line.
+      console.error("[notify] resend rejected the send:", error.message);
+    } catch (err) {
+      console.error(
+        "[notify] resend threw:",
+        err instanceof Error ? err.message : err,
+      );
     }
+  } else {
+    console.error("[notify] RESEND_API_KEY is not set");
   }
 
   try {
@@ -49,8 +57,27 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({ ...payload, _cc: CC }),
     });
-    return res.ok;
-  } catch {
+    // FormSubmit answers HTTP 200 even when it refuses to deliver (an
+    // unactivated address, or a server-to-server call with no browser
+    // Referer, both come back as 200 with success:"false"). Trusting res.ok
+    // alone reports a delivered email that never left, so check the body.
+    const data = (await res.json().catch(() => null)) as {
+      success?: string;
+      message?: string;
+    } | null;
+    const delivered = res.ok && String(data?.success) === "true";
+    if (!delivered) {
+      console.error(
+        `[notify] formsubmit relay failed (HTTP ${res.status}):`,
+        data?.message ?? "no message",
+      );
+    }
+    return delivered;
+  } catch (err) {
+    console.error(
+      "[notify] formsubmit relay threw:",
+      err instanceof Error ? err.message : err,
+    );
     return false;
   }
 }
@@ -180,11 +207,19 @@ export async function POST(req: Request) {
     kind === "scorecard"
       ? String(body.name ?? "")
       : `${String(body.firstName ?? "")} ${String(body.lastName ?? "")}`.trim();
-  if (
-    honeypot ||
-    looksLikeBot(email) ||
-    (spamName && looksLikeGibberishName(spamName))
-  ) {
+  const spamReason = honeypot
+    ? "honeypot filled"
+    : looksLikeBot(email)
+      ? "synthetic gmail pattern"
+      : spamName && looksLikeGibberishName(spamName)
+        ? "gibberish name"
+        : null;
+  if (spamReason) {
+    // Logged, not silent to us. A silent drop is the right answer for the bot
+    // but the wrong answer for us: without this line a false positive loses a
+    // real lead with no trace anywhere. Check these logs if someone reports
+    // submitting and never hearing back.
+    console.error(`[spam] dropped ${kind} (${spamReason}): ${email}`);
     return NextResponse.json({ ok: true });
   }
 
@@ -306,9 +341,25 @@ export async function POST(req: Request) {
   }
 
   const sent = await notify(payload, email);
-  if (sent) {
+
+  // The lead is safe if EITHER path worked: the notification email, or the row
+  // in Supabase (which /admin reads). Only a submission that achieved neither
+  // is genuinely lost, and only that one deserves an error.
+  //
+  // This used to gate solely on `sent`, which cost a real enquiry on 28 July
+  // 2026: the row stored fine, the relay was down, and the lead was told to go
+  // away and email Simon directly. Never send someone away when we have their
+  // details.
+  if (sent || leadId) {
+    if (!sent) {
+      console.error(
+        `[lead] STORED BUT NOT EMAILED, lead ${leadId} (${email}). Visible at ${site.url}/admin only. Fix the relay.`,
+      );
+    }
     return NextResponse.json({ ok: true });
   }
+
+  console.error(`[lead] LOST, neither stored nor emailed: ${email}`);
   return NextResponse.json(
     {
       error:

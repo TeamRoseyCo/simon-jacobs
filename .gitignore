@@ -42,3 +42,8 @@ next-env.d.ts
 
 # graphify code-graph output (generated)
 /graphify-out/
+
+# blog thumbnail generator intermediates: full-size PNGs before the webp
+# conversion, plus the throwaway headless Chrome profile. The finished cards in
+# public/blog/ are the committed artefact, these are not.
+/scripts/thumbs/out/
