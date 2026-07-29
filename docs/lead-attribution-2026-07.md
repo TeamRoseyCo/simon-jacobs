@@ -4,6 +4,27 @@
 
 Simon asked on 21 July 2026 how he can tell where a lead came from, and nobody could answer him: the two enquiries received so far are completely unattributed. He shares links from his Instagram bio and his LinkedIn profile, and the UTM tags on those links were being lost the moment a visitor clicked through from the landing page to `/contact`. The goal of this work is that every future enquiry, from any of the three forms on the site (contact, Scorecard, newsletter), arrives with the channel that produced it attached: in the notification email, in the stored lead visible at `/admin`, and as a GA4 event. Plus a pack of ready-made tagged links Simon can paste into his profiles himself.
 
+## Picking this up later: what is still owed
+
+The code is finished, type-checks, builds, and was tested end to end locally. Four things are outstanding, none of them code:
+
+1. **Simon pastes five links.** The pack is in "The tagged link pack for Simon" below. Nothing else is needed from him.
+2. **Someone registers six custom dimensions in GA4.** Until that happens the event arrives but its detail is invisible in reports, and it is not retroactive. A ready-to-paste prompt for a browser agent is in "GA4 setup, as a prompt for a browser agent" below.
+3. **One live smoke test, by a human.** Open the site, accept cookies, submit the contact form once, watch GA4 Realtime. It creates a real notification email and a real leads row, so use an address Simon will recognise and ignore.
+4. **Decide whether the privacy policy mentions the session record.** See the last note under "Notes".
+
+## How it works, in plain English
+
+Think of a name tag at the door.
+
+When Simon puts `srjinternational.co.uk/ig` in his Instagram bio, that short link does not go straight to the site. It bounces through the server, which quietly turns it into `srjinternational.co.uk/scorecard?utm_source=instagram&utm_medium=social&utm_campaign=bio`. The `?utm_source=instagram` part is the name tag. It sits in the address bar and the visitor never has to notice it.
+
+The old problem was that the name tag was stuck to the page, not to the person. The moment they clicked "Contact" in the menu they got a fresh page with a clean address, the tag was gone, and the contact form had nothing to send. That is why Simon's enquiries arrived anonymous.
+
+What happens now: the instant someone lands, the browser copies the name tag onto a small notepad that lives in that browser tab. They can read three blog posts and come back an hour later, and the notepad still says "instagram". When they finally submit a form, the form reads the notepad and staples it to the enquiry. Two extra things go on the notepad: the first page they saw, and the website they arrived from if it was not ours.
+
+The notepad is write-once on purpose. If the same visitor later clicks one of Simon's LinkedIn links in the same visit, the notepad is not overwritten, because Instagram is what actually brought them in and is what deserves the credit. That is what "first touch" means, and it is the honest answer to "which of my links earns me work".
+
 ## Tasks
 
 - [x] 1. Read the two commits that shipped today (759f2f7, 46f3616) and the existing Scorecard UTM implementation, so nothing here regresses them
@@ -31,6 +52,8 @@ Simon asked on 21 July 2026 how he can tell where a lead came from, and nobody c
 **Item 2.** `landing_page` stores the path only, not the full URL with its query string. The UTM values are already captured as their own fields, so keeping the query would only make the notification email harder to read. `referrer` is stored only when it is off-site: an internal referrer would just record the previous step in the funnel and hide the real origin.
 
 **Item 4.** The Scorecard's own `utm` state and its `useEffect` are gone, replaced by the shared module. This is a small behaviour improvement as well as a de-duplication: the old code only read the URL of the page the form was on, so a visitor who arrived on `/ig` and then browsed to the blog and back lost their tags. Same `channel` string as before, so Simon's Scorecard notifications look unchanged.
+
+**Item 6, the same call in plain English, since it will get questioned again.** Supabase is a spreadsheet with fixed columns. Adding a column is a manual job someone does by hand in the Supabase dashboard, and it is entirely separate from pushing code to the site. So there is an ordering trap: if the code says "put the source in the `channel` column" and gets deployed before anyone creates that column, Supabase rejects every single save, not just the source but the whole lead. The next real enquiry would vanish. That is precisely the failure that cost a real lead on 28 July 2026, and it is not worth re-creating for tidiness. The `message` field already exists, already displays at `/admin`, already exports to CSV, and the Scorecard has been storing its source there for weeks.
 
 **Item 6, judgment call: no new Supabase column.** Attribution is prepended to the `message` field, the way the Scorecard branch already does it, and no column was added. Reason: a migration cannot be applied atomically with a deploy here. If the code inserted a `channel` column before someone ran the SQL in the Supabase dashboard, every insert would fail with an unknown-column error, `storeLead()` would return `null`, and lead storage would be silently broken for real enquiries. Weighed against a volume of roughly two enquiries a month, a sortable column buys nothing that the message prefix does not already give. The SQL is written out under "If attribution ever needs its own column" below, for whenever someone wants it and can run the migration first.
 
@@ -76,6 +99,50 @@ One event name, `generate_lead`, fired on a successful submission from all three
 | `landing_page` | e.g. `/scorecard` | First page of the visit |
 
 **For Emil or whoever owns GA4:** the event shows up in Realtime and in Reports > Engagement > Events within minutes, but the params above are custom dimensions and stay invisible in reports until they are registered once, under Admin > Data display > Custom definitions > Create custom dimension, scope Event, with the exact parameter names in the table. Do that for `form_type`, `lead_source`, `lead_medium`, `lead_campaign`, `qualified`, `landing_page`. Both GA4 properties on the site (`G-FJGM7PLZEC` and `G-6S1EHH7C90`) receive the event, so register the dimensions in whichever one is actually being read.
+
+Registration is not retroactive. GA4 only attaches a custom dimension to events that arrive after it is created, so an event fired today with a dimension registered next week will show as "(not set)" forever. Register before the tagged links go out if possible.
+
+### GA4 setup, as a prompt for a browser agent
+
+The registration is pure clicking in the GA4 UI, so it can be handed to Claude in Chrome, signed in to the Google account that owns the property. Paste the block below. It is deliberately read-mostly: it creates dimensions and toggles one key event, and is told to change nothing else.
+
+```text
+You are working in Google Analytics 4 for the site srjinternational.co.uk. Do
+only what is listed here. Do not delete anything, do not change data retention,
+data filters, users, or any existing dimension. If a step does not match what you
+see, stop and report rather than improvising.
+
+1. Open https://analytics.google.com and go to Admin (the gear, bottom left).
+2. Two GA4 measurement IDs are installed on this site: G-FJGM7PLZEC and
+   G-6S1EHH7C90. Under Admin > Data collection and modification > Data streams,
+   work out which property owns which ID, and tell me both property names.
+   Do the rest of these steps in BOTH properties.
+3. Go to Admin > Data display > Custom definitions > Custom dimensions tab.
+4. Create six event-scoped custom dimensions. For each one click "Create custom
+   dimension", set Scope to "Event", and use these exact values. The "Event
+   parameter" must match character for character, it is case sensitive, and if
+   the parameter is not yet in the dropdown list, type it in manually and pick
+   the "use anyway" option.
+
+   Dimension name: Form type          | Event parameter: form_type
+   Dimension name: Lead source        | Event parameter: lead_source
+   Dimension name: Lead medium        | Event parameter: lead_medium
+   Dimension name: Lead campaign      | Event parameter: lead_campaign
+   Dimension name: Lead qualified     | Event parameter: qualified
+   Dimension name: Lead landing page  | Event parameter: landing_page
+
+   If a dimension with that parameter already exists, leave it alone and say so.
+5. Go to Admin > Data display > Events. Find the event named "generate_lead".
+   If it is listed, switch on "Mark as key event". If it is not listed yet, that
+   is expected on a brand new setup: say so and skip this step, it appears once
+   the first real enquiry comes through.
+6. Report back with: the two property names, which of the six dimensions you
+   created versus which already existed, whether generate_lead was there to be
+   marked, and how many of the 50 event-scoped custom dimension slots each
+   property has used.
+```
+
+To test it end to end afterwards, a human needs to open the live site, accept cookies, submit the contact form once, and watch GA4 Realtime for a `generate_lead` event. Do that with a real address that Simon can recognise and ignore, because it does produce a real notification email and a real row in the leads table.
 
 ## The tagged link pack for Simon
 
