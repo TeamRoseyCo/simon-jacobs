@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SRJ blog thumbnails</title>
+<!--
+  SRJ International blog thumbnail template.
+
+  Two modes:
+    file://.../template.html              gallery, every card in one scroll
+    file://.../template.html?card=<slug>  one card, 1:1, filling a 2400x1500
+                                          viewport (this is what render.mjs
+                                          screenshots)
+
+  Gallery keys:  B  toggle the crop-safe band overlay
+                 (or use the checkbox in the toolbar)
+
+  Card data and the Simon cutout arrive via assets/inline-data.js, which is
+  generated from cards.mjs by build-data.mjs. Run `npm run thumbs:data` if the
+  page says the data is missing.
+-->
+<script src="./assets/inline-data.js"></script>
+<style>
+  :root {
+    /* From src/app/globals.css. Keep in sync. */
+    --bg:      #F6FAFC;
+    --surface: #EEF5FA;
+    --ink:     #08131F;
+    --muted:   #2B3139;
+    --accent:  #2F6FC6;
+    --copper:  #557FC5;
+    --seafoam: #9FE7DC;
+    --teal:    #1A8275;
+    --border:  #D9E5EF;
+    /* Reference-matched squiggle red. Deliberately off-brand, it is the one
+       accent borrowed from the YouTube-thumbnail reference. */
+    --squiggle: #EE3B33;
+
+    --card-w: 2400px;
+    --card-h: 1500px;
+    /* The blog index crops an 8:5 source into a 1.6:1-ish slot with
+       object-cover, losing roughly the top and bottom 12%. Nothing that
+       matters may sit outside the middle 76%. */
+    --crop: 12%;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  /* ------------------------------------------------------------------ card */
+
+  .card {
+    position: relative;
+    width: var(--card-w);
+    height: var(--card-h);
+    overflow: hidden;
+    background: var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+    isolation: isolate;
+  }
+
+  /* Light, cool gradient. Washes of seafoam and accent over the brand
+     bg/surface base. Stays light: this is a white brand. */
+  .card__bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1450px 1150px at 10% 4%,   rgba(159, 231, 220, 0.78), transparent 58%),
+      radial-gradient(1500px 1250px at 96% 92%,  rgba(47, 111, 198, 0.30),  transparent 62%),
+      radial-gradient(1150px 950px  at 62% 104%, rgba(26, 130, 117, 0.18),  transparent 60%),
+      radial-gradient(1000px 900px  at 84% 2%,   rgba(85, 127, 197, 0.16),  transparent 62%),
+      radial-gradient(900px 760px   at 50% 6%,   rgba(255, 255, 255, 0.9),  transparent 56%),
+      linear-gradient(158deg, #F8FBFD 0%, #EDF4FA 42%, #DFECF6 100%);
+  }
+
+  /* Heavily blurred, low-opacity copy of the source photo, purely for depth.
+     Sits behind everything and is barely perceptible by design. */
+  .card__backdrop {
+    position: absolute;
+    right: -6%;
+    top: -10%;
+    width: 74%;
+    height: 130%;
+    object-fit: cover;
+    opacity: 0.16;
+    filter: blur(46px) saturate(0.7);
+    mix-blend-mode: luminosity;
+  }
+
+  /* Fine top-and-bottom light lift so the crop edges do not read as flat. */
+  .card__sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0) 22%,
+      rgba(255, 255, 255, 0) 74%,
+      rgba(226, 238, 247, 0.65) 100%
+    );
+  }
+
+  /* -------------------------------------------------------------- the man */
+
+  /* Right-hand side, with the lower half of the figure dissolving into the
+     gradient. The cutout is a mid-chest crop (0.892:1), sized so his head is
+     around 490px tall, which is what makes the face read in a 190px slot.
+     The mask stops are relative to the image box, which runs 236px..1416px on
+     a 1500px canvas: the fade begins mid-chest at y=920 and is complete by
+     y=1345, so he is genuinely gone rather than just softened at the edge. */
+  .card__simon {
+    position: absolute;
+    right: 0;
+    top: 236px;
+    height: 1180px;
+    width: auto;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 58%,
+      rgba(0, 0, 0, 0.45) 76%,
+      transparent 94%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 58%,
+      rgba(0, 0, 0, 0.45) 76%,
+      transparent 94%
+    );
+    /* Barely-there contact shadow. Anything stronger reads as a cut-out glow
+       against a background this light, which is worse than no shadow at all. */
+    filter: drop-shadow(-14px 8px 30px rgba(8, 34, 75, 0.09));
+  }
+
+  /* ------------------------------------------------------------- wordmark */
+
+  .card__mark {
+    position: absolute;
+    left: 104px;
+    top: 244px;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(43, 49, 57, 0.5);
+  }
+
+  /* --------------------------------------------------------------- bubble */
+
+  /* One drop-shadow on the wrapper, not on the bubble, so bubble and tail
+     share a single continuous shadow with no seam where they meet. */
+  .card__bubblewrap {
+    position: absolute;
+    left: 100px;
+    top: 386px;
+    width: 1180px;
+    height: 700px;
+    filter:
+      drop-shadow(0 28px 56px rgba(8, 34, 75, 0.15))
+      drop-shadow(0 5px 12px rgba(8, 34, 75, 0.07));
+  }
+
+  .card__bubble {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 66px;
+    padding: 74px 84px;
+  }
+
+  .card__tail {
+    position: absolute;
+    left: 132px;
+    bottom: -78px;
+    width: 158px;
+    height: 92px;
+    background: #fff;
+    clip-path: polygon(0 0, 100% 0, 16% 100%);
+  }
+
+  .card__hook {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 900;
+    font-size: 176px; /* auto-fitted down by fitHook() */
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .card__hl { position: relative; }
+
+  /* Hand-drawn squiggle, absolutely positioned from the measured client rect
+     of the highlight span. See drawSquiggles(). */
+  .squiggle {
+    position: absolute;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .squiggle path {
+    fill: none;
+    stroke: var(--squiggle);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* ---------------------------------------------------------- safe band */
+
+  .card__band {
+    position: absolute;
+    inset: 0;
+    display: none;
+    z-index: 9;
+  }
+  body.show-band .card__band { display: block; }
+
+  .card__band::before,
+  .card__band::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: var(--crop);
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(238, 59, 51, 0.26) 0 22px,
+      rgba(238, 59, 51, 0.12) 22px 44px
+    );
+    border-color: rgba(238, 59, 51, 0.85);
+    border-style: dashed;
+    border-width: 0;
+  }
+  .card__band::before { top: 0; border-bottom-width: 5px; }
+  .card__band::after  { bottom: 0; border-top-width: 5px; }
+
+  .card__bandlabel {
+    position: absolute;
+    right: 26px;
+    font: 700 34px/1 Arial, sans-serif;
+    letter-spacing: 0.08em;
+    color: #B0221B;
+    text-transform: uppercase;
+  }
+  .card__bandlabel--t { top: calc(var(--crop) + 18px); }
+  .card__bandlabel--b { bottom: calc(var(--crop) + 18px); }
+
+  /* ------------------------------------------------------- single mode */
+
+  body.single { overflow: hidden; background: transparent; }
+  body.single .card { position: absolute; left: 0; top: 0; }
+
+  /* ------------------------------------------------------ gallery mode */
+
+  body.gallery {
+    background: #101a24;
+    color: #dbe7f1;
+    font: 400 15px/1.5 -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    padding: 0 0 120px;
+  }
+
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    align-items: center;
+    padding: 16px 28px;
+    background: rgba(16, 26, 36, 0.94);
+    border-bottom: 1px solid #24384b;
+    backdrop-filter: blur(8px);
+  }
+  .bar h1 { font-size: 16px; margin: 0; font-weight: 700; letter-spacing: 0.02em; }
+  .bar label { display: flex; gap: 8px; align-items: center; cursor: pointer; user-select: none; }
+  .bar .hint { color: #7e93a6; font-size: 13px; }
+  .bar input[type="range"] { width: 190px; }
+
+  .row {
+    display: flex;
+    gap: 34px;
+    align-items: flex-start;
+    padding: 34px 28px;
+    border-bottom: 1px solid #1c2c3b;
+  }
+
+  .row__meta { width: 250px; flex: none; padding-top: 4px; }
+  .row__slug {
+    font: 600 12px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #8fd3c8;
+    word-break: break-all;
+  }
+  .row__hook { margin-top: 10px; font-size: 14px; color: #b9c9d8; }
+  .row__n { margin-top: 10px; font-size: 12px; color: #6d8296; }
+
+  /* Scaled 1:1 card, clipped to its scaled box. */
+  .shell { flex: none; overflow: hidden; background: #000; border-radius: 6px; }
+  .shell > .card { transform-origin: top left; }
+
+  /* Simulates the blog index grid slot exactly: a 400x190 window showing an
+     object-cover crop of the 2400x1500 card. If the hook is not legible in
+     here, it is not legible on the site. */
+  .slot {
+    flex: none;
+    width: 400px;
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+  .slot > .card {
+    position: absolute;
+    left: 0;
+    top: -30px; /* (1500 * 400/2400 - 190) / 2 */
+    transform: scale(0.1666667);
+    transform-origin: top left;
+  }
+  .slot__tag {
+    margin-top: 8px;
+    font: 600 11px/1 ui-monospace, Menlo, monospace;
+    color: #6d8296;
+    letter-spacing: 0.06em;
+  }
+  .slotwrap { flex: none; }
+
+  .missing {
+    margin: 80px auto;
+    max-width: 620px;
+    padding: 28px 32px;
+    border: 1px solid #6b2f2b;
+    border-radius: 10px;
+    background: #24181a;
+    color: #ffd8d4;
+  }
+  .missing code { color: #9fe7dc; }
+</style>
+</head>
+<body>
+<script>
+(function () {
+  "use strict";
+
+  var DATA = window.__THUMBS__;
+  var params = new URLSearchParams(location.search);
+  var single = params.get("card");
+
+  if (!DATA || !DATA.cards) {
+    document.body.className = "gallery";
+    document.body.innerHTML =
+      '<div class="missing"><strong>assets/inline-data.js is missing or stale.</strong>' +
+      "<p>Generate it, then reload this page:</p>" +
+      "<pre><code>npm run thumbs:data</code></pre></div>";
+    return;
+  }
+
+  /* ---------------------------------------------------------- squiggle */
+
+  /* Three overlapping, slightly irregular strokes. viewBox is stretched to
+     the width of the underlined text (preserveAspectRatio="none"), and
+     non-scaling-stroke keeps the line weight even however far it stretches. */
+  var SQUIGGLE_PATHS = [
+    "M4 16 C 47 6, 89 22, 133 12.5 S 209 6, 253 15.5 S 289 20.5, 297 11",
+    "M10 22 C 56 13.5, 101 27, 147 17.5 S 219 12.5, 263 21 S 292 25, 296 18.5",
+    "M15 11.5 C 65 24, 111 8, 159 17.5 S 227 22, 273 11",
+  ];
+  var SQUIGGLE_OPACITY = [1, 0.6, 0.34];
+  var SQUIGGLE_WEIGHT = [17, 11, 7];
+
+  function squiggleSvg() {
+    var ns = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("class", "squiggle");
+    svg.setAttribute("viewBox", "0 0 300 32");
+    svg.setAttribute("preserveAspectRatio", "none");
+    SQUIGGLE_PATHS.forEach(function (d, i) {
+      var p = document.createElementNS(ns, "path");
+      p.setAttribute("d", d);
+      p.setAttribute("stroke-width", SQUIGGLE_WEIGHT[i]);
+      p.setAttribute("opacity", SQUIGGLE_OPACITY[i]);
+      svg.appendChild(p);
+    });
+    return svg;
+  }
+
+  /* ------------------------------------------------------------- markup */
+
+  function splitHook(hook, highlight) {
+    var i = highlight ? hook.indexOf(highlight) : -1;
+    if (i < 0) return [hook, "", ""];
+    return [hook.slice(0, i), highlight, hook.slice(i + highlight.length)];
+  }
+
+  function buildCard(card) {
+    var parts = splitHook(card.hook, card.highlight);
+    var el = document.createElement("div");
+    el.className = "card";
+    el.dataset.slug = card.slug;
+
+    var backdrop = DATA.backdrop
+      ? '<img class="card__backdrop" alt="" src="' + DATA.backdrop + '">'
+      : "";
+
+    el.innerHTML =
+      '<div class="card__bg"></div>' +
+      backdrop +
+      '<div class="card__sheen"></div>' +
+      '<img class="card__simon" alt="" src="' + DATA.simon + '">' +
+      '<div class="card__mark">SRJ International</div>' +
+      '<div class="card__bubblewrap">' +
+        '<div class="card__bubble">' +
+          '<h2 class="card__hook"></h2>' +
+        "</div>" +
+        '<div class="card__tail"></div>' +
+      "</div>" +
+      '<div class="card__band">' +
+        '<span class="card__bandlabel card__bandlabel--t">crop</span>' +
+        '<span class="card__bandlabel card__bandlabel--b">crop</span>' +
+      "</div>";
+
+    var hook = el.querySelector(".card__hook");
+    hook.appendChild(document.createTextNode(parts[0]));
+    if (parts[1]) {
+      var hl = document.createElement("span");
+      hl.className = "card__hl";
+      hl.textContent = parts[1];
+      hook.appendChild(hl);
+    }
+    if (parts[2]) hook.appendChild(document.createTextNode(parts[2]));
+
+    return el;
+  }
+
+  /* ------------------------------------------------------------ fitting */
+
+  var MAX_FONT = 176;
+  var MIN_FONT = 88;
+
+  function fitHook(card) {
+    var bubble = card.querySelector(".card__bubble");
+    var hook = card.querySelector(".card__hook");
+    var pad = 74 * 2;
+    var maxH = bubble.clientHeight - pad;
+    var size = MAX_FONT;
+    hook.style.fontSize = size + "px";
+    while (size > MIN_FONT && hook.scrollHeight > maxH) {
+      size -= 4;
+      hook.style.fontSize = size + "px";
+    }
+    return size;
+  }
+
+  function drawSquiggles(card) {
+    var bubble = card.querySelector(".card__bubble");
+    var hook = card.querySelector(".card__hook");
+    var hl = card.querySelector(".card__hl");
+    Array.prototype.forEach.call(card.querySelectorAll(".squiggle"), function (s) {
+      s.remove();
+    });
+    if (!hl) return;
+
+    // Measure in the card's own 1:1 coordinate space, undoing any preview
+    // scale applied by an ancestor transform.
+    var scale = bubble.getBoundingClientRect().width / bubble.offsetWidth;
+    var base = hook.getBoundingClientRect();
+    var rects = hl.getClientRects();
+    if (!rects.length) return;
+
+    // If the highlight wraps, underline only its last line. Underlining every
+    // line puts a stroke straight through the line below it, and one clean
+    // underline is what the reference actually does.
+    var r = rects[rects.length - 1];
+    var w = r.width / scale;
+    if (w < 12) return;
+
+    var svg = squiggleSvg();
+    svg.style.left = (r.left - base.left) / scale - 12 + "px";
+    svg.style.top = (r.bottom - base.top) / scale - 14 + "px";
+    svg.style.width = w + 24 + "px";
+    svg.style.height = "46px";
+    hook.appendChild(svg);
+  }
+
+  function layout(card) {
+    var size = fitHook(card);
+    drawSquiggles(card);
+    return size;
+  }
+
+  /* --------------------------------------------------------------- boot */
+
+  if (single) {
+    var card = DATA.cards.filter(function (c) { return c.slug === single; })[0];
+    if (!card) {
+      document.body.textContent = "no card for slug: " + single;
+      return;
+    }
+    document.body.className = "single";
+    if (params.get("band") === "1") document.body.classList.add("show-band");
+    var node = buildCard(card);
+    document.body.appendChild(node);
+    layout(node);
+    // Signal for the renderer, and for a human checking the console.
+    window.__READY__ = true;
+    document.documentElement.setAttribute("data-ready", "1");
+    return;
+  }
+
+  /* Gallery */
+  document.body.className = "gallery";
+
+  var bar = document.createElement("div");
+  bar.className = "bar";
+  bar.innerHTML =
+    "<h1>SRJ blog thumbnails</h1>" +
+    '<label><input type="checkbox" id="band"> show crop-safe band</label>' +
+    '<label>preview size <input type="range" id="zoom" min="16" max="60" value="30"></label>' +
+    '<span class="hint">press <strong>B</strong> to toggle the band. Right-hand tile is the real 400&times;190 blog-index slot.</span>';
+  document.body.appendChild(bar);
+
+  var rows = [];
+
+  DATA.cards.forEach(function (card, i) {
+    var row = document.createElement("div");
+    row.className = "row";
+
+    var meta = document.createElement("div");
+    meta.className = "row__meta";
+    meta.innerHTML =
+      '<div class="row__slug">' + card.slug + "</div>" +
+      '<div class="row__hook">' + card.hook + "</div>";
+    var n = document.createElement("div");
+    n.className = "row__n";
+    meta.appendChild(n);
+    row.appendChild(meta);
+
+    var shell = document.createElement("div");
+    shell.className = "shell";
+    var big = buildCard(card);
+    shell.appendChild(big);
+    row.appendChild(shell);
+
+    var slotwrap = document.createElement("div");
+    slotwrap.className = "slotwrap";
+    var slot = document.createElement("div");
+    slot.className = "slot";
+    var small = buildCard(card);
+    slot.appendChild(small);
+    slotwrap.appendChild(slot);
+    var tag = document.createElement("div");
+    tag.className = "slot__tag";
+    tag.textContent = "400 x 190 (as rendered on /blog)";
+    slotwrap.appendChild(tag);
+    row.appendChild(slotwrap);
+
+    document.body.appendChild(row);
+    rows.push({ shell: shell, big: big, small: small, note: n, index: i });
+  });
+
+  function applyZoom(pct) {
+    var s = pct / 100;
+    rows.forEach(function (r) {
+      r.big.style.transform = "scale(" + s + ")";
+      r.shell.style.width = Math.round(2400 * s) + "px";
+      r.shell.style.height = Math.round(1500 * s) + "px";
+    });
+  }
+
+  function relayout() {
+    rows.forEach(function (r) {
+      var size = layout(r.big);
+      layout(r.small);
+      r.note.textContent = "hook " + size + "px";
+    });
+  }
+
+  applyZoom(30);
+  relayout();
+
+  document.getElementById("zoom").addEventListener("input", function (e) {
+    applyZoom(+e.target.value);
+    relayout();
+  });
+
+  var bandBox = document.getElementById("band");
+  bandBox.addEventListener("change", function () {
+    document.body.classList.toggle("show-band", bandBox.checked);
+  });
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "b" || e.key === "B") {
+      bandBox.checked = !bandBox.checked;
+      document.body.classList.toggle("show-band", bandBox.checked);
+    }
+  });
+
+  // Fonts can land after first layout; re-fit once they have.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+  window.__READY__ = true;
+})();
+</script>
+</body>
+</html>

@@ -47,3 +47,5 @@ next-env.d.ts
 # conversion, plus the throwaway headless Chrome profile. The finished cards in
 # public/blog/ are the committed artefact, these are not.
 /scripts/thumbs/out/
+# Generated from cards.mjs + the cutout by `npm run thumbs:data`.
+/scripts/thumbs/assets/inline-data.js

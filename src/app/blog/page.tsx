@@ -1,8 +1,37 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ConsultCta from "@/components/ConsultCta";
 import { posts, formatPostDate } from "@/lib/posts";
+
+// Which posts actually have a thumbnail on disk, read once at build time (this
+// is a server component, so this never runs in the browser). Without this a
+// post added to posts.ts before its image exists renders a 404 image on the
+// index, which is exactly what used to happen here.
+//
+// To generate a thumbnail for a new post instead of falling back, see
+// scripts/thumbs/README.md.
+const BLOG_IMAGE_DIR = path.join(process.cwd(), "public", "blog");
+const DEFAULT_POST_IMAGE = "/blog/_default.webp";
+
+const HAS_IMAGE: Set<string> = (() => {
+  try {
+    return new Set(
+      fs
+        .readdirSync(BLOG_IMAGE_DIR)
+        .filter((f) => f.endsWith(".webp"))
+        .map((f) => f.replace(/\.webp$/, "")),
+    );
+  } catch {
+    return new Set<string>();
+  }
+})();
+
+function postImage(slug: string): string {
+  return HAS_IMAGE.has(slug) ? `/blog/${slug}.webp` : DEFAULT_POST_IMAGE;
+}
 
 export const metadata: Metadata = {
   title: "Tax & Profit Notes for Agency Founders",
@@ -55,7 +84,7 @@ export default function BlogPage() {
           >
             <div className="relative min-h-[240px] md:min-h-[300px]">
               <Image
-                src={`/blog/${featured.slug}.webp`}
+                src={postImage(featured.slug)}
                 alt={featured.title}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
@@ -93,7 +122,7 @@ export default function BlogPage() {
             >
               <div className="relative h-[190px] w-full">
                 <Image
-                  src={`/blog/${post.slug}.webp`}
+                  src={postImage(post.slug)}
                   alt={post.title}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
