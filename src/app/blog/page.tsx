@@ -11,10 +11,11 @@ import { posts, formatPostDate } from "@/lib/posts";
 // post added to posts.ts before its image exists renders a 404 image on the
 // index, which is exactly what used to happen here.
 //
-// To generate a thumbnail for a new post instead of falling back, see
-// scripts/thumbs/README.md.
+// The fallback is an existing brand photo rather than a generated card. Eleven
+// posts share it, which is repetitive but neutral: a repeated real photo reads
+// as a house style, a broken image reads as a dead site.
 const BLOG_IMAGE_DIR = path.join(process.cwd(), "public", "blog");
-const DEFAULT_POST_IMAGE = "/blog/_default.webp";
+const DEFAULT_POST_IMAGE = "/simon-jacobs-event.webp";
 
 const HAS_IMAGE: Set<string> = (() => {
   try {
