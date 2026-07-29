@@ -82,6 +82,64 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
   }
 }
 
+// Where the lead came from, read off the submission. The browser captures the
+// UTM tags on Simon's shared links (plus the first page and any off-site
+// referrer) on arrival and keeps them for the session, see src/lib/attribution.ts.
+//
+// `channel` keeps the "source / campaign" shape the Scorecard notifications have
+// always used, so nothing Simon already recognises changes: "instagram / bio",
+// "linkedin / profile". The rest goes out as extra notification lines.
+//
+// `prefix` is prepended to the stored lead's `message`. The leads table has no
+// attribution column and adding one would break every insert until someone runs
+// the migration in Supabase by hand, which would silently lose real leads, so
+// the message field carries it and /admin shows it with no schema change. See
+// docs/lead-attribution-2026-07.md for the reasoning and the migration if it is
+// ever wanted.
+function attribution(body: Record<string, unknown>) {
+  // Newlines stripped and length capped: these values come off a URL, so they
+  // are attacker-controlled, and they are rendered as lines in Simon's
+  // notification email. Without this a crafted utm_source could forge a line.
+  const val = (key: string) =>
+    String(body[key] ?? "")
+      .replace(/[\r\n\t]+/g, " ")
+      .trim()
+      .slice(0, 200);
+
+  const source = val("utm_source");
+  const medium = val("utm_medium");
+  const campaign = val("utm_campaign");
+  const content = val("utm_content");
+  const term = val("utm_term");
+  const referrer = val("referrer");
+  const landing = val("landing_page");
+  const channel = [source, campaign].filter(Boolean).join(" / ");
+
+  const lines = [
+    channel ? `Lead source: ${channel}` : "",
+    medium ? `Medium: ${medium}` : "",
+    content ? `Content: ${content}` : "",
+    term ? `Term: ${term}` : "",
+    landing ? `Landed on: ${landing}` : "",
+    referrer ? `Came from: ${referrer}` : "",
+  ].filter(Boolean);
+
+  return {
+    channel,
+    // Spread into the notification payload. notify() drops empty values itself,
+    // so unattributed leads read exactly as they did before.
+    fields: {
+      channel,
+      medium,
+      utm_content: content,
+      utm_term: term,
+      landing_page: landing,
+      referrer,
+    },
+    prefix: lines.length ? `${lines.join("\n")}\n\n` : "",
+  };
+}
+
 // Persist a lead to Supabase if it's configured. Never throws: storage is a
 // bonus on top of the email relay, so a DB hiccup must not break submissions.
 // Returns the new row's id (for queuing follow-ups) or null on any failure.
@@ -249,6 +307,8 @@ export async function POST(req: Request) {
     );
   }
 
+  const attr = attribution(body);
+
   let payload: Record<string, unknown>;
   let lead: Record<string, unknown>;
   let sequence: { track: "call" | "scorecard"; firstName: string } | null = null;
@@ -257,8 +317,12 @@ export async function POST(req: Request) {
       _subject: "New consult / scorecard signup",
       source: "Email capture",
       email,
+      ...attr.fields,
     };
-    lead = { source: "subscribe", email };
+    // A newsletter signup has no message of its own, so the attribution block is
+    // the whole of it. Null rather than an empty string when we know nothing, so
+    // /admin renders it as blank instead of an empty box.
+    lead = { source: "subscribe", email, message: attr.prefix.trim() || null };
   } else if (kind === "scorecard") {
     const breakdown = Array.isArray(body.breakdown)
       ? (body.breakdown as Array<Record<string, unknown>>)
@@ -275,17 +339,11 @@ export async function POST(req: Request) {
     const answers = answerDetail
       .map((a) => `- [${String(a.area)}] ${String(a.question)} -> ${String(a.answer)}`)
       .join("\n");
-    // Marketing channel from the UTM-tagged link Simon shares (e.g. LinkedIn).
-    // "source / campaign" when both are present, so the notification and the
-    // stored lead show where each scorecard lead actually came from.
-    const utmSource = String(body.utm_source ?? "").trim();
-    const utmCampaign = String(body.utm_campaign ?? "").trim();
-    const channel = [utmSource, utmCampaign].filter(Boolean).join(" / ");
     payload = {
       _subject: `New Profit-Rich Scorecard, ${String(body.name)} (${String(body.total)}/${String(body.max)}, ${String(body.rating)})`,
       name: String(body.name),
       email,
-      channel,
+      ...attr.fields,
       total: `${String(body.total)}/${String(body.max)}, ${String(body.rating)}`,
       results,
       answers,
@@ -295,7 +353,7 @@ export async function POST(req: Request) {
       name: String(body.name),
       email,
       score: `${String(body.total)}/${String(body.max)}, ${String(body.rating)}`,
-      message: `${channel ? `Lead source: ${channel}\n\n` : ""}${answers ? `${results}\n\n${answers}` : results}`,
+      message: `${attr.prefix}${answers ? `${results}\n\n${answers}` : results}`,
     };
     sequence = { track: "scorecard", firstName: String(body.name).trim().split(/\s+/)[0] ?? "" };
   } else {
@@ -309,6 +367,9 @@ export async function POST(req: Request) {
       _subject: `${qualified ? "QUALIFIED" : "Lead"}: agency question from ${fullName}`.trim(),
       name: fullName,
       email,
+      // High up on purpose. The whole point of this: Simon reads "where did this
+      // one come from" in the first few lines, not at the bottom.
+      ...attr.fields,
       phone: String(body.phone ?? ""),
       website: String(body.website ?? ""),
       turnover,
@@ -327,12 +388,25 @@ export async function POST(req: Request) {
       role: role || null,
       intent: intent || null,
       qualified,
-      message: String(body.question ?? ""),
+      // Attribution first, then the question. Same shape the scorecard branch
+      // has always stored, so /admin and the CSV export show it with no schema
+      // change.
+      message: `${attr.prefix}${String(body.question ?? "")}`,
     };
     if (qualified) {
       sequence = { track: "call", firstName: String(body.firstName ?? "").trim() };
     }
   }
+
+  // One line per lead, with its channel. The 28 July 2026 incident had the email
+  // relay down and only the Supabase row to go on; if both had failed there would
+  // have been nothing anywhere. This line means the Vercel log always knows which
+  // link produced an enquiry, whatever else breaks.
+  console.log(
+    `[lead] ${kind} from ${email} via ${attr.channel || "no tagged link"}${
+      attr.fields.landing_page ? ` (landed on ${attr.fields.landing_page})` : ""
+    }`,
+  );
 
   const leadId = await storeLead(lead);
 

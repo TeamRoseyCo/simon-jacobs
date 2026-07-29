@@ -25,6 +25,32 @@ const nextConfig: NextConfig = {
           "/scorecard?utm_source=linkedin&utm_medium=social&utm_campaign=profile",
         permanent: false,
       },
+      // One short link per placement, so a lead traces back to the individual
+      // link rather than just "LinkedIn". The two below point at /contact and
+      // /scorecard respectively because the intent differs: someone pressing the
+      // button on a profile is ready to talk, someone opening a Featured item is
+      // still reading. Full list Simon pastes from:
+      // docs/lead-attribution-2026-07.md.
+      {
+        source: "/li-button",
+        destination:
+          "/contact?utm_source=linkedin&utm_medium=social&utm_campaign=profile-button",
+        permanent: false,
+      },
+      {
+        source: "/li-featured",
+        destination:
+          "/scorecard?utm_source=linkedin&utm_medium=social&utm_campaign=featured",
+        permanent: false,
+      },
+      // Email signature. Short and readable, because it sits under Simon's name
+      // in plain text where a tagged URL would look like spam.
+      {
+        source: "/call",
+        destination:
+          "/contact?utm_source=email&utm_medium=signature&utm_campaign=email-signature",
+        permanent: false,
+      },
     ];
   },
 };

@@ -2,6 +2,8 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { bookHref, scorecardHref } from "@/lib/content";
+import { attributionPayload } from "@/lib/attribution";
+import { trackLead } from "@/lib/analytics";
 
 // Draft key for the in-progress form. Bump the version if the field shape
 // changes so an old draft can't restore into a mismatched form.
@@ -158,12 +160,27 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ _kind: "contact", ...f, qualified: q, company_url: companyUrl }),
+        // Lead source rides along invisibly: the utm_* / referrer /
+        // landing_page fields captured when the visitor first arrived, which by
+        // now is usually a different page from this one. Read at submit time
+        // rather than held in state, and deliberately kept out of `Fields` so it
+        // can never land in the saved draft: it is not something the visitor
+        // typed, and a stale draft must not carry a stale source.
+        body: JSON.stringify({
+          _kind: "contact",
+          ...f,
+          qualified: q,
+          company_url: companyUrl,
+          ...attributionPayload(),
+        }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setQualified(q);
       setDone(true);
+      // Counted only now that it actually landed, and only if the visitor
+      // accepted analytics cookies (the helper checks, see src/lib/analytics.ts).
+      trackLead({ form: "contact", qualified: q });
       // Submitted successfully — drop the saved draft so it can't reappear.
       try {
         localStorage.removeItem(DRAFT_KEY);

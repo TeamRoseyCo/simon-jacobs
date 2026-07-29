@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { scorecardAreas, scorecardAnswers } from "@/lib/content";
 import { posts } from "@/lib/posts";
+import { attributionPayload } from "@/lib/attribution";
+import { trackLead } from "@/lib/analytics";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const AREAS = scorecardAreas;
@@ -29,22 +31,6 @@ export default function ScorecardForm() {
   // Honeypot: hidden from humans, tempting to bots. A filled value is dropped
   // server-side (see src/app/api/contact/route.ts).
   const [companyUrl, setCompanyUrl] = useState("");
-  // Marketing source from the link Simon shares (e.g. /score?utm_source=linkedin).
-  // Captured once on load so it survives even if the URL changes mid-quiz, then
-  // sent with the submission so Simon sees which channel produced the lead.
-  const [utm, setUtm] = useState<{
-    source?: string;
-    medium?: string;
-    campaign?: string;
-  }>({});
-
-  useEffect(() => {
-    const p = new URLSearchParams(window.location.search);
-    const source = p.get("utm_source") ?? undefined;
-    const medium = p.get("utm_medium") ?? undefined;
-    const campaign = p.get("utm_campaign") ?? undefined;
-    if (source || medium || campaign) setUtm({ source, medium, campaign });
-  }, []);
 
   const total = AREAS.length + 1; // areas + contact
   const onContact = step === AREAS.length;
@@ -94,15 +80,19 @@ export default function ScorecardForm() {
           rating: rating(grandTotal, AREAS.length * 6),
           breakdown,
           answerDetail,
-          utm_source: utm.source,
-          utm_medium: utm.medium,
-          utm_campaign: utm.campaign,
           company_url: companyUrl,
+          // Marketing source from the link Simon shares (e.g. /ig, /li). Now
+          // read from the shared session record in src/lib/attribution.ts
+          // instead of this page's own URL: a visitor who arrived on /ig, read a
+          // blog post, and came back to the Scorecard used to lose their tags.
+          ...attributionPayload(),
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setDone(true);
+      // Only after it landed, and only with analytics consent.
+      trackLead({ form: "scorecard" });
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "Could not send. Please try again.",

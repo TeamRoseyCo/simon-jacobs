@@ -5,6 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
 import CookieConsent from "@/components/CookieConsent";
+import AttributionCapture from "@/components/AttributionCapture";
 import { site } from "@/lib/content";
 
 const siteUrl = site.url;
@@ -130,6 +131,13 @@ export default function RootLayout({
         <SiteFooter />
         <ScrollReveal />
         <CookieConsent />
+        {/* Records which of Simon's tagged links brought this visitor in, on
+            whatever page they land on, so the forms can send it with the
+            enquiry. Renders nothing and sets no cookie: the value lives in
+            sessionStorage for this visit only, is first-party, and travels no
+            further than the enquiry the visitor chooses to submit. Analytics
+            stays behind the consent banner, see src/lib/analytics.ts. */}
+        <AttributionCapture />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

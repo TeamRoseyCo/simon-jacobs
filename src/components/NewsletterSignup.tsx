@@ -1,6 +1,8 @@
 "use client";
 
 import { useId, useState } from "react";
+import { attributionPayload } from "@/lib/attribution";
+import { trackLead } from "@/lib/analytics";
 
 type Variant = "panel" | "footer";
 
@@ -30,11 +32,18 @@ export default function NewsletterSignup({
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ _kind: "subscribe", email: email.trim() }),
+        // Same invisible lead-source fields the other two forms send, so an
+        // email capture from the footer is attributed like any other enquiry.
+        body: JSON.stringify({
+          _kind: "subscribe",
+          email: email.trim(),
+          ...attributionPayload(),
+        }),
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("done");
       setEmail("");
+      trackLead({ form: "newsletter" });
     } catch {
       setStatus("error");
     } finally {
