@@ -203,7 +203,7 @@ export default function ContactForm() {
     ) : (
       <div className="finance-card mx-auto max-w-2xl p-8 text-center md:p-10">
         <h3 className="font-serif text-2xl text-ink">
-          Thanks{f.firstName ? `, ${f.firstName}` : ""} — got it.
+          Thanks{f.firstName ? `, ${f.firstName}` : ""}. Got it.
         </h3>
         <p className="mx-auto mt-3 max-w-[480px] text-sm leading-7 text-muted">
           A one-to-one call may not be the right fit just yet, but the best

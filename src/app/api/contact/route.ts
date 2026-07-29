@@ -306,7 +306,7 @@ export async function POST(req: Request) {
     const role = String(body.role ?? "");
     const intent = String(body.intent ?? "");
     payload = {
-      _subject: `${qualified ? "QUALIFIED" : "Lead"} — agency question from ${fullName}`.trim(),
+      _subject: `${qualified ? "QUALIFIED" : "Lead"}: agency question from ${fullName}`.trim(),
       name: fullName,
       email,
       phone: String(body.phone ?? ""),
