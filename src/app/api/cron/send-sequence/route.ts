@@ -79,7 +79,7 @@ export async function GET(req: Request) {
     }
 
     const unsubLink = unsubscribeUrl(site.url, row.email);
-    const { subject, text } = buildTemplate(row, unsubLink);
+    const { subject, text, html } = buildTemplate(row, unsubLink);
 
     try {
       const { error } = await resend.emails.send({
@@ -88,6 +88,7 @@ export async function GET(req: Request) {
         replyTo: "simon@srjinternational.co.uk",
         subject,
         text,
+        html,
         headers: {
           "List-Unsubscribe": `<mailto:simon@srjinternational.co.uk?subject=unsubscribe>, <${unsubLink}>`,
           "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",

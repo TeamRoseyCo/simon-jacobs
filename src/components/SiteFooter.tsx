@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { bookCtaHref, navLinks, site } from "@/lib/content";
 import NewsletterSignup from "@/components/NewsletterSignup";
@@ -31,8 +32,17 @@ export default function SiteFooter() {
 
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr] md:px-10 lg:px-16">
         <div>
-          <Link href="/" className="brand-script text-[30px] leading-none text-white">
-            SRJ International
+          <Link href="/" aria-label="SRJ International, home" className="flex items-center gap-3">
+            <Image
+              src="/logo/srj-wordmark-white.png"
+              alt=""
+              width={96}
+              height={96}
+              className="h-7 w-auto"
+            />
+            <span className="brand-script text-[30px] leading-none text-white">
+              SRJ International
+            </span>
           </Link>
           <p className="mt-5 max-w-[360px] text-sm leading-7 text-white/68">
             Chartered tax advice, profit extraction, and accountancy for UK
@@ -146,6 +156,18 @@ export default function SiteFooter() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="border-t border-white/10 py-8">
+        <Link href="/" aria-label="SRJ International, home" className="mx-auto flex w-fit items-center justify-center">
+          <Image
+            src="/logo/srj-wordmark-white.png"
+            alt="SRJ International"
+            width={96}
+            height={96}
+            className="h-8 w-auto"
+          />
+        </Link>
       </div>
 
       <div className="border-t border-white/10">

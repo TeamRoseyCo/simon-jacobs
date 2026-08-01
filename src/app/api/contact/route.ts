@@ -182,7 +182,7 @@ async function startSequence(opts: {
 
   const unsubLink = unsubscribeUrl(site.url, opts.email);
   const resend = new Resend(resendKey);
-  const { subject, text } =
+  const { subject, text, html } =
     opts.track === "scorecard"
       ? scorecardEmail1({ firstName: opts.firstName, resourceLink: RESOURCE_LINK, unsubLink })
       : callEmail1({ firstName: opts.firstName, unsubLink });
@@ -194,6 +194,7 @@ async function startSequence(opts: {
       replyTo: TARGET,
       subject,
       text,
+      html,
       headers: {
         "List-Unsubscribe": `<mailto:${TARGET}?subject=unsubscribe>, <${unsubLink}>`,
         "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",

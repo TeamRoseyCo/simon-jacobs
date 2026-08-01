@@ -9,11 +9,14 @@ export type TemplateVars = {
   unsubLink: string;
 };
 
-type Template = { subject: string; text: string };
+type Template = { subject: string; text: string; html: string };
 
 const SIGNOFF_CALL = `
 Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
 ${site.physicalAddress} · Unsubscribe anytime: {{unsub}}`;
+
+// Served from public/logo/srj-wordmark.png, the same mark as the site favicon.
+const LOGO_URL = `${site.url}/logo/srj-wordmark.png`;
 
 function render(text: string, vars: TemplateVars): string {
   return text
@@ -24,11 +27,51 @@ function render(text: string, vars: TemplateVars): string {
     .replaceAll("{{unsub}}", vars.unsubLink);
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// Builds the HTML sibling of the plain-text send: same copy, plus the logo up
+// top and a real "Unsubscribe" link instead of a bare, ugly URL. The raw
+// unsubscribe link is swapped for a token BEFORE escaping (it can contain `&`
+// in its query string) and turned into an anchor AFTER escaping, so the link
+// itself is never mangled and never shown to the reader.
+function buildHtml(renderedText: string, unsubLink: string): string {
+  const tokenised = renderedText.split(unsubLink).join("@@UNSUB@@");
+  const escaped = escapeHtml(tokenised);
+  const linked = escaped.split("@@UNSUB@@").join(
+    `<a href="${unsubLink}" style="color:#08131F;">Unsubscribe</a>`,
+  );
+  const body = linked
+    .split(/\n{2,}/)
+    .map((para) => `<p style="margin:0 0 16px;">${para.replace(/\n/g, "<br>")}</p>`)
+    .join("\n");
+
+  return `<!doctype html>
+<html>
+  <body style="margin:0;padding:24px;background:#f5f5f3;font-family:Arial,Helvetica,sans-serif;color:#08131F;">
+    <table role="presentation" width="100%" style="max-width:520px;margin:0 auto;">
+      <tr>
+        <td style="padding-bottom:24px;">
+          <img src="${LOGO_URL}" alt="SRJ International" width="96" style="display:block;" />
+        </td>
+      </tr>
+      <tr>
+        <td style="font-size:15px;line-height:1.6;">${body}</td>
+      </tr>
+    </table>
+  </body>
+</html>`;
+}
+
 export function callEmail1(vars: TemplateVars): Template {
-  return {
-    subject: "Here's your link to get booked in",
-    text: render(
-      `Hey {{first_name}},
+  const subject = "Here's your link to get booked in";
+  const text = render(
+    `Hey {{first_name}},
 
 Thanks for reaching out. I've got your message in front of me, so as promised, here's your link to grab a time that suits you:
 → {{BOOKING_LINK}}
@@ -52,16 +95,15 @@ That's all for now.
 Talk soon,
 Simon
 ${SIGNOFF_CALL}`,
-      vars,
-    ),
-  };
+    vars,
+  );
+  return { subject, text, html: buildHtml(text, vars.unsubLink) };
 }
 
 export function callEmail2(vars: TemplateVars): Template {
-  return {
-    subject: `Hey ${vars.firstName || "there"}, still want that call?`,
-    text: render(
-      `Hey {{first_name}}!
+  const subject = `Hey ${vars.firstName || "there"}, still want that call?`;
+  const text = render(
+    `Hey {{first_name}}!
 
 Your question came through the other day, but it doesn't look like you've grabbed a time yet.
 
@@ -74,16 +116,15 @@ Or just hit reply and ask me right here. I read every one.
 
 Talk soon,
 Simon`,
-      vars,
-    ),
-  };
+    vars,
+  );
+  return { subject, text, html: buildHtml(text, vars.unsubLink) };
 }
 
 export function scorecardEmail1(vars: TemplateVars): Template {
-  return {
-    subject: "Your Profit-Rich Scorecard is on its way",
-    text: render(
-      `Hey {{first_name}},
+  const subject = "Your Profit-Rich Scorecard is on its way";
+  const text = render(
+    `Hey {{first_name}},
 
 Nice work finishing the Profit-Rich Scorecard. You've just done something most agency owners don't: looking at where money leaks.
 
@@ -109,16 +150,15 @@ Speak soon. Your scorecard's on its way.
 
 Simon
 ${SIGNOFF_CALL}`,
-      vars,
-    ),
-  };
+    vars,
+  );
+  return { subject, text, html: buildHtml(text, vars.unsubLink) };
 }
 
 export function scorecardEmail2(vars: TemplateVars): Template {
-  return {
-    subject: `Hey ${vars.firstName || "there"}, how did it land?`,
-    text: render(
-      `Hey {{first_name}}!
+  const subject = `Hey ${vars.firstName || "there"}, how did it land?`;
+  const text = render(
+    `Hey {{first_name}}!
 
 I sent over your Profit-Rich Scorecard and 90-day plan a couple of days back.
 
@@ -130,16 +170,15 @@ More useful bits on the way soon.
 
 Catch you soon,
 Simon`,
-      vars,
-    ),
-  };
+    vars,
+  );
+  return { subject, text, html: buildHtml(text, vars.unsubLink) };
 }
 
 export function instagramEmail3(vars: TemplateVars): Template {
-  return {
-    subject: "Here's where I post the free stuff (daily)",
-    text: render(
-      `Hey {{first_name}}.
+  const subject = "Here's where I post the free stuff (daily)";
+  const text = render(
+    `Hey {{first_name}}.
 
 Whether we've spoken yet or not, I'd rather you didn't wait around for my next email to get something useful.
 
@@ -159,7 +198,7 @@ Talk soon,
 Simon
 
 P.S. It's where I test new ideas first and break down real (anonymised) agency numbers. Got a question about yours? Drop it in the comments and I'll likely turn it into a post.`,
-      vars,
-    ),
-  };
+    vars,
+  );
+  return { subject, text, html: buildHtml(text, vars.unsubLink) };
 }
