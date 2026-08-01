@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { posts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 import { site } from "@/lib/content";
 
 const siteUrl = site.url;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts();
   const routes = [
     "",
     "/chartered-tax-adviser-london-marketing-agencies",

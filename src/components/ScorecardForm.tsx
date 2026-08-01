@@ -4,12 +4,18 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { scorecardAreas, scorecardAnswers } from "@/lib/content";
-import { posts } from "@/lib/posts";
 import { attributionPayload } from "@/lib/attribution";
 import { trackLead } from "@/lib/analytics";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const AREAS = scorecardAreas;
+
+export type ScorecardBlogLink = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  readingTime: string;
+};
 
 function rating(score: number, max: number) {
   const pct = score / max;
@@ -18,7 +24,11 @@ function rating(score: number, max: number) {
   return "Red";
 }
 
-export default function ScorecardForm() {
+export default function ScorecardForm({
+  posts,
+}: {
+  posts: ScorecardBlogLink[];
+}) {
   const [started, setStarted] = useState(false);
   // step 0..AREAS.length-1 = an area; AREAS.length = contact step
   const [step, setStep] = useState(0);

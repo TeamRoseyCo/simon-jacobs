@@ -3,13 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ConsultCta from "@/components/ConsultCta";
 import FaqAccordion from "@/components/FaqAccordion";
-import { posts, getPost, formatPostDate } from "@/lib/posts";
+import { getAllPosts, getPost, formatPostDate } from "@/lib/posts";
 import { site } from "@/lib/content";
 
 const siteUrl = site.url;
 const OG_IMAGE = "/simon-jacobs.jpg";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
   return posts.map((p) => ({ slug: p.slug }));
 }
 
@@ -19,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -88,7 +89,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
 
   const postUrl = `${siteUrl}/blog/${post.slug}`;
@@ -141,9 +142,9 @@ export default async function BlogPostPage({
         }
       : null;
 
-  const related = (post.related ?? [])
-    .map((s) => getPost(s))
-    .filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const related = (
+    await Promise.all((post.related ?? []).map((s) => getPost(s)))
+  ).filter((p): p is NonNullable<typeof p> => Boolean(p));
 
   return (
     <>

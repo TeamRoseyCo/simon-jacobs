@@ -161,6 +161,9 @@ export default function LeadsTable({ leads }: { leads: Lead[] }) {
           <h1 style={pageTitleStyle}>Leads</h1>
         </div>
         <div style={{ display: "flex", gap: "0.6rem" }}>
+          <a href="/admin/blog" style={ghostPill}>
+            Blog posts
+          </a>
           <button
             type="button"
             onClick={() => downloadCsv(filtered)}

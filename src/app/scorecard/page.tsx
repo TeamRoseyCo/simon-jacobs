@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ScorecardForm from "@/components/ScorecardForm";
+import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "The Profit-Rich Scorecard for Agencies",
@@ -8,10 +9,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "/scorecard" },
 };
 
-export default function ScorecardPage() {
+export default async function ScorecardPage() {
+  const posts = (await getAllPosts()).slice(0, 3).map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    readingTime: p.readingTime,
+  }));
   return (
     <section className="flex min-h-[calc(100svh-76px)] w-full flex-col items-center justify-start px-6 pb-12 pt-14 md:pt-20">
-      <ScorecardForm />
+      <ScorecardForm posts={posts} />
     </section>
   );
 }

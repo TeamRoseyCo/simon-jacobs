@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ConsultCta from "@/components/ConsultCta";
-import { posts, formatPostDate } from "@/lib/posts";
+import { getAllPosts, formatPostDate } from "@/lib/posts";
 
 // Which posts actually have a thumbnail on disk, read once at build time (this
 // is a server component, so this never runs in the browser). Without this a
@@ -41,7 +41,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getAllPosts();
   const [featured, ...rest] = posts;
 
   return (

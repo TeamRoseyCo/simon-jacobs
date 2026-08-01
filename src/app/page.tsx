@@ -10,7 +10,7 @@ import ScorecardSection from "@/components/ScorecardSection";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
 import { services, whoFor, lead, exitAngle, bookCtaHref } from "@/lib/content";
-import { posts } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 
 // Homepage-specific meta description. The site-wide default in layout.tsx runs
 // 172 chars (Bing flagged it as too long on "/"); this trims it to ~153, inside
@@ -21,7 +21,8 @@ export const metadata: Metadata = {
     "Chartered Tax Advisers for UK marketing agencies. Tax planning, profit extraction and accountancy from a CTA, ACA and ex-PwC. Keep more of what you earn.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts();
   return (
     <>
       <Hero />
