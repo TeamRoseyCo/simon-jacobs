@@ -70,6 +70,48 @@ export const posts: Post[] = [
     ],
   },
   {
+    slug: "private-residence-relief-rent-out-home-before-selling",
+    title: "Rented out your home before selling? You may still owe no capital gains tax",
+    tag: "Capital gains",
+    date: "2026-07-31",
+    readingTime: "4 min read",
+    excerpt:
+      "You do not need to pay any capital gains tax on the sale of your house, if it has been your main home the whole time you owned it. Rent it out first, and the rules change, unless you know the exemption that can bring the whole gain back into relief.",
+    body: [
+      "You do not need to pay any capital gains tax on the sale of your house.",
+      "If it has been your main home for the entire time you have owned it, you are entitled to Private Residence Relief, wiping out the gain entirely.",
+      "## Where it gets interesting",
+      "Move out, rent the property out, then sell it, and your relief gets restricted to the time you actually lived there plus the final 9 months of ownership. The rented-out period becomes taxable.",
+      "## However, there is a way round this",
+      "Move back into the property before you sell it.",
+      "Live away from it for less than 3 years across your entire period of ownership.",
+      "Do not have another home that counts as your main residence during that time.",
+      "Meet all three, and under the \"period of absence for any reason\" rules, HMRC lets you exempt the entire gain from capital gains tax, even the years you rented it out.",
+      "So if you are planning to rent out your home for under 3 years, this is a tax tip worth knowing before you sell.",
+    ],
+    faqs: [
+      {
+        question: "Do I pay capital gains tax when I sell my main home?",
+        answer:
+          "No, if it has been your main home for the entire time you owned it, Private Residence Relief wipes out the gain entirely. If you moved out and rented it out at any point, the relief is restricted to the time you actually lived there plus the final 9 months of ownership.",
+      },
+      {
+        question: "What happens if I rent out my home before selling it?",
+        answer:
+          "The rented-out period normally becomes taxable, because Private Residence Relief only covers the time you lived there plus the final 9 months of ownership. There is a way round this under the \"period of absence for any reason\" rules.",
+      },
+      {
+        question: "What is the 'period of absence for any reason' exemption?",
+        answer:
+          "If you move back into the property before you sell it, were away from it for less than 3 years across your entire period of ownership, and had no other home counting as your main residence during that time, HMRC lets you exempt the entire gain from capital gains tax, even the years you rented it out.",
+      },
+    ],
+    related: [
+      "tax-when-you-sell-stocks-and-shares-agency-owner",
+      "capital-gains-tax-rising-agency-owners",
+    ],
+  },
+  {
     slug: "laptop-tax-relief-agency-annual-investment-allowance",
     title: "Laptop tax relief: repairs, new MacBooks, and the Annual Investment Allowance",
     tag: "Capital allowances",
