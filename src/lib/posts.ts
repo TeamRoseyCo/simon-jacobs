@@ -20,6 +20,56 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "selling-a-business-car-capital-allowances-vs-mileage",
+    title: "Sold a business car? Your tax bill depends on how you claimed the running costs",
+    tag: "Capital allowances",
+    date: "2026-08-01",
+    readingTime: "5 min read",
+    excerpt:
+      "Sell a car you have used in the business and the tax position turns entirely on whether you claimed Capital Allowances or Mileage Allowance. One method can add tax on the sale. The other never does.",
+    body: [
+      "Sell a car you have used in the business and the tax bill is not always what people expect. It depends heavily on which method you have been using to claim the running costs, and the two methods lead to completely different answers.",
+      "## If you have been claiming Capital Allowances",
+      "A car with any private use goes into its own single asset pool, kept separate from other equipment rather than lumped in with it. Each year you claim a Writing Down Allowance, 18% for most cars, but only the business-use percentage of that allowance is actually deductible against your profit.",
+      "When you sell, the sale price is compared against whatever is left in that pool, and that comparison decides your tax position. Sell for more than the pool value and you get a balancing charge: extra taxable profit added back, restricted to your business-use percentage. Sell for less than the pool value and you get a balancing allowance instead, an extra deduction in your final year of owning the car.",
+      "## A worked example",
+      "Buy a car for £10,000, used 50% for business. After 3 years of Writing Down Allowances at 18%, the pool sits at around £6,724. Sell it for £7,000, and the £276 difference between sale price and pool value becomes a balancing charge, but only your 50% business-use share of it, £138, actually hits your taxable profit. That £138 is added to your profit and taxed accordingly.",
+      "## If you have been claiming Mileage Allowance instead",
+      "It is a completely different story. The flat rate per mile, currently 45p for the first 10,000 business miles each year and 25p after that, is deemed to already cover the full cost of buying and running the car, not just the fuel.",
+      "That means there is no pool to track, so no balancing charge and no balancing allowance to work out when you come to sell. The sale proceeds simply are not taxable. Whatever you sell the car for sits outside the tax system entirely, because the mileage rate already accounted for the cost of the vehicle as you used it.",
+      "## Why the method matters more than people assume",
+      "Get the method and the numbers right, and a car sale might barely move your tax bill. Get it wrong, and either you overstate a balancing charge that should have been smaller, restricted properly to your business-use percentage, or you miss a balancing allowance you were entitled to when the car sold for less than the pool. The [expenses your agency can claim](/blog/agency-expenses-checklist) sit on the same principle: the detail decides the outcome, not the headline rule.",
+      "This is general information rather than advice on your own figures. Rates, percentages, and thresholds change, and mixed business and private use always needs care, so check the current position or take advice before you sell. If you want the treatment on a specific vehicle worked through properly, [see how we work](/services) or [talk to us](/contact).",
+    ],
+    faqs: [
+      {
+        question: "Do I pay tax when I sell a car I used for business?",
+        answer:
+          "It depends on how you claimed the running costs. Under Capital Allowances, the sale price is compared against the car's pool value and any difference creates a balancing charge or balancing allowance, restricted to your business-use percentage. Under Mileage Allowance, the sale proceeds are not taxable at all.",
+      },
+      {
+        question: "What is a balancing charge on a car?",
+        answer:
+          "It arises when you sell a car for more than its remaining value in the Capital Allowances pool. The difference is added back as extra taxable profit, but only the portion matching your business-use percentage, so a car used 50% for business only brings 50% of the difference into tax.",
+      },
+      {
+        question: "Does selling a car affect my tax if I claim Mileage Allowance?",
+        answer:
+          "No. The 45p and 25p mileage rates are deemed to already cover the cost of buying and running the car, so there is no pool to track. When you sell, the proceeds simply are not taxable, whether you claimed Capital Allowances would have created a balancing charge or not.",
+      },
+      {
+        question: "Should I use Capital Allowances or Mileage Allowance for a business car?",
+        answer:
+          "It depends on your car, your mileage, and your business-use percentage, and the right choice can change the tax outcome both while you own the car and when you sell it. Because the two methods lead to genuinely different results on sale, it is worth checking which one fits before you commit to it.",
+      },
+    ],
+    related: [
+      "agency-expenses-checklist",
+      "how-to-reduce-your-agencys-corporation-tax",
+      "three-tax-moves-agency-owners-2026-27",
+    ],
+  },
+  {
     slug: "laptop-tax-relief-agency-annual-investment-allowance",
     title: "Laptop tax relief: repairs, new MacBooks, and the Annual Investment Allowance",
     tag: "Capital allowances",
