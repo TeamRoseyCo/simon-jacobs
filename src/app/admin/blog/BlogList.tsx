@@ -6,7 +6,12 @@ import { useRouter } from "next/navigation";
 import {
   actionBtn,
   cardStyle,
+  eyebrowStyle,
   ghostPill,
+  headerRow,
+  pageTitleStyle,
+  pageWrap,
+  primaryPill,
   tableStyle,
   tdStyle,
   thStyle,
@@ -42,7 +47,23 @@ export default function BlogList({ posts }: { posts: BlogListItem[] }) {
   }
 
   return (
-    <div style={{ ...cardStyle, marginTop: "1.5rem", overflowX: "auto" }}>
+    <div style={pageWrap(1080)}>
+      <header style={headerRow}>
+        <div>
+          <p style={eyebrowStyle}>SRJ International</p>
+          <h1 style={pageTitleStyle}>Blog posts</h1>
+        </div>
+        <div style={{ display: "flex", gap: "0.6rem" }}>
+          <Link href="/admin" style={ghostPill}>
+            ← Leads
+          </Link>
+          <Link href="/admin/blog/new" style={primaryPill()}>
+            New post
+          </Link>
+        </div>
+      </header>
+
+      <div style={{ ...cardStyle, marginTop: "1.5rem", overflowX: "auto" }}>
       {posts.length === 0 ? (
         <p style={{ padding: "2.5rem 1.5rem", textAlign: "center", color: "var(--color-text-muted)" }}>
           No posts yet.{" "}
@@ -93,6 +114,7 @@ export default function BlogList({ posts }: { posts: BlogListItem[] }) {
           </tbody>
         </table>
       )}
+      </div>
     </div>
   );
 }

@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { cardStyle, ghostPill, primaryPill } from "../ui";
+import {
+  cardStyle,
+  eyebrowStyle,
+  ghostPill,
+  headerRow,
+  pageTitleStyle,
+  pageWrap,
+  primaryPill,
+} from "../ui";
 import type { Post } from "@/lib/posts";
 
 const labelStyle: React.CSSProperties = {
@@ -123,7 +131,18 @@ export default function PostEditor({
   }
 
   return (
-    <form onSubmit={onSubmit} style={{ ...cardStyle, padding: "1.75rem", display: "grid", gap: "1.1rem" }}>
+    <div style={pageWrap(900)}>
+      <header style={headerRow}>
+        <div>
+          <p style={eyebrowStyle}>SRJ International</p>
+          <h1 style={pageTitleStyle}>{isEdit ? "Edit post" : "New post"}</h1>
+        </div>
+      </header>
+
+      <form
+        onSubmit={onSubmit}
+        style={{ ...cardStyle, marginTop: "1.5rem", padding: "1.75rem", display: "grid", gap: "1.1rem" }}
+      >
       <div style={{ display: "grid", gap: "1.1rem", gridTemplateColumns: "1fr 1fr" }}>
         <Field label="Slug (url-safe, e.g. my-post-title)">
           <input
@@ -250,7 +269,8 @@ export default function PostEditor({
         >
           Cancel
         </button>
-      </div>
-    </form>
+        </div>
+      </form>
+    </div>
   );
 }
