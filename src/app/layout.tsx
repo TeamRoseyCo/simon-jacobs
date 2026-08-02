@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Figtree } from "next/font/google";
 import Script from "next/script";
 // Renamed from globals.css on 2 Aug 2026. Turbopack derives the stylesheet's
 // chunk URL from this path, and browsers were holding a cached copy of the old
@@ -11,6 +12,20 @@ import ScrollReveal from "@/components/ScrollReveal";
 import CookieConsent from "@/components/CookieConsent";
 import AttributionCapture from "@/components/AttributionCapture";
 import { site } from "@/lib/content";
+
+// Body sans, chosen off the /font-lab comparison. next/font downloads Figtree at
+// build time and serves it from our own origin, so there is no request to
+// Google at runtime: one less third party on a page that asks for financial
+// details, and nothing for the cookie banner to have to cover.
+// display:swap so copy paints in the fallback immediately rather than blocking.
+// Headings stay Georgia (--font-serif); this variable only feeds --font-sans.
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-figtree",
+  fallback: ["Arial", "Helvetica", "Segoe UI", "sans-serif"],
+});
 
 const siteUrl = site.url;
 // GA4 properties. Both are consent-gated by the Consent Mode v2 block below
@@ -126,7 +141,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className="h-full antialiased">
+    <html lang="en-GB" className={`${figtree.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="site-shell flex-1 overflow-hidden bg-bg text-ink">

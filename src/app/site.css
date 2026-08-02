@@ -35,7 +35,10 @@
   /* Do not use the Inter typeface anywhere on this site. Two faces only:
      serif for headings/wordmark, sans for body copy. */
   --font-serif: Georgia, "Times New Roman", serif;
-  --font-sans:  Arial, Helvetica, "Segoe UI", sans-serif;
+  /* Figtree, self-hosted through next/font in layout.tsx, which sets
+     --font-figtree on <html>. The Arial chain stays behind it so the page still
+     reads correctly if the face has not painted yet, or fails to load. */
+  --font-sans:  var(--font-figtree), Arial, Helvetica, "Segoe UI", sans-serif;
 }
 
 /* Emphasis motif: same serif as headings, coloured (teal on light
