@@ -1,39 +1,16 @@
-import fs from "node:fs";
-import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ConsultCta from "@/components/ConsultCta";
 import { getAllPosts, formatPostDate } from "@/lib/posts";
+import { postImage } from "@/lib/postImage";
 
-// Which posts actually have a thumbnail on disk, read once at build time (this
-// is a server component, so this never runs in the browser). Without this a
-// post added to posts.ts before its image exists renders a 404 image on the
-// index, which is exactly what used to happen here.
+// The image lookup moved to src/lib/postImage.ts so the home page and the
+// related-reading cards resolve thumbnails the same way this index does.
 //
 // The fallback is an existing brand photo rather than a generated card. Eleven
 // posts share it, which is repetitive but neutral: a repeated real photo reads
 // as a house style, a broken image reads as a dead site.
-const BLOG_IMAGE_DIR = path.join(process.cwd(), "public", "blog");
-const DEFAULT_POST_IMAGE = "/simon-jacobs-event.webp";
-
-const HAS_IMAGE: Set<string> = (() => {
-  try {
-    return new Set(
-      fs
-        .readdirSync(BLOG_IMAGE_DIR)
-        .filter((f) => f.endsWith(".webp"))
-        .map((f) => f.replace(/\.webp$/, "")),
-    );
-  } catch {
-    return new Set<string>();
-  }
-})();
-
-function postImage(slug: string): string {
-  return HAS_IMAGE.has(slug) ? `/blog/${slug}.webp` : DEFAULT_POST_IMAGE;
-}
-
 export const metadata: Metadata = {
   title: "Tax & Profit Notes for Agency Founders",
   description:
@@ -63,7 +40,7 @@ export default async function BlogPage() {
       </section>
 
       {/* Section intro */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-6 pt-12 text-center md:px-10 md:pt-14 lg:px-16">
+      <section className="gutter section-white pb-6 pt-12 text-center md:pt-14">
         <div className="reveal mx-auto max-w-3xl">
           <p className="eyebrow">Stories &amp; guides</p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -79,21 +56,29 @@ export default async function BlogPage() {
 
       {/* Featured (latest) post */}
       {featured ? (
-        <section className="section-white mx-auto w-full max-w-7xl px-6 pb-10 md:px-10 lg:px-16">
+        <section className="gutter section-white pb-10">
           <Link
             href={`/blog/${featured.slug}`}
             className="reveal grid overflow-hidden rounded-[14px] border border-border bg-white shadow-[0_14px_40px_rgba(8,34,75,0.06)] transition duration-300 hover:-translate-y-1 md:grid-cols-2"
           >
-            <div className="relative min-h-[240px] md:min-h-[300px]">
-              <Image
-                src={postImage(featured.slug)}
-                alt={featured.title}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-                priority
-              />
-            </div>
+            {/* The cell is given the thumbnails' own 8:5 shape, so the whole
+                card fills it edge to edge: nothing cropped, and no letterbox
+                bars either. self-start keeps it at 8:5 rather than being
+                stretched taller by the text column, which is what used to crop
+                the headline off. */}
+            {/* Real dimensions rather than `fill`: the intrinsic 8:5 gives the
+                element its height in every browser. With `fill` inside an
+                aspect-ratio box, Safari resolves the height to 0 for a flex
+                item and the card renders with no image at all. */}
+            <Image
+              src={postImage(featured.slug)}
+              alt={featured.title}
+              width={2400}
+              height={1500}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="h-auto w-full self-start bg-[#F2EFE9]"
+              priority
+            />
             <div className="flex flex-col justify-center p-7 md:p-10">
               <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">
                 {formatPostDate(featured.date)} · {featured.readingTime}
@@ -113,7 +98,7 @@ export default async function BlogPage() {
       ) : null}
 
       {/* Grid */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 md:pb-24">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {rest.map((post, index) => (
             <Link
@@ -122,15 +107,14 @@ export default async function BlogPage() {
               className="blog-card reveal"
               style={{ animationDelay: `${index * 80}ms` }}
             >
-              <div className="relative h-[190px] w-full">
-                <Image
-                  src={postImage(post.slug)}
-                  alt={post.title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+              <Image
+                src={postImage(post.slug)}
+                alt={post.title}
+                width={2400}
+                height={1500}
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="h-auto w-full bg-[#F2EFE9]"
+              />
               <div className="flex flex-1 flex-col p-6">
                 <span className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">
                   {formatPostDate(post.date)} · {post.readingTime}

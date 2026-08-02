@@ -8,7 +8,7 @@ import WorksWith from "@/components/WorksWith";
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="mx-auto w-full max-w-7xl border-b border-white/10 px-6 py-10 md:px-10 lg:px-16">
+      <div className="gutter border-b border-white/10 py-10">
         <div className="grid gap-6 md:grid-cols-[1fr_1fr] md:items-center">
           <div>
             <h3 className="font-serif text-2xl font-bold text-white md:text-3xl">
@@ -30,7 +30,7 @@ export default function SiteFooter() {
         <WorksWith tone="light" className="mt-8" />
       </div>
 
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr] md:px-10 lg:px-16">
+      <div className="gutter grid gap-10 py-12 md:grid-cols-[1.4fr_0.7fr_0.7fr_1fr]">
         <div>
           <Link href="/" aria-label="SRJ International, home" className="flex items-center gap-3">
             <Image
@@ -158,20 +158,8 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-8">
-        <Link href="/" aria-label="SRJ International, home" className="mx-auto flex w-fit items-center justify-center">
-          <Image
-            src="/logo/srj-wordmark-white.png"
-            alt="SRJ International"
-            width={96}
-            height={96}
-            className="h-8 w-auto"
-          />
-        </Link>
-      </div>
-
       <div className="border-t border-white/10">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-5 text-xs text-white/70 md:flex-row md:items-center md:justify-between md:px-10 lg:px-16">
+        <div className="gutter flex flex-col gap-4 py-5 text-xs text-white/70 md:flex-row md:items-center md:justify-between">
           <p>
             © 2026 SRJ International Limited, trading as Jacobs Taxes. All rights reserved.{" "}
             <span className="text-white/40">·</span> Website by{" "}

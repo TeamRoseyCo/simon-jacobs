@@ -19,7 +19,7 @@ const steps = [
 export default function ContactPage() {
   return (
     <>
-      <section className="section-white mx-auto grid w-full max-w-7xl items-start gap-12 px-6 pb-16 pt-12 md:px-10 md:pb-20 md:pt-16 lg:grid-cols-[1.05fr_0.9fr] lg:gap-16 lg:px-16">
+      <section className="gutter section-white grid items-start gap-12 pb-16 pt-12 md:pb-20 md:pt-16 lg:grid-cols-[1.05fr_0.9fr] lg:gap-16">
         <div className="reveal text-center lg:text-left">
           <h1 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             Find out what your agency{" "}
@@ -44,7 +44,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 md:pb-24">
         <div className="reveal mx-auto mb-8 max-w-2xl text-center">
           <p className="eyebrow">The process</p>
           <h2 className="mt-4 font-serif text-3xl font-normal leading-tight md:text-4xl">

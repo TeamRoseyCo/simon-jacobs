@@ -162,7 +162,7 @@ export default function AboutJourney({ children }: { children: ReactNode }) {
   return (
     <div
       ref={wrapRef}
-      className="about-journey relative mx-auto w-full max-w-5xl px-6 pb-16 pt-2 lg:px-16"
+      className="about-journey relative mx-auto w-full max-w-5xl px-6 pb-16 pt-2 md:px-10 lg:px-16"
     >
       {enabled && d ? (
         <>

@@ -139,7 +139,7 @@ export default function AccountantsForMarketingAgenciesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-20 text-center md:px-10 md:pt-28 lg:px-16">
+      <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="reveal mx-auto max-w-3xl">
           <p className="eyebrow">Chartered Tax Adviser · Ex-PwC · Agencies only</p>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -199,7 +199,7 @@ export default function AccountantsForMarketingAgenciesPage() {
       </section>
 
       {/* The agency-specific areas (hub → cluster links) */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 md:pb-24">
         <div className="reveal mx-auto max-w-3xl text-center">
           <p className="eyebrow">What actually moves the numbers</p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -277,7 +277,7 @@ export default function AccountantsForMarketingAgenciesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 pt-2 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 pt-2 md:pb-24">
         <div className="reveal mx-auto max-w-3xl text-center">
           <p className="eyebrow">Agency FAQ</p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">

@@ -17,7 +17,7 @@ export default async function ScorecardPage() {
     readingTime: p.readingTime,
   }));
   return (
-    <section className="flex min-h-[calc(100svh-76px)] w-full flex-col items-center justify-start px-6 pb-12 pt-14 md:pt-20">
+    <section className="flex min-h-[calc(100svh-76px)] w-full flex-col items-center justify-start px-6 pb-12 pt-14 md:px-10 md:pt-20 lg:px-16">
       <ScorecardForm posts={posts} />
     </section>
   );

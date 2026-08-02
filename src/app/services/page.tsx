@@ -92,7 +92,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-20 text-center md:px-10 md:pt-28 lg:px-16">
+      <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="reveal mx-auto max-w-3xl">
           <h1 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
             More than a{" "}
@@ -112,7 +112,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 pt-8 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 pt-8 md:pb-24">
         <div className="grid gap-4 text-left md:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
@@ -120,7 +120,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 md:pb-24">
         <div className="reveal mx-auto max-w-3xl text-center">
           <p className="eyebrow">Full service list</p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
@@ -145,7 +145,7 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      <section className="section-white relative px-4 py-16 text-white md:px-6 md:py-24 lg:px-8">
+      <section className="section-white relative py-16 text-white md:py-24 gutter-bleed">
         <div className="section-ink mx-auto w-full max-w-7xl overflow-hidden rounded-[18px] px-6 py-14 text-center md:px-10 lg:px-16 lg:py-16">
           <div className="reveal mx-auto max-w-3xl">
             <h2 className="font-serif text-4xl font-normal leading-tight md:text-6xl">
@@ -175,7 +175,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
+      <section className="section-blue-soft py-16 md:py-24 gutter-bleed">
         <div className="mx-auto w-full max-w-7xl">
           <div className="grid gap-5 md:grid-cols-3">
             {processSteps.map((step, index) => (

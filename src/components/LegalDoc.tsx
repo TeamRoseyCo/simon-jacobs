@@ -12,7 +12,7 @@ export default function LegalDoc({
   children: ReactNode;
 }) {
   return (
-    <section className="legal mx-auto w-full max-w-3xl px-6 pb-24 pt-10 md:px-8 md:pt-14">
+    <section className="legal mx-auto w-full max-w-3xl px-6 pb-24 pt-10 md:px-10 md:pt-14 lg:px-16">
       <Link href="/" className="legal-back">
         ← Back home
       </Link>

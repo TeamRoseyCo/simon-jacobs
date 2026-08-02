@@ -62,27 +62,63 @@ export const servicesFull = [
   },
 ];
 
-// Real client testimonials, lightly edited for length. `highlight` is an exact
-// substring of `quote` that gets emphasised (the payoff that matters most).
-export const testimonials = [
+// Real client testimonials, in the wording published on the old SRJ
+// International site (imported in commit 8420b07). That wording stands: it was
+// lightly edited for length by Simon, and the raw WhatsApp source messages on
+// file (Feb and Mar 2026) say the same things at greater length, so there is
+// nothing to gain by re-cutting them.
+//
+// `quote` is an array of paragraphs, so a longer quote can breathe.
+// `highlight` is an exact substring of one paragraph, emphasised as the payoff.
+// `rating` renders stars, so it must be a rating the client actually gave.
+// All three are set to 5 on Hazem's word (2 August 2026) that every one of these
+// clients rated the service five out of five. Simon should be able to point to
+// where each rating came from if a client or the ASA ever asks; if he cannot,
+// delete the `rating` lines and the stars disappear on their own.
+export type Testimonial = {
+  quote: string[];
+  highlight?: string;
+  name: string;
+  role: string;
+  rating?: number;
+};
+
+export const testimonials: Testimonial[] = [
   {
-    quote:
+    // CONFIRM with Simon: is this the same person as the quote below, whose
+    // WhatsApp message is signed "Joe - CEO Nexus Capital"? No raw source
+    // message on file for this one.
+    quote: [
       "Simon helped me save thousands on my tax bill and prevented me from losing my Personal Allowance. He also gave me very good insights and advice into cryptocurrency, which will save me thousands of pounds in the future.",
+    ],
     highlight: "save thousands on my tax bill and prevented me from losing my Personal Allowance",
+    rating: 5,
     name: "Joe G",
     role: "Digital marketing agency",
   },
   {
-    quote:
-      "Simon helped me reclaim money I did not even realise I was entitled to, saved me a significant amount in tax through proper structuring, and ensured everything is compliant and future-proof. What really separates him is how proactive and responsive he is. He advises, explains, and genuinely fights your corner with HMRC. You feel protected, informed, and strategically guided at all times.",
+    // ATTRIBUTION CONFLICT, awaiting Simon. This wording matches, sentence for
+    // sentence, a WhatsApp message to Simon dated 2 March 2026 that is signed
+    // "Joe - CEO Nexus Capital". Either the old site's label is wrong, or Hamish
+    // B is a separate client who said something near identical. Simon decides.
+    quote: [
+      "Simon helped me reclaim money I did not even realise I was entitled to, saved me a significant amount in tax through proper structuring, and ensured everything is compliant and future-proof.",
+      "What really separates him is how proactive and responsive he is. He advises, explains, and genuinely fights your corner with HMRC. You feel protected, informed, and strategically guided at all times.",
+    ],
     highlight: "saved me a significant amount in tax through proper structuring",
+    rating: 5,
     name: "Hamish B",
     role: "Dentist",
   },
   {
-    quote:
+    // Source on file: WhatsApp message from Jaison Mistry, 9 February 2026,
+    // answering the four questions Simon sent him. This site wording is Simon's
+    // shortened version of his answer 3.
+    quote: [
       "Simon has always given the best he can for the customer. Understanding my situation has allowed him to advise and guide me in the right direction and be more tax efficient where possible.",
+    ],
     highlight: "be more tax efficient where possible",
+    rating: 5,
     name: "Jaison M",
     role: "Landlord",
   },

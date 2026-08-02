@@ -67,7 +67,7 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profileLd) }}
       />
-      <section className="section-white mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-2 pt-24 md:gap-16 md:px-10 md:pb-4 md:pt-28 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-16">
+      <section className="gutter section-white grid items-center gap-12 pb-2 pt-24 md:gap-16 md:pb-4 md:pt-28 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div className="image-stack reveal relative min-h-[520px] overflow-hidden rounded-[18px]">
           <Image
             src="/simon-jacobs.webp"
@@ -116,7 +116,7 @@ export default function AboutPage() {
         </div>
       </AboutJourney>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 md:pb-24">
         <figure className="reveal overflow-hidden rounded-[18px] border border-border bg-white shadow-[0_18px_55px_rgba(8,34,75,0.08)]">
           <div className="relative aspect-[16/10] w-full">
             <Image
@@ -134,7 +134,7 @@ export default function AboutPage() {
         </figure>
       </section>
 
-      <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
+      <section className="section-blue-soft py-16 md:py-24 gutter-bleed">
         <div className="mx-auto w-full max-w-7xl">
           <div className="reveal mx-auto max-w-3xl text-center">
             <p className="eyebrow">
@@ -162,7 +162,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 py-16 md:px-10 md:py-24 lg:px-16">
+      <section className="gutter section-white py-16 md:py-24">
         <div className="reveal mx-auto max-w-3xl text-center">
           <p className="eyebrow">
             Background

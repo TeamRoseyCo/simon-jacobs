@@ -138,7 +138,7 @@ export default function ScorecardForm({
           className="load-rise relative left-1/2 mt-14 w-screen -translate-x-1/2 bg-[#eef5fb] py-14 text-center"
           style={{ animationDelay: "520ms" }}
         >
-          <div className="mx-auto w-full max-w-7xl px-6 lg:px-16">
+          <div className="gutter">
             <h3 className="font-serif text-3xl font-normal leading-tight text-ink md:text-4xl">
               While you wait, a few{" "}
               <span className="em-display text-teal">useful reads.</span>

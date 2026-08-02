@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import ConsultCta from "@/components/ConsultCta";
 import FaqAccordion from "@/components/FaqAccordion";
 import { getAllPosts, getPost, formatPostDate } from "@/lib/posts";
 import { site } from "@/lib/content";
+import { postImage } from "@/lib/postImage";
 
 const siteUrl = site.url;
 const OG_IMAGE = "/simon-jacobs.jpg";
@@ -148,7 +150,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <article className="section-white mx-auto w-full max-w-3xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32">
+      <article className="section-white mx-auto w-full max-w-3xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32 lg:px-16">
         <div className="reveal">
           <Link
             href="/blog"
@@ -174,6 +176,17 @@ export default async function BlogPostPage({
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight text-ink md:text-5xl">
             {post.title}
           </h1>
+          {/* The post's own card. Real dimensions, not `fill`, so the height
+              comes from the image itself in every browser. */}
+          <Image
+            src={postImage(post.slug)}
+            alt={post.title}
+            width={2400}
+            height={1500}
+            sizes="(min-width: 768px) 720px, 100vw"
+            className="mt-8 h-auto w-full rounded-[14px]"
+            priority
+          />
         </div>
 
         <div className="reveal mt-8 flex flex-col gap-5">
@@ -212,14 +225,24 @@ export default async function BlogPostPage({
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
               Related reading
             </p>
-            <ul className="mt-4 flex flex-col gap-3">
+            <ul className="mt-5 grid gap-5 sm:grid-cols-3">
               {related.map((r) => (
                 <li key={r.slug}>
                   <Link
                     href={`/blog/${r.slug}`}
-                    className="font-semibold text-accent transition hover:text-ink"
+                    className="finance-card group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1"
                   >
-                    {r.title} →
+                    <Image
+                      src={postImage(r.slug)}
+                      alt={r.title}
+                      width={2400}
+                      height={1500}
+                      sizes="(min-width: 640px) 240px, 90vw"
+                      className="h-auto w-full transition duration-500 group-hover:scale-105"
+                    />
+                    <span className="flex-1 p-4 font-serif text-base leading-snug text-ink">
+                      {r.title}
+                    </span>
                   </Link>
                 </li>
               ))}

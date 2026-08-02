@@ -23,7 +23,7 @@ const faqJsonLd = {
 export default function FaqPage() {
   return (
     <>
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-8 pt-20 text-center md:px-10 md:pt-32 lg:px-16">
+      <section className="gutter section-white pb-8 pt-20 text-center md:pt-32">
         <div className="reveal mx-auto max-w-3xl">
           <p className="eyebrow">
             FAQ
@@ -35,7 +35,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="section-white mx-auto w-full max-w-7xl px-6 pb-16 pt-2 md:px-10 md:pb-24 lg:px-16">
+      <section className="gutter section-white pb-16 pt-2 md:pb-24">
         <FaqAccordion items={faqs} />
       </section>
 

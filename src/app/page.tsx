@@ -11,6 +11,7 @@ import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
 import { services, whoFor, lead, exitAngle, bookCtaHref } from "@/lib/content";
 import { getAllPosts } from "@/lib/posts";
+import { postImage } from "@/lib/postImage";
 
 // Homepage-specific meta description. The site-wide default in layout.tsx runs
 // 172 chars (Bing flagged it as too long on "/"); this trims it to ~153, inside
@@ -28,7 +29,7 @@ export default async function Home() {
       <Hero />
 
       {/* Lead statement: leads the reader into the whole page */}
-      <section className="section-blue-soft px-6 py-16 text-center md:py-28 lg:px-16">
+      <section className="section-blue-soft py-16 text-center md:py-28 gutter-bleed">
         <p className="accred-eyebrow accred-eyebrow-light reveal">CTA · ACA · ex-PwC</p>
         <Accreditations
           variant="light"
@@ -57,12 +58,12 @@ export default async function Home() {
             </div>
 
             <div
-              className="relative z-10 px-6 pb-12 pt-4 lg:px-14 lg:py-20"
+              className="whofor-copy relative z-10 pb-12 pt-4 lg:py-20"
               data-reveal-group
             >
               <div className="reveal text-center">
                 <h2 className="font-serif text-4xl font-bold leading-tight text-white md:text-5xl">
-                  Built for{" "}
+                  For{" "}
                   <span className="em-display text-seafoam">
                     founder-led agencies
                   </span>
@@ -93,9 +94,14 @@ export default async function Home() {
       </section>
 
       {/* Services teaser */}
-      <section className="section-white relative mx-auto w-full max-w-7xl px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
+      <section className="gutter section-white relative py-16 text-center md:py-24">
         <div className="reveal mx-auto max-w-3xl">
-          <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
+          {/* Nudged right to sit optically centred. RotatingWord reserves a
+              fixed 14ch slot for the longest label and left-aligns inside it, so
+              a short word like "Claude" leaves dead space on the right that
+              drags the centred line to the left. The shift is in ch so it tracks
+              the font size. */}
+          <h2 className="translate-x-[1.5ch] font-serif text-4xl font-bold leading-tight md:translate-x-[3ch] md:text-5xl">
             Stop using{" "}
             <RotatingWord
               items={[
@@ -109,15 +115,19 @@ export default async function Home() {
             <br />
             for taxes.
           </h2>
-          <p className="mx-auto mt-4 max-w-[560px] text-base leading-8 text-muted">
-            Here&apos;s what you get when{" "}
+          {/* The link keeps the exact-match anchor into the money page, but it
+              is styled as an editorial inline link (underline, no colour shout)
+              rather than the bright accent blue, which read as a stray
+              hyperlink dropped into the sentence. */}
+          <p className="mx-auto mt-4 max-w-[560px] text-base leading-7 text-muted">
+            Here&apos;s what you get when specialist{" "}
             <Link
               href="/accountants-for-marketing-agencies"
-              className="font-semibold text-accent transition hover:text-ink"
+              className="text-ink underline decoration-border decoration-1 underline-offset-4 transition hover:text-teal hover:decoration-teal"
             >
               accountants for marketing agencies
             </Link>{" "}
-            who only work with agencies handle it instead.
+            handle it instead.
           </p>
         </div>
         <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
@@ -167,7 +177,7 @@ export default async function Home() {
           className="object-cover object-[center_35%]"
         />
         <div className="aboutbleed-scrim" aria-hidden="true" />
-        <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center">
+        <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center md:px-10 lg:px-16">
           <h2 className="reveal font-serif text-4xl font-bold leading-tight text-white md:text-6xl">
             Plain-English advice from someone who{" "}
             <span className="em-display text-seafoam">gets agencies.</span>
@@ -187,7 +197,7 @@ export default async function Home() {
       </section>
 
       {/* From the blog */}
-      <section className="section-blue-soft px-6 py-16 md:px-10 md:py-24 lg:px-16">
+      <section className="section-blue-soft py-16 md:py-24 gutter-bleed">
         <div className="mx-auto w-full max-w-7xl">
           <div className="reveal mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
@@ -199,21 +209,31 @@ export default async function Home() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="finance-card reveal flex flex-col p-6 transition duration-300 hover:-translate-y-1"
+                className="finance-card reveal group flex flex-col overflow-hidden transition duration-300 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
-                <div className="flex items-center gap-3 text-xs font-semibold text-muted">
-                  <span>{post.readingTime}</span>
+                <Image
+                  src={postImage(post.slug)}
+                  alt={post.title}
+                  width={2400}
+                  height={1500}
+                  sizes="(min-width: 768px) 33vw, 90vw"
+                  className="h-auto w-full transition duration-500 group-hover:scale-105"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center gap-3 text-xs font-semibold text-muted">
+                    <span>{post.readingTime}</span>
+                  </div>
+                  <h3 className="mt-3 font-serif text-xl font-normal leading-snug text-ink">
+                    {post.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-7 text-muted">
+                    {post.excerpt}
+                  </p>
+                  <span className="mt-5 text-sm font-semibold text-ink">
+                    Read it →
+                  </span>
                 </div>
-                <h3 className="mt-4 font-serif text-xl font-normal leading-snug text-ink">
-                  {post.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-7 text-muted">
-                  {post.excerpt}
-                </p>
-                <span className="mt-5 text-sm font-semibold text-ink">
-                  Read it →
-                </span>
               </Link>
             ))}
           </div>
@@ -221,7 +241,7 @@ export default async function Home() {
       </section>
 
       {/* The exit angle: the long game as a founder */}
-      <section className="section-blue-soft px-6 py-16 text-center md:px-10 md:py-24 lg:px-16">
+      <section className="section-blue-soft py-16 text-center md:py-24 gutter-bleed">
         <div className="reveal mx-auto max-w-3xl">
           <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
             {exitAngle.headingLead}{" "}

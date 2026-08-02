@@ -11,7 +11,7 @@ const checklist = [
 // left, a sample of the scorecard survey mocked up on the right.
 export default function ScorecardSection() {
   return (
-    <section className="sc-band relative w-full overflow-hidden px-6 py-20 md:py-28">
+    <section className="sc-band relative w-full overflow-hidden py-20 md:py-28 gutter-bleed">
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left: copy + checklist + CTA */}
         <div className="reveal text-left">
