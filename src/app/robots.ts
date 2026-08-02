@@ -8,6 +8,12 @@ import { site } from "@/lib/content";
 // lock them out. Google-Extended feeds Gemini / Vertex; Googlebot also powers
 // Google AI Overviews; ClaudeBot + Claude-SearchBot are Anthropic's crawler and
 // search index; GPTBot / OAI-SearchBot / PerplexityBot cover the rest.
+//
+// /font-lab is a temporary internal type test, not a page for clients or for an
+// AI answer to cite. It carries a noindex tag of its own; this is the belt to
+// that pair of braces. Remove both when the route goes.
+const BLOCKED = ["/admin", "/font-lab"];
+
 const AI_AGENTS = [
   "Googlebot",
   "Google-Extended",
@@ -25,11 +31,11 @@ const AI_AGENTS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: "/admin" },
+      { userAgent: "*", allow: "/", disallow: BLOCKED },
       ...AI_AGENTS.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: "/admin",
+        disallow: BLOCKED,
       })),
     ],
     sitemap: `${site.url}/sitemap.xml`,
