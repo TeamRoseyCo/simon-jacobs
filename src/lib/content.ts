@@ -153,7 +153,13 @@ export const exitAngle = {
   headingLead: "The",
   headingAccent: "long game",
   headingTail: " as a founder.",
-  body: "Every agency gets sold eventually. To sell for a serious multiple, founders need clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. We handle the structuring, the tax and the accounts quietly in the background, so when a buyer comes knocking your agency is worth more, and you walk away with far more of the sale.",
+  // Two things were removed here on 2 August 2026 and should not come back.
+  // "Every agency gets sold eventually" is an absolute that is not true, and
+  // "your agency is worth more, and you walk away with far more of the sale"
+  // promises an outcome unconditionally. On a CIOT and ICAEW practice's
+  // homepage that is the kind of line the ASA reads literally. Describe the
+  // work and the position it puts you in, never the result.
+  body: "Most founders sell eventually. Selling for a serious multiple takes clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. We handle the structuring, the tax and the accounts in the background, so when a buyer comes knocking the agency is in a stronger position and the tax on the sale is something you planned for, not something you discover.",
 };
 
 export const scorecardBand = {
