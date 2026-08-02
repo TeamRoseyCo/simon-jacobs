@@ -139,3 +139,38 @@ Company. These rank because they appear across many sources + have reviews.
 
 Everything above reinforces the on-page page:
 /chartered-tax-adviser-london-marketing-agencies
+
+## On-site testimonials: getting from 3 to 6 (2 August 2026)
+
+The site's testimonial grid holds six cards, three per row. We have three real
+quotes and need three more. Nothing gets written for a client: only their own
+words go on the page, lightly cut for length. Sources are kept as screenshots.
+
+Simon already has a question set that works. It is the one he sent Jaison Mistry
+(WhatsApp, 9 February 2026), and it produces usable copy because question 1
+gives the "before" and question 4 gives the recommendation:
+
+1. What problem were you having before we started working together?
+2. How were you introduced to me?
+3. What has it been like working with me?
+4. What would you say to someone thinking about getting in touch?
+
+**Message for Simon to send, one client at a time:**
+
+> Hi [name], I'm refreshing my website and I'd love to include a few words from
+> you if you're happy to. Four quick questions, one line each is plenty:
+> [questions 1 to 4]. Let me know how you'd like to be credited: first name and
+> industry is fine, or full name and company if you're comfortable with that.
+
+**Ask about credit explicitly.** Joe signed his message "Joe, CEO Nexus Capital",
+so naming the company is fair, but confirm it before it goes live. Where a client
+prefers to stay vague, first name plus sector is enough.
+
+**Prefer agency clients.** Three of the current quotes are off-niche (finance,
+landlord). The niche is UK marketing agencies, so agency-founder quotes do double
+duty as proof and as on-page relevance. See `docs/simon-discovery-checklist.md`
+item 7, open since June.
+
+**Do not double-spend the goodwill.** Anyone asked for a testimonial should also
+be asked for a Google review (section 5), since the review is the bigger ranking
+lever. Same conversation, two asks.
