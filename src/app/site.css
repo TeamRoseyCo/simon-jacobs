@@ -12,9 +12,13 @@
   --border:  #D9E5EF;
   /* How far content sits from the window edge, everywhere on the site: the hero
      (.hv-inner), every section (.gutter / .gutter-bleed) and the who-for copy
-     column all read this one value, so they can never drift apart. 24px on a
-     phone, growing with the window, capped at 64px. */
-  --gutter: clamp(24px, 4vw, 64px);
+     column all read this one value, so they can never drift apart.
+     24px on a phone, then 7vw, capped at 96px.
+     The 7vw matters: at 4vw a 1000px-wide window (a half-screen browser, which
+     is how this actually gets looked at) got only 40px and read as touching the
+     edge, while a maximised 1512px window got 190px and looked fine. Judge any
+     change to this at ~1000px, not full screen. */
+  --gutter: clamp(24px, 7vw, 96px);
 }
 
 @theme inline {
