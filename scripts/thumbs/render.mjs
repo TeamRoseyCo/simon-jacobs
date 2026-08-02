@@ -29,7 +29,11 @@ import { cards } from "./cards.mjs";
 const run = promisify(execFile);
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(here, "out");
-const template = path.join(here, "template.html");
+// Which layout to screenshot. Defaults to the original template; set
+// THUMB_TEMPLATE=template-tweet.html for the tweet layout. Both templates
+// honour the same contract: ?card=<slug>, one card at 2400x1500, and
+// window.__READY__ once it has settled.
+const template = path.join(here, process.env.THUMB_TEMPLATE || "template.html");
 
 const WIDTH = 2400;
 const HEIGHT = 1500;
@@ -165,6 +169,9 @@ async function shoot(cdp, slug, band) {
   const url = pathToFileURL(template); // not string concat: the repo path has a space
   url.searchParams.set("card", slug);
   if (band) url.searchParams.set("band", "1");
+  // Tweet layout only: stands the headshot on the right for this card. Set
+  // `flip: true` on the card in cards.mjs.
+  if (cards.find((c) => c.slug === slug)?.flip) url.searchParams.set("flip", "1");
 
   // No width/height here: Chrome only honours those on a new window, and the
   // viewport is pinned by setDeviceMetricsOverride below anyway.

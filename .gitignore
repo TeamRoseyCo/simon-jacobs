@@ -49,3 +49,6 @@ next-env.d.ts
 /scripts/thumbs/out/
 # Generated from cards.mjs + the cutout by `npm run thumbs:data`.
 /scripts/thumbs/assets/inline-data.js
+
+# compiled helper for the thumbnail cutout tool
+scripts/thumbs/.bin/

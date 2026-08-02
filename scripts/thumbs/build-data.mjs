@@ -28,7 +28,9 @@ async function webpDataUri(pipeline) {
 }
 
 async function main() {
-  const cutoutPath = path.join(assets, "simon-cutout.png");
+  // Default is the studio headshot cut out by cutout.mjs. THUMB_CUTOUT swaps it
+  // for another file in assets/ without touching this script.
+  const cutoutPath = path.join(assets, process.env.THUMB_CUTOUT || "simon-suit-cutout.png");
   const cropPath = path.join(assets, "simon-crop.jpg");
 
   // The cutout only ever renders at roughly 1000px wide on a 2400px card, so

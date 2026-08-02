@@ -25,6 +25,8 @@ export const cards = [
     slug: "_default",
     hook: "Tax notes for agency owners",
     highlight: "owners",
+    // flip: true stands Simon on the right instead of the left (tweet layout
+    // only). The photo is never mirrored, only its side of the card.
   },
   {
     slug: "laptop-tax-relief-agency-annual-investment-allowance",
@@ -82,6 +84,60 @@ export const cards = [
     slug: "capital-gains-tax-rising-agency-owners",
     hook: "Plan capital gains before you sell",
     highlight: "before you sell",
+  },
+
+  /* Added 2 August 2026 so every published post has a card of its own rather
+     than falling back to the shared brand photo. Each hook is drawn from its
+     post's own title or excerpt, no new claims. */
+  {
+    slug: "carry-back-a-loss-reclaim-corporation-tax",
+    hook: "Made a loss? Look at last year",
+    highlight: "last year",
+  },
+  {
+    slug: "selling-a-business-car-capital-allowances-vs-mileage",
+    hook: "Sold the car? How you claimed matters",
+    highlight: "How you claimed",
+  },
+  {
+    slug: "private-residence-relief-rent-out-home-before-selling",
+    hook: "You rented out your home before selling",
+    highlight: "before selling",
+  },
+  {
+    slug: "dont-use-claude-for-taxes",
+    hook: "Confident and wrong is expensive",
+    highlight: "and wrong",
+  },
+  {
+    slug: "agency-expenses-checklist",
+    hook: "Most agencies under-claim, not over-claim",
+    highlight: "under-claim",
+  },
+  {
+    slug: "tax-when-you-move-abroad",
+    hook: "A one-way flight is not an exit",
+    highlight: "not an exit",
+  },
+  {
+    slug: "how-much-should-agency-founders-pay-themselves",
+    hook: "Your pay is a business decision",
+    highlight: "business decision",
+  },
+  {
+    slug: "plan-tax-around-your-exit",
+    hook: "Plan around the exit, not year-end",
+    highlight: "not year-end",
+  },
+  {
+    slug: "vat-for-agencies",
+    hook: "VAT is where the money leaks",
+    highlight: "money leaks",
+  },
+  {
+    slug: "clean-books-higher-valuation",
+    hook: "Clean books quietly raise your valuation",
+    highlight: "your valuation",
   },
 ];
 

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SRJ blog cards, tweet layout</title>
+<!--
+  Blog card template, "tweet" layout. Rebuilt from the Profresults reference.
+
+  Six layers, back to front, each independently switchable in the control bar:
+
+    1  frame     cream border the dark card sits inside
+    2  bg        near-black base with two blue radial glows
+    3  dot       small black circle, top left
+    4  headshot  cut-out of Simon, bleeding off the bottom left
+    5  tweet     white rounded card: avatar, name, verified tick, headline
+    6  squiggle  hand-drawn red underline under the highlighted words
+    7  site      the domain, in white, under the card
+
+  Contract with render.mjs, do not break:
+    - window.__THUMBS__ supplies { cards, simon } (see build-data.mjs)
+    - ?card=<slug> renders that one card at exactly 2400x1500 at 0,0
+    - window.__READY__ = true once the headline has been fitted
+
+  Usage:
+    npm run thumbs:preview:tweet          every card, plus the live editor
+    npm run thumbs:render:tweet           screenshots them to out/<slug>.png
+    npm run thumbs:webp                   converts to public/blog/<slug>.webp
+-->
+<style>
+  :root {
+    --card-w: 2400px;
+    --card-h: 1500px;
+
+    /* Layer 1, the cream frame. */
+    --frame:      #F2EFE9;
+    --frame-pad:  34px;
+    --frame-radius: 46px;
+
+    /* Layer 2, the background. */
+    --ink:        #08090C;
+    --glow-a:     #17408A;   /* lower left, the bright one */
+    --glow-b:     #102A55;   /* right, softer */
+
+    /* Layer 5, the tweet card. */
+    --paper:      #FFFFFF;
+    --paper-ink:  #0B0B0D;
+    --avatar-bg:  #ECECEC;
+    --verified:   #1D9BF0;
+
+    /* Layer 6, the squiggle. */
+    --squiggle:   #E23124;
+
+    /* Avenir Next is the closest thing on macOS to the geometric sans in the
+       reference. Arial Black is the fallback so a card still renders heavy on
+       a machine without it. */
+    --sans: "Avenir Next", "Avenir", "Helvetica Neue", "Arial Black", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1a;
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ the card ============ */
+
+  .card {
+    position: relative;
+    width: var(--card-w);
+    height: var(--card-h);
+    overflow: hidden;
+    background: var(--frame);
+    padding: var(--frame-pad);
+  }
+
+  .card.no-frame { padding: 0; }
+
+  /* Layer 2: the dark stage everything else sits on. */
+  .stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--frame-radius);
+    background:
+      radial-gradient(1800px 1500px at 24% 104%, var(--glow-a) 0%, transparent 58%),
+      radial-gradient(1500px 1300px at 82% 52%, var(--glow-b) 0%, transparent 60%),
+      linear-gradient(158deg, #0C0D11 0%, #06070A 62%, #04050A 100%);
+  }
+
+  .card.no-frame .stage { border-radius: 0; }
+
+  /* A faint vignette keeps the corners from going flat once the glows are on. */
+  .stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(120% 100% at 50% 45%, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
+  }
+
+  /* Layer 3: the dot. Purely a composition mark, straight from the reference. */
+  .dot {
+    position: absolute;
+    left: 300px;
+    top: 96px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #050507;
+    z-index: 3;
+  }
+
+  /* Layer 4: the headshot, bleeding off the bottom left corner. */
+  .headshot {
+    position: absolute;
+    left: -280px;
+    bottom: -40px;
+    height: 1400px;
+    width: auto;
+    z-index: 2;
+    /* The cutout's palette alpha leaves a slightly hard edge; a hair of blur on
+       the very bottom hides where it meets the card edge. */
+    -webkit-mask-image: linear-gradient(to bottom, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 92%, transparent 100%);
+  }
+
+  /* Flip swaps which side he stands on, but the photo itself is never
+     mirrored: a mirrored portrait reads as subtly wrong, and it would put his
+     pocket square on the wrong side of the jacket. */
+  .card.flip .headshot { left: auto; right: -280px; }
+
+  /* Layer 5: the tweet. */
+  .tweet {
+    position: absolute;
+    right: 220px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 1360px;
+    min-height: 780px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 76px 84px 96px;
+    border-radius: 40px;
+    background: var(--paper);
+    box-shadow: 0 60px 140px rgba(0, 0, 0, 0.45);
+  }
+
+  .card.flip .tweet { right: auto; left: 220px; }
+
+  .tweet-head {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .avatar {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: var(--avatar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -1px;
+    color: #0B0B0D;
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  .handle {
+    font-size: 58px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--paper-ink);
+    white-space: nowrap;
+  }
+
+  .tick { width: 52px; height: 52px; flex: 0 0 auto; }
+
+  /* Layer 5b: the headline. Sized by JS to fill the card without overflowing. */
+  .hook {
+    position: relative;
+    margin-top: 54px;
+    font-weight: 800;
+    font-size: 150px;
+    line-height: 0.98;
+    letter-spacing: -3px;
+    color: var(--paper-ink);
+    overflow-wrap: break-word;
+  }
+
+  .hl { position: relative; }
+
+  /* Layer 6: the squiggle.
+
+     It is a sibling of the text, positioned in pixels by placeSquiggle() from
+     the highlighted span's own client rect, NOT a child of the span. An
+     absolutely positioned child of an inline element resolves against the union
+     of that element's line fragments, so the moment a highlight wrapped onto a
+     second line the squiggle stretched across both and struck through the
+     words. Measuring the rect avoids that entirely. */
+  .squiggle {
+    position: absolute;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  /* Thin enough that the three passes stay legible as separate strokes. At 9px
+     they merged into one flat marker line and lost the hand-drawn read. */
+  .squiggle path {
+    fill: none;
+    stroke: var(--squiggle);
+    stroke-width: 6.5;
+    stroke-linecap: round;
+  }
+
+  .no-squiggle .squiggle { display: none; }
+  .no-dot .dot { display: none; }
+  .no-headshot .headshot { display: none; }
+
+  /* Layer 7: the domain. */
+  .site {
+    position: absolute;
+    z-index: 4;
+    right: 220px;
+    bottom: 74px;
+    width: 1360px;
+    text-align: center;
+    font-size: 46px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .card.flip .site { right: auto; left: 220px; }
+
+  /* ============ preview chrome (never part of a render) ============ */
+
+  body.single { background: transparent; }
+  body.single .bar, body.single .caption { display: none; }
+  body.single .card { position: absolute; left: 0; top: 0; }
+  body.single .shell { width: auto; height: auto; margin: 0; }
+
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    align-items: center;
+    padding: 16px 22px;
+    background: #101012;
+    border-bottom: 1px solid #2a2a2e;
+    color: #ddd;
+    font: 13px/1.4 ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .bar label { display: flex; align-items: center; gap: 7px; cursor: pointer; user-select: none; }
+  .bar input[type="text"] { width: 300px; padding: 7px 10px; border-radius: 7px; border: 1px solid #3a3a40; background: #1b1b1f; color: #eee; font: inherit; }
+  .bar input[type="range"] { width: 150px; }
+  .bar .sep { width: 1px; height: 22px; background: #2f2f35; }
+  .bar strong { color: #fff; font-weight: 600; }
+
+  .shell { transform-origin: top left; margin: 26px auto; }
+  .shell > .card { transform-origin: top left; }
+
+  .caption { color: #9a9aa2; font: 12px/1.5 ui-monospace, monospace; margin: 22px auto 6px; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <strong>SRJ blog cards</strong>
+  <span class="sep"></span>
+  <label>headline <input type="text" id="i-hook" placeholder="type to try a hook" /></label>
+  <label>squiggle under <input type="text" id="i-hl" style="width:170px" placeholder="exact words" /></label>
+  <label>domain <input type="text" id="i-site" style="width:210px" /></label>
+  <label>name <input type="text" id="i-name" style="width:170px" /></label>
+  <span class="sep"></span>
+  <label><input type="checkbox" id="t-frame" checked /> frame</label>
+  <label><input type="checkbox" id="t-dot" checked /> dot</label>
+  <label><input type="checkbox" id="t-squiggle" checked /> squiggle</label>
+  <label><input type="checkbox" id="t-headshot" checked /> headshot</label>
+  <label><input type="checkbox" id="t-flip" /> flip sides</label>
+  <span class="sep"></span>
+  <label>zoom <input type="range" id="zoom" min="8" max="60" value="26" /></label>
+</div>
+
+<div id="out"></div>
+
+<script src="assets/inline-data.js"></script>
+<script>
+(function () {
+  var DATA = window.__THUMBS__ || { cards: [], simon: "" };
+  var params = new URLSearchParams(location.search);
+  var only = params.get("card");
+  var out = document.getElementById("out");
+
+  var DEFAULTS = {
+    site: "srjinternational.co.uk",
+    name: "Simon Jacobs",
+    initials: "SRJ"
+  };
+
+  // The verified tick, drawn rather than fetched so the template stays a single
+  // file with no network dependency.
+  function tick() {
+    return '<svg class="tick" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path fill="' + getVar("--verified") + '" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81C14.67 2.63 13.43 1.75 12 1.75s-2.67.88-3.34 2.19c-1.39-.46-2.9-.2-3.91.81s-1.27 2.52-.81 3.91C2.63 9.33 1.75 10.57 1.75 12s.88 2.67 2.19 3.34c-.46 1.39-.2 2.9.81 3.91s2.52 1.27 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.67-.88 3.34-2.19c1.39.46 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z"/>' +
+      '<path fill="#fff" d="M10.87 15.83 7.7 12.66l1.27-1.27 1.9 1.9 4.16-4.16 1.27 1.27z"/>' +
+      '</svg>';
+  }
+
+  function getVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  // Three overlapping strokes, each slightly different, so the underline reads
+  // as drawn by hand rather than as a rule.
+  function squiggle() {
+    return '<svg class="squiggle" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true">' +
+      '<path d="M3 20 C 74 6, 156 26, 297 10" />' +
+      '<path d="M10 31 C 88 17, 174 37, 291 21" opacity="0.95" />' +
+      '<path d="M26 26 C 104 36, 198 14, 268 31" opacity="0.7" />' +
+      '</svg>';
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  // Wrap the highlight substring so the squiggle can hang off it. Falls back to
+  // a plain headline if the highlight is not an exact substring, which is the
+  // same rule the copy in cards.mjs is written against.
+  function markUp(hook, highlight) {
+    var safe = escapeHtml(hook);
+    var h = highlight ? escapeHtml(highlight) : "";
+    var at = h ? safe.indexOf(h) : -1;
+    if (at === -1) {
+      // The highlight has to be an exact substring. When it is not, underline
+      // the last two words rather than shipping a card with no squiggle, and
+      // say so, because it is nearly always a typo in cards.mjs.
+      if (h) console.warn('squiggle: "' + highlight + '" is not in "' + hook + '"');
+      var words = safe.trim().split(/\s+/);
+      h = words.slice(-2).join(" ");
+      at = safe.lastIndexOf(h);
+      if (at === -1) return safe;
+    }
+    return safe.slice(0, at) +
+      '<span class="hl">' + h + "</span>" +
+      safe.slice(at + h.length) +
+      squiggle();
+  }
+
+  /* Put the squiggle under the highlighted words, measured rather than assumed.
+     If the phrase still wraps at the smallest type size, only the last line of
+     it gets underlined: better one clean stroke under real words than one
+     stroke smeared across two lines. */
+  function placeSquiggle(card) {
+    var hook = card.querySelector(".hook");
+    var hl = card && card.querySelector(".hl");
+    var svg = card && card.querySelector(".squiggle");
+    if (!hook || !hl || !svg) return;
+
+    var rects = hl.getClientRects();
+    if (!rects.length) { svg.style.display = "none"; return; }
+    svg.style.display = "";
+
+    var box = hook.getBoundingClientRect();
+    var r = rects[rects.length - 1];
+    var size = parseFloat(getComputedStyle(hook).fontSize);
+
+    /* In preview mode the card is transformed by the zoom slider, so measured
+       rects come back scaled while the values we write are not. Normalise by
+       the card's own scale factor; it is 1 in single-card render mode. */
+    var scale = card.getBoundingClientRect().width / (card.offsetWidth || 1) || 1;
+
+    // Sits below the baseline far enough to clear a descender (g, y, p), which
+    // is the one place the squiggle must never cross.
+    var overhang = (r.width / scale) * 0.04;
+    svg.style.left = (r.left - box.left) / scale - overhang + "px";
+    svg.style.width = r.width / scale + overhang * 2 + "px";
+    svg.style.top = (r.bottom - box.top) / scale - size * 0.16 + "px";
+    svg.style.height = size * 0.4 + "px";
+  }
+
+  // Always in this order: size the type, then measure where the words landed.
+  function layout(card) {
+    fitHook(card);
+    placeSquiggle(card);
+  }
+
+  function buildCard(card) {
+    var el = document.createElement("div");
+    // `flip: true` on a card in cards.mjs, or ?flip=1 on the URL, stands him on
+    // the right for that card. Useful for breaking up a run of identical cards
+    // down the blog index.
+    el.className = "card" + (card.flip ? " flip" : "");
+    el.dataset.slug = card.slug;
+    el.innerHTML =
+      '<div class="stage">' +
+        '<div class="dot"></div>' +
+        (DATA.simon ? '<img class="headshot" src="' + DATA.simon + '" alt="" />' : "") +
+        '<div class="tweet">' +
+          '<div class="tweet-head">' +
+            '<div class="avatar">' + DEFAULTS.initials + "</div>" +
+            '<div class="handle">' + escapeHtml(card.name || DEFAULTS.name) + "</div>" +
+            tick() +
+          "</div>" +
+          '<div class="hook">' + markUp(card.hook, card.highlight) + "</div>" +
+        "</div>" +
+        '<div class="site">' + escapeHtml(card.site || DEFAULTS.site) + "</div>" +
+      "</div>";
+    return el;
+  }
+
+  // Shrink the headline until it fits its card. Starts big on purpose: the
+  // reference gets its punch from type that only just fits.
+  function fitHook(card) {
+    var hook = card.querySelector(".hook");
+    var tweet = card.querySelector(".tweet");
+    if (!hook || !tweet) return;
+    /* Reserve the card's padding, the gap above the headline, and enough room
+       under the last line for the squiggle to hang without spilling out of the
+       white card onto the background. */
+    var room = tweet.clientHeight -
+      tweet.querySelector(".tweet-head").offsetHeight -
+      240;
+
+    var MAX = 150;
+    var MIN = 34;
+    var hl = card.querySelector(".hl");
+
+    var overflows = function () {
+      return hook.scrollHeight > room || hook.scrollWidth > hook.clientWidth + 1;
+    };
+
+    var size = MAX;
+    hook.style.fontSize = size + "px";
+    while (size > MIN && overflows()) {
+      size -= 2;
+      hook.style.fontSize = size + "px";
+    }
+
+    /* Second pass: keep the highlighted phrase on a single line if a couple of
+       steps can buy it, so the squiggle underlines the whole phrase rather than
+       just its tail. Bounded, because a long highlight would otherwise shrink
+       the headline to nothing chasing something it can never have. */
+    if (hl) {
+      var floor = Math.max(MIN, size - 26);
+      while (size > floor && hl.getClientRects().length > 1) {
+        size -= 2;
+        hook.style.fontSize = size + "px";
+      }
+      if (hl.getClientRects().length > 1) {
+        console.warn(
+          'squiggle: "' + hl.textContent + '" will not fit on one line, ' +
+            "underlining its last line only. Shorten the highlight.",
+        );
+      }
+    }
+
+    /* Belt and braces: whatever happened above, the text must be inside the
+       card. If it still overflows at this point, keep going to the hard floor. */
+    while (size > 20 && overflows()) {
+      size -= 2;
+      hook.style.fontSize = size + "px";
+    }
+  }
+
+  function applyToggles() {
+    var on = function (id) { var e = document.getElementById(id); return !e || e.checked; };
+    document.querySelectorAll(".card").forEach(function (c) {
+      c.classList.toggle("no-frame", !on("t-frame"));
+      c.classList.toggle("no-dot", !on("t-dot"));
+      c.classList.toggle("no-squiggle", !on("t-squiggle"));
+      c.classList.toggle("no-headshot", !on("t-headshot"));
+      c.classList.toggle("flip", document.getElementById("t-flip") && document.getElementById("t-flip").checked);
+    });
+  }
+
+  /* ---------- single card mode, what render.mjs screenshots ---------- */
+  if (only) {
+    document.body.classList.add("single");
+    var card = DATA.cards.filter(function (c) { return c.slug === only; })[0] ||
+               DATA.cards.filter(function (c) { return c.slug === "_default"; })[0];
+    if (!card) {
+      document.title = "missing card: " + only;
+      window.__READY__ = true;
+      return;
+    }
+    if (params.get("flip") === "1") card = Object.assign({}, card, { flip: true });
+    var node = buildCard(card);
+    out.appendChild(node);
+    var ready = function () { layout(node); window.__READY__ = true; };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ready);
+    else ready();
+    return;
+  }
+
+  /* ---------- preview mode: the live editor plus every card ---------- */
+  var scratch = { slug: "_scratch", hook: "Made a loss? Carry it back", highlight: "Carry it back" };
+  var shells = [];
+
+  function render() {
+    out.innerHTML = "";
+    shells = [];
+    var all = [scratch].concat(DATA.cards);
+    all.forEach(function (c) {
+      var cap = document.createElement("div");
+      cap.className = "caption";
+      cap.textContent = c.slug === "_scratch" ? "live editor" : c.slug;
+      var shell = document.createElement("div");
+      shell.className = "shell";
+      var node = buildCard(c);
+      shell.appendChild(node);
+      out.appendChild(cap);
+      out.appendChild(shell);
+      shells.push({ shell: shell, card: node });
+    });
+    applyToggles();
+    shells.forEach(function (s) { layout(s.card); });
+    zoom();
+  }
+
+  function zoom() {
+    var pct = Number(document.getElementById("zoom").value) / 100;
+    shells.forEach(function (s) {
+      s.card.style.transform = "scale(" + pct + ")";
+      s.shell.style.width = Math.round(2400 * pct) + "px";
+      s.shell.style.height = Math.round(1500 * pct) + "px";
+    });
+  }
+
+  function bind(id, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener(el.type === "checkbox" || el.type === "range" ? "input" : "input", fn);
+  }
+
+  bind("i-hook", function (e) { scratch.hook = e.target.value || " "; render(); });
+  bind("i-hl", function (e) { scratch.highlight = e.target.value; render(); });
+  bind("i-site", function (e) { DEFAULTS.site = e.target.value; render(); });
+  bind("i-name", function (e) { DEFAULTS.name = e.target.value; render(); });
+  ["t-frame", "t-dot", "t-squiggle", "t-headshot", "t-flip"].forEach(function (id) {
+    bind(id, function () { applyToggles(); shells.forEach(function (s) { layout(s.card); }); });
+  });
+  bind("zoom", zoom);
+
+  document.getElementById("i-hook").value = scratch.hook;
+  document.getElementById("i-hl").value = scratch.highlight;
+  document.getElementById("i-site").value = DEFAULTS.site;
+  document.getElementById("i-name").value = DEFAULTS.name;
+
+  render();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { shells.forEach(function (s) { layout(s.card); }); });
+  }
+  window.__READY__ = true;
+})();
+</script>
+</body>
+</html>

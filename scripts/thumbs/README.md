@@ -1,5 +1,39 @@
 # Blog thumbnail generator
 
+## Two layouts
+
+`template.html` is the original. `template-tweet.html` is the tweet layout,
+rebuilt from the Profresults reference Hazem supplied on 2 August 2026. Both
+read the same `cards.mjs` and render at the same 2400x1500, so a card can be
+rendered through either without touching its copy.
+
+**The generator is step 3 of `docs/publishing-a-post.md`.** Start with
+`npm run thumbs:audit`: it reads the live post list from Supabase, tells you
+which published posts have no card copy or no rendered image, and prints the
+snippet to paste into `cards.mjs`. It exits 1 when something is missing, so it
+can gate a release.
+
+| Command | What |
+| --- | --- |
+| `npm run thumbs:audit` | What is missing, checked against the live CMS. Run this first. |
+| `npm run thumbs:preview:tweet` | Opens the tweet layout: a live editor at the top, then every card. |
+| `npm run thumbs:render:tweet` | Screenshots them to `out/<slug>.png`. |
+| `npm run thumbs:build:tweet` | Render, then convert to `public/blog/<slug>.webp`. |
+
+The layout is seven switchable layers, back to front: the cream **frame**, the
+**background** (near-black plus two blue radial glows), the **dot** top left,
+the **headshot** bleeding off the bottom left, the white **tweet** card (avatar,
+name, verified tick, headline), the red hand-drawn **squiggle** under the
+highlighted words, and the **domain** underneath. Each has a checkbox in the
+control bar, and every colour is a CSS variable at the top of the file.
+
+The squiggle is bound to the `highlight` field in `cards.mjs`: it hangs off a
+`<span>` wrapped round that exact substring, so it follows the words when the
+headline re-fits rather than being positioned by hand.
+
+`THUMB_TEMPLATE=template-tweet.html` is what switches `render.mjs` over.
+
+
 Generates the `public/blog/<slug>.webp` cards for the blog index, at 2400x1500,
 from a single HTML template. No new npm dependencies: it uses `sharp` (already a
 transitive dep via Next) and headless Chrome (already on the machine).
@@ -57,12 +91,17 @@ Non-negotiable, this is a regulated YMYL brand (CIOT / ICAEW / ASA):
   `src/lib/posts.ts` first, and write a hook that matches what it actually says.
 - Match the house voice in `posts.ts`: plain, specific, calm authority.
 
-## The hard constraint that shapes the design
+## The crop constraint, and why it is gone (2 August 2026)
 
-`src/app/blog/page.tsx` renders these into a **190px-tall slot with
-`object-cover`**, from a 2400x1500 (8:5) source. That crop throws away roughly
-the **top 12% and bottom 12%** of the image height. The featured card slot is
-about 640x300, which is cropped even harder.
+**This no longer applies to the tweet layout.** Every place that shows a card
+(blog index, featured slot, post hero, related cards, home "Useful reads") now
+renders it at its own 8:5 with the image's real dimensions, so the whole card
+shows, uncropped and unletterboxed. Do not use `fill` on these: inside an
+`aspect-ratio` box Safari resolves the height to 0 and the image disappears.
+
+The original constraint, kept because `template.html` is still designed around
+it: that template's cards were shown in a 190px-tall slot with `object-cover`
+from a 2400x1500 source, which threw away roughly the top and bottom 12%.
 
 So everything that matters, the bubble, the hook, the squiggle, and Simon's
 head, sits inside the middle 76% vertical band: **y 180 to y 1320** of 1500.
@@ -72,16 +111,22 @@ important may touch them.
 ## Files
 
 ```
-cards.mjs         card copy. The only place hooks live. Source of truth.
-template.html     the card design. Open it directly, or via thumbs:preview.
-build-data.mjs    cards.mjs + the cutout -> assets/inline-data.js
-render.mjs        headless Chrome -> out/<slug>.png at 2400x1500
-to-webp.mjs       out/<slug>.png -> public/blog/<slug>.webp
+cards.mjs           card copy. The only place hooks live. Source of truth.
+template.html       the original card design.
+template-tweet.html the tweet layout (current), with a live editor.
+audit.mjs           live CMS vs cards vs images. Run first when publishing.
+build-data.mjs      cards.mjs + the cutout -> assets/inline-data.js
+render.mjs          headless Chrome -> out/<slug>.png at 2400x1500
+to-webp.mjs         out/<slug>.png -> public/blog/<slug>.webp
+cutout.mjs          photo -> transparent PNG (Vision, colour-key fallback)
+cutout-vision.swift the Vision subject lift cutout.mjs compiles and calls
 assets/
-  simon-cutout.png  transparent-background Simon. The one hand-made asset.
-  simon-crop.jpg    the crop it was cut out of, kept for reference/regeneration.
-  inline-data.js    generated, gitignored.
-out/              generated PNGs, gitignored.
+  simon-suit-cutout.png  current cutout: the navy-suit studio headshot.
+  simon-cutout.png       older cutout from the group shot.
+  simon-crop.jpg         the crop that one was cut from.
+  inline-data.js         generated, gitignored.
+out/                generated PNGs, gitignored.
+.bin/               compiled Swift helper, gitignored.
 ```
 
 ### Why `inline-data.js` exists
@@ -112,15 +157,38 @@ It looks for a Chrome binary in this order, and `CHROME_PATH` overrides:
 
 ## The fallback card
 
-`_default` is the card used for any post that has no thumbnail of its own.
-`src/app/blog/page.tsx` reads `public/blog/` at build time and falls back to
-`/blog/_default.webp`, so a post added to `posts.ts` before its image exists can
-never render a 404 image again. Prefer generating a real card, but the safety net
-is there.
+`_default` is rendered as a card like any other. The runtime fallback lives in
+**`src/lib/postImage.ts`**, shared by every place that lists posts: it reads
+`public/blog/` once at module load and falls back to `/simon-jacobs-event.webp`
+for any slug without a card, so a post published through `/admin/blog` before
+its card exists can never render a 404 image. Prefer a real card; run
+`npm run thumbs:audit` to find the ones still missing.
+
+Note it reads the directory once at module load, so a card generated while
+`next dev` is running needs a dev-server restart to appear. The production build
+reads it fresh.
 
 ## Regenerating the cutout
 
-`assets/simon-cutout.png` was made once and should not need remaking. If it does:
+Now a script. It runs macOS Vision's subject lifting (the model behind Finder's
+Remove Background) via `cutout-vision.swift`, compiling it on first use, and
+falls back to a flood-fill colour key off-platform:
+
+```sh
+node scripts/thumbs/cutout.mjs                      # public/simon-jacobs.jpg -> assets/simon-suit-cutout.png
+node scripts/thumbs/cutout.mjs <input> <output>     # any other photo
+```
+
+`assets/simon-suit-cutout.png` (the navy-suit studio headshot) is what
+`build-data.mjs` inlines by default; `THUMB_CUTOUT=simon-cutout.png` switches
+back to the older garden-party cutout.
+
+Do not reach for a colour key on a studio portrait: it was tried on this photo
+and it ate the top of Simon's bald head, which is lit to almost exactly the
+backdrop grey, while leaving patches where the backdrop gradient fell outside
+tolerance.
+
+The history below is kept for the original cutout:
 
 ```sh
 # 1. crop Simon out of the group shot (source: TWR-TheGate-81.jpg, 4764x7139).

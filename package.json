@@ -11,8 +11,12 @@
     "thumbs:data": "node scripts/thumbs/build-data.mjs",
     "thumbs:preview": "node scripts/thumbs/build-data.mjs && open scripts/thumbs/template.html",
     "thumbs:render": "node scripts/thumbs/render.mjs",
+    "thumbs:preview:tweet": "node scripts/thumbs/build-data.mjs && open scripts/thumbs/template-tweet.html",
+    "thumbs:render:tweet": "THUMB_TEMPLATE=template-tweet.html node scripts/thumbs/render.mjs",
+    "thumbs:build:tweet": "npm run thumbs:render:tweet && npm run thumbs:webp",
     "thumbs:webp": "node scripts/thumbs/to-webp.mjs",
-    "thumbs:build": "npm run thumbs:render && npm run thumbs:webp"
+    "thumbs:build": "npm run thumbs:render && npm run thumbs:webp",
+    "thumbs:audit": "node scripts/thumbs/audit.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",
