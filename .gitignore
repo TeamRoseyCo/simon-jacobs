@@ -52,3 +52,6 @@ next-env.d.ts
 
 # compiled helper for the thumbnail cutout tool
 scripts/thumbs/.bin/
+
+# Local-only type test. Lives on disk, never ships: see /font-lab.
+src/app/font-lab/
