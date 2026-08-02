@@ -10,6 +10,11 @@
   --seafoam: #9FE7DC;
   --teal:    #1A8275;
   --border:  #D9E5EF;
+  /* How far content sits from the window edge, everywhere on the site: the hero
+     (.hv-inner), every section (.gutter / .gutter-bleed) and the who-for copy
+     column all read this one value, so they can never drift apart. 24px on a
+     phone, growing with the window, capped at 64px. */
+  --gutter: clamp(24px, 4vw, 64px);
 }
 
 @theme inline {
@@ -189,11 +194,16 @@ body {
    Opacity raised further (was 0.82) so the wordmark and nav stay easy to
    read against busy page content behind it. */
 .site-head.is-solid {
-  background: rgba(246, 250, 252, 0.96);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(217, 229, 239, 0.8);
-  box-shadow: 0 8px 30px rgba(8, 34, 75, 0.1);
+  /* Genuinely translucent. This was rgba(..., 0.96), which is opaque enough
+     that the blur behind it had nothing to show and the bar read as flat white.
+     At 0.62 the content actually blurs through it. Saturation is pushed harder
+     than the blur to keep colour in what shows through, which is what stops it
+     looking like grey fog. */
+  background: rgba(246, 250, 252, 0.62);
+  backdrop-filter: blur(26px) saturate(200%);
+  -webkit-backdrop-filter: blur(26px) saturate(200%);
+  border-bottom: 1px solid rgba(217, 229, 239, 0.55);
+  box-shadow: 0 8px 30px rgba(8, 34, 75, 0.08);
 }
 
 /* Transparent over the hero: turn the menu white. */
@@ -483,6 +493,14 @@ body {
   margin-top: 12px;
   justify-content: center;
   padding: 14px;
+}
+
+/* Tablet gutter: match the sections' md:px-10 (40px) so the wordmark stays in
+   line with the page content through the whole tablet range. */
+@media (min-width: 768px) {
+  .site-nav {
+    padding: 16px 40px;
+  }
 }
 
 /* Desktop nav (links + hidden hamburger) only once there is room for the
@@ -1148,6 +1166,67 @@ body {
 
 .faq-panel {
   border-radius: 14px;
+}
+
+/* ============ Site gutter ============ */
+/* One source of truth for how far content sits from the window edge, taken from
+   the hero (.hv-inner: 1240px wide with 24px inside it) so every section below
+   the hero lines up with it at every screen width. Change the two values here
+   and the whole site moves together.
+
+   .gutter        for a normal section: it is the width-limited wrapper itself.
+   .gutter-bleed  for a section whose background must span the full viewport, so
+                  the alignment has to come from padding instead of a max-width.
+                  The max() reproduces the same content edge as .gutter: 24px on
+                  narrow screens, and (page width - 1240) / 2 + 24 once there is
+                  room. 100% is used rather than 100vw so a visible scrollbar
+                  cannot knock it out of line with the hero. */
+.gutter {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.gutter-bleed {
+  padding-left: max(var(--gutter), calc((100% - 1240px) / 2 + var(--gutter)));
+  padding-right: max(var(--gutter), calc((100% - 1240px) / 2 + var(--gutter)));
+}
+
+/* Copy column of the who-for band. It sits in the right half of a two-column
+   grid, so 100% would be the column, not the page: the right-hand gutter has to
+   be measured from the viewport instead. Left padding is the gap from the photo,
+   not a page gutter, so it stays as it was. */
+.whofor-copy {
+  padding-left: var(--gutter);
+  padding-right: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter)));
+}
+
+@media (min-width: 1024px) {
+  .whofor-copy {
+    padding-left: 56px;
+  }
+}
+
+/* Testimonial cards. Softer and rounder than .finance-card so a wall of quotes
+   reads as people rather than as data panels, and relative so the oversized
+   quote mark can sit in the top corner. */
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(8, 34, 75, 0.07);
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(26, 130, 117, 0.35);
+  box-shadow: 0 26px 60px rgba(8, 34, 75, 0.13);
 }
 
 /* Animated accordion answer: collapse/expand height smoothly. The grid-rows
@@ -1832,7 +1911,7 @@ body {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -2415,7 +2494,7 @@ body {
 
 @media (max-width: 640px) {
   /* Header fits without clipping the menu; compact book-a-call pill. */
-  .site-nav { padding: 12px 16px; gap: 10px; }
+  .site-nav { padding: 12px 24px; gap: 10px; }
   .site-wordmark { font-size: 24px; }
   .site-nav-actions { gap: 8px; }
   .nav-cta { padding: 8px 14px; font-size: 13px; }
@@ -2437,7 +2516,7 @@ body {
 
 /* Bigger mobile header + square portrait (per request). */
 @media (max-width: 640px) {
-  .site-nav { padding: 16px 16px; gap: 10px; }
+  .site-nav { padding: 16px 24px; gap: 10px; }
   .site-wordmark { font-size: 27px; }
   .nav-cta { padding: 10px 16px; font-size: 13px; }
   .nav-toggle { width: 46px; height: 46px; }
@@ -2460,7 +2539,7 @@ body {
 
 @media (max-width: 640px) {
   /* Header: bigger but fits without clipping the menu. */
-  .site-nav { padding: 15px 16px; gap: 8px; }
+  .site-nav { padding: 15px 24px; gap: 8px; }
   .site-wordmark { font-size: 24px; }
   .nav-cta { padding: 9px 12px; font-size: 12px; }
   .nav-toggle { width: 44px; height: 44px; }
@@ -2477,7 +2556,7 @@ body {
    much without shoving the menu off-screen at 390px). */
 .hv-sub { color: rgba(255, 255, 255, 0.95); }
 @media (max-width: 640px) {
-  .site-nav { padding: 18px 16px; }
+  .site-nav { padding: 18px 24px; }
   .site-wordmark { font-size: 23px; }
   .nav-toggle { width: 46px; height: 46px; }
   .site-head-spacer { height: 82px; }
@@ -2499,7 +2578,7 @@ body {
 /* Header (mobile): make the Book-a-call pill and the menu a matched pair
    (same height, vertically centred) so the cluster reads as one unit. */
 @media (max-width: 640px) {
-  .site-nav { padding: 16px 16px; }
+  .site-nav { padding: 16px 24px; }
   .site-nav-actions { gap: 10px; align-items: center; }
   .site-wordmark { font-size: 22px; }
   .nav-cta {

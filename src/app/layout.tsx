@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+// Renamed from globals.css on 2 Aug 2026. Turbopack derives the stylesheet's
+// chunk URL from this path, and browsers were holding a cached copy of the old
+// URL, rendering current HTML against a stale stylesheet. Renaming the file
+// mints a URL nothing has cached.
+import "./site.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollReveal from "@/components/ScrollReveal";
