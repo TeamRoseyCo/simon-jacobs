@@ -139,6 +139,12 @@ export const cards = [
     hook: "Clean books quietly raise your valuation",
     highlight: "your valuation",
   },
+  {
+    slug: "company-capital-losses-carry-forward",
+    hook: "A capital loss does not disappear",
+    highlight: "not disappear",
+    flip: true,
+  },
 ];
 
 export default cards;
