@@ -16,6 +16,10 @@ export default function ClaudeGif() {
       src="/claude.webp"
       alt="The Claude AI logo, one of the AI tools you should not rely on for your agency's taxes"
       onError={() => setShow(false)}
+      // Below-the-fold decoration: lazy-load so it never competes with the LCP
+      // element for early bandwidth.
+      loading="lazy"
+      decoding="async"
       className="claude-egg pointer-events-none absolute bottom-4 left-4 z-10 block h-14 w-auto select-none lg:left-8"
     />
   );

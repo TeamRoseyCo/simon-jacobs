@@ -34,6 +34,8 @@ const profileLd = {
     url: `${site.url}/about`,
     email: site.email,
     telephone: "+447821900992",
+    // TODO(verify): add CIOT Find-a-CTA register URL to sameAs once Simon is
+    // listed (tax.org.uk). Unverified today, so it is deliberately omitted.
     sameAs: [site.linkedin, site.instagram, site.icaew],
     worksFor: {
       "@type": "AccountingService",
@@ -49,6 +51,26 @@ const profileLd = {
         name: "Chartered Institute of Taxation (CIOT)",
       },
       { "@type": "Organization", name: "ICAEW" },
+    ],
+    // Machine-readable credentials (already asserted in the About page copy and
+    // the CTA · ACA accreditation strip). CTA is awarded by the CIOT, ACA by the
+    // ICAEW.
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Professional certification",
+        name: "Chartered Tax Adviser (CTA)",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Chartered Institute of Taxation",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Professional certification",
+        name: "Chartered Accountant (ACA)",
+        recognizedBy: { "@type": "Organization", name: "ICAEW" },
+      },
     ],
     knowsAbout: [
       "Tax planning",

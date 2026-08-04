@@ -14,7 +14,6 @@ const AI_AGENTS = [
   "Googlebot",
   "Google-Extended",
   "ClaudeBot",
-  "Claude-Web",
   "Claude-SearchBot",
   "anthropic-ai",
   "GPTBot",
@@ -22,6 +21,9 @@ const AI_AGENTS = [
   "ChatGPT-User",
   "PerplexityBot",
   "Bingbot",
+  // CCBot feeds Common Crawl, a major LLM training corpus. Listing it explicitly
+  // signals training-data willingness (the "*" rule already allows it).
+  "CCBot",
 ];
 
 export default function robots(): MetadataRoute.Robots {

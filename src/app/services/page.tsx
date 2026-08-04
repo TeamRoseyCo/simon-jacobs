@@ -5,7 +5,21 @@ import type { ReactNode } from "react";
 import ConsultCta from "@/components/ConsultCta";
 import ServiceCard from "@/components/ServiceCard";
 import FullServiceChecklist from "@/components/FullServiceChecklist";
-import { services, servicesFull, resultItems, processSteps } from "@/lib/content";
+import { services, servicesFull, resultItems, processSteps, site } from "@/lib/content";
+
+const siteUrl = site.url;
+
+// Service schema for the main services hub. Mirrors the shape used on the five
+// agency-vertical money pages; the provider references the sitewide org node by
+// @id rather than re-describing it, so both resolve to one entity.
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Agency tax planning, profit extraction and accountancy",
+  serviceType: "Tax planning and accountancy for UK marketing agencies",
+  areaServed: { "@type": "Country", name: "United Kingdom" },
+  provider: { "@id": `${siteUrl}/#organization` },
+};
 
 function Ico({ children, className }: { children: ReactNode; className?: string }) {
   return (
@@ -92,6 +106,10 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="reveal mx-auto max-w-3xl">
           <h1 className="font-serif text-4xl font-normal leading-tight md:text-5xl">

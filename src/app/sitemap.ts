@@ -31,8 +31,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/terms",
     "/accessibility",
   ]);
+  // Static routes have no per-page edit timestamp, so stamp a single build-time
+  // date. lastmod is a genuine crawl signal Google uses (unlike priority /
+  // changefreq, which it largely ignores). Blog posts below carry their own
+  // real lastModified.
+  const buildDate = new Date();
   const staticRoutes: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteUrl}${route}`,
+    lastModified: buildDate,
     changeFrequency: "monthly",
     priority: route === "" ? 1 : lowPriority.has(route) ? 0.3 : 0.8,
   }));

@@ -106,19 +106,11 @@ export default async function BlogPostPage({
     wordCount,
     image: `${siteUrl}${OG_IMAGE}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
-    author: {
-      "@type": "Person",
-      name: "Simon Jacobs",
-      jobTitle: "Chartered Tax Adviser",
-      url: `${siteUrl}/about`,
-      sameAs: [site.linkedin, site.instagram],
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "SRJ International",
-      "@id": `${siteUrl}/#organization`,
-      logo: { "@type": "ImageObject", url: `${siteUrl}${OG_IMAGE}` },
-    },
+    // Reference the one canonical Simon Jacobs Person (full node on /about, @id
+    // below) and the sitewide org, so authorship on every post resolves to a
+    // single author entity rather than a fresh inline Person per post.
+    author: { "@id": `${siteUrl}/#simon-jacobs` },
+    publisher: { "@id": `${siteUrl}/#organization` },
   };
 
   const breadcrumbJsonLd = {
@@ -161,6 +153,10 @@ export default async function BlogPostPage({
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold text-accent">
             <span>{post.tag}</span>
             <span className="text-muted">·</span>
+            <Link href="/about" className="text-accent transition hover:text-ink">
+              By Simon Jacobs, CTA · ACA
+            </Link>
+            <span className="text-muted">·</span>
             <span className="text-muted">{formatPostDate(post.date)}</span>
             <span className="text-muted">·</span>
             <span className="text-muted">{post.readingTime}</span>
@@ -188,6 +184,13 @@ export default async function BlogPostPage({
             priority
           />
         </div>
+
+        {post.excerpt && (
+          <p className="reveal mt-8 rounded-[14px] border border-border bg-surface p-5 text-base leading-8 text-ink">
+            <span className="font-semibold">In short: </span>
+            {post.excerpt}
+          </p>
+        )}
 
         <div className="reveal mt-8 flex flex-col gap-5">
           {post.body.map((block, i) => {
@@ -249,6 +252,37 @@ export default async function BlogPostPage({
             </ul>
           </div>
         )}
+
+        {/* Visible author attribution — the CTA · ACA / ex-PwC signal is in the
+            BlogPosting schema, but this makes it legible to readers and quality
+            raters too. Facts match /about; no new claims. */}
+        <div className="reveal mt-14 flex flex-col gap-4 rounded-[14px] border border-border bg-surface p-6 sm:flex-row sm:items-center">
+          <Image
+            src="/simon-jacobs.webp"
+            alt="Simon Jacobs, Chartered Tax Adviser and founder of SRJ International"
+            width={72}
+            height={72}
+            sizes="72px"
+            className="h-16 w-16 shrink-0 rounded-full object-cover object-[center_12%]"
+          />
+          <p className="text-sm leading-7 text-muted">
+            <Link
+              href="/about"
+              className="font-semibold text-ink transition hover:text-accent"
+            >
+              Simon Jacobs
+            </Link>{" "}
+            is a Chartered Tax Adviser (CTA · ACA) and ex-PwC, founder of SRJ
+            International. He advises founder-led UK marketing agencies on tax,
+            profit extraction and exit.{" "}
+            <Link
+              href="/about"
+              className="font-semibold text-accent transition hover:text-ink"
+            >
+              Read his full profile →
+            </Link>
+          </p>
+        </div>
       </article>
 
       <ConsultCta

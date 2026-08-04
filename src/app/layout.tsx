@@ -117,15 +117,11 @@ const jsonLd = {
     addressCountry: "GB",
   },
   sameAs: [site.linkedin, site.instagram, site.icaew],
-  founder: {
-    "@type": "Person",
-    name: "Simon Jacobs",
-    jobTitle: "Chartered Tax Adviser",
-    description:
-      "Chartered Tax Adviser (CTA · ACA) and ex-PwC, specialising in tax planning and profit extraction for UK marketing agencies.",
-    url: `${siteUrl}/about`,
-    sameAs: [site.linkedin, site.instagram, site.icaew],
-  },
+  // Reference the one canonical Simon Jacobs Person node (defined in full on
+  // /about with the stable @id below) instead of re-describing him here, so
+  // Google/LLMs merge every mention into a single entity rather than several
+  // near-duplicate inline Persons.
+  founder: { "@id": `${siteUrl}/#simon-jacobs` },
   knowsAbout: [
     "Tax planning",
     "Profit extraction",
@@ -133,6 +129,21 @@ const jsonLd = {
     "Director remuneration",
     "Agency accountancy",
   ],
+};
+
+// Sitewide WebSite entity, tying the "SRJ International" / "Jacobs Taxes" site
+// name to the organization as publisher. Deliberately NO potentialAction /
+// SearchAction: the site has no on-site search endpoint, so declaring one would
+// be false.
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: "SRJ International",
+  alternateName: ["Jacobs Taxes", "SRJ International Limited"],
+  publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: "en-GB",
 };
 
 export default function RootLayout({
@@ -160,6 +171,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
         {/* Google Consent Mode v2: deny all storage BEFORE gtag loads. The
             CookieConsent banner flips these to 'granted' only on user opt-in,
