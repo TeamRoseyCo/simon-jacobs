@@ -8,7 +8,12 @@ import { looksLikeBot, looksLikeGibberishName } from "@/lib/spam";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TARGET = "simon@srjinternational.co.uk";
-const CC = "hazem.dweik@elevateoco.com";
+// Elevateo (the marketing agency, i.e. the data processor) gets a copy of every
+// lead alert, but a REDACTED one: direct contact details (email, phone) are
+// masked and the free-text enquiry is withheld, so only Simon — the data
+// controller — ever receives raw personal data by email. GDPR data-minimisation;
+// the full lead stays behind the access-controlled /admin.
+const ELEVATEO = ["hazem.dweik@elevateoco.com", "team@elevateoco.com"];
 const RESOURCE_LINK = `${site.url}/blog/dont-use-claude-for-taxes`;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -20,42 +25,110 @@ const resend = process.env.RESEND_API_KEY
   : null;
 const FROM = "SRJ International <simon@srjinternational.co.uk>";
 
-async function notify(payload: Record<string, unknown>, replyTo: string) {
-  const subject = String(payload._subject ?? "New enquiry from the website");
-  const body =
+// Renders the notification payload to plain text. Underscore-prefixed control
+// keys (_subject) and empty values are dropped, exactly as Simon's alerts have
+// always read.
+function renderBody(payload: Record<string, unknown>) {
+  return (
     Object.entries(payload)
       .filter(([k, v]) => !k.startsWith("_") && v !== "" && v != null)
       .map(([k, v]) => `${k}: ${v}`)
-      .join("\n") + `\n\n---\nSee every lead anytime: ${site.url}/admin`;
+      .join("\n") + `\n\n---\nSee every lead anytime: ${site.url}/admin`
+  );
+}
+
+// Mask an email to its first two characters + domain: "jordan@acme.com" ->
+// "jo•••@acme.com". Enough to recognise a returning enquirer without handing
+// Elevateo a directly-contactable address.
+const maskEmail = (v: unknown) => {
+  const s = String(v);
+  const at = s.indexOf("@");
+  if (at < 1) return "[hidden]";
+  return `${s.slice(0, Math.min(2, at))}•••${s.slice(at)}`;
+};
+
+// Keep only the last 3 digits of a phone number: "+44 7700 900123" -> "•••••• 123".
+const maskPhone = (v: unknown) => {
+  const digits = String(v).replace(/\D/g, "");
+  return digits ? `•••••• ${digits.slice(-3)}` : "";
+};
+
+// The processor (Elevateo) copy: mask the direct contact identifiers and withhold
+// the free-text enquiry, which is where a lead's personal or financial detail
+// lands. Everything else (name, lead source, turnover band, qualified/score) is
+// kept so the agency can still triage. Raw detail lives only in /admin.
+function redactForProcessor(payload: Record<string, unknown>) {
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(payload)) {
+    if (k === "email") out[k] = maskEmail(v);
+    else if (k === "phone") out[k] = maskPhone(v);
+    else if (k === "question" || k === "answers") out[k] = "[hidden — view in /admin]";
+    else out[k] = v;
+  }
+  return out;
+}
+
+async function notify(payload: Record<string, unknown>, replyTo: string) {
+  const subject = String(payload._subject ?? "New enquiry from the website");
+  const fullBody = renderBody(payload);
+  const processorBody = renderBody(redactForProcessor(payload));
+
+  let controllerEmailed = false;
 
   if (resend) {
+    // Simon (the data controller) — the complete lead, reply-to set to the
+    // enquirer so he can answer in one tap. This is the send the submission's
+    // success hinges on.
     try {
       const { error } = await resend.emails.send({
         from: FROM,
-        to: [TARGET, CC],
+        to: [TARGET],
         replyTo,
         subject,
-        text: body,
+        text: fullBody,
       });
-      if (!error) return true;
+      if (!error) controllerEmailed = true;
       // Log the reason. A dead or rotated API key and an unverified sending
       // domain both surface here, and both are invisible without this line.
-      console.error("[notify] resend rejected the send:", error.message);
+      else console.error("[notify] resend rejected the controller send:", error.message);
     } catch (err) {
       console.error(
-        "[notify] resend threw:",
+        "[notify] resend threw on the controller send:",
         err instanceof Error ? err.message : err,
       );
     }
+
+    // Elevateo (the processor) — redacted copy, and deliberately no enquirer
+    // reply-to (a reply would expose the address we just masked). Best effort:
+    // a failure here must never fail the submission or gate the fallback below.
+    try {
+      const { error } = await resend.emails.send({
+        from: FROM,
+        to: ELEVATEO,
+        subject,
+        text: processorBody,
+      });
+      if (error) console.error("[notify] resend rejected the Elevateo copy:", error.message);
+    } catch (err) {
+      console.error(
+        "[notify] resend threw on the Elevateo copy:",
+        err instanceof Error ? err.message : err,
+      );
+    }
+
+    if (controllerEmailed) return true;
   } else {
     console.error("[notify] RESEND_API_KEY is not set");
   }
 
+  // Fallback relay — Simon only. We do not push raw lead PII to Elevateo through
+  // a third-party relay; their redacted copy is a Resend-path nicety, not something
+  // worth leaking full details to keep alive.
   try {
     const res = await fetch(`https://formsubmit.co/ajax/${TARGET}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...payload, _cc: CC }),
+      body: JSON.stringify(payload),
     });
     // FormSubmit answers HTTP 200 even when it refuses to deliver (an
     // unactivated address, or a server-to-server call with no browser
