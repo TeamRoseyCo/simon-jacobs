@@ -183,6 +183,29 @@ the extraction furniture is missing.
       with byte-identical H2s, and they rank on the 227 insight posts beneath
       them rather than on their own merit. Raedan is the control experiment, six
       overlapping agency URLs on a 14 year old domain, not winning.
+- [ ] **Own media and ad spend passthrough VAT. This is the lane.** Three
+      separate pieces of evidence converge on it: the July AEO plan flagged
+      "media / ad-spend passthrough" as the jargon missing from the money page,
+      [the demand study](./keyword-demand-discovery-2026-08.md) found principal
+      versus agent VAT (disclosed and undisclosed agency, recharged expenses,
+      disbursements) to be the deepest technical search tree in the whole
+      corpus, and [the competitor study](./competitor-keyword-gap-2026-08.md)
+      found nobody owns media agencies at all. SRJ's three VAT posts are flat
+      rate, pre-registration reclaim and overseas clients. None of them touch
+      principal versus agent. It is also the single question a Chartered Tax
+      Adviser is most credible on and a generalist bookkeeper is least. Build
+      the pillar post, then wire it into the media agencies page above.
+- [ ] **Then the clean gaps, verified against the CMS as genuinely absent:**
+      employee ownership trusts and management buyouts (zero mentions across all
+      54 posts), associated companies for corporation tax (one passing mention,
+      and it bites the moment anyone follows the queued holdco post's advice),
+      and a dedicated director pensions asset. On pensions, note the demand
+      study overstated it: seven posts do mention pensions, `how-to-reduce-your-
+      agencys-corporation-tax` six times. What is missing is a page that targets
+      it, not the subject matter.
+- [ ] **Calculators.** Every serious competitor has them, Alto has twelve, SRJ
+      has none. They earn links and they are the natural home for the salary and
+      dividend arithmetic already scattered across the blog.
 - [ ] **A UK to UAE page is the one genuine gap.** 44 impressions with no
       dedicated page, served entirely by one blog post at position 37. Flag
       before building: those queries are mostly individuals moving abroad, not
@@ -203,8 +226,20 @@ the extraction furniture is missing.
 - **More subtype landing pages.** See W4.
 - **Programmatic or city pages.** Nothing to templatise until one page proves it
   can rank.
-- **New keyword research.** The Search Console query list is better evidence than
-  any tool would give us, and the July topic map is not exhausted.
+- ~~**New keyword research.**~~ Struck 4 August. This was wrong. Search Console
+  only shows queries the site already appears for, so it is survivorship biased
+  and cannot show demand where SRJ ranks nowhere, which on a five month old
+  property is most of the market. The research was done and it found real
+  clusters GSC could never have surfaced. Both studies are in
+  `keyword-demand-discovery-2026-08.md` and `competitor-keyword-gap-2026-08.md`.
+  Two caveats carried forward: Google's autocomplete endpoint started returning
+  403 partway through, so the third round leans on Bing and is lower confidence,
+  and there is still **no volume data**, so every ranking in those reports is
+  qualitative and labelled as such.
+- **When volume data does arrive, hand-clean it.** "Agency" is roughly two
+  thirds noise as a head term: employment agencies, the Valuation Office Agency,
+  government bodies' VAT numbers. Any tool-reported volume for these keywords is
+  inflated until that noise is stripped out.
 - **The log file analysis and n8n automation in the resource repo.** Both are
   good, both are for sites with traffic. 354 impressions does not justify either.
 
