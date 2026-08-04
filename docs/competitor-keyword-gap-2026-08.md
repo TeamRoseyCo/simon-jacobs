@@ -29,7 +29,7 @@ Two things have changed, and one of them is serious.
 2. **Alto is targeting SRJ's exact query set, including the odd ones.** It has
    `/locations/wallington` (SRJ's GSC query "accountant for digital agencies
    wallington", 8 impressions), plus ~20 insight pages on UK-to-Dubai / UAE /
-   statutory residence — the second half of SRJ's GSC impression profile. This
+   statutory residence, the second half of SRJ's GSC impression profile. This
    is not a coincidental overlap. It is the same ICP and the same terms.
 
 3. **The "exit angle is wide open" conclusion in the June study is now wrong.**
@@ -44,7 +44,7 @@ Two things have changed, and one of them is serious.
 
 ## Per-competitor summary
 
-### Alto Accounting — alto-accounting.com
+### Alto Accounting, alto-accounting.com
 **The one to study.** Domain 4 Jan 2025. 322 URLs.
 
 - **Targets:** `/agency-accountant` is the hub (1,689 words, title "Marketing &
@@ -89,7 +89,7 @@ Two things have changed, and one of them is serious.
   the single most useful fact in this report: the terms are winnable.** Alto
   also has no chartered tax credential at all, which is SRJ's whole basis.
 
-### Sidekick Accounting — sidekickaccounting.co.uk
+### Sidekick Accounting, sidekickaccounting.co.uk
 Domain 24 Oct 2022. **1,151 URLs.** The largest content operation in the set.
 
 - **Targets:** 10 `/sectors/` pages, all pure agency, no generalist verticals:
@@ -120,7 +120,7 @@ Domain 24 Oct 2022. **1,151 URLs.** The largest content operation in the set.
   the corpus is finance-operational rather than tax-technical, and (c) the total
   absence of public reviews. Do not attempt to out-publish Sidekick.
 
-### The Wow Company — thewowcompany.com
+### The Wow Company, thewowcompany.com
 468 URLs. `/agencies` hub is only **718 words**.
 
 - **Targets:** one vertical, "agencies", plus programme pages:
@@ -136,7 +136,7 @@ Domain 24 Oct 2022. **1,151 URLs.** The largest content operation in the set.
   ranking on age and links, not on covering terms SRJ is missing. Do not model
   page architecture on Wow.
 
-### Raedan — raedan.co.uk
+### Raedan, raedan.co.uk
 Domain 12 Feb 2012. 166 URLs. **The closest structural analogue to SRJ.**
 
 - **Targets:** the widest set of `accountants-for-<X>` slugs in the set:
@@ -146,7 +146,7 @@ Domain 12 Feb 2012. 166 URLs. **The closest structural analogue to SRJ.**
   `accounting-for-video-production`.
 - **Architecture:** flat, one page per term, no city layer, no tools.
   **It has both `/accountants-for-marketing-agencies/` and
-  `/accounting-for-marketing-agencies/` — self-cannibalising duplicates**, which
+  `/accounting-for-marketing-agencies/`, self-cannibalising duplicates**, which
   is exactly the risk SRJ is currently running with four near-identical pages.
 - **Blog depth:** ~140 posts but the archive is stale and generic. Large
   Coronavirus block, Budget 2018, Budget 2020. Recent posts are thin listicles.
@@ -158,7 +158,7 @@ Domain 12 Feb 2012. 166 URLs. **The closest structural analogue to SRJ.**
 - **How beatable:** **Old, not strong.** 14-year domain plus one page per term.
   Content quality is below what SRJ already ships. High-priority target.
 
-### A&C Chartered Accountants — ac-accounts.co.uk
+### A&C Chartered Accountants, ac-accounts.co.uk
 507 URLs. Manchester generalist.
 
 - **Targets:** 15 `/sectors/` pages, of which **only one is agency-adjacent**:
@@ -175,7 +175,7 @@ Domain 12 Feb 2012. 166 URLs. **The closest structural analogue to SRJ.**
   domain age, not because of agency coverage. SRJ cannot beat its authority
   quickly but can out-cover it trivially.
 
-### Agile Accountants — agileaccountants.co.uk
+### Agile Accountants, agileaccountants.co.uk
 Domain 8 Nov 2021. 114 URLs. Generalist with a marketing page.
 
 - **Targets:** ~18 `accountants-for-<X>` pages, mostly non-agency (catering,
@@ -192,7 +192,7 @@ Domain 8 Nov 2021. 114 URLs. Generalist with a marketing page.
   review count is the reason it ranks.** No ICAEW, no CIOT. Only 4 agency-
   relevant pages. Beatable on niche breadth and credential, not on trust.
 
-### David Howard — davidhoward.co.uk
+### David Howard, davidhoward.co.uk
 102 URLs. Surrey, "since 1973".
 
 - **Targets:** `/accounting-for-marketing-agencies` (**489 words**),
@@ -207,7 +207,7 @@ Domain 8 Nov 2021. 114 URLs. Generalist with a marketing page.
   "accounting for marketing agencies" is winnable on content merit** once SRJ
   has any authority at all.
 
-### Rise Accounting — riseaccounting.co.uk
+### Rise Accounting, riseaccounting.co.uk
 238 URLs. Two businesses in one site.
 
 - **Targets:** `/marketing-agencies/` is only **592 words** and is one vertical
@@ -230,7 +230,7 @@ Domain 8 Nov 2021. 114 URLs. Generalist with a marketing page.
   is a different intent from SRJ's queries ("uk to dubai tax advice", "uk to uae
   tax planning"). That distinction is important and is covered below.
 
-### COPA — copa.org.uk
+### COPA, copa.org.uk
 77 URLs. `/digital-agency-accountants` **rendered 6 words of text and no H1**.
 
 - **Confirmed:** the site is client-side JavaScript rendered and is effectively
@@ -247,7 +247,7 @@ Domain 8 Nov 2021. 114 URLs. Generalist with a marketing page.
 - **How beatable:** **Not a search threat at all in its current state.**
   Ignore it as a ranking rival; steal its pillar-cluster URL pattern.
 
-### Smooth Accounting — smoothaccounting.co.uk
+### Smooth Accounting, smoothaccounting.co.uk
 104 URLs. Not an agency rival, but relevant twice over.
 
 - **Targets:** `/who-we-serve/accountants-for-influencers/` with **12 sub-pages**
@@ -264,7 +264,7 @@ Domain 8 Nov 2021. 114 URLs. Generalist with a marketing page.
   proven template for the Dubai lane, and its review page is the model SRJ
   should copy.
 
-### Foxsmith — foxsmith.co.uk
+### Foxsmith, foxsmith.co.uk
 **16 URLs total.** `/services/` (tax, IHT, non-UK-domiciled individuals,
 offshore trusts, accounting strategy, MTD), `/international/`, `/about/`,
 `/careers/`. Still has a live `/hello-world/` WordPress default post.
@@ -272,7 +272,7 @@ offshore trusts, accounting strategy, MTD), `/international/`, `/about/`,
 - **How beatable:** **Not a competitor.** Referral-only private client firm with
   no agency page and no SEO layer. Keep as design reference only.
 
-### Goodman Jones — goodmanjones.com
+### Goodman Jones, goodmanjones.com
 146 URLs. `/who-we-help/creative-industries` (**1,260 words**), with one child
 page `/creative-industries/sign-up-media`.
 
@@ -287,7 +287,7 @@ page `/creative-industries/sign-up-media`.
   terms. Its **24 named client stories** are its real asset and are the thing
   SRJ most conspicuously lacks.
 
-### SRLV — srlv.co.uk
+### SRLV, srlv.co.uk
 285 URLs. Media and entertainment specialist, genuinely credible.
 
 - **Architecture:** the most sophisticated taxonomy in the set. Four
@@ -306,7 +306,7 @@ page `/creative-industries/sign-up-media`.
   agencies". It is a large chartered firm; SRJ will not outrank it on brand.
   But it has **no page for "media agencies" as a term** either. See below.
 
-### CIOT register — tax.org.uk
+### CIOT register, tax.org.uk
 618 KB sitemap. Sections: **288 `/adit/`** pages (the international tax
 qualification), 24 blog, 21 pillar-two, 15 technical, plus branch and press
 pages.
