@@ -315,6 +315,11 @@ export const cards = [
     hook: "Prove the business purpose",
     highlight: "business purpose",
   },
+  {
+    slug: "side-hustle-sole-trader-or-limited-company",
+    hook: "Your side hustle stacks on your salary",
+    highlight: "on your salary",
+  },
 ];
 
 export default cards;

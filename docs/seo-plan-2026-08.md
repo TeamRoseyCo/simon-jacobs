@@ -33,6 +33,16 @@ Re-measure on 4 September 2026 against these exact numbers.
 
 **Relevance is solved. Corroboration is not.**
 
+Update, 4 August, from the competitor study, and it is the most encouraging fact
+in any of these documents. The firm beating SRJ hardest is Alto Accounting, whose
+domain was registered on 4 January 2025. SRJ's was registered on 2 March 2026.
+Both dates verified by whois. Alto is fourteen months older, not ten years, and
+it holds SRJ's exact query set including a Wallington page. Meanwhile Raedan has
+been running since February 2012 with six overlapping agency pages and is not
+winning. So the moat is not domain age. Alto's lead is architecture and corpus
+volume: 322 URLs, 19 city pages, 227 insight posts, 12 calculators. That is
+replicable, and considerably faster than "wait for the domain to age".
+
 Google is already matching SRJ to the right commercial queries: accountants for
 media, marketing, digital, branding, PR, creative and advertising agencies. That
 is the hard half of the problem and it is done. Every one of those queries sits
@@ -161,10 +171,18 @@ the extraction furniture is missing.
       Fold media, PR, branding and social media agency language into
       `/accountants-for-digital-marketing-agencies` and the main money page,
       where those queries already produce impressions.
-- [ ] **Hold the media / PR / branding subtype pages** until either the existing
-      subtype pages start ranking, or there is genuinely vertical-specific
-      substance to say. Spun variants read as doorway pages, which the July plan
-      already warned about.
+- [ ] **Build `/accountants-for-media-agencies`, and only that one.** Revised
+      4 August on competitor evidence (see
+      [the competitor gap study](./competitor-keyword-gap-2026-08.md)). It is
+      SRJ's single biggest query at 20 impressions, and not one of the 14
+      competitors studied has a dedicated page for it. Sidekick's "media" pages
+      are all social media. This is the cleanest open lane on the board and it
+      earns the exception to the consolidate rule.
+- [ ] **Hold PR and branding as sections of the hub, not as pages.** Same
+      evidence: Alto's 16 vertical pages are template clones of 867 to 923 words
+      with byte-identical H2s, and they rank on the 227 insight posts beneath
+      them rather than on their own merit. Raedan is the control experiment, six
+      overlapping agency URLs on a 14 year old domain, not winning.
 - [ ] **A UK to UAE page is the one genuine gap.** 44 impressions with no
       dedicated page, served entirely by one blog post at position 37. Flag
       before building: those queries are mostly individuals moving abroad, not

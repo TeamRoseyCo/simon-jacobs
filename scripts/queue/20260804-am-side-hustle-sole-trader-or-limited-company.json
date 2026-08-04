@@ -1,0 +1,51 @@
+{
+  "publishAt": "2026-08-04",
+  "slot": "morning",
+  "slug": "side-hustle-sole-trader-or-limited-company",
+  "title": "Starting a side hustle while employed: sole trader or limited company?",
+  "tag": "Company structure",
+  "readingTime": "3 min read",
+  "excerpt": "If you already earn well from a job, a side hustle's profit lands on top of your salary as a sole trader. Put it through a limited company and the starting point is very different.",
+  "body": [
+    "If you've got a job and you're earning good money, then decide to start a side hustle, how you structure it matters more than you'd think.",
+    "## As a sole trader, the profit stacks on your salary",
+    "Set it up as a sole trader, and any profit gets added on top of your existing salary.",
+    "That can mean paying up to 45% income tax and National Insurance on money you probably don't even need right now.",
+    "That is the part people miss. A sole trader business is not taxed separately from you, so its profit is not starting from zero. It joins the top of your income, where your salary has already used up the lower bands, and it gets taxed at whatever your highest marginal rate happens to be.",
+    "## As a limited company, it starts somewhere else entirely",
+    "Set it up as a limited company instead, and that profit is taxed at 19-25% corporation tax, a very different starting point.",
+    "That one decision alone can cut the tax bill on your side hustle profits by more than half.",
+    "For a lot of my clients, that was reason enough on its own to set up a limited company from day one.",
+    "## The catch, and it decides whether this works for you",
+    "Worth remembering this applies to profit you're leaving in the business.",
+    "If you want to draw the money out personally, there'll be a further tax charge on top, so it's the right structure mainly if you're happy building up cash inside the company rather than taking it all out straight away.",
+    "So the question to ask yourself is not which structure is cheaper in the abstract. It is what you actually intend to do with the money. If it is funding your life next month, the company saving is smaller than it looks once you have extracted it. If it is capital you are deliberately building up, whether to reinvest, to buy equipment, or simply because you do not need it yet, the gap is real and it compounds.",
+    "## Worth knowing before you decide",
+    "A company is a separate legal entity, which brings filing obligations, a public record at Companies House and a director's responsibilities. That is a manageable cost, but it is a cost, and it is worth weighing against the saving rather than assuming the tax answer settles it.",
+    "Once profit is sitting inside a company, how you eventually get it out becomes the next question, and [how much an agency founder should actually pay themselves](/blog/how-much-should-agency-founders-pay-themselves) covers the salary and dividend mix. If the side hustle is already a company and you want the profit taxed as efficiently as possible, [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) is the companion piece.",
+    "Rates, thresholds and reliefs change, and the right structure depends entirely on your own income, your plans for the money and how long you intend to run it, so this is general information rather than advice on your position. If you want the two routes compared on your own numbers before you register anything, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Is a limited company always better than being a sole trader for a side hustle?",
+      "answer": "No. The comparison turns on what you do with the profit. Left inside the company, it is taxed at corporation tax rates rather than added to your salary. Taken out personally, there is a further charge on top, which narrows the gap. There are also non-tax differences: a company is a separate legal entity with its own filing duties and a public record. See HMRC and Companies House guidance on [business legal structures](https://www.gov.uk/business-legal-structures)."
+    },
+    {
+      "question": "Why does side hustle profit get taxed so heavily if I already have a job?",
+      "answer": "Because as a sole trader the profit is not taxed in isolation. It is added to your other income, so your salary has already used the personal allowance and the lower bands, and the side hustle profit is taxed at your top marginal rate. The current bands and the rate that applies above each threshold are set out at [Income Tax rates and Personal Allowances](https://www.gov.uk/income-tax-rates)."
+    },
+    {
+      "question": "What rate does a company pay on its profit?",
+      "answer": "Corporation tax has a small profits rate and a main rate, with marginal relief in between, so the effective rate depends on the level of profit. Check the current rates and thresholds before relying on any figure, at [Corporation Tax rates and reliefs](https://www.gov.uk/corporation-tax-rates) and HMRC's guidance on [marginal relief](https://www.gov.uk/guidance/corporation-tax-marginal-relief)."
+    },
+    {
+      "question": "What is the extra charge when I take money out of the company?",
+      "answer": "Profit extracted personally is taxed again in your hands, and how depends on the route: salary, dividends or pension contributions each work differently. Dividend rates and the dividend allowance are set out at [Tax on dividends](https://www.gov.uk/tax-on-dividends). This is the reason the structure suits someone building up cash inside the company rather than drawing everything out immediately."
+    }
+  ],
+  "related": [
+    "how-much-should-agency-founders-pay-themselves",
+    "how-to-reduce-your-agencys-corporation-tax",
+    "three-tax-moves-agency-owners-2026-27"
+  ]
+}
