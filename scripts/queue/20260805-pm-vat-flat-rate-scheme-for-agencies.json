@@ -1,0 +1,54 @@
+{
+  "publishAt": "2026-08-05",
+  "slug": "vat-flat-rate-scheme-for-agencies",
+  "title": "The VAT Flat Rate Scheme: worth it for an agency, or not?",
+  "tag": "VAT",
+  "readingTime": "4 min read",
+  "excerpt": "If your agency is VAT registered but your VATable costs are minimal, the Flat Rate Scheme can leave cash in the business. If you are caught by the limited cost business rules, it does the opposite.",
+  "body": [
+    "If your marketing agency is VAT registered but your VATable expenses are minimal, the Flat Rate Scheme could save you cash.",
+    "## How it differs from normal VAT",
+    "Normally, you charge 20% VAT to clients and pay VAT to HMRC after deducting the VAT on your expenses.",
+    "Under the Flat Rate Scheme, you cannot reclaim VAT on most purchases. Instead, you pay HMRC a fixed percentage of your VAT-inclusive turnover.",
+    "For advertising services, the flat rate is currently 11%. And if you are in your first year of VAT registration, you can get a 1% discount, reducing it to 10%.",
+    "So instead of handing over all the VAT you collect, you may keep part of the difference.",
+    "## Why it suits some agencies and not others",
+    "The scheme rewards a particular shape of business: one that charges VAT on most of what it sells and buys very little that carries VAT. A consultancy-heavy agency whose main cost is people fits that shape. An agency buying media, hardware and software at volume usually does not, because the VAT it is giving up the right to reclaim is worth more than the flat rate saves.",
+    "## The traps",
+    "1. Your VAT taxable turnover must usually be £150,000 or less to join",
+    "2. You may be caught by the limited cost business rules",
+    "3. If you are, your flat rate could be 16.5%",
+    "4. You cannot reclaim VAT on most expenses",
+    "5. Any VAT saving may increase your taxable profit for corporation tax",
+    "That third point is the one that turns the scheme from a saving into a cost. At 16.5% of gross turnover you are handing over very close to all the VAT you charged, with no right to reclaim anything, which is worse than standard VAT accounting for most businesses.",
+    "## Before you join",
+    "So if your agency has low VATable costs, the Flat Rate Scheme might be worth considering.",
+    "But do not assume it automatically saves you money. Run the numbers first, on your own figures, for a full year rather than a quiet quarter.",
+    "The one exception worth knowing about is capital assets: on the Flat Rate Scheme you can still reclaim VAT on a single asset costing more than £2,000, so a £3,000 camera is recoverable where a £900 phone is not. For the wider picture on where VAT quietly costs agencies money, [VAT for agencies](/blog/vat-for-agencies) is the place to start. And if your clients are outside the UK, the prior question is whether you should be charging VAT at all, which [VAT when your agency has overseas clients](/blog/vat-on-overseas-clients-for-agencies) deals with.",
+    "Rates, thresholds and the limited cost business rules can change, and which flat rate applies to your trade is a question of fact, so this is general information rather than advice. If you want the comparison run on your own numbers, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What is the flat rate percentage for a marketing or advertising agency?",
+      "answer": "HMRC's published trade sector table puts advertising at 11%. There is a 1% discount in your first year of VAT registration, which takes it to 10%. The correct sector for your own business is a question of what you actually do, and choosing the wrong one is your risk, not HMRC's. See [VAT Notice 733](https://www.gov.uk/guidance/flat-rate-scheme-for-small-businesses-vat-notice-733--2)."
+    },
+    {
+      "question": "Who can join the VAT Flat Rate Scheme?",
+      "answer": "HMRC states you can join if you are a VAT registered business and you expect your VAT taxable turnover to be £150,000 or less, excluding VAT, in the next 12 months. There are separate rules that force you to leave once turnover rises above a higher figure. See [VAT Flat Rate Scheme](https://www.gov.uk/vat-flat-rate-scheme)."
+    },
+    {
+      "question": "What is a limited cost business?",
+      "answer": "It is a business whose spending on goods is very low relative to turnover. HMRC applies a 16.5% flat rate to businesses that meet the limited cost test, which is close to the full 20% VAT charged once the arithmetic on gross turnover is done, and with no input VAT recovery. Service businesses buying almost nothing physical are the ones most likely to be caught. See [VAT Notice 733](https://www.gov.uk/guidance/flat-rate-scheme-for-small-businesses-vat-notice-733--2)."
+    },
+    {
+      "question": "Does a Flat Rate Scheme saving get taxed?",
+      "answer": "Yes, in effect. If the scheme means you keep VAT you would otherwise have paid over, that shows up as higher turnover or lower costs in your accounts, so it increases the profit your company pays corporation tax on. The saving is real, it is just not tax free."
+    }
+  ],
+  "related": [
+    "vat-for-agencies",
+    "vat-on-overseas-clients-for-agencies",
+    "agency-expenses-checklist"
+  ],
+  "slot": "evening"
+}

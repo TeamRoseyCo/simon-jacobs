@@ -1,0 +1,55 @@
+{
+  "publishAt": "2026-08-13",
+  "slug": "are-subscriptions-a-business-expense",
+  "title": "Netflix, Audible, YouTube Premium: which subscriptions can your agency claim?",
+  "tag": "Expenses",
+  "readingTime": "3 min read",
+  "excerpt": "Two agencies can pay for the same subscription and only one of them gets the deduction. The deciding factor is whether there is any private benefit attached, because a part claim is usually not on offer.",
+  "body": [
+    "Can you claim subscriptions as business expenses?",
+    "It's not about the subscription itself. It's about why you need it for your business.",
+    "## Why the same subscription can go either way",
+    "If it's genuinely used to run or grow the business, it can be allowable.",
+    "Example: YouTube Premium to research ads/content without interruptions, Audible for marketing books you're using to improve client work.",
+    "If there's a personal benefit, HMRC can disallow it.",
+    "Example: Netflix in the background or for watching at home is dual purpose, so it's likely not allowable.",
+    "Nobody at HMRC has a list of approved products. The statutory test is whether the cost was incurred wholly and exclusively for the purposes of the trade, which is a question about your purpose, not about the vendor.",
+    "## The part you cannot get around: there is usually no split",
+    "This is the point people miss on subscriptions specifically, and it is what separates them from a phone bill or a home office.",
+    "HMRC's guidance on the wholly and exclusively rule says the test is only satisfied if your sole purpose for incurring the expense is business, and that this remains the case even where there are also business reasons for the spend. If one of the reasons is not business, the expenditure fails the test, and there is no provision that allows a business proportion.",
+    "So the instinct to claim seventy percent of the streaming bill is not usually available. A single monthly subscription is one payment for one service. Either the purpose was business or it was mixed, and mixed loses the whole thing rather than part of it.",
+    "That is also why the household name subscriptions are the risky ones. It is not that HMRC dislikes them. It is that they are the ones where a private benefit is hardest to argue away.",
+    "## What actually strengthens a claim",
+    "Specificity. A tool that only makes sense in the context of what you sell is easier to defend than a general purpose one you happen to use for work. A media planning platform, a keyword tool, a stock library your team draws from every week: nobody is asking why the agency pays for those.",
+    "Where a subscription is genuinely dual use, the cleaner answer is often to buy the business version rather than claim part of the personal one. A separate account, on the company card, used for client work, is a different fact pattern from your family login with a business justification attached.",
+    "## The question to ask before you commit it",
+    "So before you put a subscription through the business, ask yourself: do I need this for my specific business, and can I justify it with no personal use?",
+    "If the honest answer is that you would have paid for it anyway, you have your answer.",
+    "Subscriptions sit inside the broader set of costs an agency can and cannot claim, which is laid out in [the agency expenses checklist](/blog/agency-expenses-checklist). And if a subscription is VAT bearing, recovery has its own separate conditions, covered in [VAT for agencies](/blog/vat-for-agencies).",
+    "The wholly and exclusively test is applied on your own facts and the rules change, so this is general information rather than advice. If you want your subscription list reviewed before it lands in the accounts, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Can I claim part of a subscription I use for both work and home?",
+      "answer": "Usually not. HMRC states that the wholly and exclusively rule is only satisfied if your sole purpose for the expense is business, and that where expenditure is dual purpose there is no provision that allows a business proportion. Certain costs with an identifiable separate business part are treated differently, but a single subscription rarely divides that cleanly. See [BIM37007](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37007)."
+    },
+    {
+      "question": "Does an incidental private benefit spoil the claim?",
+      "answer": "Not automatically. HMRC's guidance draws a distinction between a non-business purpose, which disallows the cost, and an incidental benefit that was not part of your purpose in spending the money. The distinction is fine and fact specific, which is why documenting the business reason at the time matters. See [BIM37007](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37007)."
+    },
+    {
+      "question": "What records should I keep for a subscription claim?",
+      "answer": "Keep the invoice and enough to show the business purpose. A company must keep accounting records of all money spent, including receipts and orders, for six years from the end of the last financial year they relate to, and HMRC can fine you £3,000 for failing to keep accounting records. See [company and accounting records](https://www.gov.uk/running-a-limited-company/company-and-accounting-records)."
+    },
+    {
+      "question": "Can I reclaim VAT on software subscriptions?",
+      "answer": "If your agency is VAT registered and the subscription is for business use, the input VAT is generally recoverable, and you need a valid VAT invoice. Where an item is also for personal use, HMRC allows only the business proportion of the VAT, which is a different rule from the deduction test. See [reclaiming VAT on business expenses](https://www.gov.uk/charge-reclaim-record-vat/reclaim-vat-business-expenses)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "audit-your-agency-software-spend",
+    "personal-costs-through-the-business-hmrc-enquiry"
+  ],
+  "slot": "evening"
+}

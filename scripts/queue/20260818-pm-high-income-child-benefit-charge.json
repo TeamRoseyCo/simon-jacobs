@@ -1,0 +1,54 @@
+{
+  "publishAt": "2026-08-18",
+  "slug": "high-income-child-benefit-charge",
+  "title": "Earning over £60,000 and claiming Child Benefit? What HMRC takes back",
+  "tag": "Personal tax",
+  "readingTime": "3 min read",
+  "excerpt": "The High Income Child Benefit Charge is based on the highest earner in the household, not the household total. That is why one parent on £80,000 can lose all of it while a couple on £59,000 each keeps the lot.",
+  "body": [
+    "If you earn more than £60,000 and claim Child Benefit, HMRC could be coming for it back.",
+    "This is one of the most common quiet surprises for agency owners, because a good year in the business can push you over a line that has nothing to do with the business.",
+    "If the highest earner in the household earns over £60,000, the High Income Child Benefit Charge starts to apply.",
+    "## How the charge works",
+    "Here's how it works:",
+    "1. Under £60,000: you can keep the full Child Benefit.",
+    "2. Between £60,000 and £80,000: you gradually pay some of it back.",
+    "3. Over £80,000: you have to repay the full amount",
+    "HMRC's guidance sets out the same shape and gives the mechanics of the middle band: you pay back 1% of your Child Benefit for every £200 of income over the threshold, which is why £20,000 of income between £60,000 and £80,000 claws back the whole amount. These thresholds apply for tax years from 2024 to 2025 onwards, and thresholds change, so check the current position.",
+    "## The bit that catches people out",
+    "And this is based on the highest earner, not total household income.",
+    "So a couple earning £59,000 each may keep the full amount, but one parent earning £80,000 could lose it all.",
+    "It is not a rule with an obvious logic to it, and there is no way to average across a household. If you are the higher earner and you are the one making decisions about how much you draw from your company, the charge is effectively part of your marginal rate on that income.",
+    "## What income actually counts",
+    "The measure is adjusted net income, not salary. HMRC's guidance explains it is your total taxable income including savings interest and dividends, calculated before personal allowances and after deducting certain reliefs such as pension contributions and Gift Aid.",
+    "For an agency owner that has two consequences. Dividends count, so a year where you clear the company's cash can trigger a charge even though your salary has not moved. And because pension contributions come off the figure, the number is more controllable than most people assume.",
+    "## What can be done about it",
+    "If you're close to the threshold, pension contributions and other planning can help reduce the charge.",
+    "The two levers are the timing and the size of what you take, and what you divert into a pension. Both need doing inside the tax year, not afterwards. If your income sits in this region, the interaction with the personal allowance taper matters too: see [the 60% tax trap](/blog/the-60-percent-tax-trap) for the band just above, and [how much agency founders should pay themselves](/blog/how-much-should-agency-founders-pay-themselves) for the salary and dividend decision that drives the number.",
+    "Thresholds and rules change and the answer depends on your own income and household, so this is general information rather than advice. If you want the numbers modelled properly before you draw anything, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "At what income does the High Income Child Benefit Charge start?",
+      "answer": "HMRC states an individual income is over the threshold if it is over £60,000 for tax years starting from 2024 to 2025, and over £50,000 for tax years up to and including 2023 to 2024. Thresholds change, so check the current figure. See [High Income Child Benefit Charge](https://www.gov.uk/child-benefit-tax-charge)."
+    },
+    {
+      "question": "How is the charge calculated between £60,000 and £80,000?",
+      "answer": "HMRC's guidance states you pay back 1% of your Child Benefit for every £200 you earn over the threshold, and that if you or your partner earn £80,000 or more you pay all of it back. HMRC also publishes a Child Benefit tax calculator. See [High Income Child Benefit Charge](https://www.gov.uk/child-benefit-tax-charge)."
+    },
+    {
+      "question": "Which income figure is used?",
+      "answer": "Adjusted net income. HMRC explains this is your total taxable income, including savings interest and dividends, calculated before any personal allowances and less certain tax reliefs such as pension contributions and Gift Aid. See [High Income Child Benefit Charge](https://www.gov.uk/child-benefit-tax-charge)."
+    },
+    {
+      "question": "Should we just stop claiming Child Benefit?",
+      "answer": "That is a decision worth taking deliberately rather than by default, because a claim can matter for National Insurance credits and for a child's National Insurance number even where the money is repaid. HMRC sets out the options for what to do, including opting out of payments while keeping the claim. See [what you need to do](https://www.gov.uk/child-benefit-tax-charge/what-you-need-to-do)."
+    }
+  ],
+  "related": [
+    "the-60-percent-tax-trap",
+    "how-much-should-agency-founders-pay-themselves",
+    "four-tax-free-allowances-agency-owners"
+  ],
+  "slot": "evening"
+}

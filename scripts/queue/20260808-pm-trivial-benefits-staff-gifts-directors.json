@@ -1,0 +1,67 @@
+{
+  "publishAt": "2026-08-08",
+  "slug": "trivial-benefits-staff-gifts-directors",
+  "title": "How can you give your agency staff a gift without creating a tax bill?",
+  "tag": "Staff benefits",
+  "readingTime": "3 min read",
+  "excerpt": "The trivial benefits rules let you give an employee a gift worth up to £50 tax free while the agency still claims the cost. Directors get their own annual cap, and one common mistake breaks the whole thing.",
+  "body": [
+    "HMRC will give you tax relief for giving gifts to your marketing agency staff.",
+    "Under the trivial benefits rules, you can give employees gifts worth up to £50 at a time, completely tax free for them, and your agency can claim the cost as a business expense.",
+    "## The five rules to keep in mind",
+    "1. The gift must cost £50 or less",
+    "2. It can't be cash or a cash voucher",
+    "3. It can't be a reward for work or performance",
+    "4. It can't be written into their contract",
+    "5. It can't be a regular occurrence, so no weekly pizza parties",
+    "Keep within these rules, and a bottle of wine or a meal out now and again is tax free for your staff and tax deductible for your agency, while helping keep the team motivated.",
+    "Two of those conditions cause almost all the problems in practice. The third one, not a reward for work, is the one agencies trip over: the moment a gift is tied to hitting a target or landing an account it is no longer trivial, it is a bonus in a nicer wrapper and it goes through payroll. And the £50 is a hard ceiling. Go a pound over and the exemption does not shave off the excess, it fails entirely and the whole benefit becomes taxable.",
+    "## The director cap",
+    "Worth noting: if you're a director of your own company, there's also a £300 annual cap on trivial benefits you can receive yourself, so it's worth checking this with your tax adviser too.",
+    "If you're a director of a close company, you can receive up to £300 per tax year in trivial benefits.",
+    "So a director has two limits running at once: £50 per individual benefit and £300 in total across the tax year. Employees who are not directors have the £50 per benefit test with no annual cap, subject to the other conditions and to the benefits genuinely being trivial rather than a regular arrangement dressed up as one.",
+    "## The Kindle question",
+    "Can you put your Kindle subscription through your company and claim tax relief?",
+    "Usually, HMRC will see a personal benefit.",
+    "That means it won't pass the \"wholly and exclusively\" test as a normal business expense.",
+    "But there may be another route: trivial benefits.",
+    "That could include things like Amazon vouchers, provided:",
+    "1. Each voucher is £50 or less",
+    "2. It's not cash or a cash voucher",
+    "3. It's not a reward for your work",
+    "4. It's not included in your employment contract",
+    "5. You stay within the £300 annual director cap",
+    "So instead of putting a Kindle subscription directly through the company as a business expense, your company could provide Amazon vouchers as trivial benefits.",
+    "## The mistake that breaks it",
+    "But don't buy one £300 voucher.",
+    "Split it into separate £50 vouchers, otherwise it won't qualify.",
+    "This is the detail that undoes an otherwise sensible plan. The £50 test applies to the cost of providing each benefit, so a single £300 voucher is one benefit costing £300 and it fails at the first condition. Six £50 vouchers across the year are six separate benefits, each within the limit and within the annual cap. Note too that the rules exclude cash and cash vouchers, so a voucher exchangeable for cash is out regardless of the amount.",
+    "Keep a simple record of what was given, when, to whom and what it cost. Without that, nobody can demonstrate a year later that each benefit was inside the limit.",
+    "This sits at the small end of a bigger question, which is how you get value out of the company at all: [how much an agency founder should pay themselves](/blog/how-much-should-agency-founders-pay-themselves) covers the salary, dividend and pension side, and [what an agency can and cannot expense](/blog/agency-expenses-checklist) covers the rest of the cost base.",
+    "Limits, caps and conditions change, and whether a particular benefit qualifies depends on the facts, so treat this as general information rather than advice. If you want your benefits and payroll position checked, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What conditions does a trivial benefit have to meet?",
+      "answer": "HMRC's guidance sets out four conditions under Section 323A ITEPA 2003: the cost of providing the benefit does not exceed £50, the benefit is not cash or a cash voucher, the employee is not entitled to it as part of any contractual obligation, and it is not provided in recognition of particular services performed as part of their employment duties. If any condition fails, the benefit is taxed in the normal way. See [EIM21864](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21864) and [Tax on trivial benefits](https://www.gov.uk/expenses-and-benefits-trivial-benefits)."
+    },
+    {
+      "question": "Is there an annual limit for company directors?",
+      "answer": "Yes. HMRC's guidance states that where the employer is a close company and the benefit is provided to a director or other office holder of the company, or a member of their family or household, the exemption is capped at a total cost of £300 in the tax year. See [EIM21864](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21864) and [EIM21869](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21869)."
+    },
+    {
+      "question": "What happens if a gift costs more than £50?",
+      "answer": "The exemption is lost for that benefit, not just for the excess. HMRC's guidance is that if any of the conditions is not satisfied then the benefit is taxed in the normal way, subject to any other exemption or allowable deduction. That is why a single large voucher fails where several smaller ones would not. See [EIM21864](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21864)."
+    },
+    {
+      "question": "Can I give a gift card instead?",
+      "answer": "A non-cash voucher can qualify, but cash and cash vouchers are specifically excluded by the conditions, so a voucher that can be exchanged for cash does not work. HMRC's guidance on that condition is at [EIM21866](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21866)."
+    }
+  ],
+  "related": [
+    "how-much-should-agency-founders-pay-themselves",
+    "agency-expenses-checklist",
+    "phones-for-staff-tax-free"
+  ],
+  "slot": "evening"
+}

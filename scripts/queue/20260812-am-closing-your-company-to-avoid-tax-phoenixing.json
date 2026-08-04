@@ -1,0 +1,57 @@
+{
+  "publishAt": "2026-08-12",
+  "slug": "closing-your-company-to-avoid-tax-phoenixing",
+  "title": "Can you close your agency, take the cash, and start again?",
+  "tag": "Corporation tax",
+  "readingTime": "4 min read",
+  "excerpt": "Shutting the old company, leaving the tax bill behind and reopening under a new name is a plan HMRC has already legislated against. Here is what actually happens if you try it.",
+  "body": [
+    "Don't think you can avoid tax by closing down your marketing agency.",
+    "Some people think they can get clever: close down the old company, leave the tax bill behind, take the cash as capital, then open a new company doing the same thing.",
+    "But there are serious problems with this.",
+    "## HMRC can object to the company being closed",
+    "If your company still owes tax, HMRC can object to the strike-off at Companies House.",
+    "That means the company stays active and you may still need to file accounts, tax returns, and deal with HMRC.",
+    "This is not an obscure power. A strike-off application has to be copied to anyone who could be affected, creditors included, and HMRC is a creditor whenever there is unpaid Corporation Tax, VAT or PAYE. The application simply stalls, and the filing obligations carry on running in the background while it does.",
+    "## You still need to settle the tax bill",
+    "Before closing the company, you need to deal with Corporation Tax, VAT, PAYE, final accounts, and any other outstanding liabilities.",
+    "Closing the company does not magically wipe the tax bill.",
+    "## Anti-phoenixing rules can tax the cash as income",
+    "If you close your agency, take the cash as a capital distribution, then start a new company doing the same or similar trade, HMRC may challenge it.",
+    "Instead of paying Capital Gains Tax, potentially at 18% (as of 6 April 2026) if Business Asset Disposal Relief applies, HMRC could treat the payment like dividends.",
+    "That could mean Income Tax at up to 39.35%.",
+    "There is a specific targeted anti-avoidance rule aimed at exactly this pattern, and it looks at what you do after the winding up, not just at the paperwork you filed during it. Carrying on a similar trade or activity within two years of the distribution is one of the things it tests for. Which means the plan can look clean on the day the money moves and fail eighteen months later.",
+    "## Directors can be personally exposed",
+    "If HMRC believe you knowingly avoided tax, stripped money out of the company, or acted fraudulently, this can lead to penalties, personal exposure, and even director disqualification in serious cases.",
+    "That is the part people underprice. The downside is not a bigger tax bill. It is a bigger tax bill plus a personal one plus a question mark over whether you can be a director at all.",
+    "## What to do instead",
+    "Closing a company is not a tax avoidance strategy.",
+    "If your marketing agency has tax debts or you're thinking about winding it up, get advice before you make things worse.",
+    "There is a legitimate version of most of what people are reaching for here, and it involves planning the wind up or the sale in advance rather than after the cash has gone. [Planning tax around your exit](/blog/plan-tax-around-your-exit) covers the sequencing, and if the pressure is a Corporation Tax bill rather than an exit, [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) deals with the legitimate levers first.",
+    "Rates, reliefs and the anti-avoidance conditions change, and whether a distribution is taxed as capital or income turns entirely on your own facts, so this is general information rather than advice. If you are thinking about winding up, get advice before anything is distributed: [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What is the anti-phoenixing rule?",
+      "answer": "It is a targeted anti-avoidance rule that can treat a distribution made when a company is wound up as income rather than capital. HMRC's guidance sets out the conditions, which include the individual carrying on a similar trade or activity in the two years after the distribution and the arrangements having a main purpose of obtaining a tax advantage. See [CTM36305](https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm36305)."
+    },
+    {
+      "question": "Can I strike off a company that owes HMRC money?",
+      "answer": "In practice, not without HMRC's cooperation. When you apply to strike off, you must send a copy of the application within seven days to anyone who could be affected, including creditors, and HMRC counts as a creditor for unpaid tax. Objections keep the company on the register. See [strike off your company](https://www.gov.uk/strike-off-your-company-from-companies-register)."
+    },
+    {
+      "question": "What rate would apply if the distribution is capital instead?",
+      "answer": "Where Business Asset Disposal Relief applies, HMRC's published rate is 18% on qualifying gains disposed of from 6 April 2026, up from 14% for 2025/26. Rates change and the relief has its own conditions, so check the current position. See [Business Asset Disposal Relief](https://www.gov.uk/business-asset-disposal-relief)."
+    },
+    {
+      "question": "And if HMRC treats it as a dividend?",
+      "answer": "It is taxed as dividend income at your marginal dividend rate. For 2026/27 HMRC publishes 10.75% at basic rate, 35.75% at higher rate and 39.35% at additional rate, above the dividend allowance. Rates and allowances change and should be checked against the current tax year. See [tax on dividends](https://www.gov.uk/tax-on-dividends)."
+    }
+  ],
+  "related": [
+    "plan-tax-around-your-exit",
+    "how-to-reduce-your-agencys-corporation-tax",
+    "too-much-cash-in-your-agency-badr"
+  ],
+  "slot": "morning"
+}

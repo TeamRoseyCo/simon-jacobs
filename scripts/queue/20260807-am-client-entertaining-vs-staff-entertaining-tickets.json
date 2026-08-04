@@ -1,0 +1,58 @@
+{
+  "publishAt": "2026-08-07",
+  "slug": "client-entertaining-vs-staff-entertaining-tickets",
+  "title": "Can you put Wimbledon or football tickets through your limited company?",
+  "tag": "Expenses",
+  "readingTime": "3 min read",
+  "excerpt": "Whether match tickets are an allowable expense comes down to one question: who is coming with you. Same seat, different guest, completely different tax treatment.",
+  "body": [
+    "How do you expense Wimbledon, Silverstone, or football tickets through your limited company?",
+    "If you can answer one question correctly, you can claim it.",
+    "That question is: who's coming with you?",
+    "## Take a client and it is client entertaining",
+    "Take a client, and it's client entertaining.",
+    "That's never an allowable business expense, full stop. No corporation tax relief, no VAT reclaim, no matter how big the deal is or how much business gets discussed courtside.",
+    "This is not a grey area you can argue your way out of with a good note in the diary. Business entertainment is disallowed by statute for corporation tax, and separately blocked for VAT recovery, so the cost lands on your company after tax and stays there.",
+    "## Take your staff and it is a different story",
+    "Take your staff, and it's a completely different story.",
+    "Staff entertaining is an allowable business expense. You get corporation tax relief and can reclaim the VAT. Keep it within your £150 per head annual allowance and it's tax-free too.",
+    "Same tennis match. Same seat. Different guest. Completely different tax treatment.",
+    "## Where the £150 actually applies",
+    "It is worth being precise about that £150, because it does two different jobs and people blur them.",
+    "The company getting a deduction for staff entertaining is one question. Whether the employee is taxed on the benefit of being entertained is a second, separate one. HMRC's guidance is that even where the cost is allowable for the company, the employees themselves may be taxable on the entertainment received unless an exemption applies.",
+    "The exemption most agencies rely on is the one for annual parties and similar annual functions. HMRC's position is that it covers an annual party or similar annual function that is available to employees generally, with no charge to tax where the cost per head does not exceed £150. Two conditions do the work there: it has to be annual and recurring rather than a one-off, and it has to be open to the team generally rather than to whoever you happen to like most.",
+    "So a summer event that the whole agency is invited to every year is squarely the sort of thing the exemption was written for. Two seats at a Premier League match for you and one senior account director is a harder case, and if it falls outside the exemption the cost can still be deductible for the company while being a reportable benefit for the person who went.",
+    "## Mixing clients and staff does not fix it",
+    "The obvious workaround is to bring a colleague along so the day counts as staff entertaining. HMRC has already thought of that.",
+    "The staff entertaining exception does not apply where entertaining the employee is incidental to entertaining people who are not employees. The test HMRC applies is whether the employer would have paid for the event if the guests had not been there. If the answer is no, the whole thing is business entertainment, including the employee's share.",
+    "## Check before you book",
+    "Check who you're planning to take before you book those tickets.",
+    "Decide the guest list first, then book, then record it properly, because the invoice will not tell anyone a year later which of the two situations you were in. If the day genuinely is client entertaining, book it anyway if it wins work, just do it knowing it is a post-tax cost rather than a deduction.",
+    "Entertaining is one of the few costs where the answer is a flat no rather than a judgement call, which makes it worth knowing cold: the wider picture is in [what an agency can and cannot expense](/blog/agency-expenses-checklist), and the VAT side of agency life is covered in [VAT for agencies](/blog/vat-for-agencies).",
+    "Rates, exemption limits and reporting rules change, and the treatment turns on your own facts, so treat this as general information rather than advice. If you want your expense policy checked properly, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Is client entertaining ever tax deductible?",
+      "answer": "For corporation tax, no. Business entertainment expenditure is disallowed, and HMRC's Business Income Manual sets out the general rule with only limited exceptions, one of which is entertainment of employees. For VAT, HMRC's notice on business entertainment states that input tax incurred on the provision of business entertainment to UK and non-UK business contacts who are not customers is blocked from recovery. See [BIM45033](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim45033) and [Business entertainment (VAT Notice 700/65)](https://www.gov.uk/guidance/business-entertainment-and-vat-notice-70065)."
+    },
+    {
+      "question": "Is staff entertaining allowable for the company?",
+      "answer": "HMRC's manual states that staff entertaining is allowable so long as it is wholly and exclusively for the purposes of the trade and is not merely incidental to entertainment provided for customers. It gives a staff Christmas party or a sporting event open only to employees as examples that are not disallowed by the legislation. See [BIM45033](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim45033)."
+    },
+    {
+      "question": "What does the £150 per head figure actually cover?",
+      "answer": "It is the exemption for annual parties and other social functions, which stops the employee being taxed on the benefit. HMRC's guidance says the exemption applies to an annual party or similar annual function provided for employees and available to employees generally, with no charge to tax if the cost per head does not exceed £150. It is a limit, not an allowance: go over it and the exemption is lost rather than reduced. See [EIM21690](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21690)."
+    },
+    {
+      "question": "Can I bring one employee along to make a client day allowable?",
+      "answer": "No. HMRC's guidance is that the staff entertaining exception does not apply where the entertainment of the employee is incidental to the entertainment of customers or others who are not employees, and the test is whether the employer would have paid for the event if no guests had been present. See [BIM45034](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim45034)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "vat-for-agencies",
+    "trivial-benefits-staff-gifts-directors"
+  ],
+  "slot": "morning"
+}

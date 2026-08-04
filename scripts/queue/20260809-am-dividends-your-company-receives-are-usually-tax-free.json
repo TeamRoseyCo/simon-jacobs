@@ -1,0 +1,56 @@
+{
+  "publishAt": "2026-08-09",
+  "slug": "dividends-your-company-receives-are-usually-tax-free",
+  "title": "Does your company pay corporation tax on dividends it receives?",
+  "tag": "Corporation tax",
+  "readingTime": "3 min read",
+  "excerpt": "Dividends received by a UK company, from the UK or overseas, are usually exempt from corporation tax. Receive £50,000 and the company can usually keep £50,000, with a few exceptions worth knowing.",
+  "body": [
+    "If your company receives dividends from another company, they're often tax-free.",
+    "In many cases, dividends received by a UK company (whether from a UK or overseas company) are exempt from Corporation Tax.",
+    "So if your company receives £50,000 of dividends, it can usually keep the full £50,000.",
+    "## Why this is not a loophole",
+    "It surprises people, so it is worth saying where it comes from. The profits being paid out have already been through corporation tax once in the paying company. Taxing them again on arrival in a second company, and then a third time when they eventually reach a human being, would stack three charges on the same money. The exemption exists to stop that.",
+    "HMRC's own summary is that dividends or other distributions received from UK or overseas resident companies are chargeable to corporation tax unless the distribution is exempt, and that most distributions, including those from overseas-resident companies, are now exempt. The mechanics sit in Part 9A of the Corporation Tax Act 2009.",
+    "## Where the exceptions bite",
+    "But there are exceptions:",
+    "1. Some overseas dividends can fall into taxable categories",
+    "2. Withholding tax overseas may apply (even if the UK doesn't tax the dividend)",
+    "3. The exemption depends on the type of dividend and the circumstances",
+    "The second one catches agency owners with overseas holdings most often, because it is a different tax in a different country. The UK exemption says nothing about whether the country the dividend came from deducted tax before it left. If it did, you may be looking at double taxation relief rather than a clean receipt, which is a separate conversation.",
+    "There is also a structural point. The conditions differ depending on whether the receiving company is a small company or not. For a small company, exemption depends on conditions including the paying company being resident in the UK or in a qualifying territory. For everyone else, the distribution has to fall into one of the exempt classes and clear the anti-avoidance rules. Same headline answer, different route to it.",
+    "However there are a few exceptions such as if a dividend paid by an overseas company receives tax relief in that country.",
+    "## What it means if you have a holding company",
+    "This is the rule that makes a group structure work. If a holding company sits above your agency, profits can move up as dividends without a tax charge on the way, which is why holding companies get used to hold cash outside the trading company or to fund a second venture.",
+    "It is also why the exemption is not a plan on its own. The money is exempt when it arrives in the company. It is not exempt when it eventually reaches you personally, and personal dividend tax rates are a separate matter with their own bands. Moving profit up a structure defers the personal tax point rather than removing it.",
+    "## What to check before you assume",
+    "So the rule of thumb is: dividends are usually exempt - but if it's overseas or complex, check with your tax adviser before assuming it's tax-free.",
+    "In practice that means three questions. Where is the paying company resident. What kind of distribution is it, because interest-like distributions are specifically outside the exemption. And was anything deducted at source before the money arrived.",
+    "If the reason you are looking at this is that profit is piling up somewhere it should not, that is a structural question rather than a compliance one: [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) covers the day-to-day side, and [planning tax around your exit](/blog/plan-tax-around-your-exit) covers what the structure needs to look like well before a sale.",
+    "Rates, exempt classes and conditions change, and the answer depends on your own facts, so treat this as general information rather than advice. If you are setting up or reviewing a group structure, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Are dividends received by a UK company taxable?",
+      "answer": "HMRC's guidance states that dividends or other distributions received on or after 1 July 2009 from UK or overseas resident companies are chargeable to corporation tax under Part 9A of CTA 2009 unless the distribution is exempt, and that most distributions, including those from overseas-resident companies, are now exempt. See [CTM02060](https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm02060)."
+    },
+    {
+      "question": "Does it matter whether my company is small?",
+      "answer": "Yes, the route to exemption differs. HMRC's guidance sets out that a distribution received by a small company is exempt provided four conditions are satisfied, including that the paying company is resident in the UK or in a qualifying territory. For other companies, the distribution has to fall into one of the exempt classes and not be caught by the anti-avoidance rules. See [INTM652010](https://www.gov.uk/hmrc-internal-manuals/international-manual/intm652010) and [INTM653010](https://www.gov.uk/hmrc-internal-manuals/international-manual/intm653010)."
+    },
+    {
+      "question": "What about tax deducted overseas before the dividend reaches us?",
+      "answer": "That is a separate issue from the UK exemption. Another country may withhold tax on the dividend under its own rules, and whether any of it can be relieved in the UK depends on the position and on any double taxation agreement. HMRC publishes guidance on claiming double taxation relief for companies. See [Claiming Double Taxation Relief for companies](https://www.gov.uk/guidance/double-taxation-relief-for-companies)."
+    },
+    {
+      "question": "Are all distributions covered by the exemption?",
+      "answer": "No. HMRC notes that distributions within CTA 2010 S1000(1) paragraphs E and F, broadly non-dividend distributions comprising interest and other distributions in respect of non-commercial and special securities, are not exempt. The type of distribution matters, not just where it came from. See [CTM02060](https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm02060)."
+    }
+  ],
+  "related": [
+    "how-to-reduce-your-agencys-corporation-tax",
+    "plan-tax-around-your-exit",
+    "sell-your-agency-holdco-or-non-resident"
+  ],
+  "slot": "morning"
+}

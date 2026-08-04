@@ -1,0 +1,55 @@
+{
+  "publishAt": "2026-08-15",
+  "slug": "audit-your-agency-software-spend",
+  "title": "Why is your agency not growing? Look at what you spend on tools",
+  "tag": "Bookkeeping",
+  "readingTime": "3 min read",
+  "excerpt": "Tool spend creeps up one subscription at a time and nobody owns the total. An expense being deductible is not the same as it being worth paying, and the arithmetic on that is less forgiving than most founders assume.",
+  "body": [
+    "If your digital marketing agency is struggling to grow, you need to audit your expenses.",
+    "## List every cost category",
+    "Software, ads, subcontractors, tools, subscriptions. It can easily be £5k, £10k, £100k+ a month.",
+    "Start with the bank feed rather than with memory. Every recurring card payment, every annual renewal, every seat licence that was added for someone who left. If the total surprises you, that is the finding.",
+    "## Find the biggest offenders",
+    "Sort by annual cost, not monthly. A £500 a month tool is a £6,000 a year commitment, which is the number you should be asking questions about. Then ask two things of each line: who used it in the last thirty days, and what would break if it stopped.",
+    "The illustrations below are just that, illustrations, not anyone's actual figures. But the shape is consistent across agencies: a small number of lines account for most of the spend, and one or two of them are doing nothing.",
+    "## Spot waste you didn't even know you had",
+    "Unused subscriptions, duplicate tools doing the same job, and \"nice-to-haves\" that never move the needle.",
+    "Duplication is the most common one in an agency, because tools arrive with people. Two project trackers, three AI writing assistants, two stock libraries, a design tool nobody has opened since the last rebrand. Nobody decided to pay for all of them. It just accumulated.",
+    "## Cut the dead weight",
+    "Cancel what you don't use, consolidate tools, and put that cash back into your pocket to reinvest into what actually drives growth.",
+    "## The tax point, because it cuts the other way",
+    "There is a habit of thinking of software spend as free because it is deductible. It is not free.",
+    "A deductible cost reduces your taxable profit, so the company saves tax at its Corporation Tax rate rather than recovering the whole amount. For 2026/27 HMRC publishes a main rate of 25% on profits over £250,000, a small profits rate of 19% on profits of £50,000 or less, and Marginal Relief in between. At 25%, a £6,000 tool you do not use still costs the company £4,500 of real money after relief. At 19%, £4,860.",
+    "So relief takes a quarter of the sting out of waste at best. It never makes waste worth having, and a tax deduction is a poor reason to keep paying for something.",
+    "## Make it a fixture, not a one-off",
+    "Do a subscriptions audit, and you'll be shocked how much you save.",
+    "The version that actually works is calendared: one hour, once a quarter, one person accountable, cancellations made in the meeting rather than added to a list. Anything you cancel and genuinely miss can be resubscribed in five minutes, which is worth remembering when someone argues for keeping a tool just in case.",
+    "Doing this properly depends on your bookkeeping being current, and [what happens if you lose a receipt](/blog/what-happens-if-you-lose-a-receipt) covers why an out of date ledger hides this kind of spend. Once you know the total, [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) deals with the legitimate ways to bring the bill down, and [the agency expenses checklist](/blog/agency-expenses-checklist) covers which of these costs are deductible at all.",
+    "Rates and thresholds change and should be checked against the current position, and this is general information rather than advice. If you want a second pair of eyes on your cost base before your year end, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Is software and subscription spend tax deductible?",
+      "answer": "Generally yes, where it is incurred wholly and exclusively for the purposes of the trade. HMRC's guidance is that expenditure fails the test if there is any non-business purpose, and that dual purpose expenditure is not usually apportioned. Tools used solely for client delivery rarely raise a question. See [BIM37007](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37007)."
+    },
+    {
+      "question": "How much does a deduction actually save the company?",
+      "answer": "Tax at the company's rate, not the whole cost. HMRC publishes a main Corporation Tax rate of 25% on profits over £250,000, a small profits rate of 19% on profits of £50,000 or less, and Marginal Relief between those thresholds. Rates and thresholds change, so check the position for your accounting period. See [Corporation Tax rates](https://www.gov.uk/corporation-tax-rates)."
+    },
+    {
+      "question": "Can I reclaim VAT on software subscriptions?",
+      "answer": "If your agency is VAT registered and the subscription is for business use, the input VAT is normally recoverable, and you must hold a valid VAT invoice. Where a purchase is partly for personal use, HMRC allows only the business proportion. Some overseas supplies fall under different rules. See [reclaiming VAT on business expenses](https://www.gov.uk/charge-reclaim-record-vat/reclaim-vat-business-expenses)."
+    },
+    {
+      "question": "What records do I need to keep for tool spend?",
+      "answer": "A company must keep accounting records of all money spent by the company, including receipts and orders, for six years from the end of the last company financial year they relate to. HMRC can fine you £3,000 for failing to keep accounting records, so a subscription with no invoice trail is a problem beyond the wasted cash. See [company and accounting records](https://www.gov.uk/running-a-limited-company/company-and-accounting-records)."
+    }
+  ],
+  "related": [
+    "what-happens-if-you-lose-a-receipt",
+    "are-subscriptions-a-business-expense",
+    "how-to-reduce-your-agencys-corporation-tax"
+  ],
+  "slot": "morning"
+}

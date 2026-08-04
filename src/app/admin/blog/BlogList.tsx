@@ -23,7 +23,17 @@ export type BlogListItem = {
   title: string;
   tag: string;
   date: string;
+  status: "published" | "scheduled";
+  publishAt?: string;
 };
+
+// Scheduled posts are written and carded but held back. The daily cron
+// publishes the oldest due one, so this column is the queue Simon can see.
+function statusLabel(p: BlogListItem) {
+  if (p.status === "published") return "Live";
+  if (!p.publishAt) return "Queued";
+  return `Queued ${p.publishAt.slice(0, 10)}`;
+}
 
 export default function BlogList({ posts }: { posts: BlogListItem[] }) {
   const router = useRouter();
@@ -78,6 +88,7 @@ export default function BlogList({ posts }: { posts: BlogListItem[] }) {
               <th style={{ ...thStyle, textAlign: "left" }}>Title</th>
               <th style={thStyle}>Tag</th>
               <th style={thStyle}>Date</th>
+              <th style={thStyle}>Status</th>
               <th style={thStyle}>Actions</th>
             </tr>
           </thead>
@@ -92,6 +103,19 @@ export default function BlogList({ posts }: { posts: BlogListItem[] }) {
                 </td>
                 <td style={{ ...tdStyle, textAlign: "center" }}>{p.tag}</td>
                 <td style={{ ...tdStyle, textAlign: "center" }}>{p.date}</td>
+                <td
+                  style={{
+                    ...tdStyle,
+                    textAlign: "center",
+                    fontSize: "0.8rem",
+                    color:
+                      p.status === "published"
+                        ? "var(--color-text-muted)"
+                        : "var(--color-primary)",
+                  }}
+                >
+                  {statusLabel(p)}
+                </td>
                 <td style={{ ...tdStyle, textAlign: "center" }}>
                   <div style={{ display: "inline-flex", gap: "0.5rem" }}>
                     <Link href={`/admin/blog/${p.slug}`} style={ghostPill}>

@@ -1,0 +1,51 @@
+{
+  "publishAt": "2026-08-06",
+  "slug": "emi-share-options-incentivise-staff",
+  "title": "Want to reward a key employee without a 40% tax hit? Consider EMI options",
+  "tag": "Share schemes",
+  "readingTime": "3 min read",
+  "excerpt": "A £40k bonus can lose a big share to income tax and National Insurance before it reaches your best employee. EMI share options can turn the same reward into a capital gain instead.",
+  "body": [
+    "Want to incentivise key staff without destroying them with income tax? Consider EMI options.",
+    "## The problem with a cash bonus",
+    "Instead of paying someone an extra £40k salary or bonus, where they could lose 40% or 45% plus National Insurance, there is another route.",
+    "The cash bonus is the expensive way to say thank you. It is taxed as employment income at the employee's marginal rate, National Insurance applies on both sides, and none of it is tied to whether they stay or whether the business grows.",
+    "## How EMI works instead",
+    "1. Grant them EMI share options worth £40k",
+    "2. They get the right to buy shares in your company in the future",
+    "3. If EMI is set up properly, there is usually no income tax on grant",
+    "4. When they eventually sell the shares, they pay capital gains tax instead, 18% for many employees, and in some cases less depending on the facts",
+    "EMI can turn a tax painful bonus into a much cleaner incentive.",
+    "## What it changes beyond the tax",
+    "The tax treatment is the headline, but the behaviour change is the real point. An option only pays if the value of the company goes up, and typically only if the person is still there when it vests. You are rewarding the outcome you actually want rather than the fact that a good year happened.",
+    "## The catch",
+    "Eligibility and paperwork are strict, so get it structured properly before you promise it.",
+    "There are conditions on the company, on the employee, on the size of the grant and on how the options are documented, and there is a notification to HMRC with a deadline attached. Miss the formalities and you can end up with an ordinary option taxed as employment income, which is the outcome you were trying to avoid. A valuation is usually part of doing it properly.",
+    "Handing someone actual shares outright is a different decision with different consequences, because shares carry ownership and votes from the moment they are issued while an option carries neither until it is exercised. If the wider question is how much of the company's value ends up with you rather than with HMRC, [how much an agency founder should actually pay themselves](/blog/how-much-should-agency-founders-pay-themselves) and [planning your tax around the exit](/blog/plan-tax-around-your-exit) are the two to read next.",
+    "Rates and conditions change, and whether your company and your employee qualify is entirely fact-dependent, so this is general information rather than advice. If you are thinking about an EMI scheme, get it structured before anything is promised: [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What is an EMI share option scheme?",
+      "answer": "Enterprise Management Incentives is a tax-advantaged share option scheme aimed at smaller trading companies. HMRC's guidance manual for tax-advantaged share schemes covers the conditions the company, the employee and the options each have to meet. See [ETASSUM50000](https://www.gov.uk/hmrc-internal-manuals/employee-tax-advantaged-share-scheme-user-manual/etassum50000)."
+    },
+    {
+      "question": "Is there income tax when EMI options are granted?",
+      "answer": "Where the scheme meets the EMI requirements and the options are granted at market value, there is generally no income tax or National Insurance on grant or on exercise. That is the core of the advantage. The conditions are strict, and a scheme that fails them loses the treatment. See [ETASSUM50000](https://www.gov.uk/hmrc-internal-manuals/employee-tax-advantaged-share-scheme-user-manual/etassum50000)."
+    },
+    {
+      "question": "Do I have to tell HMRC about EMI options?",
+      "answer": "Yes. EMI options have to be notified to HMRC, and the notification has a deadline. HMRC publishes the process for submitting an EMI notification, and separately a process for claiming a reasonable excuse if a notification is late, which tells you how seriously the deadline is treated. See [Submit an EMI notification](https://www.gov.uk/guidance/submit-an-enterprise-management-incentives-emi-notification)."
+    },
+    {
+      "question": "Does the employee end up owning part of my company?",
+      "answer": "Only if and when they exercise the options, and only on the terms you set. That is a deliberate design choice: options can be made to vest over time or on an exit, which is very different from handing over shares on day one."
+    }
+  ],
+  "related": [
+    "giving-away-shares-in-your-agency-control",
+    "seis-rd-credits-emi-reliefs-agencies",
+    "how-much-should-agency-founders-pay-themselves"
+  ],
+  "slot": "evening"
+}

@@ -1,0 +1,70 @@
+{
+  "publishAt": "2026-08-14",
+  "slug": "what-happens-if-you-lose-a-receipt",
+  "title": "Lost the receipt: does HMRC still let you claim the expense?",
+  "tag": "Bookkeeping",
+  "readingTime": "4 min read",
+  "excerpt": "This is not a question about whether the cost was allowable. It is a question about whether you can prove it was, and the answer depends on the size of the cost and who you paid.",
+  "body": [
+    "HMRC can reject your business expenses if you don't have receipts.",
+    "Why? Because if you can't prove what the money was spent on, HMRC can argue there's no evidence it was wholly and exclusively for your business.",
+    "So ideally, you should keep receipts and records for every business expense.",
+    "## Bank statements are not receipts",
+    "Bank statements show money left your account. Receipts show what it was actually spent on.",
+    "That distinction is the whole post. An allowable expense with no evidence behind it and a disallowable expense with no evidence behind it look identical to an inspector, and the burden of showing which one it was sits with you.",
+    "It is also a legal obligation rather than best practice. A company must keep accounting records covering all money spent by the company, receipts and orders included, for six years from the end of the last financial year they relate to. HMRC can charge a £3,000 fine for failing to keep accounting records.",
+    "## But what happens if you forget?",
+    "For small expenses with well-known suppliers like Adobe, Microsoft, Google, or Apple, a bank statement plus a note explaining the business purpose may be enough.",
+    "But for larger or less obvious costs, keep the receipt. For example:",
+    "1. £2,000 paid to \"ABC Digital Marketing\"",
+    "2. A large one-off software purchase",
+    "3. Equipment costs",
+    "4. Travel and hotel costs",
+    "5. Petrol station expenses",
+    "Petrol station receipts are especially important because HMRC need to know whether you bought fuel for business travel or just picked up a sandwich and coffee for personal use.",
+    "The more evidence you have, the stronger your expense claim is.",
+    "In practice, most of these are recoverable if you act. Software vendors keep invoice histories in your account. Hotels and airlines reissue on request. The receipt you genuinely cannot rebuild is the paper one from a petrol station six months ago, which is exactly the category HMRC scrutinises hardest.",
+    "## If the records are gone for good",
+    "HMRC publishes a procedure for this, and it is worth following rather than quietly ignoring. If you cannot replace records that were lost, stolen or destroyed, you must do your best to recreate them, tell your Corporation Tax office straight away, and include that information in your Company Tax Return.",
+    "A disclosed reconstruction is a much better conversation than a gap someone else finds.",
+    "## Stop creating the problem",
+    "Give your accountant your receipts as soon as you spend the money.",
+    "Wait a week, a month, six months, or longer, and it can cause real errors when your company accounts are being prepared. Your accountant can't reconcile your transactions properly until they've got the receipts in front of them.",
+    "Without receipts to reference, personal expenses can end up recorded as software costs, or genuine business expenses get lumped into director loan amounts. That means your accounts are wrong, and you could end up under or overpaying tax as a result.",
+    "That second failure mode is the underrated one. A missing receipt does not only cost you a deduction. It can quietly move money into your director's loan account, which has its own consequences.",
+    "## A system that takes about ten seconds",
+    "This is how accountants file their receipts properly. Here's the simple system I use:",
+    "1. Take a photo immediately. As soon as I get a business receipt, I take a photo on my phone.",
+    "2. Save it in a receipts folder. I keep a separate folder marked \"Receipts\" so everything is in one place.",
+    "3. Upload it when doing bookkeeping. When I'm updating my accounts, I upload the receipt to my accounting software and attach it to the correct transaction.",
+    "4. Move it once it's dealt with. After the receipt has been uploaded and matched, I move it into a folder called \"Receipts - done\".",
+    "That way, I know exactly what's still outstanding and what's already been recorded.",
+    "Simple system, but it saves a lot of stress when it comes to bookkeeping, accounts, and HMRC records. The fix is simple: upload your receipts to Google Drive, Xero, or Zoho straight after you spend the money.",
+    "Weak records cost more than a disallowed lunch. They show up when someone is valuing the business, which is the argument in [clean books, higher valuation](/blog/clean-books-higher-valuation), and they are how automation goes wrong quietly, as in [the AI bookkeeping that cost £20k in tax](/blog/ai-bookkeeping-cost-20k-tax).",
+    "Record keeping requirements, penalties and HMRC's practice can change, and what evidence is enough depends on the cost and the circumstances, so this is general information rather than advice. If your records need sorting out before a year end, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "How long do I have to keep receipts?",
+      "answer": "A company must keep records for six years from the end of the last company financial year they relate to, and longer in certain cases, including where the record relates to something expected to last more than six years such as equipment, where the return was filed late, or where HMRC has opened a compliance check. See [company and accounting records](https://www.gov.uk/running-a-limited-company/company-and-accounting-records)."
+    },
+    {
+      "question": "What should I do if my records are lost or destroyed?",
+      "answer": "HMRC's instruction is that if you cannot replace records that were lost, stolen or destroyed, you must do your best to recreate them, tell your Corporation Tax office straight away, and include that information in your Company Tax Return. See [company and accounting records](https://www.gov.uk/running-a-limited-company/company-and-accounting-records)."
+    },
+    {
+      "question": "Can I reclaim VAT without the VAT invoice?",
+      "answer": "Not as a matter of course. HMRC requires valid VAT invoices to support an input tax claim, and separately requires you to keep all invoices you receive, original or electronic copies. That is a stricter evidential rule than the one for a Corporation Tax deduction, so a missing VAT invoice is the more expensive kind of gap. See [keeping VAT records](https://www.gov.uk/charge-reclaim-record-vat/keeping-vat-records)."
+    },
+    {
+      "question": "Is there a penalty just for not keeping records?",
+      "answer": "Yes. HMRC states you can be fined £3,000 or disqualified as a company director if you do not keep accounting records, separately from any tax, interest or penalties arising from expenses being disallowed. Penalty amounts and HMRC practice change, so check the current position. See [company and accounting records](https://www.gov.uk/running-a-limited-company/company-and-accounting-records)."
+    }
+  ],
+  "related": [
+    "clean-books-higher-valuation",
+    "ai-bookkeeping-cost-20k-tax",
+    "personal-costs-through-the-business-hmrc-enquiry"
+  ],
+  "slot": "evening"
+}

@@ -1,0 +1,59 @@
+{
+  "publishAt": "2026-08-10",
+  "slug": "sell-your-agency-holdco-or-non-resident",
+  "title": "How do you sell your agency without getting destroyed by tax?",
+  "tag": "Exit",
+  "readingTime": "3 min read",
+  "excerpt": "Two structures come up again and again before a sale: selling through a holding company, or selling while non-UK resident. Each solves a different problem, and one of them has a five year trap in it.",
+  "body": [
+    "How to sell your agency without getting destroyed by tax.",
+    "There are broadly two routes people ask about, and the right one depends on what you actually want the money for.",
+    "## Route one: selling through a HoldCo",
+    "If you sell through a HoldCo structure, you can potentially pay 0% tax on the sale at the company level.",
+    "That means the sale proceeds sit inside the HoldCo, ready to reinvest into new ventures without you extracting the cash personally.",
+    "The relief behind this is the substantial shareholdings exemption, which can exempt a company's gain on disposing of shares in a trading company. It is not automatic. The conditions include a size test and a holding period: broadly, the investing company must hold at least 10% of the investee company's ordinary share capital and be entitled to at least 10% of profits and assets available to equity holders, held throughout a continuous period of at least 12 months.",
+    "That holding period is the reason this cannot be arranged the week before completion. A structure put in place while a buyer is already in the room may not have existed long enough to qualify.",
+    "## The catch: the money is trapped",
+    "But the money is \"trapped\" until you take it out.",
+    "If Jack wants to spend it personally (holiday, car, house), he'll need to extract it - usually as dividends - and that can mean dividend tax of up to 39.35%.",
+    "So the exemption is not a way of never paying tax on the proceeds. It is a way of getting the whole sum into a company without a charge at that point, which is genuinely valuable if you intend to reinvest it, and largely a deferral if you intend to spend it.",
+    "That makes the honest question a simple one: reinvest or spend. A founder who wants to fund the next business gets real benefit. A founder who wants a house is choosing between paying capital gains tax now and dividend tax later.",
+    "## Route two: selling while non-UK resident",
+    "The alternative is selling while non-UK resident.",
+    "If Jack genuinely relocates overseas (Dubai, Portugal, Spain) and sells while non-resident, the UK may not charge CGT on the sale - but the local country might, and rates can vary.",
+    "Note the word genuinely. Residence is decided by the statutory residence test, on days and ties and facts, not by intention or by holding a visa somewhere else. A move that leaves your family, your home and most of your working life in the UK tends not to produce the result people expect.",
+    "And the second half of that sentence deserves as much weight as the first. Removing a UK charge is not the same as paying no tax. The destination country has its own rules, and some of the popular ones tax gains at rates that make the exercise pointless.",
+    "## Watch the 5-year trap",
+    "If Jack returns to the UK within 5 years, the temporary non-residence rules can pull the gain back into UK tax.",
+    "This is the part that turns a plan into a problem. The temporary non-residence rules can bring gains realised during a period of non-residence back into charge in the year you return, if the period away is short enough. HMRC publishes a helpsheet on exactly this. In practice it means the decision is not \"leave, sell, come back\", it is a commitment measured in years.",
+    "## Decide before you sign",
+    "The right option depends on your goals: reinvest vs spend personally. Speak to a tax adviser before you sell - after you've signed, it's too late to plan.",
+    "That last line is the whole point. Both routes need to be in place long before a buyer appears, one because of a 12 month holding period and the other because residence takes a tax year to change. Once heads of terms are signed, the structure you have is the structure you are selling with.",
+    "The groundwork that has to happen years earlier is set out in [planning tax around your exit](/blog/plan-tax-around-your-exit), and if the overseas route is the one you are weighing up, [tax when you move abroad](/blog/tax-when-you-move-abroad) and [owning a UK agency as a non-resident](/blog/non-resident-owner-uk-agency) cover what actually has to change.",
+    "Rates, reliefs and residence rules change, and every one of these routes turns on your own facts, so this is general information rather than advice. If a sale is anywhere on your horizon, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What is the substantial shareholdings exemption?",
+      "answer": "It is the relief that can exempt a company's gain on a disposal of shares. HMRC's guidance explains the substantial shareholding requirement: broadly the investing company must hold at least 10% of the investee company's ordinary share capital and be entitled to at least 10% of profits and assets available for distribution to equity holders, held throughout a continuous period of at least 12 months. Other conditions also have to be met. See [CG53070](https://www.gov.uk/hmrc-internal-manuals/capital-gains-manual/cg53070)."
+    },
+    {
+      "question": "What tax do I pay to get money out of a holding company?",
+      "answer": "Extracting proceeds personally is a separate tax event from the sale. Dividends are taxed at the personal dividend rates for the tax year in question, and HMRC publishes the current rates and bands. Other routes, such as a liquidation, have different treatment and their own anti-avoidance rules. See [Tax on dividends](https://www.gov.uk/tax-on-dividends)."
+    },
+    {
+      "question": "Can I avoid UK capital gains tax by moving abroad before I sell?",
+      "answer": "Only if you genuinely become non-UK resident under the statutory residence test, and only if you do not fall foul of the temporary non-residence rules on returning. HMRC's helpsheet HS278 covers how gains made while non-resident can be charged in the year of return. The country you move to may also tax the gain. See [Temporary non-residents and Capital Gains Tax (HS278)](https://www.gov.uk/government/publications/temporary-non-residents-and-capital-gains-tax-hs278-self-assessment-helpsheet) and [Tax on foreign income](https://www.gov.uk/tax-foreign-income)."
+    },
+    {
+      "question": "How long before a sale should the structure be in place?",
+      "answer": "Longer than most people plan for. The substantial shareholdings exemption has a 12 month holding requirement, and residence changes are measured in tax years and then tested again if you come back within the temporary non-residence window. Both are structural, so they cannot be retrofitted once terms are agreed. See [CG53070](https://www.gov.uk/hmrc-internal-manuals/capital-gains-manual/cg53070) and [RDRM12600](https://www.gov.uk/hmrc-internal-manuals/residence-domicile-and-remittance-basis/rdrm12600)."
+    }
+  ],
+  "related": [
+    "plan-tax-around-your-exit",
+    "tax-when-you-move-abroad",
+    "non-resident-owner-uk-agency"
+  ],
+  "slot": "morning"
+}

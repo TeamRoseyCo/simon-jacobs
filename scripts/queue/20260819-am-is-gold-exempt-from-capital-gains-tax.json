@@ -1,0 +1,58 @@
+{
+  "publishAt": "2026-08-19",
+  "slug": "is-gold-exempt-from-capital-gains-tax",
+  "title": "Is gold really exempt from Capital Gains Tax in the UK?",
+  "tag": "Capital gains",
+  "readingTime": "3 min read",
+  "excerpt": "Some gold coins are exempt from CGT, and for a reason most people get wrong. Gold bars, ETFs, foreign coins and gold held in a company are a different question entirely.",
+  "body": [
+    "Your tax-free gold investment might not actually be tax-free.",
+    "A lot of people think gold is automatically exempt from Capital Gains Tax.",
+    "It isn't.",
+    "## Which gold is actually exempt",
+    "In the UK, certain legal tender gold coins minted by The Royal Mint, most notably Sovereigns and Britannias, are exempt from CGT.",
+    "The reason matters, because it tells you where the boundary is. HMRC's Capital Gains Manual explains it as a currency point rather than a gold point: \"Sovereigns minted in 1837 and later years and Britannia gold coins are currency but, like all sterling currency, are exempt because of TCGA92/S21 (1)(b).\"",
+    "So it is not that gold is favoured. It is that these particular coins are sterling currency, and sterling currency is not a chargeable asset. Note the date in HMRC's wording too: sovereigns minted before 1837 do not sit inside that sentence.",
+    "## Which gold is not",
+    "But other gold investments may still be taxable, including:",
+    "1. Gold bars",
+    "2. Non-UK gold coins",
+    "3. Gold ETFs",
+    "4. Gold held through a company",
+    "These can be subject to CGT at up to 24% when you sell.",
+    "That 24% is the higher and additional rate on gains from 6 April 2026 under HMRC's published rates, with 18% applying where the gain falls within the basic rate band. Rates change, so check the current position, and remember your annual exempt amount comes off the gain before any of it.",
+    "## Why holding it personally matters",
+    "And here's the key point:",
+    "To benefit from the CGT exemption, you need to hold qualifying UK legal tender coins personally, not through your business.",
+    "Once an asset sits inside your company you are in a different tax system. Company gains fall under corporation tax rather than personal CGT, there is no annual exempt amount, using a company asset personally raises benefit-in-kind questions, and getting the asset or the proceeds out to you is a second taxable event. A company buying bullion also raises the question of whether it is a trading company at all, which matters if you ever want business reliefs on an exit.",
+    "## What to check before you buy",
+    "So before you assume your gold gains are tax-free, check exactly what you're buying and how you're holding it.",
+    "In practice: the specific coin and its mint year, whether it is UK legal tender, whose name it is held in, and whether what you are actually buying is a coin at all rather than an ETF or a contract tracking the price. Two purchases that feel identical can land very differently.",
+    "If your gains come from shares rather than metal, [tax when you sell stocks and shares as an agency owner](/blog/tax-when-you-sell-stocks-and-shares-agency-owner) covers that, and [capital gains tax and agency owners](/blog/capital-gains-tax-rising-agency-owners) covers where the rates have been heading.",
+    "Rates, allowances and the treatment of specific investments change, and this is general information rather than advice on your holdings. If you want your position checked before you buy or sell, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Are gold Sovereigns and Britannias exempt from Capital Gains Tax?",
+      "answer": "HMRC's Capital Gains Manual states: \"Sovereigns minted in 1837 and later years and Britannia gold coins are currency but, like all sterling currency, are exempt because of TCGA92/S21 (1)(b).\" The exemption follows from them being sterling currency rather than from them being gold. See [CG78305](https://www.gov.uk/hmrc-internal-manuals/capital-gains-manual/cg78305)."
+    },
+    {
+      "question": "What rate of Capital Gains Tax would apply to taxable gold?",
+      "answer": "HMRC's published rates state that higher and additional rate taxpayers pay 24% on gains from 6 April 2026, and that basic rate taxpayers pay 18% on the part of the gain falling within the basic rate band, with 24% above it. Rates change, so check the current position. See [Capital Gains Tax rates](https://www.gov.uk/capital-gains-tax/rates)."
+    },
+    {
+      "question": "Does the annual exempt amount apply to a gain on gold?",
+      "answer": "Where a gain is chargeable, you only pay Capital Gains Tax on overall gains above the tax-free allowance, which HMRC states is £3,000 for individuals. It does not carry forward to another year. See [Capital Gains Tax allowances](https://www.gov.uk/capital-gains-tax/allowances)."
+    },
+    {
+      "question": "Is buying gold through my company a way to avoid the tax?",
+      "answer": "It changes the tax rather than removing it. A company's gains sit within corporation tax rather than personal Capital Gains Tax, there is no annual exempt amount, and extracting the asset or the proceeds is a further taxable step. Whether any exemption applies depends on the specific asset and the facts. See [Capital Gains Tax](https://www.gov.uk/capital-gains-tax) and [CG78305](https://www.gov.uk/hmrc-internal-manuals/capital-gains-manual/cg78305)."
+    }
+  ],
+  "related": [
+    "tax-when-you-sell-stocks-and-shares-agency-owner",
+    "capital-gains-tax-rising-agency-owners",
+    "four-tax-free-allowances-agency-owners"
+  ],
+  "slot": "morning"
+}

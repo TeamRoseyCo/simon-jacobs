@@ -3,6 +3,14 @@
     {
       "path": "/api/cron/send-sequence",
       "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/publish-post",
+      "schedule": "30 7 * * *"
+    },
+    {
+      "path": "/api/cron/publish-post",
+      "schedule": "30 18 * * *"
     }
   ]
 }

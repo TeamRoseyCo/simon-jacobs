@@ -1,0 +1,54 @@
+{
+  "publishAt": "2026-08-18",
+  "slug": "four-tax-free-allowances-agency-owners",
+  "title": "Which allowances let an agency owner take money tax-free?",
+  "tag": "Tax planning",
+  "readingTime": "3 min read",
+  "excerpt": "Four allowances worth knowing, with the 2026/27 figures: the trading allowance, the personal allowance, the capital gains annual exempt amount and the ISA limit. Using them properly before the tax year ends is the whole trick.",
+  "body": [
+    "If you run a marketing agency, you can earn some money completely tax-free.",
+    "Not a scheme, not a structure. Four allowances that already exist, which a surprising number of agency owners either forget or run out of time to use. The figures below are the 2026/27 position and allowances get changed at Budgets, so check the current numbers before you plan around them.",
+    "Here are 4 allowances worth knowing:",
+    "## 1. The £1,000 trading allowance",
+    "If you're a sole trader and your business expenses are less than £1,000, you can claim the £1,000 trading allowance instead of your actual expenses.",
+    "This can effectively reduce your taxable profit by £1,000.",
+    "HMRC describes the trading allowance as a tax exemption of up to £1,000 a year for individuals with trading income, and where gross income from that source is £1,000 or less you generally do not need to tell HMRC about it at all. Note the scope: this is for trading income received personally, so it is relevant to a sole trade or a small side activity rather than to profits inside your limited company.",
+    "## 2. The £12,570 personal allowance",
+    "The first £12,570 of income you receive can be tax-free. But once your income goes over £100,000, you start losing this allowance.",
+    "The standard personal allowance is £12,570 for 2026/27. The taper is the bit that catches agency owners: HMRC's guidance is that the allowance goes down by £1 for every £2 that adjusted net income is above £100,000, so it reaches zero at £125,140. That is where the effective marginal rate on that slice of income gets ugly, which is the subject of [the 60% tax trap](/blog/the-60-percent-tax-trap).",
+    "## 3. The £3,000 capital gains allowance",
+    "The first £3,000 of gains from selling assets like shares in your agency, crypto, or property can be tax-free.",
+    "HMRC calls it the Annual Exempt Amount, and it is £3,000 for individuals. It does not carry forward. If you have gains to realise and a choice about timing, the allowance is worth using each year rather than banking a single large disposal into one.",
+    "## 4. The £20,000 ISA allowance",
+    "You can put up to £20,000 per tax year into a Stocks and Shares ISA and dividends and gains inside the ISA are tax-free.",
+    "For the 2026 to 2027 tax year HMRC states the maximum you can save in ISAs is £20,000, and that limit is the total across the ISA types rather than £20,000 in each. For an agency owner taking dividends, an ISA is the most straightforward place for money that has already been taxed once to stop being taxed again.",
+    "## The part people get wrong",
+    "The key is knowing which allowances apply to you, and using them properly before the tax year ends.",
+    "Most of these reset on 6 April and do not roll forward, so an unused allowance is simply gone. The tax year ends on 5 April, which means the planning conversation has to happen before then rather than when the return is being prepared months later. If you want the wider list, [three tax moves for agency owners in 2026/27](/blog/three-tax-moves-agency-owners-2026-27) covers the bigger levers.",
+    "Rates, allowances and thresholds change at Budgets and the right combination depends on your own income mix, so treat this as general information rather than advice. To get your position looked at properly, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What is the trading allowance and who can use it?",
+      "answer": "HMRC describes the trading allowance as a tax exemption of up to £1,000 a year for individuals with trading income, including self-employment, casual services and hiring out personal equipment. If gross income from those sources is £1,000 or less you generally do not need to tell HMRC, subject to exceptions. See [Tax-free allowances on property and trading income](https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income)."
+    },
+    {
+      "question": "How much is the personal allowance and when do you lose it?",
+      "answer": "The standard personal allowance is £12,570. HMRC's guidance states it goes down by £1 for every £2 that your adjusted net income is above £100,000, so the allowance is zero once income reaches £125,140. Figures apply to the tax year shown on the page and change at Budgets. See [Income Tax rates and Personal Allowances](https://www.gov.uk/income-tax-rates)."
+    },
+    {
+      "question": "How much capital gain is tax-free?",
+      "answer": "HMRC states the Capital Gains tax-free allowance, the Annual Exempt Amount, is £3,000, and £1,500 for trusts. You only pay Capital Gains Tax on overall gains above it. See [Capital Gains Tax allowances](https://www.gov.uk/capital-gains-tax/allowances)."
+    },
+    {
+      "question": "Is the £20,000 ISA limit per ISA or in total?",
+      "answer": "In total. HMRC states that in the 2026 to 2027 tax year the maximum you can save in ISAs is £20,000, across the four ISA types. See [Individual Savings Accounts](https://www.gov.uk/individual-savings-accounts)."
+    }
+  ],
+  "related": [
+    "the-60-percent-tax-trap",
+    "three-tax-moves-agency-owners-2026-27",
+    "how-much-should-agency-founders-pay-themselves"
+  ],
+  "slot": "morning"
+}

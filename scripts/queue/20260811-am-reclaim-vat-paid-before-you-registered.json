@@ -1,0 +1,60 @@
+{
+  "publishAt": "2026-08-11",
+  "slug": "reclaim-vat-paid-before-you-registered",
+  "title": "Can you reclaim VAT you paid before your agency was VAT registered?",
+  "tag": "VAT",
+  "readingTime": "3 min read",
+  "excerpt": "Not while you are unregistered. But once you register, VAT on goods you still hold can go back four years and VAT on services six months, with some costs blocked either way.",
+  "body": [
+    "If your marketing agency is not VAT registered, can you reclaim VAT on business purchases?",
+    "The short answer is no - not while you're not VAT registered.",
+    "But if you later register for VAT, you may be able to reclaim some VAT paid before registration.",
+    "The reason for the flat no is mechanical. Only a person who is already registered for VAT can exercise the right to deduct input tax. What happens on registration is a separate relief that lets you treat some of that earlier VAT as if it were input tax, with time limits attached.",
+    "## Goods: up to 4 years before registration",
+    "This can apply to things like laptops, equipment, or other business assets, but only if you still have them and they're still used in the business.",
+    "That second condition is the one that decides most claims. HMRC's guidance requires the goods to remain on hand at the date of registration and to be used in the newly registered business, bought within the time limits in regulation 111, which for registrations after 1 April 2010 is four years.",
+    "So the laptop you are typing on can qualify. The laptop you sold on eBay eighteen months ago cannot, because it is not on hand. Stock you have already consumed is gone for the same reason.",
+    "## Services: up to 6 months before registration",
+    "This could include things like software subscriptions, website design, or professional fees.",
+    "Six months is a much shorter window and it is not obviously generous, but HMRC's reasoning is that six months is a period in which it is reasonable to expect that services obtained will relate to the business activity being carried on at the time of registration.",
+    "For an agency that means the practical answer often depends on timing. A brand and website built three months before you registered may be in scope. The same work done two years earlier is not.",
+    "## Some costs are still blocked",
+    "You can't reclaim VAT on business entertainment, and VAT recovery on cars is heavily restricted where there is private use.",
+    "Neither of those is a pre-registration quirk. They are blocks that apply to registered businesses too, and registering does not unlock them retrospectively. It is worth knowing before you start adding up old invoices, because entertaining tends to be one of the larger lines in an agency's early spending.",
+    "## The other side of registering",
+    "But remember:",
+    "Once you register for VAT, you need to charge VAT on your taxable sales.",
+    "So if you're charging UK clients, you'll need to add 20% VAT to your invoices.",
+    "This is the part that has to be weighed against the reclaim. A one-off recovery on old equipment is a single number. Adding 20% to every UK invoice from then on changes your price to any client who cannot recover it themselves, and it brings returns, records and deadlines with it. If your clients are all VAT registered businesses it is close to neutral for them. If they are not, it is a price rise.",
+    "None of that is a reason to avoid registering, and once your taxable turnover crosses the registration threshold the decision is not yours anyway. It is a reason to know which side of the line you are on before you volunteer.",
+    "## Before you claim anything",
+    "VAT is a complex area, so speak to a tax adviser before assuming you can reclaim VAT on old purchases.",
+    "Practically: find the actual VAT invoices, not bank statements, because HMRC will want the invoices. List what you still hold and what has gone. Split goods from services, because they have different clocks. Then check the total is worth the exercise before you spend an afternoon on it.",
+    "The wider picture of how VAT works for an agency is in [VAT for agencies](/blog/vat-for-agencies), and if the old purchases you are looking at are equipment then the corporation tax side of the same spending is covered in [laptops, phones and the Annual Investment Allowance](/blog/laptop-tax-relief-agency-annual-investment-allowance).",
+    "VAT rules, rates and time limits change, and recovery depends on your own facts and records, so treat this as general information rather than advice. If you are about to register and want the pre-registration position reviewed, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Can an unregistered business reclaim VAT?",
+      "answer": "No. HMRC's guidance is that only a person who is already registered for VAT can exercise the right to deduct input tax, though relief is permitted in certain circumstances before registration and after deregistration under regulation 111 of the VAT Regulations 1995. See [VIT32000](https://www.gov.uk/hmrc-internal-manuals/vat-input-tax/vit32000)."
+    },
+    {
+      "question": "How far back can I reclaim VAT on goods bought before registration?",
+      "answer": "HMRC's guidance states that in the case of goods, the goods must remain on hand at the date of registration and be used in the newly registered business, and must have been bought within the time limits in regulation 111, which for businesses with a registration date after 1 April 2010 is four years. See [VIT32000](https://www.gov.uk/hmrc-internal-manuals/vat-input-tax/vit32000)."
+    },
+    {
+      "question": "What is the time limit for services?",
+      "answer": "HMRC's guidance states that in the case of services, the supply must have been received not more than six months before the date of registration, on the basis that six months is a reasonable period in which to expect services obtained to relate to the business activity carried on at the time of registration. See [VIT32000](https://www.gov.uk/hmrc-internal-manuals/vat-input-tax/vit32000)."
+    },
+    {
+      "question": "Which costs can never be reclaimed?",
+      "answer": "Business entertainment is blocked: HMRC's notice states that input tax incurred on the provision of business entertainment to UK and non-UK business contacts who are not customers is blocked from recovery. VAT recovery on cars is also restricted, and HMRC's VAT guide sets out the general rules on what input tax can and cannot be deducted. See [Business entertainment (VAT Notice 700/65)](https://www.gov.uk/guidance/business-entertainment-and-vat-notice-70065) and [VAT guide (VAT Notice 700)](https://www.gov.uk/guidance/vat-guide-notice-700)."
+    }
+  ],
+  "related": [
+    "vat-for-agencies",
+    "reclaim-vat-on-agency-equipment",
+    "vat-flat-rate-scheme-for-agencies"
+  ],
+  "slot": "morning"
+}

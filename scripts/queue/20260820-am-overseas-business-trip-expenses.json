@@ -1,0 +1,59 @@
+{
+  "publishAt": "2026-08-20",
+  "slug": "overseas-business-trip-expenses",
+  "title": "Can you put an overseas business trip through your agency?",
+  "tag": "Expenses",
+  "readingTime": "3 min read",
+  "excerpt": "Flights, hotels and food on a genuine business trip can be allowable. Add enough personal time to the itinerary and HMRC can challenge the individual costs, or the whole trip.",
+  "body": [
+    "Your business trip could cost you thousands in tax if you get this wrong.",
+    "Agency owners travel: client pitches, supplier meetings, conferences, partners in other markets. The tax treatment is usually fine. It is the trips with a holiday quietly attached that create problems.",
+    "## What can be allowable",
+    "If you travel overseas to meet clients, potential clients, suppliers, or business partners, the costs can be allowable.",
+    "That could include:",
+    "1. Flights",
+    "2. Hotels",
+    "3. Food and drink while travelling",
+    "4. Transport",
+    "5. Other business travel costs",
+    "HMRC's manual on travel and subsistence addresses meals and accommodation on business trips, and the general position is that reasonable costs of accommodation and food while travelling away for the business can be deductible where the travel itself is for the purposes of the trade.",
+    "## The test that decides it",
+    "But the key test is this:",
+    "Was the trip wholly and exclusively for the purposes of your business?",
+    "That is the same test as every other expense, and HMRC has a whole section of its manual on how it applies to travel costs specifically, filed under duality of purpose. If the journey has two purposes running side by side, one business and one personal, the deduction is in question.",
+    "## Where personal time breaks it",
+    "If you start adding personal costs, holidays, tourist activities, unrelated events, or personal meals, HMRC can disallow those costs.",
+    "And if HMRC believe the real purpose of the trip was a holiday with a bit of business on the side, they could challenge the whole trip.",
+    "That means the tax relief you thought you were getting could disappear, costing you thousands.",
+    "This is the distinction worth holding on to. Some personal spending on a business trip is simply a non-allowable line you do not claim, and the rest of the trip is unaffected. But if the balance tips far enough that the trip's real purpose looks personal, the argument stops being about the individual receipts and becomes about the flights and the hotel too. Bringing a partner who has no role in the business is a common way that happens.",
+    "## What proving it looks like",
+    "Before you put an overseas trip through the business, make sure you can prove the business purpose.",
+    "In practice that means a record made at the time rather than reconstructed afterwards: who you met and when, what the meeting was for, the invitation or the conference booking, the itinerary showing business days rather than a fortnight with one lunch in it. If personal days are attached, split the costs sensibly and claim only the business part rather than hoping nobody looks.",
+    "For the wider picture of what your agency can and cannot put through, [the agency expenses checklist](/blog/agency-expenses-checklist) is the reference, and if the trip is about winning work abroad then [VAT on overseas clients for agencies](/blog/vat-on-overseas-clients-for-agencies) covers the invoicing side of the same relationship.",
+    "Rules and HMRC's approach change and every trip turns on its own facts, so this is general information rather than advice on your travel. If you want a specific trip reviewed before you claim it, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Are flights and hotels on a business trip tax deductible?",
+      "answer": "They can be, where the travel is for the purposes of the business. HMRC's Business Income Manual covers expenditure on meals and accommodation in the context of travel and subsistence, and the deduction still depends on the wholly and exclusively test being met. See [BIM47705](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim47705)."
+    },
+    {
+      "question": "What if a trip is part business and part holiday?",
+      "answer": "HMRC deals with mixed-purpose travel under duality of purpose, and its manual has a dedicated section on travel costs within that topic. Personal elements are not deductible, and where the real purpose of the journey is personal the wider costs can be challenged too. See [BIM37600](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37600)."
+    },
+    {
+      "question": "What does wholly and exclusively mean for travel?",
+      "answer": "HMRC's overview of the rule explains that expenditure must be incurred wholly and exclusively for the purposes of the trade, and that a non-trade purpose existing alongside the business purpose can deny the deduction. See [BIM37007](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37007)."
+    },
+    {
+      "question": "What records should I keep for an overseas trip?",
+      "answer": "Enough to show the business purpose, not just the spend: who you met, why, and when. HMRC's compliance check guidance shows that accounts, calculations and returns can all be examined, so contemporaneous evidence of purpose is what makes a claim defensible. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "travel-to-your-own-office-is-not-an-expense",
+    "personal-costs-through-the-business-hmrc-enquiry"
+  ],
+  "slot": "morning"
+}

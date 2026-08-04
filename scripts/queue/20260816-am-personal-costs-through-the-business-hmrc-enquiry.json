@@ -1,0 +1,59 @@
+{
+  "publishAt": "2026-08-16",
+  "slug": "personal-costs-through-the-business-hmrc-enquiry",
+  "title": "What happens if HMRC finds a personal cost in your agency's expenses?",
+  "tag": "HMRC",
+  "readingTime": "3 min read",
+  "excerpt": "Trying to claim personal costs as business expenses is exactly how you open yourself up to an HMRC investigation. Here is what actually happens when HMRC disallows one, and why the cost is rarely limited to the expense itself.",
+  "body": [
+    "Trying to claim personal costs as business expenses is exactly how you open yourself up to an HMRC investigation.",
+    "This is not about being frightened of HMRC. It is about understanding what a disallowed expense actually costs once you follow the chain all the way through, because most agency owners only ever price the tax they saved.",
+    "## What HMRC can do if an expense is not allowable",
+    "If HMRC investigate your business and find expenses that clearly aren't wholly and exclusively for the business, they can disallow them.",
+    "That means:",
+    "1. You repay the tax you saved",
+    "2. You pay interest",
+    "3. You could face penalties for getting it wrong",
+    "The wholly and exclusively test is the whole game here. HMRC's own manual describes it as the rule that expenditure has to be incurred wholly and exclusively for the purposes of the trade, and a cost with a real personal purpose sitting alongside the business one is where arguments start.",
+    "## Why it rarely stops at one expense",
+    "But it doesn't stop there.",
+    "Once HMRC find one dodgy expense, they may start looking at everything else.",
+    "They could review your other expenses, challenge costs you thought were allowable, and even go back into previous years' tax returns.",
+    "This is the part people underestimate. A compliance check that opens on one point does not have to stay on that point, and HMRC publishes what a check can cover: any taxes you pay, your accounts and tax calculations, your Self Assessment or Company Tax Return, and your PAYE records if you employ people.",
+    "## What the arithmetic can turn into",
+    "So what started as a £1,000 \"tax saving\" from putting a family holiday through the business could turn into £1,500, £2,000, £10,000 or more owed to HMRC.",
+    "Those figures are an illustration of how the number grows rather than a calculation for any particular case. The direction of travel is the point: tax back, interest from the date the tax was due, and a penalty on top that depends on how the error happened and how you behaved once HMRC asked.",
+    "## The behaviour question behind the penalty",
+    "Penalties are not a flat charge. HMRC says it looks at why you underpaid or overclaimed, whether you told HMRC as soon as you could, and how helpful you have been during the check. Careless is treated differently from deliberate, and a genuine mistake disclosed early is treated differently again.",
+    "That is why the honest answer to \"can I put this through?\" matters more than the answer you want.",
+    "## What to do instead",
+    "Think twice before putting personal spending through your business.",
+    "It's not worth the tax bill, penalties, stress, or HMRC scrutiny.",
+    "The better route is boring and it works: know what genuinely qualifies, claim all of it, and keep the evidence that shows why. [The agency expenses checklist](/blog/agency-expenses-checklist) sets out what a marketing agency can legitimately put through, and if the goal is a smaller corporation tax bill then [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) is the list to work through first.",
+    "Rules and penalty rates change and every expense turns on its own facts, so treat this as general information rather than advice on your situation. If you want your expenses position reviewed before HMRC does it for you, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What does wholly and exclusively actually mean?",
+      "answer": "It is the statutory test for deducting a business expense. HMRC's Business Income Manual overview of the rule explains that expenditure must be incurred wholly and exclusively for the purposes of the trade, and that a non-trade or dual purpose can deny the deduction. See [BIM37007](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37007)."
+    },
+    {
+      "question": "What can HMRC look at in a compliance check?",
+      "answer": "HMRC's guidance says a check can cover any taxes you pay, your accounts and tax calculations, your Self Assessment tax return, your Company Tax Return, and your PAYE records and returns if you employ people. HMRC will write or phone to say what they want to check, and will contact your accountant instead if you use one. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    },
+    {
+      "question": "Do I pay interest as well as the tax?",
+      "answer": "Normally yes. HMRC's guidance states that if you owe more tax after a check you will be asked to pay it within 30 days and will normally have to pay interest from the date the tax was due. You may also have to pay a penalty. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    },
+    {
+      "question": "How are penalties for a wrong expense claim decided?",
+      "answer": "HMRC's factsheet on penalties for inaccuracies explains that the penalty depends on the behaviour behind the inaccuracy, whether the disclosure was prompted or unprompted, and how much help you gave. HMRC also says it considers whether you told them as soon as you could. See [CC/FS7A](https://www.gov.uk/government/publications/compliance-checks-penalties-for-inaccuracies-in-returns-or-documents-ccfs7a) and [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "what-happens-if-you-lose-a-receipt",
+    "how-to-reduce-your-agencys-corporation-tax"
+  ],
+  "slot": "morning"
+}

@@ -1,0 +1,65 @@
+{
+  "publishAt": "2026-08-10",
+  "slug": "too-much-cash-in-your-agency-badr",
+  "title": "Can too much cash in your agency cost you Business Asset Disposal Relief?",
+  "tag": "Exit",
+  "readingTime": "3 min read",
+  "excerpt": "Business Asset Disposal Relief only applies if your company is a trading company. Let cash and investments build up and HMRC can argue it is not, which changes the rate you pay when you sell.",
+  "body": [
+    "Having too much cash in your marketing agency could leave you with an expensive tax bill when you sell.",
+    "## What the relief is worth",
+    "When you sell your agency, you may be able to claim Business Asset Disposal Relief.",
+    "This means you pay Capital Gains Tax at 18% on the first £1m of qualifying gains.",
+    "The £1m is a lifetime limit rather than a per-sale one, so a founder on their second exit may have less of it left than they think. The rate is the one that applies for disposals from 6 April 2026, and rates in this area have moved more than once in recent years, so it should always be checked against the current position for the tax year you are actually selling in.",
+    "There are conditions beyond the trading test as well. HMRC's guidance requires that for at least two years before you sell, you have been an employee or office holder and the company has been your personal company, broadly meaning at least 5% of the shares and voting rights along with a 5% entitlement to profits and assets or to disposal proceeds.",
+    "## The trap",
+    "But there's a trap.",
+    "To qualify, your company needs to be a trading company.",
+    "If your agency becomes too cash-rich or starts holding too many investments, HMRC could argue it's no longer mainly a trading business.",
+    "That could mean you lose Business Asset Disposal Relief and pay Capital Gains Tax at the normal rate of up to 24% instead.",
+    "HMRC's own condition is that the company's main activities are in trading rather than non-trading activities like investment, or that it is the holding company of a trading group. The word doing the work is main. A trading company is not one that does no investing, it is one whose activities do not include non-trading activities to a substantial extent, and that is a judgement about the whole picture rather than a single ratio.",
+    "## Why this creeps up on profitable agencies",
+    "Nobody sets out to turn an agency into an investment company. It happens because the agency did well.",
+    "Retained profit builds up. Nobody wants to strip it out and pay dividend tax on money the business does not need yet. Then the cash gets put somewhere it earns a return, or into a property, or into a portfolio, because leaving seven figures in a current account feels wasteful. Each of those decisions is sensible on its own, and together they change what the company looks like on the day a buyer runs diligence.",
+    "The difference between 18% and up to 24% on a gain of a million pounds is not a rounding error, and it is decided by facts you have been accumulating quietly for years.",
+    "## What to do about it",
+    "So if you've got large amounts of cash sitting in your agency, don't ignore it.",
+    "You may need a plan, such as:",
+    "1. Paying dividends",
+    "2. Reinvesting into the trade",
+    "3. Setting up a holding company structure",
+    "4. Separating trading assets from investment assets",
+    "5. Planning before a future sale",
+    "None of those is free. Dividends cost personal tax now to protect a rate later. Restructuring has its own timing conditions attached to the reliefs it relies on. The point is not to pick one from the list, it is that the position needs looking at with a number attached rather than being left to drift.",
+    "## Do it before you agree to sell",
+    "Because the worst time to find out you don't qualify for relief is after you've agreed to sell.",
+    "Speak to a tax adviser early so you don't get hit with a higher tax bill.",
+    "Early means years, not months. The conditions carry two year and twelve month tests, and a company that has looked cash-heavy for a long time is not fixed by a single dividend in the final quarter.",
+    "This is one piece of a wider sequence, which is set out in [planning tax around your exit](/blog/plan-tax-around-your-exit), and if the direction of capital gains tax rates is part of your thinking then [capital gains tax and agency owners](/blog/capital-gains-tax-rising-agency-owners) is worth reading alongside it.",
+    "Rates, limits and the way the trading test is applied change, and the answer turns on your own balance sheet, so this is general information rather than advice. If you want your company tested against the conditions properly, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What rate does Business Asset Disposal Relief give?",
+      "answer": "HMRC's guidance states that from 6 April 2026 you pay 18% on gains qualifying for Business Asset Disposal Relief, against main capital gains tax rates of 18% and 24% on gains made from 6 April 2026 depending on your income. The relief has a lifetime limit of £1 million of qualifying gains. Rates have changed repeatedly, so check the position for the tax year of your disposal. See [Capital Gains Tax rates](https://www.gov.uk/capital-gains-tax/rates) and [Business Asset Disposal Relief](https://www.gov.uk/business-asset-disposal-relief)."
+    },
+    {
+      "question": "What makes a company a trading company for the relief?",
+      "answer": "HMRC's guidance requires that the company's main activities are in trading rather than non-trading activities like investment, or that it is the holding company of a trading group, and its manual explains that the terms take their meaning from TCGA 1992 S165A. It is a test of the company's activities as a whole, not a single cash threshold. See [Business Asset Disposal Relief](https://www.gov.uk/business-asset-disposal-relief) and [CG64055](https://www.gov.uk/hmrc-internal-manuals/capital-gains-manual/cg64055)."
+    },
+    {
+      "question": "What else has to be true to claim it?",
+      "answer": "HMRC's guidance sets out that for at least two years before the sale you must be an employee or office holder of the company or one in the same group, and the business must be your personal company, meaning at least 5% of the shares and voting rights plus a 5% entitlement to distributable profits and assets on winding up, or to disposal proceeds if the company is sold. Different rules apply to shares from an EMI scheme. See [Business Asset Disposal Relief](https://www.gov.uk/business-asset-disposal-relief)."
+    },
+    {
+      "question": "What if the company has already stopped trading?",
+      "answer": "HMRC's guidance states that if the company stops being a trading company you can still qualify for relief if you sell your shares within three years. That is a window, not a fix for a company that has been substantially investment-holding while trading. See [Business Asset Disposal Relief](https://www.gov.uk/business-asset-disposal-relief)."
+    }
+  ],
+  "related": [
+    "plan-tax-around-your-exit",
+    "capital-gains-tax-rising-agency-owners",
+    "sell-your-agency-holdco-or-non-resident"
+  ],
+  "slot": "evening"
+}

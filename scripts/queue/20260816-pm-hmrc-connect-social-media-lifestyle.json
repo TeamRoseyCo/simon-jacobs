@@ -1,0 +1,56 @@
+{
+  "publishAt": "2026-08-16",
+  "slug": "hmrc-connect-social-media-lifestyle",
+  "title": "Does HMRC really look at your social media before opening an enquiry?",
+  "tag": "HMRC",
+  "readingTime": "3 min read",
+  "excerpt": "HMRC compares what you report with other information available about you. If the lifestyle on your feed does not match the income on your return, that mismatch can be the thing that gets noticed.",
+  "body": [
+    "HMRC are watching your social media posts.",
+    "That sounds dramatic, so here is the sober version of it. HMRC uses data-matching tools, including its CONNECT system, to compare what people report to HMRC with other information available about them.",
+    "## What a mismatch looks like",
+    "So if you report £50,000 of income, but your Instagram shows:",
+    "1. Two Lamborghinis",
+    "2. Constant luxury holidays",
+    "3. Designer shopping",
+    "4. A lifestyle that doesn't match your tax return",
+    "That can raise red flags.",
+    "The point is not the cars. It is the gap between two stories about the same person, one told on a return and one told in public.",
+    "## What it does not mean",
+    "It doesn't automatically mean you've done anything wrong.",
+    "This matters, so it is worth saying plainly. There are entirely ordinary explanations for a visible lifestyle on a modest declared income: dividends taken in an earlier year, a partner's earnings, an inheritance, savings, borrowing, a business asset the company owns, or a holiday somebody else paid for. A mismatch is a question, not a conclusion, and being asked the question is not an accusation.",
+    "## What can follow",
+    "But if HMRC think your declared income doesn't match your lifestyle, they may open an enquiry and start looking through your finances in detail.",
+    "That could lead to extra tax, interest, and penalties if income has been underreported.",
+    "HMRC publishes what a compliance check can cover: any taxes you pay, your accounts and tax calculations, your Self Assessment tax return, your Company Tax Return, and your PAYE records if you employ people. If you have an accountant, HMRC contacts them rather than you.",
+    "## What actually protects you",
+    "So before you flex online, make sure your tax return tells the same story.",
+    "For an agency owner that usually comes down to three unglamorous habits. Declare everything, including the income streams that feel too small to bother with. Keep the paper that explains where money came from, so an explanation is evidence rather than a memory. And make sure how you pay yourself is documented properly, because dividends taken without the right paperwork are exactly the sort of thing that becomes an argument later.",
+    "Getting the pay mix right in the first place is covered in [how much agency founders should pay themselves](/blog/how-much-should-agency-founders-pay-themselves), and if the concern is what you have been putting through the company, [the agency expenses checklist](/blog/agency-expenses-checklist) is the place to start.",
+    "This is general information rather than advice, and how HMRC selects cases is its own business rather than something published in detail. If you think your return and your reality do not line up neatly, get it looked at properly: [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Does HMRC use data from outside your tax return?",
+      "answer": "Yes. HMRC's privacy notice sets out how it uses personal information, including data received from and shared with third parties, and it has a section covering artificial intelligence, analytics and machine learning. HMRC does not publish the internal detail of how cases are selected. See the [HMRC Privacy Notice](https://www.gov.uk/government/publications/data-protection-act-dpa-information-hm-revenue-and-customs-hold-about-you)."
+    },
+    {
+      "question": "Can HMRC open an enquiry just because of a social media post?",
+      "answer": "HMRC does not publish its selection criteria, so nobody outside HMRC can say what triggers what. What is published is that HMRC checks tax affairs to make sure the right amount is being paid, and that it will write or phone to say what it wants to check. A visible lifestyle is not itself evidence of underpaid tax. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    },
+    {
+      "question": "What happens if HMRC opens a check on me?",
+      "answer": "HMRC will tell you what it wants to check, and may ask to visit your home, business or adviser's office. You can have an accountant or legal adviser with you. After the check HMRC writes with the result: a repayment if you have paid too much, or a request to pay additional tax within 30 days, normally with interest from the date the tax was due, and possibly a penalty. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    },
+    {
+      "question": "Should I delete my social media?",
+      "answer": "No, and that is the wrong instinct. Nothing on a public feed causes a tax problem on its own. What causes a problem is income that was not declared. The fix is an accurate return and records that explain where money came from, not a quieter internet presence."
+    }
+  ],
+  "related": [
+    "personal-costs-through-the-business-hmrc-enquiry",
+    "how-much-should-agency-founders-pay-themselves",
+    "agency-expenses-checklist"
+  ],
+  "slot": "evening"
+}

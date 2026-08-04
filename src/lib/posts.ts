@@ -19,7 +19,15 @@ export type Post = {
   body: string[];
   faqs?: Faq[]; // rendered as an accordion + FAQPage schema
   related?: string[]; // slugs of related posts, shown as internal links
+  status: PostStatus;
+  publishAt?: string; // ISO timestamp; only meaningful while status is "scheduled"
 };
+
+// "scheduled" posts are written and carded but held back. The daily cron at
+// /api/cron/publish-post flips the oldest due one to "published". Nothing
+// public reads a scheduled post: getAllPosts filters them out and the post
+// page 404s on them.
+export type PostStatus = "published" | "scheduled";
 
 type BlogPostRow = {
   slug: string;
@@ -32,6 +40,8 @@ type BlogPostRow = {
   body: string[];
   faqs: Faq[];
   related: string[];
+  status: PostStatus | null;
+  publish_at: string | null;
 };
 
 function rowToPost(row: BlogPostRow): Post {
@@ -46,10 +56,19 @@ function rowToPost(row: BlogPostRow): Post {
     body: row.body,
     faqs: row.faqs,
     related: row.related,
+    status: row.status ?? "published",
+    publishAt: row.publish_at ?? undefined,
   };
 }
 
+// Public reads. Scheduled posts are invisible here, which is what keeps the
+// blog index, the homepage cards, the sitemap and the related links honest.
 export async function getAllPosts(): Promise<Post[]> {
+  return (await getEveryPost()).filter((p) => p.status === "published");
+}
+
+// Admin reads. Returns the queue as well as what is live, newest first.
+export async function getEveryPost(): Promise<Post[]> {
   const supabase = getSupabaseAdmin();
   if (!supabase) return [];
   const { data, error } = await supabase
@@ -70,6 +89,13 @@ export async function getPost(slug: string): Promise<Post | undefined> {
     .maybeSingle();
   if (error || !data) return undefined;
   return rowToPost(data as BlogPostRow);
+}
+
+// What the public post page uses. A scheduled slug reads as missing, so it
+// 404s rather than leaking a post ahead of its date.
+export async function getPublishedPost(slug: string): Promise<Post | undefined> {
+  const post = await getPost(slug);
+  return post && post.status === "published" ? post : undefined;
 }
 
 export function formatPostDate(iso: string): string {

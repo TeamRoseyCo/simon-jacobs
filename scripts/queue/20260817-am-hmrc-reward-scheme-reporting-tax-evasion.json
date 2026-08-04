@@ -1,0 +1,57 @@
+{
+  "publishAt": "2026-08-17",
+  "slug": "hmrc-reward-scheme-reporting-tax-evasion",
+  "title": "Does HMRC pay people for reporting serious tax evasion?",
+  "tag": "HMRC",
+  "readingTime": "3 min read",
+  "excerpt": "HMRC's Strengthened Reward Scheme can pay a share of the tax recovered in serious cases. It is aimed at very large evasion and avoidance, not at everyday business tax, and it says something useful about where HMRC is putting its effort.",
+  "body": [
+    "HMRC's Strengthened Reward Scheme can pay whistleblowers up to 30% of the tax recovered in serious cases.",
+    "This is worth understanding for what it tells you about HMRC's direction of travel rather than as something to act on. It is not an invitation to report anybody, and for the overwhelming majority of agency owners it will never come up.",
+    "## What the scheme is aimed at",
+    "But this isn't for reporting someone over a minor cash-in-hand job.",
+    "The scheme is aimed at high-value tax avoidance or evasion cases where HMRC recovers at least £1.5m in unpaid tax.",
+    "That could include things like:",
+    "1. Offshore tax evasion",
+    "2. Large-scale avoidance schemes",
+    "3. Serious corporate tax fraud",
+    "4. High-value hidden income or assets",
+    "HMRC's own guidance describes cases of this size as normally involving large companies, wealthy individuals, and offshore or avoidance schemes. That is a long way from a marketing agency with a debatable expense claim.",
+    "## How the reward actually works",
+    "The published position is narrower than the headline suggests. A reward is possible where the information leads to the collection of at least £1.5 million in tax, and the payment is between 15% and 30% of the tax collected, excluding penalties and interest. Rewards are at HMRC's discretion and are not guaranteed, and HMRC notes there could be years between a report and any payment because investigations take a long time.",
+    "There is also a list of people who cannot be paid, including anyone who was involved in the arrangements themselves, anyone whose information HMRC already had or could have found through routine processes, and anyone reporting anonymously.",
+    "## Why an agency owner should care at all",
+    "The key point?",
+    "HMRC is now putting bigger financial incentives behind serious tax whistleblowing.",
+    "Read that as a signal about resourcing rather than a threat. HMRC is willing to pay for information about the top end of non-compliance, which tells you where the enforcement attention is going. It also tells you something about aggressive schemes: an arrangement that depends on nobody ever mentioning it to HMRC is now a slightly worse bet than it was.",
+    "## The practical takeaway",
+    "So if someone has genuine information about major tax evasion, HMRC may reward them for coming forward.",
+    "For everyone else, the useful conclusion is the dull one. Keep your own position defensible, use the reliefs that exist properly, and stay away from anything that only works if it is never examined. That is not caution, it is just the version of tax planning that survives contact with a compliance check.",
+    "If you want to know what legitimate planning looks like in practice, [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) covers the reliefs that stand up, and [how to choose a tax adviser for your marketing agency](/blog/how-to-choose-a-tax-adviser-for-your-marketing-agency) covers how to tell a planner from a promoter.",
+    "This is general information about a published HMRC scheme rather than advice, and the terms of the scheme can change, so check the current position. If you want your own position reviewed, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "How much can HMRC's Strengthened Reward Scheme pay?",
+      "answer": "HMRC's guidance states that you could get a reward if the information you provide leads to the collection of at least £1.5 million in tax, and that the reward would be between 15% and 30% of the tax collected, excluding penalties and interest. Rewards are given at HMRC's discretion and are not guaranteed. See [Reporting serious tax avoidance or evasion](https://www.gov.uk/guidance/reporting-serious-tax-avoidance-or-evasion)."
+    },
+    {
+      "question": "What kinds of cases is the scheme for?",
+      "answer": "HMRC says tax avoidance or evasion of this size normally involves large companies, wealthy individuals, and offshore or avoidance schemes. It is not aimed at small-scale or everyday non-compliance. See [Reporting serious tax avoidance or evasion](https://www.gov.uk/guidance/reporting-serious-tax-avoidance-or-evasion)."
+    },
+    {
+      "question": "Who cannot receive a reward?",
+      "answer": "HMRC lists several exclusions, including current or former civil servants who got the information through their work, the taxpayer involved in the evasion or avoidance or anyone who planned it, cases where HMRC already knew the information or could have found it through routine processes, people acting on behalf of someone else, and anonymous reports. Anonymous reports are still accepted, but no payment is made. See [Reporting serious tax avoidance or evasion](https://www.gov.uk/guidance/reporting-serious-tax-avoidance-or-evasion)."
+    },
+    {
+      "question": "Does this mean HMRC is more likely to investigate a small agency?",
+      "answer": "Nothing in the scheme suggests that. It is explicitly pitched at cases recovering at least £1.5 million. HMRC's ordinary compliance work on smaller businesses runs through compliance checks, which are documented separately. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    }
+  ],
+  "related": [
+    "tax-avoidance-vs-tax-evasion",
+    "personal-costs-through-the-business-hmrc-enquiry",
+    "how-to-choose-a-tax-adviser-for-your-marketing-agency"
+  ],
+  "slot": "morning"
+}

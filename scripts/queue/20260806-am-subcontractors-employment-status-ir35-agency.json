@@ -1,0 +1,52 @@
+{
+  "publishAt": "2026-08-06",
+  "slug": "subcontractors-employment-status-ir35-agency",
+  "title": "Your agency's subcontractors: are they really subcontractors?",
+  "tag": "Employment status",
+  "readingTime": "4 min read",
+  "excerpt": "A lot of agencies hire subcontractors while treating them like employees. If the reality looks like employment and you are not running payroll, HMRC can come asking.",
+  "body": [
+    "If you hire subcontractors for your marketing agency, you could be opening yourself up to HMRC scrutiny.",
+    "A lot of agencies hire subcontractors when, in reality, they may be treating them more like employees. This can create issues under employment status rules and, where they operate through their own limited company, potentially IR35.",
+    "## The questions HMRC will ask",
+    "1. Control. Do they decide how, when and where they work, or do you?",
+    "2. Substitution. Can they send someone else to do the work if they are unavailable?",
+    "3. Exclusivity. Can they work for other clients, or are they restricted to only working for you?",
+    "4. Business risk. Do they provide their own equipment, fix mistakes at their own cost, and operate like a real business?",
+    "None of these is decided by one answer. Status is judged on the overall picture of the working relationship, which is why a contract saying self-employed does not settle it. What matters is what actually happens week to week.",
+    "## Why agencies get caught more than most",
+    "The pattern is familiar: a freelancer starts on one project, does well, and a year later they are in your standups, using your tools, working the hours you set, and effectively unavailable to anyone else. Nothing about that arrangement is dishonest. It just stopped being subcontracting somewhere along the way, and the paperwork never caught up.",
+    "## What it costs if the reality does not match the paperwork",
+    "If the reality looks like employment, but you are not operating payroll, HMRC could start asking questions.",
+    "That could lead to PAYE and National Insurance exposure, penalties, and unnecessary attention on the rest of your business. The exposure sits with whoever should have operated payroll, and interest runs from when the tax should have been paid, so an arrangement that has drifted for three years is a three-year problem rather than a current-year one.",
+    "## What to do",
+    "So before you hire subcontractors, make sure the working arrangement actually matches the tax treatment.",
+    "That means being honest about the four questions above at the point you engage someone, and revisiting them when a relationship changes shape. If you want a long-term exclusive person embedded in your team, employing them is not a failure of tax planning, it is simply the accurate description of what you are doing.",
+    "Getting the treatment right also affects what you can claim and how: [what your agency can actually claim as an expense](/blog/agency-expenses-checklist) covers the wider picture. If the question behind this one is how you pay the people at the top rather than the people you contract, [how much an agency founder should actually pay themselves](/blog/how-much-should-agency-founders-pay-themselves) takes that on.",
+    "Employment status is fact-specific and the rules on off-payroll working have changed more than once, so this is general information rather than advice on any particular contractor. If you want your arrangements reviewed before HMRC does it for you, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "How does HMRC decide if someone is employed or self-employed?",
+      "answer": "There is no single test. HMRC's Employment Status Manual sets out that status is determined by the terms and conditions and the reality of the working relationship as a whole, drawing on case law factors including control, personal service and substitution, and whether the person is in business on their own account. See [ESM0500](https://www.gov.uk/hmrc-internal-manuals/employment-status-manual/esm0500)."
+    },
+    {
+      "question": "Is there a tool for checking status?",
+      "answer": "Yes. HMRC provides Check Employment Status for Tax, known as CEST, which gives a view on whether a particular engagement should be treated as employed or self-employed for tax. HMRC will stand by the result where the information given is accurate and the answers reflect the actual working practices. See [Check employment status for tax](https://www.gov.uk/guidance/check-employment-status-for-tax)."
+    },
+    {
+      "question": "Does IR35 apply to my agency when I hire a contractor through their limited company?",
+      "answer": "It can. The off-payroll working rules put responsibility for deciding status, and in some cases for deducting tax, on the client organisation rather than the contractor, depending on the size of the client and whether it is in the public or private sector. Whether your agency is caught turns on those tests, so it needs checking rather than assuming. See [Understanding off-payroll working (IR35)](https://www.gov.uk/guidance/understanding-off-payroll-working-ir35)."
+    },
+    {
+      "question": "Does a written contract saying self-employed protect me?",
+      "answer": "Not on its own. The contract is evidence, but if the day to day reality contradicts it, the reality is what counts. A clause allowing substitution that nobody has ever been allowed to use is a good example of paperwork that will not hold up."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "emi-share-options-incentivise-staff",
+    "personal-costs-through-the-business-hmrc-enquiry"
+  ],
+  "slot": "morning"
+}

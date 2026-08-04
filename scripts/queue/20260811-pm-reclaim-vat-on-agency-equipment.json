@@ -1,0 +1,57 @@
+{
+  "publishAt": "2026-08-11",
+  "slug": "reclaim-vat-on-agency-equipment",
+  "title": "Can you reclaim the VAT on your agency's laptops, cameras and chairs?",
+  "tag": "VAT",
+  "readingTime": "3 min read",
+  "excerpt": "If your agency is VAT registered, the VAT on business equipment is usually recoverable. Private use and the Flat Rate Scheme are the two things that cut the claim down.",
+  "body": [
+    "Can you actually reclaim VAT on your marketing agency's equipment?",
+    "## The short answer",
+    "If your agency is VAT registered, you can usually reclaim the 20% VAT on business equipment.",
+    "That could include:",
+    "1. Laptops",
+    "2. Cameras",
+    "3. Phones",
+    "4. Office chairs",
+    "5. Other equipment used for the business",
+    "The claim goes on the VAT return for the period in which you incurred the cost, alongside everything else you are recovering.",
+    "## What private use does to the claim",
+    "But note, personal use can restrict recovery.",
+    "HMRC's position is that where an item is also for personal use you can only claim the business proportion of the VAT. Its own worked example is a mobile phone with half the calls private, where half the VAT on the purchase price and the plan is recoverable. The same logic reaches the camera you also take on holiday and the chair that lives in a room your family uses.",
+    "That is a judgement you have to be able to show, not one you can assert. Write down how you arrived at the split at the time, not two years later under a compliance check.",
+    "## Keep the invoice, not just the bank line",
+    "Always keep your VAT invoices. HMRC will want to see these if they inspect your books.",
+    "A valid VAT invoice is a condition of the claim, not a nice-to-have. A card statement shows money left the account. It does not show the VAT, the supplier's VAT number, or what was bought, which is exactly what an officer asks for.",
+    "## If you are on the Flat Rate Scheme",
+    "On the Flat Rate Scheme, different rules apply. You can only reclaim VAT on assets costing more than £2,000.",
+    "So a £1,000 phone? No VAT reclaim. But a £3k camera? You're covered.",
+    "Something to weigh up before deciding whether the Flat Rate Scheme is right for you. An agency that buys equipment steadily is giving up real recovery in exchange for a simpler calculation, and [the VAT Flat Rate Scheme for agencies](/blog/vat-flat-rate-scheme-for-agencies) walks through whether that trade is worth making.",
+    "The capital allowances side of the same purchase is a separate question with its own rules, covered in [laptop tax relief and the Annual Investment Allowance](/blog/laptop-tax-relief-agency-annual-investment-allowance). If you are still working out the basics of VAT in an agency, start with [VAT for agencies](/blog/vat-for-agencies).",
+    "VAT rates, the £2,000 capital asset limit and the Flat Rate Scheme rules can change, and how much recovery you get depends on your own facts, so this is general information rather than advice. If you want your equipment claims reviewed properly, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Can I reclaim VAT on equipment I use partly at home?",
+      "answer": "Only the business proportion. HMRC states that if any items are also for personal use, you can only claim the business proportion of the VAT, and you must keep records showing how you arrived at that proportion. See [reclaiming VAT on business expenses](https://www.gov.uk/charge-reclaim-record-vat/reclaim-vat-business-expenses)."
+    },
+    {
+      "question": "Do I need the actual VAT invoice to reclaim?",
+      "answer": "Yes. HMRC requires valid VAT invoices to support an input tax claim, and separately requires you to keep all invoices you receive, original or electronic. A bank statement alone is not a VAT invoice. See [keeping VAT records](https://www.gov.uk/charge-reclaim-record-vat/keeping-vat-records)."
+    },
+    {
+      "question": "What is the £2,000 limit on the Flat Rate Scheme?",
+      "answer": "On the Flat Rate Scheme you generally cannot reclaim VAT on purchases, except for certain capital assets costing more than £2,000 including VAT. HMRC sets out the detail in the Flat Rate Scheme notice, and the limit applies to the asset or single purchase rather than to your annual spend. See [VAT Notice 733](https://www.gov.uk/guidance/flat-rate-scheme-for-small-businesses-vat-notice-733--2)."
+    },
+    {
+      "question": "Can I reclaim VAT on equipment bought before I registered?",
+      "answer": "Sometimes. HMRC allows recovery of VAT on goods bought in the four years before registration where you still have the goods, and on services bought in the six months before, provided they relate to the business now registered. See [reclaiming VAT on business expenses](https://www.gov.uk/charge-reclaim-record-vat/reclaim-vat-business-expenses)."
+    }
+  ],
+  "related": [
+    "vat-flat-rate-scheme-for-agencies",
+    "reclaim-vat-paid-before-you-registered",
+    "laptop-tax-relief-agency-annual-investment-allowance"
+  ],
+  "slot": "evening"
+}

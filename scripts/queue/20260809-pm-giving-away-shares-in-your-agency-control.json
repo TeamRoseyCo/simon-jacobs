@@ -1,0 +1,62 @@
+{
+  "publishAt": "2026-08-09",
+  "slug": "giving-away-shares-in-your-agency-control",
+  "title": "What do you actually give away when you pay someone in shares?",
+  "tag": "Shareholders",
+  "readingTime": "3 min read",
+  "excerpt": "Paying a consultant in equity protects cash flow and quietly costs you control. Drop below 75% and there are decisions you can no longer make on your own.",
+  "body": [
+    "This is why giving away too many shares in your digital marketing agency can make your life harder.",
+    "It's tempting to pay consultants with shares instead of cash to protect cash flow. But be careful how much you give away.",
+    "## Shares are ownership, not a future payment",
+    "Once someone owns shares, you've given them real rights in your company, not just a \"future payment\".",
+    "This is the difference between a promise and a transfer. A bonus you have not paid yet is a liability you control. A share you have issued is somebody else's property, with voting rights, dividend rights and rights to information attached, and you cannot take it back because the relationship cooled.",
+    "It is also worth knowing that handing shares to someone who works for the company is rarely tax-neutral. Where securities are acquired by reason of an employment or office, the employment-related securities rules can bring a charge on the value received, so \"I paid them in equity instead of cash\" can still produce a tax event for the person and a reporting obligation for the company.",
+    "## Drop below 75% and you lose easy control",
+    "If you give away more than 25% in total and you end up owning less than 75%, you can't pass certain key decisions on your own, like:",
+    "1. changing the company articles",
+    "2. major restructures",
+    "3. winding up the company",
+    "4. other special resolutions",
+    "You'll need shareholder approval, and that can slow you down or block you completely.",
+    "The 75% number matters more than most founders expect, because the decisions behind it are exactly the ones you need when something big happens. Restructuring before a sale. Creating a new share class. Winding the company up cleanly. Losing the ability to do those alone does not stop the business trading, it stops you moving quickly at the moment speed is worth the most.",
+    "## More shareholders means more friction",
+    "Too many shareholders = more admin and more friction.",
+    "More people to consult, more signatures, more negotiations, more headaches.",
+    "There is a second-order cost here that shows up years later. A buyer looking at your agency wants a clean cap table and every shareholder signed up to the deal. A minority holder who has stopped being involved, or who cannot be found, is a problem you inherit at the worst possible time.",
+    "## What to do instead",
+    "Consider alphabet shares / different share classes.",
+    "You can give someone dividend rights without handing them the same level of control - and you can keep 75%+ voting control while still incentivising them.",
+    "That is the practical answer for most agencies: separate the economics from the votes. Someone can share in profit without acquiring the ability to veto a restructure. Different share classes need to be set up properly in the articles, and dividend arrangements between classes attract their own scrutiny, so this is a job for documents rather than a verbal understanding.",
+    "If the person you want to reward is an employee rather than an outside consultant, an option is often the better instrument, because nothing changes hands until the conditions you set are met.",
+    "## Before you promise anything",
+    "If you're thinking about giving away equity, speak to a tax adviser first. It's easy to give away control by accident.",
+    "The order matters. Equity conversations tend to happen verbally, in a good mood, and get documented months later on worse terms than either side remembers agreeing. Decide the percentage, the class, the voting rights and what happens if the person leaves, before anybody is told a number.",
+    "A tidy shareholding structure is also part of what makes the business sellable at all, which is the subject of [why clean books mean a higher valuation](/blog/clean-books-higher-valuation), and if the underlying question is really how you take money out of the company then [how much an agency founder should pay themselves](/blog/how-much-should-agency-founders-pay-themselves) is the better starting point.",
+    "Company law and tax rules change, and the consequences depend entirely on your articles and your own facts, so this is general information rather than advice. Before you issue or transfer a single share, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Why is 75% the number that matters?",
+      "answer": "Because certain company decisions require a special resolution rather than a simple majority, so a holder with less than 75% of the votes cannot pass them alone. Changing the articles, some restructures and a voluntary winding up sit in that category. The precise position depends on your own articles, which can set higher thresholds, so they need reading rather than assuming."
+    },
+    {
+      "question": "Is giving shares to someone who works for me a taxable event?",
+      "answer": "It can be. HMRC's Employment Related Securities Manual covers the rules that apply where securities or options are acquired by reason of an employment or office, which can create an income tax charge on the value received and reporting obligations for the employer. Whether they apply depends on the facts and on the relationship. See [ERSM20000](https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm20000) and [ERSM20010](https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm20010)."
+    },
+    {
+      "question": "What are alphabet shares?",
+      "answer": "It is the common name for having separate classes of ordinary share, often labelled A, B and C, with different rights attached. It lets a company give one holder dividend rights without the same voting rights. The rights come from the articles of association, so the documents have to be drafted to do it, and arrangements that shift dividends between classes can attract HMRC attention."
+    },
+    {
+      "question": "Is a share option better than giving shares now?",
+      "answer": "It is a different tool with a different effect. An option only converts into ownership when the conditions you set are met, so you keep control in the meantime, and tax-advantaged schemes exist for employees. HMRC's guidance on tax-advantaged share schemes sets out the conditions. See [ETASSUM50000](https://www.gov.uk/hmrc-internal-manuals/employee-tax-advantaged-share-scheme-user-manual/etassum50000)."
+    }
+  ],
+  "related": [
+    "clean-books-higher-valuation",
+    "emi-share-options-incentivise-staff",
+    "how-much-should-agency-founders-pay-themselves"
+  ],
+  "slot": "evening"
+}

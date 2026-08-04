@@ -1,0 +1,51 @@
+{
+  "publishAt": "2026-08-19",
+  "slug": "seis-rd-credits-emi-reliefs-agencies",
+  "title": "Three tax reliefs most marketing agency owners never look at",
+  "tag": "Tax reliefs",
+  "readingTime": "3 min read",
+  "excerpt": "SEIS, R&D tax credits and EMI share schemes. Three reliefs written into law that agency owners routinely leave alone, usually because nobody ever told them the conditions.",
+  "body": [
+    "If you run a marketing agency and you don't know about these tax reliefs, you're leaving cash on the table.",
+    "None of these are clever. They are statutory reliefs with published conditions, which is exactly what makes them worth using.",
+    "## 1. SEIS relief",
+    "If you're looking to raise investment, getting Seed Enterprise Investment Scheme status can mean your investors pay no tax when they buy and sell your shares. That makes your company a much more attractive opportunity for them.",
+    "The mechanism is that SEIS gives tax reliefs to individual investors who buy new shares in a qualifying company, so the scheme improves the deal for the person writing the cheque rather than for the company directly. There are conditions on the company, on the money raised and on what it is spent on, and HMRC operates an advance assurance process precisely because companies want to know where they stand before they go out and raise.",
+    "## 2. R&D tax credits",
+    "If you're developing in-house software or doing anything that goes beyond the industry norm, you could be entitled to R&D tax credits. As things stand, spending £500k on qualifying R&D could reduce your tax bill by around £75k, potentially wiping it out entirely.",
+    "Treat those numbers as an illustration of the scale rather than a quote for your claim. The credit is calculated by applying an expenditure credit rate to your qualifying expenditure, and the rate depends on the period and the regime you fall under, so the net benefit for a given year has to be worked out from the current rules.",
+    "The harder question is what qualifies. R&D for tax purposes means work seeking an advance in science or technology and resolving scientific or technological uncertainty, which is not the same thing as a difficult client project or a creative first. Building genuinely novel in-house software can qualify. Running an unusually good campaign does not. Claims in this area have had close HMRC attention, so the evidence for the technical uncertainty matters as much as the spend.",
+    "## 3. EMI share schemes",
+    "If you want to incentivise your staff, EMI share options can be far more tax efficient than handing out extra salary. There's typically no income tax or NIC when the options are granted, and just 18% capital gains tax when they're eventually sold.",
+    "The 18% is illustrative too: HMRC's published rates give 18% on gains falling within the basic rate band and 24% above it from 6 April 2026, so the actual rate depends on the employee's own income and gain in the year of sale. EMI also carries strict conditions on the company, the employee and the options, plus a notification to HMRC with a deadline, and a scheme that fails the conditions loses the treatment.",
+    "## Why agency owners miss all three",
+    "The pattern is the same in each case. The relief exists, the conditions are published, and nobody looks because the assumption is that reliefs are for tech companies. Two of the three are specifically useful to a growing agency: EMI if you are trying to keep the people who make the business work, SEIS if you are raising.",
+    "Rates and thresholds can shift, so always check the current position before acting on any of these.",
+    "For the reliefs and deductions that apply without any special status at all, [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) is the starting list, and [three tax moves for agency owners in 2026/27](/blog/three-tax-moves-agency-owners-2026-27) covers the personal side.",
+    "Whether your company and your circumstances qualify is entirely fact-dependent, so this is general information rather than advice. If you want any of the three assessed properly before you commit to it, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "What does SEIS actually do for my investors?",
+      "answer": "HMRC's guidance explains that the Seed Enterprise Investment Scheme is designed to help new companies raise money by offering tax reliefs to individual investors who buy new shares in the company, subject to conditions on the company and the investment. Companies can also seek advance assurance from HMRC. See [Apply to use the Seed Enterprise Investment Scheme](https://www.gov.uk/guidance/venture-capital-schemes-apply-to-use-the-seed-enterprise-investment-scheme)."
+    },
+    {
+      "question": "Would a marketing agency qualify for R&D tax relief?",
+      "answer": "Only for work that meets the definition of R&D for tax purposes, which centres on seeking an advance in science or technology and resolving technological uncertainty. Developing genuinely novel in-house software may qualify; ordinary creative or campaign work does not. HMRC publishes the guidance on what counts and how to claim. See [Claiming Research and Development tax relief](https://www.gov.uk/government/collections/research-and-development-rd-tax-relief)."
+    },
+    {
+      "question": "How is an R&D claim calculated?",
+      "answer": "HMRC's guidance sets out working out qualifying costs and applying the relevant expenditure credit rate, which has varied by period, so the benefit for any given accounting period depends on the rate and regime that apply to it. Any illustrative figure should be recalculated against the current rates. See [Work out your Research and Development tax relief](https://www.gov.uk/guidance/work-out-your-research-and-development-tax-relief)."
+    },
+    {
+      "question": "What rate of Capital Gains Tax applies when EMI shares are sold?",
+      "answer": "It depends on the employee's income and gain. HMRC's published rates give 18% on gains within the basic rate band and 24% above it from 6 April 2026, and separate rates can apply where a business relief is available. The EMI conditions themselves are in HMRC's share schemes manual. See [Capital Gains Tax rates](https://www.gov.uk/capital-gains-tax/rates) and [ETASSUM50000](https://www.gov.uk/hmrc-internal-manuals/employee-tax-advantaged-share-scheme-user-manual/etassum50000)."
+    }
+  ],
+  "related": [
+    "emi-share-options-incentivise-staff",
+    "how-to-reduce-your-agencys-corporation-tax",
+    "three-tax-moves-agency-owners-2026-27"
+  ],
+  "slot": "evening"
+}

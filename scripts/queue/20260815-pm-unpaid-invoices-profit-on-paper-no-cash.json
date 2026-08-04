@@ -1,0 +1,52 @@
+{
+  "publishAt": "2026-08-15",
+  "slug": "unpaid-invoices-profit-on-paper-no-cash",
+  "title": "Profitable on paper, empty in the bank: where did your agency's cash go?",
+  "tag": "Cash flow",
+  "readingTime": "3 min read",
+  "excerpt": "An invoice becomes income the day you raise it, not the day it clears. Which means you can owe tax on money that is still sitting in a client's account.",
+  "body": [
+    "If you're wondering why your marketing agency has no cash, unpaid invoices might be the reason.",
+    "## Income is recorded when you invoice, not when you get paid",
+    "When you send an invoice to a client, it gets recorded as sales income straight away, but it won't actually show up in your bank account until you get paid.",
+    "So you could have £100k sitting as sales income, your P&L looking healthy, and your bank balance telling a completely different story.",
+    "This is not a bookkeeping quirk. Company accounts are prepared on an accruals basis, which means revenue lands in the period you earned it rather than the period the money arrived. The profit figure is honest. It just is not a cash figure, and reading it as one is how founders talk themselves into a dividend they cannot fund.",
+    "## The bit that stings: you are taxed on it anyway",
+    "Corporation Tax follows the accounting profit, so a large unpaid invoice raises your tax bill in the year you raised it. The tax is payable on a fixed date whether or not the client has paid, which is why a debtor book and a Corporation Tax deadline arriving in the same month is a genuinely dangerous combination.",
+    "VAT works the same way by default. On standard VAT accounting the output tax is due by reference to the invoice date, so you can be paying HMRC VAT you have not collected. There are two things that soften this. The Cash Accounting Scheme lets eligible businesses account for VAT when they are paid rather than when they invoice. And where a debt genuinely goes bad, VAT bad debt relief allows a claim once conditions are met, including that six months have passed since payment was due and that the debt has been written off in your VAT accounts.",
+    "If a debt is ultimately irrecoverable, a bad debt deduction for Corporation Tax is a separate question with its own rules. Neither is a substitute for collecting the money.",
+    "## What to actually do",
+    "Check your unpaid invoices on your accounting software and see how many have actually been paid.",
+    "If they're not settled within 30 days, it's worth chasing your clients. That's real cash sitting outside your business.",
+    "Look at your aged debtors report rather than your bank balance, and look at it in bands. Anything past thirty days needs a name against it. Anything past ninety needs a decision rather than another polite email.",
+    "## Making it less likely next time",
+    "The pattern that causes this is almost always structural rather than personal. Long payment terms agreed in a pitch nobody wanted to lose. No deposit. Invoicing at the end of a project instead of monthly. One person who owns delivery and nobody who owns collection.",
+    "Shorter terms, staged invoicing, and a standing weekly look at the debtors list will do more for your cash position than any tax planning will.",
+    "A debtor book that is not being managed also shows up when someone else is reading your numbers, which is the point of [clean books and a higher valuation](/blog/clean-books-higher-valuation). And if the Corporation Tax bill is the immediate pressure, [how to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) covers the legitimate levers.",
+    "Rules, rates and scheme thresholds change and eligibility depends on your own facts, so this is general information rather than advice. If your profit and your bank balance have stopped resembling each other, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Do I pay Corporation Tax on invoices a client has not paid?",
+      "answer": "Generally yes, because taxable profit follows the accounts, which recognise the sale when it is earned rather than when it is paid. Relief comes later, if at all: HMRC's guidance on bad and doubtful debts sets out when a deduction for an unrecoverable debt is available. See [BIM42701](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim42701)."
+    },
+    {
+      "question": "Can I stop paying VAT on invoices before the client pays?",
+      "answer": "The Cash Accounting Scheme is designed for that. It lets eligible VAT registered businesses account for VAT on the basis of payments received and made rather than invoice dates. There are turnover conditions to join and to stay in, and thresholds change, so check the current position. See [VAT Cash Accounting Scheme](https://www.gov.uk/vat-cash-accounting-scheme)."
+    },
+    {
+      "question": "What is VAT bad debt relief and when can I claim it?",
+      "answer": "It allows you to reclaim VAT you have already accounted for on a supply that has not been paid, subject to conditions. HMRC's notice requires that you have accounted for and paid the VAT, that the debt has been written off in your day to day VAT accounts and transferred to a separate bad debt account, and that six months have passed since the relevant date. Claims are generally subject to a four year and six month time limit. See [VAT Notice 700/18](https://www.gov.uk/guidance/relief-from-vat-on-bad-debts-notice-70018)."
+    },
+    {
+      "question": "Should I take a dividend out of profit I have not collected?",
+      "answer": "Treat that as a separate question from the profit figure. Dividends must be paid out of distributable profits, and the practical constraint is whether the company can fund the payment without leaving itself unable to meet liabilities such as VAT, PAYE and Corporation Tax. A healthy profit and loss account with a large unpaid debtor book is not the same as available cash. See [company and accounting records](https://www.gov.uk/running-a-limited-company/company-and-accounting-records)."
+    }
+  ],
+  "related": [
+    "clean-books-higher-valuation",
+    "audit-your-agency-software-spend",
+    "how-to-reduce-your-agencys-corporation-tax"
+  ],
+  "slot": "evening"
+}

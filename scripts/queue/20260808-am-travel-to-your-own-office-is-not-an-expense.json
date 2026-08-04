@@ -1,0 +1,54 @@
+{
+  "publishAt": "2026-08-08",
+  "slug": "travel-to-your-own-office-is-not-an-expense",
+  "title": "Is travelling to your own office a business expense?",
+  "tag": "Expenses",
+  "readingTime": "3 min read",
+  "excerpt": "Travel to your normal place of work is not a business expense, and a temporary office can quietly become your normal one. Two numbers decide it: 24 months and 40%.",
+  "body": [
+    "If you claim travel to your office as a business expense, you could end up with an expensive tax bill.",
+    "## Your commute is not a business cost",
+    "Travel to your normal place of work isn't a business expense.",
+    "This catches agency owners out because it feels like a business journey. You are going there to work, the office is in the company's name, the train ticket is on the company card. None of that matters. The cost of getting from home to a permanent workplace is ordinary commuting, and HMRC's guidance is clear that travel to a permanent workplace is not deductible.",
+    "A permanent workplace, in HMRC's words, is a place an employee attends regularly for the performance of the duties of the employment. Note that you can have more than one at the same time, so running two offices does not turn either journey into business travel.",
+    "## The trap in the phrase temporary workplace",
+    "That includes temporary workplaces too - if you're expected to work there for more than 24 months and for at least 40% of your working time, HMRC treats it the same as your normal office.",
+    "This is the part people miss. A temporary workplace is somewhere you go to perform a task of limited duration or for a temporary purpose, and travel there is deductible. But there is a further rule: where you attend a workplace in the course of a period of continuous work that lasts, or is likely to last, more than 24 months, it stops being a temporary workplace and becomes a permanent one.",
+    "Two details in that rule do most of the damage. First, it is about expectation, not hindsight. If you are expected from the start to be there beyond 24 months, the travel is not deductible from day one, not from month 25. Second, the test looks at whether the duties are performed to a significant extent at that place, which HMRC applies using a 40% of working time measure.",
+    "## What does still count",
+    "But if you're travelling to a client's office, a business meeting, or a temporary workplace where you spend less than 40% of your time or less than 24 months, that can count as a genuine business expense.",
+    "For most agencies that is the bulk of the real travel: pitches, client sites, shoots, a studio, an industry event. Those journeys are the ones worth recording carefully, because they are the ones you can actually claim.",
+    "## Where the line goes fuzzy",
+    "The line between the two isn't always obvious, so before you claim it, run it past a tax adviser and check it actually qualifies.",
+    "The awkward cases are the ones agencies now live in. A coworking desk you use three days a week for years. A retained client whose office you effectively work from. A home office plus a city office where you cannot say which is the main one. None of those has an obvious answer from the invoice alone, and the answer can change over time as the pattern of your week changes.",
+    "## The cost of getting it wrong",
+    "Get it wrong and you're looking at disallowed expenses and a bill you didn't budget for.",
+    "Worth being clear about what that bill is. Travel that is not allowable and has been paid by the company is not simply removed from the accounts. It can become a taxable benefit or additional earnings for the director as well as a disallowed cost for the company, so one wrong assumption can produce two adjustments.",
+    "Keep a note of the purpose of each journey rather than just the receipt, and review the pattern once a year rather than once at the start. Travel sits alongside the rest of the expenses picture in [what an agency can and cannot expense](/blog/agency-expenses-checklist), and if the journeys are in your own car the choice between mileage and capital allowances is set out in [selling a business car](/blog/selling-a-business-car-capital-allowances-vs-mileage).",
+    "The rules and the way HMRC applies them change, and the answer depends entirely on your own working pattern, so this is general information rather than advice on your situation. If you want your travel claims checked before they go in a return, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Why is travel to my own office not deductible?",
+      "answer": "Because it is ordinary commuting. HMRC's guidance defines a permanent workplace as a place an employee attends regularly for the performance of the duties of the employment, and states that the cost of travel to a permanent workplace is not deductible under Section 338 ITEPA 2003. See [EIM32065](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32065)."
+    },
+    {
+      "question": "What is the 24 month rule?",
+      "answer": "HMRC's guidance explains that a workplace is not a temporary workplace where the employee attends it in the course of a period of continuous work that lasts, or is likely to last, more than 24 months, and that where this rule applies the workplace is a permanent workplace. Continuous work is measured by whether the duties are performed to a significant extent at that place. See [EIM32080](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32080)."
+    },
+    {
+      "question": "Where does the 40% figure come from?",
+      "answer": "It is how HMRC measures whether duties are performed to a significant extent at a workplace when applying the 24 month rule. HMRC's guidance on limited duration sets out that test. Because it is a proportion of working time, the answer can change if the shape of your week changes. See [EIM32080](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32080) and [EIM32075](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32075)."
+    },
+    {
+      "question": "Can I claim travel to a client meeting?",
+      "answer": "Travel for necessary attendance at a temporary workplace, such as a one-off client meeting or a short project, is generally deductible under the rules HMRC sets out in its travel expenses guidance. Keep a record of the purpose of the journey, not just the ticket. See [EIM32000](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim32000)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "selling-a-business-car-capital-allowances-vs-mileage",
+    "overseas-business-trip-expenses"
+  ],
+  "slot": "morning"
+}

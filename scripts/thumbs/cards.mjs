@@ -145,6 +145,176 @@ export const cards = [
     highlight: "not disappear",
     flip: true,
   },
+  {
+    slug: "employment-allowance-national-insurance-agency",
+    hook: "The relief most agencies never claim",
+    highlight: "never claim",
+  },
+  {
+    slug: "vat-flat-rate-scheme-for-agencies",
+    hook: "Flat Rate VAT: saving or trap?",
+    highlight: "or trap?",
+    flip: true,
+  },
+  {
+    slug: "subcontractors-employment-status-ir35-agency",
+    hook: "Are they really subcontractors?",
+    highlight: "subcontractors?",
+  },
+  {
+    slug: "emi-share-options-incentivise-staff",
+    hook: "Reward your best employee, not HMRC",
+    highlight: "not HMRC",
+    flip: true,
+  },
+  {
+    slug: "client-entertaining-vs-staff-entertaining-tickets",
+    hook: "Same seat, different guest, different tax",
+    highlight: "different tax",
+  },
+  {
+    slug: "pre-trading-expenses-agency",
+    hook: "Costs you paid before you started",
+    highlight: "before you started",
+    flip: true,
+  },
+  {
+    slug: "travel-to-your-own-office-is-not-an-expense",
+    hook: "Your commute is not an expense",
+    highlight: "not an expense",
+  },
+  {
+    slug: "trivial-benefits-staff-gifts-directors",
+    hook: "A gift with no tax bill",
+    highlight: "no tax bill",
+    flip: true,
+  },
+  {
+    slug: "dividends-your-company-receives-are-usually-tax-free",
+    hook: "Dividends your company receives",
+    highlight: "receives",
+  },
+  {
+    slug: "giving-away-shares-in-your-agency-control",
+    hook: "Shares are not just a payment",
+    highlight: "a payment",
+    flip: true,
+  },
+  {
+    slug: "sell-your-agency-holdco-or-non-resident",
+    hook: "Selling up without a tax shock",
+    highlight: "tax shock",
+  },
+  {
+    slug: "too-much-cash-in-your-agency-badr",
+    hook: "Too much cash can cost relief",
+    highlight: "cost relief",
+    flip: true,
+  },
+  {
+    slug: "reclaim-vat-paid-before-you-registered",
+    hook: "VAT you paid before registering",
+    highlight: "before registering",
+  },
+  {
+    slug: "reclaim-vat-on-agency-equipment",
+    hook: "Laptops, cameras, chairs and VAT",
+    highlight: "and VAT",
+    flip: true,
+  },
+  {
+    slug: "closing-your-company-to-avoid-tax-phoenixing",
+    hook: "Closing down is not a strategy",
+    highlight: "not a strategy",
+  },
+  {
+    slug: "branded-clothing-and-staff-uniform-tax-relief",
+    hook: "The logo does the work",
+    highlight: "the work",
+    flip: true,
+  },
+  {
+    slug: "phones-for-staff-tax-free",
+    hook: "One phone per employee",
+    highlight: "per employee",
+  },
+  {
+    slug: "are-subscriptions-a-business-expense",
+    hook: "Which subscriptions can you claim?",
+    highlight: "you claim?",
+    flip: true,
+  },
+  {
+    slug: "courses-and-books-as-business-expenses",
+    hook: "Business expense or personal one?",
+    highlight: "personal one?",
+  },
+  {
+    slug: "what-happens-if-you-lose-a-receipt",
+    hook: "Lost the receipt. Now what?",
+    highlight: "Now what?",
+    flip: true,
+  },
+  {
+    slug: "audit-your-agency-software-spend",
+    hook: "Audit what you spend on tools",
+    highlight: "on tools",
+  },
+  {
+    slug: "unpaid-invoices-profit-on-paper-no-cash",
+    hook: "Profitable, but no cash",
+    highlight: "no cash",
+    flip: true,
+  },
+  {
+    slug: "personal-costs-through-the-business-hmrc-enquiry",
+    hook: "When HMRC finds a personal cost",
+    highlight: "personal cost",
+  },
+  {
+    slug: "hmrc-connect-social-media-lifestyle",
+    hook: "HMRC can read your feed too",
+    highlight: "your feed too",
+    flip: true,
+  },
+  {
+    slug: "hmrc-reward-scheme-reporting-tax-evasion",
+    hook: "HMRC pays for serious information",
+    highlight: "serious information",
+  },
+  {
+    slug: "tax-avoidance-vs-tax-evasion",
+    hook: "Evasion is the illegal one",
+    highlight: "illegal one",
+    flip: true,
+  },
+  {
+    slug: "four-tax-free-allowances-agency-owners",
+    hook: "Four allowances worth knowing",
+    highlight: "worth knowing",
+  },
+  {
+    slug: "high-income-child-benefit-charge",
+    hook: "The Child Benefit clawback",
+    highlight: "clawback",
+    flip: true,
+  },
+  {
+    slug: "is-gold-exempt-from-capital-gains-tax",
+    hook: "Is your gold really tax-free?",
+    highlight: "tax-free?",
+  },
+  {
+    slug: "seis-rd-credits-emi-reliefs-agencies",
+    hook: "Three reliefs most owners miss",
+    highlight: "most owners miss",
+    flip: true,
+  },
+  {
+    slug: "overseas-business-trip-expenses",
+    hook: "Prove the business purpose",
+    highlight: "business purpose",
+  },
 ];
 
 export default cards;

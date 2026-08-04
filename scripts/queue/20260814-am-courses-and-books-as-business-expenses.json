@@ -1,0 +1,56 @@
+{
+  "publishAt": "2026-08-14",
+  "slug": "courses-and-books-as-business-expenses",
+  "title": "Is that £5k course a business expense or a personal one?",
+  "tag": "Expenses",
+  "readingTime": "4 min read",
+  "excerpt": "Training that sharpens skills you already use in the agency is normally deductible. Training that buys you a new career is capital, and HMRC has case law to back that up.",
+  "body": [
+    "Can you claim personal development as a business expense?",
+    "Books, courses, and training can all be treated as business expenses, as long as they're wholly and exclusively for the purposes of your business.",
+    "## The line HMRC actually draws",
+    "If the course improves skills you use in the business (sales, marketing, delivery, systems, leadership), it's usually easier to justify as wholly and exclusively for the business.",
+    "But if it's a brand new skill unrelated to your trade, HMRC are likely to disallow it. Example: learning crypto trading when you run a digital marketing agency.",
+    "HMRC's own guidance says almost exactly this. Training is normally revenue expenditure if it updates or provides expertise or knowledge in the individual's existing business area, and costs incurred to keep pace with advancements in technology and changes in industry practice related to that area will usually be allowable. Courses ancillary to the main trade, its examples are introductory bookkeeping and digital skills, may also qualify depending on the circumstances.",
+    "Expenditure on training unrelated to the existing business area, for example something that lets you start a new business or expand into an unrelated one, is unlikely to be allowable.",
+    "## Why the reason for disallowance is not always duality",
+    "This is the part worth understanding, because it is a different mechanism from the one that catches your streaming subscription.",
+    "A course in a genuinely new field can fail not because it is personal but because it is capital. In Dass, a taxpayer trading as an English tutor and tribunal adviser took a course towards a law diploma. The Special Commissioner found the fees were capital, on the basis that the course was one to equip him with a new qualification that would have enabled him to venture into new areas of practice. The High Court upheld it.",
+    "So the question is not only whether you enjoyed it. It is whether you came out of it doing the same job better or doing a different job at all. A marketing course for a marketer is the first. A law conversion for a marketer is the second, however genuinely you intend to use it.",
+    "## Books and the honest version of the test",
+    "A marketing book that sharpens your existing sales and marketing skills? That's a legitimate business expense.",
+    "A week-long yoga or ayahuasca retreat, claiming it helps you focus on the business? That won't slide with HMRC.",
+    "The line comes down to whether it's genuinely improving skills you already use in the business, or whether it's really personal wellbeing dressed up as a deduction.",
+    "## If you are paying for your team's training",
+    "Different rules, and generally friendlier ones. Where an employee is in work-related training, HMRC says there is nothing to report and no tax or National Insurance to pay, and the exemption extends to related costs such as books and travel while training. Training that falls outside it becomes a reportable benefit, with the National Insurance treatment depending on whether you arranged it or the employee did.",
+    "That is worth knowing before you decide whose name a course goes in.",
+    "## Before you commit the money",
+    "Before you shell out £1k to £10k or more on a course, run it by a tax adviser so you don't get stung later.",
+    "The general rules on what an agency can put through are in [the agency expenses checklist](/blog/agency-expenses-checklist), and if the course is being bought partly as a perk for the team, [trivial benefits, staff gifts and directors](/blog/trivial-benefits-staff-gifts-directors) covers where the cheaper line sits.",
+    "Whether a particular course is revenue or capital, and business or personal, turns on your own facts, and the rules change, so this is general information rather than advice. If you want a view before you put down a deposit, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Is a course in my existing field deductible?",
+      "answer": "Usually. HMRC states that expenditure on training is normally revenue expenditure if it updates or provides expertise or knowledge in the individual's existing business area, including training to keep pace with advances in technology and changes in industry practice. It must still be incurred wholly and exclusively for the purposes of the trade. See [BIM42526](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim42526)."
+    },
+    {
+      "question": "Why would HMRC call a course capital rather than personal?",
+      "answer": "Because a new qualification can be an enduring asset rather than a running cost. HMRC cites Dass, where fees for a course towards a law diploma were held capital on the basis that it equipped the taxpayer with a new qualification enabling him to venture into new areas of practice, unrelated to his existing trade. See [BIM35660](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim35660)."
+    },
+    {
+      "question": "Can I claim marketing books?",
+      "answer": "Books that support skills you already use in the trade are ordinary revenue costs and normally allowable, subject to the same wholly and exclusively test as anything else. HMRC's guidance treats books as a related cost alongside training. Keep the invoice and be able to explain the business purpose. See [BIM37007](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim37007)."
+    },
+    {
+      "question": "What about training I pay for my employees?",
+      "answer": "HMRC states you do not have to report anything or pay tax and National Insurance if the employee is in work-related training, and that this covers the cost of training plus related costs such as books and travel while training. Training outside the exemption is reportable, with Class 1A or Class 1 National Insurance depending on who arranged it. See [expenses and benefits: training payments](https://www.gov.uk/expenses-and-benefits-training-payments/whats-exempt)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "are-subscriptions-a-business-expense",
+    "trivial-benefits-staff-gifts-directors"
+  ],
+  "slot": "morning"
+}

@@ -1,0 +1,50 @@
+{
+  "publishAt": "2026-08-17",
+  "slug": "tax-avoidance-vs-tax-evasion",
+  "title": "Is tax avoidance illegal? The difference that actually matters",
+  "tag": "Tax planning",
+  "readingTime": "3 min read",
+  "excerpt": "Most people think tax avoidance is illegal. It is tax evasion that is illegal. Here is where the line sits, what HMRC means when it uses the word avoidance, and why proper planning is the route that survives scrutiny.",
+  "body": [
+    "Most people think tax avoidance is illegal. It's actually tax evasion that's illegal.",
+    "The two words get used as though they are the same thing, usually by people who want you to feel guilty about claiming a relief that Parliament wrote into law on purpose.",
+    "## The two definitions",
+    "1. Tax avoidance: using existing tax laws and reliefs legally to reduce the amount of tax you pay",
+    "2. Tax evasion: hiding income and illicitly trying to dodge tax owed to HMRC",
+    "Evasion is the one with handcuffs attached. It is not a technical argument about interpretation, it is concealment: income that never appears, invoices that are never recorded, costs that never happened.",
+    "## What HMRC means when it says avoidance",
+    "One thing worth knowing, because the wording trips people up. HMRC uses the word avoidance more narrowly than everyday speech does. Its guidance describes tax avoidance as bending the rules of the tax system to try to gain a tax advantage that Parliament never intended, often through contrived, artificial transactions that serve little purpose other than producing that advantage, operating within the letter but not the spirit of the law.",
+    "So there are really three things, not two. There is evasion, which is illegal. There is the contrived scheme, which is legal in form but which HMRC will challenge, and which HMRC says mostly does not work, with users ending up paying more than the tax they tried to avoid plus penalties. And then there is ordinary tax planning: pension contributions, the right salary and dividend mix, capital allowances, using the allowances you are entitled to. That last category is what a tax adviser should be doing for you, and it is not controversial in the slightest.",
+    "## What a good adviser does with the difference",
+    "Any good tax adviser knows the difference, and any good tax adviser will do proper tax planning so you're paying the least amount of tax legally possible as a business owner.",
+    "The tell is where the saving comes from. If it comes from a relief with a name, conditions and a statutory home, you can explain it to HMRC in a sentence. If it comes from a structure whose only purpose is the tax result, and the explanation takes a diagram, that is a different kind of product being sold to you.",
+    "## If you are paying a lot and have never looked",
+    "If you're currently paying 50-60% in tax every year and haven't looked at ways to change that, you could be missing out on thousands of pounds that should be back in your pocket through the right tax planning and structuring.",
+    "That combined rate usually comes from stacking: corporation tax on profit, then dividend tax personally, then a threshold effect on top. The reliefs that pull it back down are unremarkable and mostly sit in plain sight. [How to reduce your agency's corporation tax](/blog/how-to-reduce-your-agencys-corporation-tax) covers the company side, and [the 60% tax trap](/blog/the-60-percent-tax-trap) covers the personal band where the marginal rate quietly spikes.",
+    "Rates, reliefs and thresholds change and the right answer depends entirely on your own numbers, so this is general information rather than advice. If you want a proper look at your position, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "Is tax avoidance illegal in the UK?",
+      "answer": "Legitimately using reliefs and allowances written into tax law is not illegal. HMRC uses the term tax avoidance more narrowly, for bending the rules of the tax system to gain a tax advantage Parliament never intended, often through contrived and artificial transactions. HMRC says most such schemes simply do not work and users may end up paying much more than the tax they tried to avoid, including penalties. See [Introduction to tax avoidance](https://www.gov.uk/guidance/tax-avoidance-an-introduction)."
+    },
+    {
+      "question": "What is tax evasion?",
+      "answer": "Evasion is deliberately hiding income or misrepresenting your position to escape tax you owe. It is a criminal matter, unlike an argument over whether a deduction is allowable. HMRC treats deliberate behaviour differently from carelessness when it charges penalties. See [CC/FS7A](https://www.gov.uk/government/publications/compliance-checks-penalties-for-inaccuracies-in-returns-or-documents-ccfs7a)."
+    },
+    {
+      "question": "How can I tell if a scheme I have been offered is a problem?",
+      "answer": "HMRC publishes warning signs, including a saving that sounds too good to be true, payment routed as loans or other untaxed payments, benefits out of proportion to the money actually generated, and arrangements involving chains of companies, trusts or partnerships often based offshore. See [Introduction to tax avoidance](https://www.gov.uk/guidance/tax-avoidance-an-introduction)."
+    },
+    {
+      "question": "Does claiming a relief make me more likely to be investigated?",
+      "answer": "Claiming a relief you are entitled to, correctly and with the evidence to support it, is what the relief exists for. HMRC can check any return, and what it looks at in a check is published. The protection is accuracy and records, not modesty about claims. See [Tax compliance checks](https://www.gov.uk/tax-compliance-checks)."
+    }
+  ],
+  "related": [
+    "how-to-choose-a-tax-adviser-for-your-marketing-agency",
+    "how-to-reduce-your-agencys-corporation-tax",
+    "hmrc-reward-scheme-reporting-tax-evasion"
+  ],
+  "slot": "evening"
+}

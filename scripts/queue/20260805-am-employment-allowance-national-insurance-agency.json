@@ -1,0 +1,54 @@
+{
+  "publishAt": "2026-08-05",
+  "slug": "employment-allowance-national-insurance-agency",
+  "title": "If your agency has employees, do not miss the £10,500 National Insurance relief",
+  "tag": "National Insurance",
+  "readingTime": "3 min read",
+  "excerpt": "Employment Allowance lets eligible employers cut their employer's National Insurance bill by up to £10,500 a tax year. There is one trap that stops most one-person agencies claiming it.",
+  "body": [
+    "If your marketing agency has employees, there is a National Insurance relief from HMRC worth up to £10,500 a year that a surprising number of agency owners have never claimed.",
+    "It is called Employment Allowance.",
+    "## What Employment Allowance actually does",
+    "It allows eligible employers to reduce their employer's National Insurance bill by up to £10,500 per tax year.",
+    "This can be huge if your agency has staff on payroll. If you are paying employer's National Insurance each month, the allowance can reduce or even wipe out that bill until the £10,500 limit is used.",
+    "Note what it does not do. It reduces the employer's National Insurance your company pays. It does not touch the National Insurance or income tax your employees pay on their own wages, and it does not reduce your corporation tax bill directly, though a smaller National Insurance cost does mean a slightly higher taxable profit.",
+    "## Who can claim it",
+    "You may be able to claim if:",
+    "1. You have employees on payroll",
+    "2. You have employer's Class 1 National Insurance to pay",
+    "3. Your company is not caught by the single-director restriction",
+    "4. You meet the wider eligibility rules",
+    "## The trap that catches most agency owners",
+    "If you are a one-person company and the only employee is the sole director, you cannot claim.",
+    "This is the rule that quietly disqualifies a lot of founder-only agencies. HMRC's wording is that if your company has only one director, they must not be the only employee liable for secondary Class 1 National Insurance. So the moment you take on your first properly paid employee alongside yourself, the position can change, and it is worth checking again rather than assuming the answer is still no.",
+    "## What to do about it",
+    "If your marketing agency has staff, check whether you are eligible, because this could save you thousands in employer's National Insurance.",
+    "It is claimed through your payroll software as part of your normal submissions rather than by writing to HMRC, so in practice this is a conversation with whoever runs your payroll. If you have had staff for a while and have never claimed, ask whether earlier years can still be picked up.",
+    "How you pay your team and how you pay yourself are two different questions, and the second one has its own answers: [how much an agency founder should actually pay themselves](/blog/how-much-should-agency-founders-pay-themselves) covers the salary and dividend side. If you are looking for the wider set of moves available this tax year, [three tax moves for agency owners in 2026/27](/blog/three-tax-moves-agency-owners-2026-27) is the short list.",
+    "Figures and thresholds change, and eligibility turns on your own payroll facts, so treat this as general information rather than advice on your situation. If you want your payroll position checked properly, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "How much is Employment Allowance worth?",
+      "answer": "HMRC states that Employment Allowance allows eligible employers to reduce their annual National Insurance liability by up to £10,500. It is a reduction in the employer's National Insurance the company pays, not a cash payment. See [Employment Allowance](https://www.gov.uk/claim-employment-allowance)."
+    },
+    {
+      "question": "Can a one-person limited company claim Employment Allowance?",
+      "answer": "Generally no. HMRC's eligibility guidance is explicit: if your company has only one director, they must not be the only employee liable for secondary Class 1 National Insurance. So a sole director who is the only person on the payroll above the secondary threshold cannot claim. Take on another employee paid above that threshold and the position needs looking at again. See [Employment Allowance eligibility](https://www.gov.uk/claim-employment-allowance/eligibility)."
+    },
+    {
+      "question": "Which employers can claim it?",
+      "answer": "HMRC's National Insurance Manual states that Employment Allowance can be claimed by most employers who pay secondary Class 1 National Insurance contributions on their employees, with categories including businesses, charities and community amateur sports clubs. There are further conditions, including a public sector work test. See [NIM06510](https://www.gov.uk/hmrc-internal-manuals/national-insurance-manual/nim06510) and the [eligibility guidance](https://www.gov.uk/claim-employment-allowance/eligibility)."
+    },
+    {
+      "question": "Does Employment Allowance reduce my corporation tax too?",
+      "answer": "Not directly. It reduces the employer's National Insurance your company pays. Because that National Insurance was itself a deductible cost, paying less of it leaves slightly more taxable profit, so the cash saving is real but a little smaller than £10,500 once corporation tax is taken into account."
+    }
+  ],
+  "related": [
+    "three-tax-moves-agency-owners-2026-27",
+    "how-much-should-agency-founders-pay-themselves",
+    "agency-expenses-checklist"
+  ],
+  "slot": "morning"
+}

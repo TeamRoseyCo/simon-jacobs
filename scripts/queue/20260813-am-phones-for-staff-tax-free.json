@@ -1,0 +1,52 @@
+{
+  "publishAt": "2026-08-13",
+  "slug": "phones-for-staff-tax-free",
+  "title": "Can you give your staff a phone without creating a taxable benefit?",
+  "tag": "Staff benefits",
+  "readingTime": "3 min read",
+  "excerpt": "One phone per employee, on a contract in the company's name, is exempt from income tax and National Insurance. Change either of those two facts and the treatment changes with it.",
+  "body": [
+    "HMRC will give you tax relief on giving phones to your staff.",
+    "You can provide each employee with one phone, and the cost is an allowable business expense.",
+    "Your employees pay no income tax and no National Insurance on it either.",
+    "This is one of the cleaner exemptions in the employment tax rules. HMRC's guidance says you do not have to report anything or deduct and pay tax and National Insurance where you provide the employee with only one mobile phone or SIM card and the phone contract is between you and the supplier. The exemption covers the handset, the line rental and private calls the employer pays for on that phone.",
+    "## There's a few conditions to watch",
+    "1. Give someone more than one phone, and it becomes a benefit in kind, meaning it's taxable.",
+    "2. You also need the phone contracted and paid for by your business, not the employee. If it's in their name and you're just reimbursing them, the tax treatment changes.",
+    "On the first point, HMRC's position is that where you provide more than one phone, one is exempt from paying and reporting and any others count as assets, which brings them into the reporting regime.",
+    "On the second, reimbursing an employee's own phone bill is a different transaction. If the employee arranges the contract and you pay the supplier, HMRC requires the cost reported on form P11D with Class 1 National Insurance through payroll. If they pay and you reimburse a monthly tariff, National Insurance and tax are due on the tariff and on private calls above it, though business calls over the tariff are not caught.",
+    "## Why the contract detail matters more than it sounds",
+    "Most agencies get this wrong by accident rather than by design. Someone joins, they already have a phone, and the simplest thing is to add the bill to their expense claim. That is the version with the payroll consequence. Putting the line in the company's name from the start is the same money and no reporting.",
+    "It is worth a quick look at how your existing handsets are actually contracted before you assume the exemption applies.",
+    "## One more trap",
+    "Salary sacrifice breaks it. HMRC states that you do have to report employees' mobile phone costs if they are part of a salary sacrifice arrangement, so a phone dressed up as part of a flexible benefits package is not the same thing as a phone the company simply provides.",
+    "## Getting it right",
+    "Get it right, and it's a genuine tax saving for your business and a way to reward your staff completely tax free.",
+    "The exemption is about the benefit charge on the employee. The company's own deduction and its capital allowances position on hardware are a separate calculation, covered in [laptop tax relief and the Annual Investment Allowance](/blog/laptop-tax-relief-agency-annual-investment-allowance). If you are looking for other ways to reward people without a payroll cost attached, [the agency expenses checklist](/blog/agency-expenses-checklist) is the wider picture.",
+    "Rules, rates and reporting thresholds change, and the treatment depends on how your contracts are actually written, so this is general information rather than advice. If you want your staff benefits reviewed before the next payroll year, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "How many phones can I give an employee tax free?",
+      "answer": "One. HMRC states there is nothing to report and no tax or National Insurance to pay where you provide your employee with only one mobile phone or SIM card and the contract is between you and the supplier. Provide more than one and the additional phones count as assets for reporting purposes. See [expenses and benefits: mobile phones](https://www.gov.uk/expenses-and-benefits-mobile-phones)."
+    },
+    {
+      "question": "Does the exemption cover the bill as well as the handset?",
+      "answer": "Yes. HMRC's manual says the exemption covers the phone itself, any line rental and the cost of private calls paid for by the employer on that phone. That is the point of it: you are not asked to split business and private calls. See [EIM21779](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21779)."
+    },
+    {
+      "question": "What counts as a mobile phone for this?",
+      "answer": "HMRC treats smartphones as mobile phones, and extends the definition to a connection such as a SIM card provided independently of a handset. It specifically excludes devices whose primary purpose is something else, listing satellite navigation devices, devices that are solely PDAs, and tablet and laptop computers. See [EIM21779](https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim21779)."
+    },
+    {
+      "question": "What if the phone is in the employee's name and I reimburse them?",
+      "answer": "The treatment changes. HMRC says that if the employee arranges the phone but you pay the supplier, you must report the cost on form P11D and pay Class 1 National Insurance through payroll. If you reimburse a monthly tariff, tax and National Insurance are due on the tariff and on private calls above it. See [expenses and benefits: mobile phones](https://www.gov.uk/expenses-and-benefits-mobile-phones)."
+    }
+  ],
+  "related": [
+    "trivial-benefits-staff-gifts-directors",
+    "laptop-tax-relief-agency-annual-investment-allowance",
+    "agency-expenses-checklist"
+  ],
+  "slot": "morning"
+}

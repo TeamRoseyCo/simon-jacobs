@@ -1,0 +1,62 @@
+{
+  "publishAt": "2026-08-07",
+  "slug": "pre-trading-expenses-agency",
+  "title": "Can you claim the costs you paid before your agency started trading?",
+  "tag": "Expenses",
+  "readingTime": "3 min read",
+  "excerpt": "Most agency owners only claim costs from the day the first invoice went out. Qualifying pre-trading expenses can reach back up to seven years before trading began.",
+  "body": [
+    "You're probably underclaiming expenses and it's costing you money.",
+    "A lot of marketing agency owners only claim costs after the business has started making money.",
+    "But they forget about the costs they incurred before trading even began.",
+    "## What counts as a pre-trading cost",
+    "That could include:",
+    "1. Training and courses",
+    "2. Research guides",
+    "3. Startup equipment",
+    "4. Software and subscriptions",
+    "5. Branding and website costs",
+    "6. Professional advice",
+    "Think about the six months before your first client invoice. The brand, the site, the tools you signed up to so you could deliver, the adviser you paid to get incorporated. None of that produced revenue at the time, which is exactly why it tends to get left out of the first set of accounts.",
+    "## The test the cost has to pass",
+    "If those costs were incurred wholly and exclusively for the business, and they would have been allowable if the business had already been trading, you may be able to claim tax relief on pre-trading expenses.",
+    "That is the whole rule in one sentence, and both halves matter. HMRC's manual describes relief for expenditure of a revenue nature incurred for the purposes of a trade before it is commenced, limited to expenditure that would have been allowable if it had been incurred after trading started. So the wholly and exclusively test still has to be satisfied. A cost that would have been disallowed while trading, entertaining being the obvious example, does not become allowable because you paid it early.",
+    "## The seven year point",
+    "And the key point?",
+    "You can potentially claim qualifying pre-trading expenses from up to 7 years before the business started.",
+    "HMRC's guidance sets the same limit: relief extends to expenditure incurred within a period of seven years prior to the commencement of the trade. In practice the expenditure is relieved as if it were incurred on the first day of trading, which means it lands in your first accounting period rather than in some earlier year you never filed for.",
+    "## Equipment follows a different rule",
+    "Startup equipment is worth separating out, because a laptop is not a revenue cost.",
+    "The pre-trading rule covers revenue expenditure. Capital expenditure has its own provision: HMRC's guidance notes that pre-trading capital expenditure is treated as incurred on the date trading starts for capital allowances purposes. So the relief is still there, it just arrives through capital allowances rather than as an expense in the profit and loss account. The practical effect for most founders is similar, and the distinction is set out in [laptops, phones and the Annual Investment Allowance](/blog/laptop-tax-relief-agency-annual-investment-allowance).",
+    "## How to actually get it",
+    "So don't just look at what you spent after launch.",
+    "Check what you spent before launch too - because you might be leaving tax relief on the table.",
+    "That means going back through personal bank and card statements from before the company existed, listing what was genuinely for the business, and keeping whatever evidence you still have. Receipts from three years ago are harder to produce than receipts from last month, so a list with dates, amounts and a one-line business purpose against each item is worth building while you can still remember what each payment was.",
+    "If it turns out you have already filed a return that missed some of this, ask whether it can still be amended rather than assuming the moment has passed. And if you are still in the pre-launch phase, the simplest version of this advice is to keep the paperwork now: [what an agency can and cannot expense](/blog/agency-expenses-checklist) is the list to keep beside you from day one.",
+    "Rules and time limits change, and whether a specific cost qualifies depends entirely on your own facts, so this is general information rather than advice. If you want your first set of accounts reviewed for missed pre-trading relief, [see how we work](/services) or [talk to us](/contact)."
+  ],
+  "faqs": [
+    {
+      "question": "How far back can pre-trading expenses go?",
+      "answer": "HMRC's manual states that the relief extends only to expenditure incurred within a period of seven years prior to the commencement of the trade, profession or vocation, and which would have been allowable if it had been incurred after trading commenced. The relevant legislation is S57 ITTOIA 2005 for unincorporated businesses and S61 CTA 2009 for companies. See [BIM46351](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim46351)."
+    },
+    {
+      "question": "Does the wholly and exclusively test still apply?",
+      "answer": "Yes. HMRC is explicit that the wholly and exclusively test still has to be satisfied for the purposes of the relief, and that no relief can be allowed for capital expenditure under this rule. A cost that would have been disallowed during trading stays disallowed. See [BIM46351](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim46351)."
+    },
+    {
+      "question": "What about a laptop I bought before the company started trading?",
+      "answer": "That is capital expenditure, so it sits outside the pre-trading expenses rule. HMRC's guidance notes there are special provisions in S12 Capital Allowances Act 2001 treating pre-trading capital expenditure as incurred on the date trading starts, for capital allowances purposes. See [BIM46351](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim46351) and [CA23020](https://www.gov.uk/hmrc-internal-manuals/capital-allowances-manual/ca23020)."
+    },
+    {
+      "question": "Do pre-trading costs get relieved in the year I paid them?",
+      "answer": "No. Under the pre-trading expenditure rules the expenditure is treated as incurred on the first day of trading, so it is relieved in the first trading period rather than in the earlier year in which the money actually left your account. See [BIM46351](https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim46351)."
+    }
+  ],
+  "related": [
+    "agency-expenses-checklist",
+    "laptop-tax-relief-agency-annual-investment-allowance",
+    "how-to-reduce-your-agencys-corporation-tax"
+  ],
+  "slot": "evening"
+}

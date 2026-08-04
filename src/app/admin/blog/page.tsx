@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { isAuthed, ADMIN_COOKIE } from "@/lib/adminAuth";
-import { getAllPosts } from "@/lib/posts";
+import { getEveryPost } from "@/lib/posts";
 import BlogList from "./BlogList";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default async function AdminBlogPage() {
   const token = (await cookies()).get(ADMIN_COOKIE)?.value;
   if (!isAuthed(token)) redirect("/admin/login");
 
-  const posts = await getAllPosts();
+  const posts = await getEveryPost();
 
   return (
     <BlogList
@@ -27,6 +27,8 @@ export default async function AdminBlogPage() {
         title: p.title,
         tag: p.tag,
         date: p.date,
+        status: p.status,
+        publishAt: p.publishAt,
       }))}
     />
   );
