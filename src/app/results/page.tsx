@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 // his own "one example, numbers vary" caveat so nothing overstates a guarantee.
 const outcomes = [
   {
-    stat: "£20k → nil",
+    stat: "£20k › nil",
     label: "AI bookkeeping, corrected",
     body: "An agency owner had automated his bookkeeping with AI. It logged expenses as income and left the accounts unbalanced, pushing his tax bill around £20k too high. We rebuilt the books from scratch and the bill came down to nil. One example; the numbers vary business to business.",
     href: "/blog/ai-bookkeeping-cost-20k-tax",
@@ -60,9 +60,9 @@ export default function ResultsPage() {
     <>
       {/* Hero */}
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
-        <div className="reveal mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Results</p>
-          <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h1 className="ap-h2 mt-4">
             What better tax planning{" "}
             <span className="em-display text-teal">actually looks like.</span>
           </h1>
@@ -80,8 +80,7 @@ export default function ResultsPage() {
           {outcomes.map((o, index) => (
             <article
               key={o.label}
-              className="finance-card reveal flex h-full flex-col p-6 md:p-7"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="finance-card flex h-full flex-col p-6 md:p-7"
             >
               <span className="em-display text-4xl leading-none text-teal md:text-5xl">
                 {o.stat}
@@ -95,7 +94,7 @@ export default function ResultsPage() {
                   href={o.href}
                   className="mt-4 text-sm font-semibold text-accent transition hover:text-ink"
                 >
-                  Read the story →
+                  Read the story ›
                 </Link>
               )}
             </article>
@@ -105,9 +104,9 @@ export default function ResultsPage() {
 
       {/* How the results happen (method, not promises) */}
       <section className="gutter section-white pb-16 md:pb-24">
-        <div className="reveal mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">How it happens</p>
-          <h2 className="mt-4 font-serif text-3xl font-normal leading-tight md:text-4xl">
+          <h2 className="ap-h2 mt-4">
             The same approach behind{" "}
             <span className="em-display text-teal">every result.</span>
           </h2>
@@ -120,13 +119,12 @@ export default function ResultsPage() {
           {method.map((m, index) => (
             <article
               key={m.step}
-              className="finance-card reveal flex h-full flex-col p-6 md:p-7"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="finance-card flex h-full flex-col p-6 md:p-7"
             >
               <span className="em-display text-3xl leading-none text-teal">
                 {m.step}
               </span>
-              <span className="mt-3 block font-serif text-xl text-ink">
+              <span className="ap-h3 mt-3 block text-ink">
                 {m.title}
               </span>
               <p className="mt-3 flex-1 text-sm leading-7 text-muted">{m.body}</p>
@@ -137,18 +135,18 @@ export default function ResultsPage() {
 
       {/* Credentials */}
       <section className="section-blue-soft py-16 text-center md:py-20 gutter-bleed">
-        <p className="accred-eyebrow accred-eyebrow-light reveal">
+        <p className="accred-eyebrow accred-eyebrow-light">
           Chartered, and Big Four trained
         </p>
-        <Accreditations variant="light" className="accred-prominent reveal mt-6" />
+        <Accreditations variant="light" className="accred-prominent mt-6" />
       </section>
 
       {/* Testimonials (real client quotes) */}
       <Testimonials />
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
-        <p className="reveal text-base leading-8 text-muted">
-          Want to see how this applies to your agency? Read the{" "}
+        <p className="text-base leading-8 text-muted">
+          Want to see how this applies to your business? Read the{" "}
           <Link
             href="/accountants-for-marketing-agencies"
             className="font-semibold text-accent hover:text-ink"
@@ -164,7 +162,7 @@ export default function ResultsPage() {
       </section>
 
       <ConsultCta
-        heading="Ask what your agency could be keeping."
+        heading="Ask what your business could be keeping."
         sub="Book a short discovery call and we will look at your actual numbers."
       />
     </>

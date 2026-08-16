@@ -42,8 +42,7 @@ function Card({ t, index }: { t: Testimonial; index: number }) {
   const last = t.quote.length - 1;
   return (
     <figure
-      className="testimonial-card reveal flex h-full flex-col rounded-[18px] border border-border bg-white p-7 md:p-8"
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="testimonial-card flex h-full flex-col rounded-[18px] border border-border bg-white p-7 md:p-8"
     >
       {/* Stars left, quote mark right, on one row in normal flow. The quote mark
           used to be absolutely positioned in the corner, where it overlapped the
@@ -82,8 +81,8 @@ export default function Testimonials() {
   return (
     <section className="section-tinted py-16 md:py-24 gutter-bleed">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="reveal mx-auto max-w-3xl text-center">
-          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="ap-h2">
             What clients say about{" "}
             <span className="em-display text-teal">working with us.</span>
           </h2>

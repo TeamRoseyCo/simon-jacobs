@@ -36,7 +36,7 @@ const empty: Fields = {
 // Lead qualification. Thresholds come from the Ideal Client Profile
 // (founder-led UK marketing agencies, ~£500k-£2.5m turnover). A lead qualifies
 // for a discovery call only if they are a decision-maker AND at/above the
-// turnover floor. Everyone else is still captured, then routed to the free
+// turnover floor. Everyone else is still captured, then routed to the
 // Scorecard instead of the calendar, so Simon's call time goes to real fits.
 //
 // FUTURE: add a minimum-spend gate here once Simon sets the figure
@@ -201,7 +201,7 @@ export default function ContactForm() {
   if (done) {
     return qualified ? (
       <div className="finance-card mx-auto max-w-2xl p-8 text-center md:p-10">
-        <h3 className="font-serif text-2xl text-ink">
+        <h3 className="ap-h3 text-ink">
           You are exactly who we work with.
         </h3>
         <p className="mx-auto mt-3 max-w-[460px] text-sm leading-7 text-muted">
@@ -219,20 +219,20 @@ export default function ContactForm() {
       </div>
     ) : (
       <div className="finance-card mx-auto max-w-2xl p-8 text-center md:p-10">
-        <h3 className="font-serif text-2xl text-ink">
+        <h3 className="ap-h3 text-ink">
           Thanks{f.firstName ? `, ${f.firstName}` : ""}. Got it.
         </h3>
         <p className="mx-auto mt-3 max-w-[480px] text-sm leading-7 text-muted">
           A one-to-one call may not be the right fit just yet, but the best
-          place to start is the free Profit-Rich Scorecard: a score across 7
+          place to start is the Profit-Rich Scorecard: a score across 7
           areas and a 90-day plan, no call needed. We have your details and
-          will be in touch as the agency grows.
+          will be in touch as the business grows.
         </p>
         <a
           href={scorecardHref}
           className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
         >
-          Take the free Scorecard
+          Take the Scorecard
         </a>
       </div>
     );
@@ -339,7 +339,7 @@ export default function ContactForm() {
           type="text"
           inputMode="url"
           autoComplete="url"
-          placeholder="youragency.co.uk"
+          placeholder="yourbusiness.co.uk"
           value={f.website}
           onChange={set("website")}
           className={`${fieldBase} border-border`}
@@ -419,7 +419,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor={`${id}-question`} className={labelBase}>
-          What is the most pressing financial question about your agency? {req}
+          What is the most pressing financial question about your business? {req}
         </label>
         <textarea
           id={`${id}-question`}
@@ -466,7 +466,7 @@ export default function ContactForm() {
               email instead of leaving them to copy the address by hand. */}
           <a
             href={`mailto:simon@srjinternational.co.uk?subject=${encodeURIComponent(
-              "Question about my agency's tax",
+              "Question about my business's tax",
             )}&body=${encodeURIComponent(
               `${f.question}\n\n${[f.firstName, f.lastName].filter(Boolean).join(" ")}\n${f.email}${f.phone ? `\n${f.phone}` : ""}`,
             )}`}

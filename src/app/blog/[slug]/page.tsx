@@ -151,7 +151,7 @@ export default async function BlogPostPage({
   return (
     <>
       <article className="section-white mx-auto w-full max-w-3xl px-6 pb-16 pt-20 md:px-10 md:pb-24 md:pt-32 lg:px-16">
-        <div className="reveal">
+        <div>
           <Link
             href="/blog"
             className="text-sm font-semibold text-accent transition hover:text-ink"
@@ -173,7 +173,7 @@ export default async function BlogPostPage({
               </>
             )}
           </div>
-          <h1 className="mt-4 font-serif text-4xl font-normal leading-tight text-ink md:text-5xl">
+          <h1 className="ap-h2 mt-4 text-ink">
             {post.title}
           </h1>
           {/* The post's own card. Real dimensions, not `fill`, so the height
@@ -189,13 +189,13 @@ export default async function BlogPostPage({
           />
         </div>
 
-        <div className="reveal mt-8 flex flex-col gap-5">
+        <div className="mt-8 flex flex-col gap-5">
           {post.body.map((block, i) => {
             if (block.startsWith("## ")) {
               return (
                 <h2
                   key={i}
-                  className="mt-6 font-serif text-2xl font-normal leading-snug text-ink md:text-3xl"
+                  className="ap-h2-sm mt-6 text-ink"
                 >
                   {block.slice(3)}
                 </h2>
@@ -210,8 +210,8 @@ export default async function BlogPostPage({
         </div>
 
         {post.faqs && post.faqs.length > 0 && (
-          <div className="reveal mt-14">
-            <h2 className="font-serif text-2xl font-normal leading-snug text-ink md:text-3xl">
+          <div className="mt-14">
+            <h2 className="ap-h2-sm text-ink">
               Common questions
             </h2>
             <div className="mt-4">
@@ -221,7 +221,7 @@ export default async function BlogPostPage({
         )}
 
         {related.length > 0 && (
-          <div className="reveal mt-14 border-t border-border pt-8">
+          <div className="mt-14 border-t border-border pt-8">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
               Related reading
             </p>
@@ -252,7 +252,7 @@ export default async function BlogPostPage({
       </article>
 
       <ConsultCta
-        heading="Want this applied to your agency?"
+        heading="Want this applied to your business?"
         sub="Book a short discovery call and we will look at your actual numbers."
       />
 

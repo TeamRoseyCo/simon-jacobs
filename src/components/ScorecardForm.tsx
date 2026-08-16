@@ -120,14 +120,12 @@ export default function ScorecardForm({
           ✓
         </div>
         <h2
-          className="load-rise mt-6 font-serif text-3xl text-ink"
-          style={{ animationDelay: "260ms" }}
+          className="ap-h2-sm mt-6 text-ink"
         >
           Thanks, {name.split(" ")[0]}.
         </h2>
         <p
-          className="load-rise mx-auto mt-3 max-w-[440px] text-base leading-7 text-muted"
-          style={{ animationDelay: "360ms" }}
+          className="mx-auto mt-3 max-w-[440px] text-base leading-7 text-muted"
         >
           We will score your answers across all 7 areas and email your
           Profit-Rich Scorecard, plus a 90-day plan, to{" "}
@@ -135,11 +133,10 @@ export default function ScorecardForm({
         </p>
 
         <div
-          className="load-rise relative left-1/2 mt-14 w-screen -translate-x-1/2 bg-[#eef5fb] py-14 text-center"
-          style={{ animationDelay: "520ms" }}
+          className="relative left-1/2 mt-14 w-screen -translate-x-1/2 bg-[#eef5fb] py-14 text-center"
         >
           <div className="gutter">
-            <h3 className="font-serif text-3xl font-normal leading-tight text-ink md:text-4xl">
+            <h3 className="ap-h2 text-ink">
               While you wait, a few{" "}
               <span className="em-display text-teal">useful reads.</span>
             </h3>
@@ -163,14 +160,14 @@ export default function ScorecardForm({
                     <span className="text-xs font-semibold text-muted">
                       {post.readingTime}
                     </span>
-                    <h4 className="mt-2 font-serif text-lg font-normal leading-snug text-ink">
+                    <h4 className="ap-h4 mt-2 text-ink">
                       {post.title}
                     </h4>
                     <p className="mt-2 flex-1 text-sm leading-6 text-muted">
                       {post.excerpt}
                     </p>
                     <span className="mt-4 text-sm font-semibold text-ink">
-                      Read it →
+                      Read it ›
                     </span>
                   </div>
                 </Link>
@@ -180,16 +177,15 @@ export default function ScorecardForm({
               href="/blog"
               className="mt-8 inline-flex text-sm font-semibold text-ink transition hover:text-teal"
             >
-              Check out our blog →
+              Check out our blog ›
             </Link>
           </div>
         </div>
 
         <div
-          className="load-rise mx-auto mt-14 max-w-xl"
-          style={{ animationDelay: "680ms" }}
+          className="mx-auto mt-14 max-w-xl"
         >
-          <h3 className="font-serif text-2xl text-ink md:text-3xl">
+          <h3 className="ap-h2-sm text-ink">
             Or see exactly how{" "}
             <span className="em-display text-teal">we can help.</span>
           </h3>
@@ -202,7 +198,7 @@ export default function ScorecardForm({
               aria-hidden="true"
               className="transition-transform group-hover:translate-x-1"
             >
-              →
+              ›
             </span>
           </Link>
         </div>
@@ -214,15 +210,14 @@ export default function ScorecardForm({
   if (!started) {
     return (
       <div className="mx-auto w-full max-w-xl text-center">
-        <p className="eyebrow">The Profit-Rich Scorecard</p>
-        <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
-          Find where your agency is{" "}
+        <h1 className="ap-h2 mt-4">
+          Find where your business is{" "}
           <span className="em-display text-teal">leaking profit.</span>
         </h1>
         <p className="mx-auto mt-4 max-w-[480px] text-base leading-8 text-muted">
           21 quick questions across the 7 areas where founder-led agencies
           usually lose profit. Answer honestly and we email back your score with
-          a 90-day plan to plug the gaps. Free, and no sales pitch.
+          a 90-day plan to plug the gaps. No sales pitch.
         </p>
         <ul className="mx-auto mt-7 max-w-[420px] space-y-2.5 text-left">
           {[
@@ -249,7 +244,7 @@ export default function ScorecardForm({
           onClick={() => setStarted(true)}
           className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-ink px-9 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-teal"
         >
-          Start the scorecard →
+          Start the scorecard ›
         </button>
         <p className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-muted">
           Scored by a Chartered Tax Adviser · CTA · ACA · ex-PwC · ~5 minutes
@@ -279,7 +274,7 @@ export default function ScorecardForm({
       <div>
         {!onContact ? (
           <>
-            <h2 className="font-serif text-2xl text-ink md:text-3xl">
+            <h2 className="ap-h2-sm text-ink">
               {area.title}
             </h2>
 
@@ -318,7 +313,7 @@ export default function ScorecardForm({
           </>
         ) : (
           <>
-            <h2 className="font-serif text-xl text-ink md:text-2xl">
+            <h2 className="ap-h3 text-ink">
               Where should we send your results?
             </h2>
             <p className="mt-2 text-sm leading-6 text-muted">
@@ -352,7 +347,7 @@ export default function ScorecardForm({
                   type="email"
                   inputMode="email"
                   autoComplete="email"
-                  placeholder="you@youragency.co.uk"
+                  placeholder="you@yourbusiness.co.uk"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -405,7 +400,7 @@ export default function ScorecardForm({
               disabled={!areaComplete(step)}
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-white transition enabled:hover:bg-teal disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {step === AREAS.length - 1 ? "Last step →" : "Next →"}
+              {step === AREAS.length - 1 ? "Last step ›" : "Next ›"}
             </button>
           ) : (
             <button

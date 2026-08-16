@@ -91,16 +91,19 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <>
+    // Same `pal-ink` scheme as the homepage and contact. Without it this page
+    // kept the old cool blue-white ground and teal accent, so moving between
+    // pages read as two different sites.
+    <div className="pal-ink">
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
-        <div className="reveal mx-auto max-w-3xl">
-          <h1 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="ap-h2">
             More than a{" "}
             <span className="em-display text-teal">year-end tidy-up.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-muted">
             Year-round advice on tax, profit, and the numbers that decide how
-            much you keep and how much your agency is worth. See how we work as{" "}
+            much you keep and how much your business is worth. See how we work as{" "}
             <Link
               href="/accountants-for-marketing-agencies"
               className="font-semibold text-accent transition hover:text-ink"
@@ -113,7 +116,12 @@ export default function ServicesPage() {
       </section>
 
       <section className="gutter section-white pb-16 pt-8 md:pb-24">
-        <div className="grid gap-4 text-left md:grid-cols-3">
+        {/* `items-start` is load-bearing. Grid rows default to align-items:
+            stretch, so every card matched the tallest one and opening a single
+            "What's included" inflated all three, leaving two cards with a large
+            empty void. Each card's open state was already independent; the
+            stretching was doing the damage. */}
+        <div className="grid items-start gap-4 text-left md:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
@@ -121,15 +129,15 @@ export default function ServicesPage() {
       </section>
 
       <section className="gutter section-white pb-16 md:pb-24">
-        <div className="reveal mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Full service list</p>
-          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h2 className="ap-h2 mt-4">
             Everything handled{" "}
             <span className="em-display text-teal">under one roof.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted">
             From day-to-day compliance to forward planning, the whole finance
-            function for your agency in one place.
+            function for your business in one place.
           </p>
         </div>
         <FullServiceChecklist
@@ -140,33 +148,32 @@ export default function ServicesPage() {
             </Ico>
           ))}
         />
-        <p className="reveal mx-auto mt-4 max-w-[600px] text-center text-xs text-muted">
+        <p className="mx-auto mt-4 max-w-[600px] text-center text-xs text-muted">
           Tap an item to see how it works.
         </p>
       </section>
 
       <section className="section-white relative py-16 text-white md:py-24 gutter-bleed">
         <div className="section-ink mx-auto w-full max-w-7xl overflow-hidden rounded-[18px] px-6 py-14 text-center md:px-10 lg:px-16 lg:py-16">
-          <div className="reveal mx-auto max-w-3xl">
-            <h2 className="font-serif text-4xl font-normal leading-tight md:text-6xl">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="ap-h1">
               <span className="em-display text-seafoam">How</span>
             </h2>
             <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-white/70">
               The work is designed to make tax visible earlier, profit easier to
-              understand, and agency decisions less reactive.
+              understand, and business decisions less reactive.
             </p>
           </div>
           <div className="mt-8 grid gap-3 text-left sm:grid-cols-2">
             {resultItems.map((item, index) => (
               <div
                 key={item}
-                className="reveal flex items-start gap-4 rounded-[10px] border border-white/12 bg-white/8 p-5 backdrop-blur-xl md:p-6"
-                style={{ animationDelay: `${index * 90}ms` }}
+                className="flex items-start gap-4 rounded-[10px] border border-white/12 bg-white/8 p-5 backdrop-blur-xl md:p-6"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-seafoam/15 text-seafoam">
                   <Ico className="h-6 w-6">{resultIcons[index]}</Ico>
                 </span>
-                <span className="font-serif text-xl leading-snug text-white md:text-2xl">
+                <span className="ap-h3 text-white">
                   {item}
                 </span>
               </div>
@@ -181,8 +188,7 @@ export default function ServicesPage() {
             {processSteps.map((step, index) => (
               <article
                 key={step.title}
-                className="finance-card reveal p-5 text-center md:p-6"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="finance-card p-5 text-center md:p-6"
               >
                 <Image
                   src={stepEmoji[index]}
@@ -191,7 +197,7 @@ export default function ServicesPage() {
                   height={72}
                   className="mx-auto h-16 w-16"
                 />
-                <h3 className="mt-4 font-serif text-3xl font-normal text-ink">
+                <h3 className="ap-h2-sm mt-4 text-ink">
                   {step.title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-muted">{step.body}</p>
@@ -205,6 +211,6 @@ export default function ServicesPage() {
         heading="See what better tax planning could be worth."
         sub="Book a short discovery call and we will look at where your profit is going."
       />
-    </>
+    </div>
   );
 }

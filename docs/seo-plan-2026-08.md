@@ -3,7 +3,7 @@
 The next iteration of [the AEO master plan](./aeo-master-plan-2026-07.md), not a
 replacement for it. Two things are new since that was written: 20 days of real
 Search Console data, and a pass through the methodology in
-`~/Desktop/business/SEO-Resources` (GEO/AEO/LLMO research, the E-E-A-T framework,
+`~/Desktop/💼 business/📚 RESOURCES/SEO-Resources` (GEO/AEO/LLMO research, the E-E-A-T framework,
 topical authority, local SEO).
 
 Same guardrails as everything else on this brand: Simon's own positions plus

@@ -1,6 +1,8 @@
 // Shared site content. Copy is tuned to the Ideal Client Profile
-// (see docs/ideal-client-profile.md): founder-led UK digital/marketing agencies,
-// £500k to £5m turnover, scaling toward a 5 to 10 year exit.
+// Repositioned 15 Aug 2026 from agency-only to GENERAL PRACTICE with three
+// spikes: cross-border tax, exit planning, and sectors (agencies being the
+// first of several). Rationale and evidence:
+// docs/general-practice-repositioning-2026-08.md
 
 export const site = {
   url: "https://srjinternational.co.uk",
@@ -17,16 +19,16 @@ export const site = {
   // established personal entity (rather than the unrelated "SRJ" collisions).
   // CONFIRM this is the correct profile (it 403s to bots, so verify in-browser).
   icaew: "https://find.icaew.com/members/london/simon-jacobs/tPW1A",
-  bookSubject: "Agency tax planning discovery call",
+  bookSubject: "Tax planning discovery call",
   // Registered office, used as the CAN-SPAM physical address in sequence emails.
   physicalAddress: "10 Northcliffe Drive, London, England, N20 8JZ",
   tagline:
-    "SRJ International helps UK marketing agencies keep more of what they earn.",
+    "SRJ International helps UK business owners keep more of what they earn.",
 } as const;
 
 // The full compliance service list (carried over from SRJ International).
 // `body` is placeholder "how it works" copy for the click-to-expand checklist
-// on the services page — CONFIRM/replace with Simon's own wording.
+// on the services page, CONFIRM/replace with Simon's own wording.
 export const servicesFull = [
   {
     title: "Corporation tax",
@@ -38,7 +40,7 @@ export const servicesFull = [
   },
   {
     title: "VAT & CIS",
-    body: "VAT returns filed on the right scheme for an agency, plus CIS handled if you use subcontractors.",
+    body: "VAT returns filed on the right scheme for your business, plus CIS handled if you use subcontractors.",
   },
   {
     title: "Tax planning",
@@ -133,16 +135,34 @@ export const bookCtaHref = "/contact";
 export const scorecardHref = "/scorecard";
 
 // Home-page section copy (Gate 3, drawn from docs/copy-research/Language of the Customer.docx)
+// Structured the way Apple writes a product headline: one short declarative
+// claim, then a single qualifying line that says who it is not for. The long
+// "keep more of what they earn" sentence moved to `heroSupport` and is no
+// longer rendered in the hero; put it back below the CTAs if it is wanted.
+// Three AI writing tells were removed here on 15 August 2026. Do not undo them.
+//  - "Tax, profit and accounts." was a rule-of-three list, which reads as
+//    comprehensive without saying anything specific.
+//  - "Done properly." was a quality claim with no content; every competitor
+//    could put it on their own homepage unchanged.
+//  - "For founder-led agencies, not giant companies." was an "X, not Y"
+//    negative parallelism. The turnover band does the same exclusion by being
+//    precise instead, and qualifies the lead while it is at it.
+// The headline now states the actual differentiator: planning before the
+// transaction rather than compliance after it. It reuses the wording already
+// proven in the services copy ("We make the call before the money moves").
 export const hero = {
-  eyebrow: "Chartered Tax Adviser · Ex-PwC · Agencies only",
-  titleLead: "Tax, profit and accounts for UK",
-  titleAccent: "marketing agencies.",
-  sub: "We help founder-led UK marketing agencies keep more of what they earn and build a business that's actually worth selling.",
+  eyebrow: "Chartered Tax Adviser · Ex-PwC",
+  titleLead: "Tax planned before",
+  titleAccent: "the money moves.",
+  sub: "For owner-managed UK businesses and the people who run them.",
 };
+
+export const heroSupport =
+  "We help UK business owners keep more of what they earn and build something that is actually worth selling.";
 
 // Lead statement: the opening line that leads the reader into the whole page.
 export const lead = {
-  partA: "Most agency owners are brilliant at winning clients but ",
+  partA: "Most business owners are brilliant at what they do but ",
   inkAccent: "terrible at keeping what they make.",
   partB: " Because nobody ever showed them ",
   tealAccent: "what's actually possible.",
@@ -159,14 +179,14 @@ export const exitAngle = {
   // promises an outcome unconditionally. On a CIOT and ICAEW practice's
   // homepage that is the kind of line the ASA reads literally. Describe the
   // work and the position it puts you in, never the result.
-  body: "Most founders sell eventually. Selling for a serious multiple takes clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. We handle the structuring, the tax and the accounts in the background, so when a buyer comes knocking the agency is in a stronger position and the tax on the sale is something you planned for, not something you discover.",
+  body: "Most owners sell eventually. Selling for a serious multiple takes clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. We handle the structuring, the tax and the accounts in the background, so when a buyer comes knocking the business is in a stronger position and the tax on the sale is a number you worked out months earlier.",
 };
 
 export const scorecardBand = {
-  eyebrow: "Free Profit-Rich Scorecard",
-  headingLead: "Find out exactly where your agency is ",
+  eyebrow: "Profit-Rich Scorecard",
+  headingLead: "Find out exactly where your business is ",
   headingAccent: "leaking profit.",
-  sub: "Answer a few quick questions and we'll send back your score across 7 areas, plus a 90-day plan to plug the leaks. Free, and no sales pitch.",
+  sub: "Answer a few quick questions and we'll send back your score across 7 areas, plus a 90-day plan to plug the leaks. No sales pitch.",
   cta: "Take the Scorecard",
   time: "est. ~5 minutes",
 };
@@ -198,7 +218,7 @@ export const scorecardAreas = [
     letter: "G",
     title: "Growth-proof structure",
     questions: [
-      "Is your company structure reviewed as the agency grows?",
+      "Is your company structure reviewed as the business grows?",
       "Are you confident your structure protects retained profit?",
       "Have you considered the right setup for investment, partners, or a holding company?",
     ],
@@ -223,9 +243,9 @@ export const scorecardAreas = [
   },
   {
     letter: "A",
-    title: "Agency VAT & revenue",
+    title: "VAT & revenue",
     questions: [
-      "Are you on the right VAT scheme for an agency?",
+      "Are you on the right VAT scheme for how you actually trade?",
       "Do you handle VAT correctly on pass-through costs and overseas clients?",
       "Is revenue recognised correctly across retainers and projects?",
     ],
@@ -234,7 +254,7 @@ export const scorecardAreas = [
     letter: "L",
     title: "Long-term wealth & exit",
     questions: [
-      "Are you building the agency with a future sale or exit in mind?",
+      "Are you building the business with a future sale or exit in mind?",
       "Is your personal wealth growing alongside the business?",
       "Are your books and structure clean enough to survive buyer due diligence?",
     ],
@@ -248,19 +268,19 @@ export const trustItems = [
     label: "Qualified",
     value: "CTA · ACA",
     description:
-      "CTA and ACA mean our team is trained in both tax advice (Chartered Institute of Taxation) and accountancy (ICAEW). In plain English: your agency gets advice that connects tax planning with the real numbers.",
+      "CTA and ACA mean our team is trained in both tax advice (Chartered Institute of Taxation) and accountancy (ICAEW). In plain English: you get advice that connects tax planning with the real numbers.",
   },
   {
     label: "Background",
     value: "Ex-PwC",
     description:
-      "Ex-PwC means our team has Big Four advisory experience. In plain English: you get structured thinking usually reserved for larger businesses, applied to your agency.",
+      "Ex-PwC means our team has Big Four advisory experience. In plain English: you get structured thinking usually reserved for much larger businesses.",
   },
   {
     label: "Specialism",
-    value: "UK Marketing Agencies",
+    value: "Cross-border & exits",
     description:
-      "This means the advice is shaped around UK agency realities like retainers, margins, payroll, dividends, and reinvestment decisions.",
+      "Where a Chartered Tax Adviser earns their keep: moving between countries, selling a business, and the structuring decisions either one forces.",
   },
 ];
 
@@ -270,7 +290,7 @@ export const services = [
     body: "Pay less, legally, and never get blindsided by a year-end bill again. We make the call before the money moves: corporation tax, VAT, and how you take money out.",
     includes: [
       "Corporation tax forecasting and timing",
-      "A VAT position and scheme that fits an agency",
+      "A VAT position and scheme that fits how you trade",
       "Director extraction: salary, dividends, pension",
       "Allowances and reliefs where they genuinely apply",
       "Decisions modelled before you commit, not after",
@@ -278,7 +298,7 @@ export const services = [
   },
   {
     title: "Profit extraction",
-    body: "Keep more of what you earn. The right salary, dividend and pension mix for your numbers, so the agency funds your life, not just the taxman's.",
+    body: "Keep more of what you earn. The right salary, dividend and pension mix for your numbers, so the business funds your life before it funds the taxman.",
     includes: [
       "The right salary and dividend split for your numbers",
       "Pension used as a tax-efficient extraction route",
@@ -288,7 +308,7 @@ export const services = [
     ],
   },
   {
-    title: "Agency accountancy",
+    title: "Accounts and compliance",
     body: "The boring stuff, handled. Bookkeeping, VAT, payroll and year-end done properly, with management accounts you can actually read, and books clean enough to survive a buyer's due diligence.",
     includes: [
       "Management accounts you can actually read",
@@ -301,18 +321,18 @@ export const services = [
 ];
 
 export const whoFor = [
-  "You run a UK marketing or digital agency turning over roughly £500k to £2.5m.",
-  "You're the founder, and the one who actually makes the call.",
+  "You run an owner-managed UK business turning over roughly £500k to £5m.",
+  "You're the owner, and the one who actually makes the call.",
   "Corporation, VAT and personal tax take a bigger bite every year.",
   "You're done doing your tax DIY and hoping for the best.",
-  "You want to build something worth selling, not just a job that pays well.",
+  "You want the business to be worth something on the day you stop running it.",
 ];
 
 export const resultItems = [
   "Clearer monthly profit visibility",
   "Fewer last-minute tax surprises",
   "Better director pay decisions",
-  "A cleaner, more valuable agency to sell",
+  "A cleaner, more valuable business to sell",
 ];
 
 export const processSteps = [
@@ -322,7 +342,7 @@ export const processSteps = [
   },
   {
     title: "Plan",
-    body: "You get a focused tax and profit plan written in plain English, with the trade-offs spelled out, what each choice is likely to cost, and what it means for both your take-home and the agency's value at exit.",
+    body: "You get a focused tax and profit plan written in plain English, with the trade-offs spelled out, what each choice is likely to cost, and what it means for both your take-home and the value of the business at exit.",
   },
   {
     title: "Maintain",
@@ -345,7 +365,7 @@ export const principles = [
   },
   {
     title: "Exit-minded",
-    body: "Even routine decisions are made with one eye on the agency's value, so you're building something sellable.",
+    body: "Even routine decisions are made with one eye on what the business is worth, so you're building something sellable.",
   },
 ];
 
@@ -360,11 +380,11 @@ export const credentials = [
   },
   {
     title: "Ex-PwC",
-    body: "Big Four advisory experience, applied to the practical decisions agency founders face.",
+    body: "Big Four advisory experience, applied to the practical decisions owners actually face.",
   },
   {
-    title: "Agency specialist",
-    body: "Focused on UK marketing and digital agencies: retainers, margins, and founder incentives.",
+    title: "Cross-border tax",
+    body: "Leaving the UK, arriving in it, or trading across it. Residence, double taxation, and what actually follows you.",
   },
 ];
 
@@ -377,17 +397,17 @@ export const faqs = [
   {
     question: "Do I need to understand tax before we speak?",
     answer:
-      "No. That is the point. You should be able to explain what you want from the agency, what feels messy, and what you are unsure about. We can translate the tax and accountancy part into plain English.",
+      "No. That is the point. You should be able to explain what you want from the business, what feels messy, and what you are unsure about. We can translate the tax and accountancy part into plain English.",
   },
   {
     question: "Is this just someone telling me to spend less?",
     answer:
-      "No. Most agency owners do not need a lecture about costs. They need a clearer plan for profit, tax, director pay, reinvestment, and what to do before the year-end panic starts.",
+      "No. Most owners do not need a lecture about costs. They need a clearer plan for profit, tax, director pay, reinvestment, and what to do before the year-end panic starts.",
   },
   {
     question: "Am I too small for this?",
     answer:
-      "Probably not if the agency is making real money and you are unsure how much you should keep, pay yourself, save for tax, or put back into growth. The work is about better decisions, not acting like a giant company.",
+      "Probably not if the business is making real money and you are unsure how much you should keep, pay yourself, save for tax, or put back into growth. The work is about better decisions, whatever size you are.",
   },
   {
     question: "Can my normal accountant not just do this?",
@@ -395,24 +415,24 @@ export const faqs = [
       "Maybe. Some accountants are excellent at proactive planning. Others mainly handle compliance after the fact. This is for founders who want the advice before decisions are made, not only after the numbers are already history.",
   },
   {
-    question: "Do you only work with marketing agencies?",
+    question: "What kinds of business do you work with?",
     answer:
-      "The focus is UK marketing and digital agencies because the advice is strongest when it understands the business model, margins, retainers, and founder incentives.",
+      "Owner-managed UK businesses of most kinds: agencies, professional practices, property, and trading companies. The work is strongest where the tax is genuinely complicated, which usually means cross-border income, a sale on the horizon, or a structure that has outgrown itself.",
   },
   {
-    question: "Can you help me build toward selling the agency?",
+    question: "Can you help me build toward selling the business?",
     answer:
-      "Yes. A lot of the value is getting the numbers clean and the profit story clear well before an exit, so the agency is easier to sell and holds up under a buyer's scrutiny.",
+      "Yes. A lot of the value is getting the numbers clean and the profit story clear well before an exit, so the business is easier to sell and holds up under a buyer's scrutiny.",
   },
   {
     question: "What happens after I book?",
     answer:
-      "You will have a short discovery call to understand where the agency is today, what is bothering you financially, and whether we can help.",
+      "You will have a short discovery call to understand where the business is today, what is bothering you financially, and whether we can help.",
   },
   {
     question: "Is this going to be really boring?",
     answer:
-      "The tax bits might be. The useful part should not be. The goal is to make the money side feel calmer and clearer, so you can run the agency with fewer surprises.",
+      "The tax bits might be. The useful part should not be. The goal is to make the money side feel calmer and clearer, so you can run the business with fewer surprises.",
   },
 ];
 

@@ -190,7 +190,7 @@ To get it, all you have to do:
 
 1. Follow me here: {{INSTAGRAM_LINK}}
 2. Turn on post notifications so you don't miss the good ones.
-3. Nick whatever works for your agency.
+3. Nick whatever works for your business.
 
 That's all for now.
 

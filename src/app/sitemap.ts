@@ -8,6 +8,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
   const routes = [
     "",
+    // Spike 1 of the general-practice repositioning. Highest-evidence new
+    // money page: ~41 impressions already, no landing page before this.
+    "/international-tax",
     "/chartered-tax-adviser-london-marketing-agencies",
     "/accountants-for-marketing-agencies",
     "/accountants-for-creative-agencies",

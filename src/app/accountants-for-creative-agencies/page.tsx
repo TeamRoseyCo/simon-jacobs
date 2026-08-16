@@ -138,9 +138,9 @@ export default function AccountantsForCreativeAgenciesPage() {
     <>
       {/* Hero */}
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
-        <div className="reveal mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Chartered Tax Adviser · CTA · ACA · Ex-PwC</p>
-          <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h1 className="ap-h2 mt-4">
             Accountants for{" "}
             <span className="em-display text-teal">creative agencies.</span>
           </h1>
@@ -159,11 +159,11 @@ export default function AccountantsForCreativeAgenciesPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href={bookCtaHref} className="hv-btn-primary">
               Book a discovery call
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true">›</span>
             </Link>
             <Link href={scorecardHref} className="hv-btn-ghost-ink">
               See where your profit leaks
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true">›</span>
             </Link>
           </div>
         </div>
@@ -171,8 +171,8 @@ export default function AccountantsForCreativeAgenciesPage() {
 
       {/* Why a specialist */}
       <section className="section-white mx-auto w-full max-w-3xl px-6 pb-12 pt-6 md:px-10 md:pb-16 lg:px-16">
-        <div className="reveal">
-          <h2 className="font-serif text-3xl font-normal leading-tight md:text-4xl">
+        <div>
+          <h2 className="ap-h2">
             Why creative agencies need a{" "}
             <span className="em-display text-teal">specialist accountant.</span>
           </h2>
@@ -196,9 +196,9 @@ export default function AccountantsForCreativeAgenciesPage() {
 
       {/* Creative-specific areas */}
       <section className="gutter section-white pb-16 md:pb-24">
-        <div className="reveal mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">What actually moves the numbers</p>
-          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h2 className="ap-h2 mt-4">
             Built around how creative{" "}
             <span className="em-display text-teal">studios run.</span>
           </h2>
@@ -207,10 +207,9 @@ export default function AccountantsForCreativeAgenciesPage() {
           {areas.map((area, index) => (
             <article
               key={area.title}
-              className="finance-card reveal flex h-full flex-col p-6 md:p-7"
-              style={{ animationDelay: `${index * 90}ms` }}
+              className="finance-card flex h-full flex-col p-6 md:p-7"
             >
-              <h3 className="font-serif text-2xl font-normal text-ink">
+              <h3 className="ap-h3 text-ink">
                 {area.title}
               </h3>
               <p className="mt-4 flex-1 text-sm leading-7 text-muted">
@@ -220,7 +219,7 @@ export default function AccountantsForCreativeAgenciesPage() {
                 href={area.href}
                 className="mt-5 text-sm font-semibold text-accent transition hover:text-ink"
               >
-                {area.linkText} →
+                {area.linkText} ›
               </Link>
             </article>
           ))}
@@ -231,7 +230,7 @@ export default function AccountantsForCreativeAgenciesPage() {
       <Testimonials />
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
-        <p className="reveal text-base leading-8 text-muted">
+        <p className="text-base leading-8 text-muted">
           We also work with{" "}
           <Link
             href="/accountants-for-marketing-agencies"
@@ -267,9 +266,9 @@ export default function AccountantsForCreativeAgenciesPage() {
 
       {/* FAQ */}
       <section className="gutter section-white pb-16 pt-2 md:pb-24">
-        <div className="reveal mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Creative agency FAQ</p>
-          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h2 className="ap-h2 mt-4">
             Questions creative founders{" "}
             <span className="em-display text-teal">ask us first.</span>
           </h2>
@@ -277,7 +276,7 @@ export default function AccountantsForCreativeAgenciesPage() {
         <div className="mt-10">
           <FaqAccordion items={faqs} />
         </div>
-        <p className="reveal mx-auto mt-8 max-w-[640px] text-center text-xs leading-6 text-muted">
+        <p className="mx-auto mt-8 max-w-[640px] text-center text-xs leading-6 text-muted">
           General information, not personal tax advice. Rules and thresholds
           change; we advise on your specific position on a call.
         </p>

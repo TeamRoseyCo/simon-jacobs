@@ -8,7 +8,6 @@ import Script from "next/script";
 import "./site.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import ScrollReveal from "@/components/ScrollReveal";
 import CookieConsent from "@/components/CookieConsent";
 import AttributionCapture from "@/components/AttributionCapture";
 import { site } from "@/lib/content";
@@ -37,19 +36,24 @@ const GA_IDS = ["G-FJGM7PLZEC", "G-6S1EHH7C90"];
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Chartered Tax Advisers for UK Agencies | SRJ International",
+    default: "Chartered Tax Advisers for UK Business Owners | SRJ International",
     template: "%s | SRJ International",
   },
   description:
-    "Tax planning, profit extraction, and accountancy for UK marketing agencies. Chartered Tax Adviser (CTA · ACA) and ex-PwC, helping agency owners keep more of what they earn.",
+    "Tax planning, profit extraction, and accountancy for owner-managed UK businesses. Chartered Tax Adviser (CTA · ACA) and ex-PwC, with a focus on cross-border tax and business sales.",
   keywords: [
-    "tax adviser for marketing agencies",
-    "agency tax planning UK",
-    "profit extraction",
     "chartered tax adviser",
-    "agency accountant",
+    "accountants for UK business owners",
+    "UK to Dubai tax advice",
+    "cross-border tax adviser UK",
+    "tax when selling a business UK",
+    "profit extraction",
     "director pay",
     "corporation tax planning",
+    // Retained deliberately: the agency pages hold essentially all of the
+    // site's current impressions and stay live as one sector.
+    "tax adviser for marketing agencies",
+    "agency accountant",
   ],
   authors: [{ name: "SRJ International" }],
   creator: "SRJ International",
@@ -62,9 +66,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: siteUrl,
     siteName: "SRJ International",
-    title: "SRJ International | Chartered Tax Advisers for UK Marketing Agencies",
+    title: "SRJ International | Chartered Tax Advisers for UK Business Owners",
     description:
-      "Tax planning, profit extraction, and accountancy for UK marketing agencies, so you stop leaving money on the table.",
+      "Tax planning, profit extraction, and accountancy for owner-managed UK businesses, so you stop leaving money on the table.",
     images: [
       {
         url: "/simon-jacobs.jpg",
@@ -76,9 +80,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SRJ International | Chartered Tax Advisers for UK Marketing Agencies",
+    title: "SRJ International | Chartered Tax Advisers for UK Business Owners",
     description:
-      "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
+      "Tax planning, profit extraction, and accountancy for owner-managed UK businesses.",
     images: ["/simon-jacobs.jpg"],
   },
   robots: {
@@ -101,7 +105,7 @@ const jsonLd = {
   legalName: "SRJ International Limited",
   alternateName: "Jacobs Taxes",
   description:
-    "Tax planning, profit extraction, and accountancy for UK marketing agencies.",
+    "Tax planning, profit extraction, and accountancy for owner-managed UK businesses.",
   url: siteUrl,
   image: `${siteUrl}/simon-jacobs.jpg`,
   logo: `${siteUrl}/simon-jacobs.jpg`,
@@ -122,7 +126,7 @@ const jsonLd = {
     name: "Simon Jacobs",
     jobTitle: "Chartered Tax Adviser",
     description:
-      "Chartered Tax Adviser (CTA · ACA) and ex-PwC, specialising in tax planning and profit extraction for UK marketing agencies.",
+      "Chartered Tax Adviser (CTA · ACA) and ex-PwC, specialising in cross-border tax, business sales, and profit extraction for owner-managed UK businesses.",
     url: `${siteUrl}/about`,
     sameAs: [site.linkedin, site.instagram, site.icaew],
   },
@@ -131,7 +135,12 @@ const jsonLd = {
     "Profit extraction",
     "Corporation tax",
     "Director remuneration",
-    "Agency accountancy",
+    "Cross-border taxation",
+    "Statutory residence test",
+    "Business sale and exit planning",
+    "Business Asset Disposal Relief",
+    "VAT",
+    "Self assessment",
   ],
 };
 
@@ -148,7 +157,6 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
-        <ScrollReveal />
         <CookieConsent />
         {/* Records which of Simon's tagged links brought this visitor in, on
             whatever page they land on, so the forms can send it with the

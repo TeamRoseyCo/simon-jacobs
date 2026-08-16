@@ -2,12 +2,12 @@
 
 import { useId, useState } from "react";
 
-// Merged CTA + email capture: visitors join the list to get their free consult.
+// Merged CTA + email capture: visitors join the list to get a consult.
 // POSTs to /api/contact (_kind: "subscribe"), which stores the lead in Supabase
 // and notifies Simon.
 export default function ConsultCta({
-  heading = "Find out what your agency could be keeping.",
-  sub = "Join the list and we will set you up with a free consultation. No spam, unsubscribe anytime.",
+  heading = "Find out what your business could be keeping.",
+  sub = "Join the list and we will set you up with a consultation. No spam, unsubscribe anytime.",
 }: {
   heading?: string;
   sub?: string;
@@ -70,8 +70,8 @@ export default function ConsultCta({
         </video>
         <div className="cta-scrim" aria-hidden="true" />
         <div className="cta-grain" aria-hidden="true" />
-        <div className="reveal mx-auto max-w-3xl">
-          <h2 className="font-serif text-4xl font-normal leading-tight md:text-5xl">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="ap-h2">
             {heading}
           </h2>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-white/80">
@@ -80,15 +80,15 @@ export default function ConsultCta({
         </div>
 
         {status === "done" ? (
-          <p className="reveal text-lg font-medium text-white">
-            You&apos;re on the list. We will email you to set up your free
+          <p className="text-lg font-medium text-white">
+            You&apos;re on the list. We will email you to set up your
             consultation.
           </p>
         ) : (
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="email-capture reveal"
+            className="email-capture"
           >
             <label htmlFor={`${id}-email`} className="sr-only">
               Email address
@@ -98,7 +98,7 @@ export default function ConsultCta({
               type="email"
               inputMode="email"
               autoComplete="email"
-              placeholder="you@youragency.co.uk"
+              placeholder="you@yourbusiness.co.uk"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -119,7 +119,7 @@ export default function ConsultCta({
               />
               <span>
                 I consent to SRJ International contacting me by email about a
-                free consultation.
+                consultation.
               </span>
             </label>
             <button
@@ -136,7 +136,7 @@ export default function ConsultCta({
                   Sending…
                 </>
               ) : (
-                "Confirm and get a free consult"
+                "Confirm and book a consult"
               )}
             </button>
           </form>

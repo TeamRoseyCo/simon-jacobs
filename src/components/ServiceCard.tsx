@@ -19,11 +19,10 @@ export default function ServiceCard({
 
   return (
     <article
-      className="finance-card reveal flex flex-col p-5 transition duration-300 hover:-translate-y-1 md:p-6"
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="finance-card flex flex-col p-5 transition duration-300 hover:-translate-y-1 md:p-6"
     >
       <span className="text-xs font-semibold text-accent">0{index + 1}</span>
-      <h2 className="mt-5 font-serif text-2xl font-normal text-ink">
+      <h2 className="ap-h3 mt-5 text-ink">
         {service.title}
       </h2>
       <p className="mt-4 text-sm leading-7 text-muted md:min-h-[6.5rem]">

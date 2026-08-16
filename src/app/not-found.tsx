@@ -11,7 +11,7 @@ export default function NotFound() {
     <section className="section-blue-soft flex min-h-[70vh] items-center py-24 gutter-bleed">
       <div className="mx-auto max-w-2xl text-center">
         <p className="accred-eyebrow accred-eyebrow-light">Error 404</p>
-        <h1 className="mt-4 font-serif text-4xl font-bold leading-tight md:text-5xl">
+        <h1 className="ap-h2 mt-4">
           That page took an{" "}
           <span className="em-display text-teal">early exit.</span>
         </h1>

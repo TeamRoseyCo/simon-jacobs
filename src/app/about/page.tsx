@@ -68,7 +68,7 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profileLd) }}
       />
       <section className="gutter section-white grid items-center gap-12 pb-2 pt-24 md:gap-16 md:pb-4 md:pt-28 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-        <div className="image-stack reveal relative min-h-[520px] overflow-hidden rounded-[18px]">
+        <div className="image-stack relative min-h-[520px] overflow-hidden rounded-[18px]">
           <Image
             src="/simon-jacobs.webp"
             alt="Simon Jacobs, Chartered Tax Adviser and founder of SRJ International"
@@ -77,8 +77,8 @@ export default function AboutPage() {
             className="object-cover object-[center_12%]"
           />
         </div>
-        <div className="reveal flex flex-col justify-center text-center lg:text-left">
-          <h1 className="mx-auto max-w-[620px] font-serif text-4xl font-normal leading-tight md:text-5xl lg:mx-0">
+        <div className="flex flex-col justify-center text-center lg:text-left">
+          <h1 className="ap-h2 mx-auto max-w-[620px] lg:mx-0">
             Meet Simon Jacobs,{" "}
             <span className="em-display text-teal">Chartered Tax Adviser</span>
           </h1>
@@ -117,7 +117,7 @@ export default function AboutPage() {
       </AboutJourney>
 
       <section className="gutter section-white pb-16 md:pb-24">
-        <figure className="reveal overflow-hidden rounded-[18px] border border-border bg-white shadow-[0_18px_55px_rgba(8,34,75,0.08)]">
+        <figure className="overflow-hidden rounded-[18px] border border-border bg-white shadow-[0_18px_55px_rgba(8,34,75,0.08)]">
           <div className="relative aspect-[16/10] w-full">
             <Image
               src="/simon-jacobs-event.webp"
@@ -136,11 +136,11 @@ export default function AboutPage() {
 
       <section className="section-blue-soft py-16 md:py-24 gutter-bleed">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="reveal mx-auto max-w-3xl text-center">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
               How I work
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+            <h2 className="ap-h2 mt-4">
               Four things you can{" "}
               <span className="em-display text-teal">count on.</span>
             </h2>
@@ -149,10 +149,9 @@ export default function AboutPage() {
             {principles.map((p, index) => (
               <article
                 key={p.title}
-                className="finance-card reveal p-5 md:p-6"
-                style={{ animationDelay: `${index * 90}ms` }}
+                className="finance-card p-5 md:p-6"
               >
-                <h3 className="font-serif text-2xl font-normal text-ink">
+                <h3 className="ap-h3 text-ink">
                   {p.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted">{p.body}</p>
@@ -163,11 +162,11 @@ export default function AboutPage() {
       </section>
 
       <section className="gutter section-white py-16 md:py-24">
-        <div className="reveal mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">
             Background
           </p>
-          <h2 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h2 className="ap-h2 mt-4">
             The credentials behind{" "}
             <span className="em-display text-teal">the advice.</span>
           </h2>
@@ -176,20 +175,19 @@ export default function AboutPage() {
           {credentials.map((c, index) => (
             <article
               key={c.title}
-              className="finance-card reveal p-5 md:p-6"
-              style={{ animationDelay: `${index * 90}ms` }}
+              className="finance-card p-5 md:p-6"
             >
-              <h3 className="font-serif text-xl font-normal leading-snug text-ink">
+              <h3 className="ap-h3 text-ink">
                 {c.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-muted">{c.body}</p>
             </article>
           ))}
         </div>
-        <p className="accred-eyebrow accred-eyebrow-light reveal mt-10">CTA · ACA · ex-PwC</p>
-        <Accreditations variant="light" className="reveal" />
-        <WorksWith className="reveal mt-8" />
-        <p className="reveal mx-auto mt-10 max-w-2xl text-center text-sm leading-7 text-muted">
+        <p className="accred-eyebrow accred-eyebrow-light mt-10">CTA · ACA · ex-PwC</p>
+        <Accreditations variant="light" />
+        <WorksWith className="mt-8" />
+        <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-7 text-muted">
           This site was designed and built by{" "}
           <a
             href="https://roseyco.com"

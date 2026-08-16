@@ -9,7 +9,13 @@ import RotatingWord from "@/components/RotatingWord";
 import ScorecardSection from "@/components/ScorecardSection";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
-import { services, whoFor, lead, exitAngle, bookCtaHref } from "@/lib/content";
+import {
+  services,
+  whoFor,
+  lead,
+  bookCtaHref,
+  scorecardHref,
+} from "@/lib/content";
 import { getAllPosts } from "@/lib/posts";
 import { postImage } from "@/lib/postImage";
 
@@ -19,91 +25,81 @@ import { postImage } from "@/lib/postImage";
 // credential and keyword signals.
 export const metadata: Metadata = {
   description:
-    "Chartered Tax Advisers for UK marketing agencies. Tax planning, profit extraction and accountancy from a CTA, ACA and ex-PwC. Keep more of what you earn.",
+    "Chartered Tax Advisers for owner-managed UK businesses. Tax planning, cross-border advice and accountancy from a CTA, ACA and ex-PwC. Keep more of what you earn.",
 };
 
 export default async function Home() {
   const posts = await getAllPosts();
   return (
-    <>
+    // `pal-ink` swaps the site palette for SRJ's own deep ink scheme on this
+    // page only. site.css keys the override off `:root:has(.pal-ink)`, so the
+    // shared header and footer recolour here too without affecting any other
+    // route. Swap this one class back to `pal-panther` to restore the previous
+    // scheme.
+    <div className="pal-ink">
       <Hero />
 
       {/* Lead statement: leads the reader into the whole page */}
-      <section className="section-blue-soft py-16 text-center md:py-28 gutter-bleed">
-        <p className="accred-eyebrow accred-eyebrow-light reveal">CTA · ACA · ex-PwC</p>
+      <section className="section-blue-soft ap-section text-center gutter-bleed">
         <Accreditations
           variant="light"
-          className="accred-prominent reveal mb-12 md:mb-16"
+          className="accred-prominent mb-12 md:mb-16"
         />
-        <p className="reveal mx-auto max-w-3xl font-serif text-[26px] font-normal leading-[1.45] text-[#4F5D6E] md:text-[36px] md:leading-[1.4]">
+        <p className="ap-statement">
           {lead.partA}
-          <span className="text-ink">{lead.inkAccent}</span>
+          <span>{lead.inkAccent}</span>
           {lead.partB}
-          <span className="em-display text-teal">{lead.tealAccent}</span>
+          <span className="ap-accent">{lead.tealAccent}</span>
         </p>
-        <WorksWith className="reveal mt-12" />
+        <WorksWith className="mt-12" />
       </section>
 
-      {/* Who this is for: full-bleed, over a clouds texture */}
-      <section className="whofor-section relative w-full overflow-hidden">
-          <div className="grid lg:grid-cols-2 lg:items-stretch">
-            <div className="whofor-photo relative z-10 min-h-[300px] lg:min-h-[560px]">
-              <Image
-                src="/simon-jacobs-dubai.webp"
-                alt="A chartered tax adviser at SRJ International for UK marketing agencies"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-[center_22%]"
-              />
-            </div>
-
-            <div
-              className="whofor-copy relative z-10 pb-12 pt-4 lg:py-20"
-              data-reveal-group
-            >
-              <div className="reveal text-center">
-                <h2 className="font-serif text-4xl font-bold leading-tight text-white md:text-5xl">
-                  For{" "}
-                  <span className="em-display text-seafoam">
-                    founder-led agencies
-                  </span>
-                  , not giant companies.
-                </h2>
-              </div>
-              <ul className="mt-8 grid gap-3">
-                {whoFor.map((item, index) => (
-                  <li
-                    key={item}
-                    className="reveal flex items-start gap-3 rounded-[12px] border border-white/12 bg-white/8 p-4 backdrop-blur-xl md:p-5"
-                    style={{ animationDelay: `${index * 80}ms` }}
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-seafoam/20 text-sm font-bold text-seafoam"
-                    >
-                      ✓
-                    </span>
-                    <span className="text-base leading-7 text-white/90">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* Who this is for.
+          Rebuilt 15 Aug 2026. The original put the copy directly on top of a
+          full-bleed interior shot, which buried the text and duplicated the
+          About section's treatment further down. The photo is back, but as a
+          contained, rounded image sitting beside the copy rather than behind
+          it, so it reads as a photograph instead of a texture. */}
+      <section className="whofor-v2">
+        <div className="whofor-v2-inner">
+          <div className="whofor-v2-media">
+            <Image
+              src="/simon-jacobs-dubai.webp"
+              alt="Simon Jacobs, Chartered Tax Adviser at SRJ International"
+              fill
+              sizes="(min-width: 900px) 46vw, 90vw"
+              className="object-cover object-[38%_28%]"
+            />
           </div>
+
+          <div className="whofor-v2-copy">
+            <h2 className="whofor-v2-title">
+              For <span className="ap-nowrap">owner-managed businesses</span>,
+              not giant companies.
+            </h2>
+            <ul className="whofor-v2-list">
+              {whoFor.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <Link href={scorecardHref} className="ap-link on-dark whofor-v2-cta">
+              See where your profit leaks <span aria-hidden="true">›</span>
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Services teaser */}
-      <section className="gutter section-white relative py-16 text-center md:py-24">
-        <div className="reveal mx-auto max-w-3xl">
-          {/* Nudged right to sit optically centred. RotatingWord reserves a
-              fixed 14ch slot for the longest label and left-aligns inside it, so
-              a short word like "Claude" leaves dead space on the right that
-              drags the centred line to the left. The shift is in ch so it tracks
-              the font size. */}
-          <h2 className="translate-x-[1.5ch] font-serif text-4xl font-bold leading-tight md:translate-x-[3ch] md:text-5xl">
-            Stop using{" "}
+      <section className="gutter section-white ap-section relative text-center">
+        <div className="mx-auto max-w-3xl">
+          {/* The heading block is pinned: .svc-head is a fixed-width box, its
+              text left-aligned, the box itself centred on the page. So
+              "Stop using" always starts at the same x and the rotating word
+              expands rightward into the box's spare width. Nothing reflows,
+              nothing resizes, and "for taxes." never moves. */}
+          <h2 className="ap-h2 svc-head">
             <RotatingWord
+              prefix="Stop using "
               items={[
                 { label: "ChatGPT", color: "#10A37F" },
                 { label: "Claude", color: "#D97757" },
@@ -119,44 +115,36 @@ export default async function Home() {
               is styled as an editorial inline link (underline, no colour shout)
               rather than the bright accent blue, which read as a stray
               hyperlink dropped into the sentence. */}
-          <p className="mx-auto mt-4 max-w-[560px] text-base leading-7 text-muted">
-            Here&apos;s what you get when specialist{" "}
+          <p className="ap-sub mt-5">
+            Here&apos;s what a Chartered Tax Adviser does instead. We work
+            across owner-managed businesses, including{" "}
             <Link
               href="/accountants-for-marketing-agencies"
-              className="text-ink underline decoration-border decoration-1 underline-offset-4 transition hover:text-teal hover:decoration-teal"
+              className="ap-inline-link"
             >
-              accountants for marketing agencies
-            </Link>{" "}
-            handle it instead.
+              marketing and creative agencies
+            </Link>
+            .
           </p>
         </div>
-        <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
-          {services.map((service, index) => (
-            <article
-              key={service.title}
-              className="finance-card reveal p-5 transition duration-300 hover:-translate-y-1 md:p-6"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <span className="text-xs font-semibold text-accent">
-                0{index + 1}
-              </span>
-              <h3 className="mt-5 font-serif text-2xl font-normal text-ink">
-                {service.title}
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-muted">{service.body}</p>
+        <div className="ap-feature-grid mt-14">
+          {services.map((service) => (
+            <article key={service.title} className="ap-feature">
+              <h3 className="ap-h3 text-ink">{service.title}</h3>
+              <p className="mt-3">{service.body}</p>
             </article>
           ))}
         </div>
-        <div className="reveal mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
             href={bookCtaHref}
-            className="inline-flex min-h-12 items-center justify-center rounded-[5px] bg-ink px-7 text-sm font-semibold text-white transition hover:bg-accent"
+            className="ap-btn"
           >
             Book a call
           </a>
           <Link
             href="/services"
-            className="inline-flex min-h-12 items-center justify-center rounded-[5px] border border-ink/20 bg-white px-7 text-sm font-semibold text-ink transition hover:border-ink hover:bg-surface"
+            className="ap-btn-quiet"
           >
             Explore the services
           </Link>
@@ -171,37 +159,35 @@ export default async function Home() {
       <section className="aboutbleed relative w-full overflow-hidden">
         <Image
           src="/simon-jacobs-event.webp"
-          alt="A chartered tax adviser in conversation with agency founders"
+          alt="A chartered tax adviser in conversation with business owners"
           fill
           sizes="100vw"
           className="object-cover object-[center_35%]"
         />
         <div className="aboutbleed-scrim" aria-hidden="true" />
         <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center md:px-10 lg:px-16">
-          <h2 className="reveal font-serif text-4xl font-bold leading-tight text-white md:text-6xl">
+          <h2 className="ap-h2 text-white">
             Plain-English advice from someone who{" "}
-            <span className="em-display text-seafoam">gets agencies.</span>
+            <span className="text-seafoam">has seen it before.</span>
           </h2>
-          <p className="reveal mx-auto mt-6 max-w-[560px] text-base leading-8 text-white/85">
+          <p className="mx-auto mt-6 max-w-[560px] text-base leading-8 text-white/85">
             Chartered Tax Adviser, Chartered Accountant, and ex-PwC. We work
-            year-round with founder-led UK agencies on tax, profit extraction,
-            and building a business that is genuinely worth selling.
+            year-round with owner-managed UK businesses on tax, profit
+            extraction, cross-border questions, and building something that is
+            genuinely worth selling.
           </p>
-          <Link
-            href="/about"
-            className="reveal mt-6 inline-flex text-sm font-semibold text-white transition hover:text-seafoam"
-          >
-            More about us →
+          <Link href="/about" className="ap-link on-dark mt-7">
+            More about us <span aria-hidden="true">›</span>
           </Link>
         </div>
       </section>
 
       {/* From the blog */}
-      <section className="section-blue-soft py-16 md:py-24 gutter-bleed">
+      <section className="section-blue-soft ap-section gutter-bleed">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="reveal mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
-              Useful <span className="em-display text-teal">reads.</span>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="ap-h2">
+              Useful <span className="text-teal">reads.</span>
             </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -209,8 +195,7 @@ export default async function Home() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="finance-card reveal group flex flex-col overflow-hidden transition duration-300 hover:-translate-y-1"
-                style={{ animationDelay: `${index * 90}ms` }}
+                className="ap-card group flex flex-col overflow-hidden"
               >
                 <Image
                   src={postImage(post.slug)}
@@ -218,20 +203,20 @@ export default async function Home() {
                   width={2400}
                   height={1500}
                   sizes="(min-width: 768px) 33vw, 90vw"
-                  className="h-auto w-full transition duration-500 group-hover:scale-105"
+                  className="h-auto w-full"
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center gap-3 text-xs font-semibold text-muted">
                     <span>{post.readingTime}</span>
                   </div>
-                  <h3 className="mt-3 font-serif text-xl font-normal leading-snug text-ink">
+                  <h3 className="ap-h3 mt-3 text-ink" style={{ fontSize: "18px" }}>
                     {post.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-7 text-muted">
                     {post.excerpt}
                   </p>
-                  <span className="mt-5 text-sm font-semibold text-ink">
-                    Read it →
+                  <span className="ap-link mt-5">
+                    Read it <span aria-hidden="true">›</span>
                   </span>
                 </div>
               </Link>
@@ -240,26 +225,13 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* The exit angle: the long game as a founder */}
-      <section className="section-blue-soft py-16 text-center md:py-24 gutter-bleed">
-        <div className="reveal mx-auto max-w-3xl">
-          <h2 className="font-serif text-4xl font-bold leading-tight md:text-5xl">
-            {exitAngle.headingLead}{" "}
-            <span className="em-display text-teal">{exitAngle.headingAccent}</span>
-            {exitAngle.headingTail}
-          </h2>
-          <p className="mx-auto mt-6 max-w-[680px] text-lg leading-9 text-muted">
-            {exitAngle.body}
-          </p>
-        </div>
-      </section>
 
       <Testimonials />
 
       <ConsultCta
-        heading="Find out what your agency could be keeping."
-        sub="Book a free 15-minute discovery call. No spam, no pressure, just a straight answer on whether we can help."
+        heading="Find out what your business could be keeping."
+        sub="Book a 15-minute discovery call. You will get a straight answer on whether we can help, and no follow-up unless you ask for one."
       />
-    </>
+    </div>
   );
 }

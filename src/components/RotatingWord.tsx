@@ -4,15 +4,27 @@ import { useEffect, useState } from "react";
 
 export type RotatingItem = { label: string; color: string };
 
-// Cycles through a short list of words in place (e.g. the AI tools people
-// wrongly turn to for tax advice), fading between them on a fixed interval.
-// Each word carries its own colour (roughly matching its brand); the
-// surrounding heading's font size never changes, only the word and its colour.
+/**
+ * Rotates a phrase in a heading, animating the WHOLE phrase rather than just
+ * the changing word.
+ *
+ * Why the whole phrase: animating only the word meant "Stop using" sat dead
+ * still while a coloured word blinked beside it, which read as a glitch. Moving
+ * the prefix with it makes the change look deliberate.
+ *
+ * Why it does not shift the layout: the prefix is constant, and the container
+ * (`.svc-head`) is a fixed-width, left-aligned box centred on the page. So the
+ * phrase always starts at the same x and only ever expands to the right into
+ * the box's spare width. The font size never changes, and nothing after it
+ * moves because nothing follows it on the same line.
+ */
 export default function RotatingWord({
   items,
-  intervalMs = 2200,
+  prefix,
+  intervalMs = 2600,
 }: {
   items: RotatingItem[];
+  prefix?: string;
   intervalMs?: number;
 }) {
   const [index, setIndex] = useState(0);
@@ -26,22 +38,12 @@ export default function RotatingWord({
   }, [items.length, intervalMs]);
 
   const current = items[index];
-  // Fixed to the longest label's width (in ch, so it scales with font size)
-  // and left-aligned within that slot, so "Stop using" always sits right
-  // next to the word, and the rest of the sentence never shifts as
-  // shorter/longer words rotate through.
-  const widthCh = Math.max(...items.map((i) => i.label.length)) + 1;
 
   return (
-    <span
-      className="inline-block text-left align-baseline"
-      style={{ width: `${widthCh}ch` }}
-    >
-      <span
-        key={index}
-        className="load-rise inline-block"
-        style={{ animationDuration: "420ms", color: current.color }}
-      >
+    // `key` on the animating span restarts the CSS animation on every change.
+    <span key={index} className="rot-phrase">
+      {prefix ? <span className="rot-prefix">{prefix}</span> : null}
+      <span className="rot-word" style={{ color: current.color }}>
         {current.label}
       </span>
     </span>

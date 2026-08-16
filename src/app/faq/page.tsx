@@ -24,11 +24,11 @@ export default function FaqPage() {
   return (
     <>
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-32">
-        <div className="reveal mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl">
           <p className="eyebrow">
             FAQ
           </p>
-          <h1 className="mt-4 font-serif text-4xl font-normal leading-tight md:text-5xl">
+          <h1 className="ap-h2 mt-4">
             A few <span className="em-display text-teal">sensible questions</span>{" "}
             before a call.
           </h1>

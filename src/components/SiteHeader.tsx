@@ -27,10 +27,12 @@ export default function SiteHeader() {
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
 
-  // Transparent white-on-dark only while sitting over the home hero at the top;
-  // everywhere else (scrolled, or any inner page) it's the solid glass bar.
+  // The home hero is light (see .hv-light in site.css), so the white-on-dark
+  // transparent bar no longer has a dark ground to sit on and would render
+  // white type on a white hero. Solid glass everywhere until the hero goes
+  // back to navy, at which point this becomes `isHome && !scrolled` again.
   const isHome = pathname === "/";
-  const transparent = isHome && !scrolled;
+  const transparent = false;
 
   return (
     <>
@@ -59,7 +61,7 @@ export default function SiteHeader() {
         <div className="site-nav-actions">
           <a href={bookCtaHref} className="nav-cta">
             Book a call
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">›</span>
           </a>
           <button
             type="button"
@@ -87,7 +89,7 @@ export default function SiteHeader() {
           ))}
           <a href={bookCtaHref} className="nav-cta mobile-cta">
             Book a discovery call
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">›</span>
           </a>
         </div>
       </div>

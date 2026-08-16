@@ -9,7 +9,7 @@ export default function FaqAccordion({ items }: { items: Faq[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="faq-panel reveal mx-auto max-w-4xl divide-y divide-border px-6 text-left">
+    <div className="faq-panel mx-auto max-w-4xl divide-y divide-border px-6 text-left">
       {items.map((faq, i) => {
         const isOpen = openIndex === i;
         return (
@@ -19,7 +19,7 @@ export default function FaqAccordion({ items }: { items: Faq[] }) {
                 type="button"
                 aria-expanded={isOpen}
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="flex w-full cursor-pointer items-center justify-between gap-3 py-6 text-left font-serif text-lg text-ink sm:gap-6 sm:text-xl"
+                className="ap-h3 flex w-full cursor-pointer items-center justify-between gap-3 py-6 text-left text-ink sm:gap-6"
               >
                 {faq.question}
                 <span

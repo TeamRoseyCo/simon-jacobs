@@ -1,7 +1,7 @@
 import { bookCtaHref } from "@/lib/content";
 
 export default function CtaBand({
-  heading = "Find out what your agency could be keeping.",
+  heading = "Find out what your business could be keeping.",
   sub,
 }: {
   heading?: string;
@@ -10,8 +10,8 @@ export default function CtaBand({
   return (
     <section id="book" className="px-4 py-16 md:px-6 md:py-24 lg:px-8">
       <div className="cta-band mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-6 p-8 text-center lg:p-10">
-        <div className="reveal mx-auto max-w-3xl">
-          <h2 className="font-serif text-4xl font-normal leading-tight md:text-6xl">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="ap-h1">
             {heading}
           </h2>
           {sub ? (

@@ -53,7 +53,7 @@ export default function NewsletterSignup({
 
   if (status === "done") {
     return (
-      <p className={footer ? "text-sm text-white/80" : "text-base text-ink"}>
+      <p className={footer ? "text-sm text-[#55636f]" : "text-base text-ink"}>
         Thanks. You&apos;re on the list, look out for the first email.
       </p>
     );
@@ -75,7 +75,7 @@ export default function NewsletterSignup({
         type="email"
         inputMode="email"
         autoComplete="email"
-        placeholder="you@youragency.co.uk"
+        placeholder="you@yourbusiness.co.uk"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
@@ -84,7 +84,7 @@ export default function NewsletterSignup({
         aria-invalid={status === "error"}
         className={
           footer
-            ? "min-h-11 flex-1 rounded-[8px] border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/45 outline-none focus:border-white/45"
+            ? "min-h-11 flex-1 rounded-[10px] border border-[rgba(8,19,31,0.14)] bg-white px-4 text-sm text-ink placeholder:text-[#5C6570] outline-none focus:border-accent"
             : "min-h-12 flex-1 rounded-[10px] border border-border bg-white px-4 text-sm text-ink outline-none focus:border-accent"
         }
       />
@@ -93,17 +93,24 @@ export default function NewsletterSignup({
         disabled={submitting}
         className={
           footer
-            ? "inline-flex min-h-11 items-center justify-center rounded-[8px] bg-white px-5 text-sm font-semibold text-ink transition hover:bg-surface disabled:opacity-70"
+            ? "ap-btn min-h-11 disabled:opacity-70"
             : "inline-flex min-h-12 items-center justify-center rounded-[10px] bg-ink px-6 text-sm font-semibold text-white transition hover:bg-accent disabled:opacity-70"
         }
       >
         {submitting ? "Subscribing…" : "Subscribe"}
       </button>
+      {/* Was `sm:sr-only`, which hid this message at every width from 640px up.
+          The form is noValidate, so a sighted desktop user who mistyped their
+          address got no feedback at all and assumed it had worked. That is a
+          lead lost silently, and a WCAG 3.3.1 failure.
+
+          Not set in red: the palette has no error hue and adding one would put
+          a stray colour on the page. The message carries its own icon and the
+          input takes a heavier border, so the error does not depend on colour
+          at all, which is stronger under 1.4.1 anyway. Ink on white is 18.11. */}
       {status === "error" ? (
-        <span
-          role="alert"
-          className={`text-xs ${footer ? "text-red-300" : "text-red-600"} sm:sr-only`}
-        >
+        <span role="alert" className="ns-error">
+          <span aria-hidden="true">!</span>
           Something went wrong. Please try again.
         </span>
       ) : null}

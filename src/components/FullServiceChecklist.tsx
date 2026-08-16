@@ -20,8 +20,7 @@ export default function FullServiceChecklist({
         return (
           <div
             key={item.title}
-            className="finance-card reveal overflow-hidden"
-            style={{ animationDelay: `${index * 60}ms` }}
+            className="finance-card overflow-hidden"
           >
             <button
               type="button"
