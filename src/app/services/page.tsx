@@ -93,7 +93,9 @@ const resultIcons: ReactNode[] = [
   </>,
 ];
 
-// Big Apple-emoji art for the process steps (same order as processSteps).
+// Big emoji art for the process steps (same order as processSteps).
+// Noto Emoji, Apache 2.0. See public/CREDITS.md before swapping the set:
+// these were Apple's, which is not licensable off an Apple platform.
 const stepEmoji = ["/diagnose.webp", "/plan.webp", "/maintain.webp"];
 
 export const metadata: Metadata = {
