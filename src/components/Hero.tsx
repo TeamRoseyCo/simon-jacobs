@@ -41,11 +41,11 @@ export default function Hero() {
                 weight gave the hero no focal point: the most important thing on
                 the page was also the least visible thing on it. */}
             <Link href={scorecardHref} className="hv-link hv-cta-primary">
-              Find your profit leak
+              See where you stand
               <span aria-hidden="true">›</span>
             </Link>
             <a href={bookCtaHref} className="hv-link">
-              Book a call
+              Talk through a decision
               <span aria-hidden="true">›</span>
             </a>
           </div>

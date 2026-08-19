@@ -4,6 +4,8 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Allow phones on the local Wi-Fi to receive dev assets and HMR updates.
+  allowedDevOrigins: ["192.168.0.132"],
   // Short, memorable links for Simon to share. /score is the generic one and
   // forwards any query string automatically. /ig and /li are pre-tagged per
   // channel so Simon can paste a clean, tiny link into his Instagram bio /

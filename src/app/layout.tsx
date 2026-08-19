@@ -164,7 +164,7 @@ export default function RootLayout({
     <html lang="en-GB" className={`${figtree.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
-        <main className="site-shell flex-1 overflow-hidden bg-bg text-ink">
+        <main className="site-shell flex-1 bg-bg text-ink">
           {children}
         </main>
         <SiteFooter />

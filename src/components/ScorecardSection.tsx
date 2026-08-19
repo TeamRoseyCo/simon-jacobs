@@ -44,7 +44,7 @@ export default function ScorecardSection() {
         </div>
 
         {/* Right: sample survey mockup */}
-        <div className="relative hidden lg:block">
+        <div className="sc-mock-wrap relative">
           <div className="sc-mock-card" aria-hidden="true">
             <div className="flex items-center justify-between">
               <span className="text-[13px] font-medium text-ink">

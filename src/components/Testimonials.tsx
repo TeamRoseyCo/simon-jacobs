@@ -38,7 +38,7 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-function Card({ t, index }: { t: Testimonial; index: number }) {
+function Card({ t }: { t: Testimonial }) {
   const last = t.quote.length - 1;
   return (
     <figure
@@ -79,7 +79,7 @@ function Card({ t, index }: { t: Testimonial; index: number }) {
 
 export default function Testimonials() {
   return (
-    <section className="section-tinted py-16 md:py-24 gutter-bleed">
+    <section className="testimonials-section py-16 md:py-24 gutter-bleed">
       <div className="mx-auto w-full max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="ap-h2">
@@ -94,8 +94,8 @@ export default function Testimonials() {
 
         {/* Three across, so six quotes fill two clean rows. */}
         <div className="mt-10 grid gap-5 text-left md:mt-12 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, index) => (
-            <Card key={t.name} t={t} index={index} />
+          {testimonials.map((t) => (
+            <Card key={t.name} t={t} />
           ))}
         </div>
       </div>

@@ -154,7 +154,7 @@ export const hero = {
   eyebrow: "Chartered Tax Adviser · Ex-PwC",
   titleLead: "Tax planned before",
   titleAccent: "the money moves.",
-  sub: "For owner-managed UK businesses and the people who run them.",
+  sub: "Accounts and tax advice for UK business owners who are tired of finding out after year-end.",
 };
 
 export const heroSupport =
@@ -162,10 +162,10 @@ export const heroSupport =
 
 // Lead statement: the opening line that leads the reader into the whole page.
 export const lead = {
-  partA: "Most business owners are brilliant at what they do but ",
-  inkAccent: "terrible at keeping what they make.",
-  partB: " Because nobody ever showed them ",
-  tealAccent: "what's actually possible.",
+  partA: "Your accounts can be correct and still arrive ",
+  inkAccent: "too late to help.",
+  partB: " We keep the numbers current, so you can decide ",
+  tealAccent: "before the money moves.",
 };
 
 export const exitAngle = {
@@ -287,7 +287,7 @@ export const trustItems = [
 export const services = [
   {
     title: "Tax planning",
-    body: "Pay less, legally, and never get blindsided by a year-end bill again. We make the call before the money moves: corporation tax, VAT, and how you take money out.",
+    body: "See the corporation tax, VAT and personal-tax consequence before you commit. The useful conversation happens during the year, while timing and structure can still change.",
     includes: [
       "Corporation tax forecasting and timing",
       "A VAT position and scheme that fits how you trade",
@@ -297,8 +297,8 @@ export const services = [
     ],
   },
   {
-    title: "Profit extraction",
-    body: "Keep more of what you earn. The right salary, dividend and pension mix for your numbers, so the business funds your life before it funds the taxman.",
+    title: "Owner pay and extraction",
+    body: "Know what can come out, what should stay in the company, and what must be reserved. Salary, dividends and pension are modelled against your actual numbers and plans.",
     includes: [
       "The right salary and dividend split for your numbers",
       "Pension used as a tax-efficient extraction route",
@@ -308,8 +308,8 @@ export const services = [
     ],
   },
   {
-    title: "Accounts and compliance",
-    body: "The boring stuff, handled. Bookkeeping, VAT, payroll and year-end done properly, with management accounts you can actually read, and books clean enough to survive a buyer's due diligence.",
+    title: "Accounts and financial control",
+    body: "Bookkeeping, VAT, payroll and year-end remain accurate and current. You get numbers you can use before a dividend, investment, move abroad or possible sale.",
     includes: [
       "Management accounts you can actually read",
       "Year-end accounts and corporation tax returns",
@@ -321,11 +321,11 @@ export const services = [
 ];
 
 export const whoFor = [
-  "You run an owner-managed UK business turning over roughly £500k to £5m.",
-  "You're the owner, and the one who actually makes the call.",
-  "Corporation, VAT and personal tax take a bigger bite every year.",
-  "You're done doing your tax DIY and hoping for the best.",
-  "You want the business to be worth something on the day you stop running it.",
+  "You own and run a UK business, and the company's money affects your own.",
+  "The filings get done, but the useful advice keeps arriving after year-end.",
+  "You are deciding how to take profit, grow, move country, or prepare for a sale.",
+  "You want one named adviser who can explain what changes before you act.",
+  "You value clean records and straight answers more than the cheapest monthly package.",
 ];
 
 export const resultItems = [
@@ -338,15 +338,15 @@ export const resultItems = [
 export const processSteps = [
   {
     title: "Diagnose",
-    body: "We start with a discovery call and a look at the numbers: turnover, margins, current extraction, your tax position, and your goals for the next few years. The aim is to find where profit is quietly leaking and where the easy wins are.",
+    body: "We start with the company, the owner, the records and the next decision. You leave knowing what is urgent, what needs a proper review, and whether we are the right firm to handle it.",
   },
   {
     title: "Plan",
-    body: "You get a focused tax and profit plan written in plain English, with the trade-offs spelled out, what each choice is likely to cost, and what it means for both your take-home and the value of the business at exit.",
+    body: "We compare the options in plain English: tax, cash, timing and the trade-offs. Where another UK or overseas specialist is needed, that boundary is made clear before anything is implemented.",
   },
   {
     title: "Maintain",
-    body: "The plan is kept live through the year with regular check-ins, so big decisions like hiring, dividends, and reinvestment happen with the numbers in front of you, before deadlines force your hand.",
+    body: "The books and filings stay current, with reviews at an agreed rhythm. Dividends, pensions, investment and other material choices are revisited while there is still time to act.",
   },
 ];
 
