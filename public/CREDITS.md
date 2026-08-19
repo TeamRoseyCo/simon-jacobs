@@ -1,5 +1,12 @@
 # Third-party artwork
 
+## Homepage decision-model icons
+
+The non-Apple versions of the books, abacus, pound banknote, and compass icons
+in the homepage decision model are from
+[Microsoft Fluent Emoji](https://github.com/microsoft/fluentui-emoji), used
+under the MIT License. Apple devices render their native emoji instead.
+
 ## Process step icons
 
 `diagnose.webp`, `plan.webp`, `maintain.webp` — the three 160px discs above the

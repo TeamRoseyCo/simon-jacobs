@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalDoc title="Terms of Use" updated="29 June 2026">
+    <LegalDoc title="Terms of Use" updated="20 August 2026">
       <p>
         These terms govern your use of <strong>srjinternational.co.uk</strong> (the
         &ldquo;Site&rdquo;), operated by <strong>SRJ International Limited</strong>{" "}
@@ -55,6 +55,10 @@ export default function TermsPage() {
         by SRJ International Limited or its licensors and is protected by law.
         You may view and share links to it for personal, non-commercial use, but
         you may not reproduce it without permission.
+      </p>
+      <p>
+        Licences and acknowledgements for third-party visual assets are listed
+        in the Site&apos;s <a href="/CREDITS.md">artwork credits</a>.
       </p>
 
       <h2>5. Links to other sites</h2>

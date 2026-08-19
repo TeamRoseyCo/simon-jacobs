@@ -269,17 +269,6 @@ export default function SiteFooter() {
                 RoseyCo
               </a>
             </p>
-            <p className="foot-asset-credit">
-              Non-Apple card icons from{" "}
-              <a
-                href="https://github.com/microsoft/fluentui-emoji"
-                target="_blank"
-                rel="noopener"
-              >
-                Microsoft Fluent Emoji
-              </a>
-              , used under the MIT licence.
-            </p>
           </div>
           <nav className="foot-legal-nav" aria-label="Legal">
             <Link href="/privacy" className="foot-link">
