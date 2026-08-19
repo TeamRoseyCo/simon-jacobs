@@ -10,12 +10,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const steps = [
-  "A short fit call to understand where the business is today.",
-  "We talk through what feels messy: tax, profit, director pay, growth.",
-  "You leave knowing whether we can help. No pressure either way.",
-];
-
 export default function ContactPage() {
   return (
     // Same `pal-ink` scheme as the homepage. Without it this page kept the old
@@ -79,19 +73,7 @@ export default function ContactPage() {
             </div>
 
             <div className="ct-card">
-              <p className="ct-card-head">What happens next</p>
-              <ol className="ct-steps">
-                {steps.map((step, index) => (
-                  <li key={step}>
-                    <span className="ct-step-num">{`0${index + 1}`}</span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className="ct-card">
-              <p className="ct-card-head">Who you are talking to</p>
+              <p className="ct-card-subhead">Who you are talking to</p>
               <dl className="ct-trust">
                 {trustItems.map((item) => (
                   <div key={item.label}>
