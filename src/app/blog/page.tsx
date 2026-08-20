@@ -45,7 +45,7 @@ export default async function BlogPage() {
           <p className="eyebrow">Stories &amp; guides</p>
           <h2 className="ap-h2 mt-4">
             Notes on tax, profit, and a{" "}
-            <span className="em-display text-teal">more valuable agency.</span>
+            <span className="em-display text-teal">more valuable business.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted">
             Short, plain-English reads for owner-managed UK businesses. No
