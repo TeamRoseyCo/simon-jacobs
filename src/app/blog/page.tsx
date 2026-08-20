@@ -48,8 +48,8 @@ export default async function BlogPage() {
             <span className="em-display text-teal">more valuable agency.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-base leading-8 text-muted">
-            Short, plain-English reads for founder-led UK agencies. No jargon
-            walls, no filler.
+            Short, plain-English reads for owner-managed UK businesses. No
+            jargon walls, no filler.
           </p>
         </div>
       </section>

@@ -67,8 +67,8 @@ export default function ResultsPage() {
             <span className="em-display text-teal">actually looks like.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-muted">
-            A few real outcomes from working with UK agency owners. Every
-            business is different, so treat these as examples of what is
+            A few real outcomes from working with owner-managed UK businesses.
+            Every business is different, so treat these as examples of what is
             possible, not a promise of the same result.
           </p>
         </div>
