@@ -1,163 +1,80 @@
 # Lead email copy (send-ready)
 
-The actual copy for the first-email sequence, in Simon's voice. Modelled on the
-Tyson 4D welcome sequence (see `email-sequences.md` for the strategy/spec).
+**Canonical source is the code**, not this file: the emails are authored as
+branded [react-email](https://react.email) components in `src/emails/templates.tsx`
+(shared shell/brand in `src/emails/shell.tsx`) and rendered to HTML + plaintext
+in `src/lib/emailTemplates.tsx`. This doc mirrors that copy for review/sign-off.
 
-Status legend: **APPROVED** = signed off by Simon, ready to wire in.
-**DRAFT** = still being edited (live in the editable artifact).
+**Rewritten 2026-08-15 for the general-practice repositioning** (see
+`general-practice-repositioning-2026-08.md`): copy speaks to **owner-managed UK
+business owners**, not agencies specifically. The value nuggets are general tax
+truths (the 60% trap, profit extraction, clean-books-raise-valuation) that land
+for any owner-managed company, and the spikes — cross-border tax, exit, sectors
+— are woven in where natural. Value-first, in Simon's reel voice, wrapped in the
+SRJ brand (ink/accent/seafoam, Georgia headings, wordmark, value-callout blocks,
+styled CTA, PS strip, footer).
 
-Placeholders (filled in at send time):
-`{{first_name}}`, `{{BOOKING_LINK}}`, `{{RESOURCE_LINK}}`,
-`{{INSTAGRAM_LINK}}` = https://www.instagram.com/simonjacobs_cta,
-`{{physical_address}}`, `{{unsub_link}}`.
-
----
-
-## Email 1 · Wants a call — APPROVED
-- **Trigger:** instant, on contact-form submit
-- **Subject:** Here's your link to get booked in
-- **Preheader:** Your call link is inside
-
-```text
-Hey {{first_name}},
-
-Thanks for reaching out. I've got your message in front of me, so as promised, here's your link to grab a time that suits you:
-→ {{BOOKING_LINK}}
-
-Pick a slot and bring all your questions. I'm already preparing what you gave me, so there's no prep needed on your end.
-
-Between now and then, you'll get the occasional email from me on the things most agency owners find out too late: cutting the tax bill, paying yourself properly, and building an agency worth selling.
-
-All things you won't want to miss. So to make sure they don't get crammed into your promotions tab, do me a quick favour,
-First:
-Reply to this email with anything. Anything at all, even just a 'hi' or confirmation.
-
-Second:
-Add me as a contact. On Gmail desktop, hover over my name for a second and click "Add to Contacts" on the little popup. On mobile, hit the three dots and press "mark as important".
-
-Third:
-If one of my emails ever lands in your promotions tab, drag it over to primary. Do that a couple of times and Gmail will start putting me where you'll actually see me.
-
-That's all for now.
-
-Talk soon,
-Simon
-
-Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
-{{physical_address}} · Unsubscribe anytime: {{unsub_link}}
-```
+Delivery: Email 1 (per track) sends instantly from `/api/contact`; Emails 2–3
+are queued to `email_queue` and sent by the daily `/api/cron/send-sequence`
+cron. Every send carries `List-Unsubscribe` + one-click headers and checks
+`suppressed_emails` first.
 
 ---
 
-## Email 1 · Wants the scorecard — APPROVED
-- **Trigger:** instant, on scorecard submit
-- **Subject:** Your Profit-Rich Scorecard is on its way
-- **Preheader:** I'm scoring yours now
+## Track: wants a call (qualified contact-form lead)
 
-```text
-Hey {{first_name}},
+### Email 1 — instant · Subject: "Here's your link to get booked in"
+> Hey {first_name},
+> Got your message — thanks for reaching out. Here's your link to grab a time that suits you: **[Book your call →]**
+> Pick a slot and bring your questions. I'll have read what you sent before we speak, so there's nothing to prep your end.
+> *(callout)* One thing worth knowing before we talk: most business owners I meet aren't overpaying because they did something wrong — they're overpaying because nobody told them the **order** to do things in. How you pay yourself, when to buy the kit, how profit leaves the company, what an exit or a move abroad does to the bill. Small timing calls, big difference by year-end. We'll go through yours on the call.
+> Talk soon, Simon
+> *P.S. So my emails actually reach you (and don't get binned in Promotions), hit reply with anything, even a full stop. Gmail takes the hint.*
 
-Nice work finishing the Profit-Rich Scorecard. You've just done something most agency owners don't: looking at where money leaks.
-
-Here's what happens next. I personally score your answers across all 7 areas and send back your full result, plus a 90-day plan with the specific moves to plug the leaks, in order. It lands in your inbox within 2 working days.
-
-But here's the catch: it's no use if it never reaches you. So to make sure your scorecard (and everything after it) doesn't get buried in your promotions tab, do me a quick favour.
-
-First:
-Hit reply to this email. Literally anything, even one word. It's the single best way to signal to Gmail not to bury my emails.
-
-Second:
-Add me as a contact. On Gmail desktop, hover over my name for a second and click "Add to Contacts". On mobile, hit the three dots and press "mark as important".
-
-Third:
-If one of my emails ever slips into your promotions tab, drag it to primary. Do that once or twice and Gmail will start sending me straight through.
-
-While I put yours together, here's something worth a read in the meantime:
-→ {{RESOURCE_LINK}}
-
-After that, you'll get the occasional email from me on tax, profit extraction, and building an agency worth selling.
-
-Speak soon. Your scorecard's on its way.
-
-Simon
-
-Simon Jacobs · Jacobs Taxes (a trading name of SRJ International Limited)
-{{physical_address}} · Unsubscribe anytime: {{unsub_link}}
-```
+### Email 2 — +2 days if no booking · Subject: "The 60% tax trap most business owners miss"
+> Hey {first_name},
+> Quick one, because it catches so many owners out.
+> *(callout)* There's a slice of income — between **£100,000 and £125,140** — where every extra pound is effectively taxed at about **60%**. No tax table anywhere says "60%". It's your tax-free allowance quietly disappearing as your income climbs. Have a good year, take a bigger dividend to fund something, and you walk straight into it without realising.
+> The fix is almost always **timing** and how you pay yourself — decided before the money moves, not after. That's exactly the kind of thing we'd sort on your call. You asked for one the other day but haven't grabbed a time yet: **[Grab your time →]**
+> Or just hit reply with the question on your mind. I read every one.
+> Simon
 
 ---
 
-## Email 2 · Wants a call — APPROVED
-- **Trigger:** +2 days, if they haven't booked
-- **Subject:** Hey {{first_name}}, still want that call?
-- **Preheader:** I kept a slot open for you
+## Track: scorecard (Profit-Rich Scorecard finisher)
 
-```text
-Hey {{first_name}}!
+### Email 1 — instant · Subject: "Your Profit-Rich Scorecard is on its way"
+> Hey {first_name},
+> Nice work finishing the Scorecard — most business owners never actually stop to look at where the money leaks, so you're already ahead.
+> Here's what happens next: I score your answers across all 7 areas myself and send back your full result plus a **90-day plan** — the specific moves to plug the leaks, in the order that matters. It lands within 2 working days.
+> *(callout)* While I build yours, one idea worth sitting with: on most P&Ls I see, the biggest leak isn't a missed expense — it's profit leaving the company the expensive way. **How you pay yourself moves the needle more than any receipt ever will.** Your scorecard will show where yours stands.
+> Something worth a read while you wait: **[Read this next →]**
+> Simon
+> *P.S. So your result doesn't land in Promotions — hit reply with anything, even one word.*
 
-Your question came through the other day, but it doesn't look like you've grabbed a time yet.
-
-Everything okay?
-
-If you still want it, here's your link again:
-→ {{BOOKING_LINK}}
-
-Or just hit reply and ask me right here. I read every one.
-
-Talk soon,
-Simon
-```
+### Email 2 — +5 days · Subject: "How did your scorecard land?"
+> Hey {first_name},
+> I sent your Profit-Rich Scorecard and 90-day plan over a few days back. How did it land? Anything in there catch you off guard?
+> *(callout)* If it's still on the "I'll get to it" pile, here's one move worth doing regardless of your score: get your bookkeeping genuinely clean and current. Not exciting, I know. But clean books let you make tax decisions **before** year-end instead of finding out after — and if you ever sell the business, they quietly raise what a buyer will pay. I've watched messy books knock real money off a valuation.
+> Hit reply and tell me the area you scored worst in — I'll point you at the fastest fix.
+> Simon
 
 ---
 
-## Email 2 · Wants the scorecard — APPROVED
-- **Trigger:** 5 days after Email 1
-- **Subject:** Hey {{first_name}}, how did it land?
-- **Preheader:** I've been wondering how it landed
+## Shared final step (both tracks)
 
-```text
-Hey {{first_name}}!
-
-I sent over your Profit-Rich Scorecard and 90-day plan a couple of days back.
-
-How did it land?
-
-Hit reply and let me know, even a line. Did anything in there catch you off guard?
-
-More useful bits on the way soon.
-
-Catch you soon,
-Simon
-```
+### Email 3 — Subject: "Where I post the free stuff (most days)"
+> Hey {first_name},
+> Whether we've spoken yet or not, I don't want you waiting on my next email to get something useful.
+> The day-to-day stuff lives on my Instagram — most days, for business owners: cutting the tax bill, paying yourself properly, and building something actually worth selling. Short, plain, no jargon. The stuff most accountants keep behind a bill. I just put it out.
+> **[Follow @simonjacobs_cta →]**
+> Turn post notifications on so you catch the good ones, and take whatever works for your business.
+> Simon
+> *P.S. It's where I break down real (anonymised) numbers and test ideas first. Got a question about yours? Drop it in the comments — good chance I turn it into a post.*
 
 ---
 
-## Email 3 · Both tracks (Instagram) — DRAFT
-- **Trigger:** +4-5 days after Email 1 (either track)
-- **Subject:** Here's where I post the free stuff (daily)
-- **Preheader:** The stuff I wish every agency owner saw sooner
-
-```text
-Hey {{first_name}}.
-
-Whether we've spoken yet or not, I'd rather you didn't wait around for my next email to get something useful.
-
-So here's where the day-to-day stuff lives: my Instagram. I post almost every day for agency owners, on cutting the tax bill, paying yourself properly, and building something actually worth selling. Short, plain, no jargon.
-
-It's the sort of thing most accountants keep behind a closed door (or a bill). I just put it out.
-
-To get it, all you have to do:
-
-1. Follow me here: {{INSTAGRAM_LINK}}
-2. Turn on post notifications so you don't miss the good ones.
-3. Nick whatever works for your agency.
-
-That's all for now.
-
-Talk soon,
-Simon
-
-P.S. It's where I test new ideas first and break down real (anonymised) agency numbers. Got a question about yours? Drop it in the comments and I'll likely turn it into a post.
-```
-
-`{{INSTAGRAM_LINK}}` resolves to https://www.instagram.com/simonjacobs_cta (see placeholders above). Flip the status to APPROVED once Simon signs off.
+## Gap (not yet built)
+Newsletter subscribers (`source=subscribe`) and **unqualified** contact-form
+leads get no sequence. A short, value-led welcome for them (same voice) is the
+obvious next add.

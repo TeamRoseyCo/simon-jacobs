@@ -79,7 +79,7 @@ export async function GET(req: Request) {
     }
 
     const unsubLink = unsubscribeUrl(site.url, row.email);
-    const { subject, text, html } = buildTemplate(row, unsubLink);
+    const { subject, text, html } = await buildTemplate(row, unsubLink);
 
     try {
       const { error } = await resend.emails.send({

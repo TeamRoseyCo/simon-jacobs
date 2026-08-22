@@ -255,10 +255,9 @@ async function startSequence(opts: {
 
   const unsubLink = unsubscribeUrl(site.url, opts.email);
   const resend = new Resend(resendKey);
-  const { subject, text, html } =
-    opts.track === "scorecard"
-      ? scorecardEmail1({ firstName: opts.firstName, resourceLink: RESOURCE_LINK, unsubLink })
-      : callEmail1({ firstName: opts.firstName, unsubLink });
+  const { subject, text, html } = await (opts.track === "scorecard"
+    ? scorecardEmail1({ firstName: opts.firstName, resourceLink: RESOURCE_LINK, unsubLink })
+    : callEmail1({ firstName: opts.firstName, unsubLink }));
 
   try {
     await resend.emails.send({
