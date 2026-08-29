@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     template: "%s | SRJ International",
   },
   description:
-    "Tax planning, profit extraction, and accountancy for owner-managed UK businesses. Chartered Tax Adviser (CTA · ACA) and ex-PwC, with a focus on cross-border tax and business sales.",
+    "Tax planning, profit extraction, and accountancy for owner-managed UK businesses. Chartered Tax Adviser (CTA · ACA) and PwC trained, with a focus on cross-border tax and business sales.",
   keywords: [
     "chartered tax adviser",
     "accountants for UK business owners",

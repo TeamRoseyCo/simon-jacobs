@@ -159,7 +159,7 @@ export default async function CopyHomepage() {
             <span className="text-seafoam">has seen it before.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-[560px] text-base leading-8 text-white/85">
-            Chartered Tax Adviser, Chartered Accountant, and ex-PwC. We work
+            Chartered Tax Adviser, Chartered Accountant, and PwC trained. We work
             year-round with owner-managed UK businesses on tax, profit
             extraction, cross-border questions, and building something that is
             genuinely worth selling.

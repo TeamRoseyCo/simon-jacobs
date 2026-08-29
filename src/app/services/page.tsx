@@ -15,8 +15,8 @@ const siteUrl = site.url;
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Agency tax planning, profit extraction and accountancy",
-  serviceType: "Tax planning and accountancy for UK marketing agencies",
+  name: "Tax planning, profit extraction and accountancy",
+  serviceType: "Tax planning and accountancy for UK business owners",
   areaServed: { "@type": "Country", name: "United Kingdom" },
   provider: { "@id": `${siteUrl}/#organization` },
 };
@@ -99,9 +99,9 @@ const resultIcons: ReactNode[] = [
 const stepEmoji = ["/diagnose.webp", "/plan.webp", "/maintain.webp"];
 
 export const metadata: Metadata = {
-  title: "Agency Tax Planning & Profit Extraction",
+  title: "Tax Planning & Profit Extraction",
   description:
-    "Proactive tax planning, profit extraction, and accountancy for UK marketing agencies, built around how agencies actually run and where they are heading.",
+    "Proactive tax planning, profit extraction, and accountancy for UK business owners, built around how the business actually runs and where it's heading.",
   alternates: { canonical: "/services" },
 };
 
@@ -123,12 +123,13 @@ export default function ServicesPage() {
           </h1>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-muted">
             Year-round advice on tax, profit, and the numbers that decide how
-            much you keep and how much your business is worth. See how we work as{" "}
+            much you keep and how much your business is worth, for
+            owner-managed UK businesses of every kind, including{" "}
             <Link
               href="/accountants-for-marketing-agencies"
               className="font-semibold text-accent transition hover:text-ink"
             >
-              accountants for marketing agencies
+              marketing and creative agencies
             </Link>
             .
           </p>

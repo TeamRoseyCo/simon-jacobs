@@ -12,9 +12,9 @@ import { postImage } from "@/lib/postImage";
 // posts share it, which is repetitive but neutral: a repeated real photo reads
 // as a house style, a broken image reads as a dead site.
 export const metadata: Metadata = {
-  title: "Tax & Profit Notes for Agency Founders",
+  title: "Tax & Profit Notes for UK Business Owners",
   description:
-    "Plain-English notes on tax, profit extraction, VAT, and building a more valuable agency, written for founder-led UK marketing agencies.",
+    "Plain-English notes on tax, profit extraction, VAT, and building a more valuable business, written for UK business owners.",
   alternates: { canonical: "/blog" },
 };
 

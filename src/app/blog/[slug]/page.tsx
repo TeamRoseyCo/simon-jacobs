@@ -254,7 +254,7 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        {/* Visible author attribution — the CTA · ACA / ex-PwC signal is in the
+        {/* Visible author attribution — the CTA · ACA / PwC trained signal is in the
             BlogPosting schema, but this makes it legible to readers and quality
             raters too. Facts match /about; no new claims. */}
         <div className="mt-14 flex flex-col gap-4 rounded-[14px] border border-border bg-surface p-6 sm:flex-row sm:items-center">
@@ -273,8 +273,8 @@ export default async function BlogPostPage({
             >
               Simon Jacobs
             </Link>{" "}
-            is a Chartered Tax Adviser (CTA · ACA) and ex-PwC, founder of SRJ
-            International. He advises founder-led UK marketing agencies on tax,
+            is a Chartered Tax Adviser (CTA · ACA) and PwC trained, founder of SRJ
+            International. He advises UK business owners on tax,
             profit extraction and exit.{" "}
             <Link
               href="/about"

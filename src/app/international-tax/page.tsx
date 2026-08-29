@@ -29,7 +29,7 @@ const siteUrl = site.url;
 export const metadata: Metadata = {
   title: "International & Cross-Border Tax Advice",
   description:
-    "Chartered Tax Adviser for UK residence and cross-border tax: leaving the UK, returning to it, UK-to-UAE and Dubai moves, double taxation, and foreign income. CTA, ACA and ex-PwC.",
+    "Chartered Tax Adviser for UK residence and cross-border tax: leaving the UK, returning to it, UK-to-UAE and Dubai moves, double taxation, and foreign income. CTA, ACA and PwC trained.",
   alternates: { canonical: "/international-tax" },
   openGraph: {
     type: "website",
@@ -171,7 +171,7 @@ export default function InternationalTaxPage() {
             SRJ International advises UK business owners and individuals on
             residence, leaving or returning to the UK, foreign income, and
             double taxation. Led by Simon Jacobs, a Chartered Tax Adviser
-            (CTA · ACA) and ex-PwC. Cross-border work is where a chartered tax
+            (CTA · ACA) and PwC trained. Cross-border work is where a chartered tax
             qualification earns its keep, because the rules are statutory,
             intricate, and unforgiving of guesswork.
           </p>

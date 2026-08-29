@@ -139,7 +139,7 @@ export default function AccountantsForCreativeAgenciesPage() {
       {/* Hero */}
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-3xl">
-          <p className="eyebrow">Chartered Tax Adviser · CTA · ACA · Ex-PwC</p>
+          <p className="eyebrow">Chartered Tax Adviser · CTA · ACA · PwC Trained</p>
           <h1 className="ap-h2 mt-4">
             Accountants for{" "}
             <span className="em-display text-teal">creative agencies.</span>
@@ -152,7 +152,7 @@ export default function AccountantsForCreativeAgenciesPage() {
             SRJ International is a firm of specialist accountants and Chartered
             Tax Advisers for UK creative agencies: design, branding, content, and
             production studios. Led by Simon Jacobs, a Chartered Tax Adviser
-            (CTA · ACA) and ex-PwC, we handle VAT, project accounting, profit
+            (CTA · ACA) and PwC trained, we handle VAT, project accounting, profit
             extraction, and exit planning around how creative studios actually
             run.
           </p>

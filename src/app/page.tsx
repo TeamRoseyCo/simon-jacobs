@@ -27,7 +27,7 @@ import { postImage } from "@/lib/postImage";
 // credential and keyword signals.
 export const metadata: Metadata = {
   description:
-    "Chartered Tax Advisers for owner-managed UK businesses. Tax planning, cross-border advice and accountancy from a CTA, ACA and ex-PwC. Keep more of what you earn.",
+    "Chartered Tax Advisers for owner-managed UK businesses. Tax planning, cross-border advice and accountancy from a CTA, ACA and PwC trained adviser. Keep more of what you earn.",
 };
 
 export default async function Home() {
@@ -118,18 +118,17 @@ export default async function Home() {
             <br />
             know what changes.
           </h2>
-          {/* The link keeps the exact-match anchor into the money page, but it
-              is styled as an editorial inline link (underline, no colour shout)
-              rather than the bright accent blue, which read as a stray
-              hyperlink dropped into the sentence. */}
+          {/* 29 Aug 2026: link swapped from the marketing-agencies vertical to
+              the general /services money page, at the client's request — this
+              teaser now reads as general UK, with sector pages linked lower
+              down the funnel instead. Styled as an editorial inline link
+              (underline, no colour shout) rather than the bright accent blue,
+              which read as a stray hyperlink dropped into the sentence. */}
           <p className="ap-sub mt-5">
             The return is the final record. Useful advice happens earlier. We
-            work across owner-managed businesses, including{" "}
-            <Link
-              href="/accountants-for-marketing-agencies"
-              className="ap-inline-link"
-            >
-              marketing and creative agencies
+            work across{" "}
+            <Link href="/services" className="ap-inline-link">
+              owner-managed UK businesses of every kind
             </Link>
             .
           </p>
@@ -180,7 +179,7 @@ export default async function Home() {
             <span className="text-seafoam">has seen it before.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-[560px] text-base leading-8 text-white/85">
-            Chartered Tax Adviser, Chartered Accountant, and ex-PwC. We work
+            Chartered Tax Adviser, Chartered Accountant, and PwC trained. We work
             year-round with owner-managed UK businesses on tax, profit
             extraction, cross-border questions, and building something that is
             genuinely worth selling.

@@ -4,9 +4,9 @@ import FaqAccordion from "@/components/FaqAccordion";
 import { faqs } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "FAQ: Agency tax planning questions",
+  title: "FAQ: Tax planning questions",
   description:
-    "Sensible questions UK agency founders ask before a tax planning call: what Big Four means, whether you're too small, building toward a sale, and what happens after you book.",
+    "Sensible questions UK business owners ask before a tax planning call: what Big Four means, whether you're too small, building toward a sale, and what happens after you book.",
   alternates: { canonical: "/faq" },
 };
 

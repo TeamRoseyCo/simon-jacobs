@@ -7,7 +7,7 @@ import Accreditations from "@/components/Accreditations";
 export const metadata: Metadata = {
   title: "Client Results",
   description:
-    "Real outcomes from tax planning and accountancy for UK marketing agencies: tax bills brought down, money reclaimed, and structures built for a cleaner exit.",
+    "Real outcomes from tax planning and accountancy for UK business owners: tax bills brought down, money reclaimed, and structures built for a cleaner exit.",
   alternates: { canonical: "/results" },
 };
 
@@ -24,14 +24,17 @@ const outcomes = [
   {
     stat: "Thousands saved",
     label: "Personal Allowance protected",
-    body: "A digital agency client saved thousands on his tax bill and kept his Personal Allowance intact through proper planning, plus guidance on other assets expected to save more in future.",
-    href: "/blog/how-much-should-agency-founders-pay-themselves",
+    body: "A client saved thousands on his tax bill and kept his Personal Allowance intact through proper planning, plus guidance on other assets expected to save more in future.",
+    // No href: neither existing blog post is actually this client's story
+    // (the closest match is a generic pay-extraction guide), and a "Read the
+    // story" link that lands on unrelated content is worse than no link.
+    // Point here once a post telling this specific story exists.
   },
   {
     stat: "Money reclaimed",
     label: "Proper structuring",
     body: "A client reclaimed money he did not realise he was owed and saved a significant amount in tax through the right structure, with everything left compliant and future-proof.",
-    href: "/blog/plan-tax-around-your-exit",
+    // Same as above: no existing post tells this story specifically.
   },
 ];
 
@@ -85,7 +88,7 @@ export default function ResultsPage() {
               <span className="em-display text-4xl leading-none text-teal md:text-5xl">
                 {o.stat}
               </span>
-              <span className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+              <span className="mt-3 block text-xs font-semibold text-muted">
                 {o.label}
               </span>
               <p className="mt-4 flex-1 text-sm leading-7 text-muted">{o.body}</p>
@@ -112,7 +115,7 @@ export default function ResultsPage() {
           </h2>
           <p className="mx-auto mt-5 max-w-[620px] text-base leading-8 text-muted">
             None of these outcomes came from a clever trick. They came from a
-            repeatable way of working, applied to each agency&apos;s real numbers.
+            repeatable way of working, applied to each client&apos;s real numbers.
           </p>
         </div>
         <div className="mt-10 grid gap-4 text-left md:grid-cols-3">
@@ -146,16 +149,16 @@ export default function ResultsPage() {
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
         <p className="text-base leading-8 text-muted">
-          Want to see how this applies to your business? Read the{" "}
+          Want to see how this applies to your business?{" "}
+          <Link href="/contact" className="font-semibold text-accent hover:text-ink">
+            Book a discovery call
+          </Link>
+          , or see how we work with{" "}
           <Link
-            href="/accountants-for-marketing-agencies"
+            href="/services"
             className="font-semibold text-accent hover:text-ink"
           >
-            agency accounting page
-          </Link>{" "}
-          or{" "}
-          <Link href="/contact" className="font-semibold text-accent hover:text-ink">
-            book a discovery call
+            owner-managed UK businesses of every kind
           </Link>
           .
         </p>

@@ -17,7 +17,7 @@ const siteUrl = site.url;
 export const metadata: Metadata = {
   title: "Chartered Tax Adviser in London for Marketing Agencies",
   description:
-    "A London-based Chartered Tax Adviser (CTA, ACA, ex-PwC) for marketing agencies. Retainer revenue, media pass-through VAT, IR35, profit extraction and exit planning. Deal with the adviser, not an account manager.",
+    "A London-based Chartered Tax Adviser (CTA, ACA, PwC trained) for marketing agencies. Retainer revenue, media pass-through VAT, IR35, profit extraction and exit planning. Deal with the adviser, not an account manager.",
   keywords: [
     "chartered tax adviser London",
     "chartered tax advisor London",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title:
       "Chartered Tax Adviser in London for Marketing Agencies | SRJ International",
     description:
-      "London Chartered Tax Adviser (CTA, ACA, ex-PwC) built for marketing agencies. Retainers, media pass-through VAT, IR35, profit extraction, exit.",
+      "London Chartered Tax Adviser (CTA, ACA, PwC trained) built for marketing agencies. Retainers, media pass-through VAT, IR35, profit extraction, exit.",
     url: `${siteUrl}/chartered-tax-adviser-london-marketing-agencies`,
     images: [{ url: "/simon-jacobs.jpg" }],
   },
@@ -197,7 +197,7 @@ export default function CharteredTaxAdviserLondonPage() {
           </p>
           <p className="mx-auto mt-4 max-w-[640px] text-base leading-8 text-muted">
             SRJ International is a London practice led by Simon Jacobs, a
-            Chartered Tax Adviser (CTA · ACA) and ex-PwC. We work only with UK
+            Chartered Tax Adviser (CTA · ACA) and PwC trained. We work only with UK
             marketing, digital and creative agencies on retainer revenue, media
             pass-through VAT, IR35, profit extraction and exit planning. You deal
             with the adviser, not an account manager.

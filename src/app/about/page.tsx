@@ -7,9 +7,9 @@ import WorksWith from "@/components/WorksWith";
 import { principles, credentials, site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About Simon Jacobs, CTA & ex-PwC | SRJ International",
+  title: "About Simon Jacobs, CTA & PwC Trained | SRJ International",
   description:
-    "Simon Jacobs is a Chartered Tax Adviser (CTA · ACA) and ex-PwC, founder of SRJ International (formerly Jacobs Taxes). He advises UK marketing agencies on tax, profit extraction, director pay, and exit.",
+    "Simon Jacobs is a Chartered Tax Adviser (CTA · ACA) and PwC trained, founder of SRJ International (formerly Jacobs Taxes). He advises UK business owners on tax, profit extraction, director pay, and exit.",
   alternates: { canonical: "/about" },
 };
 
@@ -29,7 +29,7 @@ const profileLd = {
     name: "Simon Jacobs",
     jobTitle: "Chartered Tax Adviser (CTA · ACA)",
     description:
-      "Simon Jacobs is a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA), ex-PwC, and founder of SRJ International (formerly known as Jacobs Taxes), specialising in tax planning and profit extraction for UK marketing agencies.",
+      "Simon Jacobs is a Chartered Tax Adviser (CTA) and Chartered Accountant (ACA), PwC trained, and founder of SRJ International (formerly known as Jacobs Taxes), specialising in tax planning and profit extraction for UK business owners.",
     image: `${site.url}/simon-jacobs.jpg`,
     url: `${site.url}/about`,
     email: site.email,
@@ -77,7 +77,7 @@ const profileLd = {
       "Profit extraction",
       "Corporation tax",
       "Director remuneration",
-      "Agency accountancy",
+      "Cross-border taxation",
     ],
   },
 };
@@ -120,18 +120,18 @@ export default function AboutPage() {
         <div className="aj-step">
           <p className="max-w-xl text-lg leading-9 text-muted">
             He set up on his own to specialise in the clients he enjoys most:
-            digital marketing agencies, SMEs, and high-net-worth individuals,
-            with tax planning, accounting, and compliance under one roof. The
-            day-to-day realities of a growing agency, uneven cashflow, retained
-            clients, director pay, and the tension between taking profit and
-            reinvesting it, are exactly where good planning earns its keep.
+            online businesses and brick-and-mortars, with tax planning,
+            accounting, and compliance under one roof. The day-to-day
+            realities of growing businesses, uneven cashflow, director pay,
+            and the tension between taking profit and reinvesting it, are
+            exactly where good planning earns its keep.
           </p>
         </div>
         <div className="aj-step justify-end text-right">
           <p className="ml-auto max-w-xl text-lg leading-9 text-muted">
             Away from the numbers, he is an award-winning public speaker who
-            has presented at the ICAEW and CIOT and serves as Vice President of
-            Membership at his local Toastmasters club. It is the same instinct
+            has presented at the ICAEW and CIOT and serves on the committee at
+            his local Toastmasters club. It is the same instinct
             that drives the work: explain it clearly, and help you make the call
             with confidence.
           </p>
@@ -143,7 +143,7 @@ export default function AboutPage() {
           <div className="relative aspect-[16/10] w-full">
             <Image
               src="/simon-jacobs-event.webp"
-              alt="A chartered tax adviser in conversation with agency founders over dinner"
+              alt="A chartered tax adviser in conversation with business owners over dinner"
               fill
               sizes="(min-width: 1024px) 1100px, 100vw"
               className="object-cover object-[center_32%]"
@@ -206,7 +206,7 @@ export default function AboutPage() {
             </article>
           ))}
         </div>
-        <p className="accred-eyebrow accred-eyebrow-light mt-10">CTA · ACA · ex-PwC</p>
+        <p className="accred-eyebrow accred-eyebrow-light mt-10">CTA · ACA · PwC Trained</p>
         <Accreditations variant="light" />
         <WorksWith className="mt-8" />
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-7 text-muted">
@@ -226,7 +226,7 @@ export default function AboutPage() {
 
       <ConsultCta
         heading="Bring the questions you've been putting off."
-        sub="A short discovery call to talk through where the agency is and where you want it to go."
+        sub="A short discovery call to talk through where the business is and where you want it to go."
       />
     </>
   );

@@ -215,7 +215,7 @@ export default function ScorecardForm({
           <span className="em-display text-teal">leaking profit.</span>
         </h1>
         <p className="mx-auto mt-4 max-w-[480px] text-base leading-8 text-muted">
-          21 quick questions across the 7 areas where founder-led agencies
+          21 quick questions across the 7 areas where founder-led businesses
           usually lose profit. Answer honestly and we email back your score with
           a 90-day plan to plug the gaps. No sales pitch.
         </p>
@@ -247,7 +247,7 @@ export default function ScorecardForm({
           Start the scorecard ›
         </button>
         <p className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-muted">
-          Scored by a Chartered Tax Adviser · CTA · ACA · ex-PwC · ~5 minutes
+          Scored by a Chartered Tax Adviser · CTA · ACA · PwC Trained · ~5 minutes
         </p>
       </div>
     );

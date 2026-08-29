@@ -34,7 +34,7 @@ const empty: Fields = {
 };
 
 // Lead qualification. Thresholds come from the Ideal Client Profile
-// (founder-led UK marketing agencies, ~£500k-£2.5m turnover). A lead qualifies
+// (owner-managed UK businesses, ~£500k-£2.5m turnover). A lead qualifies
 // for a discovery call only if they are a decision-maker AND at/above the
 // turnover floor. Everyone else is still captured, then routed to the
 // Scorecard instead of the calendar, so Simon's call time goes to real fits.

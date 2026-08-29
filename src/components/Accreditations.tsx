@@ -20,7 +20,7 @@ const items: Item[] = [
     href: "https://www.tax.org.uk",
     logo: { src: "/accreditations/ciot.png", width: 392, height: 726 },
   },
-  { mark: "ex-PwC", caption: "Big Four trained", href: "https://www.pwc.co.uk" },
+  { mark: "PwC Trained", caption: "Big Four trained", href: "https://www.pwc.co.uk" },
 ];
 
 export default function Accreditations({

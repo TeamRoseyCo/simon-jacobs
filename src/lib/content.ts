@@ -147,13 +147,13 @@ export const scorecardHref = "/scorecard";
 //  - "For founder-led agencies, not giant companies." was an "X, not Y"
 //    negative parallelism. The turnover band does the same exclusion by being
 //    precise instead, and qualifies the lead while it is at it.
-// The headline now states the actual differentiator: planning before the
-// transaction rather than compliance after it. It reuses the wording already
-// proven in the services copy ("We make the call before the money moves").
+// 29 August 2026: headline swapped again, from the differentiator claim
+// ("Tax planned before the money moves.") to a straight identity statement —
+// who Simon is and where he's based — at the client's request.
 export const hero = {
-  eyebrow: "Chartered Tax Adviser · Ex-PwC",
-  titleLead: "Tax planned before",
-  titleAccent: "the money moves.",
+  eyebrow: "Chartered Tax Adviser · PwC Trained",
+  titleLead: "Your chartered tax adviser",
+  titleAccent: "and accountant in London.",
   sub: "Accounts and tax advice for UK business owners who are tired of finding out after year-end.",
 };
 
@@ -272,9 +272,9 @@ export const trustItems = [
   },
   {
     label: "Background",
-    value: "Ex-PwC",
+    value: "PwC Trained",
     description:
-      "Ex-PwC means our team has Big Four advisory experience. In plain English: you get structured thinking usually reserved for much larger businesses.",
+      "PwC trained means our team has Big Four advisory experience. In plain English: you get structured thinking usually reserved for much larger businesses.",
   },
   {
     label: "Specialism",
@@ -379,7 +379,7 @@ export const credentials = [
     body: "An ICAEW Chartered Accountant, trained in accountancy as well as tax, so advice connects to the real numbers.",
   },
   {
-    title: "Ex-PwC",
+    title: "PwC Trained",
     body: "Big Four advisory experience, applied to the practical decisions owners actually face.",
   },
   {
@@ -392,7 +392,7 @@ export const faqs = [
   {
     question: "What does Big Four mean?",
     answer:
-      "Big Four means PwC, Deloitte, EY, and KPMG: the four largest global accounting and advisory firms. Ex-PwC means our team has experience from one of those firms, then applies that structured thinking to the practical decisions agency owners actually face.",
+      "Big Four means PwC, Deloitte, EY, and KPMG: the four largest global accounting and advisory firms. PwC trained means our team has experience from one of those firms, then applies that structured thinking to the practical decisions business owners actually face.",
   },
   {
     question: "Do I need to understand tax before we speak?",
