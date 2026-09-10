@@ -58,18 +58,19 @@ export interface AgencyNotifyResult {
 /**
  * Where the agency ping goes.
  *
- * MEASURED 2026-09-10, do not change on a hunch. Resend reports "delivered" for
- * leads@roseyco.com, team@elevateoco.com AND bailey.barry@elevateoco.com,
- * because all three are accepted by their mail servers. Only
- * bailey.barry@elevateoco.com actually lands in an inbox anyone reads. The other
- * two accept the message and swallow it, which is why the notifications sent to
- * team@elevateoco.com through August were never seen.
+ * `team@elevateoco.com` is the agreed destination for every client (Bailey,
+ * 2026-09-10). Override per environment with LEAD_AGENCY_NOTIFY_TO
+ * (comma-separated) rather than editing this in twelve repositories.
  *
- * Override per environment with LEAD_AGENCY_NOTIFY_TO (comma-separated) so this
- * never needs a commit in twelve repositories again. Point it at a shared inbox
- * the moment one is genuinely set up and reading.
+ * One measured caveat worth knowing when debugging a "missing" notification: a
+ * Resend `delivered` event only means the receiving mail server accepted the
+ * message. On 2026-09-10 leads@roseyco.com, team@elevateoco.com and
+ * bailey.barry@elevateoco.com all reported delivered, but only the last one
+ * appeared in Bailey's own mailbox. So if these need to reach a specific person,
+ * check that person is a delivering member of the group — do not infer it from a
+ * provider's delivery event, and search the destination mailbox instead.
  */
-const FALLBACK_TO = ["bailey.barry@elevateoco.com"];
+const FALLBACK_TO = ["team@elevateoco.com"];
 
 function envRecipients(): string[] | null {
   let raw: string | undefined;
