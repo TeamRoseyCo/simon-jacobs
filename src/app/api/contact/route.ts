@@ -4,16 +4,11 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { site } from "@/lib/content";
 import { unsubscribeUrl } from "@/lib/unsubscribe";
 import { callEmail1, scorecardEmail1 } from "@/lib/emailTemplates";
+import { notifyAgencyLead } from "@/lib/agencyNotify";
 import { looksLikeBot, looksLikeGibberishName } from "@/lib/spam";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const TARGET = "simon@srjinternational.co.uk";
-// Elevateo (the marketing agency, i.e. the data processor) gets a copy of every
-// lead alert, but a REDACTED one: direct contact details (email, phone) are
-// masked and the free-text enquiry is withheld, so only Simon — the data
-// controller — ever receives raw personal data by email. GDPR data-minimisation;
-// the full lead stays behind the access-controlled /admin.
-const ELEVATEO = ["hazem.dweik@elevateoco.com", "team@elevateoco.com"];
 const RESOURCE_LINK = `${site.url}/blog/dont-use-claude-for-taxes`;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -37,41 +32,9 @@ function renderBody(payload: Record<string, unknown>) {
   );
 }
 
-// Mask an email to its first two characters + domain: "jordan@acme.com" ->
-// "jo•••@acme.com". Enough to recognise a returning enquirer without handing
-// Elevateo a directly-contactable address.
-const maskEmail = (v: unknown) => {
-  const s = String(v);
-  const at = s.indexOf("@");
-  if (at < 1) return "[hidden]";
-  return `${s.slice(0, Math.min(2, at))}•••${s.slice(at)}`;
-};
-
-// Keep only the last 3 digits of a phone number: "+44 7700 900123" -> "•••••• 123".
-const maskPhone = (v: unknown) => {
-  const digits = String(v).replace(/\D/g, "");
-  return digits ? `•••••• ${digits.slice(-3)}` : "";
-};
-
-// The processor (Elevateo) copy: mask the direct contact identifiers and withhold
-// the free-text enquiry, which is where a lead's personal or financial detail
-// lands. Everything else (name, lead source, turnover band, qualified/score) is
-// kept so the agency can still triage. Raw detail lives only in /admin.
-function redactForProcessor(payload: Record<string, unknown>) {
-  const out: Record<string, unknown> = {};
-  for (const [k, v] of Object.entries(payload)) {
-    if (k === "email") out[k] = maskEmail(v);
-    else if (k === "phone") out[k] = maskPhone(v);
-    else if (k === "question" || k === "answers") out[k] = "[hidden — view in /admin]";
-    else out[k] = v;
-  }
-  return out;
-}
-
 async function notify(payload: Record<string, unknown>, replyTo: string) {
   const subject = String(payload._subject ?? "New enquiry from the website");
   const fullBody = renderBody(payload);
-  const processorBody = renderBody(redactForProcessor(payload));
 
   let controllerEmailed = false;
 
@@ -98,23 +61,16 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
       );
     }
 
-    // Elevateo (the processor) — redacted copy, and deliberately no enquirer
-    // reply-to (a reply would expose the address we just masked). Best effort:
-    // a failure here must never fail the submission or gate the fallback below.
-    try {
-      const { error } = await resend.emails.send({
-        from: FROM,
-        to: ELEVATEO,
-        subject,
-        text: processorBody,
-      });
-      if (error) console.error("[notify] resend rejected the Elevateo copy:", error.message);
-    } catch (err) {
-      console.error(
-        "[notify] resend threw on the Elevateo copy:",
-        err instanceof Error ? err.message : err,
-      );
-    }
+    // Agency lead notification — the ONE standard shape.
+    // See marketing-ide/docs/LEAD-NOTIFICATION-STANDARD.md. Zero PII by design:
+    // this replaced a masked copy that still carried the enquirer's name.
+    await notifyAgencyLead({
+      client: "SRJ International",
+      apiKey: process.env.RESEND_API_KEY!,
+      source: "Website contact form",
+      ownerLabel: "Simon",
+      to: ["leads@roseyco.com", "hazem.dweik@elevateoco.com"],
+    });
 
     if (controllerEmailed) return true;
   } else {
