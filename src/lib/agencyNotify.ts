@@ -37,7 +37,7 @@ export interface AgencyNotifyOptions {
    * closing line so the reader knows where the real detail lives.
    */
   ownerLabel?: string;
-  /** Agency recipients. Defaults to the central inbox. */
+  /** Agency recipients. Defaults to LEAD_AGENCY_NOTIFY_TO, else the address measured to actually arrive. */
   to?: string[];
   /** Envelope from. Defaults to `<client> Website <leads@roseyco.com>`. */
   from?: string;
@@ -55,7 +55,40 @@ export interface AgencyNotifyResult {
   skipped?: string;
 }
 
-const DEFAULT_TO = ["leads@roseyco.com"];
+/**
+ * Where the agency ping goes.
+ *
+ * MEASURED 2026-09-10, do not change on a hunch. Resend reports "delivered" for
+ * leads@roseyco.com, team@elevateoco.com AND bailey.barry@elevateoco.com,
+ * because all three are accepted by their mail servers. Only
+ * bailey.barry@elevateoco.com actually lands in an inbox anyone reads. The other
+ * two accept the message and swallow it, which is why the notifications sent to
+ * team@elevateoco.com through August were never seen.
+ *
+ * Override per environment with LEAD_AGENCY_NOTIFY_TO (comma-separated) so this
+ * never needs a commit in twelve repositories again. Point it at a shared inbox
+ * the moment one is genuinely set up and reading.
+ */
+const FALLBACK_TO = ["bailey.barry@elevateoco.com"];
+
+function envRecipients(): string[] | null {
+  let raw: string | undefined;
+  try {
+    // Deno (Supabase edge functions)
+    const d = (globalThis as { Deno?: { env?: { get(k: string): string | undefined } } }).Deno;
+    raw = d?.env?.get("LEAD_AGENCY_NOTIFY_TO");
+  } catch { /* env access not permitted; fall through */ }
+  if (!raw) {
+    try {
+      // Node / Next
+      const p = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process;
+      raw = p?.env?.LEAD_AGENCY_NOTIFY_TO;
+    } catch { /* no process; fall through */ }
+  }
+  if (!raw) return null;
+  const list = raw.split(",").map((x) => x.trim()).filter(Boolean);
+  return list.length ? list : null;
+}
 const DEFAULT_ACCENT = "#0f3d3e";
 const DEFAULT_TZ = "Europe/London";
 
@@ -109,7 +142,7 @@ This is a lead-volume notification only. For client confidentiality, no personal
 export async function notifyAgencyLead(o: AgencyNotifyOptions): Promise<AgencyNotifyResult> {
   try {
     if (!o.apiKey) return { ok: false, skipped: "no api key" };
-    const to = (o.to ?? DEFAULT_TO).map((s) => s.trim()).filter(Boolean);
+    const to = (o.to ?? envRecipients() ?? FALLBACK_TO).map((s) => s.trim()).filter(Boolean);
     if (!to.length) return { ok: false, skipped: "no recipients" };
 
     const { subject, html, text } = buildAgencyEmail(o);

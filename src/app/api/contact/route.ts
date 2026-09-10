@@ -69,7 +69,7 @@ async function notify(payload: Record<string, unknown>, replyTo: string) {
       apiKey: process.env.RESEND_API_KEY!,
       source: "Website contact form",
       ownerLabel: "Simon",
-      to: ["leads@roseyco.com", "hazem.dweik@elevateoco.com"],
+      to: ["bailey.barry@elevateoco.com", "hazem.dweik@elevateoco.com"],
     });
 
     if (controllerEmailed) return true;
