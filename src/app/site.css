@@ -3710,6 +3710,19 @@ body {
 .pal-ink .ap-btn:hover,
 :root:has(.pal-ink) .nav-cta:hover { background: #173F93; }
 
+/* .mobile-cta sets its own colour with !important, so the palette rule above
+   cannot reach it and the label stayed ink on the blue fill (2.37:1). */
+:root:has(.pal-ink) .nav-cta.mobile-cta {
+  background: #1B4DB1;
+  color: #fff !important;
+  border-color: #1B4DB1 !important;
+}
+:root:has(.pal-ink) .nav-cta.mobile-cta:hover {
+  background: #173F93;
+  color: #fff !important;
+  border-color: #173F93 !important;
+}
+
 .pal-ink .hv-cta-primary {
   background: #1B4DB1;
   color: #fff;

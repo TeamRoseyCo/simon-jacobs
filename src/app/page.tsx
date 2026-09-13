@@ -9,7 +9,6 @@ import RotatingWord from "@/components/RotatingWord";
 import ScorecardSection from "@/components/ScorecardSection";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
-import PasScrollSequence from "@/components/PasScrollSequence";
 import DecisionModel from "@/components/DecisionModel";
 import {
   services,
@@ -55,8 +54,6 @@ export default async function Home() {
         </p>
         <WorksWith className="mt-12" />
       </section>
-
-      <PasScrollSequence />
 
       <DecisionModel />
 

@@ -10,7 +10,6 @@ import ScorecardSection from "@/components/ScorecardSection";
 import Accreditations from "@/components/Accreditations";
 import WorksWith from "@/components/WorksWith";
 import EditableCopyMode from "@/components/EditableCopyMode";
-import PasScrollSequence from "@/components/PasScrollSequence";
 import DecisionModel from "@/components/DecisionModel";
 import {
   services,
@@ -33,7 +32,6 @@ export const metadata: Metadata = {
 function CopyBridgeSections() {
   return (
     <>
-      <PasScrollSequence variant="draft" />
       <DecisionModel />
     </>
   );
