@@ -10,14 +10,6 @@
   --seafoam: #9FE7DC;
   --teal:    #1A8275;
   --border:  #D9E5EF;
-  /* How far content sits from the window edge, everywhere on the site: the hero
-     (.hv-inner), every section (.gutter / .gutter-bleed) and the who-for copy
-     column all read this one value, so they can never drift apart.
-     24px on a phone, then 7vw, capped at 96px.
-     The 7vw matters: at 4vw a 1000px-wide window (a half-screen browser, which
-     is how this actually gets looked at) got only 40px and read as touching the
-     edge, while a maximised 1512px window got 190px and looked fine. Judge any
-     change to this at ~1000px, not full screen. */
   --gutter: clamp(24px, 7vw, 96px);
 }
 
@@ -32,25 +24,16 @@
   --color-teal:    var(--teal);
   --color-border:  var(--border);
 
-  /* Do not use the Inter typeface anywhere on this site. Two faces only:
-     serif for headings/wordmark, sans for body copy. */
   --font-serif: Georgia, "Times New Roman", serif;
-  /* Figtree, self-hosted through next/font in layout.tsx, which sets
-     --font-figtree on <html>. The Arial chain stays behind it so the page still
-     reads correctly if the face has not painted yet, or fails to load. */
   --font-sans:  var(--font-figtree), Arial, Helvetica, "Segoe UI", sans-serif;
 }
 
-/* Emphasis motif: same serif as headings, coloured (teal on light
-   backgrounds, seafoam on dark) to highlight the key phrase inside
-   headings and lead copy. No separate typeface, no italic. */
 .em-display {
   font-family: var(--font-serif);
   font-style: normal;
   letter-spacing: 0;
 }
 
-/* Accreditation marks strip (ICAEW / CIOT / ex-PwC). */
 .accred-strip {
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +42,6 @@
   gap: 14px;
 }
 
-/* White logo tiles read cleanly on both light and dark sections. */
 .accred-badge {
   display: flex;
   flex-direction: column;
@@ -117,7 +99,6 @@
   color: var(--muted);
 }
 
-/* ============ Blog (muslimstore-style layout) ============ */
 .blog-hero {
   position: relative;
   overflow: hidden;
@@ -150,12 +131,10 @@
   box-shadow: 0 22px 60px rgba(8, 34, 75, 0.12);
 }
 
-/* Eyebrow label above headings. One source of truth for the eyebrow colour. */
 .eyebrow {
   display: none;
 }
 
-/* On dark sections the teal eyebrow has too little contrast, so use seafoam. */
 .section-ink .eyebrow {
   color: var(--seafoam);
 }
@@ -163,9 +142,6 @@
 * {
   box-sizing: border-box;
 }
-
-/* No smooth scroll: navigating between pages should jump instantly to the top
-   rather than animating up through every section. */
 
 body {
   background: var(--bg);
@@ -184,7 +160,6 @@ body {
   position: relative;
 }
 
-/* ============ Header ============ */
 .site-head {
   position: fixed;
   top: 0;
@@ -198,15 +173,7 @@ body {
     border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Frosted "liquid glass" bar: once scrolled, and on every inner page.
-   Opacity raised further (was 0.82) so the wordmark and nav stay easy to
-   read against busy page content behind it. */
 .site-head.is-solid {
-  /* Genuinely translucent. This was rgba(..., 0.96), which is opaque enough
-     that the blur behind it had nothing to show and the bar read as flat white.
-     At 0.62 the content actually blurs through it. Saturation is pushed harder
-     than the blur to keep colour in what shows through, which is what stops it
-     looking like grey fog. */
   background: rgba(246, 250, 252, 0.62);
   backdrop-filter: blur(26px) saturate(200%);
   -webkit-backdrop-filter: blur(26px) saturate(200%);
@@ -214,7 +181,6 @@ body {
   box-shadow: 0 8px 30px rgba(8, 34, 75, 0.08);
 }
 
-/* Transparent over the hero: turn the menu white. */
 .site-head.is-transparent .site-wordmark {
   color: #fff;
 }
@@ -239,13 +205,10 @@ body {
   background-color: #fff;
 }
 
-/* Reserves the fixed header's height on pages with no hero behind it. */
 .site-head-spacer {
   height: 76px;
 }
 
-/* Inner-page dark hero: tuck under the fixed header (cancel the spacer) so
-   there's no white band above it. */
 .page-hero {
   margin-top: -76px;
   padding-top: calc(76px + 4.5rem);
@@ -277,9 +240,6 @@ body {
   gap: 24px;
   margin: 0 auto;
   width: 100%;
-  /* Same container as every page section (1240 + --gutter), so the wordmark
-     shares a left edge with the hero H1 and all section content below it.
-     This was 80rem + 24px, which sat the wordmark ~92px left of the headline. */
   max-width: 1240px;
   padding: 16px var(--gutter);
 }
@@ -322,7 +282,6 @@ body {
   transition: color 0.2s ease;
 }
 
-/* Reserve the bold width up front so hover-bolding never reflows the menu. */
 .nav-link::after {
   content: attr(data-text);
   height: 0;
@@ -343,7 +302,6 @@ body {
   font-weight: 700;
 }
 
-/* Keep the white-on-hero header bold-on-hover legible too. */
 .site-head.is-transparent .nav-link:hover,
 .site-head.is-transparent .nav-link.is-active {
   font-weight: 700;
@@ -506,17 +464,12 @@ body {
   padding: 14px;
 }
 
-/* Tablet gutter: track --gutter, the same value .gutter/.gutter-bleed and the
-   hero use, so the wordmark stays in line with page content at every width. */
 @media (min-width: 768px) {
   .site-nav {
     padding: 16px var(--gutter);
   }
 }
 
-/* Desktop nav (links + hidden hamburger) only once there is room for the
-   wordmark, 5 links, and the Book-a-call pill. Below this the hamburger
-   handles the whole tablet range so the pill never clips. */
 @media (min-width: 1024px) {
   .site-nav {
     padding: 16px var(--gutter);
@@ -541,7 +494,6 @@ body {
   }
 }
 
-/* ============ Hero ============ */
 .hero {
   --mx: 72%;
   --my: 26%;
@@ -551,7 +503,6 @@ body {
   min-height: clamp(620px, 92vh, 940px);
   display: flex;
   align-items: center;
-  /* Uniform top/bottom so the content sits visually centred */
   padding: clamp(40px, 6vw, 80px) 0;
   background: radial-gradient(
     130% 100% at 50% -12%,
@@ -562,7 +513,6 @@ body {
   );
 }
 
-/* Slow drifting aurora */
 .hero-aurora {
   position: absolute;
   inset: -12%;
@@ -577,7 +527,6 @@ body {
   animation: auroraShift 22s ease-in-out infinite;
 }
 
-/* Glow that follows the cursor (vars set by Hero.tsx) */
 .hero-spotlight {
   position: absolute;
   inset: 0;
@@ -591,7 +540,6 @@ body {
   );
 }
 
-/* Faint engineering grid, masked toward the top */
 .hero-grid {
   position: absolute;
   inset: 0;
@@ -626,9 +574,6 @@ body {
   }
 }
 
-/* On-load entrance animations (above-the-fold, no JS required) */
-
-/* Scorecard success tick: pop in with a little overshoot */
 .sc-tick {
   animation: scTick 0.6s cubic-bezier(0.2, 0.8, 0.2, 1.2) both;
 }
@@ -652,7 +597,6 @@ body {
   }
 }
 
-/* Bottom fade into the page background */
 .hero-fade {
   position: absolute;
   left: 0;
@@ -705,7 +649,6 @@ body {
   color: var(--seafoam);
 }
 
-/* ============ Global email capture (CTA + footer) ============ */
 .email-capture {
   display: flex;
   flex-direction: column;
@@ -895,7 +838,6 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Right column: expertise one-liner sitting above the portrait */
 .hero-right {
   display: flex;
   flex-direction: column;
@@ -998,8 +940,6 @@ body {
   margin-bottom: 5px;
 }
 
-/* Portal tooltip: fixed to the viewport, above the sticky header (z 50),
-   never clipped by the hero. Positioned via inline left/top from the trigger. */
 .trust-tooltip-fixed {
   position: fixed;
   z-index: 120;
@@ -1057,8 +997,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  /* Desktop: revert to the previous two-column hero (text left, photo right).
-     Mobile/tablet keep the centered photo-on-top layout from the base rules. */
   .hero-inner {
     padding-left: 64px;
     padding-right: 64px;
@@ -1110,7 +1048,6 @@ body {
   background: #f6fafc;
 }
 
-/* Slightly deeper than the page background, so white cards lift off it. */
 .section-tinted {
   background: #e6eff8;
 }
@@ -1148,19 +1085,6 @@ body {
   border-radius: 14px;
 }
 
-/* ============ Site gutter ============ */
-/* One source of truth for how far content sits from the window edge, taken from
-   the hero (.hv-inner: 1240px wide with 24px inside it) so every section below
-   the hero lines up with it at every screen width. Change the two values here
-   and the whole site moves together.
-
-   .gutter        for a normal section: it is the width-limited wrapper itself.
-   .gutter-bleed  for a section whose background must span the full viewport, so
-                  the alignment has to come from padding instead of a max-width.
-                  The max() reproduces the same content edge as .gutter: 24px on
-                  narrow screens, and (page width - 1240) / 2 + 24 once there is
-                  room. 100% is used rather than 100vw so a visible scrollbar
-                  cannot knock it out of line with the hero. */
 .gutter {
   width: 100%;
   max-width: 1240px;
@@ -1175,10 +1099,6 @@ body {
   padding-right: max(var(--gutter), calc((100% - 1240px) / 2 + var(--gutter)));
 }
 
-/* Copy column of the who-for band. It sits in the right half of a two-column
-   grid, so 100% would be the column, not the page: the right-hand gutter has to
-   be measured from the viewport instead. Left padding is the gap from the photo,
-   not a page gutter, so it stays as it was. */
 .whofor-copy {
   padding-left: var(--gutter);
   padding-right: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter)));
@@ -1190,9 +1110,6 @@ body {
   }
 }
 
-/* Testimonial cards. Softer and rounder than .finance-card so a wall of quotes
-   reads as people rather than as data panels, and relative so the oversized
-   quote mark can sit in the top corner. */
 .testimonial-card {
   position: relative;
   overflow: hidden;
@@ -1213,8 +1130,6 @@ body {
   box-shadow: 0 26px 60px rgba(8, 34, 75, 0.13);
 }
 
-/* Animated accordion answer: collapse/expand height smoothly. The grid-rows
-   0fr -> 1fr trick animates intrinsic height and works across browsers. */
 .faq-answer {
   display: grid;
   grid-template-rows: 0fr;
@@ -1254,7 +1169,6 @@ body {
   animation: auroraShift 24s ease-in-out infinite;
 }
 
-/* Looping mountain video behind the closing CTA (moved from the hero) */
 .cta-band > .cta-video {
   position: absolute;
   inset: 0;
@@ -1273,7 +1187,6 @@ body {
     linear-gradient(135deg, rgba(8, 34, 75, 0.82) 0%, rgba(8, 34, 75, 0.62) 55%, rgba(4, 18, 37, 0.78) 100%);
 }
 
-/* Grainy film texture over the video */
 .cta-band > .cta-grain {
   position: absolute;
   inset: 0;
@@ -1307,9 +1220,6 @@ body {
   margin-top: 8px;
 }
 
-/* Footer social icons: grey by default, brand-coloured on hover.
-   LinkedIn colour is handled by Tailwind (currentColor); Instagram swaps
-   its fill to the brand gradient defined inline in the SVG. */
 .footer-social-ig svg path,
 .footer-social-ig svg circle {
   fill: currentColor;
@@ -1331,8 +1241,6 @@ body {
   }
 }
 
-/* "Who this is for": Simon's photo on the left, feathered into the blue on
-   all sides so it blends from around, with drifting squares behind it. */
 .whofor-photo {
   -webkit-mask-image: radial-gradient(
     125% 115% at 40% 45%,
@@ -1410,7 +1318,6 @@ body {
   }
 }
 
-/* Claude easter-egg gif (shows ~1 in 4 sessions next to the Claude heading) */
 .claude-egg {
   animation: claudePop 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
@@ -1422,7 +1329,6 @@ body {
   .claude-egg { animation: none; }
 }
 
-/* ===== SOPHIA-style full-bleed hero ===== */
 .hero-veil {
   position: absolute;
   inset: 0;
@@ -1528,9 +1434,6 @@ body {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Ghost button for LIGHT backgrounds (the white hero on the pillar page). The
-   default .hv-btn-ghost is white-on-transparent for dark heroes and vanishes
-   here, so this ink variant keeps the same shape with readable contrast. */
 .hv-btn-ghost-ink {
   display: inline-flex;
   align-items: center;
@@ -1552,11 +1455,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===== Home hero =====
-   Apple's product-page composition, SRJ's palette. Single centred axis:
-   claim, qualifier, chevron links, then the product. Content is top-weighted
-   rather than vertically centred, because Apple sets the headline high and
-   lets the product fill the lower two thirds. */
 .hv {
   position: relative;
   overflow: hidden;
@@ -1580,8 +1478,6 @@ body {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  /* Fade the blob canvas out before the section boundary, so there is no hard
-     edge where the hero meets what follows. Straight from RoseyCo. */
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
@@ -1610,10 +1506,6 @@ body {
   border-radius: 50%;
 }
 
-/* Navy hero fallback: one light source behind Simon so his cut-out silhouette
-   separates from the ground. (Five blurred blobs used to sit here. On navy
-   they put soft mid-blue over mid-blue and read as mud. On the white ground
-   below the same technique reads as light, which is why it comes back there.) */
 .hv-dot-1 {
   display: block;
   width: min(680px, 52vw);
@@ -1634,10 +1526,6 @@ body {
   display: none;
 }
 
-/* ===== Light hero variant (white ground + soft blobs, after RoseyCo) =====
-   Scoped to .hv-light rather than applied to .hv, because .hv-btn-primary,
-   .hv-btn-ghost and friends are shared with the five pillar-page heroes.
-   Remove `hv-light` in Hero.tsx to return to the navy hero. */
 .hv-light {
   background-color: #fbfcfe;
   background-image: none;
@@ -1652,8 +1540,6 @@ body {
   opacity: 0.9;
 }
 
-/* SRJ's own palette, not RoseyCo's lilac and pink: seafoam, accent blue and
-   teal, at tint strengths that stay under the type. */
 .hv-light .hv-dot-1 {
   width: min(30vw, 440px);
   aspect-ratio: 1;
@@ -1680,8 +1566,6 @@ body {
   background: radial-gradient(circle at 50% 50%, #a8e0d2 0%, rgba(168, 224, 210, 0) 58%);
 }
 
-/* Hairlines have to invert: the navy hero draws white lines, which are
-   invisible on white. */
 .hv-light .hv-grid {
   opacity: 0.5;
   background-image:
@@ -1693,8 +1577,6 @@ body {
   color: var(--ink);
 }
 
-/* Seafoam is a dark-ground accent and disappears on white. Teal is the accent
-   every other page already uses for headline emphasis. */
 .hv-light .hv-title .hero-accent {
   color: var(--teal);
 }
@@ -1703,7 +1585,6 @@ body {
   color: #55636f;
 }
 
-/* Apple's link blue, played by SRJ's --accent. */
 .hv-light .hv-link {
   color: var(--accent);
 }
@@ -1731,10 +1612,6 @@ body {
   color: rgba(8, 19, 31, 0.6);
 }
 
-/* On white the drop-shadow has to go. Applied to a bottom-feathered cut-out it
-   rendered the fading jacket as a grey smudge sitting in open white, which is
-   the one thing worse than the grey card it replaced. He now meets the fold
-   flush, so there is no crop edge left to hide and no shadow needed. */
 @media (min-width: 1024px) {
   .hv-light .hv-portrait {
     filter: none;
@@ -1746,9 +1623,6 @@ body {
   }
 }
 
-/* Static grid. It used to drift on a 14s loop and sit at opacity 0.5 under a
-   soft radial mask, so it never resolved into lines. Held still and drawn a
-   little harder, it reads as a measured ruling instead of haze. */
 .hv-grid {
   position: absolute;
   inset: 0;
@@ -1770,8 +1644,6 @@ body {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 var(--gutter);
-  /* One column, one axis. The two-column split is gone: Apple puts the claim
-     above the product, never beside it. */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1779,9 +1651,6 @@ body {
 }
 
 .hv-copy {
-  /* Wide enough that the headline breaks only where the <br /> puts it.
-     A ch-based cap here throttles the 88px display type into one word per
-     line; the narrower measure belongs on .hv-sub, not on the container. */
   max-width: 900px;
   width: 100%;
   text-align: center;
@@ -1791,20 +1660,13 @@ body {
   margin: 0;
   color: #fff;
   font-family: var(--font-sans);
-  /* Semibold, not black. Apple sets display type at 600 and lets the size do
-     the work; 700+ at this scale reads as shouting rather than confident. */
   font-weight: 600;
   font-size: clamp(38px, 5.6vw, 76px);
   line-height: 1.05;
-  /* Apple tracks display type tightly negative and opens it back up as size
-     drops. -0.035em is roughly their large-title setting. */
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
-/* The second declarative. Same size and weight as the first line, separated
-   only by colour, which is how Apple splits a two-part headline. No italic
-   serif here: that was a RoseyCo borrowing and it fights the Apple register. */
 .hv-title .hero-accent {
   font-family: inherit;
   font-style: normal;
@@ -1813,9 +1675,6 @@ body {
   color: var(--seafoam);
 }
 
-/* The qualifying line. Apple sets this markedly smaller than the headline and
-   in a softer ink, so it reads as a caption to the claim rather than a
-   competing statement. */
 .hv-sub {
   margin: clamp(16px, 2vw, 22px) auto 0;
   max-width: 40ch;
@@ -1837,9 +1696,6 @@ body {
   margin-top: clamp(20px, 2.6vw, 30px);
 }
 
-/* Apple's primary action is a text link with a chevron, not a filled block.
-   The accent blue is SRJ's own --accent, which happens to sit in the same
-   role Apple's link blue does. */
 .hv-link {
   display: inline-flex;
   align-items: center;
@@ -1855,8 +1711,6 @@ body {
 .hv-link span {
   font-size: 1.16em;
   line-height: 0;
-  /* Nudged off the baseline so the chevron optically centres on the cap
-     height rather than sitting low against it. */
   transform: translateY(-0.5px);
 }
 
@@ -1925,46 +1779,27 @@ body {
 
 .hv-portrait {
   display: none;
-  /* Required, not cosmetic. The child is a next/image `fill`, which is
-     `position: absolute; inset: 0` and resolves against the nearest positioned
-     ancestor. Without this the mobile avatar's image escapes its 208px box and
-     stretches across the whole hero, and `overflow: hidden` here cannot clip it
-     because the containing block is then an ancestor of this element. */
   position: relative;
 }
 
 @media (min-width: 1024px) {
-  /* Simon is a cut-out standing on the ground, not a photo in a card. The old
-     treatment put his studio backdrop (a flat light grey) inside a rounded
-     rectangle, which made the largest, brightest shape in the hero a slab
-     carrying no information. No card, no border, no grey.
-
-     Now centred in the flow beneath the copy, Apple-style, rather than
-     absolutely pinned to the right. He grows to fill the remaining height and
-     runs off the bottom edge, which is what makes the fold feel like a crop of
-     something larger rather than the end of the page. */
   .hv-portrait {
     position: relative;
     display: block;
     z-index: 2;
     width: min(46vw, 560px);
-    /* Take whatever vertical space the copy leaves, with a floor so a short
-       viewport still shows a recognisable head and shoulders. */
     flex: 1 1 auto;
     min-height: 300px;
     margin: clamp(18px, 3vh, 40px) auto 0;
     filter: drop-shadow(0 30px 56px rgba(3, 12, 30, 0.42));
   }
 
-  /* Feather only the last sliver, so the crop at his chest reads as deliberate
-     without making the jacket look like it is dissolving. */
   .hv-portrait img {
     -webkit-mask-image: linear-gradient(180deg, #000 90%, transparent 100%);
     mask-image: linear-gradient(180deg, #000 90%, transparent 100%);
   }
 }
 
-/* Prominent accreditation strip (used at the top of the lead section) */
 .accred-prominent .accred-badge {
   min-width: 184px;
   padding: 26px 34px;
@@ -1977,7 +1812,6 @@ body {
   font-size: 12px;
 }
 
-/* Full-bleed "Who this is for" section over a clouds texture */
 .whofor-section {
   position: relative;
   width: 100%;
@@ -1996,12 +1830,10 @@ body {
   background-size: cover, 120% auto;
 }
 
-/* Keep the headline legible where the cloud wisps are brightest */
 .whofor-section h2 {
   text-shadow: 0 2px 28px rgba(6, 15, 36, 0.55);
 }
 
-/* Feather the photo into the section's exact navy so there is no split line */
 .whofor-photo::after {
   content: "";
   position: absolute;
@@ -2029,7 +1861,6 @@ body {
   }
 }
 
-/* Spiced-up scorecard band: dark base, drifting grid, glow + grain */
 .sc-band {
   background: linear-gradient(180deg, #ffffff 0%, #f1f6fb 100%);
 }
@@ -2066,7 +1897,6 @@ body {
   }
 }
 
-/* Sample survey mockup: a clean square card on the white band */
 .sc-mock-card {
   position: relative;
   z-index: 1;
@@ -2083,7 +1913,6 @@ body {
   box-shadow: 0 30px 70px rgba(8, 34, 75, 0.16);
 }
 
-/* About scroll-journey connector */
 .about-journey-svg {
   position: absolute;
   inset: 0;
@@ -2123,7 +1952,6 @@ body {
   min-height: 260px;
 }
 
-/* Full-bleed About section: photo background with a legibility scrim */
 .aboutbleed-scrim {
   position: absolute;
   inset: 0;
@@ -2134,7 +1962,6 @@ body {
     radial-gradient(60% 60% at 50% 50%, rgba(6, 15, 36, 0.15), rgba(6, 15, 36, 0.55) 100%);
 }
 
-/* Witty aside on its own line under the hero body */
 .hv-aside {
   margin: 10px 0 0;
   color: rgba(159, 231, 220, 0.92);
@@ -2143,7 +1970,6 @@ body {
   font-size: clamp(14px, 1.2vw, 16px);
 }
 
-/* ============ Cookie consent (ported, Jacobs palette) ============ */
 .cc-overlay {
   position: fixed; inset: 0; z-index: 300;
   display: flex; align-items: center; justify-content: center; padding: 20px;
@@ -2178,7 +2004,6 @@ body {
 }
 .cc-accept:hover { background: var(--teal); }
 
-/* preferences view */
 .cc-modal-prefs { max-width: 520px; max-height: 88vh; overflow-y: auto; padding: 22px; text-align: left; }
 .cc-prefs-bar {
   display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px;
@@ -2200,7 +2025,6 @@ body {
 .cc-save { width: 100%; margin-top: 18px; background: var(--ink); color: #fff; border: none; border-radius: 999px; padding: 15px; font-weight: 600; font-size: 15px; cursor: pointer; font-family: inherit; transition: background 0.2s; }
 .cc-save:hover { background: var(--teal); }
 
-/* ============ Legal pages (privacy / cookies / terms / accessibility) ============ */
 .legal { color: var(--muted); }
 .legal-back {
   display: inline-block;
@@ -2271,9 +2095,6 @@ body {
 }
 .legal-foot a:hover { color: var(--teal); }
 
-/* ============ Admin dashboard (literal port of raharesort dashboard) ============ */
-/* Scoped palette + animated sky-blue backdrop. Vars are local to the panel so
-   they never leak into the public site. */
 .dashboard-panel {
   --color-primary: #8b7355;
   --color-secondary: #1f1d1a;
@@ -2311,10 +2132,7 @@ body {
   .dashboard-panel { animation: none; }
 }
 
-/* ============ Mobile-first refinements ============ */
 @media (max-width: 1023px) {
-  /* Hero: anchor content near the top (kills the big empty gap) and show
-     Simon's portrait on mobile, his face is the trust anchor. */
   .hv { align-items: flex-start; }
   .hv-inner { gap: 6px; }
   .hv-portrait {
@@ -2331,7 +2149,6 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* Accreditation cards: 3 compact badges in a row instead of 3 huge stacked. */
   .accred-prominent.accred-strip { gap: 8px; flex-wrap: nowrap; }
   .accred-prominent .accred-badge {
     min-width: 0;
@@ -2344,8 +2161,6 @@ body {
   .accred-prominent .accred-caption { font-size: 9.5px; letter-spacing: 0.05em; }
 }
 
-/* ============ Header + mobile refinements (v2) ============ */
-/* Book a call: a real pill button with black text in every header state. */
 .nav-cta {
   background: #fff;
   color: var(--ink);
@@ -2363,7 +2178,6 @@ body {
   transform: translateY(-1px);
 }
 .nav-cta:hover span { transform: translateX(3px); }
-/* Keep it a white pill with black text even over the dark hero. */
 .site-head.is-transparent .nav-cta:not(.mobile-cta) {
   background: #fff;
   color: var(--ink);
@@ -2374,10 +2188,8 @@ body {
   color: #fff;
   border-color: var(--ink);
 }
-/* Vertically centre the wordmark with the actions (drop the big downward nudge). */
 .site-wordmark { padding: 0; transform: translateY(2px); }
 
-/* Mobile dropdown: book-a-call as a button, no coloured strip, text always dark. */
 .mobile-link { color: var(--ink) !important; }
 .mobile-cta {
   margin-top: 14px;
@@ -2396,14 +2208,12 @@ body {
 }
 
 @media (max-width: 1023px) {
-  /* Hero title: one sans face throughout, accent picked out by colour only. */
   .hv-title { font-family: var(--font-sans); font-style: normal; font-weight: 800; letter-spacing: -0.02em; }
   .hv-title .hero-accent {
     font-family: var(--font-sans);
     font-style: normal;
     font-weight: 800;
   }
-  /* Simon's photo on top: a circular avatar above the heading. */
   .hv-portrait {
     display: block;
     order: -1;
@@ -2421,7 +2231,6 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* Header fits without clipping the menu; compact book-a-call pill. */
   .site-nav { padding: 12px 24px; gap: 10px; }
   .site-wordmark { font-size: 24px; }
   .site-nav-actions { gap: 8px; }
@@ -2429,20 +2238,17 @@ body {
   .nav-cta span { display: none; }
 }
 
-/* About: more breathing room between the journey paragraphs on mobile. */
 @media (max-width: 767px) {
   .aj-step { margin-block: 1.6rem; }
   .aj-step:first-of-type { margin-top: 0.5rem; }
 }
 
-/* Solid dropdown panel (no hero bleed-through) + keep the pill on one line. */
 .mobile-menu { background: var(--bg); }
 .nav-cta { white-space: nowrap; }
 @media (max-width: 640px) {
   .site-wordmark { font-size: 22px; }
 }
 
-/* Bigger mobile header + square portrait (per request). */
 @media (max-width: 640px) {
   .site-nav { padding: 16px 24px; gap: 10px; }
   .site-wordmark { font-size: 27px; }
@@ -2450,7 +2256,6 @@ body {
   .nav-toggle { width: 46px; height: 46px; }
 }
 @media (max-width: 1023px) {
-  /* Simon's photo: rounded square, not a circle. */
   .hv-portrait {
     width: 150px;
     max-width: 150px;
@@ -2460,28 +2265,21 @@ body {
   .hv-portrait img { object-position: center 16% !important; }
 }
 
-/* ===== More mobile fixes ===== */
-/* Hero body copy: lift contrast so it reads on the blue. */
 .hv-sub { color: rgba(255, 255, 255, 0.92); }
 .hv-aside { color: rgba(159, 231, 220, 0.95); }
 
 @media (max-width: 640px) {
-  /* Header: bigger but fits without clipping the menu. */
   .site-nav { padding: 15px 24px; gap: 8px; }
   .site-wordmark { font-size: 24px; }
   .nav-cta { padding: 9px 12px; font-size: 12px; }
   .nav-toggle { width: 44px; height: 44px; }
-  /* Hero buttons: more reasonable size on phones. */
   .hv-btn-primary, .hv-btn-ghost { padding: 13px 22px; font-size: 14px; }
-  /* Accreditations everywhere (footer, about): 3 compact badges in a row. */
   .accred-strip { flex-wrap: nowrap; gap: 8px; }
   .accred-badge { min-width: 0; flex: 1 1 0; padding: 14px 8px; gap: 8px; }
   .accred-logo, .accred-mark { height: 40px; font-size: 16px; }
   .accred-caption { font-size: 9px; letter-spacing: 0.04em; }
 }
 
-/* Header: get "bigger" from a taller bar (cursive wordmark is too wide to grow
-   much without shoving the menu off-screen at 390px). */
 .hv-sub { color: rgba(255, 255, 255, 0.95); }
 @media (max-width: 640px) {
   .site-nav { padding: 18px 24px; }
@@ -2490,7 +2288,6 @@ body {
   .site-head-spacer { height: 82px; }
 }
 
-/* Credentials line above the accreditation strips. */
 .accred-eyebrow {
   text-align: center;
   font-family: var(--font-sans);
@@ -2503,8 +2300,6 @@ body {
 .accred-eyebrow-light { color: var(--teal); }
 .accred-eyebrow-dark { color: var(--seafoam); }
 
-/* Header (mobile): make the Book-a-call pill and the menu a matched pair
-   (same height, vertically centred) so the cluster reads as one unit. */
 @media (max-width: 640px) {
   .site-nav { padding: 16px 24px; }
   .site-nav-actions { gap: 10px; align-items: center; }
@@ -2518,7 +2313,6 @@ body {
   .site-head-spacer { height: 76px; }
 }
 
-/* Credentials line: normal serif, dark, bigger and clearly visible (override). */
 .accred-eyebrow {
   font-family: var(--font-serif);
   font-size: 18px;
@@ -2529,14 +2323,10 @@ body {
 .accred-eyebrow-light { color: var(--ink); }
 .accred-eyebrow-dark { color: #ffffff; }
 
-/* Who-for heading: italic Playfair descenders need more room on phone so the
-   lines don't run into each other. */
 @media (max-width: 767px) {
   .whofor-section h2 { line-height: 1.32; }
 }
 
-/* Mobile header: simple flex so the menu sits hard-right and the Book-a-call
-   pill sits right next to it (no awkward grid gaps). */
 @media (max-width: 1023px) {
   .site-nav {
     display: flex;
@@ -2545,14 +2335,10 @@ body {
   }
   .site-nav-actions { gap: 10px; }
 }
-/* Hero portrait: bigger on phones. */
 @media (max-width: 1023px) {
   .hv-portrait { width: 208px; max-width: 208px; height: 208px; }
 }
 
-/* Who-for: uniform navy on phones (the clouds texture banded oddly behind the
-   stacked heading). Solid colour = one even background; the photo still feathers
-   into the same navy. */
 @media (max-width: 1023px) {
   .whofor-section {
     background-image: none;
@@ -2560,18 +2346,10 @@ body {
   }
 }
 
-/* ===== Hero portrait: mobile placement after the DOM move =====
-   The cut-out now sits as a direct child of .hv rather than inside .hv-inner,
-   so that on desktop it can be positioned against the section and stand on its
-   bottom edge. .hv is a flex row, so below 1024 that left the avatar beside the
-   copy instead of above it. Stack the section and let the existing `order: -1`
-   do what it always did. */
 @media (max-width: 1023px) {
   .hv {
     flex-direction: column;
     align-items: center;
-    /* Content is top-anchored here, so a forced 100svh left a tall empty band
-       under the CTAs (most visible on tablets). Hug the content instead. */
     min-height: auto;
     padding-bottom: 0;
   }
@@ -2581,9 +2359,6 @@ body {
   }
 }
 
-/* The mobile avatar rules were written for the navy hero: a heavy black shadow
-   and a translucent white hairline. Both read as grime on a white ground, and
-   the cut-out is transparent, so it needs its own disc to sit on. */
 @media (max-width: 1023px) {
   .hv-light .hv-portrait {
     background: radial-gradient(circle at 50% 35%, #e8f6f3 0%, #eff6fb 100%);
@@ -2596,25 +2371,13 @@ body {
     mask-image: none;
   }
 
-  /* The cut-out is a head-and-shoulders crop with transparent margins, so
-     `contain` letterboxes it inside the avatar and leaves it floating small.
-     Cover fills the disc; the existing object-position keeps his face centred. */
   .hv-portrait img {
     object-fit: cover;
   }
 }
 
-/* ============================================================
-   Apple-style header
-   apple.com's nav is deliberately quiet: a thin translucent bar, a small
-   wordmark, small evenly-spaced links at low weight, and no shouting CTA.
-   The bar recedes so the product can be the only loud thing on the page.
-   Palette is SRJ's throughout; nothing here is Apple's grey.
-   ============================================================ */
 @media (min-width: 1024px) {
   .site-head.is-solid {
-    /* Thinner, cleaner glass than the previous 26px blur + 200% saturate,
-       which was doing enough work to read as a surface in its own right. */
     background: rgba(246, 250, 252, 0.72);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -2623,8 +2386,6 @@ body {
   }
 
   .site-nav {
-    /* Apple's bar is 44px tall. 52 keeps that proportion while leaving room
-       for a serif wordmark, which Apple does not have to accommodate. */
     padding: 0 var(--gutter);
     min-height: 52px;
     align-items: center;
@@ -2637,8 +2398,6 @@ body {
     transform: none;
   }
 
-  /* Small, light, evenly spaced. Apple runs 12px at weight 400; 13.5 suits a
-     longer wordmark and an older audience without breaking the proportion. */
   .site-nav-links {
     gap: clamp(20px, 2.4vw, 32px);
   }
@@ -2660,8 +2419,6 @@ body {
     font-weight: 500;
   }
 
-  /* The CTA stops being a bordered pill competing with the wordmark, and
-     becomes the one blue thing in the bar. */
   .nav-cta {
     background: var(--accent);
     color: #fff;
@@ -2684,12 +2441,6 @@ body {
   }
 }
 
-/* ============================================================
-   Hero portrait, consolidated.
-   Several older blocks style .hv-portrait as a small rounded avatar for the
-   navy two-column hero. Under the Apple composition the product is centred
-   beneath the claim at both sizes, so this block is last and resets them.
-   ============================================================ */
 .hv-portrait {
   display: block;
   position: relative;
@@ -2708,10 +2459,6 @@ body {
   filter: none;
 }
 
-/* Same reset at .hv-light's specificity. The earlier light-hero block gives the
-   mobile avatar a tinted disc, a hairline and a shadow, all of which outrank a
-   single-class selector no matter how late it appears. Under the Apple
-   composition the product sits on the page with nothing behind it. */
 .hv-light .hv-portrait {
   background: none;
   border: 0;
@@ -2727,10 +2474,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  /* Anchored to the section's bottom edge and centred on the same axis as the
-     copy. Absolute so his height is set by the hero rather than by the flow,
-     which is what lets the crop at his chest fall below the fold instead of
-     hanging in open space. */
   .hv-portrait {
     position: absolute;
     left: 50%;
@@ -2743,14 +2486,6 @@ body {
   }
 }
 
-/* ============================================================
-   Apple section system, homepage
-   Apple's page below the hero is a stack of full-bleed panels that alternate
-   between two grounds, each opening with one large centred claim, one short
-   line under it, and chevron links. Headings are sentence case and set in the
-   same sans as the hero, not a serif: the serif/sans split was the biggest
-   thing making the page below the fold read as a different site.
-   ============================================================ */
 .ap-h2 {
   font-family: var(--font-sans);
   font-weight: 600;
@@ -2768,8 +2503,6 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* The line under the claim. Apple keeps it markedly smaller and softer so it
-   reads as a caption rather than a second headline. */
 .ap-sub {
   font-family: var(--font-sans);
   font-size: clamp(16px, 1.35vw, 20px);
@@ -2782,8 +2515,6 @@ body {
   text-wrap: balance;
 }
 
-/* Chevron link, matching the hero. Replaces the arrow links, which were a
-   different idiom on every section. */
 .ap-link {
   display: inline-flex;
   align-items: center;
@@ -2807,7 +2538,6 @@ body {
   gap: 10px clamp(22px, 3vw, 34px);
 }
 
-/* Apple's pill. Solid accent, no border, no shadow. */
 .ap-btn {
   display: inline-flex;
   align-items: center;
@@ -2842,12 +2572,8 @@ body {
 }
 .ap-btn-quiet:hover { background: rgba(8, 19, 31, 0.09); }
 
-/* Vertical rhythm. Apple runs roughly 100 to 140px of air per panel, which is
-   far more than the 64px this page was using. */
 .ap-section { padding-block: clamp(72px, 9vw, 130px); }
 
-/* Cards: no hairline border, no lift-on-hover. Apple defines a card by giving
-   it a different ground and a large corner radius, and leaves it still. */
 .ap-card {
   background: #fff;
   border: 0;
@@ -2856,9 +2582,6 @@ body {
 }
 .ap-card-soft { background: var(--surface); }
 
-/* Inner-page display sizes, same system as .ap-h2 on the homepage.
-   .ap-h1 is for a page's own title (About, Services, the pillar pages), which
-   sits a step below the home hero so the hero stays the largest type on site. */
 .ap-h1 {
   font-family: var(--font-sans);
   font-weight: 600;
@@ -2885,10 +2608,6 @@ body {
   letter-spacing: -0.016em;
 }
 
-/* .em-display sets --font-serif on the emphasised span inside a heading. That
-   was right when headings were serif; under the sans display scale it leaves
-   two faces inside one line. Inside an ap-* heading it now carries the colour
-   only, which is all the motif needs to do. */
 .ap-h1 .em-display,
 .ap-h2 .em-display,
 .ap-h2-sm .em-display,
@@ -2898,10 +2617,6 @@ body {
   letter-spacing: inherit;
 }
 
-/* Pillar-page hero buttons. These pages use .hv-btn-primary and
-   .hv-btn-ghost-ink on a light ground, which predates the Apple pass and
-   still renders as a white pill on near-white. Bring them onto the same two
-   pills the rest of the site now uses. */
 .hv-btn-primary {
   background: var(--accent);
   color: #fff;
@@ -2934,19 +2649,6 @@ body {
   transform: none;
 }
 
-/* ============================================================
-   Corrections after the first Apple pass.
-   The type scale went on correctly but it was applied to things that are not
-   headlines, and the template patterns underneath it were left in place.
-   Large sans type sitting on tick-boxes and bordered cards reads worse than
-   the serif did. Three fixes.
-   ============================================================ */
-
-/* 1. Statement paragraphs are not headlines.
-   The lead ran at .ap-h2 (52px semibold) across 25 words in three colours.
-   Apple reserves display sizes for three-to-six-word headlines and keeps
-   everything else at reading size. This is the in-between size they actually
-   use for a page's opening statement. */
 .ap-statement {
   font-family: var(--font-sans);
   font-weight: 500;
@@ -2958,8 +2660,6 @@ body {
   margin-inline: auto;
   text-wrap: balance;
 }
-/* One accent inside it, not two. The grey/ink/teal split made a single
-   sentence read as three separate thoughts. */
 .ap-statement .em-display,
 .ap-statement .ap-accent {
   font-family: inherit;
@@ -2967,9 +2667,6 @@ body {
   color: var(--teal);
 }
 
-/* 2. Accreditations: no boxes.
-   White bordered cards floating on pale blue is the generic pattern. Apple
-   sets credentials as plain marks on the ground with space around them. */
 .accred-strip .accred-badge {
   background: none;
   border: 0;
@@ -2987,10 +2684,6 @@ body {
   color: #7b8794;
 }
 
-/* 3. Qualifier list: no cards, no ticks.
-   Translucent rounded boxes each with a green check circle is the single most
-   template-looking pattern on the page, and Apple has nothing like it. This
-   is their spec-list treatment: plain rows, hairline rules, no containers. */
 .ap-speclist { display: block; margin: 0; padding: 0; list-style: none; }
 .ap-speclist li {
   display: block;
@@ -3008,11 +2701,6 @@ body {
 }
 .ap-speclist li:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
 
-/* Simon's cut-out ends at his chest, and bottom-aligning it against the hero
-   edge put that straight edge exactly on the section boundary, so the jacket
-   appeared sliced. Feather the last stretch instead. Safe to do here because
-   .hv-light already sets filter:none; the earlier grey smudge came from a
-   drop-shadow being cast from the faded alpha, not from the mask itself. */
 @media (min-width: 1024px) {
   .hv-light .hv-portrait img {
     -webkit-mask-image: linear-gradient(180deg, #000 62%, rgba(0, 0, 0, 0.55) 84%, transparent 100%);
@@ -3020,13 +2708,8 @@ body {
   }
 }
 
-/* Keep "founder-led agencies" whole. text-wrap:balance still breaks at the
-   hyphen, which left a line ending on "founder-". */
 .ap-nowrap { white-space: nowrap; }
 
-/* ============================================================
-   Who this is for. Photo beside the copy, not behind it.
-   ============================================================ */
 .whofor-v2 {
   background: #08131F;
   padding-block: clamp(72px, 9vw, 128px);
@@ -3044,8 +2727,6 @@ body {
 @media (min-width: 900px) {
   .whofor-v2-inner { grid-template-columns: 0.85fr 1fr; }
 }
-/* Contained and rounded, so it reads as a photograph rather than a texture
-   with words on it. Apple frames a supporting image; it does not print over it. */
 .whofor-v2-media {
   position: relative;
   width: 100%;
@@ -3076,8 +2757,6 @@ body {
   color: #fff;
   text-wrap: balance;
 }
-/* Single column beside the photo: two columns here would set a very short
-   measure and break the lines badly. */
 .whofor-v2-list {
   list-style: none;
   margin: clamp(28px, 3.4vw, 44px) 0 0;
@@ -3095,7 +2774,6 @@ body {
   padding-left: 20px;
   position: relative;
 }
-/* A hairline tick of colour rather than a check glyph in a circle. */
 .whofor-v2-list li::before {
   content: "";
   position: absolute;
@@ -3149,12 +2827,6 @@ body {
   }
 }
 
-/* ============================================================
-   Services and scorecard: same two faults as the qualifier list had.
-   ============================================================ */
-/* Text-only features do not need cards. Boxed, they were three tall white
-   rectangles with dead space pooling at the bottom of each. Apple sets a
-   feature trio as plain columns. */
 .ap-feature {
   background: none;
   border: 0;
@@ -3215,7 +2887,6 @@ body {
   }
 }
 
-/* Scorecard promises: plain rows, matching the qualifier list. */
 .ap-plainlist { list-style: none; margin: 0; padding: 0; }
 .ap-plainlist li {
   display: block;
@@ -3234,14 +2905,6 @@ body {
 .ap-plainlist li svg,
 .ap-plainlist li .tick { display: none; }
 
-/* ============================================================
-   Footer, rebuilt light.
-   Apple's footer is the quietest thing on the page: small muted type on a
-   light grey field, hairline rules, tiny column headings, no heavy CTA slab.
-   Going light also removes the contrast problem the dark ground had, where
-   the ICAEW mark is a black PNG and simply disappeared once the white
-   badge plates were taken away.
-   ============================================================ */
 .site-footer-light {
   background: #EEF2F7;
   color: #55636f;
@@ -3282,7 +2945,6 @@ body {
   color: var(--ink);
 }
 .foot-firm { font-size: 14px; font-weight: 600; color: var(--ink); }
-/* Tiny, bold, wide-tracked. Apple's column headings are 12px and quiet. */
 .foot-head {
   font-family: var(--font-sans);
   font-size: 12px;
@@ -3322,16 +2984,9 @@ body {
 .foot-dot { color: #b7c1cc; }
 .foot-bar-inner nav { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
 
-/* The newsletter block inherited dark-ground styling from the old footer. */
 .site-footer-light .newsletter-note,
 .site-footer-light label { color: #55636f; }
 
-/* RotatingWord reserves a fixed 14ch slot and left-aligns inside it, which
-   dragged the centred headline off axis. The page.tsx nudge that compensated
-   for it is gone; centre the slot instead so the fix is not width-dependent. */
-/* Rotating phrase. The whole line animates, prefix included, so the change
-   reads as one deliberate move instead of a word blinking beside static text.
-   Natural width, growing rightward; .svc-head below holds the position. */
 .rot-phrase {
   display: inline-block;
   white-space: nowrap;
@@ -3345,19 +3000,10 @@ body {
   to   { opacity: 1; transform: none; }
 }
 
-/* This is the one animation left on the site, and it is a state change on a
-   live element rather than an entrance effect, so it stays. It still yields
-   to the reduced-motion preference. */
 @media (prefers-reduced-motion: reduce) {
   .rot-phrase { animation: none; }
 }
 
-/* Both lines centred. This is only safe because the WHOLE phrase animates on
-   each change: the line re-centres during the 460ms fade, so the width change
-   happens while the text is transparent and never reads as a jump. Left-
-   aligning was the earlier workaround for a word that changed in isolation.
-   The fixed width still clears the longest label ("a spreadsheet") on one line
-   so the phrase itself never wraps mid-change. */
 .svc-head {
   width: min(100%, 660px);
   margin-inline: auto;
@@ -3365,28 +3011,20 @@ body {
   text-wrap: nowrap;
 }
 @media (max-width: 700px) {
-  /* Below this the fixed box would overflow, so let it wrap naturally. */
   .svc-head { width: 100%; text-wrap: balance; }
 }
 
-/* Inline links in body copy: Apple's accent blue, no underline until hover.
-   The grey-underlined variant read as a dead hyperlink dropped into a line. */
 .ap-inline-link {
   color: var(--accent);
   text-decoration: none;
 }
 .ap-inline-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* Scorecard demo card: one border treatment, not a hairline plus a shadow,
-   and options as quiet rows rather than boxed inputs with a tick badge. */
 .sc-mock-card {
   border: 1px solid rgba(8, 19, 31, 0.09);
   box-shadow: 0 22px 50px rgba(8, 34, 75, 0.07);
   border-radius: 18px;
   background: #fff;
-  /* The earlier rule pins this to 540px, which left a large empty band under
-     the score row once the tick badge and padding came out. Let it size to
-     its content. */
   min-height: 0;
   max-width: 470px;
 }
@@ -3398,7 +3036,6 @@ body {
   color: #55636f;
   background: #fff;
 }
-/* Selection reads as a filled state, which is how a real control looks. */
 .sc-opt-on {
   border-color: var(--accent);
   background: rgba(47, 111, 198, 0.07);
@@ -3430,47 +3067,17 @@ body {
   }
 }
 
-/* Apple's dark panels are set in plain white. A mint-tinted headline reads as
-   consumer-tech, and the accent belongs on interactive elements, not on type.
-   The hairline markers go neutral for the same reason. */
 .whofor-v2-list li::before { background: rgba(255, 255, 255, 0.4); opacity: 1; }
 .whofor-v2-cta { color: #fff; }
 .whofor-v2-cta:hover { color: #fff; }
 
-/* No margin reset here on purpose. Tailwind's preflight already zeroes h1-h6
-   margins, and anything written in this file is UNLAYERED, which outranks
-   Tailwind's @layer utilities no matter how low its specificity, so even a
-   :where() reset silently killed every mt-* on an ap-* heading. */
-
-/* ============================================================
-   PANTHER TURQUOISE, homepage only.
-   Sampled from the turquoise panther chameleon (Furcifer pardalis, Nosy Be
-   morph) and rebuilt in OKLCH on a single hue, 203 degrees. Full study and
-   contrast table: ~/Desktop/🦎 PANTHER TURQUOISE PALETTE.html
-
-   Keyed off :root:has(.pal-panther) rather than the wrapper itself, so the
-   shared header and footer pick it up on this route while every other page
-   keeps the existing scheme. page.tsx puts .pal-panther on the home tree.
-   ============================================================ */
 :root:has(.pal-panther) {
-  --bg:      #F4F6FF;  /* Mist      neut-50  */
-  --surface: #E5E7F2;  /* neut-100           */
-  --ink:     #012528;  /* Abyss     teal-900 */
-  --muted:   #45474F;  /* neut-700           */
-  --accent:  #077B83;  /* Reef      teal-600, 4.67:1 on Mist */
-  --copper:  #069CA6;  /* Glass     teal-500 */
-  --seafoam: #ADE5EA;  /* teal-200           */
-  --teal:    #035E65;  /* Lagoon    teal-700, 6.97:1 on Mist */
-  --border:  #BEC0CA;  /* Ash       neut-300 */
-}
+  --bg:      #F4F6FF;  --surface: #E5E7F2;  --ink:     #012528;  --muted:   #45474F;  --accent:  #077B83;  --copper:  #069CA6;  --seafoam: #ADE5EA;  --teal:    #035E65;  --border:  #BEC0CA;  }
 
-/* --- grounds ------------------------------------------------------------ */
 .pal-panther .hv-light { background-color: #F7FAFB; }
 .pal-panther .whofor-v2 { background: #012528; }
 :root:has(.pal-panther) .site-footer-light { background: #E9ECF5; }
 
-/* Hero blobs onto the teal ramp. Two teals and one warm, which is the split
-   the photograph itself uses. */
 .pal-panther .hv-light .hv-dot-1 {
   background: radial-gradient(circle at 30% 30%, #ADE5EA 0%, rgba(173, 229, 234, 0) 58%);
 }
@@ -3481,7 +3088,6 @@ body {
   background: radial-gradient(circle at 50% 50%, #E3D1BB 0%, rgba(227, 209, 187, 0) 58%);
 }
 
-/* --- type --------------------------------------------------------------- */
 .pal-panther .hv-light .hv-sub,
 .pal-panther .ap-sub,
 .pal-panther .ap-feature p { color: #4A5560; }
@@ -3490,7 +3096,6 @@ body {
 .pal-panther .whofor-v2-list li { color: rgba(255, 255, 255, 0.76); }
 .pal-panther .whofor-v2-list li::before { background: #ADE5EA; }
 
-/* --- controls ----------------------------------------------------------- */
 .pal-panther .ap-btn-quiet { background: rgba(1, 37, 40, 0.06); color: var(--ink); }
 .pal-panther .ap-btn-quiet:hover { background: rgba(1, 37, 40, 0.11); }
 .pal-panther .ap-btn:hover,
@@ -3508,7 +3113,6 @@ body {
     linear-gradient(90deg, rgba(1, 37, 40, 0.055) 1px, transparent 1px);
 }
 
-/* --- shared chrome, only while the home tree is mounted ----------------- */
 :root:has(.pal-panther) .site-head.is-solid {
   background: rgba(244, 246, 255, 0.72);
   border-bottom-color: rgba(1, 37, 40, 0.09);
@@ -3524,89 +3128,15 @@ body {
 :root:has(.pal-panther) .foot-bar-inner { color: #6E7A85; }
 
 
-/* ============================================================
-   SRJ INK, homepage only.
-   SRJ's own scheme. Deliberately NOT Apple's: the hierarchy is the same because
-   that is just working hierarchy, but every colour is SRJ's. Prussian navy at
-   hue 220 rather than Apple's cyan-leaning 210, and none of Apple's hexes.
-
-   Keyed off :root:has(.pal-ink) rather than the wrapper itself, so the
-   shared header and footer pick it up on this route while every other page
-   keeps the existing scheme. page.tsx puts .pal-ink on the home tree.
-   Swap that one class back to `pal-panther` to restore the previous scheme.
-
-   THREE THINGS THIS FIXES, all of which read as "no contrast":
-
-   1. VALUE, not hue. The old section grounds are cool blue-whites hardcoded
-      outside the token system, so a token-level palette swap never reached
-      them. Measured relative luminance: page ground 90.5 against
-      .section-blue-soft 90.4. A tenth of a point apart. Two areas at the same
-      VALUE do not separate however far apart their HUE is, which is why the
-      top of the page read as one continuous sheet. The ladder below steps
-      100 / 91.4 / 81 / 1.2.
-
-   2. FIGURE-GROUND on the portrait. Simon is a cut-out with a light head and a
-      near-black suit, floating on a light ground, so only the suit read and the
-      head dissolved. The grey pool behind him is deliberately MID value: dark
-      enough that the light head separates downward, light enough that the dark
-      suit separates upward. One tone solving both ends of a two-tone figure.
-
-   3. FOCAL POINT. Both hero CTAs were plain text links at body weight, so the
-      primary action was the least prominent thing on the screen. One filled
-      blue button now carries the only saturated colour on the page.
-
-   CONTRAST, measured, all AA or better:
-     on #FFFFFF        ink #14161A 16.83   secondary #545B66 5.07
-                       link #17356B 11.95  button white-on-#1B4DB1 7.66
-     on #F2F3F5        ink 16.31           secondary 6.17      link 10.76
-     on dark #0E1A2E   #F2F3F5 15.68       on-dark blue #A9C6F5 10.02
-
-   These figures were RE-MEASURED on 16 Aug 2026 and the previous ones were
-   wrong. When this block was converted from the earlier Apple palette, a
-   find-and-replace swapped the hexes inside this comment as well as in the
-   rules, so Apple's measurements stayed attached to SRJ's colours. Every
-   number above is now computed from the hex beside it.
-
-   TRAPS, do not undo these:
-   - Hover goes DARKER, not lighter. #1B4DB1 hovers to #173F93 (white 9.68).
-     Apple's convention of hovering to a lighter blue drops white below 4.5.
-   - #7A828E is 3.88 on white and 3.50 on #F2F3F5. It FAILS AA and must never
-     carry body copy, links or legal text. Several footer greys are currently
-     in this tier or worse and need replacing.
-
-   Superseded note, kept because it caused a real error: an earlier version of
-   this comment claimed the button blue "measures 4.31 as text and FAILS".
-   That was true of Apple's #0071E3, not of #1B4DB1, which measures 6.90 on
-   #F2F3F5 and passes. Do not reintroduce that restriction.
-   ============================================================ */
 :root:has(.pal-ink) {
-  --bg:      #FFFFFF;  /* lum 100          */
-  --surface: #F2F3F5;  /* lum 91.4         */
-  --ink:     #14161A;  /* 18.11 on white   */
-  --muted:   #545B66;  /* 6.85 on white    */
-  --accent:  #17356B;  /* text-safe blue, 11.95 on white */
-  --copper:  #1B4DB1;  /* button blue, fills only */
-  --seafoam: #A9C6F5;  /* Apple's on-dark blue, 5.58 on #14161A */
-  --teal:    #17356B;  /* the em-display accent on light */
-  --border:  #D2D2D7;  /* Apple hairline   */
-}
+  --bg:      #FFFFFF;  --surface: #F2F3F5;  --ink:     #14161A;  --muted:   #545B66;  --accent:  #17356B;  --copper:  #1B4DB1;  --seafoam: #A9C6F5;  --teal:    #17356B;  --border:  #D2D2D7;  }
 
-/* --- the value ladder --------------------------------------------------- */
-.pal-ink .hv-light { background-color: #FFFFFF; }           /* lum 100  */
-.pal-ink .section-white { background: #FFFFFF; }            /* lum 100  */
-.pal-ink .section-blue-soft { background: #F2F3F5; }        /* lum 91.4 */
-.pal-ink .section-tinted { background: #E4E7EB; }           /* lum 81   */
-.pal-ink .whofor-v2 { background: #0E1A2E; }                /* lum 1.2  */
-:root:has(.pal-ink) .site-footer-light { background: #F2F3F5; }
+.pal-ink .hv-light { background-color: #FFFFFF; }           .pal-ink .section-white { background: #FFFFFF; }            .pal-ink .section-blue-soft { background: #F2F3F5; }        .pal-ink .section-tinted { background: #E4E7EB; }           .pal-ink .whofor-v2 { background: #0E1A2E; }                :root:has(.pal-ink) .site-footer-light { background: #F2F3F5; }
 
-/* Cards go pure white so they lift off the grey grounds. This only works
-   BECAUSE the grounds stepped down: white on a 90-value ground was invisible. */
 .pal-ink .statement-panel,
 .pal-ink .finance-card,
 .pal-ink .faq-panel { background: #FFFFFF; }
 
-/* --- hero washes -------------------------------------------------------- */
-/* One soft blue, top left, kept well away from the headline. */
 .pal-ink .hv-light .hv-dot-1 {
   width: min(72vw, 680px);
   top: 12%;
@@ -3616,7 +3146,6 @@ body {
   opacity: 0.46;
   background: radial-gradient(circle at 40% 40%, #4F7FD8 0%, rgba(79, 127, 216, 0) 66%);
 }
-/* Its mirror, low right, weaker still. */
 .pal-ink .hv-light .hv-dot-2 {
   display: block;
   width: min(60vw, 560px);
@@ -3629,15 +3158,8 @@ body {
   opacity: 0.34;
   background: radial-gradient(circle at 50% 50%, #76A9E8 0%, rgba(118, 169, 232, 0) 68%);
 }
-/* Third blob off. On an empty margin with nothing in front of it, it separates
-   nothing and reads as a smudge rather than as light. */
 .pal-ink .hv-light .hv-dot-3 { display: none; }
 
-/* The grey pool that separates the portrait. Lives on .hv-portrait because the
-   blob canvas is masked out at 58% of the hero height, above the figure.
-   Falloff runs to 82% and the whole thing is blurred: at a 70% stop the outer
-   edge was still readable as a ring, and a visible circle behind the copy is
-   worse than no separation at all. */
 .pal-ink .hv-portrait::before {
   content: "";
   position: absolute;
@@ -3658,33 +3180,6 @@ body {
   pointer-events: none;
 }
 
-/* Simon's head was landing on the CTA row.
-
-   The cause was not spacing. `.hv-portrait` is `position: absolute` with its
-   height derived from the hero's height, so on a short window its top edge
-   climbs into the copy. Measured gap before this rule: +38px at a 900px
-   viewport, but -7px at 800, -39px at 740 and -60px at 700.
-
-   `margin-top` cannot fix it: on an absolutely positioned box anchored to
-   `bottom` with an explicit height, margin-top is inert.
-
-   Three things have to hold at once, and they conflict. He stays a FIXED 440px
-   (he is the proof on this page and should be the same size for everyone), the
-   gap under the CTA never closes, and the hero stays ONE screen with no
-   scrolling. Copy plus gap plus portrait needs about 900px, which a 760px
-   window does not have, so growing the hero breaks rule three and shrinking
-   him breaks rule one.
-
-   What gives instead is how much of him is ON screen, which is the
-   composition's original intent anyway: the fold should read as a crop of
-   something larger rather than the end of the page.
-
-   Anchoring by TOP rather than by bottom is what does it. max() takes whichever
-   sits lower: on a tall window `100% - 440px` wins and he stands on the hero's
-   bottom edge as designed, and on a short one the floor wins, he stays pinned
-   just under the CTA at his full size, and the surplus hangs past the fold
-   where `overflow: hidden` on .hv crops it. His distance from the copy is now
-   a constant rather than a leftover of the window height. */
 @media (min-width: 1024px) {
   .pal-ink .hv-portrait {
     height: 440px;
@@ -3694,7 +3189,6 @@ body {
   }
 }
 
-/* --- type --------------------------------------------------------------- */
 .pal-ink .hv-light .hv-sub,
 .pal-ink .ap-sub,
 .pal-ink .ap-feature p { color: #545B66; }
@@ -3703,8 +3197,6 @@ body {
 .pal-ink .whofor-v2-list li { color: rgba(242, 243, 245, 0.82); }
 .pal-ink .whofor-v2-list li::before { background: #A9C6F5; }
 
-/* --- controls ----------------------------------------------------------- */
-/* #1B4DB1 for anything filled, #17356B for anything set as text. */
 .pal-ink .ap-btn,
 :root:has(.pal-ink) .nav-cta { background: #1B4DB1; color: #fff; }
 .pal-ink .ap-btn:hover,
@@ -3735,8 +3227,6 @@ body {
   background: #173F93;
   transform: translateY(-1px);
 }
-/* Secondary stays a quiet text link on purpose. One primary per screen, or
-   there is no focal point again. */
 .pal-ink .hv-light .hv-link:not(.hv-cta-primary) { color: var(--accent); }
 .pal-ink .hv-actions { align-items: center; gap: 22px; }
 
@@ -3755,7 +3245,6 @@ body {
     linear-gradient(90deg, rgba(20, 22, 26, 0.045) 1px, transparent 1px);
 }
 
-/* --- shared chrome, only while the home tree is mounted ----------------- */
 :root:has(.pal-ink) .site-head.is-solid {
   background: rgba(255, 255, 255, 0.72);
   border-bottom-color: rgba(20, 22, 26, 0.10);
@@ -3771,17 +3260,6 @@ body {
 :root:has(.pal-ink) .foot-bar-inner { color: #7A828E; }
 :root:has(.pal-ink) .ap-link.on-dark { color: #A9C6F5; }
 
-/* ============================================================
-   CONTACT PAGE, under .pal-ink.
-   Rebuilt 16 Aug 2026. The old layout put the form in a 1.05fr column with a
-   photo beside it in 0.9fr, so the right side was empty for most of the scroll
-   while the process steps and the credential tiles sat orphaned in a second
-   section below the fold. Page ran 2666px for one form.
-
-   Everything below the fold moved into a sticky right rail. Same value ladder
-   as the homepage: grey ground, ONE white card (the form, the only thing here
-   with a job to do), and a dark panel as the anchor.
-   ============================================================ */
 .pal-ink .ct-wrap {
   background: #F2F3F5;
   padding-block: clamp(40px, 6vh, 72px) clamp(56px, 9vh, 104px);
@@ -3807,10 +3285,6 @@ body {
   color: #545B66;
 }
 
-/* Plain container. ContactForm renders its own .finance-card, so the card
-   styling belongs on that, not on a wrapper around it. The form also ships
-   `mx-auto max-w-2xl`, which centred it in the column and left it narrower
-   than the rail beside it, so both are unset here. */
 .pal-ink .ct-formcard {
   margin-top: 28px;
 }
@@ -3822,11 +3296,9 @@ body {
   background: #FFFFFF;
   border: 1px solid #E4E7EB;
   border-radius: 20px;
-  /* Shadow does the lifting the old page asked colour to do. */
   box-shadow: 0 1px 2px rgba(20, 22, 26, 0.04), 0 18px 40px rgba(20, 22, 26, 0.07);
 }
 
-/* --- the rail ----------------------------------------------------------- */
 .ct-rail {
   display: flex;
   flex-direction: column;
@@ -3835,7 +3307,6 @@ body {
 @media (min-width: 1024px) {
   .ct-rail {
     position: sticky;
-    /* Clears the fixed header. */
     top: 104px;
   }
 }
@@ -3865,7 +3336,6 @@ body {
   color: var(--ink);
 }
 
-/* --- the person panel, the page's dark anchor --------------------------- */
 .pal-ink .ct-person {
   display: flex;
   align-items: flex-end;
@@ -3879,8 +3349,6 @@ body {
 .ct-person-photo {
   position: relative;
   flex: 0 0 132px;
-  /* Tall enough that he is a person rather than a thumbnail, and he stands on
-     the panel's bottom edge the same way he does in the hero. */
   height: 168px;
   align-self: flex-end;
 }
@@ -3899,11 +3367,9 @@ body {
   margin-top: 6px;
   font-size: 13px;
   line-height: 1.6;
-  /* 10.02 on the panel. */
   color: #A9C6F5;
 }
 
-/* --- steps -------------------------------------------------------------- */
 .ct-steps {
   margin-top: 14px;
   display: flex;
@@ -3928,7 +3394,6 @@ body {
   color: #17356B;
 }
 
-/* --- credentials -------------------------------------------------------- */
 .ct-trust {
   margin-top: 14px;
   display: grid;
@@ -3967,39 +3432,15 @@ body {
 
 
 
-/* ============================================================
-   FOOTER, rebuilt 16 Aug 2026. Applies on EVERY route, not just pal-ink.
-
-   THREE GREYS, NOT SIX. The old footer used #14161A / #45525f / #55636f /
-   #7b8794 / #8894a1 / #9aa5b1 / #b7c1cc to express four levels of meaning, so
-   no grey meant anything, and the bottom three failed WCAG AA on the footer
-   ground (3.30, 2.78, 2.25). The legal links and the Accessibility Statement
-   link were themselves below AA, which is the worst possible finding on a
-   regulated firm's site. Headings are now distinguished by CASE and TRACKING,
-   which is a stronger signal than value and costs no contrast.
-
-   One ground on every route (#F2F3F5). The footer previously rendered #EEF2F7
-   everywhere except the pal-ink pages, so every ratio had to be checked twice
-   and the per-route fork bought nothing.
-   ============================================================ */
 .site-footer-light {
-  --foot-ink:    #14161A;  /* wordmark only.            16.31 on ground */
-  --foot-body:   #454C57;  /* links and body copy.       7.80 on ground */
-  --foot-quiet:  #5C6570;  /* headings, legal, fine.     5.33 on ground */
-  --foot-accent: #17356B;  /* actions.                  10.76 on ground */
-  --foot-rule:   #D2D2D7;  /* hairlines only, never text */
-
-  background: #F2F3F5;
+  --foot-ink:    #14161A;  --foot-body:   #454C57;  --foot-quiet:  #5C6570;  --foot-accent: #17356B;  --foot-rule:   #D2D2D7;  background: #F2F3F5;
   color: var(--foot-body);
   border-top: 1px solid var(--foot-rule);
 }
 
-/* One spacing scale, 8px based. The old markup used mt-1/3/4/5/6/9, six
-   different gaps for four levels of relationship. */
 .foot-band { padding-block: 40px; }
 .foot-cols, .foot-bar { border-top: 1px solid var(--foot-rule); }
 
-/* --- Band A: capture ---------------------------------------------------- */
 .foot-capture {
   display: grid;
   grid-template-columns: 1fr;
@@ -4046,8 +3487,6 @@ body {
 }
 .site-footer-light .foot-fine a:hover { color: var(--foot-ink); }
 
-/* The only accent-coloured actions, one per band so they never share a
-   visual field with each other or with the single filled control. */
 .site-footer-light .foot-action {
   color: var(--foot-accent);
   font-weight: 500;
@@ -4060,15 +3499,12 @@ body {
 }
 .foot-action-block { display: inline-block; margin-block: 4px; }
 
-/* --- Band B: directory -------------------------------------------------- */
 .foot-cols {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: start;              /* identity column is ~3x taller than the rest */
-  column-gap: clamp(24px, 3.5vw, 56px);
+  align-items: start;              column-gap: clamp(24px, 3.5vw, 56px);
   row-gap: 40px;
 }
-/* New breakpoint. Without it the tablet footer was a single ~1400px stack. */
 @media (min-width: 600px) { .foot-cols { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) {
   .foot-cols { grid-template-columns: minmax(240px, 1.6fr) repeat(3, minmax(132px, 0.8fr)); }
@@ -4110,8 +3546,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--foot-quiet);       /* 5.33, was 2.78 */
-}
+  color: var(--foot-quiet);       }
 .foot-links {
   display: flex;
   flex-direction: column;
@@ -4122,8 +3557,7 @@ body {
 .site-footer-light .foot-link {
   font-size: 14px;
   line-height: 1.45;
-  color: var(--foot-body);        /* 7.80 */
-  text-decoration: none;
+  color: var(--foot-body);        text-decoration: none;
 }
 .site-footer-light .foot-link:hover {
   color: var(--foot-ink);
@@ -4131,8 +3565,6 @@ body {
   text-underline-offset: 3px;
 }
 
-/* 22px glyph in a 40px target for WCAG 2.2 SC 2.5.8, with negative margin so
-   the larger hit area costs no layout. */
 .foot-socials { display: flex; align-items: center; gap: 4px; margin-top: 8px; }
 .foot-socials-row {
   grid-column: 1 / -1;
@@ -4148,11 +3580,9 @@ body {
   width: 40px;
   height: 40px;
   margin: -9px;
-  color: var(--foot-quiet);       /* 5.33, clears the 3:1 non-text minimum */
-}
+  color: var(--foot-quiet);       }
 .site-footer-light .foot-social:hover { color: var(--foot-ink); }
 
-/* --- Band C: legal ------------------------------------------------------ */
 .foot-bar-inner {
   display: flex;
   flex-wrap: wrap;
@@ -4162,8 +3592,7 @@ body {
   padding-block: 24px;
   font-size: 12.5px;
   line-height: 1.6;
-  color: var(--foot-quiet);       /* 5.33, was 3.30 */
-}
+  color: var(--foot-quiet);       }
 .foot-legal { display: grid; gap: 4px; max-width: 68ch; }
 .foot-legal-nav {
   display: flex;
@@ -4174,8 +3603,6 @@ body {
 .site-footer-light .foot-bar-inner .foot-link { font-size: 12.5px; color: var(--foot-quiet); }
 .site-footer-light .foot-strong { color: var(--foot-body); font-weight: 500; }
 
-/* Mobile order: the things a phone user actually wants first. The identity
-   column and the legal band are the least urgent, so they sink. */
 @media (max-width: 599px) {
   .foot-cols {
     display: grid;
@@ -4214,11 +3641,6 @@ body {
   }
 }
 
-/* Newsletter error. Colour-independent on purpose: the palette carries no error
-   hue, and signalling by icon plus border weight rather than by red satisfies
-   WCAG 1.4.1 outright instead of relying on a colour a reader may not see.
-   The old treatment used text-red-600, which measured 4.35 on the footer ground
-   and failed AA as well as being a stray hue. */
 .ns-error {
   display: flex;
   align-items: baseline;
@@ -4230,3 +3652,73 @@ body {
 }
 .ns-error > span[aria-hidden] { font-weight: 700; }
 input[aria-invalid="true"] { border-color: #14161A !important; border-width: 2px; }
+
+/* ============================================================
+   pal-board2 — the approved board 2 palette, layered over pal-ink.
+   Applied on the homepage only, as an additional class, so every
+   pal-ink layout rule still applies and this block changes colour
+   and nothing else. Remove the class to revert.
+
+   Values and their reasons are in the colour study, 16 Sep 2026.
+   ============================================================ */
+
+/* Brand navy. Same lightness as the old #2A3B54 at 56% saturation,
+   so it reads blue rather than slate. Half CIOT's chroma, so it sits
+   beside the badge rather than imitating it. */
+.pal-board2 { --accent: #1C3963; --copper: #845F3E; --teal: #C0603A; }
+
+/* The band. Brand navy wins on tonal interrupt (75.5 of 90.8 against a
+   white neighbour) and has the lowest photo-edge merging of the options
+   measured. Body list at 10.70:1, band CTA at 6.17:1. */
+.pal-board2 .whofor-v2 { background: #1C3963; }
+.pal-board2 .whofor-v2-list li { color: rgba(251, 248, 243, 0.84); }
+.pal-board2 .whofor-v2-list li::before { background: #E8B49B; }
+
+/* The headline split moves onto the positioning line. Chroma is the stronger
+   salience cue at equal size and weight, so the accent half is read first,
+   and it was sitting on the qualifier and the postcode. */
+.pal-board2 .hv-light .hv-title { color: #C0603A; }
+.pal-board2 .hv-light .hv-title .hero-accent { color: #1C3963; }
+
+/* Primary actions in brand navy. Paper on navy is 10.70:1. */
+.pal-board2 .ap-btn,
+.pal-board2 .hv-cta-primary,
+:root:has(.pal-board2) .nav-cta { background: #1C3963; color: #fff; }
+.pal-board2 .ap-btn:hover,
+.pal-board2 .hv-cta-primary:hover,
+:root:has(.pal-board2) .nav-cta:hover { background: #16304F; }
+:root:has(.pal-board2) .nav-cta.mobile-cta {
+  background: #1C3963;
+  color: #fff !important;
+  border-color: #1C3963 !important;
+}
+:root:has(.pal-board2) .nav-cta.mobile-cta:hover {
+  background: #16304F;
+  color: #fff !important;
+  border-color: #16304F !important;
+}
+
+/* Terracotta is two values, not one. #C0603A sits at L* 51.7 and reaches
+   4.22:1 on white, which passes large text and fails body text. The darkened
+   sibling at L* 44 carries anything below 24px. */
+.pal-board2 .ap-h2 .text-teal,
+.pal-board2 .ap-h3 .text-teal,
+.pal-board2 .ap-statement .ap-accent { color: #C0603A; }
+.pal-board2 .ap-inline-link,
+.pal-board2 .foot-action { color: #9C4A2A; }
+.pal-board2 .sc-opt-on {
+  border-color: #9C4A2A;
+  background: rgba(156, 74, 42, 0.07);
+  color: var(--ink);
+}
+
+/* Tan carries interaction and structure: links on light grounds and hairlines. */
+.pal-board2 .hv-light .hv-link:not(.hv-cta-primary) { color: #845F3E; }
+:root:has(.pal-board2) .foot-link { color: #4A515C; }
+:root:has(.pal-board2) .ap-link.on-dark { color: #E8B49B; }
+
+/* Footer rules removed. They separate blocks that the spacing already separates. */
+:root:has(.pal-board2) .site-footer-light { --foot-rule: transparent; --foot-accent: #9C4A2A; }
+:root:has(.pal-board2) .foot-cols,
+:root:has(.pal-board2) .foot-bar,
+:root:has(.pal-board2) .site-footer-light .foot-top { border-top: 0; border-bottom: 0; }

@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-
-// Shared wrapper for the legal pages (privacy, cookies, terms, accessibility).
 export default function LegalDoc({
   title,
   updated,

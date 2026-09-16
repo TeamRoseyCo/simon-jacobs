@@ -12,11 +12,6 @@ export const metadata: Metadata = {
     "Simon Jacobs is a Chartered Tax Adviser (CTA · ACA) and PwC trained, founder of SRJ International (formerly Jacobs Taxes). He advises UK business owners on tax, profit extraction, director pay, and exit.",
   alternates: { canonical: "/about" },
 };
-
-// ProfilePage + Person schema so branded searches for "Simon Jacobs" and
-// "Jacobs Taxes" resolve to this page as the canonical entity. Google treats a
-// ProfilePage with a mainEntity Person as the authoritative profile for a named
-// individual; alternateName on worksFor declares the "Jacobs Taxes" alias.
 const profileLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -34,8 +29,6 @@ const profileLd = {
     url: `${site.url}/about`,
     email: site.email,
     telephone: "+447821900992",
-    // TODO(verify): add CIOT Find-a-CTA register URL to sameAs once Simon is
-    // listed (tax.org.uk). Unverified today, so it is deliberately omitted.
     sameAs: [site.linkedin, site.instagram, site.icaew],
     worksFor: {
       "@type": "AccountingService",
@@ -52,9 +45,6 @@ const profileLd = {
       },
       { "@type": "Organization", name: "ICAEW" },
     ],
-    // Machine-readable credentials (already asserted in the About page copy and
-    // the CTA · ACA accreditation strip). CTA is awarded by the CIOT, ACA by the
-    // ICAEW.
     hasCredential: [
       {
         "@type": "EducationalOccupationalCredential",
@@ -115,7 +105,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Editorial sequence with a scroll-journey connector behind it */}
+
       <AboutJourney>
         <div className="aj-step">
           <p className="max-w-xl text-lg leading-9 text-muted">
@@ -168,7 +158,7 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {principles.map((p, index) => (
+            {principles.map((p) => (
               <article
                 key={p.title}
                 className="finance-card p-5 md:p-6"
@@ -194,7 +184,7 @@ export default function AboutPage() {
           </h2>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {credentials.map((c, index) => (
+          {credentials.map((c) => (
             <article
               key={c.title}
               className="finance-card p-5 md:p-6"

@@ -32,9 +32,9 @@ table-stakes by the teardown below.
    just the strongest example? Two of his three testimonials are a **dentist** and
    a **landlord** — that contradicts the single-agency ICP. Decide: do we drop the
    non-agency quotes for sharper focus, or keep them and soften the niche claim?
-5. **Brand name.** The site shows the firm as **"SRJ International"** but the email
-   is **simon@jacobs-taxes.com** and the project is "Simon Jacobs." What's the
-   canonical brand — personal name, SRJ, or jacobs-taxes? Logo file?
+5. ~~**Brand name.**~~ **SETTLED 29 Aug 2026 — the brand is "SRJ International."**
+   Confirmed by Simon in the logo brief; `jacobs-taxes.com` stays as email only.
+   The logo commission runs against this name — see `gate-2-moodboards.md`.
 6. **Reviews / rating.** Smooth leads with "4.8 from 103 Google reviews," Crunch
    with "Trustpilot 5.0, 64,000 clients." Does Simon have a Google Business profile
    or Trustpilot we can surface? Even a modest real rating beats none.

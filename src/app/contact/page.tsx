@@ -12,18 +12,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    // Same `pal-ink` scheme as the homepage. Without it this page kept the old
-    // cool blue-white and teal accent, so arriving here from the homepage read
-    // as a different site.
     <div className="pal-ink">
-      {/* The old page ran the form down a 1.05fr column with a photo in the
-          0.9fr column beside it, so the right-hand side was empty for most of
-          the scroll and the process steps and credentials sat orphaned in a
-          second section underneath. Everything that was below the fold is now
-          in the right rail, which fills the dead space and shortens the page. */}
-      {/* .gutter caps width at 1240px and centres, so putting the grey on it
-          left white margins down both edges. The ground goes on the full-width
-          wrapper and the gutter moves inside it. */}
+
+
       <section className="ct-wrap">
         <div className="ct-grid gutter">
           <div className="ct-main">
@@ -37,22 +28,15 @@ export default function ContactPage() {
               for.
             </p>
 
-            {/* ContactForm already renders its own `.finance-card`, so this is
-                a plain container. Wrapping it in a second card gave a card
-                inside a card. The card styling is applied to the form itself
-                further down in site.css. */}
+
             <div className="ct-formcard">
               <ContactForm />
             </div>
           </div>
 
-          {/* Sticky so it stays useful while the form scrolls. */}
+
           <aside className="ct-rail">
-            {/* Dark panel: the page's value anchor, and the reason the white
-                form card reads as lifted rather than flat. The cut-out replaces
-                the old studio shot, whose flat grey backdrop inside a rounded
-                rectangle made the brightest shape on the page one carrying no
-                information. */}
+
             <div className="ct-card ct-person">
               <div className="ct-person-photo">
                 <Image

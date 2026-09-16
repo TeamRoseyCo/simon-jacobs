@@ -34,8 +34,6 @@ function buildTemplate(row: QueueRow, unsubLink: string) {
   }
   return instagramEmail3(vars);
 }
-
-// Vercel Cron hits this on a schedule (see vercel.json). Not user-facing.
 export async function GET(req: Request) {
   if (!auth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 

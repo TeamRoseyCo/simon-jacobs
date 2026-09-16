@@ -2,21 +2,6 @@ import { NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 
-// Publishes one queued blog post per run, twice a day.
-//
-// Posts are written and carded up front, then held in `blog_posts` with
-// status = 'scheduled' and a publish_at timestamp: 06:00 for a morning slot,
-// 17:00 for an evening one. Vercel Cron hits this route at 07:30 and 18:30 (see
-// vercel.json), it takes the oldest post that is due, sets its date to today,
-// flips it to published, revalidates the pages that list posts and pings
-// IndexNow so Bing (and the AI search engines reading Bing) see it.
-//
-// One post per run on purpose. If a run is missed, or several posts fall due at
-// once, the queue drains two a day rather than dumping the backlog into the
-// index on one date. That is the fallback cushion: the blog keeps publishing
-// whether or not anyone remembers to.
-// RELEVANT FILES: src/lib/posts.ts, vercel.json, scripts/indexnow.mjs
-
 const HOST = "srjinternational.co.uk";
 const IDXNOW_KEY = "3c75b0b8bc9f45c8a6e5920b8fda2d67";
 
@@ -25,9 +10,6 @@ function auth(req: Request) {
   const expected = `Bearer ${process.env.CRON_SECRET ?? ""}`;
   return Boolean(process.env.CRON_SECRET) && header === expected;
 }
-
-// IndexNow is best-effort. A failed ping must never fail the publish, the
-// post is live either way and the next deploy's npm run indexnow catches up.
 async function pingIndexNow(slug: string) {
   const urlList = [
     `https://${HOST}/blog/${slug}`,
@@ -75,8 +57,6 @@ export async function GET(req: Request) {
   }
 
   const post = due[0];
-  // Date the post today, not on the publish_at it was queued for. A post that
-  // sat in the queue an extra week should not go live back-dated.
   const today = now.toISOString().slice(0, 10);
 
   const { error: updateError } = await supabase

@@ -21,10 +21,6 @@ export const metadata: Metadata = {
     images: [{ url: "/simon-jacobs.jpg" }],
   },
 };
-
-// Agency-specific FAQ. Answers are 40-60 words (featured-snippet / AI-citation
-// friendly) and kept descriptive rather than prescriptive — specifics are
-// always "we look at your numbers", so nothing here reads as filed tax advice.
 const faqs = [
   {
     question: "Do marketing agencies need a specialist accountant?",
@@ -99,9 +95,6 @@ const serviceJsonLd = {
     url: siteUrl,
   },
 };
-
-// The five agency-specific areas, each linking down to its cluster post (the
-// hub-and-spoke internal linking that builds topical authority).
 const areas = [
   {
     title: "Rebilled costs & VAT",
@@ -138,7 +131,7 @@ const areas = [
 export default function AccountantsForMarketingAgenciesPage() {
   return (
     <>
-      {/* Hero */}
+
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Chartered Tax Adviser · PwC Trained · Agencies only</p>
@@ -171,7 +164,7 @@ export default function AccountantsForMarketingAgenciesPage() {
         </div>
       </section>
 
-      {/* Why a specialist */}
+
       <section className="section-white mx-auto w-full max-w-3xl px-6 pb-12 pt-6 md:px-10 md:pb-16 lg:px-16">
         <div>
           <h2 className="ap-h2">
@@ -198,7 +191,7 @@ export default function AccountantsForMarketingAgenciesPage() {
         </div>
       </section>
 
-      {/* The agency-specific areas (hub › cluster links) */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">What actually moves the numbers</p>
@@ -208,7 +201,7 @@ export default function AccountantsForMarketingAgenciesPage() {
           </h2>
         </div>
         <div className="mt-10 grid gap-4 text-left md:grid-cols-2 lg:grid-cols-3">
-          {areas.map((area, index) => (
+          {areas.map((area) => (
             <article
               key={area.title}
               className="finance-card flex h-full flex-col p-6 md:p-7"
@@ -230,7 +223,7 @@ export default function AccountantsForMarketingAgenciesPage() {
         </div>
       </section>
 
-      {/* Proof */}
+
       <Testimonials />
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
@@ -275,7 +268,7 @@ export default function AccountantsForMarketingAgenciesPage() {
         </p>
       </section>
 
-      {/* FAQ */}
+
       <section className="gutter section-white pb-16 pt-2 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Agency FAQ</p>

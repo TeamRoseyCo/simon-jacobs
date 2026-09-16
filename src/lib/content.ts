@@ -1,8 +1,3 @@
-// Shared site content. Copy is tuned to the Ideal Client Profile
-// Repositioned 15 Aug 2026 from agency-only to GENERAL PRACTICE with three
-// spikes: cross-border tax, exit planning, and sectors (agencies being the
-// first of several). Rationale and evidence:
-// docs/general-practice-repositioning-2026-08.md
 
 export const site = {
   url: "https://srjinternational.co.uk",
@@ -14,21 +9,12 @@ export const site = {
   phone: "07821 900 992",
   linkedin: "https://uk.linkedin.com/in/simon-r-jacobs",
   instagram: "https://www.instagram.com/simonjacobs_cta",
-  // Simon's ICAEW member profile. This URL is already indexed and ranks for his
-  // name, so listing it in sameAs helps search engines merge this site into his
-  // established personal entity (rather than the unrelated "SRJ" collisions).
-  // CONFIRM this is the correct profile (it 403s to bots, so verify in-browser).
   icaew: "https://find.icaew.com/members/london/simon-jacobs/tPW1A",
   bookSubject: "Tax planning discovery call",
-  // Registered office, used as the CAN-SPAM physical address in sequence emails.
   physicalAddress: "10 Northcliffe Drive, London, England, N20 8JZ",
   tagline:
     "SRJ International helps UK business owners keep more of what they earn.",
 } as const;
-
-// The full compliance service list (carried over from SRJ International).
-// `body` is placeholder "how it works" copy for the click-to-expand checklist
-// on the services page, CONFIRM/replace with Simon's own wording.
 export const servicesFull = [
   {
     title: "Corporation tax",
@@ -63,20 +49,6 @@ export const servicesFull = [
     body: "Your books kept accurate and current, so management accounts and tax filings are never a scramble.",
   },
 ];
-
-// Real client testimonials, in the wording published on the old SRJ
-// International site (imported in commit 8420b07). That wording stands: it was
-// lightly edited for length by Simon, and the raw WhatsApp source messages on
-// file (Feb and Mar 2026) say the same things at greater length, so there is
-// nothing to gain by re-cutting them.
-//
-// `quote` is an array of paragraphs, so a longer quote can breathe.
-// `highlight` is an exact substring of one paragraph, emphasised as the payoff.
-// `rating` renders stars, so it must be a rating the client actually gave.
-// All three are set to 5 on Hazem's word (2 August 2026) that every one of these
-// clients rated the service five out of five. Simon should be able to point to
-// where each rating came from if a client or the ASA ever asks; if he cannot,
-// delete the `rating` lines and the stars disappear on their own.
 export type Testimonial = {
   quote: string[];
   highlight?: string;
@@ -87,9 +59,6 @@ export type Testimonial = {
 
 export const testimonials: Testimonial[] = [
   {
-    // CONFIRM with Simon: is this the same person as the quote below, whose
-    // WhatsApp message is signed "Joe - CEO Nexus Capital"? No raw source
-    // message on file for this one.
     quote: [
       "Simon helped me save thousands on my tax bill and prevented me from losing my Personal Allowance. He also gave me very good insights and advice into cryptocurrency, which will save me thousands of pounds in the future.",
     ],
@@ -99,10 +68,6 @@ export const testimonials: Testimonial[] = [
     role: "Digital marketing agency",
   },
   {
-    // ATTRIBUTION CONFLICT, awaiting Simon. This wording matches, sentence for
-    // sentence, a WhatsApp message to Simon dated 2 March 2026 that is signed
-    // "Joe - CEO Nexus Capital". Either the old site's label is wrong, or Hamish
-    // B is a separate client who said something near identical. Simon decides.
     quote: [
       "Simon helped me reclaim money I did not even realise I was entitled to, saved me a significant amount in tax through proper structuring, and ensured everything is compliant and future-proof.",
       "What really separates him is how proactive and responsive he is. He advises, explains, and genuinely fights your corner with HMRC. You feel protected, informed, and strategically guided at all times.",
@@ -113,9 +78,6 @@ export const testimonials: Testimonial[] = [
     role: "Dentist",
   },
   {
-    // Source on file: WhatsApp message from Jaison Mistry, 9 February 2026,
-    // answering the four questions Simon sent him. This site wording is Simon's
-    // shortened version of his answer 3.
     quote: [
       "Simon has always given the best he can for the customer. Understanding my situation has allowed him to advise and guide me in the right direction and be more tax efficient where possible.",
     ],
@@ -125,31 +87,9 @@ export const testimonials: Testimonial[] = [
     role: "Landlord",
   },
 ];
-
-// The raw booking calendar. Only used after a lead qualifies on the contact
-// form (see ContactForm.tsx) so call slots go to real fits.
 export const bookHref = "https://calendar.app.google/LjoJzvA8E1p9E8oV7";
-// Site-wide "Book a call" CTAs point here (the qualification form), not the
-// calendar directly, so the qualification gate can't be bypassed.
 export const bookCtaHref = "/contact";
 export const scorecardHref = "/scorecard";
-
-// Home-page section copy (Gate 3, drawn from docs/copy-research/Language of the Customer.docx)
-// Structured the way Apple writes a product headline: one short declarative
-// claim, then a single qualifying line that says who it is not for. The long
-// "keep more of what they earn" sentence moved to `heroSupport` and is no
-// longer rendered in the hero; put it back below the CTAs if it is wanted.
-// Three AI writing tells were removed here on 15 August 2026. Do not undo them.
-//  - "Tax, profit and accounts." was a rule-of-three list, which reads as
-//    comprehensive without saying anything specific.
-//  - "Done properly." was a quality claim with no content; every competitor
-//    could put it on their own homepage unchanged.
-//  - "For founder-led agencies, not giant companies." was an "X, not Y"
-//    negative parallelism. The turnover band does the same exclusion by being
-//    precise instead, and qualifies the lead while it is at it.
-// 29 August 2026: headline swapped again, from the differentiator claim
-// ("Tax planned before the money moves.") to a straight identity statement —
-// who Simon is and where he's based — at the client's request.
 export const hero = {
   eyebrow: "Chartered Tax Adviser · PwC Trained",
   titleLead: "Your chartered tax adviser",
@@ -159,8 +99,6 @@ export const hero = {
 
 export const heroSupport =
   "We help UK business owners keep more of what they earn and build something that is actually worth selling.";
-
-// Lead statement: the opening line that leads the reader into the whole page.
 export const lead = {
   partA: "Your accounts can be correct and still arrive ",
   inkAccent: "too late to help.",
@@ -173,12 +111,6 @@ export const exitAngle = {
   headingLead: "The",
   headingAccent: "long game",
   headingTail: " as a founder.",
-  // Two things were removed here on 2 August 2026 and should not come back.
-  // "Every agency gets sold eventually" is an absolute that is not true, and
-  // "your agency is worth more, and you walk away with far more of the sale"
-  // promises an outcome unconditionally. On a CIOT and ICAEW practice's
-  // homepage that is the kind of line the ASA reads literally. Describe the
-  // work and the position it puts you in, never the result.
   body: "Most owners sell eventually. Selling for a serious multiple takes clean, profitable books and the right structure, built 12 to 24 months before the offer ever lands. We handle the structuring, the tax and the accounts in the background, so when a buyer comes knocking the business is in a stronger position and the tax on the sale is a number you worked out months earlier.",
 };
 
@@ -190,11 +122,6 @@ export const scorecardBand = {
   cta: "Take the Scorecard",
   time: "est. ~5 minutes",
 };
-
-// The Profit-Rich DIGITAL Scorecard. Area D's questions are Simon's exact wording
-// from the live Google Form; D-I-G-I-T-A-L areas the rest are drafted in the same
-// style and format (CONFIRM wording with Simon). Each question scores No 0 /
-// Sometimes 1 / Yes 2, so each area is out of 6 and the whole thing out of 42.
 export const scorecardAreas = [
   {
     letter: "D",

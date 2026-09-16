@@ -1,8 +1,4 @@
 import { testimonials, type Testimonial } from "@/lib/content";
-
-// Emphasise the payoff phrase inside a paragraph. `highlight` has to be an exact
-// substring or it is ignored, so a copy edit to a quote can never produce
-// mangled output, it just loses the emphasis.
 function emphasise(text: string, highlight?: string) {
   if (!highlight) return text;
   const at = text.indexOf(highlight);
@@ -44,9 +40,7 @@ function Card({ t }: { t: Testimonial }) {
     <figure
       className="testimonial-card flex h-full flex-col rounded-[18px] border border-border bg-white p-7 md:p-8"
     >
-      {/* Stars left, quote mark right, on one row in normal flow. The quote mark
-          used to be absolutely positioned in the corner, where it overlapped the
-          stars on a narrow card. */}
+
       <div className="flex items-start justify-between gap-4">
         {t.rating ? <Stars rating={t.rating} /> : <span />}
         <span
@@ -92,7 +86,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Three across, so six quotes fill two clean rows. */}
+
         <div className="mt-10 grid gap-5 text-left md:mt-12 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <Card key={t.name} t={t} />

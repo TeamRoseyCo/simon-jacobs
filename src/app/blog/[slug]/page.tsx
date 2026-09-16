@@ -40,10 +40,6 @@ export async function generateMetadata({
     },
   };
 }
-
-// Lightweight inline renderer: turns [label](href) into links inside a
-// paragraph, leaving the rest as plain text. Internal hrefs (starting with "/")
-// use next/link; anything else is treated as external.
 function renderInline(text: string, keyBase: string) {
   const parts: React.ReactNode[] = [];
   const linkRe = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -106,9 +102,6 @@ export default async function BlogPostPage({
     wordCount,
     image: `${siteUrl}${OG_IMAGE}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
-    // Reference the one canonical Simon Jacobs Person (full node on /about, @id
-    // below) and the sitewide org, so authorship on every post resolves to a
-    // single author entity rather than a fresh inline Person per post.
     author: { "@id": `${siteUrl}/#simon-jacobs` },
     publisher: { "@id": `${siteUrl}/#organization` },
   };
@@ -172,8 +165,7 @@ export default async function BlogPostPage({
           <h1 className="ap-h2 mt-4 text-ink">
             {post.title}
           </h1>
-          {/* The post's own card. Real dimensions, not `fill`, so the height
-              comes from the image itself in every browser. */}
+
           <Image
             src={postImage(post.slug)}
             alt={post.title}
@@ -254,9 +246,7 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        {/* Visible author attribution — the CTA · ACA / PwC trained signal is in the
-            BlogPosting schema, but this makes it legible to readers and quality
-            raters too. Facts match /about; no new claims. */}
+
         <div className="mt-14 flex flex-col gap-4 rounded-[14px] border border-border bg-surface p-6 sm:flex-row sm:items-center">
           <Image
             src="/simon-jacobs.webp"

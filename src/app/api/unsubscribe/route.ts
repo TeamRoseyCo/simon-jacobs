@@ -13,10 +13,6 @@ async function suppress(email: string) {
 function invalid() {
   return new NextResponse("Invalid or expired unsubscribe link.", { status: 400 });
 }
-
-// One-click unsubscribe (RFC 8058): mailbox providers POST here directly with
-// no page load. Kept token-verified so it can't be used to suppress anyone
-// else's address.
 export async function POST(req: Request) {
   const { searchParams } = new URL(req.url);
   const email = searchParams.get("email") ?? "";
@@ -25,8 +21,6 @@ export async function POST(req: Request) {
   await suppress(email);
   return new NextResponse("OK", { status: 200 });
 }
-
-// Clicking the link in the email body itself.
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const email = searchParams.get("email") ?? "";

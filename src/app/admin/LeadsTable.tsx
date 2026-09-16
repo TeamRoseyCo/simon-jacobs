@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   actionBtn,
@@ -161,9 +162,9 @@ export default function LeadsTable({ leads }: { leads: Lead[] }) {
           <h1 style={pageTitleStyle}>Leads</h1>
         </div>
         <div style={{ display: "flex", gap: "0.6rem" }}>
-          <a href="/admin/blog" style={ghostPill}>
+          <Link href="/admin/blog" style={ghostPill}>
             Blog posts
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => downloadCsv(filtered)}

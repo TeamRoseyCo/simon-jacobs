@@ -21,9 +21,6 @@ export const metadata: Metadata = {
     images: [{ url: "/simon-jacobs.jpg" }],
   },
 };
-
-// Advertising-specific FAQ. Answers 40-60 words, descriptive not prescriptive
-// (safe method): specifics are always "we look at your numbers".
 const faqs = [
   {
     question: "Do advertising agencies need a specialist accountant?",
@@ -136,7 +133,7 @@ const areas = [
 export default function AccountantsForAdvertisingAgenciesPage() {
   return (
     <>
-      {/* Hero */}
+
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Chartered Tax Adviser · CTA · ACA · PwC Trained</p>
@@ -168,7 +165,7 @@ export default function AccountantsForAdvertisingAgenciesPage() {
         </div>
       </section>
 
-      {/* Why a specialist */}
+
       <section className="section-white mx-auto w-full max-w-3xl px-6 pb-12 pt-6 md:px-10 md:pb-16 lg:px-16">
         <div>
           <h2 className="ap-h2">
@@ -193,7 +190,7 @@ export default function AccountantsForAdvertisingAgenciesPage() {
         </div>
       </section>
 
-      {/* Advertising-specific areas */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">What actually moves the numbers</p>
@@ -203,7 +200,7 @@ export default function AccountantsForAdvertisingAgenciesPage() {
           </h2>
         </div>
         <div className="mt-10 grid gap-4 text-left md:grid-cols-2 lg:grid-cols-3">
-          {areas.map((area, index) => (
+          {areas.map((area) => (
             <article
               key={area.title}
               className="finance-card flex h-full flex-col p-6 md:p-7"
@@ -225,7 +222,7 @@ export default function AccountantsForAdvertisingAgenciesPage() {
         </div>
       </section>
 
-      {/* Proof */}
+
       <Testimonials />
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
@@ -263,7 +260,7 @@ export default function AccountantsForAdvertisingAgenciesPage() {
         </p>
       </section>
 
-      {/* FAQ */}
+
       <section className="gutter section-white pb-16 pt-2 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Advertising agency FAQ</p>

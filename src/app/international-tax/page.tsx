@@ -6,26 +6,6 @@ import FaqAccordion from "@/components/FaqAccordion";
 import { site, bookCtaHref, scorecardHref } from "@/lib/content";
 
 const siteUrl = site.url;
-
-/**
- * Spike 1 of the general-practice repositioning: cross-border tax.
- * See docs/general-practice-repositioning-2026-08.md section 3.
- *
- * Why this page exists, from the evidence rather than a hunch:
- *  - Four Search Console queries totalling ~41 impressions ("uk to dubai tax
- *    advice" 19, "uk to uae tax planning" 16, "tax consultant for british
- *    expats dubai" 6) and the site had no landing page at all, only blog posts.
- *  - Those queries sit at positions 38 to 44, the best non-brand positions on
- *    the property. The agency cluster sits at 50 to 83.
- *  - competitor-keyword-gap-2026-08.md gap 2: every competitor covering Dubai
- *    is mis-angled at company FORMATION. Nobody owns "UK owner leaving the UK,
- *    what happens to my UK tax", and a CTA is the correct professional for it.
- *
- * SAFE METHOD. This is a YMYL page for a CIOT/ICAEW practice. Every statement
- * here is either descriptive of the service or a paraphrase of published HMRC
- * guidance with the source linked. No figures, no thresholds, no day counts,
- * no promised outcomes. All gov.uk URLs below were verified 200 on 15 Aug 2026.
- */
 export const metadata: Metadata = {
   title: "International & Cross-Border Tax Advice",
   description:
@@ -40,9 +20,6 @@ export const metadata: Metadata = {
     images: [{ url: "/simon-jacobs.jpg" }],
   },
 };
-
-// Answers stay descriptive, never prescriptive: what the rules are about and
-// how we would look at it, never what your answer is.
 const faqs = [
   {
     question: "Do I still pay UK tax if I move abroad?",
@@ -156,7 +133,7 @@ const areas = [
 export default function InternationalTaxPage() {
   return (
     <>
-      {/* Hero */}
+
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-3xl">
           <h1 className="ap-h2 mt-4">
@@ -188,7 +165,7 @@ export default function InternationalTaxPage() {
         </div>
       </section>
 
-      {/* Why a CTA */}
+
       <section className="section-white mx-auto w-full max-w-3xl px-6 pb-12 pt-6 md:px-10 md:pb-16 lg:px-16">
         <div>
           <h2 className="ap-h2">
@@ -253,7 +230,7 @@ export default function InternationalTaxPage() {
         </div>
       </section>
 
-      {/* Areas */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="ap-h2 mt-4">
@@ -308,7 +285,7 @@ export default function InternationalTaxPage() {
         </p>
       </section>
 
-      {/* FAQ */}
+
       <section className="gutter section-white pb-16 pt-2 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="ap-h2 mt-4">

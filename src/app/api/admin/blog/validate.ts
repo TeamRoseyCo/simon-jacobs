@@ -1,4 +1,3 @@
-// Shared payload validation for the blog admin API routes.
 
 export type PostRow = {
   slug: string;

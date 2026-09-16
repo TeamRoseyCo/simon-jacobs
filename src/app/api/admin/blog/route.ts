@@ -6,8 +6,6 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { validatePostPayload } from "./validate";
 
 export const runtime = "nodejs";
-
-// Create a new post.
 export async function POST(req: Request) {
   const token = (await cookies()).get(ADMIN_COOKIE)?.value;
   if (!isAuthed(token)) {

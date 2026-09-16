@@ -27,10 +27,6 @@ export async function POST(request: Request) {
 
   const ip = clientIp(request);
   const supabase = getSupabaseAdmin();
-
-  // Lockout is a bonus safety net on top of the credential check, not a
-  // dependency: if Supabase is unavailable, login just behaves as before
-  // (no lockout) rather than failing closed.
   if (supabase) {
     const { data: row } = await supabase
       .from("login_attempts")
@@ -62,8 +58,6 @@ export async function POST(request: Request) {
         { status: 401 },
       );
     }
-
-    // Success: clear any prior failures for this IP.
     await supabase.from("login_attempts").delete().eq("ip", ip);
   } else if (
     typeof username !== "string" ||

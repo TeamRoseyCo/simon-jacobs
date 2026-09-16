@@ -14,11 +14,6 @@ import {
   Link,
   Hr,
 } from "@react-email/components";
-
-// SRJ International brand, matched to the live site: editorial and personal.
-// Serif wordmark (Georgia stands in for the site's Playfair), ink text, a single
-// blue accent with teal as the secondary, and Simon's photo in the signature so
-// the email reads as a note from a person, not a system.
 export const brand = {
   page: "#EDF3F8",
   card: "#FFFFFF",
@@ -59,7 +54,7 @@ export function Layout({
               border: `1px solid ${brand.border}`,
             }}
           >
-            {/* brand gradient hairline */}
+
             <Section
               style={{
                 height: "4px",
@@ -72,7 +67,7 @@ export function Layout({
               &nbsp;
             </Section>
 
-            {/* header: serif wordmark left, discipline right (mirrors the site header) */}
+
             <Section style={{ padding: "26px 36px 0" }}>
               <Row>
                 <Column style={{ verticalAlign: "middle" }}>
@@ -133,8 +128,6 @@ export function H({ children }: { children: React.ReactNode }) {
     </Text>
   );
 }
-
-// A small teal eyebrow label above a heading, the site's editorial signal.
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <Text
@@ -163,8 +156,6 @@ export function P({ children }: { children: React.ReactNode }) {
 export function B({ children }: { children: React.ReactNode }) {
   return <strong style={{ color: brand.ink, fontWeight: 700 }}>{children}</strong>;
 }
-
-// The value nugget: the reel-sized insight in each email.
 export function Callout({ children }: { children: React.ReactNode }) {
   return (
     <Section
@@ -204,8 +195,6 @@ export function CTA({ href, children }: { href: string; children: React.ReactNod
     </Section>
   );
 }
-
-// Signature with Simon's photo, so every email reads as a note from a person.
 export function Signoff() {
   return (
     <Section style={{ marginTop: "24px", paddingTop: "20px", borderTop: `1px solid ${brand.border}` }}>

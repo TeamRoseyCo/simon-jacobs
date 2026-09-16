@@ -1,15 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
-
-/* ============================================================================
-   Admin dashboard design system. Literal port of the raharesort.com dashboard
-   (frosted cards, pill controls, centered table, pagination) on the sky-blue
-   .dashboard-panel backdrop. Colours come from the panel-scoped CSS vars.
-   ========================================================================== */
-
-/* ---- Layout ---------------------------------------------------------------- */
-
+import React, { useMemo, useState } from "react";
 export function pageWrap(maxWidth = 1100): React.CSSProperties {
   return { maxWidth, margin: "0 auto", padding: "2.25rem 1.25rem 4rem" };
 }
@@ -52,9 +43,6 @@ export const metaTextStyle: React.CSSProperties = {
   fontWeight: 400,
   color: "var(--color-text-muted)",
 };
-
-/* ---- Surfaces -------------------------------------------------------------- */
-
 export const cardStyle: React.CSSProperties = {
   borderRadius: 22,
   overflow: "hidden",
@@ -72,9 +60,6 @@ export const emptyCardStyle: React.CSSProperties = {
   color: "var(--color-text-muted)",
   fontSize: "0.95rem",
 };
-
-/* ---- Buttons & controls ---------------------------------------------------- */
-
 const pillBase: React.CSSProperties = {
   padding: "0.6rem 1.15rem",
   fontSize: "0.74rem",
@@ -127,8 +112,6 @@ export const searchInput: React.CSSProperties = {
   color: "var(--color-secondary)",
   outline: "none",
 };
-
-/** Round 32px icon action button (delete). */
 export function actionBtn(color: string, active = false): React.CSSProperties {
   return {
     display: "inline-flex",
@@ -144,9 +127,6 @@ export function actionBtn(color: string, active = false): React.CSSProperties {
     cursor: active ? "default" : "pointer",
   };
 }
-
-/* ---- Table ----------------------------------------------------------------- */
-
 export const thStyle: React.CSSProperties = {
   textAlign: "center",
   padding: "0.95rem 0.85rem",
@@ -174,9 +154,6 @@ export const tableStyle: React.CSSProperties = {
   borderCollapse: "collapse",
   fontSize: "0.9rem",
 };
-
-/* ---- Icons ----------------------------------------------------------------- */
-
 export function TrashIcon({ size = 16 }: { size?: number }) {
   return (
     <svg
@@ -195,19 +172,28 @@ export function TrashIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
-
-/* ---- Pagination ------------------------------------------------------------ */
-
 export const PAGE_SIZES = [15, 25, 50, 100] as const;
 export const DEFAULT_PAGE_SIZE = 15;
 
 export function usePagination<T>(items: T[], resetKey: string) {
   const [pageSize, setPageSize] = useState<number | "all">(DEFAULT_PAGE_SIZE);
-  const [page, setPage] = useState(1);
-
-  useEffect(() => {
-    setPage(1);
-  }, [resetKey, pageSize]);
+  const [pageState, setPageState] = useState({ key: resetKey, page: 1 });
+  const page = pageState.key === resetKey ? pageState.page : 1;
+  const setPage: React.Dispatch<React.SetStateAction<number>> = (next) => {
+    setPageState((previous) => {
+      const current = previous.key === resetKey ? previous.page : 1;
+      return {
+        key: resetKey,
+        page: typeof next === "function" ? next(current) : next,
+      };
+    });
+  };
+  const setPageSizeAndReset: React.Dispatch<React.SetStateAction<number | "all">> = (next) => {
+    setPageSize((previous) =>
+      typeof next === "function" ? next(previous) : next,
+    );
+    setPageState({ key: resetKey, page: 1 });
+  };
 
   const total = items.length;
   const perPage = pageSize === "all" ? Math.max(total, 1) : pageSize;
@@ -226,7 +212,7 @@ export function usePagination<T>(items: T[], resetKey: string) {
     page,
     setPage,
     pageSize,
-    setPageSize,
+    setPageSize: setPageSizeAndReset,
     total,
     totalPages,
     currentPage,

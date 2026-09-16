@@ -6,14 +6,11 @@ const checklist = [
   "A 90-day plan to plug the leaks",
   "No sales pitch",
 ];
-
-// Lead magnet, RB-style layout on a clean white band: copy + checklist on the
-// left, a sample of the scorecard survey mocked up on the right.
 export default function ScorecardSection() {
   return (
     <section className="sc-band relative w-full overflow-hidden py-20 md:py-28 gutter-bleed">
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        {/* Left: copy + checklist + CTA */}
+
         <div className="text-left">
           <h2 className="ap-h2 text-ink">
             {scorecardBand.headingLead}
@@ -43,7 +40,7 @@ export default function ScorecardSection() {
           </div>
         </div>
 
-        {/* Right: sample survey mockup */}
+
         <div className="sc-mock-wrap relative">
           <div className="sc-mock-card" aria-hidden="true">
             <div className="flex items-center justify-between">

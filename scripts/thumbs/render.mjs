@@ -1,23 +1,3 @@
-/**
- * Screenshots every card in cards.mjs to scripts/thumbs/out/<slug>.png at
- * exactly 2400x1500.
- *
- * How: the template is opened once per card as file://template.html?card=<slug>,
- * which makes that single card fill a 2400x1500 viewport at 1:1, and the frame
- * is captured through the Chrome DevTools Protocol.
- *
- * Why CDP rather than the one-liner `--headless --screenshot=out.png`: Chrome
- * dropped that shortcut along with old headless, and it is a no-op in Chrome
- * 132+ (verified silently doing nothing on Chrome for Testing 149). CDP also
- * lets us wait for the page to actually signal window.__READY__ and for fonts
- * to load instead of guessing at a timeout. Node's built-in WebSocket and
- * fetch do the talking, so this still needs zero npm dependencies.
- *
- * Usage:
- *   node scripts/thumbs/render.mjs                     all cards
- *   node scripts/thumbs/render.mjs the-60-percent-tax-trap [more slugs...]
- *   node scripts/thumbs/render.mjs --band              overlay the crop band
- */
 import { execFile, spawn } from "node:child_process";
 import { promisify } from "node:util";
 import fs from "node:fs/promises";
@@ -29,17 +9,10 @@ import { cards } from "./cards.mjs";
 const run = promisify(execFile);
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(here, "out");
-// Which layout to screenshot. Defaults to the original template; set
-// THUMB_TEMPLATE=template-tweet.html for the tweet layout. Both templates
-// honour the same contract: ?card=<slug>, one card at 2400x1500, and
-// window.__READY__ once it has settled.
 const template = path.join(here, process.env.THUMB_TEMPLATE || "template.html");
 
 const WIDTH = 2400;
 const HEIGHT = 1500;
-
-// In preference order. The cached Chrome for Testing build is tried first: it
-// has no profile, no signed-in state, and no update nags.
 const CHROME_CANDIDATES = [
   `${os.homedir()}/Library/Caches/ms-playwright/chromium-1228/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing`,
   `${os.homedir()}/Library/Caches/ms-playwright/chromium-1228/chrome-mac/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing`,
@@ -56,18 +29,13 @@ async function findChrome() {
     try {
       await fs.access(p);
       return p;
-    } catch {
-      /* keep looking */
-    }
+    } catch {}
   }
   throw new Error(
     "No Chrome found. Set CHROME_PATH to a Chrome or Chromium binary.\nTried:\n  " +
       CHROME_CANDIDATES.join("\n  "),
   );
 }
-
-/* ------------------------------------------------------- CDP plumbing */
-
 class Cdp {
   constructor(ws) {
     this.ws = ws;
@@ -100,9 +68,7 @@ class Cdp {
   close() {
     try {
       this.ws.close();
-    } catch {
-      /* already gone */
-    }
+    } catch {}
   }
 }
 
@@ -132,8 +98,6 @@ async function launch(chrome, profileDir) {
       "--disable-extensions",
       "--disable-gpu",
       "--no-sandbox",
-      // Chrome for Testing otherwise spends the first few seconds failing to
-      // reach Google services and spraying the log with it.
       "--disable-background-networking",
       "--disable-sync",
       "--disable-component-update",
@@ -154,27 +118,17 @@ async function launch(chrome, profileDir) {
         const info = await res.json();
         return { child, wsUrl: info.webSocketDebuggerUrl };
       }
-    } catch {
-      /* not up yet */
-    }
+    } catch {}
     await sleep(150);
   }
   child.kill("SIGKILL");
   throw new Error("Chrome did not expose a DevTools port within 30s");
 }
-
-/* --------------------------------------------------------- screenshot */
-
 async function shoot(cdp, slug, band) {
   const url = pathToFileURL(template); // not string concat: the repo path has a space
   url.searchParams.set("card", slug);
   if (band) url.searchParams.set("band", "1");
-  // Tweet layout only: stands the headshot on the right for this card. Set
-  // `flip: true` on the card in cards.mjs.
   if (cards.find((c) => c.slug === slug)?.flip) url.searchParams.set("flip", "1");
-
-  // No width/height here: Chrome only honours those on a new window, and the
-  // viewport is pinned by setDeviceMetricsOverride below anyway.
   const { targetId } = await cdp.send("Target.createTarget", { url: "about:blank" });
   const { sessionId } = await cdp.send("Target.attachToTarget", { targetId, flatten: true });
 
@@ -186,8 +140,6 @@ async function shoot(cdp, slug, band) {
     );
     await cdp.send("Page.enable", {}, sessionId);
     await cdp.send("Page.navigate", { url: url.href }, sessionId);
-
-    // Wait for the template's own ready flag, fonts, and image decode.
     const expr = `(async () => {
       if (!window.__READY__) return "js";
       if (document.fonts && document.fonts.status !== "loaded") { await document.fonts.ready; }
@@ -209,8 +161,6 @@ async function shoot(cdp, slug, band) {
       await sleep(100);
     }
     if (state !== "ok") throw new Error(`page never became ready (stuck at "${state}")`);
-
-    // One extra frame so the squiggle relayout after font load has painted.
     await sleep(180);
 
     const { data } = await cdp.send(
@@ -227,15 +177,10 @@ async function shoot(cdp, slug, band) {
     await cdp.send("Target.closeTarget", { targetId }).catch(() => {});
   }
 }
-
-/* --------------------------------------------------------------- main */
-
 async function main() {
   const argv = process.argv.slice(2);
   const band = argv.includes("--band");
   const only = argv.filter((a) => !a.startsWith("--"));
-
-  // Regenerate the inlined data so a render can never use stale copy.
   const built = await run(process.execPath, [path.join(here, "build-data.mjs")]);
   process.stdout.write(built.stdout);
 

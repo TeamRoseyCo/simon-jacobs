@@ -8,8 +8,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
   const routes = [
     "",
-    // Spike 1 of the general-practice repositioning. Highest-evidence new
-    // money page: ~41 impressions already, no landing page before this.
     "/international-tax",
     "/chartered-tax-adviser-london-marketing-agencies",
     "/accountants-for-marketing-agencies",
@@ -34,10 +32,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/terms",
     "/accessibility",
   ]);
-  // Static routes have no per-page edit timestamp, so stamp a single build-time
-  // date. lastmod is a genuine crawl signal Google uses (unlike priority /
-  // changefreq, which it largely ignores). Blog posts below carry their own
-  // real lastModified.
   const buildDate = new Date();
   const staticRoutes: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${siteUrl}${route}`,

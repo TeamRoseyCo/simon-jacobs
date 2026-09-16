@@ -26,9 +26,6 @@ export type BlogListItem = {
   status: "published" | "scheduled";
   publishAt?: string;
 };
-
-// Scheduled posts are written and carded but held back. The daily cron
-// publishes the oldest due one, so this column is the queue Simon can see.
 function statusLabel(p: BlogListItem) {
   if (p.status === "published") return "Live";
   if (!p.publishAt) return "Queued";

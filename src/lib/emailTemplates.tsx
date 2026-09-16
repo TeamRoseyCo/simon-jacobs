@@ -9,11 +9,6 @@ import {
   InstagramEmail3,
   type EmailProps,
 } from "@/emails/templates";
-
-// Send-ready lead emails, authored as branded react-email components (see
-// src/emails/) and rendered to HTML + plaintext here. Copy lives in the
-// components and is mirrored in docs/email-copy.md. Each function is async
-// because react-email's render() is async.
 export type TemplateVars = {
   firstName: string;
   resourceLink?: string;

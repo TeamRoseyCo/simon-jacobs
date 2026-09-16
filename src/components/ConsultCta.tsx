@@ -1,10 +1,6 @@
 "use client";
 
 import { useId, useState } from "react";
-
-// Merged CTA + email capture: visitors join the list to get a consult.
-// POSTs to /api/contact (_kind: "subscribe"), which stores the lead in Supabase
-// and notifies Simon.
 export default function ConsultCta({
   heading = "Find out what your business could be keeping.",
   sub = "Join the list and we will set you up with a consultation. No spam, unsubscribe anytime.",

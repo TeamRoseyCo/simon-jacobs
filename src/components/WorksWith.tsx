@@ -1,6 +1,4 @@
 import Image from "next/image";
-
-// The software Simon runs client books on. Logos pulled into /public.
 export default function WorksWith({
   className = "",
   tone = "dark",

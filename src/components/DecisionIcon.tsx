@@ -27,8 +27,6 @@ export default function DecisionIcon({
   artworkSrc,
   emoji,
 }: DecisionIconProps) {
-  // The server and Apple devices render the native emoji. Other platforms use
-  // the downloaded artwork after hydration, inside the same fixed-size slot.
   const showArtwork = useSyncExternalStore(
     subscribe,
     getClientSnapshot,

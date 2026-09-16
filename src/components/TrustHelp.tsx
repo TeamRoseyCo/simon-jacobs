@@ -2,9 +2,6 @@
 
 import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
-
-// A help "?" with a tooltip rendered in a portal at the document root, so it
-// sits above the sticky header and is never clipped by the hero's overflow.
 export default function TrustHelp({
   label,
   description,

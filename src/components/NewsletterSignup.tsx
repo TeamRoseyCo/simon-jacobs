@@ -5,9 +5,6 @@ import { attributionPayload } from "@/lib/attribution";
 import { trackLead } from "@/lib/analytics";
 
 type Variant = "panel" | "footer";
-
-// Captures and validates the email client-side, then POSTs to /api/contact
-// (_kind: "subscribe") which stores the lead in Supabase and notifies Simon.
 export default function NewsletterSignup({
   variant = "panel",
 }: {
@@ -32,8 +29,6 @@ export default function NewsletterSignup({
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Same invisible lead-source fields the other two forms send, so an
-        // email capture from the footer is attributed like any other enquiry.
         body: JSON.stringify({
           _kind: "subscribe",
           email: email.trim(),
@@ -99,15 +94,7 @@ export default function NewsletterSignup({
       >
         {submitting ? "Subscribing…" : "Subscribe"}
       </button>
-      {/* Was `sm:sr-only`, which hid this message at every width from 640px up.
-          The form is noValidate, so a sighted desktop user who mistyped their
-          address got no feedback at all and assumed it had worked. That is a
-          lead lost silently, and a WCAG 3.3.1 failure.
 
-          Not set in red: the palette has no error hue and adding one would put
-          a stray colour on the page. The message carries its own icon and the
-          input takes a heavier border, so the error does not depend on colour
-          at all, which is stronger under 1.4.1 anyway. Ink on white is 18.11. */}
       {status === "error" ? (
         <span role="alert" className="ns-error">
           <span aria-hidden="true">!</span>

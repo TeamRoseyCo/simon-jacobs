@@ -1,18 +1,3 @@
-// Loads queued blog posts into Supabase.
-//
-// Each post is one JSON file in this directory: the same fields the CMS uses,
-// plus `publishAt` (a date, YYYY-MM-DD) and `slot` ("morning" or "evening").
-// It goes in with status = 'scheduled', so nothing public can see it until
-// /api/cron/publish-post flips it live in that slot. Two posts a day, so a
-// date can hold one morning post and one evening post.
-//
-//   node scripts/queue/load.mjs            # load every post file
-//   node scripts/queue/load.mjs --dry      # show what would happen
-//   node scripts/queue/load.mjs 20260805     # load specific files
-//
-// Re-running is safe: it upserts on slug and never touches a post that has
-// already gone live.
-// RELEVANT FILES: src/app/api/cron/publish-post/route.ts, docs/scheduled-publishing.md
 
 import { readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -21,8 +6,6 @@ import { createClient } from "@supabase/supabase-js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..");
-// The cron runs at 07:30 and 18:30 UTC, so each slot is due shortly before its
-// run. Two posts a day means two slots, never two posts in one slot.
 const SLOT_TIME_UTC = { morning: "06:00:00Z", evening: "17:00:00Z" };
 
 function loadEnv() {
@@ -35,7 +18,6 @@ function loadEnv() {
       }
     }
   } catch {
-    // env may already be in the shell
   }
 }
 
@@ -63,7 +45,6 @@ function toRow(post, file) {
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) {
     throw new Error(`${file}: slug is not url-safe: ${slug}`);
   }
-  // No em dashes anywhere on this site. Catch them before they ship.
   const prose = JSON.stringify([post.title, post.excerpt, post.body, post.faqs]);
   if (prose.includes("—")) throw new Error(`${file}: contains an em dash`);
 
@@ -71,8 +52,6 @@ function toRow(post, file) {
     slug,
     title: required(post, "title", file),
     tag: required(post, "tag", file),
-    // `date` is a placeholder. The cron overwrites it with the day it actually
-    // publishes, so a post delayed in the queue is never back-dated.
     date: publishAt,
     updated: post.updated ?? null,
     reading_time: required(post, "readingTime", file),
@@ -84,11 +63,6 @@ function toRow(post, file) {
     publish_at: `${publishAt}T${SLOT_TIME_UTC[slot]}`,
   };
 }
-
-// An inline /blog/ link only works if its target is live by the time the linking
-// post publishes. A link to a post further down the queue is a 404 for however
-// many days sit between them, so a forward link is a hard error. Backward links
-// between queued posts are fine and are how the cluster knits itself together.
 function findForwardLinks(rows) {
   const when = new Map(rows.map((r) => [r.slug, r.publish_at]));
   const problems = [];
@@ -98,8 +72,6 @@ function findForwardLinks(rows) {
       [...prose.matchAll(/\]\(\/blog\/([a-z0-9-]+)\)/g)].map((m) => m[1]),
     );
     for (const target of targets) {
-      // Not in the queue means it is already live, or a typo the site will 404
-      // on either way. Only queue-internal ordering is checkable here.
       if (!when.has(target)) continue;
       if (when.get(target) >= row.publish_at) {
         problems.push(`${row.slug} links forward to ${target} (${row.publish_at} -> ${when.get(target)})`);
@@ -149,8 +121,6 @@ async function main() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
   const supabase = createClient(url, key, { auth: { persistSession: false } });
-
-  // Never rewrite a post that is already live, even by accident.
   const { data: live } = await supabase
     .from("blog_posts")
     .select("slug")

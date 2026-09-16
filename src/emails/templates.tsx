@@ -11,11 +11,6 @@ export type EmailProps = {
 
 const hi = (name: string) => `Hey ${name || "there"},`;
 
-// SRJ is a general chartered practice with three spikes: cross-border tax, exit
-// planning, and sectors. Copy speaks to owner-managed UK business owners. Value
-// nuggets are general tax truths. No em dashes anywhere, on purpose.
-// See docs/general-practice-repositioning-2026-08.md.
-
 export function CallEmail1({ firstName, bookingLink, unsubLink }: EmailProps) {
   return (
     <Layout preview="Your call link is inside, plus one thing worth knowing first" unsubLink={unsubLink}>

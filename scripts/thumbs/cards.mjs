@@ -1,32 +1,8 @@
-/**
- * Blog thumbnail card data. Single source of truth.
- *
- * One entry per blog post that needs a thumbnail, plus the `_default` card
- * used as the fallback for any post with no image of its own.
- *
- *   slug      must match the post slug in src/lib/posts.ts (output is
- *             public/blog/<slug>.webp)
- *   hook      the headline on the card. 4 to 7 words, hard maximum. The card
- *             is displayed in a 400x190 slot on the blog index, so anything
- *             longer stops being legible.
- *   highlight a substring of `hook` (exact, case-sensitive) that the
- *             hand-drawn red squiggle underlines. Keep it to one or two words.
- *
- * Copy rules, non-negotiable, this is a regulated YMYL brand (CIOT/ICAEW/ASA):
- *   - No em dashes anywhere.
- *   - No promised outcomes, no invented figures, no advice. Punchy and
- *     curiosity-driven is fine; "slash your tax bill" is not.
- *   - Every hook must be faithful to what its post actually says. Read the
- *     post's `title` and `excerpt` in src/lib/posts.ts before writing one.
- */
-
 export const cards = [
   {
     slug: "_default",
     hook: "Tax notes for agency owners",
     highlight: "owners",
-    // flip: true stands Simon on the right instead of the left (tweet layout
-    // only). The photo is never mirrored, only its side of the card.
   },
   {
     slug: "laptop-tax-relief-agency-annual-investment-allowance",
@@ -76,8 +52,6 @@ export const cards = [
   {
     slug: "dubai-agency-optimise-uk-tax-first",
     hook: "Dubai does not switch off UK tax",
-    // "switch off" straddles a line break at the fitted size, which would
-    // leave a squiggle under a lone "off". "UK tax" lands on the last line.
     highlight: "UK tax",
   },
   {
@@ -85,11 +59,7 @@ export const cards = [
     hook: "Plan capital gains before you sell",
     highlight: "before you sell",
   },
-
-  /* Added 2 August 2026 so every published post has a card of its own rather
-     than falling back to the shared brand photo. Each hook is drawn from its
-     post's own title or excerpt, no new claims. */
-  {
+{
     slug: "carry-back-a-loss-reclaim-corporation-tax",
     hook: "Made a loss? Look at last year",
     highlight: "last year",

@@ -1,36 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, bookCtaHref } from "@/lib/content";
 
 export default function SiteHeader() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // Close the mobile menu whenever the route changes.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  // Track scroll so the header can fade from transparent (over the hero) to a
-  // frosted "liquid glass" bar once the user moves down the page.
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const open = openPath === pathname;
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
-
-  // The home hero is light (see .hv-light in site.css), so the white-on-dark
-  // transparent bar no longer has a dark ground to sit on and would render
-  // white type on a white hero. Solid glass everywhere until the hero goes
-  // back to navy, at which point this becomes `isHome && !scrolled` again.
   const isHome = pathname === "/";
   const transparent = false;
 
@@ -68,7 +49,7 @@ export default function SiteHeader() {
             className="nav-toggle"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpenPath(open ? null : pathname)}
           >
             <span className={`nav-toggle-bars ${open ? "is-open" : ""}`} />
           </button>
@@ -94,14 +75,13 @@ export default function SiteHeader() {
         </div>
       </div>
       </header>
-      {/* Dim the page behind the open mobile menu so hero copy does not peek
-          beneath the dropdown. Tapping it closes the menu. */}
+
       <div
         className={`mobile-scrim ${open ? "is-open" : ""}`}
         aria-hidden="true"
-        onClick={() => setOpen(false)}
+        onClick={() => setOpenPath(null)}
       />
-      {/* Inner pages have no hero behind the fixed header, so reserve its height. */}
+
       {!isHome ? <div className="site-head-spacer" aria-hidden="true" /> : null}
     </>
   );

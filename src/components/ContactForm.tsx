@@ -4,9 +4,6 @@ import { useEffect, useId, useRef, useState } from "react";
 import { bookHref, scorecardHref } from "@/lib/content";
 import { attributionPayload } from "@/lib/attribution";
 import { trackLead } from "@/lib/analytics";
-
-// Draft key for the in-progress form. Bump the version if the field shape
-// changes so an old draft can't restore into a mismatched form.
 const DRAFT_KEY = "jacobs-contact-draft-v1";
 
 type Fields = {
@@ -32,15 +29,6 @@ const empty: Fields = {
   intent: "",
   question: "",
 };
-
-// Lead qualification. Thresholds come from the Ideal Client Profile
-// (owner-managed UK businesses, ~£500k-£2.5m turnover). A lead qualifies
-// for a discovery call only if they are a decision-maker AND at/above the
-// turnover floor. Everyone else is still captured, then routed to the
-// Scorecard instead of the calendar, so Simon's call time goes to real fits.
-//
-// FUTURE: add a minimum-spend gate here once Simon sets the figure
-// (see docs/later-improvements.md).
 const TURNOVER_BANDS = [
   { value: "under-250k", label: "Under £250k", qualifies: false },
   { value: "250k-500k", label: "£250k – £500k", qualifies: false },
@@ -67,12 +55,6 @@ function isQualified(turnover: string, role: string) {
   const r = ROLES.find((x) => x.value === role);
   return Boolean(t?.qualifies && r?.qualifies);
 }
-
-// Required fields in the order they appear, with the label used in the error
-// summary and the DOM id suffix used to scroll to them. On a phone the submit
-// button sits well below the first empty field, so an inline red border alone
-// is invisible: the form just looks broken. Both the summary and the scroll
-// below exist to make a blocked submit obvious.
 const REQUIRED_FIELDS = [
   { key: "firstName", label: "First name", idSuffix: "first" },
   { key: "lastName", label: "Last name", idSuffix: "last" },
@@ -81,11 +63,6 @@ const REQUIRED_FIELDS = [
   { key: "role", label: "Your role", idSuffix: "role" },
   { key: "question", label: "Your most pressing question", idSuffix: "question" },
 ] as const;
-
-// Validates client-side, then POSTs to /api/contact (which re-validates
-// server-side, stores the lead, and relays to Simon's inbox). The success
-// screen branches on qualification: a fit is sent to the booking calendar,
-// everyone else to the Scorecard.
 export default function ContactForm() {
   const id = useId();
   const [f, setF] = useState<Fields>(empty);
@@ -94,32 +71,24 @@ export default function ContactForm() {
   const [qualified, setQualified] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState("");
-  // Honeypot: kept out of `Fields` so it never lands in the saved draft. A real
-  // visitor never sees or fills it; a filled value is dropped server-side.
   const [companyUrl, setCompanyUrl] = useState("");
   const hydrated = useRef(false);
-
-  // Restore an in-progress draft so an accidental refresh (or navigating away
-  // and back) does not wipe what the visitor has typed. Runs after mount so it
-  // never causes an SSR hydration mismatch.
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(DRAFT_KEY);
-      if (saved) setF((prev) => ({ ...prev, ...(JSON.parse(saved) as Partial<Fields>) }));
-    } catch {
-      // malformed or unavailable storage — start with a blank form
-    }
-    hydrated.current = true;
+    const restoreDraft = () => {
+      try {
+        const saved = localStorage.getItem(DRAFT_KEY);
+        if (saved) setF((prev) => ({ ...prev, ...(JSON.parse(saved) as Partial<Fields>) }));
+      } catch {}
+      hydrated.current = true;
+    };
+    const timer = window.setTimeout(restoreDraft, 0);
+    return () => window.clearTimeout(timer);
   }, []);
-
-  // Persist the draft on every change. Guarded by `hydrated` so the empty
-  // initial state can't overwrite a saved draft before the restore above runs.
   useEffect(() => {
     if (!hydrated.current) return;
     try {
       localStorage.setItem(DRAFT_KEY, JSON.stringify(f));
     } catch {
-      // storage full or disabled — draft-saving is a nice-to-have, ignore
     }
   }, [f]);
 
@@ -145,7 +114,6 @@ export default function ContactForm() {
     setErrors(next);
     const firstBad = REQUIRED_FIELDS.find((f) => next[f.key]);
     if (firstBad) {
-      // Take the visitor to the field that is actually blocking them.
       const el = document.getElementById(`${id}-${firstBad.idSuffix}`);
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
       (el as HTMLElement | null)?.focus({ preventScroll: true });
@@ -160,12 +128,6 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Lead source rides along invisibly: the utm_* / referrer /
-        // landing_page fields captured when the visitor first arrived, which by
-        // now is usually a different page from this one. Read at submit time
-        // rather than held in state, and deliberately kept out of `Fields` so it
-        // can never land in the saved draft: it is not something the visitor
-        // typed, and a stale draft must not carry a stale source.
         body: JSON.stringify({
           _kind: "contact",
           ...f,
@@ -178,14 +140,10 @@ export default function ContactForm() {
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setQualified(q);
       setDone(true);
-      // Counted only now that it actually landed, and only if the visitor
-      // accepted analytics cookies (the helper checks, see src/lib/analytics.ts).
       trackLead({ form: "contact", qualified: q });
-      // Submitted successfully — drop the saved draft so it can't reappear.
       try {
         localStorage.removeItem(DRAFT_KEY);
       } catch {
-        // ignore
       }
     } catch (err) {
       setServerError(
@@ -250,8 +208,7 @@ export default function ContactForm() {
       noValidate
       className="finance-card mx-auto flex max-w-2xl flex-col gap-5 p-6 text-left md:p-8"
     >
-      {/* Honeypot. Hidden off-screen (not display:none, which naive bots skip)
-          and pulled out of the tab order. A filled value flags a bot server-side. */}
+
       <div
         aria-hidden="true"
         className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden"
@@ -462,8 +419,7 @@ export default function ContactForm() {
           className="rounded-[10px] border border-red-300 bg-red-50 p-4 text-sm text-red-700"
         >
           <p>{serverError}</p>
-          {/* Last resort. If the relay is down, hand the visitor a ready-made
-              email instead of leaving them to copy the address by hand. */}
+
           <a
             href={`mailto:simon@srjinternational.co.uk?subject=${encodeURIComponent(
               "Question about my business's tax",

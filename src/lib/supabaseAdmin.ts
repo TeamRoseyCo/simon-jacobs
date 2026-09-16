@@ -1,12 +1,6 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 let client: SupabaseClient | null = null;
-
-/**
- * Server-only Supabase client using the service-role key.
- * Returns null if env vars are missing so callers can degrade gracefully.
- * NEVER import this into a client component, the service key must stay server-side.
- */
 export function getSupabaseAdmin(): SupabaseClient | null {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;

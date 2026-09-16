@@ -1,14 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-
-/**
- * Scroll "journey" connector for the About story. The line is built from the
- * REAL positions of the two paragraphs: it runs down the empty gutter beside
- * each one, bends at each paragraph's vertical centre, and a ball follows the
- * reading line (mapped through arc-length so it stays locked through the bend),
- * with the line filling gray -> blue up to it. Disabled on mobile / reduced motion.
- */
 export default function AboutJourney({ children }: { children: ReactNode }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -20,8 +12,6 @@ export default function AboutJourney({ children }: { children: ReactNode }) {
   const [progress, setProgress] = useState(0);
   const [ball, setBall] = useState({ x: 0, y: 0 });
   const [enabled, setEnabled] = useState(false);
-
-  // Measure the paragraphs and build the path from where they actually are.
   useEffect(() => {
     const wrap = wrapRef.current;
     const inner = innerRef.current;
@@ -55,7 +45,6 @@ export default function AboutJourney({ children }: { children: ReactNode }) {
         const left = pr.left - wr.left;
         const right = pr.right - wr.left;
         const side = (left + right) / 2 < W / 2 ? "left" : "right";
-        // Run the line in the EMPTY gutter on the opposite side of the text.
         const gutterX =
           side === "left" ? (right + (W - padR)) / 2 : (padL + left) / 2;
         return {
@@ -67,8 +56,6 @@ export default function AboutJourney({ children }: { children: ReactNode }) {
       });
 
       const [a, b] = geo;
-      // One flowing curve: start at the TOP of P1 in its (right) gutter, sweep
-      // smoothly across to P2's (left) gutter, then a soft tail down.
       const dy = b.centerY - a.centerY;
       const startY = a.top;
       const endY = Math.min(H, b.bottom + 4);
@@ -93,8 +80,6 @@ export default function AboutJourney({ children }: { children: ReactNode }) {
       window.removeEventListener("resize", measure);
     };
   }, []);
-
-  // Arc-length lookup table (y -> fraction) rebuilt whenever the path changes.
   useEffect(() => {
     const path = pathRef.current;
     if (!path || !d) {
@@ -113,9 +98,6 @@ export default function AboutJourney({ children }: { children: ReactNode }) {
     }
     lutRef.current = lut;
   }, [d]);
-
-  // Map the reading line (viewport middle) to the matching point on the path,
-  // via the y->arc-length table so the ball never races ahead through a bend.
   useEffect(() => {
     const wrap = wrapRef.current;
     const path = pathRef.current;

@@ -1,8 +1,4 @@
 import { createHmac, timingSafeEqual } from "crypto";
-
-// Signs/verifies one-click unsubscribe links so anyone can suppress their own
-// address without auth, but can't suppress someone else's. Reuses ADMIN_SECRET
-// rather than adding another secret to manage/rotate.
 function sign(email: string): string {
   const secret = process.env.ADMIN_SECRET ?? "";
   return createHmac("sha256", secret).update(email.toLowerCase()).digest("hex").slice(0, 32);

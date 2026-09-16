@@ -1,13 +1,3 @@
-/**
- * Screenshots a URL at a given viewport, so a layout question can be settled by
- * looking at the page rather than by reading CSS and hoping.
- *
- * Uses the same headless Chrome and CDP plumbing as the thumbnail renderer, and
- * the same zero-dependency approach: Node's built-in fetch and WebSocket.
- *
- * Usage:
- *   node scripts/shot.mjs http://localhost:3000/ 1512 982 out.png
- */
 import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -90,12 +80,8 @@ await send(
   { width: Number(w), height: Number(h), deviceScaleFactor: 1, mobile: false },
   sessionId,
 );
-// Cache disabled on purpose: this tool exists to see what the server is
-// actually serving right now, not what a browser cached earlier.
 await send("Network.enable", {}, sessionId);
 await send("Network.setCacheDisabled", { cacheDisabled: true }, sessionId);
-// Pre-accept the cookie banner, otherwise every screenshot is a picture of the
-// consent modal. Also lets a scroll offset be passed as the 5th argument.
 await send("Runtime.enable", {}, sessionId);
 await send(
   "Page.addScriptToEvaluateOnNewDocument",

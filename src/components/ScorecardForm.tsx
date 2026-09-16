@@ -30,7 +30,6 @@ export default function ScorecardForm({
   posts: ScorecardBlogLink[];
 }) {
   const [started, setStarted] = useState(false);
-  // step 0..AREAS.length-1 = an area; AREAS.length = contact step
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [name, setName] = useState("");
@@ -38,8 +37,6 @@ export default function ScorecardForm({
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
-  // Honeypot: hidden from humans, tempting to bots. A filled value is dropped
-  // server-side (see src/app/api/contact/route.ts).
   const [companyUrl, setCompanyUrl] = useState("");
 
   const total = AREAS.length + 1; // areas + contact
@@ -67,8 +64,6 @@ export default function ScorecardForm({
       return { area: `${a.letter}: ${a.title}`, score, max: 6, rating: rating(score, 6) };
     });
     const grandTotal = breakdown.reduce((s, b) => s + b.score, 0);
-    // Every individual question + the answer given, so Simon sees the full
-    // picture in the notification, not just the area-level scores.
     const answerDetail = AREAS.flatMap((a, ai) =>
       a.questions.map((q, qi) => ({
         area: `${a.letter}: ${a.title}`,
@@ -91,17 +86,12 @@ export default function ScorecardForm({
           breakdown,
           answerDetail,
           company_url: companyUrl,
-          // Marketing source from the link Simon shares (e.g. /ig, /li). Now
-          // read from the shared session record in src/lib/attribution.ts
-          // instead of this page's own URL: a visitor who arrived on /ig, read a
-          // blog post, and came back to the Scorecard used to lose their tags.
           ...attributionPayload(),
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong.");
       setDone(true);
-      // Only after it landed, and only with analytics consent.
       trackLead({ form: "scorecard" });
     } catch (err) {
       setError(
@@ -111,8 +101,6 @@ export default function ScorecardForm({
       setSubmitting(false);
     }
   }
-
-  // ---- Success ----
   if (done) {
     return (
       <div className="mx-auto w-full max-w-5xl text-center">
@@ -205,8 +193,6 @@ export default function ScorecardForm({
       </div>
     );
   }
-
-  // ---- Intro / start screen ----
   if (!started) {
     return (
       <div className="mx-auto w-full max-w-xl text-center">
@@ -252,8 +238,6 @@ export default function ScorecardForm({
       </div>
     );
   }
-
-  // ---- The test ----
   return (
     <div className="mx-auto w-full max-w-xl">
       <div className="mb-4">
@@ -357,8 +341,7 @@ export default function ScorecardForm({
                 />
               </div>
             </div>
-            {/* Honeypot. Off-screen (not display:none, which naive bots skip)
-                and out of the tab order. A filled value flags a bot server-side. */}
+
             <div
               aria-hidden="true"
               className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden"

@@ -6,14 +6,6 @@ import FaqAccordion from "@/components/FaqAccordion";
 import { site, bookCtaHref, scorecardHref } from "@/lib/content";
 
 const siteUrl = site.url;
-
-// Exact-match page for the query "chartered tax adviser/advisor London for
-// marketing agency". Our wedge vs the ranking firms (Alto, SRLV, BKL, Brebners,
-// Hayes): most are chartered ACCOUNTANTS with a tax team; Simon is personally a
-// Chartered Tax ADVISER (CTA), which is exactly what this query asks for. So the
-// page owns the CTA angle, carries London local signals (NAP + LocalBusiness
-// schema), and names the agency-specific hooks AI Overviews reward. Safe method
-// throughout: descriptive not prescriptive, no invented figures.
 export const metadata: Metadata = {
   title: "Chartered Tax Adviser in London for Marketing Agencies",
   description:
@@ -37,9 +29,6 @@ export const metadata: Metadata = {
     images: [{ url: "/simon-jacobs.jpg" }],
   },
 };
-
-// Descriptive, 40-70 word answers (safe method). Specifics always resolve to
-// "we look at your numbers" rather than a prescriptive figure.
 const faqs = [
   {
     question:
@@ -102,9 +91,6 @@ const breadcrumbJsonLd = {
     },
   ],
 };
-
-// Service + local provider. areaServed leads with London so the page carries a
-// geo signal for "London" queries, backed by the NAP rendered on-page below.
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -183,7 +169,7 @@ const areas = [
 export default function CharteredTaxAdviserLondonPage() {
   return (
     <>
-      {/* Hero */}
+
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Chartered Tax Adviser (CTA) · London · Agencies only</p>
@@ -215,7 +201,7 @@ export default function CharteredTaxAdviserLondonPage() {
         </div>
       </section>
 
-      {/* The wedge: adviser, not just an accountant */}
+
       <section className="section-white mx-auto w-full max-w-3xl px-6 pb-12 pt-6 md:px-10 md:pb-16 lg:px-16">
         <div>
           <h2 className="ap-h2">
@@ -239,7 +225,7 @@ export default function CharteredTaxAdviserLondonPage() {
         </div>
       </section>
 
-      {/* Agency-specific areas */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">What actually moves the numbers</p>
@@ -249,7 +235,7 @@ export default function CharteredTaxAdviserLondonPage() {
           </h2>
         </div>
         <div className="mt-10 grid gap-4 text-left md:grid-cols-2 lg:grid-cols-3">
-          {areas.map((area, index) => (
+          {areas.map((area) => (
             <article
               key={area.title}
               className="finance-card flex h-full flex-col p-6 md:p-7"
@@ -271,7 +257,7 @@ export default function CharteredTaxAdviserLondonPage() {
         </div>
       </section>
 
-      {/* London local signal */}
+
       <section className="section-blue-soft py-16 md:py-20 gutter-bleed">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">Based in London, working across the UK</p>
@@ -295,10 +281,10 @@ export default function CharteredTaxAdviserLondonPage() {
         </div>
       </section>
 
-      {/* Proof */}
+
       <Testimonials />
 
-      {/* Cross-links */}
+
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">
         <p className="text-base leading-8 text-muted">
           More on how we work with{" "}
@@ -334,7 +320,7 @@ export default function CharteredTaxAdviserLondonPage() {
         </p>
       </section>
 
-      {/* FAQ */}
+
       <section className="gutter section-white pb-16 pt-2 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">London agency tax FAQ</p>

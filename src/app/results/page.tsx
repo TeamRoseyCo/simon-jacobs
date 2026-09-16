@@ -10,10 +10,6 @@ export const metadata: Metadata = {
     "Real outcomes from tax planning and accountancy for UK business owners: tax bills brought down, money reclaimed, and structures built for a cleaner exit.",
   alternates: { canonical: "/results" },
 };
-
-// Quantified outcomes drawn only from already-published, approved material
-// (Simon's own video case study and existing client testimonials). Framed with
-// his own "one example, numbers vary" caveat so nothing overstates a guarantee.
 const outcomes = [
   {
     stat: "£20k › nil",
@@ -25,21 +21,13 @@ const outcomes = [
     stat: "Thousands saved",
     label: "Personal Allowance protected",
     body: "A client saved thousands on his tax bill and kept his Personal Allowance intact through proper planning, plus guidance on other assets expected to save more in future.",
-    // No href: neither existing blog post is actually this client's story
-    // (the closest match is a generic pay-extraction guide), and a "Read the
-    // story" link that lands on unrelated content is worse than no link.
-    // Point here once a post telling this specific story exists.
   },
   {
     stat: "Money reclaimed",
     label: "Proper structuring",
     body: "A client reclaimed money he did not realise he was owed and saved a significant amount in tax through the right structure, with everything left compliant and future-proof.",
-    // Same as above: no existing post tells this story specifically.
   },
 ];
-
-// The repeatable approach behind the outcomes above. Method, not promises, so it
-// reinforces expertise without implying a guaranteed result.
 const method = [
   {
     step: "01",
@@ -61,7 +49,7 @@ const method = [
 export default function ResultsPage() {
   return (
     <>
-      {/* Hero */}
+
       <section className="gutter section-white pb-8 pt-20 text-center md:pt-28">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Results</p>
@@ -77,10 +65,10 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* Quantified outcomes */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="grid gap-4 text-left md:grid-cols-3">
-          {outcomes.map((o, index) => (
+          {outcomes.map((o) => (
             <article
               key={o.label}
               className="finance-card flex h-full flex-col p-6 md:p-7"
@@ -105,7 +93,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* How the results happen (method, not promises) */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="eyebrow">How it happens</p>
@@ -119,7 +107,7 @@ export default function ResultsPage() {
           </p>
         </div>
         <div className="mt-10 grid gap-4 text-left md:grid-cols-3">
-          {method.map((m, index) => (
+          {method.map((m) => (
             <article
               key={m.step}
               className="finance-card flex h-full flex-col p-6 md:p-7"
@@ -136,7 +124,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* Credentials */}
+
       <section className="section-blue-soft py-16 text-center md:py-20 gutter-bleed">
         <p className="accred-eyebrow accred-eyebrow-light">
           Chartered, and Big Four trained
@@ -144,7 +132,7 @@ export default function ResultsPage() {
         <Accreditations variant="light" className="accred-prominent mt-6" />
       </section>
 
-      {/* Testimonials (real client quotes) */}
+
       <Testimonials />
 
       <section className="section-white mx-auto w-full max-w-3xl px-6 py-14 text-center md:px-10 md:py-16 lg:px-16">

@@ -1,22 +1,3 @@
-/**
- * Knocks the background out of a studio headshot and writes a transparent PNG.
- *
- * Built for shots on a flat, light, evenly lit backdrop, which is what Simon's
- * headshot is. It flood-fills inward from the edges of the frame rather than
- * thresholding the whole image, which matters here: his shirt and pocket square
- * are nearly as light as the backdrop, and a plain threshold would punch holes
- * straight through them. Only background that is actually connected to the
- * border can be removed.
- *
- * The mask is then eroded by a pixel and feathered, because a hard cut on a
- * light backdrop leaves a pale halo that is very obvious once the cutout is
- * dropped onto a near-black card.
- *
- * Usage:
- *   node scripts/thumbs/cutout.mjs                       public/simon-jacobs.jpg -> assets/simon-suit-cutout.png
- *   node scripts/thumbs/cutout.mjs <input> <output>
- *   TOLERANCE=48 node scripts/thumbs/cutout.mjs          looser match, eats more background
- */
 import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -31,20 +12,8 @@ const repo = path.join(here, "..", "..");
 
 const input = process.argv[2] || path.join(repo, "public", "simon-jacobs.jpg");
 const output = process.argv[3] || path.join(here, "assets", "simon-suit-cutout.png");
-
-// How far a pixel's colour may sit from the sampled backdrop and still count as
-// background. Euclidean distance in RGB. 40 is comfortably below the gap
-// between the grey backdrop and his white shirt.
 const TOLERANCE = Number(process.env.TOLERANCE || 40);
-// Upscale before masking so the feathered edge lands on the card at full size
-// rather than being enlarged along with its own softness.
 const WORK_WIDTH = Number(process.env.WORK_WIDTH || 1600);
-
-/**
- * Preferred path: Vision's subject lifting, via the tiny Swift tool next door.
- * Compiles it on first use and reuses the binary after that. Returns false if
- * anything about that route is unavailable, so the colour key can take over.
- */
 async function visionCutout() {
   if (process.platform !== "darwin" || process.env.NO_VISION) return false;
   const swift = path.join(here, "cutout-vision.swift");
@@ -83,9 +52,6 @@ async function main() {
   const src = sharp(input).resize({ width: WORK_WIDTH, kernel: "lanczos3" }).ensureAlpha();
   const { data, info } = await src.raw().toBuffer({ resolveWithObject: true });
   const { width: w, height: h, channels } = info;
-
-  // Sample the backdrop from the four corners rather than one, so a slight
-  // lighting gradient across the backdrop does not throw the match off.
   const at = (x, y) => (y * w + x) * channels;
   const corners = [
     [2, 2],
@@ -103,9 +69,6 @@ async function main() {
     const db = data[i + 2] - bg[2];
     return Math.sqrt(dr * dr + dg * dg + db * db) <= TOLERANCE;
   };
-
-  // Flood fill from every border pixel. Iterative, with a typed-array queue,
-  // because a recursive fill blows the stack on an image this size.
   const bgMask = new Uint8Array(w * h);
   const queue = new Int32Array(w * h);
   let head = 0;
@@ -133,13 +96,8 @@ async function main() {
     if (y > 0) push(p - w);
     if (y < h - 1) push(p + w);
   }
-
-  // Subject = everything the fill could not reach.
   let alpha = new Uint8Array(w * h);
   for (let p = 0; p < w * h; p++) alpha[p] = bgMask[p] ? 0 : 255;
-
-  // Erode the subject by one pixel: the outermost ring of the subject is half
-  // backdrop by definition, and it is what shows up as a halo.
   const eroded = new Uint8Array(w * h);
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
@@ -154,8 +112,6 @@ async function main() {
     }
   }
   alpha = eroded;
-
-  // Feather, so the edge is anti-aliased instead of stair-stepped.
   const feathered = await sharp(Buffer.from(alpha), {
     raw: { width: w, height: h, channels: 1 },
   })

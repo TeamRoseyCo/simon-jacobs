@@ -1,20 +1,3 @@
-/**
- * Checks that every published post has a card, and tells you exactly what to
- * run for the ones that do not.
- *
- * This is the step that keeps the generator inside the posting process rather
- * than beside it. Publishing happens in the CMS at /admin/blog, which knows
- * nothing about scripts/thumbs, so without a check a post goes live with the
- * fallback photo and nobody notices until the blog index looks repetitive.
- *
- * Reads the live post list straight from Supabase (same table the site reads),
- * so it is always checking what is actually published, not a local copy.
- *
- * Usage:
- *   npm run thumbs:audit
- *
- * Exit code is 1 when something is missing, so it can gate a release step.
- */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -22,9 +5,6 @@ import { cards } from "./cards.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repo = path.join(here, "..", "..");
-
-// .env.local is not loaded for a plain node script, so read it directly rather
-// than adding dotenv for one file.
 function env(name) {
   if (process.env[name]) return process.env[name];
   try {
@@ -70,8 +50,6 @@ const imaged = new Set(
 
 const noCard = posts.filter((p) => !carded.has(p.slug));
 const noImage = posts.filter((p) => carded.has(p.slug) && !imaged.has(p.slug));
-// A card whose post no longer exists: dead weight, and it silently renders on
-// every full run.
 const orphans = [...carded].filter(
   (s) => s !== "_default" && !posts.some((p) => p.slug === s),
 );

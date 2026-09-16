@@ -1,18 +1,3 @@
-/**
- * Writes scripts/thumbs/assets/inline-data.js, the bridge between cards.mjs
- * and template.html.
- *
- * template.html is opened over file:// (both by Chrome headless when
- * rendering and by a human previewing the whole set). Over file:// a page
- * cannot fetch() a sibling file and cannot import an ES module, but it CAN
- * load a plain <script src="...">. So the card data and the cutout are
- * baked into a classic script that sets window.__THUMBS__.
- *
- * Keeping cards.mjs as the only place card copy lives means the template can
- * never drift out of sync with it.
- *
- * Run directly, or let render.mjs / preview call it.
- */
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -28,17 +13,9 @@ async function webpDataUri(pipeline) {
 }
 
 async function main() {
-  // Default is the studio headshot cut out by cutout.mjs. THUMB_CUTOUT swaps it
-  // for another file in assets/ without touching this script.
   const cutoutPath = path.join(assets, process.env.THUMB_CUTOUT || "simon-suit-cutout.png");
   const cropPath = path.join(assets, "simon-crop.jpg");
-
-  // The cutout only ever renders at roughly 1000px wide on a 2400px card, so
-  // 1400px is plenty and keeps the inlined payload small.
   const cutout = await webpDataUri(sharp(cutoutPath).resize({ width: 1400 }));
-
-  // Heavily blurred copy of the source crop, used as a low-opacity depth
-  // layer behind the gradient. Tiny on purpose: it is blurred to mush anyway.
   let backdrop = { uri: "", bytes: 0 };
   try {
     backdrop = await webpDataUri(

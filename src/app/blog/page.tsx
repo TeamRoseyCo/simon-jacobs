@@ -4,13 +4,6 @@ import Image from "next/image";
 import ConsultCta from "@/components/ConsultCta";
 import { getAllPosts, formatPostDate } from "@/lib/posts";
 import { postImage } from "@/lib/postImage";
-
-// The image lookup moved to src/lib/postImage.ts so the home page and the
-// related-reading cards resolve thumbnails the same way this index does.
-//
-// The fallback is an existing brand photo rather than a generated card. Eleven
-// posts share it, which is repetitive but neutral: a repeated real photo reads
-// as a house style, a broken image reads as a dead site.
 export const metadata: Metadata = {
   title: "Tax & Profit Notes for UK Business Owners",
   description:
@@ -24,7 +17,7 @@ export default async function BlogPage() {
 
   return (
     <>
-      {/* Hero banner */}
+
       <section className="blog-hero px-6 pb-16 pt-24 text-center md:px-10 md:pb-20 md:pt-36 lg:px-16">
         <div className="mx-auto max-w-3xl">
           <h1 className="ap-h1 text-white">
@@ -39,7 +32,7 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Section intro */}
+
       <section className="gutter section-white pb-6 pt-12 text-center md:pt-14">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Stories &amp; guides</p>
@@ -54,22 +47,15 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Featured (latest) post */}
+
       {featured ? (
         <section className="gutter section-white pb-10">
           <Link
             href={`/blog/${featured.slug}`}
             className="grid overflow-hidden rounded-[14px] border border-border bg-white shadow-[0_14px_40px_rgba(8,34,75,0.06)] transition duration-300 hover:-translate-y-1 md:grid-cols-2"
           >
-            {/* The cell is given the thumbnails' own 8:5 shape, so the whole
-                card fills it edge to edge: nothing cropped, and no letterbox
-                bars either. self-start keeps it at 8:5 rather than being
-                stretched taller by the text column, which is what used to crop
-                the headline off. */}
-            {/* Real dimensions rather than `fill`: the intrinsic 8:5 gives the
-                element its height in every browser. With `fill` inside an
-                aspect-ratio box, Safari resolves the height to 0 for a flex
-                item and the card renders with no image at all. */}
+
+
             <Image
               src={postImage(featured.slug)}
               alt={featured.title}
@@ -97,10 +83,10 @@ export default async function BlogPage() {
         </section>
       ) : null}
 
-      {/* Grid */}
+
       <section className="gutter section-white pb-16 md:pb-24">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {rest.map((post, index) => (
+          {rest.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}

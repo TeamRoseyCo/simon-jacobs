@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 function Toggle({
@@ -34,9 +35,6 @@ type ConsentChoice = {
   marketing?: boolean;
   functioning?: boolean;
 };
-
-// Push the user's choice into Google Consent Mode v2. Defaults are set to
-// 'denied' in layout.tsx before gtag loads; this flips them on opt-in.
 function applyConsent(c: ConsentChoice) {
   const w = window as unknown as {
     gtag?: (...args: unknown[]) => void;
@@ -94,20 +92,18 @@ export default function CookieConsent() {
   const pathname = usePathname();
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem("sj-cookie-consent");
-      if (!stored) {
+    const loadConsent = () => {
+      try {
+        const stored = localStorage.getItem("sj-cookie-consent");
+        if (!stored) setShow(true);
+        else applyConsent(JSON.parse(stored) as ConsentChoice);
+      } catch {
         setShow(true);
-      } else {
-        // Returning visitor: re-apply their saved choice to Consent Mode.
-        applyConsent(JSON.parse(stored) as ConsentChoice);
       }
-    } catch {
-      setShow(true);
-    }
+    };
+    const timer = window.setTimeout(loadConsent, 0);
+    return () => window.clearTimeout(timer);
   }, []);
-
-  // Never show on the internal admin dashboard.
   if (pathname?.startsWith("/admin")) return null;
 
   function save(choice: Record<string, boolean>) {
@@ -133,8 +129,8 @@ export default function CookieConsent() {
       <div className={`cc-modal ${view === "prefs" ? "cc-modal-prefs" : ""}`}>
         {view === "main" ? (
           <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="cc-icon" src="/cookie.webp" alt="" />
+
+            <Image className="cc-icon" src="/cookie.webp" alt="" width={84} height={84} />
             <h2 className="cc-title">Cookie Consent</h2>
             <p className="cc-text">
               Our website uses cookies to make sure you get the best experience

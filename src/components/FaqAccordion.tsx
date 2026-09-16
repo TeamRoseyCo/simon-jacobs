@@ -5,7 +5,6 @@ import { useState } from "react";
 type Faq = { question: string; answer: string };
 
 export default function FaqAccordion({ items }: { items: Faq[] }) {
-  // Only one question is open at a time; null means all closed.
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (

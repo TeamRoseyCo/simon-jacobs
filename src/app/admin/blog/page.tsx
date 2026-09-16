@@ -10,10 +10,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 export const dynamic = "force-dynamic";
-
-// Server pages here stay thin: auth + data only. All the admin chrome lives in
-// the client components, because src/app/admin/ui.tsx is a "use client" module
-// and its helpers cannot be called from a server component.
 export default async function AdminBlogPage() {
   const token = (await cookies()).get(ADMIN_COOKIE)?.value;
   if (!isAuthed(token)) redirect("/admin/login");

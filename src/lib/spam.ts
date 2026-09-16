@@ -1,21 +1,8 @@
-// src/lib/spam.ts
-// Pure helpers for keeping bot / spam submissions out of the contact + scorecard
-// forms. Ported from the Rosey Co spam gate. No DB or network here, so it is
-// trivially testable and safe to import anywhere.
-// RELEVANT FILES: src/app/api/contact/route.ts, src/components/ContactForm.tsx, src/components/ScorecardForm.tsx
 
 const GMAIL_DOMAINS = new Set(["gmail.com", "googlemail.com"]);
-
-/** Lowercase + trim. The minimal cleanup every address gets. */
 export function normalizeEmail(email: string): string {
   return String(email || "").trim().toLowerCase();
 }
-
-/**
- * Heuristic detector for the automated Gmail dot-abuse / gibberish signups.
- * Returns true only for the clearly-synthetic pattern, never for ordinary
- * addresses like first.last@gmail.com. Conservative on purpose.
- */
 export function looksLikeBot(email: string): boolean {
   const norm = normalizeEmail(email);
   const at = norm.lastIndexOf("@");
@@ -32,18 +19,6 @@ export function looksLikeBot(email: string): boolean {
   if (dots >= 2 && avgFrag <= 2.5) return true;
   return false;
 }
-
-/**
- * Heuristic detector for keyboard-mash / randomly generated names (the garbage
- * rows spam bots submit, e.g. "Xkfjdhslwoe" or "gCpTuqSPMwSFTqcqzFUFmS").
- * Conservative so real names, including short, non-English, and hyphenated ones,
- * pass. Only trips on strong, unambiguous signals:
- *   - a digit inside a human name;
- *   - a run of 6+ consecutive consonants (no natural name does this);
- *   - a long token (10+ letters) with almost no vowels; or
- *   - a long token (12+ letters) whose case flips 6+ times.
- * Short tokens are never judged, they carry too much false-positive risk.
- */
 export function looksLikeGibberishName(name: string): boolean {
   const raw = String(name || "").trim();
   if (!raw) return false;

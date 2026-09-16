@@ -1,11 +1,3 @@
-/**
- * Converts scripts/thumbs/out/<slug>.png to public/blog/<slug>.webp at
- * 2400x1500, and reports each file size. Target is under ~250KB per card.
- *
- * Usage:
- *   node scripts/thumbs/to-webp.mjs                     all rendered cards
- *   node scripts/thumbs/to-webp.mjs the-60-percent-tax-trap [more slugs...]
- */
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,16 +10,8 @@ const publicBlog = path.join(here, "..", "..", "public", "blog");
 
 const WIDTH = 2400;
 const HEIGHT = 1500;
-
-// The blog images already on the site are 57 to 62KB at 2400x1500, so these
-// are tuned to land in the same band rather than anywhere near the 250KB
-// ceiling. q76 is the point where the gradient stays clean and the photo of
-// Simon still holds detail; below about q70 the gradient starts to band.
-// effort 6 buys roughly 8% off the file size for a second or two of CPU.
 const QUALITY = 76;
 const EFFORT = 6;
-
-// Hard ceiling. Anything over this gets flagged in the output.
 const BUDGET = 120 * 1024;
 
 async function main() {
@@ -52,7 +36,6 @@ async function main() {
 
     const dest = path.join(publicBlog, `${card.slug}.webp`);
     const info = await sharp(src)
-      // Belt and braces: the screenshot should already be exact.
       .resize(WIDTH, HEIGHT, { fit: "cover", position: "centre" })
       .webp({ quality: QUALITY, effort: EFFORT })
       .toFile(dest);

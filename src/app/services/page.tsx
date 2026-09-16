@@ -8,10 +8,6 @@ import FullServiceChecklist from "@/components/FullServiceChecklist";
 import { services, servicesFull, resultItems, processSteps, site } from "@/lib/content";
 
 const siteUrl = site.url;
-
-// Service schema for the main services hub. Mirrors the shape used on the five
-// agency-vertical money pages; the provider references the sitewide org node by
-// @id rather than re-describing it, so both resolve to one entity.
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -37,8 +33,6 @@ function Ico({ children, className }: { children: ReactNode; className?: string 
     </svg>
   );
 }
-
-// Vector icons aligned to the full service list (same order as servicesFull).
 const serviceIcons: ReactNode[] = [
   <path key="a" d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 7h0M9 11h0M9 15h0M15 7h0M15 11h0M15 15h0" />,
   <>
@@ -72,8 +66,6 @@ const serviceIcons: ReactNode[] = [
     <path key="h2" d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
   </>,
 ];
-
-// Icons for the How / results section (same order as resultItems).
 const resultIcons: ReactNode[] = [
   <>
     <path key="i1" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
@@ -92,10 +84,6 @@ const resultIcons: ReactNode[] = [
     <path key="l2" d="M17 8h4v4" />
   </>,
 ];
-
-// Big emoji art for the process steps (same order as processSteps).
-// Noto Emoji, Apache 2.0. See public/CREDITS.md before swapping the set:
-// these were Apple's, which is not licensable off an Apple platform.
 const stepEmoji = ["/diagnose.webp", "/plan.webp", "/maintain.webp"];
 
 export const metadata: Metadata = {
@@ -107,9 +95,6 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    // Same `pal-ink` scheme as the homepage and contact. Without it this page
-    // kept the old cool blue-white ground and teal accent, so moving between
-    // pages read as two different sites.
     <div className="pal-ink">
       <script
         type="application/ld+json"
@@ -137,11 +122,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="gutter section-white pb-16 pt-8 md:pb-24">
-        {/* `items-start` is load-bearing. Grid rows default to align-items:
-            stretch, so every card matched the tallest one and opening a single
-            "What's included" inflated all three, leaving two cards with a large
-            empty void. Each card's open state was already independent; the
-            stretching was doing the damage. */}
+
         <div className="grid items-start gap-4 text-left md:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />

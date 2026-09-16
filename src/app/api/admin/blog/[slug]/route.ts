@@ -6,10 +6,6 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 import { validatePostPayload } from "../validate";
 
 export const runtime = "nodejs";
-
-// Update an existing post. The route param is the ORIGINAL slug; the payload
-// may rename it, which is why the row keeps its own slug and we .eq() on the
-// param rather than the payload's slug.
 export async function PUT(
   req: Request,
   { params }: { params: Promise<{ slug: string }> },

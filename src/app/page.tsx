@@ -19,11 +19,6 @@ import {
 } from "@/lib/content";
 import { getAllPosts } from "@/lib/posts";
 import { postImage } from "@/lib/postImage";
-
-// Homepage-specific meta description. The site-wide default in layout.tsx runs
-// 172 chars (Bing flagged it as too long on "/"); this trims it to ~153, inside
-// the ~150-160 range engines display without truncating, while keeping the
-// credential and keyword signals.
 export const metadata: Metadata = {
   description:
     "Chartered Tax Advisers for owner-managed UK businesses. Tax planning, cross-border advice and accountancy from a CTA, ACA and PwC trained adviser. Keep more of what you earn.",
@@ -32,15 +27,10 @@ export const metadata: Metadata = {
 export default async function Home() {
   const posts = await getAllPosts();
   return (
-    // `pal-ink` swaps the site palette for SRJ's own deep ink scheme on this
-    // page only. site.css keys the override off `:root:has(.pal-ink)`, so the
-    // shared header and footer recolour here too without affecting any other
-    // route. Swap this one class back to `pal-panther` to restore the previous
-    // scheme.
-    <div className="pal-ink">
+    <div className="pal-ink pal-board2">
       <Hero />
 
-      {/* Lead statement: leads the reader into the whole page */}
+
       <section className="section-blue-soft ap-section text-center gutter-bleed">
         <Accreditations
           variant="light"
@@ -57,12 +47,7 @@ export default async function Home() {
 
       <DecisionModel />
 
-      {/* Who this is for.
-          Rebuilt 15 Aug 2026. The original put the copy directly on top of a
-          full-bleed interior shot, which buried the text and duplicated the
-          About section's treatment further down. The photo is back, but as a
-          contained, rounded image sitting beside the copy rather than behind
-          it, so it reads as a photograph instead of a texture. */}
+
       <section className="whofor-v2">
         <div className="whofor-v2-inner">
           <div className="whofor-v2-media">
@@ -91,14 +76,10 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Services teaser */}
+
       <section className="gutter section-white ap-section relative text-center">
         <div className="mx-auto max-w-3xl">
-          {/* The heading block is pinned: .svc-head is a fixed-width box, its
-              text left-aligned, the box itself centred on the page. So
-              "Stop using" always starts at the same x and the rotating word
-              expands rightward into the box's spare width. Nothing reflows,
-              nothing resizes, and "for taxes." never moves. */}
+
           <h2 className="ap-h2 svc-head">
             <RotatingWord
               prefix="Before you "
@@ -115,12 +96,7 @@ export default async function Home() {
             <br />
             know what changes.
           </h2>
-          {/* 29 Aug 2026: link swapped from the marketing-agencies vertical to
-              the general /services money page, at the client's request — this
-              teaser now reads as general UK, with sector pages linked lower
-              down the funnel instead. Styled as an editorial inline link
-              (underline, no colour shout) rather than the bright accent blue,
-              which read as a stray hyperlink dropped into the sentence. */}
+
           <p className="ap-sub mt-5">
             The return is the final record. Useful advice happens earlier. We
             work across{" "}
@@ -155,12 +131,12 @@ export default async function Home() {
         <ClaudeGif />
       </section>
 
-      {/* Lead magnet: scroll-revealed scorecard invite (Door A) */}
+
       <ScorecardSection />
 
       <Testimonials />
 
-      {/* About: full-bleed photo with the heading set on it */}
+
       <section className="aboutbleed relative w-full overflow-hidden">
         <Image
           src="/simon-jacobs-event.webp"
@@ -192,7 +168,7 @@ export default async function Home() {
         sub="Book a 15-minute discovery call. Tell us what is moving - profit, money, country, or a possible sale - and we will tell you plainly whether we can help."
       />
 
-      {/* From the blog */}
+
       <section className="section-blue-soft ap-section gutter-bleed">
         <div className="mx-auto w-full max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
