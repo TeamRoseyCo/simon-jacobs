@@ -55,3 +55,7 @@ scripts/thumbs/.bin/
 
 # Local-only type test. Lives on disk, never ships: see /font-lab.
 src/app/font-lab/
+
+# local scratch
+/tmp/
+shot.png

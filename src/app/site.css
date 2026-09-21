@@ -3672,7 +3672,7 @@ input[aria-invalid="true"] { border-color: #14161A !important; border-width: 2px
    measured. Body list at 10.70:1, band CTA at 6.17:1. */
 .pal-board2 .whofor-v2 { background: #1C3963; }
 .pal-board2 .whofor-v2-list li { color: rgba(251, 248, 243, 0.84); }
-.pal-board2 .whofor-v2-list li::before { background: #E8B49B; }
+.pal-board2 .whofor-v2-list li::before { background: rgba(251, 248, 243, 0.55); }
 
 /* The headline split moves onto the positioning line. Chroma is the stronger
    salience cue at equal size and weight, so the accent half is read first,
