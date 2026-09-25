@@ -177,7 +177,7 @@ export default function SiteFooter() {
               Website by{" "}
 
               <a
-                href="https://roseyco.com"
+                href="https://www.roseyco.com/uk/services/web-development"
                 target="_blank"
                 rel="noopener"
                 className="foot-strong"

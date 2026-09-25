@@ -202,7 +202,7 @@ export default function AboutPage() {
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-7 text-muted">
           This site was designed and built by{" "}
           <a
-            href="https://roseyco.com"
+            href="https://www.roseyco.com/uk/services/web-development"
             target="_blank"
             rel="noopener"
             className="font-semibold text-accent underline decoration-border underline-offset-2 transition hover:text-ink"
